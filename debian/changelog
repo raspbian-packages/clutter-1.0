@@ -1,3 +1,11 @@
+clutter (0.8.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * Ship the COGL documentation
+  * Clean up minor lintian warnings
+
+ -- Ross Burton <ross@debian.org>  Fri, 19 Jun 2009 11:38:03 +0100
+
 clutter (0.8.4-1) unstable; urgency=low
 
   * New upstream release

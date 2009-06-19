@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Ross Burton <ross@debian.org>
 Uploaders: Rob Bradford <robster@debian.org>
 Build-Depends: debhelper (>= 5), cdbs, libgl1-mesa-dev|libgl-dev, libgtk2.0-dev, gtk-doc-tools
-Standards-Version: 3.7.2
+Standards-Version: 3.8.2
 
 Package: libclutter-0.8-0
 Section: libs
@@ -28,10 +28,10 @@ Description: Open GL based interactive canvas library (development files)
  This package contains the development files.
 
 Package: libclutter-0.8-dbg
-Section: libdevel
+Section: debug
 Priority: extra
 Architecture: any
-Depends: libclutter-0.8-0 (= ${binary:Version})
+Depends: libclutter-0.8-0 (= ${binary:Version}), ${misc:Depends}
 Description: Open GL based interactive canvas library (debug files)
  Clutter is an Open GL based interactive canvas library, designed for creating
  fast, mainly 2D single window applications such as media box UIs,
