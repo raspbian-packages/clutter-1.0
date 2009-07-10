@@ -1,3 +1,9 @@
+clutter (0.8.8-2) UNRELEASED; urgency=low
+
+  * Downgrade pkg-config dep to a recommends.
+
+ -- Loïc Minier <lool@dooz.org>  Fri, 10 Jul 2009 14:57:00 +0200
+
 clutter (0.8.8-1) unstable; urgency=low
 
   * New upstream release.

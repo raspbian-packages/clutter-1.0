@@ -18,7 +18,8 @@ Description: Open GL based interactive canvas library
 Package: libclutter-0.8-dev
 Section: libdevel
 Architecture: any
-Depends: libclutter-0.8-0 (= ${binary:Version}), pkg-config, libgtk2.0-dev, libgl1-mesa-dev|libgl-dev, ${misc:Depends}
+Depends: libclutter-0.8-0 (= ${binary:Version}), libgtk2.0-dev, libgl1-mesa-dev|libgl-dev, ${misc:Depends}
+Recommends: pkg-config
 Suggests: libclutter-doc
 Description: Open GL based interactive canvas library (development files)
  Clutter is an Open GL based interactive canvas library, designed for creating
