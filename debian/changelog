@@ -4,6 +4,7 @@ clutter (0.8.8-2) UNRELEASED; urgency=low
   * Update download URL in copyright.
   * Use LDFLAGS/CFLAGS vars directly to avoid overriding them completely; bdep
     on cdbs >= 0.4.41.
+  * Wrap build-deps and deps.
 
  -- Loïc Minier <lool@dooz.org>  Fri, 10 Jul 2009 14:57:00 +0200
 
