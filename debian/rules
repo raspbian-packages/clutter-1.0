@@ -6,10 +6,10 @@ include /usr/share/cdbs/1/rules/simple-patchsys.mk
 include /usr/share/cdbs/1/rules/utils.mk
 
 LDFLAGS += -Wl,-O1 -Wl,--as-needed
-DEB_COMPRESS_EXCLUDE = .c
-DEB_CONFIGURE_EXTRA_FLAGS := --enable-gtk-doc
+DEB_COMPRESS_EXCLUDE += .c
+DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc
 
-CPU=$(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
+CPU := $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 ifeq ($(CPU),arm)
 CFLAGS += -march=armv5t
 endif

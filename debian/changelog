@@ -8,6 +8,7 @@ clutter (0.8.8-2) UNRELEASED; urgency=low
   * Let libclutter-0.8-dev dep on ${shlibs:Depends}.
   * Bdep on libpango1.0-dev (>= 1.18) and libglib2.0-dev (>= 2.14)
     explicitely.
+  * Cleanup rules.
 
  -- Loïc Minier <lool@dooz.org>  Fri, 10 Jul 2009 14:57:00 +0200
 
