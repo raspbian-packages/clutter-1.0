@@ -2,13 +2,14 @@ Source: clutter
 Section: libs
 Priority: optional
 Maintainer: Ross Burton <ross@debian.org>
-Uploaders: Rob Bradford <robster@debian.org>
+Uploaders: Rob Bradford <robster@debian.org>, Gustavo Noronha Silva <kov@debian.org>
 Build-Depends: debhelper (>= 5),
                cdbs (>= 0.4.41),
                libgl1-mesa-dev | libgl-dev,
                libgtk2.0-dev,
-               libpango1.0-dev (>= 1.18),
-               libglib2.0-dev (>= 2.14),
+               libcairo-dev (>= 1.4),
+               libpango1.0-dev (>= 1.20),
+               libglib2.0-dev (>= 2.16),
                gtk-doc-tools,
 Standards-Version: 3.8.2
 
