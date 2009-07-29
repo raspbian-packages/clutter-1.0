@@ -1,5 +1,6 @@
-clutter (0.8.8-2) UNRELEASED; urgency=low
+clutter (1.0.0-1) UNRELEASED; urgency=low
 
+  [ Loïc Minier ]
   * Downgrade pkg-config dep to a recommends.
   * Update download URL in copyright.
   * Use LDFLAGS/CFLAGS vars directly to avoid overriding them completely; bdep
@@ -11,7 +12,10 @@ clutter (0.8.8-2) UNRELEASED; urgency=low
   * Cleanup rules.
   * Use CDBS gnome.mk class instead of autotools.
 
- -- Loïc Minier <lool@dooz.org>  Fri, 10 Jul 2009 14:57:00 +0200
+  [ Gustavo Noronha Silva ]
+  * New stable upstream release
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Wed, 29 Jul 2009 13:44:01 +0200
 
 clutter (0.8.8-1) unstable; urgency=low
 
