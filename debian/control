@@ -1,4 +1,4 @@
-Source: clutter
+Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Ross Burton <ross@debian.org>
@@ -28,7 +28,7 @@ Description: Open GL based interactive canvas library
  fast, mainly 2D single window applications such as media box UIs,
  presentations, kiosk style applications and so on.
 
-Package: libclutter-dev
+Package: libclutter-1.0-dev
 Section: libdevel
 Architecture: any
 Depends: libclutter-1.0-0 (= ${binary:Version}),
@@ -58,7 +58,7 @@ Description: Open GL based interactive canvas library (debug files)
  .
  This package contains the debug files.
 
-Package: libclutter-doc
+Package: libclutter-1.0-doc
 Section: doc
 Architecture: all
 Depends: ${misc:Depends}
