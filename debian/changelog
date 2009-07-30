@@ -8,7 +8,7 @@ clutter-1.0 (1.0.0-1) UNRELEASED; urgency=low
   * Wrap build-deps and deps.
   * Let libclutter-0.8-dev dep on ${shlibs:Depends}.
   * Bdep on libpango1.0-dev (>= 1.18) and libglib2.0-dev (>= 2.14)
-    explicitely.
+    explicitly.
   * Cleanup rules.
   * Use CDBS gnome.mk class instead of autotools.
 
