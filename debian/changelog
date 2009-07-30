@@ -19,8 +19,10 @@ clutter-1.0 (1.0.0-1) UNRELEASED; urgency=low
   * debian/control:
   - make the doc package clutter-version-specific (libclutter-1.0-doc),
     and make it conflict with libclutter-doc
+  * debian/copyright:
+  - fixed and updated information with recent copyright changes
 
- -- Gustavo Noronha Silva <kov@debian.org>  Thu, 30 Jul 2009 12:35:56 +0200
+ -- Gustavo Noronha Silva <kov@debian.org>  Thu, 30 Jul 2009 12:48:00 +0200
 
 clutter (0.8.8-1) unstable; urgency=low
 
