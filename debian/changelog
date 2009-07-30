@@ -1,4 +1,4 @@
-clutter-1.0 (1.0.0-1) UNRELEASED; urgency=low
+clutter-1.0 (1.0.0-1) unstable; urgency=low
 
   [ Loïc Minier ]
   * Downgrade pkg-config dep to a recommends.
