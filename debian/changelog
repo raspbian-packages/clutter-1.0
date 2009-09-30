@@ -1,3 +1,9 @@
+clutter-1.0 (1.0.6-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Wed, 30 Sep 2009 19:25:03 +0100
+
 clutter-1.0 (1.0.0-1) unstable; urgency=low
 
   [ Loïc Minier ]
