@@ -1,3 +1,10 @@
+clutter-1.0 (1.0.8-2) UNRELEASED; urgency=low
+
+  * debian/control:
+  - bump Standards-Version to 3.8.3
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Mon, 19 Oct 2009 15:05:42 -0200
+
 clutter-1.0 (1.0.8-1) unstable; urgency=low
 
   * New upstream release
