@@ -15,6 +15,7 @@ Build-Depends: debhelper (>= 5),
                gobject-introspection (>= 0.6.5-3),
                gir1.0-freedesktop (>= 0.6.3),
                gir1.0-glib-2.0,
+               gir1.0-gtk-2.0,
                gir-repository-dev
 Standards-Version: 3.8.2
 

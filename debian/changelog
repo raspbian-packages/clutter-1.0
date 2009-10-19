@@ -1,4 +1,4 @@
-clutter-1.0 (1.0.8-1) UNRELEASED; urgency=low
+clutter-1.0 (1.0.8-1) unstable; urgency=low
 
   * New upstream release
   * debian/control:
@@ -6,6 +6,8 @@ clutter-1.0 (1.0.8-1) UNRELEASED; urgency=low
     gobject-introspection >= 0.6.5-3, and using the new gir1.0-* packages
   * debian/control, libclutter-1.0-0.install, gir1.0-clutter-1.0.install:
   - add new package for the typelib files
+  * debian/rules:
+  - make dh_girepository be called on the packages
 
  -- Gustavo Noronha Silva <kov@debian.org>  Mon, 19 Oct 2009 13:55:06 -0200
 

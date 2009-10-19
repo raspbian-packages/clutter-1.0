@@ -14,4 +14,7 @@ ifeq ($(CPU),arm)
 CFLAGS += -march=armv5t
 endif
 
+$(patsubst %,binary-predeb/%,$(DEB_ALL_PACKAGES)) ::
+	dh_girepository -p$(cdbs_curpkg)
+
 common-binary-predeb-arch:: list-missing
