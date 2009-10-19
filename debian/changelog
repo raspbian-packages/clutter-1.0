@@ -1,8 +1,12 @@
 clutter-1.0 (1.0.6-2) UNRELEASED; urgency=low
 
-  * NOT RELEASED YET
+  * debian/control:
+  - adopt new GObject-Introspection mini-policy, by build-depending on
+    gobject-introspection >= 0.6.5-3, and using the new gir1.0-* packages
+  * debian/control, libclutter-1.0-0.install, gir1.0-clutter-1.0.install:
+  - add new package for the typelib files
 
- -- Gustavo Noronha Silva <kov@debian.org>  Wed, 30 Sep 2009 20:14:53 +0100
+ -- Gustavo Noronha Silva <kov@debian.org>  Mon, 19 Oct 2009 13:55:06 -0200
 
 clutter-1.0 (1.0.6-1) unstable; urgency=low
 

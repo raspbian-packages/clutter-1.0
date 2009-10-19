@@ -12,10 +12,10 @@ Build-Depends: debhelper (>= 5),
                libglib2.0-dev (>= 2.16),
                gtk-doc-tools,
                libgirepository1.0-dev (>= 0.6.3),
-               gobject-introspection (>= 0.6.3),
-               gobject-introspection-glib-2.0 (>= 0.6.3),
-               gobject-introspection-freedesktop (>= 0.6.3),
-               gobject-introspection-repository (>= 0.6.3)
+               gobject-introspection (>= 0.6.5-3),
+               gir1.0-freedesktop (>= 0.6.3),
+               gir1.0-glib-2.0,
+               gir-repository-dev
 Standards-Version: 3.8.2
 
 Package: libclutter-1.0-0
@@ -71,3 +71,18 @@ Description: Open GL based interactive canvas library (documentation)
  presentations, kiosk style applications and so on.
  .
  This package contains the documentation.
+
+Package: gir1.0-clutter-1.0
+Section: libs
+Architecture: any
+Depends: ${gir:Depends},
+         ${shlibs:Depends},
+         ${misc:Depends}
+Conflicts: libclutter-1.0-0 (<< 1.0.6-2)
+Replaces: libclutter-1.0-0 (<< 1.0.6-2)
+Description: GObject introspection data for the Clutter 1.0 library
+ This package contains introspection data for the Clutter scene
+ graph library.
+ .
+ It can be used by packages using the GIRepository format to generate
+ dynamic bindings.
