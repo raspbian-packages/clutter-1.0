@@ -78,8 +78,8 @@ Architecture: any
 Depends: ${gir:Depends},
          ${shlibs:Depends},
          ${misc:Depends}
-Conflicts: libclutter-1.0-0 (<< 1.0.6-2)
-Replaces: libclutter-1.0-0 (<< 1.0.6-2)
+Conflicts: libclutter-1.0-0 (<< 1.0.8)
+Replaces: libclutter-1.0-0 (<< 1.0.8)
 Description: GObject introspection data for the Clutter 1.0 library
  This package contains introspection data for the Clutter scene
  graph library.
