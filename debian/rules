@@ -12,7 +12,9 @@ GNOME_DOWNLOAD_URL = http://www.clutter-project.org/sources/clutter/$(DEB_UPSTRE
 
 LDFLAGS += -Wl,-O1 -Wl,--as-needed
 DEB_COMPRESS_EXCLUDE += .c
-DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc --enable-introspection=yes
+DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc			\
+				--enable-introspection=yes	\
+				--with-json=system
 
 CPU := $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
 ifeq ($(CPU),arm)
