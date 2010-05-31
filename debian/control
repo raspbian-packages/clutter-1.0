@@ -43,6 +43,7 @@ Architecture: any
 Depends: libclutter-1.0-0 (= ${binary:Version}),
          libgtk2.0-dev,
          libgl1-mesa-dev|libgl-dev,
+         libjson-glib-dev >= 0.8,
          ${misc:Depends},
          ${shlibs:Depends}
 Recommends: pkg-config
