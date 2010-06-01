@@ -1,3 +1,11 @@
+clutter-1.0 (1.2.8-2) UNRELEASED; urgency=low
+
+  * debian/libclutter-1.0-0.symbols,
+    debian/rules:
+    - Add a symbols file.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 01 Jun 2010 22:05:39 +0200
+
 clutter-1.0 (1.2.8-1) experimental; urgency=low
 
   * New upstream development release
