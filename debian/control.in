@@ -20,7 +20,7 @@ Build-Depends: debhelper (>= 5),
                gir1.0-gtk-2.0,
                gir1.0-json-glib-1.0,
                gir-repository-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.0
 
 Package: libclutter-1.0-0
 Section: libs
