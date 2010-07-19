@@ -1,0 +1,1719 @@
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -197,6 +197,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -263,6 +265,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/aclocal.m4
++++ b/aclocal.m4
+@@ -453,6 +453,7 @@
+ 
+ 
+ # pkg.m4 - Macros to locate and utilise pkg-config.            -*- Autoconf -*-
++# serial 1 (pkg-config-0.24)
+ # 
+ # Copyright © 2004 Scott James Remnant <scott@netsplit.com>.
+ #
+@@ -480,7 +481,10 @@
+ AC_DEFUN([PKG_PROG_PKG_CONFIG],
+ [m4_pattern_forbid([^_?PKG_[A-Z_]+$])
+ m4_pattern_allow([^PKG_CONFIG(_PATH)?$])
+-AC_ARG_VAR([PKG_CONFIG], [path to pkg-config utility])dnl
++AC_ARG_VAR([PKG_CONFIG], [path to pkg-config utility])
++AC_ARG_VAR([PKG_CONFIG_PATH], [directories to add to pkg-config's search path])
++AC_ARG_VAR([PKG_CONFIG_LIBDIR], [path overriding pkg-config's built-in search path])
++
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+ 	AC_PATH_TOOL([PKG_CONFIG], [pkg-config])
+ fi
+@@ -493,7 +497,6 @@
+ 		AC_MSG_RESULT([no])
+ 		PKG_CONFIG=""
+ 	fi
+-		
+ fi[]dnl
+ ])# PKG_PROG_PKG_CONFIG
+ 
+@@ -502,21 +505,20 @@
+ # Check to see whether a particular set of modules exists.  Similar
+ # to PKG_CHECK_MODULES(), but does not set variables or print errors.
+ #
+-#
+-# Similar to PKG_CHECK_MODULES, make sure that the first instance of
+-# this or PKG_CHECK_MODULES is called, or make sure to call
+-# PKG_CHECK_EXISTS manually
++# Please remember that m4 expands AC_REQUIRE([PKG_PROG_PKG_CONFIG])
++# only at the first occurence in configure.ac, so if the first place
++# it's called might be skipped (such as if it is within an "if", you
++# have to call PKG_CHECK_EXISTS manually
+ # --------------------------------------------------------------
+ AC_DEFUN([PKG_CHECK_EXISTS],
+ [AC_REQUIRE([PKG_PROG_PKG_CONFIG])dnl
+ if test -n "$PKG_CONFIG" && \
+     AC_RUN_LOG([$PKG_CONFIG --exists --print-errors "$1"]); then
+-  m4_ifval([$2], [$2], [:])
++  m4_default([$2], [:])
+ m4_ifvaln([$3], [else
+   $3])dnl
+ fi])
+ 
+-
+ # _PKG_CONFIG([VARIABLE], [COMMAND], [MODULES])
+ # ---------------------------------------------
+ m4_define([_PKG_CONFIG],
+@@ -569,6 +571,7 @@
+ See the pkg-config man page for more details.])
+ 
+ if test $pkg_failed = yes; then
++   	AC_MSG_RESULT([no])
+         _PKG_SHORT_ERRORS_SUPPORTED
+         if test $_pkg_short_errors_supported = yes; then
+ 	        $1[]_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "$2" 2>&1`
+@@ -578,7 +581,7 @@
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$$1[]_PKG_ERRORS" >&AS_MESSAGE_LOG_FD
+ 
+-	ifelse([$4], , [AC_MSG_ERROR(dnl
++	m4_default([$4], [AC_MSG_ERROR(
+ [Package requirements ($2) were not met:
+ 
+ $$1_PKG_ERRORS
+@@ -586,25 +589,24 @@
+ Consider adjusting the PKG_CONFIG_PATH environment variable if you
+ installed software in a non-standard prefix.
+ 
+-_PKG_TEXT
+-])],
+-		[AC_MSG_RESULT([no])
+-                $4])
++_PKG_TEXT])dnl
++        ])
+ elif test $pkg_failed = untried; then
+-	ifelse([$4], , [AC_MSG_FAILURE(dnl
++     	AC_MSG_RESULT([no])
++	m4_default([$4], [AC_MSG_FAILURE(
+ [The pkg-config script could not be found or is too old.  Make sure it
+ is in your PATH or set the PKG_CONFIG environment variable to the full
+ path to pkg-config.
+ 
+ _PKG_TEXT
+ 
+-To get pkg-config, see <http://pkg-config.freedesktop.org/>.])],
+-		[$4])
++To get pkg-config, see <http://pkg-config.freedesktop.org/>.])dnl
++        ])
+ else
+ 	$1[]_CFLAGS=$pkg_cv_[]$1[]_CFLAGS
+ 	$1[]_LIBS=$pkg_cv_[]$1[]_LIBS
+         AC_MSG_RESULT([yes])
+-	ifelse([$3], , :, [$3])
++	$3
+ fi[]dnl
+ ])# PKG_CHECK_MODULES
+ 
+--- a/build/Makefile.in
++++ b/build/Makefile.in
+@@ -153,6 +153,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -219,6 +221,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/build/autotools/Makefile.in
++++ b/build/autotools/Makefile.in
+@@ -111,6 +111,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -177,6 +179,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/build/autotools/libtool.m4
++++ b/build/autotools/libtool.m4
+@@ -2445,7 +2445,7 @@
+   ;;
+ 
+ # This must be Linux ELF.
+-linux* | k*bsd*-gnu)
++linux* | k*bsd*-gnu | kopensolaris*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+   need_version=no
+@@ -2470,13 +2470,10 @@
+   # before this can be enabled.
+   hardcode_into_libs=yes
+ 
+-  # Add ABI-specific directories to the system library path.
+-  sys_lib_dlsearch_path_spec="/lib64 /usr/lib64 /lib /usr/lib"
+-
+   # Append ld.so.conf contents to the search path
+   if test -f /etc/ld.so.conf; then
+     lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \[$]2)); skip = 1; } { if (!skip) print \[$]0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;/^$/d' | tr '\n' ' '`
+-    sys_lib_dlsearch_path_spec="$sys_lib_dlsearch_path_spec $lt_ld_extra"
++    sys_lib_dlsearch_path_spec="/lib /usr/lib $lt_ld_extra"
+   fi
+ 
+   # We used to test for /lib/ld.so.1 and disable shared libraries on
+@@ -2488,6 +2485,18 @@
+   dynamic_linker='GNU/Linux ld.so'
+   ;;
+ 
++netbsdelf*-gnu)
++  version_type=linux
++  need_lib_prefix=no
++  need_version=no
++  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major ${libname}${shared_ext}'
++  soname_spec='${libname}${release}${shared_ext}$major'
++  shlibpath_var=LD_LIBRARY_PATH
++  shlibpath_overrides_runpath=no
++  hardcode_into_libs=yes
++  dynamic_linker='NetBSD ld.elf_so'
++  ;;
++
+ netbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+@@ -3075,11 +3084,11 @@
+   ;;
+ 
+ # This must be Linux ELF.
+-linux* | k*bsd*-gnu)
++linux* | k*bsd*-gnu | kopensolaris*-gnu)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+-netbsd*)
++netbsd* | netbsdelf*-gnu)
+   if echo __ELF__ | $CC -E - | $GREP __ELF__ > /dev/null; then
+     lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|_pic\.a)$'
+   else
+@@ -3696,7 +3705,7 @@
+ 	    ;;
+ 	esac
+ 	;;
+-      linux* | k*bsd*-gnu)
++      linux* | k*bsd*-gnu | kopensolaris*-gnu)
+ 	case $cc_basename in
+ 	  KCC*)
+ 	    # KAI C++ Compiler
+@@ -3760,7 +3769,7 @@
+ 	    ;;
+ 	esac
+ 	;;
+-      netbsd*)
++      netbsd* | netbsdelf*-gnu)
+ 	;;
+       *qnx* | *nto*)
+         # QNX uses GNU C++, but need to define -shared option too, otherwise
+@@ -3980,7 +3989,7 @@
+       _LT_TAGVAR(lt_prog_compiler_static, $1)='-non_shared'
+       ;;
+ 
+-    linux* | k*bsd*-gnu)
++    linux* | k*bsd*-gnu | kopensolaris*-gnu)
+       case $cc_basename in
+       # old Intel for x86_64 which still supported -KPIC.
+       ecc*)
+@@ -4185,6 +4194,9 @@
+   cygwin* | mingw* | cegcc*)
+     _LT_TAGVAR(export_symbols_cmds, $1)='$NM $libobjs $convenience | $global_symbol_pipe | $SED -e '\''/^[[BCDGRS]][[ ]]/s/.*[[ ]]\([[^ ]]*\)/\1 DATA/;/^.*[[ ]]__nm__/s/^.*[[ ]]__nm__\([[^ ]]*\)[[ ]][[^ ]]*/\1 DATA/;/^I[[ ]]/d;/^[[AITW]][[ ]]/s/.* //'\'' | sort | uniq > $export_symbols'
+   ;;
++  linux* | k*bsd*-gnu)
++    _LT_TAGVAR(link_all_deplibs, $1)=no
++  ;;
+   *)
+     _LT_TAGVAR(export_symbols_cmds, $1)='$NM $libobjs $convenience | $global_symbol_pipe | $SED '\''s/.* //'\'' | sort | uniq > $export_symbols'
+   ;;
+@@ -4249,6 +4261,9 @@
+   openbsd*)
+     with_gnu_ld=no
+     ;;
++  linux* | k*bsd*-gnu)
++    _LT_TAGVAR(link_all_deplibs, $1)=no
++    ;;
+   esac
+ 
+   _LT_TAGVAR(ld_shlibs, $1)=yes
+@@ -4270,6 +4285,7 @@
+     fi
+     supports_anon_versioning=no
+     case `$LD -v 2>&1` in
++      *GNU\ gold*) supports_anon_versioning=yes ;;
+       *\ [[01]].* | *\ 2.[[0-9]].* | *\ 2.10.*) ;; # catch versions < 2.11
+       *\ 2.11.93.0.2\ *) supports_anon_versioning=yes ;; # RH7.3 ...
+       *\ 2.11.92.0.12\ *) supports_anon_versioning=yes ;; # Mandrake 8.2 ...
+@@ -4361,7 +4377,7 @@
+       _LT_TAGVAR(archive_expsym_cmds, $1)='sed "s,^,_," $export_symbols >$output_objdir/$soname.expsym~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags ${wl}-h,$soname ${wl}--retain-symbols-file,$output_objdir/$soname.expsym ${wl}--image-base,`expr ${RANDOM-$$} % 4096 / 2 \* 262144 + 1342177280` -o $lib'
+       ;;
+ 
+-    gnu* | linux* | tpf* | k*bsd*-gnu)
++    gnu* | linux* | tpf* | k*bsd*-gnu | kopensolaris*-gnu)
+       tmp_diet=no
+       if test "$host_os" = linux-dietlibc; then
+ 	case $cc_basename in
+@@ -4431,7 +4447,7 @@
+       fi
+       ;;
+ 
+-    netbsd*)
++    netbsd* | netbsdelf*-gnu)
+       if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
+ 	_LT_TAGVAR(archive_cmds, $1)='$LD -Bshareable $libobjs $deplibs $linker_flags -o $lib'
+ 	wlarc=
+@@ -4606,6 +4622,7 @@
+ 	if test "$aix_use_runtimelinking" = yes; then
+ 	  shared_flag="$shared_flag "'${wl}-G'
+ 	fi
++	_LT_TAGVAR(link_all_deplibs, $1)=no
+       else
+ 	# not using gcc
+ 	if test "$host_cpu" = ia64; then
+@@ -4844,7 +4861,7 @@
+       _LT_TAGVAR(link_all_deplibs, $1)=yes
+       ;;
+ 
+-    netbsd*)
++    netbsd* | netbsdelf*-gnu)
+       if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
+ 	_LT_TAGVAR(archive_cmds, $1)='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'  # a.out
+       else
+@@ -5844,7 +5861,7 @@
+         _LT_TAGVAR(inherit_rpath, $1)=yes
+         ;;
+ 
+-      linux* | k*bsd*-gnu)
++      linux* | k*bsd*-gnu | kopensolaris*-gnu)
+         case $cc_basename in
+           KCC*)
+ 	    # Kuck and Associates, Inc. (KAI) C++ Compiler
+--- a/build/config.guess
++++ b/build/config.guess
+@@ -1,10 +1,10 @@
+ #! /bin/sh
+ # Attempt to guess a canonical system name.
+ #   Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+-#   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009
++#   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+ #   Free Software Foundation, Inc.
+ 
+-timestamp='2009-11-20'
++timestamp='2009-12-30'
+ 
+ # This file is free software; you can redistribute it and/or modify it
+ # under the terms of the GNU General Public License as published by
+@@ -56,8 +56,9 @@
+ GNU config.guess ($timestamp)
+ 
+ Originally written by Per Bothner.
+-Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001,
+-2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
++Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000,
++2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free
++Software Foundation, Inc.
+ 
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+--- a/build/config.sub
++++ b/build/config.sub
+@@ -1,10 +1,10 @@
+ #! /bin/sh
+ # Configuration validation subroutine script.
+ #   Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+-#   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009
++#   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010
+ #   Free Software Foundation, Inc.
+ 
+-timestamp='2009-11-20'
++timestamp='2010-01-22'
+ 
+ # This file is (in principle) common to ALL GNU software.
+ # The presence of a machine in this file suggests that SOME GNU software
+@@ -75,8 +75,9 @@
+ version="\
+ GNU config.sub ($timestamp)
+ 
+-Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001,
+-2002, 2003, 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
++Copyright (C) 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000,
++2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free
++Software Foundation, Inc.
+ 
+ This is free software; see the source for copying conditions.  There is NO
+ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+@@ -380,7 +381,8 @@
+ 	| sparclite-* \
+ 	| sparcv8-* | sparcv9-* | sparcv9b-* | sparcv9v-* | strongarm-* | sv1-* | sx?-* \
+ 	| tahoe-* | thumb-* \
+-	| tic30-* | tic4x-* | tic54x-* | tic55x-* | tic6x-* | tic80-* | tile-* \
++	| tic30-* | tic4x-* | tic54x-* | tic55x-* | tic6x-* | tic80-* \
++	| tile-* | tilegx-* \
+ 	| tron-* \
+ 	| ubicom32-* \
+ 	| v850-* | v850e-* | vax-* \
+@@ -1085,6 +1087,11 @@
+ 		basic_machine=tic6x-unknown
+ 		os=-coff
+ 		;;
++        # This must be matched before tile*.
++        tilegx*)
++		basic_machine=tilegx-unknown
++		os=-linux-gnu
++		;;
+ 	tile*)
+ 		basic_machine=tile-unknown
+ 		os=-linux-gnu
+@@ -1435,6 +1442,8 @@
+ 	-dicos*)
+ 		os=-dicos
+ 		;;
++        -nacl*)
++	        ;;
+ 	-none)
+ 		;;
+ 	*)
+--- a/build/ltmain.sh
++++ b/build/ltmain.sh
+@@ -65,7 +65,7 @@
+ #       compiler:		$LTCC
+ #       compiler flags:		$LTCFLAGS
+ #       linker:		$LD (gnu? $with_gnu_ld)
+-#       $progname:		(GNU libtool) 2.2.6b
++#       $progname:		(GNU libtool) 2.2.6b Debian-2.2.6b-2
+ #       automake:		$automake_version
+ #       autoconf:		$autoconf_version
+ #
+@@ -73,7 +73,7 @@
+ 
+ PROGRAM=ltmain.sh
+ PACKAGE=libtool
+-VERSION=2.2.6b
++VERSION="2.2.6b Debian-2.2.6b-2"
+ TIMESTAMP=""
+ package_revision=1.3017
+ 
+@@ -5033,7 +5033,10 @@
+ 	case $pass in
+ 	dlopen) libs="$dlfiles" ;;
+ 	dlpreopen) libs="$dlprefiles" ;;
+-	link) libs="$deplibs %DEPLIBS% $dependency_libs" ;;
++	link)
++	  libs="$deplibs %DEPLIBS%"
++	  test "X$link_all_deplibs" != Xno && libs="$libs $dependency_libs"
++	  ;;
+ 	esac
+       fi
+       if test "$linkmode,$pass" = "lib,dlpreopen"; then
+@@ -5344,19 +5347,19 @@
+ 	    # It is a libtool convenience library, so add in its objects.
+ 	    convenience="$convenience $ladir/$objdir/$old_library"
+ 	    old_convenience="$old_convenience $ladir/$objdir/$old_library"
++	    tmp_libs=
++	    for deplib in $dependency_libs; do
++	      deplibs="$deplib $deplibs"
++	      if $opt_duplicate_deps ; then
++		case "$tmp_libs " in
++		*" $deplib "*) specialdeplibs="$specialdeplibs $deplib" ;;
++		esac
++	      fi
++	      tmp_libs="$tmp_libs $deplib"
++	    done
+ 	  elif test "$linkmode" != prog && test "$linkmode" != lib; then
+ 	    func_fatal_error "\`$lib' is not a convenience library"
+ 	  fi
+-	  tmp_libs=
+-	  for deplib in $dependency_libs; do
+-	    deplibs="$deplib $deplibs"
+-	    if $opt_duplicate_deps ; then
+-	      case "$tmp_libs " in
+-	      *" $deplib "*) specialdeplibs="$specialdeplibs $deplib" ;;
+-	      esac
+-	    fi
+-	    tmp_libs="$tmp_libs $deplib"
+-	  done
+ 	  continue
+ 	fi # $pass = conv
+ 
+@@ -5893,6 +5896,7 @@
+ 	  if test "$link_all_deplibs" != no; then
+ 	    # Add the search paths of all dependency libraries
+ 	    for deplib in $dependency_libs; do
++	      path=
+ 	      case $deplib in
+ 	      -L*) path="$deplib" ;;
+ 	      *.la)
+@@ -6206,6 +6210,9 @@
+ 	    revision="$number_minor"
+ 	    lt_irix_increment=no
+ 	    ;;
++	  *)
++	    func_fatal_configuration "$modename: unknown library version type \`$version_type'"
++	    ;;
+ 	  esac
+ 	  ;;
+ 	no)
+--- a/build/mingw/Makefile.in
++++ b/build/mingw/Makefile.in
+@@ -111,6 +111,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -177,6 +179,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/build/mkinstalldirs
++++ b/build/mkinstalldirs
+@@ -1,21 +1,36 @@
+ #! /bin/sh
+ # mkinstalldirs --- make directory hierarchy
+-# Author: Noah Friedman <friedman@prep.ai.mit.edu>
+-# Created: 1993-05-16
+-# Public domain
+ 
++scriptversion=2009-04-28.21; # UTC
++
++# Original author: Noah Friedman <friedman@prep.ai.mit.edu>
++# Created: 1993-05-16
++# Public domain.
++#
++# This file is maintained in Automake, please report
++# bugs to <bug-automake@gnu.org> or send patches to
++# <automake-patches@gnu.org>.
++
++nl='
++'
++IFS=" ""	$nl"
+ errstatus=0
+-dirmode=""
++dirmode=
+ 
+ usage="\
+-Usage: mkinstalldirs [-h] [--help] [-m mode] dir ..."
++Usage: mkinstalldirs [-h] [--help] [--version] [-m MODE] DIR ...
++
++Create each directory DIR (with mode MODE, if specified), including all
++leading file name components.
++
++Report bugs to <bug-automake@gnu.org>."
+ 
+ # process command line arguments
+ while test $# -gt 0 ; do
+   case $1 in
+     -h | --help | --h*)         # -h for help
+-      echo "$usage" 1>&2
+-      exit 0
++      echo "$usage"
++      exit $?
+       ;;
+     -m)                         # -m PERM arg
+       shift
+@@ -23,6 +38,10 @@
+       dirmode=$1
+       shift
+       ;;
++    --version)
++      echo "$0 $scriptversion"
++      exit $?
++      ;;
+     --)                         # stop option processing
+       shift
+       break
+@@ -50,30 +69,58 @@
+   0) exit 0 ;;
+ esac
+ 
++# Solaris 8's mkdir -p isn't thread-safe.  If you mkdir -p a/b and
++# mkdir -p a/c at the same time, both will detect that a is missing,
++# one will create a, then the other will try to create a and die with
++# a "File exists" error.  This is a problem when calling mkinstalldirs
++# from a parallel make.  We use --version in the probe to restrict
++# ourselves to GNU mkdir, which is thread-safe.
+ case $dirmode in
+   '')
+-    if mkdir -p -- . 2>/dev/null; then
++    if mkdir -p --version . >/dev/null 2>&1 && test ! -d ./--version; then
+       echo "mkdir -p -- $*"
+       exec mkdir -p -- "$@"
++    else
++      # On NextStep and OpenStep, the `mkdir' command does not
++      # recognize any option.  It will interpret all options as
++      # directories to create, and then abort because `.' already
++      # exists.
++      test -d ./-p && rmdir ./-p
++      test -d ./--version && rmdir ./--version
+     fi
+     ;;
+   *)
+-    if mkdir -m "$dirmode" -p -- . 2>/dev/null; then
++    if mkdir -m "$dirmode" -p --version . >/dev/null 2>&1 &&
++       test ! -d ./--version; then
+       echo "mkdir -m $dirmode -p -- $*"
+       exec mkdir -m "$dirmode" -p -- "$@"
++    else
++      # Clean up after NextStep and OpenStep mkdir.
++      for d in ./-m ./-p ./--version "./$dirmode";
++      do
++        test -d $d && rmdir $d
++      done
+     fi
+     ;;
+ esac
+ 
+ for file
+ do
+-  set fnord `echo ":$file" | sed -ne 's/^:\//#/;s/^://;s/\// /g;s/^#/\//;p'`
++  case $file in
++    /*) pathcomp=/ ;;
++    *)  pathcomp= ;;
++  esac
++  oIFS=$IFS
++  IFS=/
++  set fnord $file
+   shift
++  IFS=$oIFS
+ 
+-  pathcomp=
+   for d
+   do
+-    pathcomp="$pathcomp$d"
++    test "x$d" = x && continue
++
++    pathcomp=$pathcomp$d
+     case $pathcomp in
+       -*) pathcomp=./$pathcomp ;;
+     esac
+@@ -84,21 +131,21 @@
+       mkdir "$pathcomp" || lasterr=$?
+ 
+       if test ! -d "$pathcomp"; then
+-  	errstatus=$lasterr
++	errstatus=$lasterr
+       else
+-  	if test ! -z "$dirmode"; then
++	if test ! -z "$dirmode"; then
+ 	  echo "chmod $dirmode $pathcomp"
+-    	  lasterr=""
+-  	  chmod "$dirmode" "$pathcomp" || lasterr=$?
++	  lasterr=
++	  chmod "$dirmode" "$pathcomp" || lasterr=$?
+ 
+-  	  if test ! -z "$lasterr"; then
+-  	    errstatus=$lasterr
+-  	  fi
+-  	fi
++	  if test ! -z "$lasterr"; then
++	    errstatus=$lasterr
++	  fi
++	fi
+       fi
+     fi
+ 
+-    pathcomp="$pathcomp/"
++    pathcomp=$pathcomp/
+   done
+ done
+ 
+@@ -107,5 +154,9 @@
+ # Local Variables:
+ # mode: shell-script
+ # sh-indentation: 2
++# eval: (add-hook 'write-file-hooks 'time-stamp)
++# time-stamp-start: "scriptversion="
++# time-stamp-format: "%:y-%02m-%02d.%02H"
++# time-stamp-time-zone: "UTC"
++# time-stamp-end: "; # UTC"
+ # End:
+-# mkinstalldirs ends here
+--- a/clutter/Makefile.in
++++ b/clutter/Makefile.in
+@@ -290,6 +290,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -356,6 +358,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/cogl/Makefile.in
++++ b/clutter/cogl/Makefile.in
+@@ -151,6 +151,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -217,6 +219,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/cogl/cogl/Makefile.in
++++ b/clutter/cogl/cogl/Makefile.in
+@@ -248,6 +248,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -314,6 +316,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/cogl/cogl/driver/Makefile.in
++++ b/clutter/cogl/cogl/driver/Makefile.in
+@@ -153,6 +153,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -219,6 +221,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/cogl/cogl/driver/gl/Makefile.in
++++ b/clutter/cogl/cogl/driver/gl/Makefile.in
+@@ -153,6 +153,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -219,6 +221,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/cogl/cogl/driver/gles/Makefile.in
++++ b/clutter/cogl/cogl/driver/gles/Makefile.in
+@@ -168,6 +168,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -234,6 +236,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/cogl/pango/Makefile.in
++++ b/clutter/cogl/pango/Makefile.in
+@@ -176,6 +176,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -242,6 +244,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/eglnative/Makefile.in
++++ b/clutter/eglnative/Makefile.in
+@@ -172,6 +172,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -238,6 +240,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/eglx/Makefile.in
++++ b/clutter/eglx/Makefile.in
+@@ -167,6 +167,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -233,6 +235,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/fruity/Makefile.in
++++ b/clutter/fruity/Makefile.in
+@@ -150,6 +150,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -216,6 +218,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/glx/Makefile.in
++++ b/clutter/glx/Makefile.in
+@@ -171,6 +171,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -237,6 +239,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/json/Makefile.in
++++ b/clutter/json/Makefile.in
+@@ -181,6 +181,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -247,6 +249,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/osx/Makefile.in
++++ b/clutter/osx/Makefile.in
+@@ -175,6 +175,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -241,6 +243,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/win32/Makefile.in
++++ b/clutter/win32/Makefile.in
+@@ -171,6 +171,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -237,6 +239,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/clutter/x11/Makefile.in
++++ b/clutter/x11/Makefile.in
+@@ -195,6 +195,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -261,6 +263,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/config.h.in
++++ b/config.h.in
+@@ -39,7 +39,7 @@
+ /* Define to 1 if you have the <dlfcn.h> header file. */
+ #undef HAVE_DLFCN_H
+ 
+-/* Have libdrm installed. */
++/* Have libdrm support */
+ #undef HAVE_DRM
+ 
+ /* Define to 1 if you have the <EGL/egl.h> header file. */
+--- a/configure
++++ b/configure
+@@ -846,11 +846,15 @@
+ WINDRES
+ TSLIB_LIBS
+ TSLIB_CFLAGS
++DRM_LIBS
++DRM_CFLAGS
+ USE_GLES2_WRAPPER_FALSE
+ USE_GLES2_WRAPPER_TRUE
+ COGL_GLES_VERSION
+ HAVE_LIBDL_FALSE
+ HAVE_LIBDL_TRUE
++PKG_CONFIG_LIBDIR
++PKG_CONFIG_PATH
+ PKG_CONFIG
+ GLIB_GENMARSHAL
+ GLIB_MKENUMS
+@@ -1008,6 +1012,10 @@
+ CPPFLAGS
+ CPP
+ PKG_CONFIG
++PKG_CONFIG_PATH
++PKG_CONFIG_LIBDIR
++DRM_CFLAGS
++DRM_LIBS
+ TSLIB_CFLAGS
+ TSLIB_LIBS
+ XMKMF
+@@ -1703,6 +1711,12 @@
+               you have headers in a nonstandard directory <include dir>
+   CPP         C preprocessor
+   PKG_CONFIG  path to pkg-config utility
++  PKG_CONFIG_PATH
++              directories to add to pkg-config's search path
++  PKG_CONFIG_LIBDIR
++              path overriding pkg-config's built-in search path
++  DRM_CFLAGS  C compiler flags for DRM, overriding pkg-config
++  DRM_LIBS    linker flags for DRM, overriding pkg-config
+   TSLIB_CFLAGS
+               C compiler flags for TSLIB, overriding pkg-config
+   TSLIB_LIBS  linker flags for TSLIB, overriding pkg-config
+@@ -4820,13 +4834,13 @@
+ else
+   lt_cv_nm_interface="BSD nm"
+   echo "int some_variable = 0;" > conftest.$ac_ext
+-  (eval echo "\"\$as_me:4823: $ac_compile\"" >&5)
++  (eval echo "\"\$as_me:4837: $ac_compile\"" >&5)
+   (eval "$ac_compile" 2>conftest.err)
+   cat conftest.err >&5
+-  (eval echo "\"\$as_me:4826: $NM \\\"conftest.$ac_objext\\\"\"" >&5)
++  (eval echo "\"\$as_me:4840: $NM \\\"conftest.$ac_objext\\\"\"" >&5)
+   (eval "$NM \"conftest.$ac_objext\"" 2>conftest.err > conftest.out)
+   cat conftest.err >&5
+-  (eval echo "\"\$as_me:4829: output\"" >&5)
++  (eval echo "\"\$as_me:4843: output\"" >&5)
+   cat conftest.out >&5
+   if $GREP 'External.*some_variable' conftest.out > /dev/null; then
+     lt_cv_nm_interface="MS dumpbin"
+@@ -5292,11 +5306,11 @@
+   ;;
+ 
+ # This must be Linux ELF.
+-linux* | k*bsd*-gnu)
++linux* | k*bsd*-gnu | kopensolaris*-gnu)
+   lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+-netbsd*)
++netbsd* | netbsdelf*-gnu)
+   if echo __ELF__ | $CC -E - | $GREP __ELF__ > /dev/null; then
+     lt_cv_deplibs_check_method='match_pattern /lib[^/]+(\.so\.[0-9]+\.[0-9]+|_pic\.a)$'
+   else
+@@ -6032,7 +6046,7 @@
+   ;;
+ *-*-irix6*)
+   # Find out which ABI we are using.
+-  echo '#line 6035 "configure"' > conftest.$ac_ext
++  echo '#line 6049 "configure"' > conftest.$ac_ext
+   if { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$ac_compile\""; } >&5
+   (eval $ac_compile) 2>&5
+   ac_status=$?
+@@ -7561,11 +7575,11 @@
+    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
+    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
+    -e 's:$: $lt_compiler_flag:'`
+-   (eval echo "\"\$as_me:7564: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:7578: $lt_compile\"" >&5)
+    (eval "$lt_compile" 2>conftest.err)
+    ac_status=$?
+    cat conftest.err >&5
+-   echo "$as_me:7568: \$? = $ac_status" >&5
++   echo "$as_me:7582: \$? = $ac_status" >&5
+    if (exit $ac_status) && test -s "$ac_outfile"; then
+      # The compiler can only warn and ignore the option if not recognized
+      # So say no if there are warnings other than the usual output.
+@@ -7730,7 +7744,7 @@
+       lt_prog_compiler_static='-non_shared'
+       ;;
+ 
+-    linux* | k*bsd*-gnu)
++    linux* | k*bsd*-gnu | kopensolaris*-gnu)
+       case $cc_basename in
+       # old Intel for x86_64 which still supported -KPIC.
+       ecc*)
+@@ -7900,11 +7914,11 @@
+    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
+    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
+    -e 's:$: $lt_compiler_flag:'`
+-   (eval echo "\"\$as_me:7903: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:7917: $lt_compile\"" >&5)
+    (eval "$lt_compile" 2>conftest.err)
+    ac_status=$?
+    cat conftest.err >&5
+-   echo "$as_me:7907: \$? = $ac_status" >&5
++   echo "$as_me:7921: \$? = $ac_status" >&5
+    if (exit $ac_status) && test -s "$ac_outfile"; then
+      # The compiler can only warn and ignore the option if not recognized
+      # So say no if there are warnings other than the usual output.
+@@ -8005,11 +8019,11 @@
+    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
+    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
+    -e 's:$: $lt_compiler_flag:'`
+-   (eval echo "\"\$as_me:8008: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:8022: $lt_compile\"" >&5)
+    (eval "$lt_compile" 2>out/conftest.err)
+    ac_status=$?
+    cat out/conftest.err >&5
+-   echo "$as_me:8012: \$? = $ac_status" >&5
++   echo "$as_me:8026: \$? = $ac_status" >&5
+    if (exit $ac_status) && test -s out/conftest2.$ac_objext
+    then
+      # The compiler can only warn and ignore the option if not recognized
+@@ -8060,11 +8074,11 @@
+    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
+    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
+    -e 's:$: $lt_compiler_flag:'`
+-   (eval echo "\"\$as_me:8063: $lt_compile\"" >&5)
++   (eval echo "\"\$as_me:8077: $lt_compile\"" >&5)
+    (eval "$lt_compile" 2>out/conftest.err)
+    ac_status=$?
+    cat out/conftest.err >&5
+-   echo "$as_me:8067: \$? = $ac_status" >&5
++   echo "$as_me:8081: \$? = $ac_status" >&5
+    if (exit $ac_status) && test -s out/conftest2.$ac_objext
+    then
+      # The compiler can only warn and ignore the option if not recognized
+@@ -8179,6 +8193,9 @@
+   openbsd*)
+     with_gnu_ld=no
+     ;;
++  linux* | k*bsd*-gnu)
++    link_all_deplibs=no
++    ;;
+   esac
+ 
+   ld_shlibs=yes
+@@ -8200,6 +8217,7 @@
+     fi
+     supports_anon_versioning=no
+     case `$LD -v 2>&1` in
++      *GNU\ gold*) supports_anon_versioning=yes ;;
+       *\ [01].* | *\ 2.[0-9].* | *\ 2.10.*) ;; # catch versions < 2.11
+       *\ 2.11.93.0.2\ *) supports_anon_versioning=yes ;; # RH7.3 ...
+       *\ 2.11.92.0.12\ *) supports_anon_versioning=yes ;; # Mandrake 8.2 ...
+@@ -8291,7 +8309,7 @@
+       archive_expsym_cmds='sed "s,^,_," $export_symbols >$output_objdir/$soname.expsym~$CC -shared $pic_flag $libobjs $deplibs $compiler_flags ${wl}-h,$soname ${wl}--retain-symbols-file,$output_objdir/$soname.expsym ${wl}--image-base,`expr ${RANDOM-$$} % 4096 / 2 \* 262144 + 1342177280` -o $lib'
+       ;;
+ 
+-    gnu* | linux* | tpf* | k*bsd*-gnu)
++    gnu* | linux* | tpf* | k*bsd*-gnu | kopensolaris*-gnu)
+       tmp_diet=no
+       if test "$host_os" = linux-dietlibc; then
+ 	case $cc_basename in
+@@ -8361,7 +8379,7 @@
+       fi
+       ;;
+ 
+-    netbsd*)
++    netbsd* | netbsdelf*-gnu)
+       if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
+ 	archive_cmds='$LD -Bshareable $libobjs $deplibs $linker_flags -o $lib'
+ 	wlarc=
+@@ -8536,6 +8554,7 @@
+ 	if test "$aix_use_runtimelinking" = yes; then
+ 	  shared_flag="$shared_flag "'${wl}-G'
+ 	fi
++	link_all_deplibs=no
+       else
+ 	# not using gcc
+ 	if test "$host_cpu" = ia64; then
+@@ -8862,7 +8881,7 @@
+       link_all_deplibs=yes
+       ;;
+ 
+-    netbsd*)
++    netbsd* | netbsdelf*-gnu)
+       if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
+ 	archive_cmds='$LD -Bshareable -o $lib $libobjs $deplibs $linker_flags'  # a.out
+       else
+@@ -9752,7 +9771,7 @@
+   ;;
+ 
+ # This must be Linux ELF.
+-linux* | k*bsd*-gnu)
++linux* | k*bsd*-gnu | kopensolaris*-gnu)
+   version_type=linux
+   need_lib_prefix=no
+   need_version=no
+@@ -9792,13 +9811,10 @@
+   # before this can be enabled.
+   hardcode_into_libs=yes
+ 
+-  # Add ABI-specific directories to the system library path.
+-  sys_lib_dlsearch_path_spec="/lib64 /usr/lib64 /lib /usr/lib"
+-
+   # Append ld.so.conf contents to the search path
+   if test -f /etc/ld.so.conf; then
+     lt_ld_extra=`awk '/^include / { system(sprintf("cd /etc; cat %s 2>/dev/null", \$2)); skip = 1; } { if (!skip) print \$0; skip = 0; }' < /etc/ld.so.conf | $SED -e 's/#.*//;/^[	 ]*hwcap[	 ]/d;s/[:,	]/ /g;s/=[^=]*$//;s/=[^= ]* / /g;/^$/d' | tr '\n' ' '`
+-    sys_lib_dlsearch_path_spec="$sys_lib_dlsearch_path_spec $lt_ld_extra"
++    sys_lib_dlsearch_path_spec="/lib /usr/lib $lt_ld_extra"
+   fi
+ 
+   # We used to test for /lib/ld.so.1 and disable shared libraries on
+@@ -9810,6 +9826,18 @@
+   dynamic_linker='GNU/Linux ld.so'
+   ;;
+ 
++netbsdelf*-gnu)
++  version_type=linux
++  need_lib_prefix=no
++  need_version=no
++  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major ${libname}${shared_ext}'
++  soname_spec='${libname}${release}${shared_ext}$major'
++  shlibpath_var=LD_LIBRARY_PATH
++  shlibpath_overrides_runpath=no
++  hardcode_into_libs=yes
++  dynamic_linker='NetBSD ld.elf_so'
++  ;;
++
+ netbsd*)
+   version_type=sunos
+   need_lib_prefix=no
+@@ -10430,7 +10458,7 @@
+   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
+   lt_status=$lt_dlunknown
+   cat > conftest.$ac_ext <<_LT_EOF
+-#line 10433 "configure"
++#line 10461 "configure"
+ #include "confdefs.h"
+ 
+ #if HAVE_DLFCN_H
+@@ -10526,7 +10554,7 @@
+   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
+   lt_status=$lt_dlunknown
+   cat > conftest.$ac_ext <<_LT_EOF
+-#line 10529 "configure"
++#line 10557 "configure"
+ #include "confdefs.h"
+ 
+ #if HAVE_DLFCN_H
+@@ -10955,6 +10983,10 @@
+ 
+ 
+ 
++
++
++
++
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+ 	if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
+@@ -11067,7 +11099,6 @@
+ $as_echo "no" >&6; }
+ 		PKG_CONFIG=""
+ 	fi
+-
+ fi
+ 
+ 
+@@ -11485,8 +11516,84 @@
+ fi
+ 
+ 
+-          GLX_LIBS="$X11_LIBS -lGL"
+-          GLX_CFLAGS="$X11_CFLAGS"
++
++pkg_failed=no
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for DRM" >&5
++$as_echo_n "checking for DRM... " >&6; }
++
++if test -n "$DRM_CFLAGS"; then
++    pkg_cv_DRM_CFLAGS="$DRM_CFLAGS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libdrm\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libdrm") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_DRM_CFLAGS=`$PKG_CONFIG --cflags "libdrm" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++if test -n "$DRM_LIBS"; then
++    pkg_cv_DRM_LIBS="$DRM_LIBS"
++ elif test -n "$PKG_CONFIG"; then
++    if test -n "$PKG_CONFIG" && \
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libdrm\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "libdrm") 2>&5
++  ac_status=$?
++  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
++  test $ac_status = 0; }; then
++  pkg_cv_DRM_LIBS=`$PKG_CONFIG --libs "libdrm" 2>/dev/null`
++else
++  pkg_failed=yes
++fi
++ else
++    pkg_failed=untried
++fi
++
++
++
++if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++
++if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
++        _pkg_short_errors_supported=yes
++else
++        _pkg_short_errors_supported=no
++fi
++        if test $_pkg_short_errors_supported = yes; then
++	        DRM_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "libdrm" 2>&1`
++        else
++	        DRM_PKG_ERRORS=`$PKG_CONFIG --print-errors "libdrm" 2>&1`
++        fi
++	# Put the nasty error message in config.log where it belongs
++	echo "$DRM_PKG_ERRORS" >&5
++
++	have_libdrm=no
++elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++	have_libdrm=no
++else
++	DRM_CFLAGS=$pkg_cv_DRM_CFLAGS
++	DRM_LIBS=$pkg_cv_DRM_LIBS
++        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++	have_libdrm=yes
++fi
++          if test "x$have_libdrm" = "xyes"; then :
++
++$as_echo "#define HAVE_DRM 1" >>confdefs.h
++
++
++fi
++
++          GLX_LIBS="$X11_LIBS $DRM_LIBS -lGL"
++          GLX_CFLAGS="$X11_CFLAGS $DRM_CFLAGS"
+ 
+           CLUTTER_WINSYS_BASE=x11
+           CLUTTER_WINSYS_BASE_LIB="x11/libclutter-x11.la"
+@@ -11574,6 +11681,8 @@
+ 
+ 
+ if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
+ 
+ if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+         _pkg_short_errors_supported=yes
+@@ -11588,10 +11697,10 @@
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$TSLIB_PKG_ERRORS" >&5
+ 
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-                have_tslib=no
++	have_tslib=no
+ elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
+ 	have_tslib=no
+ else
+ 	TSLIB_CFLAGS=$pkg_cv_TSLIB_CFLAGS
+@@ -12272,6 +12381,8 @@
+ 
+ 
+ if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
+ 
+ if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+         _pkg_short_errors_supported=yes
+@@ -12286,10 +12397,10 @@
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$XINPUT_PKG_ERRORS" >&5
+ 
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-                xinput=no
++	xinput=no
+ elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
+ 	xinput=no
+ else
+ 	XINPUT_CFLAGS=$pkg_cv_XINPUT_CFLAGS
+@@ -12568,6 +12679,8 @@
+ 
+ 
+ if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
+ 
+ if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+         _pkg_short_errors_supported=yes
+@@ -12591,9 +12704,10 @@
+ 
+ Alternatively, you may set the environment variables PROFILE_DEP_CFLAGS
+ and PROFILE_DEP_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-" "$LINENO" 5
++See the pkg-config man page for more details." "$LINENO" 5
+ elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
+ 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+ $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+ as_fn_error "The pkg-config script could not be found or is too old.  Make sure it
+@@ -12611,7 +12725,7 @@
+ 	PROFILE_DEP_LIBS=$pkg_cv_PROFILE_DEP_LIBS
+         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-	:
++
+ fi
+                   CLUTTER_PROFILE_CFLAGS=" -DCLUTTER_ENABLE_PROFILE -DCOGL_ENABLE_PROFILE $PROFILE_DEP_CFLAGS"
+                   CLUTTER_PROFILE_LDFLAGS=" $PROFILE_DEP_LIBS"
+@@ -12840,6 +12954,8 @@
+ 
+ 
+ if test $pkg_failed = yes; then
++   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
+ 
+ if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+         _pkg_short_errors_supported=yes
+@@ -12863,9 +12979,10 @@
+ 
+ Alternatively, you may set the environment variables CLUTTER_DEPS_CFLAGS
+ and CLUTTER_DEPS_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-" "$LINENO" 5
++See the pkg-config man page for more details." "$LINENO" 5
+ elif test $pkg_failed = untried; then
++     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
+ 	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+ $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+ as_fn_error "The pkg-config script could not be found or is too old.  Make sure it
+@@ -12883,7 +13000,7 @@
+ 	CLUTTER_DEPS_LIBS=$pkg_cv_CLUTTER_DEPS_LIBS
+         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-	:
++
+ fi
+ 
+ 
+--- a/doc/Makefile.in
++++ b/doc/Makefile.in
+@@ -152,6 +152,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -218,6 +220,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/doc/common/Makefile.in
++++ b/doc/common/Makefile.in
+@@ -111,6 +111,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -177,6 +179,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/doc/cookbook/Makefile.in
++++ b/doc/cookbook/Makefile.in
+@@ -112,6 +112,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -178,6 +180,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/doc/manual/Makefile.in
++++ b/doc/manual/Makefile.in
+@@ -112,6 +112,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -178,6 +180,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/doc/reference/Makefile.in
++++ b/doc/reference/Makefile.in
+@@ -151,6 +151,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -217,6 +219,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/doc/reference/clutter/Makefile.in
++++ b/doc/reference/clutter/Makefile.in
+@@ -118,6 +118,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -184,6 +186,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/doc/reference/cogl/Makefile.in
++++ b/doc/reference/cogl/Makefile.in
+@@ -118,6 +118,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -184,6 +186,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/tests/Makefile.in
++++ b/tests/Makefile.in
+@@ -151,6 +151,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -217,6 +219,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/tests/conform/Makefile.in
++++ b/tests/conform/Makefile.in
+@@ -195,6 +195,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -261,6 +263,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/tests/data/Makefile.in
++++ b/tests/data/Makefile.in
+@@ -111,6 +111,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -177,6 +179,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/tests/interactive/Makefile.in
++++ b/tests/interactive/Makefile.in
+@@ -221,6 +221,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -287,6 +289,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/tests/micro-bench/Makefile.in
++++ b/tests/micro-bench/Makefile.in
+@@ -157,6 +157,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -223,6 +225,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
+--- a/tests/tools/Makefile.in
++++ b/tests/tools/Makefile.in
+@@ -148,6 +148,8 @@
+ DATADIRNAME = @DATADIRNAME@
+ DEFS = @DEFS@
+ DEPDIR = @DEPDIR@
++DRM_CFLAGS = @DRM_CFLAGS@
++DRM_LIBS = @DRM_LIBS@
+ DSYMUTIL = @DSYMUTIL@
+ DUMPBIN = @DUMPBIN@
+ ECHO_C = @ECHO_C@
+@@ -214,6 +216,8 @@
+ PANGO_PREFIX = @PANGO_PREFIX@
+ PATH_SEPARATOR = @PATH_SEPARATOR@
+ PKG_CONFIG = @PKG_CONFIG@
++PKG_CONFIG_LIBDIR = @PKG_CONFIG_LIBDIR@
++PKG_CONFIG_PATH = @PKG_CONFIG_PATH@
+ POFILES = @POFILES@
+ POSUB = @POSUB@
+ PO_IN_DATADIR_FALSE = @PO_IN_DATADIR_FALSE@
