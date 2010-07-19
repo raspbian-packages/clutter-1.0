@@ -4,7 +4,7 @@ clutter-1.0 (1.2.12-2) unstable; urgency=low
     - debian/patches/01_fix_build_on_not_linux.patch:
       + Don't hardcode libdrm APIs in clutter's source, check for libdrm
         on configure and use <drm.h> instead. Also don't fail the build
-        if libdrm is not available.
+        if libdrm is not available. Closes: #589551.
     - debian/patches/90_autoreconf.patch:
       + Run autoreconf on top of the above patch.
     - debian/control.in:
