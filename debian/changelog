@@ -9,6 +9,9 @@ clutter-1.0 (1.2.12-2) unstable; urgency=low
       + Run autoreconf on top of the above patch.
     - debian/control.in:
       + Build depend on libdrm-dev on linux-any and kfreebsd-any.
+  * debian/control.in:
+    - Build depend and depend on libgl1-mesa-dev >= 7.1~rc3-1~ for the
+      availability of gl.pc. Closes: #551811.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 19 Jul 2010 17:10:08 +0200
 

@@ -6,7 +6,7 @@ Uploaders: @GNOME_TEAM@
 Build-Depends: debhelper (>= 5),
                cdbs (>= 0.4.41),
                gnome-pkg-tools,
-               libgl1-mesa-dev | libgl-dev,
+               libgl1-mesa-dev (>= 7.1~rc3-1~) | libgl-dev,
                libgtk2.0-dev,
                libcairo2-dev (>= 1.4),
                libpango1.0-dev (>= 1.20),
@@ -38,7 +38,7 @@ Section: libdevel
 Architecture: any
 Depends: libclutter-1.0-0 (= ${binary:Version}),
          libgtk2.0-dev,
-         libgl1-mesa-dev|libgl-dev,
+         libgl1-mesa-dev (>= 7.1~rc3-1~) | libgl-dev,
          libjson-glib-dev (>= 0.8),
          ${misc:Depends},
          ${shlibs:Depends}
