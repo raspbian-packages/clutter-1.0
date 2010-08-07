@@ -16,10 +16,6 @@ DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc			\
 				--enable-introspection=yes	\
 				--with-json=system
 
-CPU := $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
-ifeq ($(CPU),arm)
-CFLAGS += -march=armv5t
-endif
 
 $(patsubst %,binary-predeb/%,$(DEB_ALL_PACKAGES)) ::
 	dh_girepository -p$(cdbs_curpkg)
