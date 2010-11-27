@@ -1,10 +1,47 @@
-clutter-1.0 (1.2.8-2) UNRELEASED; urgency=low
+clutter-1.0 (1.2.12-3) unstable; urgency=low
 
+  * Acknowledge 1.0.8-1.1 NMU, thanks gregor herrmann and Heiko Stuebner.
+    Closes: #580106
+  * debian/patches/0002-fix-spelling-errors.patch:
+    - Removed, fixed upstream.
+  * debian/patches/0001-disable-armv5t-specific-optimization.patch:
+    - Renamed to 02_disable_armv5t_specific_optimization.patch.
+      Also don't comment all the code in the #if block, just change 
+      #if __arm__ to #if 0.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 07 Aug 2010 00:54:09 +0200
+
+clutter-1.0 (1.2.12-2) unstable; urgency=low
+
+  * Fix build on !linux
+    - debian/patches/01_fix_build_on_not_linux.patch:
+      + Don't hardcode libdrm APIs in clutter's source, check for libdrm
+        on configure and use <drm.h> instead. Also don't fail the build
+        if libdrm is not available. Closes: #589551.
+    - debian/patches/90_autoreconf.patch:
+      + Run autoreconf on top of the above patch.
+    - debian/control.in:
+      + Build depend on libdrm-dev on linux-any and kfreebsd-any.
+  * debian/control.in:
+    - Build depend and depend on libgl1-mesa-dev >= 7.1~rc3-1~ for the
+      availability of gl.pc. Closes: #551811.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 19 Jul 2010 17:10:08 +0200
+
+clutter-1.0 (1.2.12-1) unstable; urgency=low
+
+  * New upstream release.
   * debian/libclutter-1.0-0.symbols,
     debian/rules:
     - Add a symbols file.
+  * debian/rules,
+    debian/source/format:
+    - Switch to source format 3.0 (quilt).
+  * debian/control.in:
+    - Standards-Version is 3.9.0, no changes needed.
+  * Upload to unstable.
 
- -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 01 Jun 2010 22:05:39 +0200
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 18 Jul 2010 17:21:49 +0200
 
 clutter-1.0 (1.2.8-1) experimental; urgency=low
 
@@ -36,6 +73,19 @@ clutter-1.0 (1.2.2-1) experimental; urgency=low
     - GNOMEify.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 21 Mar 2010 13:27:56 +0100
+
+clutter-1.0 (1.0.8-1.1) unstable; urgency=low
+
+  [ gregor herrmann ]
+  * Non-maintainer upload.
+
+  [ Heiko Stuebner ]
+  * 0001-disable-armv5t-specific-optimization.patch:
+    Fix armv4t compatiblity (Closes: #580106)
+  * 0002-fix-spelling-errors.patch:
+    Fix spelling errors causing a failing build (Closes: #583465)
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 02 Jul 2010 01:01:58 +0200
 
 clutter-1.0 (1.0.8-1) unstable; urgency=low
 

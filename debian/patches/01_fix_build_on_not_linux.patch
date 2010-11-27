@@ -1,0 +1,122 @@
+Author: Emilio Pozuelo Monfort <pochu@debian.org>
+Bug: http://bugzilla.clutter-project.org/show_bug.cgi?id=2225
+Bug-Debian: http://bugs.debian.org/589551
+Description: Fix build on !linux
+
+--- a/clutter/glx/clutter-stage-glx.c
++++ b/clutter/glx/clutter-stage-glx.c
+@@ -53,32 +53,9 @@
+ #include <fcntl.h>
+ #include <errno.h>
+ 
+-#ifdef __linux__
+-#define DRM_VBLANK_RELATIVE 0x1;
+-
+-struct drm_wait_vblank_request {
+-    int           type;
+-    unsigned int  sequence;
+-    unsigned long signal;
+-};
+-
+-struct drm_wait_vblank_reply {
+-    int          type;
+-    unsigned int sequence;
+-    long         tval_sec;
+-    long         tval_usec;
+-};
+-
+-typedef union drm_wait_vblank {
+-    struct drm_wait_vblank_request request;
+-    struct drm_wait_vblank_reply reply;
+-} drm_wait_vblank_t;
+-
+-#define DRM_IOCTL_BASE                  'd'
+-#define DRM_IOWR(nr,type)               _IOWR(DRM_IOCTL_BASE,nr,type)
+-#define DRM_IOCTL_WAIT_VBLANK           DRM_IOWR(0x3a, drm_wait_vblank_t)
+-
+-#endif /* __linux__ */
++#ifdef HAVE_DRM
++#include <drm.h>
++#endif
+ 
+ static void clutter_stage_window_iface_init (ClutterStageWindowIface *iface);
+ 
+@@ -453,7 +430,7 @@
+   /* the rest is inherited from ClutterStageX11 */
+ }
+ 
+-#ifdef __linux__
++#ifdef HAVE_DRM
+ static int
+ drm_wait_vblank(int fd, drm_wait_vblank_t *vbl)
+ {
+@@ -462,14 +439,14 @@
+     do
+       {
+         ret = ioctl(fd, DRM_IOCTL_WAIT_VBLANK, vbl);
+-        vbl->request.type &= ~DRM_VBLANK_RELATIVE;
++        vbl->request.type &= ~_DRM_VBLANK_RELATIVE;
+         rc = errno;
+       }
+     while (ret && rc == EINTR);
+ 
+     return rc;
+ }
+-#endif /* __linux__ */
++#endif /* HAVE_DRM */
+ 
+ static void
+ wait_for_vblank (ClutterBackendGLX *backend_glx)
+@@ -488,17 +465,19 @@
+                                     &retraceCount);
+     }
+   else
+-#ifdef __linux__
+     {
++#ifdef HAVE_DRM
+       drm_wait_vblank_t blank;
+ 
+       CLUTTER_NOTE (BACKEND, "Waiting for vblank (drm)");
+-      blank.request.type     = DRM_VBLANK_RELATIVE;
++      blank.request.type     = _DRM_VBLANK_RELATIVE;
+       blank.request.sequence = 1;
+       blank.request.signal   = 0;
+       drm_wait_vblank (backend_glx->dri_fd, &blank);
+-    }
++#else
++#warning "No fallback code for vblank"
+ #endif
++    }
+ }
+ 
+ void
+--- a/configure.ac
++++ b/configure.ac
+@@ -247,8 +247,13 @@
+                        [HAVE_LIBGLX=yes],
+                        [AC_MSG_ERROR([Required GLX library not found])])
+ 
+-          GLX_LIBS="$X11_LIBS -lGL"
+-          GLX_CFLAGS="$X11_CFLAGS"
++          PKG_CHECK_MODULES(DRM, [libdrm], [have_libdrm=yes], [have_libdrm=no])
++          AS_IF([test "x$have_libdrm" = "xyes"],
++                [AC_DEFINE([HAVE_DRM], [1], [Have libdrm support])]
++          )
++
++          GLX_LIBS="$X11_LIBS $DRM_LIBS -lGL"
++          GLX_CFLAGS="$X11_CFLAGS $DRM_CFLAGS"
+ 
+           CLUTTER_WINSYS_BASE=x11
+           CLUTTER_WINSYS_BASE_LIB="x11/libclutter-x11.la"
+--- a/config.h.in
++++ b/config.h.in
+@@ -39,6 +39,9 @@
+ /* Define to 1 if you have the <dlfcn.h> header file. */
+ #undef HAVE_DLFCN_H
+ 
++/* Have libdrm installed. */
++#undef HAVE_DRM
++
+ /* Define to 1 if you have the <EGL/egl.h> header file. */
+ #undef HAVE_EGL_EGL_H
+ 
