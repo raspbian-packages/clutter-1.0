@@ -4,6 +4,7 @@ Priority: optional
 Maintainer: Ross Burton <ross@debian.org>
 Uploaders: @GNOME_TEAM@
 Build-Depends: debhelper (>= 5),
+               dh-autoreconf,
                cdbs (>= 0.4.41),
                gnome-pkg-tools,
                libgl1-mesa-dev (>= 7.1~rc3-1~) | libgl-dev,
