@@ -1,3 +1,11 @@
+clutter-1.0 (1.4.0-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * debian/patches/01_fix_build_on_not_linux.patch
+    - Removed, fixed upstream
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 27 Nov 2010 19:36:01 +0000
+
 clutter-1.0 (1.2.12-3) unstable; urgency=low
 
   * Acknowledge 1.0.8-1.1 NMU, thanks gregor herrmann and Heiko Stuebner.

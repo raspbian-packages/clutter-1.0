@@ -14,13 +14,11 @@ Build-Depends: debhelper (>= 5),
                libjson-glib-dev (>= 0.8),
                libdrm-dev [linux-any kfreebsd-any],
                gtk-doc-tools,
-               libgirepository1.0-dev (>= 0.6.3),
-               gobject-introspection (>= 0.6.5-3),
-               gir1.0-freedesktop (>= 0.6.3),
+               libgirepository1.0-dev (>= 0.9.12),
+               gobject-introspection (>= 0.9.12),
                gir1.0-glib-2.0,
                gir1.0-gtk-2.0,
                gir1.0-json-glib-1.0,
-               gir-repository-dev
 Standards-Version: 3.9.0
 
 Package: libclutter-1.0-0
