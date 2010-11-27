@@ -1,3 +1,2 @@
-01_fix_build_on_not_linux.patch
 02_disable_armv5t_specific_optimization.patch
 90_autoreconf.patch
