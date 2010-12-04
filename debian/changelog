@@ -1,18 +1,25 @@
-clutter-1.0 (1.4.2-1) UNRELEASED; urgency=low
+clutter-1.0 (1.4.2-1) experimental; urgency=low
 
   * debian/control.in:
     - Don't Build-Depend/Depend on libgtk2.0-dev.
     - Build-Depend/Depend on libgdk-pixbuf2.0-dev, libdrm-dev, libxext-dev,
       libxfixes-dev, libxdamage-dev, libxcomposite-dev, libjson-glib-dev,
       libcairo2-dev, libatk1.0-dev.
+    - Add a Homepage field.
+    - Standards-Version is 3.9.1, no changes needed.
   * debian/libclutter-1.0-0.symbols:
     - Remove debian revisions.
   * debian/rules:
     - Include dh-autoreconf.mk before debhelper.mk to not leave
       *.debhelper.log files after clean.
   * New upstream release.
+  * debian/libclutter-1.0-doc.install:
+    - Ship the documentation for cally.
+  * debian/libclutter-1.0-doc.links:
+    - Fix the symlinks so they are in /usr/share/doc/libclutter-1.0-doc.
+    - Add a symlink for cally.
 
- -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 02 Dec 2010 00:28:38 +0100
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 04 Dec 2010 15:56:04 +0100
 
 clutter-1.0 (1.4.0-1) experimental; urgency=low
 
