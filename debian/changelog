@@ -1,3 +1,10 @@
+clutter-1.0 (1.4.2-2) experimental; urgency=low
+
+  * debian/control.in:
+    - Add more missing dependencies: libx11-dev and libpango1.0-dev.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 05 Dec 2010 16:14:29 +0100
+
 clutter-1.0 (1.4.2-1) experimental; urgency=low
 
   * debian/control.in:
