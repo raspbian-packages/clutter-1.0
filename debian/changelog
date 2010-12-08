@@ -1,3 +1,17 @@
+clutter-1.0 (1.5.8-1) experimental; urgency=low
+
+  * New upstream development release.
+    - debian/control.in:
+      + Bump build dependency on libcairo2-dev.
+      + Bump libclutter-1.0-dev dependencies on libcairo2-dev
+        and libjson-glib-dev.
+    - debian/rules:
+      + Remove obsolete flag --with-json=system.
+    - debian/libclutter-1.0-0.symbols:
+      + Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 08 Dec 2010 23:37:10 +0100
+
 clutter-1.0 (1.4.2-2) experimental; urgency=low
 
   * debian/control.in:

@@ -14,8 +14,7 @@ LDFLAGS += -Wl,-O1 -Wl,--as-needed
 DEB_COMPRESS_EXCLUDE += .c
 DEB_DH_MAKESHLIBS_ARGS_libclutter-1.0-0 += -- -c4
 DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc			\
-				--enable-introspection=yes	\
-				--with-json=system
+				--enable-introspection=yes
 
 
 $(patsubst %,binary-predeb/%,$(DEB_ALL_PACKAGES)) ::
