@@ -36,6 +36,7 @@ Section: libs
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Breaks: python-clutter (<< 1.3.2)
 Description: Open GL based interactive canvas library
  Clutter is an Open GL based interactive canvas library, designed for creating
  fast, mainly 2D single window applications such as media box UIs,
