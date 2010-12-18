@@ -2,6 +2,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
 * Build-Depends-Package: libclutter-1.0-dev
  cally_accessibility_init@Base 1.4.0
  cally_actor_add_action@Base 1.4.0
+ cally_actor_add_action_full@Base 1.5.10
  cally_actor_get_type@Base 1.4.0
  cally_actor_new@Base 1.4.0
  cally_actor_remove_action@Base 1.4.0
@@ -57,9 +58,9 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_box_get_y@Base 1.0.0
  clutter_actor_box_interpolate@Base 1.2.8
  clutter_actor_box_new@Base 1.0.0
- clutter_actor_box_set_origin@Base 1.5.8
- clutter_actor_box_set_size@Base 1.5.8
- clutter_actor_box_union@Base 1.5.8
+ clutter_actor_box_set_origin@Base 1.5.10
+ clutter_actor_box_set_size@Base 1.5.10
+ clutter_actor_box_union@Base 1.5.10
  clutter_actor_clear_actions@Base 1.4.0
  clutter_actor_clear_constraints@Base 1.4.0
  clutter_actor_clear_effects@Base 1.4.0
@@ -94,10 +95,10 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_get_height@Base 1.0.0
  clutter_actor_get_name@Base 1.0.0
  clutter_actor_get_opacity@Base 1.0.0
- clutter_actor_get_paint_box@Base 1.5.8
+ clutter_actor_get_paint_box@Base 1.5.10
  clutter_actor_get_paint_opacity@Base 1.0.0
  clutter_actor_get_paint_visibility@Base 1.0.0
- clutter_actor_get_paint_volume@Base 1.5.8
+ clutter_actor_get_paint_volume@Base 1.5.10
  clutter_actor_get_pango_context@Base 1.0.0
  clutter_actor_get_parent@Base 1.0.0
  clutter_actor_get_position@Base 1.0.0
@@ -115,7 +116,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_get_stage@Base 1.0.0
  clutter_actor_get_text_direction@Base 1.2.8
  clutter_actor_get_transformation_matrix@Base 1.0.0
- clutter_actor_get_transformed_paint_volume@Base 1.5.8
+ clutter_actor_get_transformed_paint_volume@Base 1.5.10
  clutter_actor_get_transformed_position@Base 1.0.0
  clutter_actor_get_transformed_size@Base 1.0.0
  clutter_actor_get_type@Base 1.0.0
@@ -435,7 +436,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_click_action_get_type@Base 1.4.0
  clutter_click_action_new@Base 1.4.0
  clutter_click_action_release@Base 1.4.0
- clutter_clone_get_paint_volume@Base 1.5.8
+ clutter_clone_get_paint_volume@Base 1.5.10
  clutter_clone_get_source@Base 1.0.0
  clutter_clone_get_type@Base 1.0.0
  clutter_clone_new@Base 1.0.0
@@ -448,10 +449,10 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_color_from_hls@Base 1.0.0
  clutter_color_from_pixel@Base 1.0.0
  clutter_color_from_string@Base 1.0.0
- clutter_color_get_static@Base 1.5.8
+ clutter_color_get_static@Base 1.5.10
  clutter_color_get_type@Base 1.0.0
  clutter_color_hash@Base 1.0.0
- clutter_color_interpolate@Base 1.5.8
+ clutter_color_interpolate@Base 1.5.10
  clutter_color_lighten@Base 1.0.0
  clutter_color_new@Base 1.0.0
  clutter_color_shade@Base 1.0.0
@@ -469,7 +470,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_container_add_valist@Base 1.0.0
  clutter_container_child_get@Base 1.0.0
  clutter_container_child_get_property@Base 1.0.0
- clutter_container_child_notify@Base 1.5.8
+ clutter_container_child_notify@Base 1.5.10
  clutter_container_child_set@Base 1.0.0
  clutter_container_child_set_property@Base 1.0.0
  clutter_container_class_find_child_property@Base 1.0.0
@@ -757,19 +758,19 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_page_turn_effect_set_period@Base 1.4.0
  clutter_page_turn_effect_set_radius@Base 1.4.0
  clutter_paint_debug_flags@Base 1.2.8
- clutter_paint_volume_copy@Base 1.5.8
- clutter_paint_volume_free@Base 1.5.8
- clutter_paint_volume_get_depth@Base 1.5.8
- clutter_paint_volume_get_height@Base 1.5.8
- clutter_paint_volume_get_origin@Base 1.5.8
- clutter_paint_volume_get_type@Base 1.5.8
- clutter_paint_volume_get_width@Base 1.5.8
- clutter_paint_volume_set_depth@Base 1.5.8
- clutter_paint_volume_set_from_allocation@Base 1.5.8
- clutter_paint_volume_set_height@Base 1.5.8
- clutter_paint_volume_set_origin@Base 1.5.8
- clutter_paint_volume_set_width@Base 1.5.8
- clutter_paint_volume_union@Base 1.5.8
+ clutter_paint_volume_copy@Base 1.5.10
+ clutter_paint_volume_free@Base 1.5.10
+ clutter_paint_volume_get_depth@Base 1.5.10
+ clutter_paint_volume_get_height@Base 1.5.10
+ clutter_paint_volume_get_origin@Base 1.5.10
+ clutter_paint_volume_get_type@Base 1.5.10
+ clutter_paint_volume_get_width@Base 1.5.10
+ clutter_paint_volume_set_depth@Base 1.5.10
+ clutter_paint_volume_set_from_allocation@Base 1.5.10
+ clutter_paint_volume_set_height@Base 1.5.10
+ clutter_paint_volume_set_origin@Base 1.5.10
+ clutter_paint_volume_set_width@Base 1.5.10
+ clutter_paint_volume_union@Base 1.5.10
  clutter_param_color_get_type@Base 1.0.0
  clutter_param_fixed_get_type@Base 1.0.0
  clutter_param_spec_color@Base 1.0.0
@@ -787,12 +788,12 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_path_add_rel_move_to@Base 1.0.0
  clutter_path_add_string@Base 1.0.0
  clutter_path_clear@Base 1.0.0
- clutter_path_constraint_get_offset@Base 1.5.8
- clutter_path_constraint_get_path@Base 1.5.8
- clutter_path_constraint_get_type@Base 1.5.8
- clutter_path_constraint_new@Base 1.5.8
- clutter_path_constraint_set_offset@Base 1.5.8
- clutter_path_constraint_set_path@Base 1.5.8
+ clutter_path_constraint_get_offset@Base 1.5.10
+ clutter_path_constraint_get_path@Base 1.5.10
+ clutter_path_constraint_get_type@Base 1.5.10
+ clutter_path_constraint_new@Base 1.5.10
+ clutter_path_constraint_set_offset@Base 1.5.10
+ clutter_path_constraint_set_path@Base 1.5.10
  clutter_path_foreach@Base 1.0.0
  clutter_path_get_description@Base 1.0.0
  clutter_path_get_length@Base 1.0.0
@@ -909,15 +910,15 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_shader_set_uniform@Base 1.0.0
  clutter_shader_set_vertex_source@Base 1.0.0
  clutter_shader_type_get_type@Base 1.4.0
- clutter_snap_constraint_get_edge@Base 1.5.8
- clutter_snap_constraint_get_offset@Base 1.5.8
- clutter_snap_constraint_get_source@Base 1.5.8
- clutter_snap_constraint_get_type@Base 1.5.8
- clutter_snap_constraint_new@Base 1.5.8
- clutter_snap_constraint_set_edges@Base 1.5.8
- clutter_snap_constraint_set_offset@Base 1.5.8
- clutter_snap_constraint_set_source@Base 1.5.8
- clutter_snap_edge_get_type@Base 1.5.8
+ clutter_snap_constraint_get_edge@Base 1.5.10
+ clutter_snap_constraint_get_offset@Base 1.5.10
+ clutter_snap_constraint_get_source@Base 1.5.10
+ clutter_snap_constraint_get_type@Base 1.5.10
+ clutter_snap_constraint_new@Base 1.5.10
+ clutter_snap_constraint_set_edges@Base 1.5.10
+ clutter_snap_constraint_set_offset@Base 1.5.10
+ clutter_snap_constraint_set_source@Base 1.5.10
+ clutter_snap_edge_get_type@Base 1.5.10
  clutter_stage_ensure_current@Base 1.0.0
  clutter_stage_ensure_redraw@Base 1.0.0
  clutter_stage_ensure_viewport@Base 1.0.0
@@ -991,7 +992,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_state_set_key@Base 1.4.0
  clutter_state_set_state@Base 1.4.0
  clutter_state_warp_to_state@Base 1.4.0
- clutter_static_color_get_type@Base 1.5.8
+ clutter_static_color_get_type@Base 1.5.10
  clutter_table_alignment_get_type@Base 1.4.0
  clutter_table_child_get_type@Base 1.4.0
  clutter_table_layout_get_alignment@Base 1.4.0
@@ -1131,6 +1132,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_timeline_advance_to_marker@Base 1.0.0
  clutter_timeline_clone@Base 1.0.0
  clutter_timeline_direction_get_type@Base 1.0.0
+ clutter_timeline_get_auto_reverse@Base 1.5.10
  clutter_timeline_get_delay@Base 1.0.0
  clutter_timeline_get_delta@Base 1.0.0
  clutter_timeline_get_direction@Base 1.0.0
@@ -1138,7 +1140,6 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_timeline_get_elapsed_time@Base 1.0.0
  clutter_timeline_get_loop@Base 1.0.0
  clutter_timeline_get_progress@Base 1.0.0
- clutter_timeline_get_reverse@Base 1.5.8
  clutter_timeline_get_type@Base 1.0.0
  clutter_timeline_has_marker@Base 1.0.0
  clutter_timeline_is_playing@Base 1.0.0
@@ -1147,11 +1148,11 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_timeline_pause@Base 1.0.0
  clutter_timeline_remove_marker@Base 1.0.0
  clutter_timeline_rewind@Base 1.0.0
+ clutter_timeline_set_auto_reverse@Base 1.5.10
  clutter_timeline_set_delay@Base 1.0.0
  clutter_timeline_set_direction@Base 1.0.0
  clutter_timeline_set_duration@Base 1.0.0
  clutter_timeline_set_loop@Base 1.0.0
- clutter_timeline_set_reverse@Base 1.5.8
  clutter_timeline_skip@Base 1.0.0
  clutter_timeline_start@Base 1.0.0
  clutter_timeline_stop@Base 1.0.0
@@ -1229,25 +1230,25 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_x11_trap_x_errors@Base 1.0.0
  clutter_x11_untrap_x_errors@Base 1.0.0
  clutter_x11_xinput_event_types_get_type@Base 1.0.0
- cogl2_path_arc@Base 1.5.8
- cogl2_path_close@Base 1.5.8
- cogl2_path_curve_to@Base 1.5.8
- cogl2_path_ellipse@Base 1.5.8
- cogl2_path_fill@Base 1.5.8
- cogl2_path_get_fill_rule@Base 1.5.8
- cogl2_path_line@Base 1.5.8
- cogl2_path_line_to@Base 1.5.8
- cogl2_path_move_to@Base 1.5.8
- cogl2_path_new@Base 1.5.8
- cogl2_path_polygon@Base 1.5.8
- cogl2_path_polyline@Base 1.5.8
- cogl2_path_rectangle@Base 1.5.8
- cogl2_path_rel_curve_to@Base 1.5.8
- cogl2_path_rel_line_to@Base 1.5.8
- cogl2_path_rel_move_to@Base 1.5.8
- cogl2_path_round_rectangle@Base 1.5.8
- cogl2_path_set_fill_rule@Base 1.5.8
- cogl2_path_stroke@Base 1.5.8
+ cogl2_path_arc@Base 1.5.10
+ cogl2_path_close@Base 1.5.10
+ cogl2_path_curve_to@Base 1.5.10
+ cogl2_path_ellipse@Base 1.5.10
+ cogl2_path_fill@Base 1.5.10
+ cogl2_path_get_fill_rule@Base 1.5.10
+ cogl2_path_line@Base 1.5.10
+ cogl2_path_line_to@Base 1.5.10
+ cogl2_path_move_to@Base 1.5.10
+ cogl2_path_new@Base 1.5.10
+ cogl2_path_polygon@Base 1.5.10
+ cogl2_path_polyline@Base 1.5.10
+ cogl2_path_rectangle@Base 1.5.10
+ cogl2_path_rel_curve_to@Base 1.5.10
+ cogl2_path_rel_line_to@Base 1.5.10
+ cogl2_path_rel_move_to@Base 1.5.10
+ cogl2_path_round_rectangle@Base 1.5.10
+ cogl2_path_set_fill_rule@Base 1.5.10
+ cogl2_path_stroke@Base 1.5.10
  cogl_angle_cos@Base 1.0.0
  cogl_angle_sin@Base 1.0.0
  cogl_angle_tan@Base 1.0.0
@@ -1325,10 +1326,10 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  cogl_double_to_fixed@Base 1.0.0
  cogl_double_to_int@Base 1.0.0
  cogl_double_to_uint@Base 1.0.0
- cogl_draw_indexed_vertex_attributes@Base 1.5.8
- cogl_draw_indexed_vertex_attributes_array@Base 1.5.8
- cogl_draw_vertex_attributes@Base 1.5.8
- cogl_draw_vertex_attributes_array@Base 1.5.8
+ cogl_draw_indexed_vertex_attributes@Base 1.5.10
+ cogl_draw_indexed_vertex_attributes_array@Base 1.5.10
+ cogl_draw_vertex_attributes@Base 1.5.10
+ cogl_draw_vertex_attributes_array@Base 1.5.10
  cogl_driver_error_get_type@Base 1.2.8
  cogl_end_gl@Base 1.0.0
  cogl_error_get_type@Base 1.4.0
@@ -1359,38 +1360,39 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  cogl_get_path@Base 1.4.0
  cogl_get_proc_address@Base 1.0.0
  cogl_get_projection_matrix@Base 1.0.0
- cogl_get_rectangle_indices@Base 1.5.8
- cogl_get_source@Base 1.5.8
+ cogl_get_rectangle_indices@Base 1.5.10
+ cogl_get_source@Base 1.5.10
  cogl_get_viewport@Base 1.0.0
+ cogl_gtype_matrix_get_type@Base 1.5.10
  cogl_handle_get_type@Base 1.0.0
  cogl_handle_ref@Base 1.0.0
  cogl_handle_unref@Base 1.0.0
- cogl_index_array_allocate@Base 1.5.8
- cogl_index_array_new@Base 1.5.8
- cogl_indices_get_array@Base 1.5.8
- cogl_indices_get_offset@Base 1.5.8
- cogl_indices_get_type@Base 1.5.8
- cogl_indices_new@Base 1.5.8
- cogl_indices_new_for_array@Base 1.5.8
- cogl_indices_set_offset@Base 1.5.8
+ cogl_index_array_allocate@Base 1.5.10
+ cogl_index_array_new@Base 1.5.10
+ cogl_indices_get_array@Base 1.5.10
+ cogl_indices_get_offset@Base 1.5.10
+ cogl_indices_get_type@Base 1.5.10
+ cogl_indices_new@Base 1.5.10
+ cogl_indices_new_for_array@Base 1.5.10
+ cogl_indices_set_offset@Base 1.5.10
  cogl_indices_type_get_type@Base 1.0.0
  cogl_is_bitmap@Base 1.0.0
  cogl_is_buffer_EXP@Base 1.2.8
- cogl_is_index_array@Base 1.5.8
- cogl_is_indices@Base 1.5.8
+ cogl_is_index_array@Base 1.5.10
+ cogl_is_indices@Base 1.5.10
  cogl_is_material@Base 1.0.0
  cogl_is_offscreen@Base 1.0.0
  cogl_is_path@Base 1.4.0
- cogl_is_pipeline@Base 1.5.8
+ cogl_is_pipeline@Base 1.5.10
  cogl_is_pixel_array_EXP@Base 1.4.0
- cogl_is_primitive@Base 1.5.8
+ cogl_is_primitive@Base 1.5.10
  cogl_is_program@Base 1.0.0
  cogl_is_shader@Base 1.0.0
  cogl_is_texture@Base 1.0.0
  cogl_is_texture_3d_EXP@Base 1.4.0
  cogl_is_texture_pixmap_x11_EXP@Base 1.4.0
- cogl_is_vertex_array@Base 1.5.8
- cogl_is_vertex_attribute@Base 1.5.8
+ cogl_is_vertex_array@Base 1.5.10
+ cogl_is_vertex_attribute@Base 1.5.10
  cogl_is_vertex_buffer@Base 1.0.0
  cogl_is_vertex_buffer_indices@Base 1.0.0
  cogl_material_alpha_func_get_type@Base 1.0.0
@@ -1456,7 +1458,9 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  cogl_material_set_user_program@Base 1.4.0
  cogl_material_unref@Base 1.0.0
  cogl_material_wrap_mode_get_type@Base 1.4.0
+ cogl_matrix_copy@Base 1.5.10
  cogl_matrix_equal@Base 1.4.0
+ cogl_matrix_free@Base 1.5.10
  cogl_matrix_frustum@Base 1.0.0
  cogl_matrix_get_array@Base 1.0.0
  cogl_matrix_get_inverse@Base 1.2.8
@@ -1465,13 +1469,12 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  cogl_matrix_multiply@Base 1.0.0
  cogl_matrix_ortho@Base 1.0.0
  cogl_matrix_perspective@Base 1.0.0
- cogl_matrix_project_points_EXP@Base 1.5.8
+ cogl_matrix_project_points_EXP@Base 1.5.10
  cogl_matrix_rotate@Base 1.0.0
  cogl_matrix_scale@Base 1.0.0
  cogl_matrix_transform_point@Base 1.0.0
- cogl_matrix_transform_points_EXP@Base 1.5.8
+ cogl_matrix_transform_points_EXP@Base 1.5.10
  cogl_matrix_translate@Base 1.0.0
- cogl_object_get_type@Base 1.4.0
  cogl_object_get_user_data@Base 1.4.0
  cogl_object_ref@Base 1.4.0
  cogl_object_set_user_data@Base 1.4.0
@@ -1520,86 +1523,86 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  cogl_path_stroke@Base 1.0.0
  cogl_path_stroke_preserve@Base 1.0.0
  cogl_perspective@Base 1.0.0
- cogl_pipeline_alpha_func_get_type@Base 1.5.8
- cogl_pipeline_copy@Base 1.5.8
- cogl_pipeline_filter_get_type@Base 1.5.8
- cogl_pipeline_foreach_layer@Base 1.5.8
- cogl_pipeline_get_alpha_test_function@Base 1.5.8
- cogl_pipeline_get_alpha_test_reference@Base 1.5.8
- cogl_pipeline_get_ambient@Base 1.5.8
- cogl_pipeline_get_color@Base 1.5.8
- cogl_pipeline_get_depth_range@Base 1.5.8
- cogl_pipeline_get_depth_test_enabled@Base 1.5.8
- cogl_pipeline_get_depth_test_function@Base 1.5.8
- cogl_pipeline_get_depth_writing_enabled@Base 1.5.8
- cogl_pipeline_get_diffuse@Base 1.5.8
- cogl_pipeline_get_emission@Base 1.5.8
- cogl_pipeline_get_layer_point_sprite_coords_enabled@Base 1.5.8
- cogl_pipeline_get_layer_wrap_mode_p@Base 1.5.8
- cogl_pipeline_get_layer_wrap_mode_s@Base 1.5.8
- cogl_pipeline_get_layer_wrap_mode_t@Base 1.5.8
- cogl_pipeline_get_n_layers@Base 1.5.8
- cogl_pipeline_get_point_size@Base 1.5.8
- cogl_pipeline_get_shininess@Base 1.5.8
- cogl_pipeline_get_specular@Base 1.5.8
- cogl_pipeline_get_user_program@Base 1.5.8
- cogl_pipeline_new@Base 1.5.8
- cogl_pipeline_remove_layer@Base 1.5.8
- cogl_pipeline_set_alpha_test_function@Base 1.5.8
- cogl_pipeline_set_ambient@Base 1.5.8
- cogl_pipeline_set_ambient_and_diffuse@Base 1.5.8
- cogl_pipeline_set_blend@Base 1.5.8
- cogl_pipeline_set_blend_constant@Base 1.5.8
- cogl_pipeline_set_color4f@Base 1.5.8
- cogl_pipeline_set_color4ub@Base 1.5.8
- cogl_pipeline_set_color@Base 1.5.8
- cogl_pipeline_set_depth_range@Base 1.5.8
- cogl_pipeline_set_depth_test_enabled@Base 1.5.8
- cogl_pipeline_set_depth_test_function@Base 1.5.8
- cogl_pipeline_set_depth_writing_enabled@Base 1.5.8
- cogl_pipeline_set_diffuse@Base 1.5.8
- cogl_pipeline_set_emission@Base 1.5.8
- cogl_pipeline_set_layer_combine@Base 1.5.8
- cogl_pipeline_set_layer_combine_constant@Base 1.5.8
- cogl_pipeline_set_layer_filters@Base 1.5.8
- cogl_pipeline_set_layer_matrix@Base 1.5.8
- cogl_pipeline_set_layer_point_sprite_coords_enabled@Base 1.5.8
- cogl_pipeline_set_layer_texture@Base 1.5.8
- cogl_pipeline_set_layer_wrap_mode@Base 1.5.8
- cogl_pipeline_set_layer_wrap_mode_p@Base 1.5.8
- cogl_pipeline_set_layer_wrap_mode_s@Base 1.5.8
- cogl_pipeline_set_layer_wrap_mode_t@Base 1.5.8
- cogl_pipeline_set_point_size@Base 1.5.8
- cogl_pipeline_set_shininess@Base 1.5.8
- cogl_pipeline_set_specular@Base 1.5.8
- cogl_pipeline_set_user_program@Base 1.5.8
- cogl_pipeline_wrap_mode_get_type@Base 1.5.8
+ cogl_pipeline_alpha_func_get_type@Base 1.5.10
+ cogl_pipeline_copy@Base 1.5.10
+ cogl_pipeline_filter_get_type@Base 1.5.10
+ cogl_pipeline_foreach_layer@Base 1.5.10
+ cogl_pipeline_get_alpha_test_function@Base 1.5.10
+ cogl_pipeline_get_alpha_test_reference@Base 1.5.10
+ cogl_pipeline_get_ambient@Base 1.5.10
+ cogl_pipeline_get_color@Base 1.5.10
+ cogl_pipeline_get_depth_range@Base 1.5.10
+ cogl_pipeline_get_depth_test_enabled@Base 1.5.10
+ cogl_pipeline_get_depth_test_function@Base 1.5.10
+ cogl_pipeline_get_depth_writing_enabled@Base 1.5.10
+ cogl_pipeline_get_diffuse@Base 1.5.10
+ cogl_pipeline_get_emission@Base 1.5.10
+ cogl_pipeline_get_layer_point_sprite_coords_enabled@Base 1.5.10
+ cogl_pipeline_get_layer_wrap_mode_p@Base 1.5.10
+ cogl_pipeline_get_layer_wrap_mode_s@Base 1.5.10
+ cogl_pipeline_get_layer_wrap_mode_t@Base 1.5.10
+ cogl_pipeline_get_n_layers@Base 1.5.10
+ cogl_pipeline_get_point_size@Base 1.5.10
+ cogl_pipeline_get_shininess@Base 1.5.10
+ cogl_pipeline_get_specular@Base 1.5.10
+ cogl_pipeline_get_user_program@Base 1.5.10
+ cogl_pipeline_new@Base 1.5.10
+ cogl_pipeline_remove_layer@Base 1.5.10
+ cogl_pipeline_set_alpha_test_function@Base 1.5.10
+ cogl_pipeline_set_ambient@Base 1.5.10
+ cogl_pipeline_set_ambient_and_diffuse@Base 1.5.10
+ cogl_pipeline_set_blend@Base 1.5.10
+ cogl_pipeline_set_blend_constant@Base 1.5.10
+ cogl_pipeline_set_color4f@Base 1.5.10
+ cogl_pipeline_set_color4ub@Base 1.5.10
+ cogl_pipeline_set_color@Base 1.5.10
+ cogl_pipeline_set_depth_range@Base 1.5.10
+ cogl_pipeline_set_depth_test_enabled@Base 1.5.10
+ cogl_pipeline_set_depth_test_function@Base 1.5.10
+ cogl_pipeline_set_depth_writing_enabled@Base 1.5.10
+ cogl_pipeline_set_diffuse@Base 1.5.10
+ cogl_pipeline_set_emission@Base 1.5.10
+ cogl_pipeline_set_layer_combine@Base 1.5.10
+ cogl_pipeline_set_layer_combine_constant@Base 1.5.10
+ cogl_pipeline_set_layer_filters@Base 1.5.10
+ cogl_pipeline_set_layer_matrix@Base 1.5.10
+ cogl_pipeline_set_layer_point_sprite_coords_enabled@Base 1.5.10
+ cogl_pipeline_set_layer_texture@Base 1.5.10
+ cogl_pipeline_set_layer_wrap_mode@Base 1.5.10
+ cogl_pipeline_set_layer_wrap_mode_p@Base 1.5.10
+ cogl_pipeline_set_layer_wrap_mode_s@Base 1.5.10
+ cogl_pipeline_set_layer_wrap_mode_t@Base 1.5.10
+ cogl_pipeline_set_point_size@Base 1.5.10
+ cogl_pipeline_set_shininess@Base 1.5.10
+ cogl_pipeline_set_specular@Base 1.5.10
+ cogl_pipeline_set_user_program@Base 1.5.10
+ cogl_pipeline_wrap_mode_get_type@Base 1.5.10
  cogl_pixel_array_new_with_size_EXP@Base 1.4.0
  cogl_pixel_format_get_type@Base 1.0.0
  cogl_polygon@Base 1.0.0
  cogl_pop_draw_buffer@Base 1.0.0
  cogl_pop_framebuffer@Base 1.2.8
  cogl_pop_matrix@Base 1.0.0
- cogl_pop_source@Base 1.5.8
- cogl_primitive_draw@Base 1.5.8
- cogl_primitive_get_first_vertex@Base 1.5.8
- cogl_primitive_get_mode@Base 1.5.8
- cogl_primitive_get_n_vertices@Base 1.5.8
- cogl_primitive_new@Base 1.5.8
- cogl_primitive_new_p2@Base 1.5.8
- cogl_primitive_new_p2c4@Base 1.5.8
- cogl_primitive_new_p2t2@Base 1.5.8
- cogl_primitive_new_p2t2c4@Base 1.5.8
- cogl_primitive_new_p3@Base 1.5.8
- cogl_primitive_new_p3c4@Base 1.5.8
- cogl_primitive_new_p3t2@Base 1.5.8
- cogl_primitive_new_p3t2c4@Base 1.5.8
- cogl_primitive_new_with_attributes_array@Base 1.5.8
- cogl_primitive_set_attributes@Base 1.5.8
- cogl_primitive_set_first_vertex@Base 1.5.8
- cogl_primitive_set_indices@Base 1.5.8
- cogl_primitive_set_mode@Base 1.5.8
- cogl_primitive_set_n_vertices@Base 1.5.8
+ cogl_pop_source@Base 1.5.10
+ cogl_primitive_draw@Base 1.5.10
+ cogl_primitive_get_first_vertex@Base 1.5.10
+ cogl_primitive_get_mode@Base 1.5.10
+ cogl_primitive_get_n_vertices@Base 1.5.10
+ cogl_primitive_new@Base 1.5.10
+ cogl_primitive_new_p2@Base 1.5.10
+ cogl_primitive_new_p2c4@Base 1.5.10
+ cogl_primitive_new_p2t2@Base 1.5.10
+ cogl_primitive_new_p2t2c4@Base 1.5.10
+ cogl_primitive_new_p3@Base 1.5.10
+ cogl_primitive_new_p3c4@Base 1.5.10
+ cogl_primitive_new_p3t2@Base 1.5.10
+ cogl_primitive_new_p3t2c4@Base 1.5.10
+ cogl_primitive_new_with_attributes_array@Base 1.5.10
+ cogl_primitive_set_attributes@Base 1.5.10
+ cogl_primitive_set_first_vertex@Base 1.5.10
+ cogl_primitive_set_indices@Base 1.5.10
+ cogl_primitive_set_mode@Base 1.5.10
+ cogl_primitive_set_n_vertices@Base 1.5.10
  cogl_program_attach_shader@Base 1.0.0
  cogl_program_get_uniform_location@Base 1.0.0
  cogl_program_link@Base 1.0.0
@@ -1619,7 +1622,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  cogl_push_draw_buffer@Base 1.0.0
  cogl_push_framebuffer@Base 1.2.8
  cogl_push_matrix@Base 1.0.0
- cogl_push_source@Base 1.5.8
+ cogl_push_source@Base 1.5.10
  cogl_read_pixels@Base 1.0.0
  cogl_read_pixels_flags_get_type@Base 1.0.0
  cogl_rectangle@Base 1.0.0
@@ -1696,13 +1699,13 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  cogl_vector3_multiply_scalar_EXP@Base 1.4.0
  cogl_vector3_normalize_EXP@Base 1.4.0
  cogl_vector3_subtract_EXP@Base 1.4.0
- cogl_vertex_array_new@Base 1.5.8
- cogl_vertex_attribute_get_array@Base 1.5.8
- cogl_vertex_attribute_get_normalized@Base 1.5.8
- cogl_vertex_attribute_new@Base 1.5.8
- cogl_vertex_attribute_set_array@Base 1.5.8
- cogl_vertex_attribute_set_normalized@Base 1.5.8
- cogl_vertex_attribute_type_get_type@Base 1.5.8
+ cogl_vertex_array_new@Base 1.5.10
+ cogl_vertex_attribute_get_array@Base 1.5.10
+ cogl_vertex_attribute_get_normalized@Base 1.5.10
+ cogl_vertex_attribute_new@Base 1.5.10
+ cogl_vertex_attribute_set_array@Base 1.5.10
+ cogl_vertex_attribute_set_normalized@Base 1.5.10
+ cogl_vertex_attribute_type_get_type@Base 1.5.10
  cogl_vertex_buffer_add@Base 1.0.0
  cogl_vertex_buffer_delete@Base 1.0.0
  cogl_vertex_buffer_disable@Base 1.0.0

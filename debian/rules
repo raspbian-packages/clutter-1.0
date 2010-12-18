@@ -1,6 +1,5 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/rules/autoreconf.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/gnome.mk
 include /usr/share/cdbs/1/rules/utils.mk
@@ -13,8 +12,9 @@ GNOME_DOWNLOAD_URL = http://www.clutter-project.org/sources/clutter/$(DEB_UPSTRE
 LDFLAGS += -Wl,-O1 -Wl,--as-needed
 DEB_COMPRESS_EXCLUDE += .c
 DEB_DH_MAKESHLIBS_ARGS_libclutter-1.0-0 += -- -c4
-DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc			\
-				--enable-introspection=yes
+DEB_CONFIGURE_EXTRA_FLAGS += \
+	--enable-gtk-doc \
+	--enable-introspection=yes
 
 
 $(patsubst %,binary-predeb/%,$(DEB_ALL_PACKAGES)) ::

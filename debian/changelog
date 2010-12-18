@@ -1,8 +1,14 @@
-clutter-1.0 (1.5.10-1) UNRELEASED; urgency=low
+clutter-1.0 (1.5.10-1) experimental; urgency=low
 
   * New upstream development release.
+    - debian/libclutter-1.0-0.symbols:
+      + Updated.
+    - debian/control.in,
+      debian/rules:
+      + Remove dh-autoreconf, we don't need it right now and autoconf
+        is failing in this tarball.
 
- -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 18 Dec 2010 01:08:17 +0000
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 18 Dec 2010 02:24:20 +0000
 
 clutter-1.0 (1.5.8-2) experimental; urgency=low
 
