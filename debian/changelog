@@ -1,3 +1,15 @@
+clutter-1.0 (1.5.14-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/control.in:
+      - Build depend on libxi-dev for XInput support.
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+    + debian/rules:
+      - Make the shlibs file always depend on the latest upstream version.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 25 Jan 2011 21:53:13 +0000
+
 clutter-1.0 (1.5.12-1) experimental; urgency=low
 
   * New upstream release.
