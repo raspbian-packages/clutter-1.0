@@ -1,3 +1,13 @@
+clutter-1.0 (1.6.6-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/control.in:
+      - Update build dependencies.
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 22 Feb 2011 20:39:37 +0000
+
 clutter-1.0 (1.6.4-1) experimental; urgency=low
 
   * New upstream release.

@@ -604,11 +604,6 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_group_get_type@Base 1.0.0
  clutter_group_new@Base 1.0.0
  clutter_group_remove_all@Base 1.0.0
- clutter_id_pool_add@Base 1.0.0
- clutter_id_pool_free@Base 1.0.0
- clutter_id_pool_lookup@Base 1.0.0
- clutter_id_pool_new@Base 1.0.0
- clutter_id_pool_remove@Base 1.0.0
  clutter_init@Base 1.0.0
  clutter_init_error_get_type@Base 1.0.0
  clutter_init_error_quark@Base 1.0.0
