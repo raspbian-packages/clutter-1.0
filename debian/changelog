@@ -1,3 +1,9 @@
+clutter-1.0 (1.6.8-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 11 Mar 2011 21:46:47 +0000
+
 clutter-1.0 (1.6.6-1) experimental; urgency=low
 
   * New upstream release.
