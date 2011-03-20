@@ -1,3 +1,144 @@
+clutter-1.0 (1.6.8-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 11 Mar 2011 21:46:47 +0000
+
+clutter-1.0 (1.6.6-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/control.in:
+      - Update build dependencies.
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 22 Feb 2011 20:39:37 +0000
+
+clutter-1.0 (1.6.4-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Mon, 14 Feb 2011 20:38:26 +0000
+
+clutter-1.0 (1.6.2-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 09 Feb 2011 18:34:39 +0000
+
+clutter-1.0 (1.6.0-1) experimental; urgency=low
+
+  * New upstream stable release.
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 01 Feb 2011 22:56:03 +0000
+
+clutter-1.0 (1.5.14-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/control.in:
+      - Build depend on libxi-dev for XInput support.
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+    + debian/rules:
+      - Make the shlibs file always depend on the latest upstream version.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 25 Jan 2011 21:53:13 +0000
+
+clutter-1.0 (1.5.12-1) experimental; urgency=low
+
+  * New upstream release.
+    - debian/libclutter-1.0-0.symbols:
+      + Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 11 Jan 2011 23:15:15 +0000
+
+clutter-1.0 (1.5.10-1) experimental; urgency=low
+
+  * New upstream development release.
+    - debian/libclutter-1.0-0.symbols:
+      + Updated.
+    - debian/control.in,
+      debian/rules:
+      + Remove dh-autoreconf, we don't need it right now and autoconf
+        is failing in this tarball.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 18 Dec 2010 02:24:20 +0000
+
+clutter-1.0 (1.5.8-2) experimental; urgency=low
+
+  * debian/control.in:
+    - Break pyclutter << 1.3.2, older versions than that don't
+      work with clutter >= 1.4.
+    - Remove the libgl-dev alternatives since we need a gl.pc
+      file and the alternatives may not have it.
+  * Update to the new gir policy:
+    - Rename gir1.0-clutter-1.0 to gir1.2-clutter-1.0.
+    - Bump the gobject-introspection build dependency.
+    - Build depend on gir1.2 packages.
+  * debian/control.in,
+    debian/libclutter-1.0-common.install:
+    - Add a common package to ship the translations.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 12 Dec 2010 20:05:04 +0100
+
+clutter-1.0 (1.5.8-1) experimental; urgency=low
+
+  * New upstream development release.
+    - debian/control.in:
+      + Bump build dependency on libcairo2-dev.
+      + Bump libclutter-1.0-dev dependencies on libcairo2-dev
+        and libjson-glib-dev.
+    - debian/rules:
+      + Remove obsolete flag --with-json=system.
+    - debian/libclutter-1.0-0.symbols:
+      + Updated.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 08 Dec 2010 23:37:10 +0100
+
+clutter-1.0 (1.4.2-2) experimental; urgency=low
+
+  * debian/control.in:
+    - Add more missing dependencies: libx11-dev and libpango1.0-dev.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 05 Dec 2010 16:14:29 +0100
+
+clutter-1.0 (1.4.2-1) experimental; urgency=low
+
+  * debian/control.in:
+    - Don't Build-Depend/Depend on libgtk2.0-dev.
+    - Build-Depend/Depend on libgdk-pixbuf2.0-dev, libdrm-dev, libxext-dev,
+      libxfixes-dev, libxdamage-dev, libxcomposite-dev, libjson-glib-dev,
+      libcairo2-dev, libatk1.0-dev.
+    - Add a Homepage field.
+    - Standards-Version is 3.9.1, no changes needed.
+  * debian/libclutter-1.0-0.symbols:
+    - Remove debian revisions.
+  * debian/rules:
+    - Include dh-autoreconf.mk before debhelper.mk to not leave
+      *.debhelper.log files after clean.
+  * New upstream release.
+  * debian/libclutter-1.0-doc.install:
+    - Ship the documentation for cally.
+  * debian/libclutter-1.0-doc.links:
+    - Fix the symlinks so they are in /usr/share/doc/libclutter-1.0-doc.
+    - Add a symlink for cally.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 04 Dec 2010 15:56:04 +0100
+
+clutter-1.0 (1.4.0-1) experimental; urgency=low
+
+  * New upstream release
+  * debian/patches/01_fix_build_on_not_linux.patch
+    - Removed, fixed upstream
+  * debian/patches/90_autoreconf.patch
+    - Removed, use dh-autoreconf instead
+  * debian/libclutter-1.0-0.symbols
+    - Updated
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sun, 28 Nov 2010 14:49:22 +0000
+
 clutter-1.0 (1.2.12-3) unstable; urgency=low
 
   * Acknowledge 1.0.8-1.1 NMU, thanks gregor herrmann and Heiko Stuebner.
