@@ -1,8 +1,11 @@
-clutter-1.0 (1.6.8-2) UNRELEASED; urgency=low
+clutter-1.0 (1.6.10-1) UNRELEASED; urgency=low
 
   * debian/control.in:
     + Update the build dependencies to build the gir package with packages
       from unstable.
+  * New upstream release.
+  * debian/libclutter-1.0-0.symbols:
+    + Updated.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 20 Mar 2011 14:22:21 +0000
 

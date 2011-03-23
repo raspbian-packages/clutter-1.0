@@ -430,7 +430,6 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_click_action_get_type@Base 1.4.0
  clutter_click_action_new@Base 1.4.0
  clutter_click_action_release@Base 1.4.0
- clutter_clone_get_paint_volume@Base 1.6.0
  clutter_clone_get_source@Base 1.0.0
  clutter_clone_get_type@Base 1.0.0
  clutter_clone_new@Base 1.0.0
