@@ -68,6 +68,7 @@ Depends: libclutter-1.0-0 (= ${binary:Version}),
          libxfixes-dev,
          libxdamage-dev,
          libxcomposite-dev,
+         libxi-dev,
          libjson-glib-dev (>= 0.12),
          ${misc:Depends},
          ${shlibs:Depends}
