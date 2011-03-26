@@ -3,7 +3,7 @@ clutter-1.0 (1.6.10-3) UNRELEASED; urgency=low
   * debian/control.in:
     + Add libxi-dev to libclutter-1.0-dev
   * debian/control.in:
-    + Make libclutter-1.0-0 depend on libclutter-1.0-common
+    + Make libclutter-1.0-0 Recommend libclutter-1.0-common
 
  -- Sjoerd Simons <sjoerd@debian.org>  Sat, 26 Mar 2011 21:58:49 +0000
 

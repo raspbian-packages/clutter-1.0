@@ -40,7 +40,7 @@ Section: libs
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
-         libclutter-1.0-common (= ${source:Version})
+Recommends: libclutter-1.0-common
 Breaks: python-clutter (<< 1.3.2)
 Description: Open GL based interactive canvas library
  Clutter is an Open GL based interactive canvas library, designed for creating
