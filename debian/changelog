@@ -1,3 +1,9 @@
+clutter-1.0 (1.6.10-4) UNRELEASED; urgency=low
+
+  * Make the -dev package depend on the gir package.
+
+ -- Josselin Mouette <joss@debian.org>  Wed, 30 Mar 2011 16:20:06 +0200
+
 clutter-1.0 (1.6.10-3) unstable; urgency=low
 
   * debian/control.in:
