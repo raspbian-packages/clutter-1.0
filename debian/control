@@ -10,6 +10,8 @@ Maintainer: Ross Burton <ross@debian.org>
 Uploaders: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>, Emilio Pozuelo Monfort <pochu@debian.org>, Sjoerd Simons <sjoerd@debian.org>
 Build-Depends: debhelper (>= 5),
                cdbs (>= 0.4.41),
+               dh-autoreconf,
+               autopoint,
                gnome-pkg-tools,
                libgl1-mesa-dev (>= 7.1~rc3-1~),
                libglib2.0-dev (>= 2.27.3),

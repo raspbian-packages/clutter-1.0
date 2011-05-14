@@ -1,0 +1,34 @@
+From 8db1a0db1879967d9fcc22dd3b1087a61dcdf5d6 Mon Sep 17 00:00:00 2001
+From: Sjoerd Simons <sjoerd.simons@collabora.co.uk>
+Date: Sat, 14 May 2011 17:40:58 +0100
+Subject: [PATCH] Explicitly link the glx flavour against libdl
+
+The glx backends uses dlopen, as such it needs to link directly to libdl
+otherwise the build will fail if the linker doesn't enable indirect linking
+(e.g. using binutils-gold or passing --no-add-needed to ld) with warnings like:
+
+../../clutter/.libs/libclutter-glx-1.0.so: error: undefined reference to 'dlerror'
+../../clutter/.libs/libclutter-glx-1.0.so: error: undefined reference to 'dlopen'
+../../clutter/.libs/libclutter-glx-1.0.so: error: undefined reference to 'dlsym'
+---
+ configure.ac |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 2576123..b75084d 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -220,6 +220,10 @@ AS_CASE([$CLUTTER_FLAVOUR],
+           CLUTTER_WINSYS_BASE_LIB="x11/libclutter-x11.la"
+           CLUTTER_SONAME_INFIX=glx
+ 
++          AC_CHECK_LIB(dl, [dlopen],
++            [FLAVOUR_LIBS="$FLAVOUR_LIBS -ldl"],
++            [AC_MSG_ERROR("libdl not found")])
++
+           # Mesa 7.3 added a GL pkg-config file, finally
+           PKG_CHECK_EXISTS([gl],
+                            [BACKEND_PC_FILES="$BACKEND_PC_FILES gl"],
+-- 
+1.7.5.1
+
