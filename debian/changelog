@@ -1,8 +1,12 @@
-clutter-1.0 (1.6.10-4) UNRELEASED; urgency=low
+clutter-1.0 (1.6.14-1) UNRELEASED; urgency=low
 
+  [ Josselin Mouette ]
   * Make the -dev package depend on the gir package.
 
- -- Josselin Mouette <joss@debian.org>  Wed, 30 Mar 2011 16:20:06 +0200
+  [ Sjoerd Simons ]
+  * New upstream release
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 14 May 2011 16:33:05 +0100
 
 clutter-1.0 (1.6.10-3) unstable; urgency=low
 
