@@ -1,4 +1,4 @@
-clutter-1.0 (1.6.14-1) UNRELEASED; urgency=low
+clutter-1.0 (1.6.14-1) unstable; urgency=low
 
   [ Josselin Mouette ]
   * Make the -dev package depend on the gir package.
@@ -10,7 +10,7 @@ clutter-1.0 (1.6.14-1) UNRELEASED; urgency=low
     * Added, fixes build with binutils-gold (Closes: #554074)
   * Use dh-autoreconf to re-generate the autotools bits
 
- -- Sjoerd Simons <sjoerd@debian.org>  Sat, 14 May 2011 19:28:35 +0100
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 14 May 2011 19:29:37 +0100
 
 clutter-1.0 (1.6.10-3) unstable; urgency=low
 
