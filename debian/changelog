@@ -5,8 +5,9 @@ clutter-1.0 (1.6.14-1) UNRELEASED; urgency=low
 
   [ Sjoerd Simons ]
   * New upstream release
+  * debian/watch: Updated to new download URL
 
- -- Sjoerd Simons <sjoerd@debian.org>  Sat, 14 May 2011 16:33:05 +0100
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 14 May 2011 16:37:01 +0100
 
 clutter-1.0 (1.6.10-3) unstable; urgency=low
 
