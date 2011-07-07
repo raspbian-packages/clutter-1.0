@@ -1,4 +1,4 @@
-clutter-1.0 (1.6.16-1) UNRELEASED; urgency=low
+clutter-1.0 (1.6.16-1) unstable; urgency=low
 
   * New upstream release
   * debian/control.in:
@@ -19,7 +19,7 @@ clutter-1.0 (1.6.16-1) UNRELEASED; urgency=low
     - Switch to .bz2 tarballs.
     - Bump version to 3
 
- -- Laurent Bigonville <bigon@debian.org>  Thu, 07 Jul 2011 12:03:07 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 07 Jul 2011 13:55:10 +0200
 
 clutter-1.0 (1.6.14-1) unstable; urgency=low
 
