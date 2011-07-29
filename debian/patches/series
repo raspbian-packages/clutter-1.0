@@ -1,1 +1,2 @@
 01-Explicitly-link-the-glx-flavour-against-libdl.patch
+fix_test_data_path.patch

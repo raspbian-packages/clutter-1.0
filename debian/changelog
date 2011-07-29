@@ -10,6 +10,7 @@ clutter-1.0 (1.7.6-1) UNRELEASED; urgency=low
     - Updated the symbols
   * debian/patches:
     - Drop 02_disable_armv5t_specific_optimization.patch, moved to cogl
+    - Add fix_test_data_path.patch
   * debian/watch:
     - updated for new location
 
