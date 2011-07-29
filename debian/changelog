@@ -1,3 +1,86 @@
+clutter-1.0 (1.7.6-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * debian/control.in:
+    - Add Build-Dep on libcogl-dev (>= 1.7.3)
+    - Add clutter-1.0-tests package
+  * debian/*.install:
+    - Remove cogl references
+  * debian/libclutter-1.0-0.symbols:
+    - Updated the symbols
+  * debian/patches:
+    - Drop 02_disable_armv5t_specific_optimization.patch, moved to cogl
+  * debian/watch:
+    - updated for new location
+
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Fri, 29 Jul 2011 13:39:53 +0200
+
+clutter-1.0 (1.6.16-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control.in:
+    - Drop gir packages as build-dependencies, they are now pulled by -dev
+      packages
+    - Bump cdbs and debhelper build-dependencies for multiarch policy
+    - Add required multiarch fields
+    - Drop duplicates Sections to please lintian
+    - Use Breaks instead of Conflicts when versionized
+  * debian/rules:
+    - Rely on cdbs to call dh_girepository
+    - Pass --libdir to configure for multiarch
+    - Fix GNOME_DOWNLOAD_URL URL
+  * debian/gir1.2-clutter-1.0.install, debian/libclutter-1.0-0.install,
+    debian/libclutter-1.0-dev.install: Adjust for multiarch paths
+  * debian/watch:
+    - Fix URL
+    - Switch to .bz2 tarballs.
+    - Bump version to 3
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 07 Jul 2011 13:55:10 +0200
+
+clutter-1.0 (1.6.14-1) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * Make the -dev package depend on the gir package.
+
+  [ Sjoerd Simons ]
+  * New upstream release
+  * debian/watch: Updated to new download URL
+  * debian/patches/01-Explicitly-link-the-glx-flavour-against-libdl.patch:
+    * Added, fixes build with binutils-gold (Closes: #554074)
+  * Use dh-autoreconf to re-generate the autotools bits
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 14 May 2011 19:29:37 +0100
+
+clutter-1.0 (1.6.10-3) unstable; urgency=low
+
+  * debian/control.in:
+    + Add libxi-dev to libclutter-1.0-dev
+  * debian/control.in:
+    + Make libclutter-1.0-0 Recommend libclutter-1.0-common
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 26 Mar 2011 22:56:00 +0000
+
+clutter-1.0 (1.6.10-2) unstable; urgency=low
+
+  * debian/control.in:
+    + Build using the gir binaries from atk and pango instead of the
+      gir-repository bundle.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 26 Mar 2011 07:33:05 +0000
+
+clutter-1.0 (1.6.10-1) unstable; urgency=low
+
+  * debian/control.in:
+    + Update the build dependencies to build the gir package with packages
+      from unstable.
+  * New upstream release.
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+  * Upload to unstable.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 23 Mar 2011 23:10:26 +0000
+
 clutter-1.0 (1.6.8-1) experimental; urgency=low
 
   * New upstream release.

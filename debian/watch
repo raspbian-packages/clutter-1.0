@@ -1,2 +1,2 @@
-version=2
-http://www.clutter-project.org/sources/clutter/([\d.]+[02468])/clutter-(.*)\.tar\.gz
+version=3
+http://download.gnome.org/sources/clutter/([\d\.]+)/clutter-(.*)\.tar\.bz2
