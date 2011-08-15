@@ -233,6 +233,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_animatable_find_property@Base 1.4.0
  clutter_animatable_get_initial_state@Base 1.4.0
  clutter_animatable_get_type@Base 1.0.0
+ clutter_animatable_interpolate_value@Base 1.7.8
  clutter_animatable_set_final_state@Base 1.4.0
  clutter_animation_bind@Base 1.0.0
  clutter_animation_bind_interval@Base 1.0.0
@@ -420,11 +421,13 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_cairo_texture_clear@Base 1.0.0
  clutter_cairo_texture_create@Base 1.0.0
  clutter_cairo_texture_create_region@Base 1.0.0
+ clutter_cairo_texture_get_auto_resize@Base 1.7.8
  clutter_cairo_texture_get_surface_size@Base 1.0.0
  clutter_cairo_texture_get_type@Base 1.0.0
  clutter_cairo_texture_invalidate@Base 1.7.6
  clutter_cairo_texture_invalidate_rectangle@Base 1.7.6
  clutter_cairo_texture_new@Base 1.0.0
+ clutter_cairo_texture_set_auto_resize@Base 1.7.8
  clutter_cairo_texture_set_surface_size@Base 1.0.0
  clutter_check_version@Base 1.2.8
  clutter_child_meta_get_actor@Base 1.0.0
