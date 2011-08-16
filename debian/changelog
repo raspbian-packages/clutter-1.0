@@ -1,4 +1,4 @@
-clutter-1.0 (1.7.8-1) UNRELEASED; urgency=low
+clutter-1.0 (1.7.10-1) UNRELEASED; urgency=low
 
   * New upstream release
   * debian/control.in:
@@ -16,7 +16,7 @@ clutter-1.0 (1.7.8-1) UNRELEASED; urgency=low
   * debian/watch:
     - updated for new location
 
- -- Rico Tzschichholz <ricotz@ubuntu.com>  Fri, 29 Jul 2011 13:39:53 +0200
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Tue, 16 Aug 2011 09:14:43 +0200
 
 clutter-1.0 (1.6.16-1) unstable; urgency=low
 
