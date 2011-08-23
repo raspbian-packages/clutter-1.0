@@ -1,5 +1,6 @@
 clutter-1.0 (1.7.10-1) UNRELEASED; urgency=low
 
+  [ Rico Tzschichholz ]
   * New upstream release
   * debian/control.in:
     - Add Build-Dep on libcogl-dev (>= 1.7.6)
@@ -16,7 +17,10 @@ clutter-1.0 (1.7.10-1) UNRELEASED; urgency=low
   * debian/watch:
     - updated for new location
 
- -- Rico Tzschichholz <ricotz@ubuntu.com>  Tue, 16 Aug 2011 09:14:43 +0200
+  [ Laurent Bigonville ]
+  * debian/control.in: Fix short description of clutter-1.0-tests package
+
+ -- Laurent Bigonville <bigon@debian.org>  Tue, 23 Aug 2011 23:54:13 +0200
 
 clutter-1.0 (1.6.16-1) unstable; urgency=low
 
