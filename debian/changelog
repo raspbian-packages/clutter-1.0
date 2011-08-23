@@ -1,4 +1,4 @@
-clutter-1.0 (1.7.10-1) UNRELEASED; urgency=low
+clutter-1.0 (1.7.10-1) experimental; urgency=low
 
   [ Rico Tzschichholz ]
   * New upstream release
@@ -20,7 +20,7 @@ clutter-1.0 (1.7.10-1) UNRELEASED; urgency=low
   [ Laurent Bigonville ]
   * debian/control.in: Fix short description of clutter-1.0-tests package
 
- -- Laurent Bigonville <bigon@debian.org>  Tue, 23 Aug 2011 23:54:13 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Tue, 23 Aug 2011 23:56:07 +0200
 
 clutter-1.0 (1.6.16-1) unstable; urgency=low
 
