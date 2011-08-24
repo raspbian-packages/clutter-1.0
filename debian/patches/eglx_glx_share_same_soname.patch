@@ -1,0 +1,34 @@
+From: Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>
+Date: Wed, 2 Feb 2011 17:21:25 -0200
+Subject: [PATCH] Eglx and glx should share the same SONAME, for compatibility reasons.
+
+Based on: http://bugzilla.clutter-project.org/show_bug.cgi?id=2276
+
+Signed-off-by: Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>
+
+Index: clutter-1.7.10/configure.ac
+===================================================================
+--- clutter-1.7.10.orig/configure.ac
++++ clutter-1.7.10/configure.ac
+@@ -283,7 +283,7 @@
+           CLUTTER_WINSYS=cogl
+           CLUTTER_WINSYS_BASE=x11
+           CLUTTER_WINSYS_BASE_LIB="x11/libclutter-x11.la"
+-          CLUTTER_SONAME_INFIX=eglx
++          CLUTTER_SONAME_INFIX=glx
+         ],
+ 
+         [eglnative],
+Index: clutter-1.7.10/configure
+===================================================================
+--- clutter-1.7.10.orig/configure
++++ clutter-1.7.10/configure
+@@ -12532,7 +12532,7 @@
+           CLUTTER_WINSYS=cogl
+           CLUTTER_WINSYS_BASE=x11
+           CLUTTER_WINSYS_BASE_LIB="x11/libclutter-x11.la"
+-          CLUTTER_SONAME_INFIX=eglx
++          CLUTTER_SONAME_INFIX=glx
+          ;; #(
+   eglnative) :
+ 

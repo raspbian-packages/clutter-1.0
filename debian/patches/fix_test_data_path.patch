@@ -2,11 +2,11 @@ Description: Set the installed data path for the tests, so that they can find
  their data files when they run.
 Author: Alexandros Frantzis <alexandros.frantzis@linaro.org>
 Last-Update: 2010-06-28
-Index: clutter-1.5.12/tests/interactive/Makefile.am
+Index: clutter-1.7.10/tests/interactive/Makefile.am
 ===================================================================
---- clutter-1.5.12.orig/tests/interactive/Makefile.am	2010-12-20 09:05:01.000000000 -0600
-+++ clutter-1.5.12/tests/interactive/Makefile.am	2011-01-12 15:10:14.568983001 -0600
-@@ -108,7 +108,7 @@
+--- clutter-1.7.10.orig/tests/interactive/Makefile.am
++++ clutter-1.7.10/tests/interactive/Makefile.am
+@@ -118,7 +118,7 @@
  test_interactive_SOURCES = test-main.c $(UNIT_TESTS)
  test_interactive_CFLAGS = $(CLUTTER_CFLAGS) $(MAINTAINER_CFLAGS)
  test_interactive_CPPFLAGS = \
