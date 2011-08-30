@@ -1,3 +1,13 @@
+clutter-1.0 (1.7.12-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * debian/libclutter-1.0-0.symbols{.armel}:
+    - Updated
+  * debian/control.in:
+    - Fix build-dep on libcogl-dev
+
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Tue, 30 Aug 2011 07:07:01 +0200
+
 clutter-1.0 (1.7.10-2) experimental; urgency=low
 
   * debian/patches/eglx_glx_share_same_soname.patch: Eglx and glx should

@@ -281,6 +281,7 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_animator_set_key@Base 1.2.8
  clutter_animator_set_timeline@Base 1.2.8
  clutter_animator_start@Base 1.2.8
+ clutter_backend_get_cogl_context@Base 1.7.12
  clutter_backend_get_double_click_distance@Base 1.0.0
  clutter_backend_get_double_click_time@Base 1.0.0
  clutter_backend_get_font_name@Base 1.0.0
