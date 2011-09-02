@@ -1,4 +1,4 @@
-clutter-1.0 (1.7.12-1) UNRELEASED; urgency=low
+clutter-1.0 (1.7.12-1) experimental; urgency=low
 
   * New upstream release
   * debian/libclutter-1.0-0.symbols{.armel}:
@@ -6,7 +6,7 @@ clutter-1.0 (1.7.12-1) UNRELEASED; urgency=low
   * debian/control.in:
     - Fix build-dep on libcogl-dev
 
- -- Rico Tzschichholz <ricotz@ubuntu.com>  Tue, 30 Aug 2011 07:07:01 +0200
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Fri, 02 Sep 2011 10:05:24 +0200
 
 clutter-1.0 (1.7.10-2) experimental; urgency=low
 
