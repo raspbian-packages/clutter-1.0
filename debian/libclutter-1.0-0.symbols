@@ -888,28 +888,19 @@ libclutter-glx-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_script_connect_signals@Base 1.0.0
  clutter_script_connect_signals_full@Base 1.0.0
  clutter_script_ensure_objects@Base 1.0.0
- clutter_script_enum_from_string@Base 1.0.0
  clutter_script_error_get_type@Base 1.0.0
  clutter_script_error_quark@Base 1.0.0
- clutter_script_flags_from_string@Base 1.0.0
  clutter_script_get_object@Base 1.0.0
  clutter_script_get_objects@Base 1.0.0
  clutter_script_get_states@Base 1.7.6
  clutter_script_get_type@Base 1.0.0
- clutter_script_get_type_from_class@Base 1.0.0
  clutter_script_get_type_from_name@Base 1.0.0
- clutter_script_get_type_from_symbol@Base 1.0.0
  clutter_script_list_objects@Base 1.0.0
  clutter_script_load_from_data@Base 1.0.0
  clutter_script_load_from_file@Base 1.0.0
  clutter_script_lookup_filename@Base 1.0.0
  clutter_script_new@Base 1.0.0
- clutter_script_parse_color@Base 1.0.0
- clutter_script_parse_geometry@Base 1.0.0
- clutter_script_parse_knot@Base 1.0.0
- clutter_script_parse_node@Base 1.0.0
  clutter_script_parser_get_type@Base 1.2.8
- clutter_script_resolve_animation_mode@Base 1.2.8
  clutter_script_unmerge_objects@Base 1.0.0
  clutter_scriptable_get_id@Base 1.0.0
  clutter_scriptable_get_type@Base 1.0.0
