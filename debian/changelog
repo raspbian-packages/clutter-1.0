@@ -1,15 +1,16 @@
-clutter-1.0 (1.7.90-1) UNRELEASED; urgency=low
+clutter-1.0 (1.8.0-1) UNRELEASED; urgency=low
 
   * New upstream release
   * debian/control.in:
-    - Bump build-dep on libatk1.0-dev (>= 2.1.5)
+    - Bump build-dep on libatk1.0-dev (>= 2.1.5), libcogl-dev (>= 1.8.0),
+      libglib2.0-dev (>= 2.28)
   * debian/*.symbols*:
     - updated, there was no API break, since the removed symbols are private
       and weren't exposed in installed header files
   * debian/*.symbols*,debian/rules:
     - build with EGL/GLES2 on armhf
 
- -- Rico Tzschichholz <ricotz@ubuntu.com>  Mon, 12 Sep 2011 17:20:45 +0200
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Mon, 19 Sep 2011 22:01:23 +0200
 
 clutter-1.0 (1.7.12-1) experimental; urgency=low
 
