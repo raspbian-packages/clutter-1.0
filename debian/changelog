@@ -6,6 +6,8 @@ clutter-1.0 (1.7.90-1) UNRELEASED; urgency=low
   * debian/*.symbols*:
     - updated, there was no API break, since the removed symbols are private
       and weren't exposed in installed header files
+  * debian/*.symbols*,debian/rules:
+    - build with EGL/GLES2 on armhf
 
  -- Rico Tzschichholz <ricotz@ubuntu.com>  Mon, 12 Sep 2011 17:20:45 +0200
 
