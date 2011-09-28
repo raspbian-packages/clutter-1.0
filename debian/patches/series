@@ -1,2 +1,2 @@
-01-Explicitly-link-the-glx-flavour-against-libdl.patch
-02_disable_armv5t_specific_optimization.patch
+fix_test_data_path.patch
+eglx_glx_share_same_soname.patch
