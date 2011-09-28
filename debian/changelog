@@ -1,5 +1,6 @@
 clutter-1.0 (1.8.0-1) UNRELEASED; urgency=low
 
+  [ Rico Tzschichholz ]
   * New upstream release
   * debian/control.in:
     - Bump build-dep on libatk1.0-dev (>= 2.1.5), libcogl-dev (>= 1.8.0),
@@ -10,7 +11,10 @@ clutter-1.0 (1.8.0-1) UNRELEASED; urgency=low
   * debian/*.symbols*,debian/rules:
     - build with EGL/GLES2 on armhf
 
- -- Rico Tzschichholz <ricotz@ubuntu.com>  Mon, 19 Sep 2011 22:01:23 +0200
+  [ Laurent Bigonville ]
+  * debian/control.in: Build-dep on libcogl-pango-dev (>= 1.8.0)
+
+ -- Laurent Bigonville <bigon@debian.org>  Wed, 28 Sep 2011 20:28:32 +0200
 
 clutter-1.0 (1.7.12-1) experimental; urgency=low
 
