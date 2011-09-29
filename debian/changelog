@@ -1,4 +1,4 @@
-clutter-1.0 (1.8.0-1) UNRELEASED; urgency=low
+clutter-1.0 (1.8.0-1) unstable; urgency=low
 
   [ Rico Tzschichholz ]
   * New upstream release
@@ -14,7 +14,7 @@ clutter-1.0 (1.8.0-1) UNRELEASED; urgency=low
   [ Laurent Bigonville ]
   * debian/control.in: Build-dep on libcogl-pango-dev (>= 1.8.0)
 
- -- Laurent Bigonville <bigon@debian.org>  Wed, 28 Sep 2011 20:28:32 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 29 Sep 2011 12:08:27 +0200
 
 clutter-1.0 (1.7.12-1) experimental; urgency=low
 
