@@ -6,7 +6,10 @@ clutter-1.0 (1.8.2-1) UNRELEASED; urgency=low
   [ Rico Tzschichholz ]
   * New upstream release
 
- -- Rico Tzschichholz <ricotz@ubuntu.com>  Mon, 17 Oct 2011 18:40:24 +0200
+  [ Laurent Bigonville ]
+  * debian/watch: Switch to .xz tarballs
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 20 Oct 2011 23:54:25 +0200
 
 clutter-1.0 (1.8.0-1) unstable; urgency=low
 
