@@ -1,2 +1,3 @@
 fix_test_data_path.patch
 eglx_glx_share_same_soname.patch
+fallback-non-transparent-stages.patch
