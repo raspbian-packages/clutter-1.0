@@ -1,7 +1,7 @@
 clutter-1.0 (1.8.2-2) unstable; urgency=low
 
   * Add fallback-non-transparent-stages.patch: Fallback to non-transparent
-    stages (taken from upstream) (Closes: #647410)
+    stages if unsupported (taken from upstream) (Closes: #647410)
 
  -- Laurent Bigonville <bigon@debian.org>  Tue, 15 Nov 2011 17:54:17 +0100
 
