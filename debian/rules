@@ -16,6 +16,7 @@ DEB_CONFIGURE_EXTRA_FLAGS += \
         --libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
 	--enable-gtk-doc \
 	--enable-introspection=yes
+DEB_DBG_PACKAGE_libclutter-1.0-0 := libclutter-1.0-dbg
 
 ifeq ($(DEB_HOST_ARCH),$(findstring $(DEB_HOST_ARCH),armel armhf))
         DEB_CONFIGURE_EXTRA_FLAGS += --with-flavour=eglx --with-gles=2.0

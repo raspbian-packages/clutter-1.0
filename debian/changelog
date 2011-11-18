@@ -1,3 +1,9 @@
+clutter-1.0 (1.8.2-3) UNRELEASED; urgency=low
+
+  * debian/rules: Only install debug symbols for the library in -dbg package
+
+ -- Laurent Bigonville <bigon@debian.org>  Fri, 18 Nov 2011 12:11:21 +0100
+
 clutter-1.0 (1.8.2-2) unstable; urgency=low
 
   * Add fallback-non-transparent-stages.patch: Fallback to non-transparent
