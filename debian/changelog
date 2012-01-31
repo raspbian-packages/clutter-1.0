@@ -1,4 +1,4 @@
-clutter-1.0 (1.8.2-3) UNRELEASED; urgency=low
+clutter-1.0 (1.8.4-1) UNRELEASED; urgency=low
 
   [ Laurent Bigonville ]
   * debian/rules: Only install debug symbols for the library in -dbg package
@@ -9,7 +9,12 @@ clutter-1.0 (1.8.2-3) UNRELEASED; urgency=low
   [ Josselin Mouette ]
   * Update repository URL.
 
- -- Michael Biebl <biebl@debian.org>  Fri, 16 Dec 2011 23:39:37 +0100
+  [ Michael Biebl ]
+  * New upstream release.
+  * Remove fallback-non-transparent-stages.patch, merged upstream.
+  * Refresh eglx_glx_share_same_soname.patch.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 31 Jan 2012 09:24:29 +0100
 
 clutter-1.0 (1.8.2-2) unstable; urgency=low
 
