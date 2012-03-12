@@ -1,34 +1,27 @@
-From: Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>
-Date: Wed, 2 Feb 2011 17:21:25 -0200
-Subject: [PATCH] Eglx and glx should share the same SONAME, for compatibility reasons.
+From: Rico Tzschichholz <ricotz@ubuntu.com>
+Subject: Eglx and glx should share the same SONAME, for compatibility reasons.
+Last-Update: 2012-02-23
 
 Based on: http://bugzilla.clutter-project.org/show_bug.cgi?id=2276
 
-Signed-off-by: Ricardo Salveti de Araujo <ricardo.salveti@canonical.com>
-
-Index: clutter-1.8.4/configure.ac
+Index: clutter-1.0-1.9.12/clutter/Makefile.am
 ===================================================================
---- clutter-1.8.4.orig/configure.ac	2012-01-30 13:25:15.000000000 +0100
-+++ clutter-1.8.4/configure.ac	2012-01-31 09:12:43.188600427 +0100
-@@ -285,7 +285,7 @@
-           CLUTTER_WINSYS=cogl
-           CLUTTER_WINSYS_BASE=x11
-           CLUTTER_WINSYS_BASE_LIB="x11/libclutter-x11.la"
--          CLUTTER_SONAME_INFIX=eglx
-+          CLUTTER_SONAME_INFIX=glx
-         ],
+--- clutter-1.0-1.9.12.orig/clutter/Makefile.am
++++ clutter-1.0-1.9.12/clutter/Makefile.am
+@@ -632,10 +632,14 @@
+ clutteregl_includedir = $(clutter_includedir)/egl
+ clutteregl_include_HEADERS = $(egl_source_h)
  
-         [eglnative],
-Index: clutter-1.8.4/configure
-===================================================================
---- clutter-1.8.4.orig/configure	2012-01-30 13:25:30.000000000 +0100
-+++ clutter-1.8.4/configure	2012-01-31 09:12:43.200600426 +0100
-@@ -12540,7 +12540,7 @@
-           CLUTTER_WINSYS=cogl
-           CLUTTER_WINSYS_BASE=x11
-           CLUTTER_WINSYS_BASE_LIB="x11/libclutter-x11.la"
--          CLUTTER_SONAME_INFIX=eglx
-+          CLUTTER_SONAME_INFIX=glx
-          ;; #(
-   eglnative) :
+-clutter-egl-$(CLUTTER_API_VERSION).pc: clutter-$(CLUTTER_API_VERSION).pc
++clutter-glx-$(CLUTTER_API_VERSION).pc: clutter-$(CLUTTER_API_VERSION).pc
+ 	$(QUIET_GEN)cp -f $< $(@F)
  
+-pc_files += clutter-egl-$(CLUTTER_API_VERSION).pc
++pc_files += clutter-glx-$(CLUTTER_API_VERSION).pc
++
++compat_libs += \
++	libclutter-glx-$(CLUTTER_API_VERSION).so \
++	$(NULL)
+ endif # SUPPORT_EGL
+ 
+ # OSX backend rules

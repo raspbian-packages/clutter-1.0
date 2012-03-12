@@ -1,3 +1,17 @@
+clutter-1.0 (1.9.14-1) UNRELEASED; urgency=low
+
+  [ Jeremy Bicha ]
+  * New upstream release.
+
+  [ Rico Tzschichholz ]
+  * Updated symbols
+  * debian/control.in:
+    - Bump minimum glib to 2.31.19 & cogl to 1.9.6
+  * debian/rules: Explicitly enable the X11 backend
+  * debian/patches/eglx_glx_share_same_soname.patch: Refreshed
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Sun, 11 Mar 2012 21:23:37 -0400
+
 clutter-1.0 (1.8.4-1) unstable; urgency=low
 
   [ Laurent Bigonville ]
