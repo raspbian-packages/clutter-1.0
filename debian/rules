@@ -15,6 +15,7 @@ DEB_DH_MAKESHLIBS_ARGS_libclutter-1.0-0 += -V -- -c4
 DEB_CONFIGURE_EXTRA_FLAGS += \
 	--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
 	--enable-x11-backend=yes \
+	--enable-gdk-backend=yes \
 	--enable-gtk-doc \
 	--enable-introspection=yes
 DEB_DBG_PACKAGE_libclutter-1.0-0 := libclutter-1.0-dbg
