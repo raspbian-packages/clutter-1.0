@@ -30,8 +30,8 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_add_constraint@Base 1.4.0
  clutter_actor_add_constraint_with_name@Base 1.4.0
  clutter_actor_add_effect@Base 1.4.0
- clutter_actor_add_transition@Base 1.9.16
  clutter_actor_add_effect_with_name@Base 1.4.0
+ clutter_actor_add_transition@Base 1.9.16
  clutter_actor_align_get_type@Base 1.9.4
  clutter_actor_allocate@Base 1.0.0
  clutter_actor_allocate_align_fill@Base 1.4.0
@@ -99,7 +99,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_get_content_box@Base 1.9.16
  clutter_actor_get_content_gravity@Base 1.9.16
  clutter_actor_get_content_scaling_filters@Base 1.9.16
- clutter_actor_get_default_paint_volume@Base 1.9.13
+ clutter_actor_get_default_paint_volume@Base 1.9.14
  clutter_actor_get_depth@Base 1.0.0
  clutter_actor_get_easing_delay@Base 1.9.16
  clutter_actor_get_easing_duration@Base 1.9.16
@@ -520,9 +520,9 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_click_action_get_type@Base 1.4.0
  clutter_click_action_new@Base 1.4.0
  clutter_click_action_release@Base 1.4.0
- clutter_clone_get_source@Base 1.0.0
  clutter_clip_node_get_type@Base 1.9.16
  clutter_clip_node_new@Base 1.9.16
+ clutter_clone_get_source@Base 1.0.0
  clutter_clone_get_type@Base 1.0.0
  clutter_clone_new@Base 1.0.0
  clutter_clone_set_source@Base 1.0.0
@@ -763,7 +763,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_input_device_get_slave_devices@Base 1.6.0
  clutter_input_device_get_type@Base 1.2.8
  clutter_input_device_grab@Base 1.9.2
- clutter_input_device_keycode_to_evdev@Base 1.9.13
+ clutter_input_device_keycode_to_evdev@Base 1.9.14
  clutter_input_device_set_enabled@Base 1.6.0
  clutter_input_device_set_key@Base 1.6.0
  clutter_input_device_type_get_type@Base 1.0.0
@@ -925,7 +925,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_paint_volume_set_origin@Base 1.6.0
  clutter_paint_volume_set_width@Base 1.6.0
  clutter_paint_volume_union@Base 1.6.0
- clutter_paint_volume_union_box@Base 1.9.13
+ clutter_paint_volume_union_box@Base 1.9.14
  clutter_param_color_get_type@Base 1.0.0
  clutter_param_fixed_get_type@Base 1.0.0
  clutter_param_spec_color@Base 1.0.0
