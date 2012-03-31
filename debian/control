@@ -42,7 +42,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Recommends: libclutter-1.0-common
-Breaks: python-clutter (<< 1.3.2)
+Breaks: python-clutter (<< 1.3.2), libcogl5
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: Open GL based interactive canvas library
