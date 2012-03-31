@@ -1,4 +1,4 @@
-clutter-1.0 (1.10.0-1) UNRELEASED; urgency=low
+clutter-1.0 (1.10.0-1) experimental; urgency=low
 
   [ Jeremy Bicha ]
   * New upstream release.
@@ -32,7 +32,7 @@ clutter-1.0 (1.10.0-1) UNRELEASED; urgency=low
     applications using cogl that don't use clutter, doing a break directly on
     libcogl5 is the most elegant solution
 
- -- Sjoerd Simons <sjoerd@debian.org>  Sat, 31 Mar 2012 19:05:21 +0200
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 31 Mar 2012 19:44:55 +0200
 
 clutter-1.0 (1.8.4-1) unstable; urgency=low
 
