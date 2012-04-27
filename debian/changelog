@@ -1,8 +1,9 @@
 clutter-1.0 (1.10.2-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Set pkg-gnome-maintainers@lists.alioth.debian.org as Maintainer.
 
- -- Michael Biebl <biebl@debian.org>  Fri, 27 Apr 2012 02:28:14 +0200
+ -- Michael Biebl <biebl@debian.org>  Fri, 27 Apr 2012 02:31:23 +0200
 
 clutter-1.0 (1.10.0-1) experimental; urgency=low
 
