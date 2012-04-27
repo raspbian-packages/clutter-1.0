@@ -1,10 +1,10 @@
-clutter-1.0 (1.10.2-1) UNRELEASED; urgency=low
+clutter-1.0 (1.10.2-1) experimental; urgency=low
 
   * New upstream release.
   * Set pkg-gnome-maintainers@lists.alioth.debian.org as Maintainer.
   * Strip debian/tmp/ from .install files.
 
- -- Michael Biebl <biebl@debian.org>  Fri, 27 Apr 2012 02:34:22 +0200
+ -- Michael Biebl <biebl@debian.org>  Fri, 27 Apr 2012 02:44:08 +0200
 
 clutter-1.0 (1.10.0-1) experimental; urgency=low
 
