@@ -1,4 +1,4 @@
-clutter-1.0 (1.10.4-3) UNRELEASED; urgency=low
+clutter-1.0 (1.10.4-3) unstable; urgency=low
 
   * Bump all symbol versions to 1.10.0. The library was renamed from
     libclutter-glx-1.0.so.0 to libclutter-1.0.so.0 and while a compat symlink
@@ -7,7 +7,7 @@ clutter-1.0 (1.10.4-3) UNRELEASED; urgency=low
     they will link against libclutter-1.0.so.0 and this library is not
     provided by older versions of libclutter-1.0-0.
 
- -- Michael Biebl <biebl@debian.org>  Sun, 06 May 2012 01:37:31 +0200
+ -- Michael Biebl <biebl@debian.org>  Sun, 06 May 2012 01:47:55 +0200
 
 clutter-1.0 (1.10.4-2) unstable; urgency=low
 
