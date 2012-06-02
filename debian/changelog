@@ -1,8 +1,8 @@
-clutter-1.0 (1.10.6-1) UNRELEASED; urgency=low
+clutter-1.0 (1.10.6-1) unstable; urgency=low
 
   * New upstream release.
 
- -- Michael Biebl <biebl@debian.org>  Sat, 02 Jun 2012 14:11:53 +0200
+ -- Michael Biebl <biebl@debian.org>  Sat, 02 Jun 2012 14:13:10 +0200
 
 clutter-1.0 (1.10.4-3) unstable; urgency=low
 
