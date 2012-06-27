@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="clutterprops"
+	OutputDirectory="$(SolutionDir)$(ConfigurationName)\$(PlatformName)\bin"
+	IntermediateDirectory="$(SolutionDir)$(ConfigurationName)\$(PlatformName)\obj\$(ProjectName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="..\..\..;$(GlibEtcInstallRoot)\include;$(GlibEtcInstallRoot)\include\glib-2.0;$(GlibEtcInstallRoot)\include\cairo;$(GlibEtcInstallRoot)\include\atk-1.0;$(GlibEtcInstallRoot)\include\pango-1.0;$(GlibEtcInstallRoot)\include\cogl-1.0;$(GlibEtcInstallRoot)\include\json-glib-1.0;$(GlibEtcInstallRoot)\lib\glib-2.0\include"
+		PreprocessorDefinitions="G_DISABLE_SINGLE_INCLUDES"
+		ForcedIncludeFiles="msvc_recommended_pragmas.h"
+		DisableSpecificWarnings="4819"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalDependencies="cogl-pango-1.0.lib cogl-1.0.lib glib-2.0.lib gobject-2.0.lib"
+		AdditionalLibraryDirectories="$(GlibEtcInstallRoot)\lib"
+	/>
+	<UserMacro
+		Name="GlibEtcInstallRoot"
+		Value="..\..\..\..\vs9\$(PlatformName)"
+	/>
+	<UserMacro
+		Name="GlibMkEnumsPath"
+		Value="..\..\..\vs9\$(PlatformName)"
+	/>
+	<UserMacro
+		Name="GlibGenMarshalPath"
+		Value="..\..\vs9\$(PlatformName)"
+	/>
+	<UserMacro
+		Name="ClutterApiVersion"
+		Value="1.0"
+	/>
+	<UserMacro
+		Name="BaseWinBuildDef"
+		Value="_WIN32_WINNT=0x0500"
+	/>
+	<UserMacro
+		Name="BaseBuildDef"
+		Value="$(BaseWinBuildDef)"
+	/>
+	<UserMacro
+		Name="LibBuildDefines"
+		Value="HAVE_CONFIG_H;CLUTTER_COMPILATION;COGL_ENABLE_EXPERIMENTAL_API;COGL_HAS_WIN32_SUPPORT;CLUTTER_ENABLE_EXPERIMENTAL_API"
+	/>
+	<UserMacro
+		Name="DebugLibBuildDefines"
+		Value="$(LibBuildDefines);_DEBUG;CLUTTER_ENABLE_DEBUG"
+	/>
+	<UserMacro
+		Name="ReleaseLibBuildDefines"
+		Value="$(LibBuildDefines);G_DISABLE_ASSERT;G_DISABLE_CHECKS;G_DISABLE_CAST_CHECKS"
+	/>
+	<UserMacro
+		Name="ClutterBuildDefines"
+		Value="$(BaseBuildDef);G_LOG_DOMAIN=\&quot;Clutter\&quot;;CLUTTER_PREFIX=\&quot;../\&quot;;CLUTTER_LIBDIR=\&quot;../lib\&quot;;CLUTTER_DATADIR=\&quot;../share\&quot;;CLUTTER_LOCALEDIR=\&quot;../share/locale\&quot;;CLUTTER_SYSCONFDIR=\&quot;../etc\&quot;"
+	/>
+	<UserMacro
+		Name="ClutterDisableDeprecationWarnings"
+		Value="CLUTTER_DISABLE_DEPRECATION_WARNINGS;GLIB_DISABLE_DEPRECATION_WARNINGS"
+	/>
+	<UserMacro
+		Name="CallyTestDefs"
+		Value="$(BaseWinBuildDef);PREFIXDIR=\&quot;/some/dummy/dir\&quot;;$(ClutterDisableDeprecationWarnings)"
+	/>
+	<UserMacro
+		Name="TestProgDef"
+		Value="$(BaseBuildDef);TESTS_DATADIR=\&quot;../share/clutter-$(ClutterApiVersion)/data\&quot;"
+	/>
+	<UserMacro
+		Name="TestPerfProgDef"
+		Value="$(BaseBuildDef);TESTS_DATA_DIR=\&quot;../share/clutter-$(ClutterApiVersion)/data\&quot;;$(ClutterDisableDeprecationWarnings)"
+	/>
+	<UserMacro
+		Name="PreBuildWin"
+		Value="
+if exist ..\..\..\config.h goto DONE_CONFIG_H&#x0D;&#x0A;
+copy ..\..\..\config.h.win32 ..\..\..\config.h&#x0D;&#x0A;
+:DONE_CONFIG_H&#x0D;&#x0A;
+if exist ..\..\..\clutter\clutter.bld.win32.win32 goto DONE_CLUTTER_CONFIG_H&#x0D;&#x0A;
+del clutter.bld.*.win32&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-config.h.win32 clutter.bld.win32.win32&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-config.h.win32 ..\..\..\clutter\clutter-config.h&#x0D;&#x0A;
+:DONE_CLUTTER_CONFIG_H&#x0D;&#x0A;
+			  "
+	/>
+	<UserMacro
+		Name="PreBuildGDK"
+		Value="
+if exist ..\..\..\config.h goto DONE_CONFIG_H&#x0D;&#x0A;
+copy ..\..\..\config.h.win32 ..\..\..\config.h&#x0D;&#x0A;
+:DONE_CONFIG_H&#x0D;&#x0A;
+if exist ..\..\..\clutter\clutter.bld.GDK.win32 goto DONE_CLUTTER_CONFIG_H&#x0D;&#x0A;
+del clutter.bld.*.win32&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-config.h.win32_GDK clutter.bld.GDK.win32&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-config.h.win32_GDK ..\..\..\clutter\clutter-config.h&#x0D;&#x0A;
+:DONE_CLUTTER_CONFIG_H&#x0D;&#x0A;
+			  "
+	/>
+	<UserMacro
+		Name="PreBuildCmd2"
+		Value="
+if exist ..\..\..\clutter\clutter-marshal.h goto DONE_CLUTTER_MARSHAL_H&#x0D;&#x0A;
+cd ..\..\..\clutter&#x0D;&#x0A;
+$(GlibGenMarshalPath)\bin\glib-genmarshal --prefix=_clutter_marshal --header clutter-marshal.list &gt; clutter-marshal.h&#x0D;&#x0A;
+cd ..\build\win32\vs9&#x0D;&#x0A;
+:DONE_CLUTTER_MARSHAL_H&#x0D;&#x0A;
+
+if exist ..\..\..\clutter\clutter-marshal.c goto DONE_CLUTTER_MARSHAL_C&#x0D;&#x0A;
+cd ..\..\..\clutter&#x0D;&#x0A;
+echo #include &quot;clutter-marshal.h&quot; &gt; clutter-marshal.c&#x0D;&#x0A;
+$(GlibGenMarshalPath)\bin\glib-genmarshal --prefix=_clutter_marshal --body clutter-marshal.list &gt;&gt; clutter-marshal.c&#x0D;&#x0A;
+cd ..\build\win32\vs9&#x0D;&#x0A;
+:DONE_CLUTTER_MARSHAL_C&#x0D;&#x0A;
+
+cd ..&#x0D;&#x0A;
+gen-enums.bat $(GlibMkEnumsPath)&#x0D;&#x0A;
+cd .\vs9&#x0D;&#x0A;
+"
+	/>
+	<UserMacro
+		Name="ClutterDoInstall"
+		Value="
+mkdir $(OutDir)&#x0D;&#x0A;
+mkdir $(OutDir)\bin&#x0D;&#x0A;
+mkdir $(OutDir)\share\clutter-$(ClutterApiVersion)\data&#x0D;&#x0A;
+copy $(SolutionDir)$(ConfigurationName)\$(PlatformName)\bin\*.dll $(OutDir)\bin&#x0D;&#x0A;
+
+copy $(SolutionDir)$(ConfigurationName)\$(PlatformName)\bin\*.exe $(OutDir)\bin&#x0D;&#x0A;
+copy ..\*.bat $(OutDir)\bin&#x0D;&#x0A;
+copy ..\..\..\tests\data\*.png $(OutDir)\share\clutter-$(ClutterApiVersion)\data&#x0D;&#x0A;
+copy ..\..\..\tests\data\clutter-1.0.suppressions $(OutDir)\share\clutter-$(ClutterApiVersion)\data&#x0D;&#x0A;
+copy ..\..\..\tests\data\*.json $(OutDir)\share\clutter-$(ClutterApiVersion)\data&#x0D;&#x0A;
+
+mkdir $(OutDir)\lib&#x0D;&#x0A;
+copy $(SolutionDir)$(ConfigurationName)\$(PlatformName)\bin\*-$(ClutterApiVersion).lib $(OutDir)\lib&#x0D;&#x0A;
+
+mkdir $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\win32&#x0D;&#x0A;
+
+copy ..\..\..\clutter\clutter.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-action.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-actor-meta.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-actor.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-align-constraint.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-alpha.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-animatable.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-animation.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-animator.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-backend.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-bind-constraint.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-binding-pool.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-bin-layout.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-blur-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-box-layout.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-brightness-contrast-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-cairo-texture.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-canvas.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-child-meta.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-click-action.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-clone.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-cogl-compat.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-color-static.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-color.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-colorize-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-config.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-constraint.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-content.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-container.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-deform-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-deprecated.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-desaturate-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-device-manager.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-drag-action.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-drop-action.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-enums.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-enum-types.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-event.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-feature.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-fixed-layout.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-flow-layout.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-gesture-action.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-group.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-image.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-input-device.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-interval.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-layout-manager.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-layout-meta.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-list-model.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-keysyms.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-macros.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-main.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-marshal.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-media.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-model.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-offscreen-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-page-turn-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-paint-node.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-paint-nodes.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-path-constraint.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-path.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-property-transition.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-script.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-scriptable.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-settings.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-shader-effect.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-shader-types.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-snap-constraint.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-stage.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-stage-manager.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-stage-window.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-state.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-swipe-action.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-table-layout.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-texture.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-text.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-text-buffer.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-timeline.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-transition.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-types.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-units.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\clutter-version.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter&#x0D;&#x0A;
+copy ..\..\..\clutter\win32\clutter-win32.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\win32&#x0D;&#x0A;
+
+mkdir $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-actor.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-animatable.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-animation.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-backend.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-behaviour.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-behaviour-depth.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-behaviour-ellipse.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-behaviour-opacity.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-behaviour-path.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-behaviour-rotate.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-behaviour-scale.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-box.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-cairo-texture.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-container.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-group.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-fixed.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-frame-source.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-keysyms.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-main.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-rectangle.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-score.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-shader.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-stage.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-stage-manager.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-texture.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-timeline.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-timeout-pool.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+copy ..\..\..\clutter\deprecated\clutter-util.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\deprecated&#x0D;&#x0A;
+
+mkdir $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-actor.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-clone.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-factory.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-group.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-main.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-rectangle.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-root.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-stage.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-text.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-texture.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+copy ..\..\..\clutter\cally\cally-util.h $(OutDir)\include\clutter-$(ClutterApiVersion)\cally&#x0D;&#x0A;
+
+"
+	/>
+	<UserMacro
+		Name="ClutterDoInstallGDK"
+		Value="
+mkdir $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\gdk&#x0D;&#x0A;
+
+copy ..\..\..\clutter\gdk\clutter-gdk.h $(OutDir)\include\clutter-$(ClutterApiVersion)\clutter\gdk&#x0D;&#x0A;
+			  "
+	/>
+	<UserMacro
+		Name="GenerateClutterDef"
+		Value="
+		       echo EXPORTS &gt; ..\..\..\clutter\clutter.def&#x0D;&#x0A;
+			   cl -EP -DHAVE_CAIRO -DCLUTTER_WINDOWING_WIN32 -DCLUTTER_ENABLE_EXPERIMENTAL_API ..\..\..\clutter\clutter.symbols &gt;&gt; ..\..\..\clutter\clutter.def&#x0D;&#x0A;
+			  "
+	/>
+	<UserMacro
+		Name="GenerateClutterGDKDef"
+		Value="
+		       echo EXPORTS &gt; ..\..\..\clutter\clutter.def&#x0D;&#x0A;
+			   cl -EP -DHAVE_CAIRO -DCLUTTER_WINDOWING_WIN32 -DCLUTTER_WINDOWING_GDK -DCLUTTER_ENABLE_EXPERIMENTAL_API ..\..\..\clutter\clutter.symbols &gt;&gt; ..\..\..\clutter\clutter.def&#x0D;&#x0A;
+			  "
+	/>
+	<UserMacro
+		Name="ClutterLibtoolCompatibleDllPrefix"
+		Value="lib"
+	/>
+	<UserMacro
+		Name="ClutterLibtoolCompatibleDllSuffix"
+		Value="-$(ClutterApiVersion)-0"
+	/>
+	<UserMacro
+		Name="ClutterSeparateVS9DllPrefix"
+		Value=""
+	/>
+	<UserMacro
+		Name="ClutterSeparateVS9DllSuffix"
+		Value="-1-vs9"
+	/>
+	<!-- Change these two to GlibLibtoolCompatibleDllPrefix and
+	GlibLibtoolCompatibleDllSuffix if that is what you want -->
+	<UserMacro
+		Name="ClutterDllPrefix"
+		Value="$(ClutterSeparateVS9DllPrefix)"
+	/>
+	<UserMacro
+		Name="ClutterDllSuffix"
+		Value="$(ClutterSeparateVS9DllSuffix)"
+	/>
+</VisualStudioPropertySheet>

@@ -1,0 +1,2546 @@
+# Romanian translation for clutter.
+# Copyright (C) 2011 clutter's COPYRIGHT HOLDER
+# This file is distributed under the same license as the clutter package.
+# laur <ionlaurentiucristian@gmail.com>, 2011.
+# Lucian Adrian Grijincu <lucian.grijincu@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: clutter master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=clutter\n"
+"POT-Creation-Date: 2012-06-19 09:03+0100\n"
+"PO-Revision-Date: 2011-11-22 20:21+0300\n"
+"Last-Translator: laur <ionlaurentiucristian@gmail.com>\n"
+"Language-Team: gnome-ro team\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);;\n"
+"X-Generator: Virtaal 0.7.0\n"
+"X-Project-Style: gnome\n"
+
+#: clutter/clutter-actor.c:5409
+msgid "X coordinate"
+msgstr "Coordonata X"
+
+#: clutter/clutter-actor.c:5410
+msgid "X coordinate of the actor"
+msgstr "Coordonata X a actorului"
+
+#: clutter/clutter-actor.c:5428
+msgid "Y coordinate"
+msgstr "Coordonata Y"
+
+#: clutter/clutter-actor.c:5429
+msgid "Y coordinate of the actor"
+msgstr "Coordonata Y a actorului"
+
+#: clutter/clutter-actor.c:5447 clutter/clutter-canvas.c:214
+#: clutter/deprecated/clutter-behaviour-ellipse.c:479
+msgid "Width"
+msgstr "Lățime"
+
+#: clutter/clutter-actor.c:5448
+msgid "Width of the actor"
+msgstr "Lățimea actorului"
+
+#: clutter/clutter-actor.c:5466 clutter/clutter-canvas.c:230
+#: clutter/deprecated/clutter-behaviour-ellipse.c:495
+msgid "Height"
+msgstr "Înălțime"
+
+#: clutter/clutter-actor.c:5467
+msgid "Height of the actor"
+msgstr "Înălțimea actorului"
+
+#: clutter/clutter-actor.c:5486
+msgid "Fixed X"
+msgstr "Coordonata X fixată"
+
+#: clutter/clutter-actor.c:5487
+msgid "Forced X position of the actor"
+msgstr "Poziția X forțată a actorului"
+
+#: clutter/clutter-actor.c:5504
+msgid "Fixed Y"
+msgstr "Coordonata Y fixată"
+
+#: clutter/clutter-actor.c:5505
+msgid "Forced Y position of the actor"
+msgstr "Poziția Y forțată a actorului"
+
+#: clutter/clutter-actor.c:5520
+msgid "Fixed position set"
+msgstr "Poziție fixă setată"
+
+#: clutter/clutter-actor.c:5521
+msgid "Whether to use fixed positioning for the actor"
+msgstr "Specifică dacă se utilizează poziționare fixată pentru actor"
+
+#: clutter/clutter-actor.c:5539
+msgid "Min Width"
+msgstr "Lățime minimă"
+
+#: clutter/clutter-actor.c:5540
+msgid "Forced minimum width request for the actor"
+msgstr "Cerere pentru lățime minimă forțată a actorului"
+
+#: clutter/clutter-actor.c:5558
+msgid "Min Height"
+msgstr "Înălțime minimă"
+
+#: clutter/clutter-actor.c:5559
+msgid "Forced minimum height request for the actor"
+msgstr "Cerere pentru înălțime minimă forțată a actorului"
+
+#: clutter/clutter-actor.c:5577
+msgid "Natural Width"
+msgstr "Lățime naturală"
+
+#: clutter/clutter-actor.c:5578
+msgid "Forced natural width request for the actor"
+msgstr "Cerere pentru lățime naturală forțată a actorului"
+
+#: clutter/clutter-actor.c:5596
+msgid "Natural Height"
+msgstr "Înălțime naturală"
+
+#: clutter/clutter-actor.c:5597
+msgid "Forced natural height request for the actor"
+msgstr "Cerere pentru înălțime naturală forțată a actorului"
+
+#: clutter/clutter-actor.c:5612
+msgid "Minimum width set"
+msgstr "Lățime minimă setată"
+
+#: clutter/clutter-actor.c:5613
+msgid "Whether to use the min-width property"
+msgstr "Specifică dacă se utilizează proprietatea de lățime minimă"
+
+#: clutter/clutter-actor.c:5627
+msgid "Minimum height set"
+msgstr "Înălțime minimă setată"
+
+#: clutter/clutter-actor.c:5628
+msgid "Whether to use the min-height property"
+msgstr "Specifică dacă se utilizează proprietatea de înălțime minimă"
+
+#: clutter/clutter-actor.c:5642
+msgid "Natural width set"
+msgstr "Lățime naturală setată"
+
+#: clutter/clutter-actor.c:5643
+msgid "Whether to use the natural-width property"
+msgstr "Specifică dacă se utilizează proprietatea de lățime naturală"
+
+#: clutter/clutter-actor.c:5657
+msgid "Natural height set"
+msgstr "Înălțime naturală setată"
+
+#: clutter/clutter-actor.c:5658
+msgid "Whether to use the natural-height property"
+msgstr "Specifică dacă se utilizează proprietatea de înălțime naturală"
+
+#: clutter/clutter-actor.c:5674
+msgid "Allocation"
+msgstr "Alocare"
+
+#: clutter/clutter-actor.c:5675
+msgid "The actor's allocation"
+msgstr "Alocarea actorului"
+
+#: clutter/clutter-actor.c:5730
+msgid "Request Mode"
+msgstr "Mod de cereri"
+
+#: clutter/clutter-actor.c:5731
+msgid "The actor's request mode"
+msgstr "Modul de cereri ale actorului"
+
+#: clutter/clutter-actor.c:5750
+msgid "Depth"
+msgstr "Adâncime"
+
+#: clutter/clutter-actor.c:5751
+msgid "Position on the Z axis"
+msgstr "Poziția pe axa Z"
+
+#: clutter/clutter-actor.c:5768
+msgid "Opacity"
+msgstr "Opacitate"
+
+#: clutter/clutter-actor.c:5769
+msgid "Opacity of an actor"
+msgstr "Opacitatea unui actor"
+
+#: clutter/clutter-actor.c:5789
+msgid "Offscreen redirect"
+msgstr "Redirecționare în afara ecranului"
+
+#: clutter/clutter-actor.c:5790
+msgid "Flags controlling when to flatten the actor into a single image"
+msgstr ""
+"Indicator ce controlează când să se aplatizeze actorul într-o singură imagine"
+
+#: clutter/clutter-actor.c:5804
+msgid "Visible"
+msgstr "Vizibil"
+
+#: clutter/clutter-actor.c:5805
+msgid "Whether the actor is visible or not"
+msgstr "Specifică dacă actorul este vizibil sau nu"
+
+#: clutter/clutter-actor.c:5819
+msgid "Mapped"
+msgstr "Mapat"
+
+#: clutter/clutter-actor.c:5820
+msgid "Whether the actor will be painted"
+msgstr "Specifică dacă actorul va fi pictat"
+
+#: clutter/clutter-actor.c:5833
+msgid "Realized"
+msgstr "Realizat"
+
+#: clutter/clutter-actor.c:5834
+msgid "Whether the actor has been realized"
+msgstr "Specifică dacă actorul a fost realizat"
+
+#: clutter/clutter-actor.c:5849
+msgid "Reactive"
+msgstr "Reactiv"
+
+#: clutter/clutter-actor.c:5850
+msgid "Whether the actor is reactive to events"
+msgstr "Specifică dacă actorul reacționează la evenimente"
+
+#: clutter/clutter-actor.c:5861
+msgid "Has Clip"
+msgstr "Are decupaj"
+
+#: clutter/clutter-actor.c:5862
+msgid "Whether the actor has a clip set"
+msgstr "Specifică dacă actorul are un decupaj setat"
+
+#: clutter/clutter-actor.c:5876
+msgid "Clip"
+msgstr "Decupaj"
+
+#: clutter/clutter-actor.c:5877
+msgid "The clip region for the actor"
+msgstr "Regiunea de decupaj pentru actor"
+
+#: clutter/clutter-actor.c:5890 clutter/clutter-actor-meta.c:207
+#: clutter/clutter-binding-pool.c:319 clutter/clutter-input-device.c:236
+msgid "Name"
+msgstr "Nume"
+
+#: clutter/clutter-actor.c:5891
+msgid "Name of the actor"
+msgstr "Numele actorului"
+
+#: clutter/clutter-actor.c:5906
+msgid "Scale X"
+msgstr "Scalează pe X"
+
+#: clutter/clutter-actor.c:5907
+msgid "Scale factor on the X axis"
+msgstr "Factorul de scalare pe axa X"
+
+#: clutter/clutter-actor.c:5925
+msgid "Scale Y"
+msgstr "Scalează pe Y"
+
+#: clutter/clutter-actor.c:5926
+msgid "Scale factor on the Y axis"
+msgstr "Factorul de scalare pe axa Y"
+
+#: clutter/clutter-actor.c:5942
+msgid "Scale Center X"
+msgstr "Centrul de scalare X"
+
+#: clutter/clutter-actor.c:5943
+msgid "Horizontal scale center"
+msgstr "Centrul de scalare orizontal"
+
+#: clutter/clutter-actor.c:5957
+msgid "Scale Center Y"
+msgstr "Centrul de scalare Y"
+
+#: clutter/clutter-actor.c:5958
+msgid "Vertical scale center"
+msgstr "Centrul de scalare vertical"
+
+#: clutter/clutter-actor.c:5972
+msgid "Scale Gravity"
+msgstr "Gravitația scalării"
+
+#: clutter/clutter-actor.c:5973
+msgid "The center of scaling"
+msgstr "Centrul de scalare"
+
+#: clutter/clutter-actor.c:5989
+msgid "Rotation Angle X"
+msgstr "Unghiul de rotație X"
+
+#: clutter/clutter-actor.c:5990
+msgid "The rotation angle on the X axis"
+msgstr "Unghiul de rotație pe axa X"
+
+#: clutter/clutter-actor.c:6008
+msgid "Rotation Angle Y"
+msgstr "Unghiul de rotație Y"
+
+#: clutter/clutter-actor.c:6009
+msgid "The rotation angle on the Y axis"
+msgstr "Unghiul de rotație pe axa Y"
+
+#: clutter/clutter-actor.c:6027
+msgid "Rotation Angle Z"
+msgstr "Unghiul de rotație Z"
+
+#: clutter/clutter-actor.c:6028
+msgid "The rotation angle on the Z axis"
+msgstr "Unghiul de rotație pe axa Z"
+
+#: clutter/clutter-actor.c:6044
+msgid "Rotation Center X"
+msgstr "Centrul de rotație X"
+
+#: clutter/clutter-actor.c:6045
+msgid "The rotation center on the X axis"
+msgstr "Centrul de rotație pe axa X"
+
+#: clutter/clutter-actor.c:6058
+msgid "Rotation Center Y"
+msgstr "Centrul de rotație Y"
+
+#: clutter/clutter-actor.c:6059
+msgid "The rotation center on the Y axis"
+msgstr "Centrul de rotație pe axa Y"
+
+#: clutter/clutter-actor.c:6072
+msgid "Rotation Center Z"
+msgstr "Centrul de rotație Z"
+
+#: clutter/clutter-actor.c:6073
+msgid "The rotation center on the Z axis"
+msgstr "Centrul de rotație pe axa Z"
+
+#: clutter/clutter-actor.c:6086
+msgid "Rotation Center Z Gravity"
+msgstr "Gravitația centrului de rotație Z"
+
+#: clutter/clutter-actor.c:6087
+msgid "Center point for rotation around the Z axis"
+msgstr "Punct central pentru rotația în jurul axei Z"
+
+#: clutter/clutter-actor.c:6102
+msgid "Anchor X"
+msgstr "Ancora X"
+
+#: clutter/clutter-actor.c:6103
+msgid "X coordinate of the anchor point"
+msgstr "Coordonata X a punctului de ancorare"
+
+#: clutter/clutter-actor.c:6118
+msgid "Anchor Y"
+msgstr "Ancora Y"
+
+#: clutter/clutter-actor.c:6119
+msgid "Y coordinate of the anchor point"
+msgstr "Coordonata Y a punctului de ancorare"
+
+#: clutter/clutter-actor.c:6133
+msgid "Anchor Gravity"
+msgstr "Gravitația ancorei"
+
+#: clutter/clutter-actor.c:6134
+msgid "The anchor point as a ClutterGravity"
+msgstr "Punctul de ancorare ca un ClutterGravity"
+
+#: clutter/clutter-actor.c:6151
+msgid "Show on set parent"
+msgstr "Afișează dacă are părinte setat"
+
+#: clutter/clutter-actor.c:6152
+msgid "Whether the actor is shown when parented"
+msgstr "Specifică dacă actorul este afișat când are părinte"
+
+#: clutter/clutter-actor.c:6169
+msgid "Clip to Allocation"
+msgstr "Decupează la alocare"
+
+#: clutter/clutter-actor.c:6170
+msgid "Sets the clip region to track the actor's allocation"
+msgstr "Setează regiunea de decupare să urmărească alocarea actorului"
+
+#: clutter/clutter-actor.c:6183
+msgid "Text Direction"
+msgstr "Direcția textului"
+
+#: clutter/clutter-actor.c:6184
+msgid "Direction of the text"
+msgstr "Direcția textului"
+
+#: clutter/clutter-actor.c:6199
+msgid "Has Pointer"
+msgstr "Are indicator"
+
+#: clutter/clutter-actor.c:6200
+msgid "Whether the actor contains the pointer of an input device"
+msgstr "Specifică dacă actorul conține indicatorul unui dispozitiv de intrare"
+
+#: clutter/clutter-actor.c:6213
+msgid "Actions"
+msgstr "Acțiuni"
+
+#: clutter/clutter-actor.c:6214
+msgid "Adds an action to the actor"
+msgstr "Adaugă o acțiune la actor"
+
+#: clutter/clutter-actor.c:6227
+msgid "Constraints"
+msgstr "Constrângeri"
+
+#: clutter/clutter-actor.c:6228
+msgid "Adds a constraint to the actor"
+msgstr "Adaugă o constrângere actorului"
+
+#: clutter/clutter-actor.c:6241
+msgid "Effect"
+msgstr "Efect"
+
+#: clutter/clutter-actor.c:6242
+msgid "Add an effect to be applied on the actor"
+msgstr "Adaugă un efect pentru a fi aplicat pe actor"
+
+#: clutter/clutter-actor.c:6256
+msgid "Layout Manager"
+msgstr "Administratorul de poziționare"
+
+#: clutter/clutter-actor.c:6257
+msgid "The object controlling the layout of an actor's children"
+msgstr ""
+
+#: clutter/clutter-actor.c:6272
+#, fuzzy
+msgid "X Alignment"
+msgstr "Aliniere linii"
+
+#: clutter/clutter-actor.c:6273
+#, fuzzy
+msgid "The alignment of the actor on the X axis within its allocation"
+msgstr "Alinierea verticală a actorului în celulă"
+
+#: clutter/clutter-actor.c:6288
+#, fuzzy
+msgid "Y Alignment"
+msgstr "Aliniere linii"
+
+#: clutter/clutter-actor.c:6289
+#, fuzzy
+msgid "The alignment of the actor on the Y axis within its allocation"
+msgstr "Alinierea verticală a actorului în celulă"
+
+#: clutter/clutter-actor.c:6306
+msgid "Margin Top"
+msgstr ""
+
+#: clutter/clutter-actor.c:6307
+msgid "Extra space at the top"
+msgstr ""
+
+#: clutter/clutter-actor.c:6324
+msgid "Margin Bottom"
+msgstr ""
+
+#: clutter/clutter-actor.c:6325
+msgid "Extra space at the bottom"
+msgstr ""
+
+#: clutter/clutter-actor.c:6342
+msgid "Margin Left"
+msgstr ""
+
+#: clutter/clutter-actor.c:6343
+msgid "Extra space at the left"
+msgstr ""
+
+#: clutter/clutter-actor.c:6360
+#, fuzzy
+msgid "Margin Right"
+msgstr "Înălțime minimă"
+
+#: clutter/clutter-actor.c:6361
+msgid "Extra space at the right"
+msgstr ""
+
+#: clutter/clutter-actor.c:6375
+#, fuzzy
+msgid "Background Color Set"
+msgstr "Culoarea cursorului setată"
+
+#: clutter/clutter-actor.c:6376 clutter/deprecated/clutter-box.c:275
+msgid "Whether the background color is set"
+msgstr "Specifică dacă culoarea de fundal este setată"
+
+#: clutter/clutter-actor.c:6392
+#, fuzzy
+msgid "Background color"
+msgstr "Culoarea de fundal a cutiei"
+
+#: clutter/clutter-actor.c:6393
+#, fuzzy
+msgid "The actor's background color"
+msgstr "Culoarea de fundal a cutiei"
+
+#: clutter/clutter-actor.c:6408
+msgid "First Child"
+msgstr ""
+
+#: clutter/clutter-actor.c:6409
+#, fuzzy
+msgid "The actor's first child"
+msgstr "Modul de cereri ale actorului"
+
+#: clutter/clutter-actor.c:6422
+msgid "Last Child"
+msgstr ""
+
+#: clutter/clutter-actor.c:6423
+#, fuzzy
+msgid "The actor's last child"
+msgstr "Alocarea actorului"
+
+#: clutter/clutter-actor.c:6437
+#, fuzzy
+msgid "Content"
+msgstr "Container"
+
+#: clutter/clutter-actor.c:6438
+#, fuzzy
+msgid "Delegate object for painting the actor's content"
+msgstr ""
+"Obiectul ClutterPath ce reprezintă calea de-a lungul căreia se va realiza "
+"animația"
+
+#: clutter/clutter-actor.c:6463
+#, fuzzy
+msgid "Content Gravity"
+msgstr "Gravitația centrului de rotație Z"
+
+#: clutter/clutter-actor.c:6464
+#, fuzzy
+msgid "Alignment of the actor's content"
+msgstr "Alinierea verticală a actorului în celulă"
+
+#: clutter/clutter-actor.c:6484
+msgid "Content Box"
+msgstr ""
+
+#: clutter/clutter-actor.c:6485
+msgid "The bounding box of the actor's content"
+msgstr ""
+
+#: clutter/clutter-actor.c:6493
+msgid "Minification Filter"
+msgstr ""
+
+#: clutter/clutter-actor.c:6494
+#, fuzzy
+msgid "The filter used when reducing the size of the content"
+msgstr "Materialul folosit când se va picta spatele actorului"
+
+#: clutter/clutter-actor.c:6501
+msgid "Magnification Filter"
+msgstr ""
+
+#: clutter/clutter-actor.c:6502
+#, fuzzy
+msgid "The filter used when increasing the size of the content"
+msgstr "Materialul folosit când se va picta spatele actorului"
+
+#: clutter/clutter-actor-meta.c:193 clutter/clutter-child-meta.c:142
+msgid "Actor"
+msgstr "Actor"
+
+#: clutter/clutter-actor-meta.c:194
+msgid "The actor attached to the meta"
+msgstr "Actorul atașat la meta"
+
+#: clutter/clutter-actor-meta.c:208
+msgid "The name of the meta"
+msgstr "Numele meta-ului"
+
+#: clutter/clutter-actor-meta.c:221 clutter/clutter-input-device.c:315
+#: clutter/deprecated/clutter-shader.c:313
+msgid "Enabled"
+msgstr "Activat"
+
+#: clutter/clutter-actor-meta.c:222
+msgid "Whether the meta is enabled"
+msgstr "Specifică dacă meta-ul este activat"
+
+#: clutter/clutter-align-constraint.c:281
+#: clutter/clutter-bind-constraint.c:356 clutter/clutter-clone.c:345
+#: clutter/clutter-snap-constraint.c:321
+msgid "Source"
+msgstr "Sursă"
+
+#: clutter/clutter-align-constraint.c:282
+msgid "The source of the alignment"
+msgstr "Sursa alinierii"
+
+#: clutter/clutter-align-constraint.c:295
+msgid "Align Axis"
+msgstr "Axă de aliniere"
+
+#: clutter/clutter-align-constraint.c:296
+msgid "The axis to align the position to"
+msgstr "Axa la care să se alinieze poziția"
+
+#: clutter/clutter-align-constraint.c:315
+#: clutter/clutter-desaturate-effect.c:270
+msgid "Factor"
+msgstr "Factor"
+
+#: clutter/clutter-align-constraint.c:316
+msgid "The alignment factor, between 0.0 and 1.0"
+msgstr "Factorul de aliniere, între 0.0 și 1.0"
+
+#: clutter/clutter-alpha.c:352 clutter/clutter-animation.c:566
+#: clutter/clutter-animator.c:1802
+msgid "Timeline"
+msgstr "Cronologie"
+
+#: clutter/clutter-alpha.c:353
+msgid "Timeline used by the alpha"
+msgstr "Cronologia folosită de către alfa"
+
+#: clutter/clutter-alpha.c:368
+msgid "Alpha value"
+msgstr "Valoarea alfa"
+
+#: clutter/clutter-alpha.c:369
+msgid "Alpha value as computed by the alpha"
+msgstr "Opacitatea calculată de către alfa"
+
+#: clutter/clutter-alpha.c:389 clutter/clutter-animation.c:522
+msgid "Mode"
+msgstr "Mod"
+
+#: clutter/clutter-alpha.c:390
+msgid "Progress mode"
+msgstr "Mod progres"
+
+#: clutter/clutter-animation.c:506
+msgid "Object"
+msgstr "Obiect"
+
+#: clutter/clutter-animation.c:507
+msgid "Object to which the animation applies"
+msgstr "Obiectul asupra căruia se aplică animația"
+
+#: clutter/clutter-animation.c:523
+msgid "The mode of the animation"
+msgstr "Modul animației"
+
+#: clutter/clutter-animation.c:537 clutter/clutter-animator.c:1786
+#: clutter/clutter-media.c:194 clutter/clutter-state.c:1488
+#: clutter/clutter-timeline.c:581
+msgid "Duration"
+msgstr "Durată"
+
+#: clutter/clutter-animation.c:538
+msgid "Duration of the animation, in milliseconds"
+msgstr "Durata animației, în milisecunde"
+
+#: clutter/clutter-animation.c:552 clutter/clutter-timeline.c:550
+msgid "Loop"
+msgstr "Repetă"
+
+#: clutter/clutter-animation.c:553
+msgid "Whether the animation should loop"
+msgstr "Specifică dacă animația se va repeta"
+
+#: clutter/clutter-animation.c:567
+msgid "The timeline used by the animation"
+msgstr "Cronologia folosită de animație"
+
+#: clutter/clutter-animation.c:583 clutter/deprecated/clutter-behaviour.c:240
+msgid "Alpha"
+msgstr "Alfa"
+
+#: clutter/clutter-animation.c:584
+msgid "The alpha used by the animation"
+msgstr "Opacitatea folosită de animație"
+
+#: clutter/clutter-animator.c:1787
+msgid "The duration of the animation"
+msgstr "Durata animației"
+
+#: clutter/clutter-animator.c:1803
+msgid "The timeline of the animation"
+msgstr "Cronologia animației"
+
+#: clutter/clutter-backend.c:376
+msgid "Unable to initialize the Clutter backend"
+msgstr "Nu s-a putut inițializa backend-ul Clutter"
+
+#: clutter/clutter-backend.c:450
+#, c-format
+msgid "The backend of type '%s' does not support creating multiple stages"
+msgstr "Backend-ul de tip „%s” nu suportă crearea de scene multiple"
+
+#: clutter/clutter-bind-constraint.c:357
+msgid "The source of the binding"
+msgstr "Sursa asocierii"
+
+#: clutter/clutter-bind-constraint.c:370
+msgid "Coordinate"
+msgstr "Coordonată"
+
+#: clutter/clutter-bind-constraint.c:371
+msgid "The coordinate to bind"
+msgstr "Coordonata de asociat"
+
+#: clutter/clutter-bind-constraint.c:385 clutter/clutter-path-constraint.c:226
+#: clutter/clutter-snap-constraint.c:366
+msgid "Offset"
+msgstr "Decalaj"
+
+#: clutter/clutter-bind-constraint.c:386
+msgid "The offset in pixels to apply to the binding"
+msgstr "Decalajul în pixeli de aplicat asocierii"
+
+#: clutter/clutter-binding-pool.c:320
+msgid "The unique name of the binding pool"
+msgstr "Numele unic al mulțimii de asociere"
+
+#: clutter/clutter-bin-layout.c:266 clutter/clutter-bin-layout.c:588
+#: clutter/clutter-box-layout.c:408 clutter/clutter-table-layout.c:662
+msgid "Horizontal Alignment"
+msgstr "Aliniere orizontală"
+
+#: clutter/clutter-bin-layout.c:267
+msgid "Horizontal alignment for the actor inside the layout manager"
+msgstr ""
+"Alinierea orizontală pentru actorul din interiorul administratorului de "
+"poziționare"
+
+#: clutter/clutter-bin-layout.c:275 clutter/clutter-bin-layout.c:605
+#: clutter/clutter-box-layout.c:417 clutter/clutter-table-layout.c:677
+msgid "Vertical Alignment"
+msgstr "Aliniere verticală"
+
+#: clutter/clutter-bin-layout.c:276
+msgid "Vertical alignment for the actor inside the layout manager"
+msgstr ""
+"Alinierea verticală pentru actorul din interiorul administratorului de "
+"poziționare"
+
+#: clutter/clutter-bin-layout.c:589
+msgid "Default horizontal alignment for the actors inside the layout manager"
+msgstr ""
+"Alinierea orizontală implicită pentru actorii din interiorul "
+"administratorului de poziționare"
+
+#: clutter/clutter-bin-layout.c:606
+msgid "Default vertical alignment for the actors inside the layout manager"
+msgstr ""
+"Alinierea verticală implicită pentru actorii din interiorul "
+"administratorului de poziționare"
+
+#: clutter/clutter-box-layout.c:383
+msgid "Expand"
+msgstr "Extinde"
+
+#: clutter/clutter-box-layout.c:384
+msgid "Allocate extra space for the child"
+msgstr "Alocă spațiu adițional pentru copil"
+
+#: clutter/clutter-box-layout.c:390 clutter/clutter-table-layout.c:641
+msgid "Horizontal Fill"
+msgstr "Umplere orizontală"
+
+#: clutter/clutter-box-layout.c:391 clutter/clutter-table-layout.c:642
+msgid ""
+"Whether the child should receive priority when the container is allocating "
+"spare space on the horizontal axis"
+msgstr ""
+"Specifică dacă copilul ar trebui să aibă prioritate când containerul alocă "
+"spațiu de rezerva pe axa orizontală"
+
+#: clutter/clutter-box-layout.c:399 clutter/clutter-table-layout.c:648
+msgid "Vertical Fill"
+msgstr "Umplere verticală"
+
+#: clutter/clutter-box-layout.c:400 clutter/clutter-table-layout.c:649
+msgid ""
+"Whether the child should receive priority when the container is allocating "
+"spare space on the vertical axis"
+msgstr ""
+"Specifică dacă copilul ar trebui să aibă prioritate când containerul alocă "
+"spațiu de rezerva pe axa verticală"
+
+#: clutter/clutter-box-layout.c:409 clutter/clutter-table-layout.c:663
+msgid "Horizontal alignment of the actor within the cell"
+msgstr "Alinierea orizontală a actorului în celulă"
+
+#: clutter/clutter-box-layout.c:418 clutter/clutter-table-layout.c:678
+msgid "Vertical alignment of the actor within the cell"
+msgstr "Alinierea verticală a actorului în celulă"
+
+#: clutter/clutter-box-layout.c:1311
+msgid "Vertical"
+msgstr "Verticală"
+
+#: clutter/clutter-box-layout.c:1312
+msgid "Whether the layout should be vertical, rather than horizontal"
+msgstr "Specifică dacă poziționarea va fi verticală, în loc de orizontală"
+
+#: clutter/clutter-box-layout.c:1327 clutter/clutter-flow-layout.c:898
+msgid "Homogeneous"
+msgstr "Omogenă"
+
+#: clutter/clutter-box-layout.c:1328
+msgid ""
+"Whether the layout should be homogeneous, i.e. all childs get the same size"
+msgstr ""
+"Specifică dacă poziționarea va fi omogenă, adică toți copiii primesc aceeași "
+"dimensiune"
+
+#: clutter/clutter-box-layout.c:1343
+msgid "Pack Start"
+msgstr "Împachetare început"
+
+#: clutter/clutter-box-layout.c:1344
+msgid "Whether to pack items at the start of the box"
+msgstr "Specifică dacă elementele vor fi împachetate la începutul cutiei"
+
+#: clutter/clutter-box-layout.c:1357
+msgid "Spacing"
+msgstr "Spațiere"
+
+#: clutter/clutter-box-layout.c:1358
+msgid "Spacing between children"
+msgstr "Spațiere între copii"
+
+#: clutter/clutter-box-layout.c:1372 clutter/clutter-table-layout.c:1775
+msgid "Use Animations"
+msgstr "Folosește animații"
+
+#: clutter/clutter-box-layout.c:1373 clutter/clutter-table-layout.c:1776
+msgid "Whether layout changes should be animated"
+msgstr "Specifică dacă schimbările de poziționare să fie animate"
+
+#: clutter/clutter-box-layout.c:1394 clutter/clutter-table-layout.c:1797
+msgid "Easing Mode"
+msgstr "Modul de atenuare"
+
+#: clutter/clutter-box-layout.c:1395 clutter/clutter-table-layout.c:1798
+msgid "The easing mode of the animations"
+msgstr "Modul de atenuare al animațiilor "
+
+#: clutter/clutter-box-layout.c:1412 clutter/clutter-table-layout.c:1815
+msgid "Easing Duration"
+msgstr "Durata atenuării"
+
+#: clutter/clutter-box-layout.c:1413 clutter/clutter-table-layout.c:1816
+msgid "The duration of the animations"
+msgstr "Durata animațiilor"
+
+#: clutter/clutter-brightness-contrast-effect.c:307
+msgid "Brightness"
+msgstr ""
+
+#: clutter/clutter-brightness-contrast-effect.c:308
+#, fuzzy
+msgid "The brightness change to apply"
+msgstr "Nuanța care va fi aplicată"
+
+#: clutter/clutter-brightness-contrast-effect.c:327
+msgid "Contrast"
+msgstr ""
+
+#: clutter/clutter-brightness-contrast-effect.c:328
+#, fuzzy
+msgid "The contrast change to apply"
+msgstr "Nuanța care va fi aplicată"
+
+#: clutter/clutter-cairo-texture.c:591
+msgid "Surface Width"
+msgstr "Lățimea suprafeței"
+
+#: clutter/clutter-cairo-texture.c:592
+msgid "The width of the Cairo surface"
+msgstr "Lățimea suprafeței Cairo"
+
+#: clutter/clutter-cairo-texture.c:606
+msgid "Surface Height"
+msgstr "Înălțimea suprafeței"
+
+#: clutter/clutter-cairo-texture.c:607
+msgid "The height of the Cairo surface"
+msgstr "Înălțimea suprafeței Cairo"
+
+#: clutter/clutter-cairo-texture.c:624
+msgid "Auto Resize"
+msgstr "Redimensionare automată"
+
+#: clutter/clutter-cairo-texture.c:625
+msgid "Whether the surface should match the allocation"
+msgstr "Specifică dacă suprafața va corespunde cu alocarea"
+
+#: clutter/clutter-canvas.c:215
+#, fuzzy
+msgid "The width of the canvas"
+msgstr "Lățimea suprafeței Cairo"
+
+#: clutter/clutter-canvas.c:231
+#, fuzzy
+msgid "The height of the canvas"
+msgstr "Înălțimea suprafeței Cairo"
+
+#: clutter/clutter-child-meta.c:127
+msgid "Container"
+msgstr "Container"
+
+#: clutter/clutter-child-meta.c:128
+msgid "The container that created this data"
+msgstr "Containerul care a creat aceste date"
+
+#: clutter/clutter-child-meta.c:143
+msgid "The actor wrapped by this data"
+msgstr "Actorul încadrat de aceste date"
+
+#: clutter/clutter-click-action.c:546
+msgid "Pressed"
+msgstr "Apăsat"
+
+#: clutter/clutter-click-action.c:547
+msgid "Whether the clickable should be in pressed state"
+msgstr "Specifică dacă butonul va fi în starea apăsat"
+
+#: clutter/clutter-click-action.c:560
+msgid "Held"
+msgstr "Reținut"
+
+#: clutter/clutter-click-action.c:561
+#, fuzzy
+msgid "Whether the clickable has a grab"
+msgstr "Specifică dacă elementul clic-abil poate fi prins"
+
+#: clutter/clutter-click-action.c:578 clutter/clutter-settings.c:599
+msgid "Long Press Duration"
+msgstr "Durata unei apăsări lungi"
+
+#: clutter/clutter-click-action.c:579
+msgid "The minimum duration of a long press to recognize the gesture"
+msgstr "Durata minimă a unei apăsări lungi pentru a recunoaște gestul"
+
+#: clutter/clutter-click-action.c:597
+msgid "Long Press Threshold"
+msgstr "Pragul unei apăsări lungi"
+
+#: clutter/clutter-click-action.c:598
+msgid "The maximum threshold before a long press is cancelled"
+msgstr "Pragul maxim înaintea căruia o apăsare îndelungată este anulată"
+
+#: clutter/clutter-clone.c:346
+msgid "Specifies the actor to be cloned"
+msgstr "Specifică actorul de clonat"
+
+#: clutter/clutter-colorize-effect.c:251
+msgid "Tint"
+msgstr "Nuanță"
+
+#: clutter/clutter-colorize-effect.c:252
+msgid "The tint to apply"
+msgstr "Nuanța care va fi aplicată"
+
+#: clutter/clutter-deform-effect.c:588
+msgid "Horizontal Tiles"
+msgstr "Dale orizontale"
+
+#: clutter/clutter-deform-effect.c:589
+msgid "The number of horizontal tiles"
+msgstr "Numărul de dale orizontale"
+
+#: clutter/clutter-deform-effect.c:604
+msgid "Vertical Tiles"
+msgstr "Dale verticale"
+
+#: clutter/clutter-deform-effect.c:605
+msgid "The number of vertical tiles"
+msgstr "Numărul de dale verticale"
+
+#: clutter/clutter-deform-effect.c:622
+msgid "Back Material"
+msgstr "Materialul din spate"
+
+#: clutter/clutter-deform-effect.c:623
+msgid "The material to be used when painting the back of the actor"
+msgstr "Materialul folosit când se va picta spatele actorului"
+
+#: clutter/clutter-desaturate-effect.c:271
+msgid "The desaturation factor"
+msgstr "Factorul de desaturare"
+
+#: clutter/clutter-device-manager.c:131 clutter/clutter-input-device.c:344
+#: clutter/x11/clutter-keymap-x11.c:316
+msgid "Backend"
+msgstr "Backend"
+
+#: clutter/clutter-device-manager.c:132
+msgid "The ClutterBackend of the device manager"
+msgstr "ClutterBackend-ul administratorului de dispozitive"
+
+#: clutter/clutter-drag-action.c:602
+msgid "Horizontal Drag Threshold"
+msgstr "Pragul pentru tragere pe orizontală"
+
+#: clutter/clutter-drag-action.c:603
+msgid "The horizontal amount of pixels required to start dragging"
+msgstr "Cantitatea de pixeli pe orizontală necesară pentru a începe tragerea"
+
+#: clutter/clutter-drag-action.c:630
+msgid "Vertical Drag Threshold"
+msgstr "Pragul pentru tragere pe verticală"
+
+#: clutter/clutter-drag-action.c:631
+msgid "The vertical amount of pixels required to start dragging"
+msgstr "Cantitatea de pixeli pe verticală necesară pentru a începe tragerea"
+
+#: clutter/clutter-drag-action.c:652
+msgid "Drag Handle"
+msgstr "Identificatorul de tragere"
+
+#: clutter/clutter-drag-action.c:653
+msgid "The actor that is being dragged"
+msgstr "Actorul care este tras"
+
+#: clutter/clutter-drag-action.c:666
+msgid "Drag Axis"
+msgstr "Axa de tragere"
+
+#: clutter/clutter-drag-action.c:667
+msgid "Constraints the dragging to an axis"
+msgstr "Constrânge tragerea la o singură axă"
+
+#: clutter/clutter-flow-layout.c:882
+msgid "Orientation"
+msgstr "Orientare"
+
+#: clutter/clutter-flow-layout.c:883
+msgid "The orientation of the layout"
+msgstr "Orientarea poziționării"
+
+#: clutter/clutter-flow-layout.c:899
+msgid "Whether each item should receive the same allocation"
+msgstr "Specifică dacă fiecare element va primi aceeași alocare"
+
+#: clutter/clutter-flow-layout.c:914 clutter/clutter-table-layout.c:1746
+msgid "Column Spacing"
+msgstr "Spațiere coloane"
+
+#: clutter/clutter-flow-layout.c:915
+msgid "The spacing between columns"
+msgstr "Spațierea dintre coloane"
+
+#: clutter/clutter-flow-layout.c:931 clutter/clutter-table-layout.c:1760
+msgid "Row Spacing"
+msgstr "Spațiere rânduri"
+
+#: clutter/clutter-flow-layout.c:932
+msgid "The spacing between rows"
+msgstr "Spațierea dintre rânduri"
+
+#: clutter/clutter-flow-layout.c:946
+msgid "Minimum Column Width"
+msgstr "Lățime minimă coloană"
+
+#: clutter/clutter-flow-layout.c:947
+msgid "Minimum width for each column"
+msgstr "Lățimea minimă a fiecărei coloane"
+
+#: clutter/clutter-flow-layout.c:962
+msgid "Maximum Column Width"
+msgstr "Lățime maximă coloană"
+
+#: clutter/clutter-flow-layout.c:963
+msgid "Maximum width for each column"
+msgstr "Lățimea maximă a fiecărei coloane"
+
+#: clutter/clutter-flow-layout.c:977
+msgid "Minimum Row Height"
+msgstr "Înălțime minimă rând"
+
+#: clutter/clutter-flow-layout.c:978
+msgid "Minimum height for each row"
+msgstr "Înălțimea minimă pentru fiecare rând"
+
+#: clutter/clutter-flow-layout.c:993
+msgid "Maximum Row Height"
+msgstr "Înălțime maximă rând"
+
+#: clutter/clutter-flow-layout.c:994
+msgid "Maximum height for each row"
+msgstr "Înălțimea maximă pentru fiecare rând"
+
+#: clutter/clutter-image.c:229 clutter/clutter-image.c:317
+#, fuzzy
+msgid "Unable to load image data"
+msgstr "Nu s-au putut încărca imaginile"
+
+#: clutter/clutter-input-device.c:220
+msgid "Id"
+msgstr "Identificator"
+
+#: clutter/clutter-input-device.c:221
+msgid "Unique identifier of the device"
+msgstr "Identificatorul unic al dispozitivului"
+
+#: clutter/clutter-input-device.c:237
+msgid "The name of the device"
+msgstr "Numele dispozitivului"
+
+#: clutter/clutter-input-device.c:251
+msgid "Device Type"
+msgstr "Tip dispozitiv"
+
+#: clutter/clutter-input-device.c:252
+msgid "The type of the device"
+msgstr "Tipul dispozitivului"
+
+#: clutter/clutter-input-device.c:267
+msgid "Device Manager"
+msgstr "Administrator de dispozitive"
+
+#: clutter/clutter-input-device.c:268
+msgid "The device manager instance"
+msgstr "Instanța administratorului de dispozitive"
+
+#: clutter/clutter-input-device.c:281
+msgid "Device Mode"
+msgstr "Mod dispozitiv"
+
+#: clutter/clutter-input-device.c:282
+msgid "The mode of the device"
+msgstr "Modul dispozitivului"
+
+#: clutter/clutter-input-device.c:296
+msgid "Has Cursor"
+msgstr "Are cursor"
+
+#: clutter/clutter-input-device.c:297
+msgid "Whether the device has a cursor"
+msgstr "Specifică dacă dispozitivul are cursor"
+
+#: clutter/clutter-input-device.c:316
+msgid "Whether the device is enabled"
+msgstr "Specifică dacă dispozitivul este activat"
+
+#: clutter/clutter-input-device.c:329
+msgid "Number of Axes"
+msgstr "Număr axe"
+
+#: clutter/clutter-input-device.c:330
+msgid "The number of axes on the device"
+msgstr "Numărul axelor de pe dispozitiv"
+
+#: clutter/clutter-input-device.c:345
+msgid "The backend instance"
+msgstr "Instanța backend-ului"
+
+#: clutter/clutter-interval.c:387
+msgid "Value Type"
+msgstr "Tipul valorii"
+
+#: clutter/clutter-interval.c:388
+msgid "The type of the values in the interval"
+msgstr "Tipul valorilor din interval"
+
+#: clutter/clutter-layout-meta.c:117
+msgid "Manager"
+msgstr "Administrator"
+
+#: clutter/clutter-layout-meta.c:118
+msgid "The manager that created this data"
+msgstr "Administratorul care a creat aceste date"
+
+#: clutter/clutter-main.c:763
+msgid "default:LTR"
+msgstr ""
+
+#: clutter/clutter-main.c:1610
+msgid "Show frames per second"
+msgstr "Afișează cadre pe secundă"
+
+#: clutter/clutter-main.c:1612
+msgid "Default frame rate"
+msgstr "Frecvență cadre implicită"
+
+#: clutter/clutter-main.c:1614
+msgid "Make all warnings fatal"
+msgstr "Consideră orice eroare ca fiind fatală"
+
+#: clutter/clutter-main.c:1617
+msgid "Direction for the text"
+msgstr "Direcția textului"
+
+#: clutter/clutter-main.c:1620
+msgid "Disable mipmapping on text"
+msgstr "Dezactivează maparea MIP pe text"
+
+#: clutter/clutter-main.c:1623
+msgid "Use 'fuzzy' picking"
+msgstr "Folosește alegere „fuzzy”"
+
+#: clutter/clutter-main.c:1626
+msgid "Clutter debugging flags to set"
+msgstr "Marcaje de depanare Clutter de setat"
+
+#: clutter/clutter-main.c:1628
+msgid "Clutter debugging flags to unset"
+msgstr "Marcaje de depanare Clutter de dezactivat"
+
+#: clutter/clutter-main.c:1632
+msgid "Clutter profiling flags to set"
+msgstr "Marcaje de profilare Clutter de setat"
+
+#: clutter/clutter-main.c:1634
+msgid "Clutter profiling flags to unset"
+msgstr "Marcaje de profilare Clutter de dezactivat"
+
+#: clutter/clutter-main.c:1637
+msgid "Enable accessibility"
+msgstr "Activează accesibilitatea"
+
+#: clutter/clutter-main.c:1829
+msgid "Clutter Options"
+msgstr "Configurări Clutter"
+
+#: clutter/clutter-main.c:1830
+msgid "Show Clutter Options"
+msgstr "Afișează configurările Clutter"
+
+#: clutter/clutter-media.c:77
+msgid "URI"
+msgstr "URI"
+
+#: clutter/clutter-media.c:78
+msgid "URI of a media file"
+msgstr "URI-ul unui fișier media"
+
+#: clutter/clutter-media.c:91
+msgid "Playing"
+msgstr "Redare"
+
+#: clutter/clutter-media.c:92
+msgid "Whether the actor is playing"
+msgstr "Specifică dacă actorul este în redare"
+
+#: clutter/clutter-media.c:106
+msgid "Progress"
+msgstr "Progres"
+
+#: clutter/clutter-media.c:107
+msgid "Current progress of the playback"
+msgstr "Progresul curent al redării"
+
+#: clutter/clutter-media.c:120
+msgid "Subtitle URI"
+msgstr "URI subtitrare"
+
+#: clutter/clutter-media.c:121
+msgid "URI of a subtitle file"
+msgstr "URI-ul unui fișier de subtitrare"
+
+#: clutter/clutter-media.c:136
+msgid "Subtitle Font Name"
+msgstr "Nume font subtitrare"
+
+#: clutter/clutter-media.c:137
+msgid "The font used to display subtitles"
+msgstr "Fontul folosit la afișarea subtitrărilor"
+
+#: clutter/clutter-media.c:151
+msgid "Audio Volume"
+msgstr "Volum audio"
+
+#: clutter/clutter-media.c:152
+msgid "The volume of the audio"
+msgstr "Volumul sunetului"
+
+#: clutter/clutter-media.c:165
+msgid "Can Seek"
+msgstr "Poate fi derulat"
+
+#: clutter/clutter-media.c:166
+msgid "Whether the current stream is seekable"
+msgstr "Specifică dacă fluxul curent poate fi derulat"
+
+#: clutter/clutter-media.c:180
+msgid "Buffer Fill"
+msgstr "Umplere memorie tampon"
+
+#: clutter/clutter-media.c:181
+msgid "The fill level of the buffer"
+msgstr "Nivelul de umplere al memoriei tampon"
+
+#: clutter/clutter-media.c:195
+msgid "The duration of the stream, in seconds"
+msgstr "Durata fluxului, în secunde"
+
+#: clutter/clutter-path-constraint.c:212
+#: clutter/deprecated/clutter-behaviour-path.c:224
+msgid "Path"
+msgstr "Cale"
+
+#: clutter/clutter-path-constraint.c:213
+msgid "The path used to constrain an actor"
+msgstr "Calea folosită pentru a constrânge un actor"
+
+#: clutter/clutter-path-constraint.c:227
+msgid "The offset along the path, between -1.0 and 2.0"
+msgstr "Decalajul pe parcursul căii, între -1.0 și 2.0"
+
+#: clutter/clutter-property-transition.c:196
+#, fuzzy
+msgid "Property Name"
+msgstr "Numele fontului"
+
+#: clutter/clutter-property-transition.c:197
+#, fuzzy
+msgid "The name of the property to animate"
+msgstr "Numele meta-ului"
+
+#: clutter/clutter-script.c:464
+msgid "Filename Set"
+msgstr "Fișier setat"
+
+#: clutter/clutter-script.c:465
+msgid "Whether the :filename property is set"
+msgstr "Specifică dacă proprietatea :filename este setată"
+
+#: clutter/clutter-script.c:479 clutter/clutter-texture.c:1078
+msgid "Filename"
+msgstr "Denumire fișier"
+
+#: clutter/clutter-script.c:480
+msgid "The path of the currently parsed file"
+msgstr "Calea fișierului parsat curent"
+
+#: clutter/clutter-script.c:497
+msgid "Translation Domain"
+msgstr ""
+
+#: clutter/clutter-script.c:498
+msgid "The translation domain used to localize string"
+msgstr ""
+
+#: clutter/clutter-settings.c:440
+msgid "Double Click Time"
+msgstr "Timp dublu-clic"
+
+#: clutter/clutter-settings.c:441
+msgid "The time between clicks necessary to detect a multiple click"
+msgstr "Timpul dintre clicuri necesar pentru a detecta clicuri multiple"
+
+#: clutter/clutter-settings.c:456
+msgid "Double Click Distance"
+msgstr "Distanță dublu-clic"
+
+#: clutter/clutter-settings.c:457
+msgid "The distance between clicks necessary to detect a multiple click"
+msgstr "Distanța dintre clicuri necesar pentru a detecta clicuri multiple"
+
+#: clutter/clutter-settings.c:472
+msgid "Drag Threshold"
+msgstr "Prag pentru tragere"
+
+#: clutter/clutter-settings.c:473
+msgid "The distance the cursor should travel before starting to drag"
+msgstr ""
+"Distanța pe care cursorul ar trebui să o parcurgă înainte de a începe "
+"tragerea"
+
+#: clutter/clutter-settings.c:488 clutter/clutter-text.c:2996
+msgid "Font Name"
+msgstr "Numele fontului"
+
+#: clutter/clutter-settings.c:489
+msgid ""
+"The description of the default font, as one that could be parsed by Pango"
+msgstr "Descrierea fontului implicit, ca unul ce ar putea fi parsat de Pango"
+
+#: clutter/clutter-settings.c:504
+msgid "Font Antialias"
+msgstr "Antialias font"
+
+#: clutter/clutter-settings.c:505
+msgid ""
+"Whether to use antialiasing (1 to enable, 0 to disable, and -1 to use the "
+"default)"
+msgstr ""
+"Specifică dacă se va folosi antialiasing (1 pentru activare, 0 pentru "
+"dezactivare, și -1 pentru valoarea implicită)"
+
+#: clutter/clutter-settings.c:521
+msgid "Font DPI"
+msgstr "DPI font"
+
+#: clutter/clutter-settings.c:522
+msgid ""
+"The resolution of the font, in 1024 * dots/inch, or -1 to use the default"
+msgstr ""
+"Rezoluția fontului, în 1024 * puncte/țol, sau -1 pentru valoarea implicită"
+
+#: clutter/clutter-settings.c:538
+msgid "Font Hinting"
+msgstr "Hinting font"
+
+#: clutter/clutter-settings.c:539
+msgid ""
+"Whether to use hinting (1 to enable, 0 to disable and -1 to use the default)"
+msgstr ""
+"Specifică dacă se va folosi hinting (1 pentru activare, 0 pentru "
+"dezactivare, și -1 pentru implicit)"
+
+#: clutter/clutter-settings.c:560
+msgid "Font Hint Style"
+msgstr "Stil hinting font"
+
+#: clutter/clutter-settings.c:561
+msgid "The style of hinting (hintnone, hintslight, hintmedium, hintfull)"
+msgstr ""
+"Stilul hintingului („hintnone”, „hintslight”, „hintmedium”, „hintfull”)"
+
+#: clutter/clutter-settings.c:582
+msgid "Font Subpixel Order"
+msgstr "Ordinul fontului la nivel de subpixel"
+
+#: clutter/clutter-settings.c:583
+msgid "The type of subpixel antialiasing (none, rgb, bgr, vrgb, vbgr)"
+msgstr ""
+"Tipul de antialiasing la nivel de subpixel („none”, „rgb”, „bgr”, „vrgb”, "
+"„vbgr”)"
+
+#: clutter/clutter-settings.c:600
+msgid "The minimum duration for a long press gesture to be recognized"
+msgstr "Durata minimă pentru a recunoaște gestul ca apăsare îndelungată"
+
+#: clutter/clutter-settings.c:607
+msgid "Fontconfig configuration timestamp"
+msgstr "Marcaj de timp pentru configurația fontconfig"
+
+#: clutter/clutter-settings.c:608
+msgid "Timestamp of the current fontconfig configuration"
+msgstr "Marcaj de timp pentru configurația fontconfig curentă"
+
+#: clutter/clutter-settings.c:625
+msgid "Password Hint Time"
+msgstr "Timpul de afișare indiciu parolă"
+
+#: clutter/clutter-settings.c:626
+msgid "How long to show the last input character in hidden entries"
+msgstr ""
+"Cât de mult timp să se afișeze ultimul caracter introdus în intrările ascunse"
+
+#: clutter/clutter-shader-effect.c:486
+msgid "Shader Type"
+msgstr "Tip shader"
+
+#: clutter/clutter-shader-effect.c:487
+msgid "The type of shader used"
+msgstr "Tipul shader-ului folosit"
+
+#: clutter/clutter-snap-constraint.c:322
+msgid "The source of the constraint"
+msgstr "Sursa constrângerii"
+
+#: clutter/clutter-snap-constraint.c:335
+msgid "From Edge"
+msgstr "Muchia sursă"
+
+#: clutter/clutter-snap-constraint.c:336
+msgid "The edge of the actor that should be snapped"
+msgstr "Muchia actorului care ar trebui să fie cuplată"
+
+#: clutter/clutter-snap-constraint.c:350
+msgid "To Edge"
+msgstr "Muchia destinație"
+
+#: clutter/clutter-snap-constraint.c:351
+msgid "The edge of the source that should be snapped"
+msgstr "Muchia sursei care ar trebui să fie cuplată"
+
+#: clutter/clutter-snap-constraint.c:367
+msgid "The offset in pixels to apply to the constraint"
+msgstr "Decalajul în pixeli de aplicat constrângerii"
+
+#: clutter/clutter-stage.c:1896
+msgid "Fullscreen Set"
+msgstr "Pe tot ecranul"
+
+#: clutter/clutter-stage.c:1897
+msgid "Whether the main stage is fullscreen"
+msgstr "Specifică dacă scena principală este pe tot ecranul"
+
+#: clutter/clutter-stage.c:1911
+msgid "Offscreen"
+msgstr "În afara ecranului"
+
+#: clutter/clutter-stage.c:1912
+msgid "Whether the main stage should be rendered offscreen"
+msgstr "Specifică dacă scena principală va fi randată în afara ecranului"
+
+#: clutter/clutter-stage.c:1924 clutter/clutter-text.c:3109
+msgid "Cursor Visible"
+msgstr "Cursor vizibil"
+
+#: clutter/clutter-stage.c:1925
+msgid "Whether the mouse pointer is visible on the main stage"
+msgstr "Specifică dacă cursorul mausului este vizibil pe scena principală"
+
+#: clutter/clutter-stage.c:1939
+msgid "User Resizable"
+msgstr "Redimensionabilă de către utilizator"
+
+#: clutter/clutter-stage.c:1940
+msgid "Whether the stage is able to be resized via user interaction"
+msgstr ""
+"Specifică dacă scena poate fi redimensionată printr-o interacțiune a "
+"utilizatorului"
+
+#: clutter/clutter-stage.c:1955 clutter/deprecated/clutter-box.c:260
+#: clutter/deprecated/clutter-rectangle.c:272
+msgid "Color"
+msgstr "Culoare"
+
+#: clutter/clutter-stage.c:1956
+msgid "The color of the stage"
+msgstr "Culoarea scenei"
+
+#: clutter/clutter-stage.c:1971
+msgid "Perspective"
+msgstr "Perspectivă"
+
+#: clutter/clutter-stage.c:1972
+msgid "Perspective projection parameters"
+msgstr "Parametrii de proiecție a perspectivei"
+
+#: clutter/clutter-stage.c:1987
+msgid "Title"
+msgstr "Titlu"
+
+#: clutter/clutter-stage.c:1988
+msgid "Stage Title"
+msgstr "Titlul scenei"
+
+#: clutter/clutter-stage.c:2005
+msgid "Use Fog"
+msgstr "Utilizare ceață"
+
+#: clutter/clutter-stage.c:2006
+msgid "Whether to enable depth cueing"
+msgstr "Specifică activarea indicării adâncimii"
+
+#: clutter/clutter-stage.c:2022
+msgid "Fog"
+msgstr "Ceață"
+
+#: clutter/clutter-stage.c:2023
+msgid "Settings for the depth cueing"
+msgstr "Configurări pentru indicarea adâncimii"
+
+#: clutter/clutter-stage.c:2039
+msgid "Use Alpha"
+msgstr "Utilizează alfa"
+
+#: clutter/clutter-stage.c:2040
+msgid "Whether to honour the alpha component of the stage color"
+msgstr "Specifică dacă să se respecte componenta de opacitate a culorii scenei"
+
+#: clutter/clutter-stage.c:2056
+msgid "Key Focus"
+msgstr "Focalizare tastă"
+
+#: clutter/clutter-stage.c:2057
+msgid "The currently key focused actor"
+msgstr "Actorul focalizat momentan cu o tastă"
+
+#: clutter/clutter-stage.c:2073
+msgid "No Clear Hint"
+msgstr "Indiciu pentru oprirea curățării (no-clear)"
+
+#: clutter/clutter-stage.c:2074
+msgid "Whether the stage should clear its contents"
+msgstr "Specifică dacă scena își va curăța conținutul"
+
+#: clutter/clutter-stage.c:2087
+msgid "Accept Focus"
+msgstr "Acceptă focalizare"
+
+#: clutter/clutter-stage.c:2088
+msgid "Whether the stage should accept focus on show"
+msgstr "Specifică dacă scena va accepta focalizare la afișare"
+
+#: clutter/clutter-state.c:1474
+msgid "State"
+msgstr "Stare"
+
+#: clutter/clutter-state.c:1475
+msgid "Currently set state, (transition to this state might not be complete)"
+msgstr ""
+"Starea setată, (posibil ca tranziția la această stare să nu fie completă)"
+
+#: clutter/clutter-state.c:1489
+msgid "Default transition duration"
+msgstr "Durația de tranziție implicită"
+
+#: clutter/clutter-table-layout.c:595
+msgid "Column Number"
+msgstr "Numărul coloanei"
+
+#: clutter/clutter-table-layout.c:596
+msgid "The column the widget resides in"
+msgstr "Coloana pe care se află widget-ul"
+
+#: clutter/clutter-table-layout.c:603
+msgid "Row Number"
+msgstr "Numărul rândului"
+
+#: clutter/clutter-table-layout.c:604
+msgid "The row the widget resides in"
+msgstr "Rândul pe care se află widget-ul"
+
+#: clutter/clutter-table-layout.c:611
+msgid "Column Span"
+msgstr "Întindere coloane"
+
+#: clutter/clutter-table-layout.c:612
+msgid "The number of columns the widget should span"
+msgstr "Numărul de coloane pe care se va întinde widget-ul"
+
+#: clutter/clutter-table-layout.c:619
+msgid "Row Span"
+msgstr "Întindere rânduri"
+
+#: clutter/clutter-table-layout.c:620
+msgid "The number of rows the widget should span"
+msgstr "Numărul de rânduri pe care se va întinde widget-ul"
+
+#: clutter/clutter-table-layout.c:627
+msgid "Horizontal Expand"
+msgstr "Extindere orizontală"
+
+#: clutter/clutter-table-layout.c:628
+msgid "Allocate extra space for the child in horizontal axis"
+msgstr "Alocă spațiu în plus pentru copilul de pe axa orizontală"
+
+#: clutter/clutter-table-layout.c:634
+msgid "Vertical Expand"
+msgstr "Extindere verticală"
+
+#: clutter/clutter-table-layout.c:635
+msgid "Allocate extra space for the child in vertical axis"
+msgstr "Alocă spațiu în plus pentru copilul de pe axa verticală"
+
+#: clutter/clutter-table-layout.c:1747
+msgid "Spacing between columns"
+msgstr "Spațiere dintre coloane"
+
+#: clutter/clutter-table-layout.c:1761
+msgid "Spacing between rows"
+msgstr "Spațiere dintre rânduri"
+
+#: clutter/clutter-text-buffer.c:351 clutter/clutter-text.c:3031
+msgid "Text"
+msgstr "Text"
+
+#: clutter/clutter-text-buffer.c:352
+#, fuzzy
+msgid "The contents of the buffer"
+msgstr "Nivelul de umplere al memoriei tampon"
+
+#: clutter/clutter-text-buffer.c:365
+#, fuzzy
+msgid "Text length"
+msgstr "Lungime maximă"
+
+#: clutter/clutter-text-buffer.c:366
+#, fuzzy
+msgid "Length of the text currently in the buffer"
+msgstr "Calea fișierului parsat curent"
+
+#: clutter/clutter-text-buffer.c:379
+#, fuzzy
+msgid "Maximum length"
+msgstr "Lungime maximă"
+
+#: clutter/clutter-text-buffer.c:380
+msgid "Maximum number of characters for this entry. Zero if no maximum"
+msgstr ""
+
+#: clutter/clutter-text.c:2978
+#, fuzzy
+msgid "Buffer"
+msgstr "Umplere memorie tampon"
+
+#: clutter/clutter-text.c:2979
+#, fuzzy
+msgid "The buffer for the text"
+msgstr "Numele meta-ului"
+
+#: clutter/clutter-text.c:2997
+msgid "The font to be used by the text"
+msgstr "Fontul folosit de text"
+
+#: clutter/clutter-text.c:3014
+msgid "Font Description"
+msgstr "Descriere font"
+
+#: clutter/clutter-text.c:3015
+msgid "The font description to be used"
+msgstr "Descrierea fontului folosit"
+
+#: clutter/clutter-text.c:3032
+msgid "The text to render"
+msgstr "Textul de afișat"
+
+#: clutter/clutter-text.c:3046
+msgid "Font Color"
+msgstr "Culoare font"
+
+#: clutter/clutter-text.c:3047
+msgid "Color of the font used by the text"
+msgstr "Culoarea fontului folosit de către text"
+
+#: clutter/clutter-text.c:3061
+msgid "Editable"
+msgstr "Editabil"
+
+#: clutter/clutter-text.c:3062
+msgid "Whether the text is editable"
+msgstr "Specifică dacă textul este editabil"
+
+#: clutter/clutter-text.c:3077
+msgid "Selectable"
+msgstr "Selectabil"
+
+#: clutter/clutter-text.c:3078
+msgid "Whether the text is selectable"
+msgstr "Specifică dacă textul este selectabil"
+
+#: clutter/clutter-text.c:3092
+msgid "Activatable"
+msgstr "Activabil"
+
+#: clutter/clutter-text.c:3093
+msgid "Whether pressing return causes the activate signal to be emitted"
+msgstr ""
+"Specifică dacă prin apăsarea tastei Enter este emis semnalul de activare"
+
+#: clutter/clutter-text.c:3110
+msgid "Whether the input cursor is visible"
+msgstr "Specifică dacă cursorul de intrare este vizibil"
+
+#: clutter/clutter-text.c:3124 clutter/clutter-text.c:3125
+msgid "Cursor Color"
+msgstr "Culoare cursor"
+
+#: clutter/clutter-text.c:3139
+msgid "Cursor Color Set"
+msgstr "Culoarea cursorului setată"
+
+#: clutter/clutter-text.c:3140
+msgid "Whether the cursor color has been set"
+msgstr "Specifică dacă culoarea cursorului a fost setată"
+
+#: clutter/clutter-text.c:3155
+msgid "Cursor Size"
+msgstr "Dimensiune cursor"
+
+#: clutter/clutter-text.c:3156
+msgid "The width of the cursor, in pixels"
+msgstr "Lățimea cursorului, în pixeli"
+
+#: clutter/clutter-text.c:3170
+msgid "Cursor Position"
+msgstr "Poziție cursor"
+
+#: clutter/clutter-text.c:3171
+msgid "The cursor position"
+msgstr "Poziția cursorului"
+
+#: clutter/clutter-text.c:3186
+msgid "Selection-bound"
+msgstr "Margine selecție"
+
+#: clutter/clutter-text.c:3187
+msgid "The cursor position of the other end of the selection"
+msgstr "Poziția cursorului de la celălalt capăt al selecției"
+
+#: clutter/clutter-text.c:3202 clutter/clutter-text.c:3203
+msgid "Selection Color"
+msgstr "Culoare selecție"
+
+#: clutter/clutter-text.c:3217
+msgid "Selection Color Set"
+msgstr "Culoarea selecției setată"
+
+#: clutter/clutter-text.c:3218
+msgid "Whether the selection color has been set"
+msgstr "Specifică dacă culoarea selecției a fost setată"
+
+#: clutter/clutter-text.c:3233
+msgid "Attributes"
+msgstr "Atribute"
+
+#: clutter/clutter-text.c:3234
+msgid "A list of style attributes to apply to the contents of the actor"
+msgstr ""
+"O listă de atribute de stil pentru a fi aplicate conținutului actorului"
+
+#: clutter/clutter-text.c:3256
+msgid "Use markup"
+msgstr "Utilizează marcare"
+
+#: clutter/clutter-text.c:3257
+msgid "Whether or not the text includes Pango markup"
+msgstr "Specifică dacă textul include sau nu marcare Pango"
+
+#: clutter/clutter-text.c:3273
+msgid "Line wrap"
+msgstr "Rupere de linii"
+
+#: clutter/clutter-text.c:3274
+msgid "If set, wrap the lines if the text becomes too wide"
+msgstr ""
+"Dacă este setată, liniile sunt rupte în cazul în care textul devine prea lat"
+
+#: clutter/clutter-text.c:3289
+msgid "Line wrap mode"
+msgstr "Mod de rupere a liniilor"
+
+#: clutter/clutter-text.c:3290
+msgid "Control how line-wrapping is done"
+msgstr "Controlează modul de rupere a liniilor"
+
+#: clutter/clutter-text.c:3305
+msgid "Ellipsize"
+msgstr "Prescurtare"
+
+#: clutter/clutter-text.c:3306
+msgid "The preferred place to ellipsize the string"
+msgstr "Poziția preferată pentru prescurtarea șirului"
+
+#: clutter/clutter-text.c:3322
+msgid "Line Alignment"
+msgstr "Aliniere linii"
+
+#: clutter/clutter-text.c:3323
+msgid "The preferred alignment for the string, for multi-line text"
+msgstr "Alinierea preferată pentru șir, pentru text cu linii multiple"
+
+#: clutter/clutter-text.c:3339
+msgid "Justify"
+msgstr "Aliniază la ambele margini"
+
+#: clutter/clutter-text.c:3340
+msgid "Whether the text should be justified"
+msgstr "Specifică dacă textul va fi aliniat la ambele margini"
+
+#: clutter/clutter-text.c:3355
+msgid "Password Character"
+msgstr "Caracter parolă"
+
+#: clutter/clutter-text.c:3356
+msgid "If non-zero, use this character to display the actor's contents"
+msgstr ""
+"Dacă este diferit de zero, folosește acest caracter pentru a afișa "
+"conținutul actorului"
+
+#: clutter/clutter-text.c:3370
+msgid "Max Length"
+msgstr "Lungime maximă"
+
+#: clutter/clutter-text.c:3371
+msgid "Maximum length of the text inside the actor"
+msgstr "Lungimea maximă a textului în interiorul actorului"
+
+#: clutter/clutter-text.c:3394
+msgid "Single Line Mode"
+msgstr "Mod linie unică"
+
+#: clutter/clutter-text.c:3395
+msgid "Whether the text should be a single line"
+msgstr "Specifică dacă textul va fi pe o singură linie"
+
+#: clutter/clutter-text.c:3409 clutter/clutter-text.c:3410
+msgid "Selected Text Color"
+msgstr "Culoarea textului selectat"
+
+#: clutter/clutter-text.c:3424
+msgid "Selected Text Color Set"
+msgstr "Culoarea textului selectat setată"
+
+#: clutter/clutter-text.c:3425
+msgid "Whether the selected text color has been set"
+msgstr "Specifică dacă culoarea textului selectat a fost setată"
+
+#: clutter/clutter-texture.c:992
+msgid "Sync size of actor"
+msgstr "Sincronizează dimensiunea actorului"
+
+#: clutter/clutter-texture.c:993
+msgid "Auto sync size of actor to underlying pixbuf dimensions"
+msgstr ""
+"Sincronizează automat dimensiunea actorului la dimensiunile pixbuf-ului de "
+"la bază"
+
+#: clutter/clutter-texture.c:1000
+msgid "Disable Slicing"
+msgstr "Dezactivează împărțirea în bucăți mai mici"
+
+#: clutter/clutter-texture.c:1001
+msgid ""
+"Forces the underlying texture to be singular and not made of smaller space "
+"saving individual textures"
+msgstr ""
+"Forțează textura de la bază să fie singulară și nu obținută din texturi mai "
+"mici (ce ocupa mai puțin spațiu)"
+
+#: clutter/clutter-texture.c:1010
+msgid "Tile Waste"
+msgstr ""
+
+#: clutter/clutter-texture.c:1011
+msgid "Maximum waste area of a sliced texture"
+msgstr ""
+
+#: clutter/clutter-texture.c:1019
+msgid "Horizontal repeat"
+msgstr "Duplicare orizontală"
+
+#: clutter/clutter-texture.c:1020
+msgid "Repeat the contents rather than scaling them horizontally"
+msgstr "Repetă conținutul în loc de a-l scala pe orizontală"
+
+#: clutter/clutter-texture.c:1027
+msgid "Vertical repeat"
+msgstr "Duplicare verticală"
+
+#: clutter/clutter-texture.c:1028
+msgid "Repeat the contents rather than scaling them vertically"
+msgstr "Repetă conținutul în loc de a-l scala pe verticală"
+
+#: clutter/clutter-texture.c:1035
+msgid "Filter Quality"
+msgstr "Calitatea filtrului"
+
+#: clutter/clutter-texture.c:1036
+msgid "Rendering quality used when drawing the texture"
+msgstr "Calitatea de randare folosită la desenarea texturii"
+
+#: clutter/clutter-texture.c:1044
+msgid "Pixel Format"
+msgstr "Format pixel"
+
+#: clutter/clutter-texture.c:1045
+msgid "The Cogl pixel format to use"
+msgstr "Formatul Cogl pentru pixeli de folosit"
+
+#: clutter/clutter-texture.c:1053
+#: clutter/wayland/clutter-wayland-surface.c:430
+msgid "Cogl Texture"
+msgstr "Textură Cogl"
+
+#: clutter/clutter-texture.c:1054
+#: clutter/wayland/clutter-wayland-surface.c:431
+msgid "The underlying Cogl texture handle used to draw this actor"
+msgstr ""
+"Identificatorul texturii Cogl de la bază folosit la desenarea acestui actor"
+
+#: clutter/clutter-texture.c:1061
+msgid "Cogl Material"
+msgstr "Material Cogl"
+
+#: clutter/clutter-texture.c:1062
+msgid "The underlying Cogl material handle used to draw this actor"
+msgstr ""
+"Identificatorul materialului Cogl de la bază folosit la desenarea acestui "
+"actor"
+
+#: clutter/clutter-texture.c:1079
+msgid "The path of the file containing the image data"
+msgstr "Calea fișierului ce conține datele imaginii"
+
+#: clutter/clutter-texture.c:1086
+msgid "Keep Aspect Ratio"
+msgstr "Păstrează proporția de aspect"
+
+#: clutter/clutter-texture.c:1087
+msgid ""
+"Keep the aspect ratio of the texture when requesting the preferred width or "
+"height"
+msgstr ""
+"Păstrează proporția de aspect a texturii la solicitarea lățimii sau "
+"înălțimii preferate"
+
+#: clutter/clutter-texture.c:1113
+msgid "Load asynchronously"
+msgstr "Încarcă asincron"
+
+#: clutter/clutter-texture.c:1114
+msgid ""
+"Load files inside a thread to avoid blocking when loading images from disk"
+msgstr ""
+"Încarcă fișierele într-un fir de execuție pentru a evita blocarea la "
+"încărcarea imaginilor de pe disc"
+
+#: clutter/clutter-texture.c:1130
+msgid "Load data asynchronously"
+msgstr "Încarcă datele asincron"
+
+#: clutter/clutter-texture.c:1131
+msgid ""
+"Decode image data files inside a thread to reduce blocking when loading "
+"images from disk"
+msgstr ""
+"Decodifică fișierele într-un fir de execuție pentru a reduce blocarea la "
+"încărcarea imaginilor de pe disc"
+
+#: clutter/clutter-texture.c:1155
+msgid "Pick With Alpha"
+msgstr "Alege cu alfa"
+
+#: clutter/clutter-texture.c:1156
+msgid "Shape actor with alpha channel when picking"
+msgstr "Conturează actorul cu canal alfa când se alege"
+
+#: clutter/clutter-texture.c:1576 clutter/clutter-texture.c:1969
+#: clutter/clutter-texture.c:2063 clutter/clutter-texture.c:2347
+msgid "Failed to load the image data"
+msgstr "Nu s-au putut încărca imaginile"
+
+#: clutter/clutter-texture.c:1733
+msgid "YUV textures are not supported"
+msgstr "Nu sunt admise texturile YUV"
+
+#: clutter/clutter-texture.c:1742
+msgid "YUV2 textues are not supported"
+msgstr "Nu sunt admise texturile YUV2"
+
+#: clutter/clutter-timeline.c:551
+msgid "Should the timeline automatically restart"
+msgstr "Dacă cronologia ar trebui să repornească automat"
+
+#: clutter/clutter-timeline.c:565
+msgid "Delay"
+msgstr "Întârziere"
+
+#: clutter/clutter-timeline.c:566
+msgid "Delay before start"
+msgstr "Întârzierea dinaintea începutului"
+
+#: clutter/clutter-timeline.c:582
+msgid "Duration of the timeline in milliseconds"
+msgstr "Durata cronologiei, în milisecunde"
+
+#: clutter/clutter-timeline.c:597
+#: clutter/deprecated/clutter-behaviour-ellipse.c:526
+#: clutter/deprecated/clutter-behaviour-rotate.c:335
+msgid "Direction"
+msgstr "Direcție"
+
+#: clutter/clutter-timeline.c:598
+msgid "Direction of the timeline"
+msgstr "Direcția cronologiei"
+
+#: clutter/clutter-timeline.c:613
+msgid "Auto Reverse"
+msgstr "Inversare automată"
+
+#: clutter/clutter-timeline.c:614
+msgid "Whether the direction should be reversed when reaching the end"
+msgstr "Specifică dacă direcția va fi inversată când se ajunge la final"
+
+#: clutter/clutter-timeline.c:632
+msgid "Repeat Count"
+msgstr ""
+
+#: clutter/clutter-timeline.c:633
+msgid "How many times the timeline should repeat"
+msgstr ""
+
+#: clutter/clutter-timeline.c:647
+#, fuzzy
+msgid "Progress Mode"
+msgstr "Mod progres"
+
+#: clutter/clutter-timeline.c:648
+msgid "How the timeline should compute the progress"
+msgstr ""
+
+#: clutter/clutter-transition.c:249
+msgid "Interval"
+msgstr ""
+
+#: clutter/clutter-transition.c:250
+#, fuzzy
+msgid "The interval of values to transition"
+msgstr "Cronologia animației"
+
+#: clutter/clutter-transition.c:264
+#, fuzzy
+msgid "Animatable"
+msgstr "Activabil"
+
+#: clutter/clutter-transition.c:265
+msgid "The animatable object"
+msgstr ""
+
+#: clutter/clutter-transition.c:286
+msgid "Remove on Complete"
+msgstr ""
+
+#: clutter/clutter-transition.c:287
+#, fuzzy
+msgid "Detach the transition when completed"
+msgstr "Specifică dacă actorul este afișat când are părinte"
+
+#: clutter/deprecated/clutter-behaviour.c:241
+#, fuzzy
+msgid "Alpha Object to drive the behaviour"
+msgstr "Obiect alfa care conduce comportamentul"
+
+#: clutter/deprecated/clutter-behaviour-depth.c:180
+msgid "Start Depth"
+msgstr "Adâncimea de început"
+
+#: clutter/deprecated/clutter-behaviour-depth.c:181
+msgid "Initial depth to apply"
+msgstr "Adâncimea aplicată inițial"
+
+#: clutter/deprecated/clutter-behaviour-depth.c:196
+msgid "End Depth"
+msgstr "Adâncimea de sfârșit"
+
+#: clutter/deprecated/clutter-behaviour-depth.c:197
+msgid "Final depth to apply"
+msgstr "Adâncimea aplicată la final"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:399
+msgid "Start Angle"
+msgstr "Unghiul de pornire"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:400
+#: clutter/deprecated/clutter-behaviour-rotate.c:282
+msgid "Initial angle"
+msgstr "Unghiul inițial"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:415
+msgid "End Angle"
+msgstr "Unghiul de sfârșit"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:416
+#: clutter/deprecated/clutter-behaviour-rotate.c:300
+msgid "Final angle"
+msgstr "Unghiul final"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:431
+msgid "Angle x tilt"
+msgstr "Înclinarea unghiului x"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:432
+msgid "Tilt of the ellipse around x axis"
+msgstr "Înclinarea elipsei în jurul axei x"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:447
+msgid "Angle y tilt"
+msgstr "Înclinarea unghiului y"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:448
+msgid "Tilt of the ellipse around y axis"
+msgstr "Înclinarea elipsei în jurul axei y"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:463
+msgid "Angle z tilt"
+msgstr "Înclinarea unghiului z"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:464
+msgid "Tilt of the ellipse around z axis"
+msgstr "Înclinarea elipsei în jurul axei z"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:480
+msgid "Width of the ellipse"
+msgstr "Lățimea elipsei"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:496
+msgid "Height of ellipse"
+msgstr "Înălțimea elipsei"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:511
+msgid "Center"
+msgstr "Centru"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:512
+msgid "Center of ellipse"
+msgstr "Centrul elipsei"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:527
+#: clutter/deprecated/clutter-behaviour-rotate.c:336
+msgid "Direction of rotation"
+msgstr "Direcția rotației"
+
+#: clutter/deprecated/clutter-behaviour-opacity.c:183
+msgid "Opacity Start"
+msgstr "Începutul opacității"
+
+#: clutter/deprecated/clutter-behaviour-opacity.c:184
+msgid "Initial opacity level"
+msgstr "Nivelul inițial de opacitate"
+
+#: clutter/deprecated/clutter-behaviour-opacity.c:201
+msgid "Opacity End"
+msgstr "Sfârșitul opacității"
+
+#: clutter/deprecated/clutter-behaviour-opacity.c:202
+msgid "Final opacity level"
+msgstr "Nivelul final de opacitate"
+
+#: clutter/deprecated/clutter-behaviour-path.c:225
+msgid "The ClutterPath object representing the path to animate along"
+msgstr ""
+"Obiectul ClutterPath ce reprezintă calea de-a lungul căreia se va realiza "
+"animația"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:281
+msgid "Angle Begin"
+msgstr "Valoarea de început a unghiului"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:299
+msgid "Angle End"
+msgstr "Valoarea de sfârșit a unghiului"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:317
+msgid "Axis"
+msgstr "Axă"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:318
+msgid "Axis of rotation"
+msgstr "Axă de rotație"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:353
+msgid "Center X"
+msgstr "Coordonata X a centrului"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:354
+msgid "X coordinate of the center of rotation"
+msgstr "Coordonata X a centrului de rotație"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:371
+msgid "Center Y"
+msgstr "Coordonata Y a centrului"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:372
+msgid "Y coordinate of the center of rotation"
+msgstr "Coordonata Y a centrului de rotație"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:389
+msgid "Center Z"
+msgstr "Coordonata Z a centrului"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:390
+msgid "Z coordinate of the center of rotation"
+msgstr "Coordonata Z a centrului de rotație"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:224
+msgid "X Start Scale"
+msgstr "Începutul scalării pe X"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:225
+msgid "Initial scale on the X axis"
+msgstr "Scalarea inițială pe axa X"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:243
+msgid "X End Scale"
+msgstr "Sfârșitul scalării pe X"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:244
+msgid "Final scale on the X axis"
+msgstr "Scalarea finală pe axa X"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:262
+msgid "Y Start Scale"
+msgstr "Începutul scalării pe Y"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:263
+msgid "Initial scale on the Y axis"
+msgstr "Scalarea inițială pe axa Y"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:281
+msgid "Y End Scale"
+msgstr "Sfârșitul scalării pe Y"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:282
+msgid "Final scale on the Y axis"
+msgstr "Scalarea finală pe axa Y"
+
+#: clutter/deprecated/clutter-box.c:261
+msgid "The background color of the box"
+msgstr "Culoarea de fundal a cutiei"
+
+#: clutter/deprecated/clutter-box.c:274
+msgid "Color Set"
+msgstr "Culoare setată"
+
+#: clutter/deprecated/clutter-rectangle.c:273
+msgid "The color of the rectangle"
+msgstr "Culoarea dreptunghiului"
+
+#: clutter/deprecated/clutter-rectangle.c:286
+msgid "Border Color"
+msgstr "Culoare contur"
+
+#: clutter/deprecated/clutter-rectangle.c:287
+msgid "The color of the border of the rectangle"
+msgstr "Culoarea conturului dreptunghiului"
+
+#: clutter/deprecated/clutter-rectangle.c:302
+msgid "Border Width"
+msgstr "Lățime contur"
+
+#: clutter/deprecated/clutter-rectangle.c:303
+msgid "The width of the border of the rectangle"
+msgstr "Lățimea conturului dreptunghiului"
+
+#: clutter/deprecated/clutter-rectangle.c:317
+msgid "Has Border"
+msgstr "Are contur"
+
+#: clutter/deprecated/clutter-rectangle.c:318
+msgid "Whether the rectangle should have a border"
+msgstr "Specifică dacă dreptunghiul va avea un contur"
+
+#: clutter/deprecated/clutter-shader.c:261
+msgid "Vertex Source"
+msgstr "Sursa nodului"
+
+#: clutter/deprecated/clutter-shader.c:262
+msgid "Source of vertex shader"
+msgstr "Sursa shader-ului vertex"
+
+#: clutter/deprecated/clutter-shader.c:278
+msgid "Fragment Source"
+msgstr "Sursa fragmentului"
+
+#: clutter/deprecated/clutter-shader.c:279
+msgid "Source of fragment shader"
+msgstr "Sursa shader-ului fragment"
+
+#: clutter/deprecated/clutter-shader.c:296
+msgid "Compiled"
+msgstr "Compilat"
+
+#: clutter/deprecated/clutter-shader.c:297
+msgid "Whether the shader is compiled and linked"
+msgstr "Specifică dacă shader-ul este compilat și linkeditat"
+
+#: clutter/deprecated/clutter-shader.c:314
+msgid "Whether the shader is enabled"
+msgstr "Specifică dacă shader-ul este activat"
+
+#: clutter/deprecated/clutter-shader.c:525
+#, c-format
+msgid "%s compilation failed: %s"
+msgstr "Compilarea %s a eșuat: %s"
+
+#: clutter/deprecated/clutter-shader.c:526
+msgid "Vertex shader"
+msgstr "Vertex shader"
+
+#: clutter/deprecated/clutter-shader.c:527
+msgid "Fragment shader"
+msgstr "Fragment shader"
+
+#: clutter/evdev/clutter-input-device-evdev.c:159
+msgid "sysfs Path"
+msgstr "Calea sysfs"
+
+#: clutter/evdev/clutter-input-device-evdev.c:160
+msgid "Path of the device in sysfs"
+msgstr "Calea dispozitivului în sysfs"
+
+#: clutter/evdev/clutter-input-device-evdev.c:175
+msgid "Device Path"
+msgstr "Cala dispozitivului"
+
+#: clutter/evdev/clutter-input-device-evdev.c:176
+msgid "Path of the device node"
+msgstr "Calea nodului dispozitivului"
+
+#: clutter/gdk/clutter-backend-gdk.c:294
+#, c-format
+msgid "Could not find a suitable CoglWinsys for a GdkDisplay of type %s"
+msgstr ""
+"Nu s-a putut găsi un CoglWinsys potrivit pentru un GdkDisplay de tipul %s"
+
+#: clutter/wayland/clutter-wayland-surface.c:404
+#, fuzzy
+msgid "Surface"
+msgstr "Lățimea suprafeței"
+
+#: clutter/wayland/clutter-wayland-surface.c:405
+msgid "The underlying wayland surface"
+msgstr ""
+
+#: clutter/wayland/clutter-wayland-surface.c:412
+#, fuzzy
+msgid "Surface width"
+msgstr "Lățimea suprafeței"
+
+#: clutter/wayland/clutter-wayland-surface.c:413
+#, fuzzy
+msgid "The width of the underlying wayland surface"
+msgstr "Lățimea suprafeței Cairo"
+
+#: clutter/wayland/clutter-wayland-surface.c:421
+#, fuzzy
+msgid "Surface height"
+msgstr "Înălțimea suprafeței"
+
+#: clutter/wayland/clutter-wayland-surface.c:422
+#, fuzzy
+msgid "The height of the underlying wayland surface"
+msgstr "Înălțimea suprafeței Cairo"
+
+#: clutter/x11/clutter-backend-x11.c:516
+msgid "X display to use"
+msgstr "Afișajul X de folosit"
+
+#: clutter/x11/clutter-backend-x11.c:522
+msgid "X screen to use"
+msgstr "Ecranul X de folosit"
+
+#: clutter/x11/clutter-backend-x11.c:527
+msgid "Make X calls synchronous"
+msgstr "Realizează apelurile X sincron"
+
+#: clutter/x11/clutter-backend-x11.c:534
+msgid "Enable XInput support"
+msgstr "Activează suportul XInput"
+
+#: clutter/x11/clutter-keymap-x11.c:317
+msgid "The Clutter backend"
+msgstr "Backend-ul Clutter"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:538
+msgid "Pixmap"
+msgstr "Pixmap"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:539
+msgid "The X11 Pixmap to be bound"
+msgstr "Pixmap-ul X11 de mărginit"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:547
+msgid "Pixmap width"
+msgstr "Lățimea pixmap-ului"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:548
+msgid "The width of the pixmap bound to this texture"
+msgstr "Lățimea pixmap-ului va fi mărginită de această textură"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:556
+msgid "Pixmap height"
+msgstr "Înălțimea pixmap-ului"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:557
+msgid "The height of the pixmap bound to this texture"
+msgstr "Înălțimea pixmap-ului va fi mărginită de această textură"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:565
+msgid "Pixmap Depth"
+msgstr "Adâncimea pixmap-ului"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:566
+msgid "The depth (in number of bits) of the pixmap bound to this texture"
+msgstr ""
+"Adâncimea (în număr de biți) a pixmap-ului mărginită la această textură"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:574
+msgid "Automatic Updates"
+msgstr "Actualizări automate"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:575
+msgid "If the texture should be kept in sync with any pixmap changes."
+msgstr ""
+"Dacă textura ar trebui păstrată în sincronizare cu orice schimbări ale "
+"pixmap-ului"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:583
+msgid "Window"
+msgstr "Fereastră"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:584
+msgid "The X11 Window to be bound"
+msgstr "Fereastra X11 de mărginit"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:592
+msgid "Window Redirect Automatic"
+msgstr "Redirecționare automată a ferestrei"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:593
+msgid "If composite window redirects are set to Automatic (or Manual if false)"
+msgstr ""
+"Dacă redirecționările ferestrei sunt setate la Automat (sau Manual dacă este "
+"fals)"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:603
+msgid "Window Mapped"
+msgstr "Fereastră mapată"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:604
+msgid "If window is mapped"
+msgstr "Dacă fereastra este mapată"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:613
+msgid "Destroyed"
+msgstr "Distrusă"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:614
+msgid "If window has been destroyed"
+msgstr "Dacă fereastra a fost distrusă"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:622
+msgid "Window X"
+msgstr "Coordonata X a ferestrei"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:623
+msgid "X position of window on screen according to X11"
+msgstr "Poziția X a ferestrei pe ecran conform X11"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:631
+msgid "Window Y"
+msgstr "Coordonata Y a ferestrei"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:632
+msgid "Y position of window on screen according to X11"
+msgstr "Poziția Y a ferestrei pe ecran conform X11"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:639
+msgid "Window Override Redirect"
+msgstr ""
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:640
+msgid "If this is an override-redirect window"
+msgstr ""
+
+#~ msgid "The layout manager used by the box"
+#~ msgstr "Administratorul de poziționare folosit de cutie"

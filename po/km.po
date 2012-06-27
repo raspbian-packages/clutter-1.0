@@ -1,0 +1,2484 @@
+# translation of clutter.master.po to Khmer
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2012.
+# Morn Met <mornmet@khmeros.info>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: clutter.master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=clutter\n"
+"POT-Creation-Date: 2012-06-19 09:03+0100\n"
+"PO-Revision-Date: 2012-03-09 11:47+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <>\n"
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.2\n"
+"X-Language: km-KH\n"
+
+#: clutter/clutter-actor.c:5409
+msgid "X coordinate"
+msgstr "កូអរដោនេ X "
+
+#: clutter/clutter-actor.c:5410
+msgid "X coordinate of the actor"
+msgstr "កូអរដោនេ X នៃ​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5428
+msgid "Y coordinate"
+msgstr "កូអរដោនេ Y "
+
+#: clutter/clutter-actor.c:5429
+msgid "Y coordinate of the actor"
+msgstr "កូអរដោណេ Y នៃ​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5447 clutter/clutter-canvas.c:214
+#: clutter/deprecated/clutter-behaviour-ellipse.c:479
+msgid "Width"
+msgstr "ទទឹង"
+
+#: clutter/clutter-actor.c:5448
+msgid "Width of the actor"
+msgstr "ទទឹង​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5466 clutter/clutter-canvas.c:230
+#: clutter/deprecated/clutter-behaviour-ellipse.c:495
+msgid "Height"
+msgstr "កម្ពស់"
+
+#: clutter/clutter-actor.c:5467
+msgid "Height of the actor"
+msgstr "កម្ពស់​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5486
+msgid "Fixed X"
+msgstr "X ថេរ"
+
+#: clutter/clutter-actor.c:5487
+msgid "Forced X position of the actor"
+msgstr "បានបង្ខំទីតាំង X នៃ​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5504
+msgid "Fixed Y"
+msgstr "Y ថេរ"
+
+#: clutter/clutter-actor.c:5505
+msgid "Forced Y position of the actor"
+msgstr "បាន​បង្ខំ​ទីតាំង Y នៃ​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5520
+msgid "Fixed position set"
+msgstr "កំណត់​ទីតាំង​ថេរ"
+
+#: clutter/clutter-actor.c:5521
+msgid "Whether to use fixed positioning for the actor"
+msgstr "ថាតើ​ត្រូវ​ប្រើ​ការ​កំណត់​ទីតាំង​ថេរ​សម្រាប់​កម្មវិធីអនុវត្ត​ដែរ​ឬទេ"
+
+#: clutter/clutter-actor.c:5539
+msgid "Min Width"
+msgstr "ទទឹង​អប្បបរមា"
+
+#: clutter/clutter-actor.c:5540
+msgid "Forced minimum width request for the actor"
+msgstr "បាន​បង្ខំ​សំណើ​ទទឹង​អប្បបរមា​សម្រាប់កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5558
+msgid "Min Height"
+msgstr "កម្ពស់​អប្បបរមា"
+
+#: clutter/clutter-actor.c:5559
+msgid "Forced minimum height request for the actor"
+msgstr "បាន​បង្ខំ​សំណើ​កម្ពស់​អប្បបរមា​សម្រាប់​កម្មវិធីអនុវត្ត"
+
+#: clutter/clutter-actor.c:5577
+msgid "Natural Width"
+msgstr "ទទឹង​ធម្មតា"
+
+#: clutter/clutter-actor.c:5578
+msgid "Forced natural width request for the actor"
+msgstr "បាន​បង្ខំ​សំណើ​ទទឹង​ធម្មតា​សម្រាប់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5596
+msgid "Natural Height"
+msgstr "កម្ពស់​ធម្មតា"
+
+#: clutter/clutter-actor.c:5597
+msgid "Forced natural height request for the actor"
+msgstr "បាន​បង្ខំសំណើ​កម្ពស់​ធម្មតា​សម្រាប់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5612
+msgid "Minimum width set"
+msgstr "កំណត់​ទទឹង​អប្បបរមា"
+
+#: clutter/clutter-actor.c:5613
+msgid "Whether to use the min-width property"
+msgstr "ថា​តើ​​ត្រូវ​ប្រើ​លក្ខណសម្បត្តិ​ទទឹង​អប្បបរមា​ដែរ​ឬទេ"
+
+#: clutter/clutter-actor.c:5627
+msgid "Minimum height set"
+msgstr "កំណត់កម្ពស់​អប្បបរមា"
+
+#: clutter/clutter-actor.c:5628
+msgid "Whether to use the min-height property"
+msgstr "ថា​តើ​ត្រូវ​ប្រើ​លក្ខណសម្បត្តិ​កម្ពស់​អប្បបរមា​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:5642
+msgid "Natural width set"
+msgstr "កំណត់​ទទឹង​ធម្មតា"
+
+#: clutter/clutter-actor.c:5643
+msgid "Whether to use the natural-width property"
+msgstr "ថា​តើ​ត្រូវ​ប្រើ​លក្ខណសម្បត្តិ​ទទឹង​ធម្មតាដែរ​ឬទេ"
+
+#: clutter/clutter-actor.c:5657
+msgid "Natural height set"
+msgstr "កំណត់​កម្ពស់​ធម្មតា"
+
+#: clutter/clutter-actor.c:5658
+msgid "Whether to use the natural-height property"
+msgstr "ថា​តើ​ត្រូវ​ប្រើ​លក្ខណសម្បត្តិ​កម្ពស់​​ធម្មតា​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:5674
+msgid "Allocation"
+msgstr "ការ​បម្រុង​ទុក"
+
+#: clutter/clutter-actor.c:5675
+msgid "The actor's allocation"
+msgstr "ការបម្រុង​ទុក​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5730
+msgid "Request Mode"
+msgstr "របៀប​ស្នើ"
+
+#: clutter/clutter-actor.c:5731
+msgid "The actor's request mode"
+msgstr "របៀប​ស្នើ​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5750
+msgid "Depth"
+msgstr "ជម្រៅ"
+
+#: clutter/clutter-actor.c:5751
+msgid "Position on the Z axis"
+msgstr "ទីតាំង​នៅ​លើ​អ័ក្ស Z"
+
+#: clutter/clutter-actor.c:5768
+msgid "Opacity"
+msgstr "ភាព​ស្រអាប់"
+
+#: clutter/clutter-actor.c:5769
+msgid "Opacity of an actor"
+msgstr "ភាពស្រអាប់​នៃ​កម្មវិធីអនុវត្ត"
+
+#: clutter/clutter-actor.c:5789
+msgid "Offscreen redirect"
+msgstr "ការ​ប្ដូរទិស Offscreen"
+
+#: clutter/clutter-actor.c:5790
+msgid "Flags controlling when to flatten the actor into a single image"
+msgstr "ដាក់​ទង់ជាតិ​ការ​ត្រួតពិនិត្យ នៅ​ពេល​ធ្វើឲ្យ​កម្មវិធី​អនុវត្តរាប​ស្មើ​ទៅជា​រូបភាព​តែមួយ"
+
+#: clutter/clutter-actor.c:5804
+msgid "Visible"
+msgstr "មើល​ឃើញ"
+
+#: clutter/clutter-actor.c:5805
+msgid "Whether the actor is visible or not"
+msgstr "ថា​តើ​អាច​មើល​ឃើញ​កម្មវិធី​អនុវត្តដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:5819
+msgid "Mapped"
+msgstr "បាន​ផ្គូផ្គង"
+
+#: clutter/clutter-actor.c:5820
+msgid "Whether the actor will be painted"
+msgstr "ថា​តើ​កម្មវិធី​អនុវត្តនឹង​ត្រូវ​បាន​គូរ​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:5833
+msgid "Realized"
+msgstr "បាន​ដឹង"
+
+#: clutter/clutter-actor.c:5834
+msgid "Whether the actor has been realized"
+msgstr "ថា​តើ​កម្មវិធី​អនុវត្ត​ត្រូវ​បាន​ធ្វើឲ្យ​ដឹង​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:5849
+msgid "Reactive"
+msgstr "ប្រតិកម្ម"
+
+#: clutter/clutter-actor.c:5850
+msgid "Whether the actor is reactive to events"
+msgstr "ថា​តើ​កម្មវិធីអនុវត្តមាន​ប្រតិកម្ម​ចំពោះ​ព្រឹត្តិការណ៍​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:5861
+msgid "Has Clip"
+msgstr "មាន​ឈុត"
+
+#: clutter/clutter-actor.c:5862
+msgid "Whether the actor has a clip set"
+msgstr "ថា​តើ​កម្មវិធី​អនុវត្ត​មាន​ការ​កំណត់​​ឈុត​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:5876
+msgid "Clip"
+msgstr "ឈុត"
+
+#: clutter/clutter-actor.c:5877
+msgid "The clip region for the actor"
+msgstr "តំបន់​ឈុត​សម្រាប់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5890 clutter/clutter-actor-meta.c:207
+#: clutter/clutter-binding-pool.c:319 clutter/clutter-input-device.c:236
+msgid "Name"
+msgstr "ឈ្មោះ"
+
+#: clutter/clutter-actor.c:5891
+msgid "Name of the actor"
+msgstr "ឈ្មោះ​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:5906
+msgid "Scale X"
+msgstr "មាត្រដ្ឋាន X"
+
+#: clutter/clutter-actor.c:5907
+msgid "Scale factor on the X axis"
+msgstr "កត្តា​មាត្រដ្ឋាន​នៅ​លើ​អ័ក្ស X"
+
+#: clutter/clutter-actor.c:5925
+msgid "Scale Y"
+msgstr "មាត្រដ្ឋាន Y"
+
+#: clutter/clutter-actor.c:5926
+msgid "Scale factor on the Y axis"
+msgstr "កត្តា​មាត្រដ្ឋាន​នៅ​លើ​អ័ក្ស Y"
+
+#: clutter/clutter-actor.c:5942
+msgid "Scale Center X"
+msgstr "ដាក់​មាត្រដ្ឋាន X ចំកណ្ដាល"
+
+#: clutter/clutter-actor.c:5943
+msgid "Horizontal scale center"
+msgstr "ដាក់មាត្រដ្ឋាន​ផ្ដេក​ចំ​កណ្ដាល"
+
+#: clutter/clutter-actor.c:5957
+msgid "Scale Center Y"
+msgstr "ដាក់​មាត្រដ្ឋាន Y ចំកណ្ដាល"
+
+#: clutter/clutter-actor.c:5958
+msgid "Vertical scale center"
+msgstr "ដាក់​មាត្រដ្ឋាន​បញ្ឈរ​ចំកណ្ដាល"
+
+#: clutter/clutter-actor.c:5972
+msgid "Scale Gravity"
+msgstr "ទំនាញ​មាត្រដ្ឋាន"
+
+#: clutter/clutter-actor.c:5973
+msgid "The center of scaling"
+msgstr "ចំណុច​កណ្ដាល​នៃ​មាត្រដ្ឋាន"
+
+#: clutter/clutter-actor.c:5989
+msgid "Rotation Angle X"
+msgstr "មុំ​រង្វិល X"
+
+#: clutter/clutter-actor.c:5990
+msgid "The rotation angle on the X axis"
+msgstr "មុំ​រង្វិល​នៅ​លើ​អ័ក្ស X"
+
+#: clutter/clutter-actor.c:6008
+msgid "Rotation Angle Y"
+msgstr "មុំ​រង្វិល Y"
+
+#: clutter/clutter-actor.c:6009
+msgid "The rotation angle on the Y axis"
+msgstr "មុំ​រង្វិល​នៅ​លើ​អ័ក្ស Y"
+
+#: clutter/clutter-actor.c:6027
+msgid "Rotation Angle Z"
+msgstr "មុំ​រង្វិល Z"
+
+#: clutter/clutter-actor.c:6028
+msgid "The rotation angle on the Z axis"
+msgstr "មុំ​រង្វិល​នៅ​លើ​អ័ក្ស Z"
+
+#: clutter/clutter-actor.c:6044
+msgid "Rotation Center X"
+msgstr "ចំណុច​រង្វិល X"
+
+#: clutter/clutter-actor.c:6045
+msgid "The rotation center on the X axis"
+msgstr "ចំណុច​រង្វិល​នៅ​លើ​អ័ក្ស X"
+
+#: clutter/clutter-actor.c:6058
+msgid "Rotation Center Y"
+msgstr "ចំណុច​រង្វិល Y"
+
+#: clutter/clutter-actor.c:6059
+msgid "The rotation center on the Y axis"
+msgstr "ចំណុច​រង្វិល​នៅ​លើ​អ័ក្ស Y"
+
+#: clutter/clutter-actor.c:6072
+msgid "Rotation Center Z"
+msgstr "ចំណុច​រង្វិល Z"
+
+#: clutter/clutter-actor.c:6073
+msgid "The rotation center on the Z axis"
+msgstr "ចំណុច​រង្វិល​នៅ​លើ​អ័ក្ស Z"
+
+#: clutter/clutter-actor.c:6086
+msgid "Rotation Center Z Gravity"
+msgstr "ចំណុច​រង្វិល​នៃ​ទំនាញ Z"
+
+#: clutter/clutter-actor.c:6087
+msgid "Center point for rotation around the Z axis"
+msgstr "ចំណុច​កណ្ដាល​សម្រាប់​បង្វិល​ជុំវិញ​អ័ក្ស Z"
+
+#: clutter/clutter-actor.c:6102
+msgid "Anchor X"
+msgstr "យុថ្កា X"
+
+#: clutter/clutter-actor.c:6103
+msgid "X coordinate of the anchor point"
+msgstr "កូអរដោនេ X នៃ​ចំណុច​យុថ្កា"
+
+#: clutter/clutter-actor.c:6118
+msgid "Anchor Y"
+msgstr "យុថ្កា Y"
+
+#: clutter/clutter-actor.c:6119
+msgid "Y coordinate of the anchor point"
+msgstr "កូអរដោនេ Y នៃ​ចំណុច​យុថ្កា"
+
+#: clutter/clutter-actor.c:6133
+msgid "Anchor Gravity"
+msgstr "ទំនាញ​យុថ្កា"
+
+#: clutter/clutter-actor.c:6134
+msgid "The anchor point as a ClutterGravity"
+msgstr "ចំណុច​យុថ្កា​ជា ClutterGravity"
+
+#: clutter/clutter-actor.c:6151
+msgid "Show on set parent"
+msgstr "បង្ហាញ​នៅ​ពេល​កំណត់ជា​មេ"
+
+#: clutter/clutter-actor.c:6152
+msgid "Whether the actor is shown when parented"
+msgstr "ថា​តើ​កម្មវិធី​បង្ហាញ​ត្រូវ​បាន​បង្ហាញ​នៅ​ពេល​កំណត់ជា​មេ​ដែរ​ឬទេ"
+
+#: clutter/clutter-actor.c:6169
+msgid "Clip to Allocation"
+msgstr "ឈុត​ត្រូវ​បម្រុង​ទុក"
+
+#: clutter/clutter-actor.c:6170
+msgid "Sets the clip region to track the actor's allocation"
+msgstr "កំណត់​តំបន់​ឈុត​ដើម្បី​តាមដាន​ការ​បម្រុង​ទុក​របស់​កម្មវិធីអនុវត្ត"
+
+#: clutter/clutter-actor.c:6183
+msgid "Text Direction"
+msgstr "ទិស​អត្ថបទ"
+
+#: clutter/clutter-actor.c:6184
+msgid "Direction of the text"
+msgstr "ទិស​អត្ថបទ"
+
+#: clutter/clutter-actor.c:6199
+msgid "Has Pointer"
+msgstr "មានទ្រនិចបង្ហាញ"
+
+#: clutter/clutter-actor.c:6200
+msgid "Whether the actor contains the pointer of an input device"
+msgstr "ថា​​តើ​កម្មវិធី​អនុវត្តមាន​ទ្រនិច​បង្ហាញ​ឧបករណ៍​បញ្ចូល​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:6213
+msgid "Actions"
+msgstr "សកម្មភាព"
+
+#: clutter/clutter-actor.c:6214
+msgid "Adds an action to the actor"
+msgstr "បន្ថែម​សកម្មភាព​ទៅ​កាន់​កម្មវិធីអនុវត្ត"
+
+#: clutter/clutter-actor.c:6227
+msgid "Constraints"
+msgstr "កម្រិត"
+
+#: clutter/clutter-actor.c:6228
+msgid "Adds a constraint to the actor"
+msgstr "បន្ថែម​កម្រិត​ទៅកាន់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:6241
+msgid "Effect"
+msgstr "បែបផែន"
+
+#: clutter/clutter-actor.c:6242
+msgid "Add an effect to be applied on the actor"
+msgstr "បន្ថែម​បែបផែន​ដែល​នឹង​ត្រូវ​អនុវត្ត​នៅ​លើ​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:6256
+msgid "Layout Manager"
+msgstr "កម្មវិធី​គ្រប់គ្រង​ប្លង់"
+
+#: clutter/clutter-actor.c:6257
+msgid "The object controlling the layout of an actor's children"
+msgstr ""
+
+#: clutter/clutter-actor.c:6272
+#, fuzzy
+msgid "X Alignment"
+msgstr "ការ​តម្រឹម​បន្ទាត់"
+
+#: clutter/clutter-actor.c:6273
+#, fuzzy
+msgid "The alignment of the actor on the X axis within its allocation"
+msgstr "ការ​តម្រឹម​​បញ្ឈរ​នៃ​កម្មវិធី​អនុវត្ត​នៅ​ខាងក្នុង​ក្រឡា"
+
+#: clutter/clutter-actor.c:6288
+#, fuzzy
+msgid "Y Alignment"
+msgstr "ការ​តម្រឹម​បន្ទាត់"
+
+#: clutter/clutter-actor.c:6289
+#, fuzzy
+msgid "The alignment of the actor on the Y axis within its allocation"
+msgstr "ការ​តម្រឹម​​បញ្ឈរ​នៃ​កម្មវិធី​អនុវត្ត​នៅ​ខាងក្នុង​ក្រឡា"
+
+#: clutter/clutter-actor.c:6306
+msgid "Margin Top"
+msgstr ""
+
+#: clutter/clutter-actor.c:6307
+msgid "Extra space at the top"
+msgstr ""
+
+#: clutter/clutter-actor.c:6324
+msgid "Margin Bottom"
+msgstr ""
+
+#: clutter/clutter-actor.c:6325
+msgid "Extra space at the bottom"
+msgstr ""
+
+#: clutter/clutter-actor.c:6342
+msgid "Margin Left"
+msgstr ""
+
+#: clutter/clutter-actor.c:6343
+msgid "Extra space at the left"
+msgstr ""
+
+#: clutter/clutter-actor.c:6360
+#, fuzzy
+msgid "Margin Right"
+msgstr "កម្ពស់​អប្បបរមា"
+
+#: clutter/clutter-actor.c:6361
+msgid "Extra space at the right"
+msgstr ""
+
+#: clutter/clutter-actor.c:6375
+#, fuzzy
+msgid "Background Color Set"
+msgstr "កំណត់​ពណ៌​ទស្សន៍ទ្រនិច"
+
+#: clutter/clutter-actor.c:6376 clutter/deprecated/clutter-box.c:275
+msgid "Whether the background color is set"
+msgstr "ថា​តើ​ពណ៌​ផ្ទៃ​ខាងក្រោយ​ជា​សំណុំ​ពណ៌​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-actor.c:6392
+#, fuzzy
+msgid "Background color"
+msgstr "ពណ៌​ផ្ទៃ​ខាងក្រោយ​ប្រអប់"
+
+#: clutter/clutter-actor.c:6393
+#, fuzzy
+msgid "The actor's background color"
+msgstr "ពណ៌​ផ្ទៃ​ខាងក្រោយ​ប្រអប់"
+
+#: clutter/clutter-actor.c:6408
+msgid "First Child"
+msgstr ""
+
+#: clutter/clutter-actor.c:6409
+#, fuzzy
+msgid "The actor's first child"
+msgstr "របៀប​ស្នើ​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:6422
+msgid "Last Child"
+msgstr ""
+
+#: clutter/clutter-actor.c:6423
+#, fuzzy
+msgid "The actor's last child"
+msgstr "ការបម្រុង​ទុក​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:6437
+#, fuzzy
+msgid "Content"
+msgstr "ឧបករណ៍​ផ្ទុក"
+
+#: clutter/clutter-actor.c:6438
+#, fuzzy
+msgid "Delegate object for painting the actor's content"
+msgstr "វត្ថុ ClutterPath តំណាង​ឲ្យ​ផ្លូវ​ដែល​​ត្រូវ​ធ្វើ​ចលនាតាម"
+
+#: clutter/clutter-actor.c:6463
+#, fuzzy
+msgid "Content Gravity"
+msgstr "ចំណុច​រង្វិល​នៃ​ទំនាញ Z"
+
+#: clutter/clutter-actor.c:6464
+#, fuzzy
+msgid "Alignment of the actor's content"
+msgstr "ការ​តម្រឹម​​បញ្ឈរ​នៃ​កម្មវិធី​អនុវត្ត​នៅ​ខាងក្នុង​ក្រឡា"
+
+#: clutter/clutter-actor.c:6484
+msgid "Content Box"
+msgstr ""
+
+#: clutter/clutter-actor.c:6485
+msgid "The bounding box of the actor's content"
+msgstr ""
+
+#: clutter/clutter-actor.c:6493
+msgid "Minification Filter"
+msgstr ""
+
+#: clutter/clutter-actor.c:6494
+#, fuzzy
+msgid "The filter used when reducing the size of the content"
+msgstr "វត្ថុ​ដែល​ត្រូវ​ប្រើ​ នៅ​ពេល​គូរ​ផ្នែក​ខាងក្រោយ​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor.c:6501
+msgid "Magnification Filter"
+msgstr ""
+
+#: clutter/clutter-actor.c:6502
+#, fuzzy
+msgid "The filter used when increasing the size of the content"
+msgstr "វត្ថុ​ដែល​ត្រូវ​ប្រើ​ នៅ​ពេល​គូរ​ផ្នែក​ខាងក្រោយ​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor-meta.c:193 clutter/clutter-child-meta.c:142
+msgid "Actor"
+msgstr "កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-actor-meta.c:194
+msgid "The actor attached to the meta"
+msgstr "កម្មវិធី​អនុវត្ត​ដែល​បានភ្ជាប់​ទៅ​មេតា"
+
+#: clutter/clutter-actor-meta.c:208
+msgid "The name of the meta"
+msgstr "ឈ្មោះមេតា"
+
+#: clutter/clutter-actor-meta.c:221 clutter/clutter-input-device.c:315
+#: clutter/deprecated/clutter-shader.c:313
+msgid "Enabled"
+msgstr "បាន​បើក"
+
+#: clutter/clutter-actor-meta.c:222
+msgid "Whether the meta is enabled"
+msgstr "ថា​តើ​មេតា​ត្រូវ​បាន​បើក​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-align-constraint.c:281
+#: clutter/clutter-bind-constraint.c:356 clutter/clutter-clone.c:345
+#: clutter/clutter-snap-constraint.c:321
+msgid "Source"
+msgstr "ប្រភព"
+
+#: clutter/clutter-align-constraint.c:282
+msgid "The source of the alignment"
+msgstr "ប្រភព​នៃ​ការ​តម្រឹម"
+
+#: clutter/clutter-align-constraint.c:295
+msgid "Align Axis"
+msgstr "តម្រឹម​អ័ក្ស"
+
+#: clutter/clutter-align-constraint.c:296
+msgid "The axis to align the position to"
+msgstr "អ័ក្ស​ត្រូវ​តម្រឹម​ទីតាំង"
+
+#: clutter/clutter-align-constraint.c:315
+#: clutter/clutter-desaturate-effect.c:270
+msgid "Factor"
+msgstr "កត្តា"
+
+#: clutter/clutter-align-constraint.c:316
+msgid "The alignment factor, between 0.0 and 1.0"
+msgstr "កត្តា​តម្រឹម​ចាប់​ពី ០.០ ដល់ ១.០"
+
+#: clutter/clutter-alpha.c:352 clutter/clutter-animation.c:566
+#: clutter/clutter-animator.c:1802
+msgid "Timeline"
+msgstr "បន្ទាត់​ពេលវេលា"
+
+#: clutter/clutter-alpha.c:353
+msgid "Timeline used by the alpha"
+msgstr "បន្ទាត់​ពេលវេលា​ត្រូវ​បាន​ប្រើ​ដោយ​អាល់ហ្វា"
+
+#: clutter/clutter-alpha.c:368
+msgid "Alpha value"
+msgstr "តម្លៃ​អាល់ហ្វា"
+
+#: clutter/clutter-alpha.c:369
+msgid "Alpha value as computed by the alpha"
+msgstr "តម្លៃ​អាល់ហ្វា​​នៅ​ពេល​គណនា​ដោយ​អាល់ហ្វា"
+
+#: clutter/clutter-alpha.c:389 clutter/clutter-animation.c:522
+msgid "Mode"
+msgstr "របៀប"
+
+#: clutter/clutter-alpha.c:390
+msgid "Progress mode"
+msgstr "របៀប​វឌ្ឍនភាព"
+
+#: clutter/clutter-animation.c:506
+msgid "Object"
+msgstr "វត្ថុ"
+
+#: clutter/clutter-animation.c:507
+msgid "Object to which the animation applies"
+msgstr "វត្ថុ​ដែលត្រូវ​អនុវត្ត​ជាមួយ​ចលនា"
+
+#: clutter/clutter-animation.c:523
+msgid "The mode of the animation"
+msgstr "របៀប​នៃ​ចលនា"
+
+#: clutter/clutter-animation.c:537 clutter/clutter-animator.c:1786
+#: clutter/clutter-media.c:194 clutter/clutter-state.c:1488
+#: clutter/clutter-timeline.c:581
+msgid "Duration"
+msgstr "ថិរវេលា"
+
+#: clutter/clutter-animation.c:538
+msgid "Duration of the animation, in milliseconds"
+msgstr "ថិរវេលា​នៃ​ចលនា គិតជា​មិល្លី​វិនាទី"
+
+#: clutter/clutter-animation.c:552 clutter/clutter-timeline.c:550
+msgid "Loop"
+msgstr "រង្វិលជុំ"
+
+#: clutter/clutter-animation.c:553
+msgid "Whether the animation should loop"
+msgstr "ថា​តើ​ចលនា​គួរតែ​វិល​ជុំ​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-animation.c:567
+msgid "The timeline used by the animation"
+msgstr "បន្ទាត់​ពេលវេលា​ត្រូវ​បាន​ប្រើ​ដោយ​ចលនា"
+
+#: clutter/clutter-animation.c:583 clutter/deprecated/clutter-behaviour.c:240
+msgid "Alpha"
+msgstr "អាល់ហ្វា"
+
+#: clutter/clutter-animation.c:584
+msgid "The alpha used by the animation"
+msgstr "អាល់ហ្វា​ត្រូវ​បាន​ប្រើ​ដោយ​ចលនា"
+
+#: clutter/clutter-animator.c:1787
+msgid "The duration of the animation"
+msgstr "ថិរវេលា​របស់​ចលនា"
+
+#: clutter/clutter-animator.c:1803
+msgid "The timeline of the animation"
+msgstr "បន្ទាត់​ពេលវេលា​របស់​ចលនា"
+
+#: clutter/clutter-backend.c:376
+msgid "Unable to initialize the Clutter backend"
+msgstr "មិន​អាច​ចាប់ផ្ដើម​កម្មវិធី​ខាងក្រោយ​របស់ Clutter បាន​ឡើយ"
+
+#: clutter/clutter-backend.c:450
+#, c-format
+msgid "The backend of type '%s' does not support creating multiple stages"
+msgstr "កម្មវិធី​ខាងក្រោយ​នៃ​ប្រភេទ '%s' មិន​គាំទ្រ​ការ​បង្កើត​ដំណាក់កាល​ច្រើន​ទេ"
+
+#: clutter/clutter-bind-constraint.c:357
+msgid "The source of the binding"
+msgstr "ប្រភព​នៃ​ការ​ចង"
+
+#: clutter/clutter-bind-constraint.c:370
+msgid "Coordinate"
+msgstr "កូអរដោនេ"
+
+#: clutter/clutter-bind-constraint.c:371
+msgid "The coordinate to bind"
+msgstr "កូអរដោនេ​ត្រូវ​ចង"
+
+#: clutter/clutter-bind-constraint.c:385 clutter/clutter-path-constraint.c:226
+#: clutter/clutter-snap-constraint.c:366
+msgid "Offset"
+msgstr "អុហ្វសិត"
+
+#: clutter/clutter-bind-constraint.c:386
+msgid "The offset in pixels to apply to the binding"
+msgstr "អុហ្វសិត​គិតជា​ភីកសែល​ត្រូវ​អនុវត្ត​ចំពោះ​ការ​ចង"
+
+#: clutter/clutter-binding-pool.c:320
+msgid "The unique name of the binding pool"
+msgstr "ឈ្មោះ​តែមួយ​នៃ​អាង​ចង"
+
+#: clutter/clutter-bin-layout.c:266 clutter/clutter-bin-layout.c:588
+#: clutter/clutter-box-layout.c:408 clutter/clutter-table-layout.c:662
+msgid "Horizontal Alignment"
+msgstr "ការ​តម្រឹម​ផ្ដេក"
+
+#: clutter/clutter-bin-layout.c:267
+msgid "Horizontal alignment for the actor inside the layout manager"
+msgstr "ការ​តម្រឹម​ផ្ដេក​សម្រាប់​កម្មវិធី​អនុវត្ត​នៅ​ក្នុង​កម្មវិធី​គ្រប់គ្រង​ប្លង់"
+
+#: clutter/clutter-bin-layout.c:275 clutter/clutter-bin-layout.c:605
+#: clutter/clutter-box-layout.c:417 clutter/clutter-table-layout.c:677
+msgid "Vertical Alignment"
+msgstr "ការ​តម្រឹម​​បញ្ឈរ"
+
+#: clutter/clutter-bin-layout.c:276
+msgid "Vertical alignment for the actor inside the layout manager"
+msgstr "ការ​តម្រឹម​បញ្ឈរ​សម្រាប់​កម្មវិធី​អនុវត្ត​នៅ​ក្នុង​កម្មវិធី​គ្រប់គ្រង​ប្លង់"
+
+#: clutter/clutter-bin-layout.c:589
+msgid "Default horizontal alignment for the actors inside the layout manager"
+msgstr "ការ​តម្រឹម​ផ្ដេក​លំនាំដើម​សម្រាប់​កម្មវិធី​អនុវត្ត​នៅ​ក្នុង​កម្មវិធី​គ្រប់គ្រង​ប្លង់"
+
+#: clutter/clutter-bin-layout.c:606
+msgid "Default vertical alignment for the actors inside the layout manager"
+msgstr "ការ​តម្រឹម​បញ្ឈរ​លំនាំដើម​សម្រាប់​កម្មវិធី​អនុវត្ត​នៅ​ក្នុង​កម្មវិធី​គ្រប់គ្រង​ប្លង់"
+
+#: clutter/clutter-box-layout.c:383
+msgid "Expand"
+msgstr "ពង្រីក"
+
+#: clutter/clutter-box-layout.c:384
+msgid "Allocate extra space for the child"
+msgstr "បម្រុង​ទុក​ទំហំ​បន្ថែម​សម្រាប់​កូន"
+
+#: clutter/clutter-box-layout.c:390 clutter/clutter-table-layout.c:641
+msgid "Horizontal Fill"
+msgstr "បំពេញ​ផ្ដេក"
+
+#: clutter/clutter-box-layout.c:391 clutter/clutter-table-layout.c:642
+msgid ""
+"Whether the child should receive priority when the container is allocating "
+"spare space on the horizontal axis"
+msgstr "ថា​តើ​កូន​គួរតែ​ទទួល​បាន​អាទិភាព នៅ​ពេល​ឧបករណ៍​ផ្ទុក​បម្រុងទុក​ទំហំ​បន្ថែម​នៅ​លើ​អ័ក្ស​ផ្ដេក​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-box-layout.c:399 clutter/clutter-table-layout.c:648
+msgid "Vertical Fill"
+msgstr "បំពេញ​បញ្ឈរ"
+
+#: clutter/clutter-box-layout.c:400 clutter/clutter-table-layout.c:649
+msgid ""
+"Whether the child should receive priority when the container is allocating "
+"spare space on the vertical axis"
+msgstr "ថា​តើ​កូន​គួរតែ​ទទួល​បាន​អាទិភាព នៅ​ពេល​ឧបករណ៍​ផ្ទុក​បម្រុងទុក​ទំហំ​បន្ថែម​នៅ​លើ​អ័ក្ស​បញ្ឈរ​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-box-layout.c:409 clutter/clutter-table-layout.c:663
+msgid "Horizontal alignment of the actor within the cell"
+msgstr "ការ​តម្រឹម​ផ្ដេក​នៃ​កម្មវិធី​អនុវត្ត​នៅ​ខាង​ក្នុង​ក្រឡា"
+
+#: clutter/clutter-box-layout.c:418 clutter/clutter-table-layout.c:678
+msgid "Vertical alignment of the actor within the cell"
+msgstr "ការ​តម្រឹម​​បញ្ឈរ​នៃ​កម្មវិធី​អនុវត្ត​នៅ​ខាងក្នុង​ក្រឡា"
+
+#: clutter/clutter-box-layout.c:1311
+msgid "Vertical"
+msgstr "បញ្ឈរ"
+
+#: clutter/clutter-box-layout.c:1312
+msgid "Whether the layout should be vertical, rather than horizontal"
+msgstr "ថា​តើ​ប្លង់​គួរតែ​បញ្ឈរ​ច្រើនជាង​ផ្ដេក​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-box-layout.c:1327 clutter/clutter-flow-layout.c:898
+msgid "Homogeneous"
+msgstr "ស្រប​គ្នា"
+
+#: clutter/clutter-box-layout.c:1328
+msgid ""
+"Whether the layout should be homogeneous, i.e. all childs get the same size"
+msgstr "ថា​តើ​ប្លង់​គួរតែ​ស្រប​គ្នា​ដែរ​ឬ​ទេ ឧ.កូន​ទាំងអស់​គួរតែ​មាន​ទំហំ​ដូច​គ្នា"
+
+#: clutter/clutter-box-layout.c:1343
+msgid "Pack Start"
+msgstr "ចាប់ផ្ដើម​ខ្ចប់"
+
+#: clutter/clutter-box-layout.c:1344
+msgid "Whether to pack items at the start of the box"
+msgstr "ថា​តើ​ត្រូវ​ខ្ចប់​ធាតុ​នៅ​ពេល​ចាប់ផ្ដើម​ប្រអប់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-box-layout.c:1357
+msgid "Spacing"
+msgstr "គម្លាត"
+
+#: clutter/clutter-box-layout.c:1358
+msgid "Spacing between children"
+msgstr "គម្លាត​រវាង​កូន"
+
+#: clutter/clutter-box-layout.c:1372 clutter/clutter-table-layout.c:1775
+msgid "Use Animations"
+msgstr "ប្រើ​ចលនា"
+
+#: clutter/clutter-box-layout.c:1373 clutter/clutter-table-layout.c:1776
+msgid "Whether layout changes should be animated"
+msgstr "ថា​តើ​ការ​ផ្លាស់ប្ដូរ​ប្លង់​គួរតែ​មាន​ចលនា​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-box-layout.c:1394 clutter/clutter-table-layout.c:1797
+msgid "Easing Mode"
+msgstr "របៀប​បន្ថយ"
+
+#: clutter/clutter-box-layout.c:1395 clutter/clutter-table-layout.c:1798
+msgid "The easing mode of the animations"
+msgstr "របៀប​បន្ថយ​ចលនា"
+
+#: clutter/clutter-box-layout.c:1412 clutter/clutter-table-layout.c:1815
+msgid "Easing Duration"
+msgstr "ថិរវេលា​បន្ថយ"
+
+#: clutter/clutter-box-layout.c:1413 clutter/clutter-table-layout.c:1816
+msgid "The duration of the animations"
+msgstr "ថិរវេលា​​ចលនា"
+
+#: clutter/clutter-brightness-contrast-effect.c:307
+msgid "Brightness"
+msgstr ""
+
+#: clutter/clutter-brightness-contrast-effect.c:308
+#, fuzzy
+msgid "The brightness change to apply"
+msgstr "ពណ៌​ប្រឿងៗ​ដែល​ត្រូវ​អនុវត្ត"
+
+#: clutter/clutter-brightness-contrast-effect.c:327
+msgid "Contrast"
+msgstr ""
+
+#: clutter/clutter-brightness-contrast-effect.c:328
+#, fuzzy
+msgid "The contrast change to apply"
+msgstr "ពណ៌​ប្រឿងៗ​ដែល​ត្រូវ​អនុវត្ត"
+
+#: clutter/clutter-cairo-texture.c:591
+msgid "Surface Width"
+msgstr "ទទឹង​ផ្ទៃ​ខាងក្រៅ"
+
+#: clutter/clutter-cairo-texture.c:592
+msgid "The width of the Cairo surface"
+msgstr "ទទឹង​ផ្ទៃ​ខាងក្រៅ​របស់ Cairo"
+
+#: clutter/clutter-cairo-texture.c:606
+msgid "Surface Height"
+msgstr "កម្ពស់​ផ្ទៃ​ខាងក្រៅ"
+
+#: clutter/clutter-cairo-texture.c:607
+msgid "The height of the Cairo surface"
+msgstr "កម្ពស់​ផ្ទៃ​ខាងក្រៅ​របស់ Cairo"
+
+#: clutter/clutter-cairo-texture.c:624
+msgid "Auto Resize"
+msgstr "ប្ដូរ​ទំហំ​ស្វ័យប្រវត្តិ"
+
+#: clutter/clutter-cairo-texture.c:625
+msgid "Whether the surface should match the allocation"
+msgstr "ថា​តើ​ផ្ទៃ​ខាងក្រៅ​គួរតែ​ផ្គូផ្គង​នឹង​ការ​បម្រុង​ទុក​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-canvas.c:215
+#, fuzzy
+msgid "The width of the canvas"
+msgstr "ទទឹង​ផ្ទៃ​ខាងក្រៅ​របស់ Cairo"
+
+#: clutter/clutter-canvas.c:231
+#, fuzzy
+msgid "The height of the canvas"
+msgstr "កម្ពស់​ផ្ទៃ​ខាងក្រៅ​របស់ Cairo"
+
+#: clutter/clutter-child-meta.c:127
+msgid "Container"
+msgstr "ឧបករណ៍​ផ្ទុក"
+
+#: clutter/clutter-child-meta.c:128
+msgid "The container that created this data"
+msgstr "ឧបករណ៍​ផ្ទុក​ដែល​បាន​បង្កើត​ទិន្នន័យ​នេះ"
+
+#: clutter/clutter-child-meta.c:143
+msgid "The actor wrapped by this data"
+msgstr "កម្មវិធី​អនុវត្ត​ត្រូវ​បាន​រុំ​ដោយ​ទិន្នន័យ​នេះ"
+
+#: clutter/clutter-click-action.c:546
+msgid "Pressed"
+msgstr "បាន​ចុច"
+
+#: clutter/clutter-click-action.c:547
+msgid "Whether the clickable should be in pressed state"
+msgstr "ថាតើ​ភាព​ដែល​អាច​ចុច​បាន​គួរតែ​ស្ថិត​ក្នុង​ស្ថានភាព​ដែល​បាន​ចុច​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-click-action.c:560
+msgid "Held"
+msgstr "ចុច​ឲ្យ​ជាប់"
+
+#: clutter/clutter-click-action.c:561
+msgid "Whether the clickable has a grab"
+msgstr "ថា​តើ​ភាព​ដែល​អាច​ចុច​បាន​មាន​ចំណុច​ចាប់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-click-action.c:578 clutter/clutter-settings.c:599
+msgid "Long Press Duration"
+msgstr "ថិរវេលា​ចុច​យូរ"
+
+#: clutter/clutter-click-action.c:579
+msgid "The minimum duration of a long press to recognize the gesture"
+msgstr "ថិរវេលា​អប្បបរមា​នៃ​ការ​ចុច​រយៈ​ពេល​យូរ ដើម្បី​ស្គាល់​ឥរិយាបថ"
+
+#: clutter/clutter-click-action.c:597
+msgid "Long Press Threshold"
+msgstr "កម្រិត​ពន្លឺ​ចុច​យូរ"
+
+#: clutter/clutter-click-action.c:598
+msgid "The maximum threshold before a long press is cancelled"
+msgstr "កម្រិត​ពន្លឺ​អតិបរមា មុន​ពេល​ចុច​រយៈពេលយូរ​ត្រូវ​បាន​បោះបង់"
+
+#: clutter/clutter-clone.c:346
+msgid "Specifies the actor to be cloned"
+msgstr "បញ្ជាក់​កម្មវិធី​អនុវត្ត​ដែល​នឹង​ត្រូវ​ក្លូន"
+
+#: clutter/clutter-colorize-effect.c:251
+msgid "Tint"
+msgstr "ពណ៌​ប្រឿង ៗ"
+
+#: clutter/clutter-colorize-effect.c:252
+msgid "The tint to apply"
+msgstr "ពណ៌​ប្រឿងៗ​ដែល​ត្រូវ​អនុវត្ត"
+
+#: clutter/clutter-deform-effect.c:588
+msgid "Horizontal Tiles"
+msgstr "ក្រឡា​ក្បឿង​ផ្ដេក"
+
+#: clutter/clutter-deform-effect.c:589
+msgid "The number of horizontal tiles"
+msgstr "ចំនួន​ក្រឡា​ក្បឿង​ផ្ដេក"
+
+#: clutter/clutter-deform-effect.c:604
+msgid "Vertical Tiles"
+msgstr "ក្រឡា​ក្បឿង​បញ្ឈរ"
+
+#: clutter/clutter-deform-effect.c:605
+msgid "The number of vertical tiles"
+msgstr "ចំនួន​ក្រឡា​ក្បឿង​បញ្ឈរ"
+
+#: clutter/clutter-deform-effect.c:622
+msgid "Back Material"
+msgstr "វត្ថុ​ខាងក្រោយ"
+
+#: clutter/clutter-deform-effect.c:623
+msgid "The material to be used when painting the back of the actor"
+msgstr "វត្ថុ​ដែល​ត្រូវ​ប្រើ​ នៅ​ពេល​គូរ​ផ្នែក​ខាងក្រោយ​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-desaturate-effect.c:271
+msgid "The desaturation factor"
+msgstr "កត្តា​អតិត្ថិភាព"
+
+#: clutter/clutter-device-manager.c:131 clutter/clutter-input-device.c:344
+#: clutter/x11/clutter-keymap-x11.c:316
+msgid "Backend"
+msgstr "កម្មវិធី​ខាង​ក្រោយ"
+
+#: clutter/clutter-device-manager.c:132
+msgid "The ClutterBackend of the device manager"
+msgstr "ClutterBackend នៃ​កម្មវិធី​គ្រប់គ្រង​ឧបករណ៍"
+
+#: clutter/clutter-drag-action.c:602
+msgid "Horizontal Drag Threshold"
+msgstr "កម្រិត​ពន្លឺ​អូស​ផ្ដេក"
+
+#: clutter/clutter-drag-action.c:603
+msgid "The horizontal amount of pixels required to start dragging"
+msgstr "ចំនួន​ផ្ដេក​គិតជា​ភីកសែល​​​ត្រូវបាន​​ទាមទារ​ដើម្បី​ចាប់ផ្ដើម​ការ​អូស"
+
+#: clutter/clutter-drag-action.c:630
+msgid "Vertical Drag Threshold"
+msgstr "កម្រិត​ពន្លឺ​អូស​បញ្ឈរ"
+
+#: clutter/clutter-drag-action.c:631
+msgid "The vertical amount of pixels required to start dragging"
+msgstr "ចំនួន​បញ្ឈរ​គិត​ជា​ភីកសែល​ត្រូវ​បាន​ទាមទារ​ដើម្បី​​ចាប់ផ្ដើម​ការអូស"
+
+#: clutter/clutter-drag-action.c:652
+msgid "Drag Handle"
+msgstr "អូស​ចំណុច​ទាញ"
+
+#: clutter/clutter-drag-action.c:653
+msgid "The actor that is being dragged"
+msgstr "កម្មវិធី​អនុវត្ត​ដែល​កំពុង​ត្រូវ​បាន​អូស"
+
+#: clutter/clutter-drag-action.c:666
+msgid "Drag Axis"
+msgstr "អូស​អ័ក្ស"
+
+#: clutter/clutter-drag-action.c:667
+msgid "Constraints the dragging to an axis"
+msgstr "កម្រិត​ការ​អូស​ទៅកាន់​អ័ក្ស"
+
+#: clutter/clutter-flow-layout.c:882
+msgid "Orientation"
+msgstr "ទិស"
+
+#: clutter/clutter-flow-layout.c:883
+msgid "The orientation of the layout"
+msgstr "ទិស​ប្លង់"
+
+#: clutter/clutter-flow-layout.c:899
+msgid "Whether each item should receive the same allocation"
+msgstr "ថា​តើ​ធាតុ​នីមួយ​ៗ​គួរតែ​បាន​ទទួល​ការ​បម្រុងទុក​ដូច​គ្នា​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-flow-layout.c:914 clutter/clutter-table-layout.c:1746
+msgid "Column Spacing"
+msgstr "គម្លាត​ជួរឈរ"
+
+#: clutter/clutter-flow-layout.c:915
+msgid "The spacing between columns"
+msgstr "គម្លាត​រវាង​ជួរឈរ"
+
+#: clutter/clutter-flow-layout.c:931 clutter/clutter-table-layout.c:1760
+msgid "Row Spacing"
+msgstr "គម្លាត​ជួរដេក"
+
+#: clutter/clutter-flow-layout.c:932
+msgid "The spacing between rows"
+msgstr "គម្លាត​រវាង​ជួរដេក"
+
+#: clutter/clutter-flow-layout.c:946
+msgid "Minimum Column Width"
+msgstr "ទទឹង​ជួរឈរ​អប្បបរមា"
+
+#: clutter/clutter-flow-layout.c:947
+msgid "Minimum width for each column"
+msgstr "ទទឹង​អប្បបរមា​សម្រាប់​ជួរឈរ​នីមួយៗ"
+
+#: clutter/clutter-flow-layout.c:962
+msgid "Maximum Column Width"
+msgstr "ទទឹង​ជួរឈរ​អតិបរមា"
+
+#: clutter/clutter-flow-layout.c:963
+msgid "Maximum width for each column"
+msgstr "ទទឹង​អតិបរមា​សម្រាប់​ជួរឈរ​នីមួយៗ"
+
+#: clutter/clutter-flow-layout.c:977
+msgid "Minimum Row Height"
+msgstr "កម្ពស់​ជួរដេក​អប្បបរមា"
+
+#: clutter/clutter-flow-layout.c:978
+msgid "Minimum height for each row"
+msgstr "កម្ពស់​អប្បបរមា​សម្រាប់​ជួរដេក​នីមួយៗ"
+
+#: clutter/clutter-flow-layout.c:993
+msgid "Maximum Row Height"
+msgstr "កម្ពស់​ជួរដេក​អតិបរមា"
+
+#: clutter/clutter-flow-layout.c:994
+msgid "Maximum height for each row"
+msgstr "កម្ពស់​អតិបរមា​សម្រាប់​ជួរដេក​នីមួយៗ"
+
+#: clutter/clutter-image.c:229 clutter/clutter-image.c:317
+#, fuzzy
+msgid "Unable to load image data"
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​ទិន្នន័យ​រូបភាព"
+
+#: clutter/clutter-input-device.c:220
+msgid "Id"
+msgstr "លេខ​សម្គាល់"
+
+#: clutter/clutter-input-device.c:221
+msgid "Unique identifier of the device"
+msgstr "គ្រឿង​សម្គាល់​ឧបករណ៍​តែមួយ"
+
+#: clutter/clutter-input-device.c:237
+msgid "The name of the device"
+msgstr "ឈ្មោះ​ឧបករណ៍"
+
+#: clutter/clutter-input-device.c:251
+msgid "Device Type"
+msgstr "ប្រភេទ​ឧបករណ៍"
+
+#: clutter/clutter-input-device.c:252
+msgid "The type of the device"
+msgstr "ប្រភេទ​ឧបករណ៍"
+
+#: clutter/clutter-input-device.c:267
+msgid "Device Manager"
+msgstr "កម្មវិធី​គ្រប់គ្រង​ឧបករណ៍"
+
+#: clutter/clutter-input-device.c:268
+msgid "The device manager instance"
+msgstr "វត្ថុ​របស់​កម្មវិធី​គ្រប់គ្រង​ឧបករណ៍"
+
+#: clutter/clutter-input-device.c:281
+msgid "Device Mode"
+msgstr "របៀប​ឧបករណ៍"
+
+#: clutter/clutter-input-device.c:282
+msgid "The mode of the device"
+msgstr "របៀប​ឧបករណ៍"
+
+#: clutter/clutter-input-device.c:296
+msgid "Has Cursor"
+msgstr "មាន​ទស្សន៍ទ្រនិច"
+
+#: clutter/clutter-input-device.c:297
+msgid "Whether the device has a cursor"
+msgstr "ថា​តើ​ឧបករណ៍​មាន​ទស្សន៍ទ្រនិច​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-input-device.c:316
+msgid "Whether the device is enabled"
+msgstr "ថា​តើ​ឧបករណ៍​ត្រូវ​បាន​បើក​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-input-device.c:329
+msgid "Number of Axes"
+msgstr "ចំនួន​អ័ក្ស"
+
+#: clutter/clutter-input-device.c:330
+msgid "The number of axes on the device"
+msgstr "ចំនួន​អ័ក្ស​នៅ​លើ​ឧបករណ៍"
+
+#: clutter/clutter-input-device.c:345
+msgid "The backend instance"
+msgstr "វត្ថុ​របស់​កម្មវិធី​ខាងក្រោយ"
+
+#: clutter/clutter-interval.c:387
+msgid "Value Type"
+msgstr "ប្រភេទ​តម្លៃ"
+
+#: clutter/clutter-interval.c:388
+msgid "The type of the values in the interval"
+msgstr "ប្រភេទ​តម្លៃ​គិតជា​ចន្លោះ​ពេល"
+
+#: clutter/clutter-layout-meta.c:117
+msgid "Manager"
+msgstr "កម្មវិធី​គ្រប់គ្រង"
+
+#: clutter/clutter-layout-meta.c:118
+msgid "The manager that created this data"
+msgstr "កម្មវិធី​គ្រប់គ្រង​ដែល​បាន​បង្កើត​ទិន្នន័យ​នេះ"
+
+#: clutter/clutter-main.c:763
+msgid "default:LTR"
+msgstr "default:LTR"
+
+#: clutter/clutter-main.c:1610
+msgid "Show frames per second"
+msgstr "បង្ហាញ​ស៊ុម​ក្នុង​មួយ​វិនាទី"
+
+#: clutter/clutter-main.c:1612
+msgid "Default frame rate"
+msgstr "អត្រា​ស៊ុម​លំនាំដើម"
+
+#: clutter/clutter-main.c:1614
+msgid "Make all warnings fatal"
+msgstr "ធ្វើឲ្យ​ការ​ព្រមាន​ទាំងអស់​ធ្ងន់ធ្ងរ"
+
+#: clutter/clutter-main.c:1617
+msgid "Direction for the text"
+msgstr "ទិស​អត្ថបទ"
+
+#: clutter/clutter-main.c:1620
+msgid "Disable mipmapping on text"
+msgstr "បិទ mipmapping នៅ​លើ​អត្ថបទ"
+
+#: clutter/clutter-main.c:1623
+msgid "Use 'fuzzy' picking"
+msgstr "ប្រើ​ការ​ជ្រើសរើស 'ស្រពិចស្រពិល'"
+
+#: clutter/clutter-main.c:1626
+msgid "Clutter debugging flags to set"
+msgstr "ទង់ជាតិ​បំបាត់​កំហុស Clutter ត្រូវ​កំណត់"
+
+#: clutter/clutter-main.c:1628
+msgid "Clutter debugging flags to unset"
+msgstr "ទង់ជាតិ​បំបាត់​កំហុស Clutter មិន​ត្រូវ​បាន​កំណត់"
+
+#: clutter/clutter-main.c:1632
+msgid "Clutter profiling flags to set"
+msgstr "ទង់ជាតិ​បង្កើត​ទម្រង់ Clutter ត្រូវ​បាន​កំណត់"
+
+#: clutter/clutter-main.c:1634
+msgid "Clutter profiling flags to unset"
+msgstr "ទង់ជាតិ​បង្កើត​ទម្រង់ Clutter មិន​ត្រូវ​បាន​កំណត់"
+
+#: clutter/clutter-main.c:1637
+msgid "Enable accessibility"
+msgstr "បើក​មធ្យោបាយ​ងាយស្រួល"
+
+#: clutter/clutter-main.c:1829
+msgid "Clutter Options"
+msgstr "ជម្រើស Clutter"
+
+#: clutter/clutter-main.c:1830
+msgid "Show Clutter Options"
+msgstr "បង្ហាញ​ជម្រើស Clutter"
+
+#: clutter/clutter-media.c:77
+msgid "URI"
+msgstr "URI"
+
+#: clutter/clutter-media.c:78
+msgid "URI of a media file"
+msgstr "URI នៃ​ឯកសារ​មេឌៀ"
+
+#: clutter/clutter-media.c:91
+msgid "Playing"
+msgstr "ចាក់"
+
+#: clutter/clutter-media.c:92
+msgid "Whether the actor is playing"
+msgstr "ថា​តើ​កម្មវិធី​អនុវត្ត​កំពុង​តែ​ចាក់​ដែរ​ឬទេ"
+
+#: clutter/clutter-media.c:106
+msgid "Progress"
+msgstr "វឌ្ឍនភាព"
+
+#: clutter/clutter-media.c:107
+msgid "Current progress of the playback"
+msgstr "វឌ្ឍនភាព​បច្ចុប្បន្ន​នៃ​ការ​ចាក់​សារ​ថ្មី"
+
+#: clutter/clutter-media.c:120
+msgid "Subtitle URI"
+msgstr "URI នៃ​ចំណងជើង​រង"
+
+#: clutter/clutter-media.c:121
+msgid "URI of a subtitle file"
+msgstr "URI នៃ​ឯកសារ​ចំណងជើង​រង"
+
+#: clutter/clutter-media.c:136
+msgid "Subtitle Font Name"
+msgstr "ឈ្មោះ​ពុម្ពអក្សរ​ចំណងជើង​រង"
+
+#: clutter/clutter-media.c:137
+msgid "The font used to display subtitles"
+msgstr "ពុម្ពអក្សរ​ដែល​ត្រូវ​ប្រើ ដើម្បី​បង្ហាញ​ចំណងជើង​រង"
+
+#: clutter/clutter-media.c:151
+msgid "Audio Volume"
+msgstr "កម្រិត​សំឡេង​អូឌីយ៉ូ"
+
+#: clutter/clutter-media.c:152
+msgid "The volume of the audio"
+msgstr "កម្រិត​សំឡេង​អូឌីយ៉ូ"
+
+#: clutter/clutter-media.c:165
+msgid "Can Seek"
+msgstr "អាច​ស្វែងរក"
+
+#: clutter/clutter-media.c:166
+msgid "Whether the current stream is seekable"
+msgstr "ថា​តើ​ស្ទ្រីម​បច្ចុប្បន្ន​អាច​ស្វែងរក​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-media.c:180
+msgid "Buffer Fill"
+msgstr "បំពេញ​អង្គ​ចងចាំ​បណ្ដោះ​អាសន្ន"
+
+#: clutter/clutter-media.c:181
+msgid "The fill level of the buffer"
+msgstr "កម្រិត​បំពេញ​អង្គ​ចងចាំ​បណ្ដោះ​អាសន្ន"
+
+#: clutter/clutter-media.c:195
+msgid "The duration of the stream, in seconds"
+msgstr "ថិរវេលា​ស្ទ្រីម​គិតជា​វិនាទី"
+
+#: clutter/clutter-path-constraint.c:212
+#: clutter/deprecated/clutter-behaviour-path.c:224
+msgid "Path"
+msgstr "ផ្លូវ"
+
+#: clutter/clutter-path-constraint.c:213
+msgid "The path used to constrain an actor"
+msgstr "ផ្លូវ​ត្រូវ​ប្រើ ដើម្បី​កម្រិត​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-path-constraint.c:227
+msgid "The offset along the path, between -1.0 and 2.0"
+msgstr "អុហ្វសិត​តាម​ផ្លូវ ចាប់ពី -១.០ ដល់ ២.០"
+
+#: clutter/clutter-property-transition.c:196
+#, fuzzy
+msgid "Property Name"
+msgstr "ឈ្មោះ​ពុម្ពអក្សរ"
+
+#: clutter/clutter-property-transition.c:197
+#, fuzzy
+msgid "The name of the property to animate"
+msgstr "ឈ្មោះមេតា"
+
+#: clutter/clutter-script.c:464
+msgid "Filename Set"
+msgstr "កំណត់​ឈ្មោះ​ឯកសារ"
+
+#: clutter/clutter-script.c:465
+msgid "Whether the :filename property is set"
+msgstr "ថា​តើ​លក្ខណសម្បត្តិ​របស់​ :filename ត្រូវ​បាន​កំណត់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-script.c:479 clutter/clutter-texture.c:1078
+msgid "Filename"
+msgstr "ឈ្មោះ​ឯកសារ"
+
+#: clutter/clutter-script.c:480
+msgid "The path of the currently parsed file"
+msgstr "ផ្លូវ​ឯកសារ​ដែល​ទើប​តែ​បាន​ញែក​ថ្មីៗ"
+
+#: clutter/clutter-script.c:497
+msgid "Translation Domain"
+msgstr ""
+
+#: clutter/clutter-script.c:498
+msgid "The translation domain used to localize string"
+msgstr ""
+
+#: clutter/clutter-settings.c:440
+msgid "Double Click Time"
+msgstr "ចុច​ទ្វេដង​លើ​ពេលវេលា"
+
+#: clutter/clutter-settings.c:441
+msgid "The time between clicks necessary to detect a multiple click"
+msgstr "ពេលវេលា​រវាង​ការ​ចុច​ពិតជា​សំខាន់​ណាស់ ​ដើម្បី​រក​ការ​ចុច​ច្រើនដង"
+
+#: clutter/clutter-settings.c:456
+msgid "Double Click Distance"
+msgstr "ចុច​ទ្វេដង​លើ​ចម្ងាយ"
+
+#: clutter/clutter-settings.c:457
+msgid "The distance between clicks necessary to detect a multiple click"
+msgstr "ចម្ងាយ​រវាង​ការ​ចុច​ពិតជា​សំខាន់​ណាស់ ដើម្បី​រក​ការ​ចុច​ច្រើន​ដង"
+
+#: clutter/clutter-settings.c:472
+msgid "Drag Threshold"
+msgstr "កម្រិត​ពន្លឺ​អូស"
+
+#: clutter/clutter-settings.c:473
+msgid "The distance the cursor should travel before starting to drag"
+msgstr "ចម្ងាយ​ទស្សន៍ទ្រនិច​គួរតែ​ធ្វើ​ដំណើរ​មុន​ការ​ចាប់ផ្ដើម​អូស"
+
+#: clutter/clutter-settings.c:488 clutter/clutter-text.c:2996
+msgid "Font Name"
+msgstr "ឈ្មោះ​ពុម្ពអក្សរ"
+
+#: clutter/clutter-settings.c:489
+msgid ""
+"The description of the default font, as one that could be parsed by Pango"
+msgstr "សេចក្ដី​ពិពណ៌នា​អំពី​ពុម្ព​អក្សរ​លំនាំដើម ដូច​ជា​ពុម្ពអក្សរ​ដែល​អាច​ត្រូវ​បាន​ញែក​ដោយ​ Pango"
+
+#: clutter/clutter-settings.c:504
+msgid "Font Antialias"
+msgstr "ការ​ប្រឆាំង​រឆេតរឆូត​នៃ​ពុម្ពអក្សរ"
+
+#: clutter/clutter-settings.c:505
+msgid ""
+"Whether to use antialiasing (1 to enable, 0 to disable, and -1 to use the "
+"default)"
+msgstr ""
+"ថា​តើ​ត្រូវ​ប្រើ​ការ​ប្រឆាំង​រឆេតរឆូត​ដែរ​ឬ​ទេ (១ ត្រូវ​បើក ០ ត្រូវ​បិទ និង -១ ត្រូវ​ប្រើ​ជាលំនាំដើម)"
+
+#: clutter/clutter-settings.c:521
+msgid "Font DPI"
+msgstr "DPI នៃ​ពុម្ពអក្សរ"
+
+#: clutter/clutter-settings.c:522
+msgid ""
+"The resolution of the font, in 1024 * dots/inch, or -1 to use the default"
+msgstr "គុណភាព​បង្ហាញ​ពុម្ពអក្សរ គិតជា ១០២៤ * ចុច/អ៊ិន្ឈ៍ ឬ -១ ត្រូវ​ប្រើជា​លំនាំដើម"
+
+#: clutter/clutter-settings.c:538
+msgid "Font Hinting"
+msgstr "ជំនួយ​ពុម្ពអក្សរ"
+
+#: clutter/clutter-settings.c:539
+msgid ""
+"Whether to use hinting (1 to enable, 0 to disable and -1 to use the default)"
+msgstr "ថា​តើ​ត្រូវ​ប្រើ​ជំនួយ (១ ត្រូវ​បើក ០ ត្រូវ​បិទ និង-១ ត្រូវ​ប្រើ​ជា​លំនាំដើម)"
+
+#: clutter/clutter-settings.c:560
+msgid "Font Hint Style"
+msgstr "រចនាប័ទ្ម​ជំនួយ​ពុម្ពអក្សរ"
+
+#: clutter/clutter-settings.c:561
+msgid "The style of hinting (hintnone, hintslight, hintmedium, hintfull)"
+msgstr "រចនាប័ទ្ម​ជំនួយ (hintnone, hintslight, hintmedium, hintfull)"
+
+#: clutter/clutter-settings.c:582
+msgid "Font Subpixel Order"
+msgstr "លំដាប់​ភីកសែល​រង​របស់​ពុម្ពអក្សរ"
+
+#: clutter/clutter-settings.c:583
+msgid "The type of subpixel antialiasing (none, rgb, bgr, vrgb, vbgr)"
+msgstr "ប្រភេទ​ប្រឆាំង​រឆេតរឆូត​នៃ​ភីកសែល​រង (none, rgb, bgr, vrgb, vbgr)"
+
+#: clutter/clutter-settings.c:600
+msgid "The minimum duration for a long press gesture to be recognized"
+msgstr "ថិរវេលា​អប្បបរមា​សម្រាប់​ឥរិយាបថ​ចុច​រយៈ​ពេលយូរ​ត្រូវ​បាន​ទទួល​ស្គាល់"
+
+#: clutter/clutter-settings.c:607
+msgid "Fontconfig configuration timestamp"
+msgstr "ត្រា​ពេលវេលា​នៃ​ការ​កំណត់​រចនាសម្ព័ន្ធ Fontconfig"
+
+#: clutter/clutter-settings.c:608
+msgid "Timestamp of the current fontconfig configuration"
+msgstr "ត្រា​ពេលវេលា​នៃ​ការ​កំណត់​រចនាសម្ព័ន្ធ fontconfig បច្ចុប្បន្ន"
+
+#: clutter/clutter-settings.c:625
+msgid "Password Hint Time"
+msgstr "ពេលវេលា​ជំនួយ​ពាក្យ​សម្ងាត់"
+
+#: clutter/clutter-settings.c:626
+msgid "How long to show the last input character in hidden entries"
+msgstr "រយៈ​ពេល​ត្រូវ​បង្ហាញ​តួអក្សរ​បញ្ចូល​ចុងក្រោយ​ក្នុង​ធាតុ​ដែល​លាក់"
+
+#: clutter/clutter-shader-effect.c:486
+msgid "Shader Type"
+msgstr "ប្រភេទ​ស្រមោល"
+
+#: clutter/clutter-shader-effect.c:487
+msgid "The type of shader used"
+msgstr "ប្រភេទ​ស្រមោល​ត្រូវ​ប្រើ"
+
+#: clutter/clutter-snap-constraint.c:322
+msgid "The source of the constraint"
+msgstr "ប្រភព​កម្រិត"
+
+#: clutter/clutter-snap-constraint.c:335
+msgid "From Edge"
+msgstr "ពី​គែម"
+
+#: clutter/clutter-snap-constraint.c:336
+msgid "The edge of the actor that should be snapped"
+msgstr "គែម​នៃ​កម្មវិធី​អនុវត្ត​ដែល​គួរតែ​ត្រូវ​បាន​ខ្ទាស់"
+
+#: clutter/clutter-snap-constraint.c:350
+msgid "To Edge"
+msgstr "ទៅគែម"
+
+#: clutter/clutter-snap-constraint.c:351
+msgid "The edge of the source that should be snapped"
+msgstr "គែម​ប្រភព​ដែល​គួរតែ​ត្រូវ​បាន​ខ្ទាស់"
+
+#: clutter/clutter-snap-constraint.c:367
+msgid "The offset in pixels to apply to the constraint"
+msgstr "អុហ្វសិត​គិតជា​ភីកសែល​ត្រូវ​អនុវត្ត​ទៅលើ​កម្រិត"
+
+#: clutter/clutter-stage.c:1896
+msgid "Fullscreen Set"
+msgstr "កំណត់​ពេញ​អេក្រង់"
+
+#: clutter/clutter-stage.c:1897
+msgid "Whether the main stage is fullscreen"
+msgstr "ថា​តើ​ឈុត​​សំខាន់​គួរបង្ហាញតែ​ពេញ​អេក្រង់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-stage.c:1911
+msgid "Offscreen"
+msgstr "Offscreen"
+
+#: clutter/clutter-stage.c:1912
+msgid "Whether the main stage should be rendered offscreen"
+msgstr "ថា​តើ​ឈុត​​សំខាន់​គួរតែ​បង្ហាញ​ពេញ​អេក្រង់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-stage.c:1924 clutter/clutter-text.c:3109
+msgid "Cursor Visible"
+msgstr "មើល​ឃើញ​ព្រួញ​កណ្ដុរ"
+
+#: clutter/clutter-stage.c:1925
+msgid "Whether the mouse pointer is visible on the main stage"
+msgstr "ថា​តើ​នឹង​មើល​ឃើញ​ព្រួញកណ្ដុរ​នៅ​លើ​ឈុត​សំខាន់​ដែរ​ឬទេ"
+
+#: clutter/clutter-stage.c:1939
+msgid "User Resizable"
+msgstr "អាច​ប្ដូរ​ទំហំ​ដោយ​អ្នកប្រើ"
+
+#: clutter/clutter-stage.c:1940
+msgid "Whether the stage is able to be resized via user interaction"
+msgstr "ថា​តើ​ឈុត​អាច​ត្រូវ​បាន​ប្ដូរ​ទំហំ​តាម​រយៈ​អន្តរកម្ម​អ្នកប្រើ​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-stage.c:1955 clutter/deprecated/clutter-box.c:260
+#: clutter/deprecated/clutter-rectangle.c:272
+msgid "Color"
+msgstr "ពណ៌"
+
+#: clutter/clutter-stage.c:1956
+msgid "The color of the stage"
+msgstr "ពណ៌​ឈុត"
+
+#: clutter/clutter-stage.c:1971
+msgid "Perspective"
+msgstr "យថាទស្សន៍"
+
+#: clutter/clutter-stage.c:1972
+msgid "Perspective projection parameters"
+msgstr "ប៉ារ៉ាម៉ែត្រ​ចំណោល​យថាទស្សន៍"
+
+#: clutter/clutter-stage.c:1987
+msgid "Title"
+msgstr "ចំណង​ជើង"
+
+#: clutter/clutter-stage.c:1988
+msgid "Stage Title"
+msgstr "ចំណងជើង​ឈុត"
+
+#: clutter/clutter-stage.c:2005
+msgid "Use Fog"
+msgstr "ប្រើ​អ័ព្ទ"
+
+#: clutter/clutter-stage.c:2006
+msgid "Whether to enable depth cueing"
+msgstr "ថា​តើ​ត្រូវ​បើក​ការ​ផ្ដល់​សញ្ញា​អំពី​ជម្រៅ​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-stage.c:2022
+msgid "Fog"
+msgstr "អ័ព្ទ"
+
+#: clutter/clutter-stage.c:2023
+msgid "Settings for the depth cueing"
+msgstr "កំណត់​សម្រាប់​ការ​ផ្ដល់​សញ្ញា​អំពី​ជម្រៅ"
+
+#: clutter/clutter-stage.c:2039
+msgid "Use Alpha"
+msgstr "ប្រើ​អាល់ហ្វា"
+
+#: clutter/clutter-stage.c:2040
+msgid "Whether to honour the alpha component of the stage color"
+msgstr "ថា​តើ​ត្រូវ​ផ្ដល់​សមាសភាគ​អាល់ហ្វា​នៃ​ពណ៌​ឈុត​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-stage.c:2056
+msgid "Key Focus"
+msgstr "ផ្ដោត​ពាក្យ​គន្លឹះ"
+
+#: clutter/clutter-stage.c:2057
+msgid "The currently key focused actor"
+msgstr "កម្មវិធី​អនុវត្ត​ដែល​បាន​ផ្ដោត​លើ​ពាក្យ​គន្លឹះ​បច្ចុប្បន្ន"
+
+#: clutter/clutter-stage.c:2073
+msgid "No Clear Hint"
+msgstr "គ្មាន​ការ​សម្អាត​ជំនួយ"
+
+#: clutter/clutter-stage.c:2074
+msgid "Whether the stage should clear its contents"
+msgstr "ថា​តើ​ឈុត​គួរតែ​​សម្អាត​មាតិកា​របស់​វា​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-stage.c:2087
+msgid "Accept Focus"
+msgstr "ព្រម​ទទួល​ផ្ដោត"
+
+#: clutter/clutter-stage.c:2088
+msgid "Whether the stage should accept focus on show"
+msgstr "ថា​តើ​ឈុត​គួរតែ​ព្រម​ទទួល​យក​ផ្ដោត​នៅ​ពេល​បង្ហាញ​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-state.c:1474
+msgid "State"
+msgstr "ស្ថានភាព"
+
+#: clutter/clutter-state.c:1475
+msgid "Currently set state, (transition to this state might not be complete)"
+msgstr "ស្ថានភាព​ដែល​បាន​កំណត់​បច្ចុប្បន្ន (ដំណើរ​ផ្លាស់ប្ដូរ​ទៅ​ស្ថានភាព​នេះ​ប្រហែល​មិន​អាច​បញ្ចប់​បាន​ទេ)"
+
+#: clutter/clutter-state.c:1489
+msgid "Default transition duration"
+msgstr "ថិរវេលា​នៃ​ដំណើរ​ផ្លាស់ប្ដូរ​លំនាំដើម"
+
+#: clutter/clutter-table-layout.c:595
+msgid "Column Number"
+msgstr "ចំនួន​ជួរឈរ"
+
+#: clutter/clutter-table-layout.c:596
+msgid "The column the widget resides in"
+msgstr "ជួរឈរ​ដែល​មាន​ធាតុក្រាហ្វិក"
+
+#: clutter/clutter-table-layout.c:603
+msgid "Row Number"
+msgstr "ចំនួន​ជួរដេក"
+
+#: clutter/clutter-table-layout.c:604
+msgid "The row the widget resides in"
+msgstr "ជួរដេក​ដែល​មាន​ធាតុក្រាហ្វិក"
+
+#: clutter/clutter-table-layout.c:611
+msgid "Column Span"
+msgstr "វិសាលភាព​ជួរឈរ"
+
+#: clutter/clutter-table-layout.c:612
+msgid "The number of columns the widget should span"
+msgstr "ចំនួន​ជួរឈរ​ដែល​ធាតុ​គួរតែ​ពង្រីក​វិសាលភាព"
+
+#: clutter/clutter-table-layout.c:619
+msgid "Row Span"
+msgstr "វិសាលភាព​ជួរដេក"
+
+#: clutter/clutter-table-layout.c:620
+msgid "The number of rows the widget should span"
+msgstr "ចំនួន​ជួរដេក​ដែល​ធាតុ​ក្រាហ្វិក​គួរតែ​ពង្រីក​វិសាលភាព"
+
+#: clutter/clutter-table-layout.c:627
+msgid "Horizontal Expand"
+msgstr "ពង្រីក​​ផ្ដេក"
+
+#: clutter/clutter-table-layout.c:628
+msgid "Allocate extra space for the child in horizontal axis"
+msgstr "បម្រុងទុក​ទំហំ​បន្ថែម​សម្រាប់​កូន​ក្នុង​អ័ក្ស​ផ្ដេក"
+
+#: clutter/clutter-table-layout.c:634
+msgid "Vertical Expand"
+msgstr "ពង្រីក​បញ្ឈរ"
+
+#: clutter/clutter-table-layout.c:635
+msgid "Allocate extra space for the child in vertical axis"
+msgstr "បម្រុងទុក​ទំហំ​បន្ថែម​សម្រាប់​កូន​នៅ​ក្នុង​អ័ក្ស​បញ្ឈរ"
+
+#: clutter/clutter-table-layout.c:1747
+msgid "Spacing between columns"
+msgstr "គម្លាត​រវាង​ជួរឈរ"
+
+#: clutter/clutter-table-layout.c:1761
+msgid "Spacing between rows"
+msgstr "គម្លាត​រវាង​ជួរដេក"
+
+#: clutter/clutter-text-buffer.c:351 clutter/clutter-text.c:3031
+msgid "Text"
+msgstr "អត្ថបទ"
+
+#: clutter/clutter-text-buffer.c:352
+#, fuzzy
+msgid "The contents of the buffer"
+msgstr "កម្រិត​បំពេញ​អង្គ​ចងចាំ​បណ្ដោះ​អាសន្ន"
+
+#: clutter/clutter-text-buffer.c:365
+#, fuzzy
+msgid "Text length"
+msgstr "ប្រវែង​អតិបរមា"
+
+#: clutter/clutter-text-buffer.c:366
+#, fuzzy
+msgid "Length of the text currently in the buffer"
+msgstr "ផ្លូវ​ឯកសារ​ដែល​ទើប​តែ​បាន​ញែក​ថ្មីៗ"
+
+#: clutter/clutter-text-buffer.c:379
+#, fuzzy
+msgid "Maximum length"
+msgstr "ប្រវែង​អតិបរមា"
+
+#: clutter/clutter-text-buffer.c:380
+msgid "Maximum number of characters for this entry. Zero if no maximum"
+msgstr ""
+
+#: clutter/clutter-text.c:2978
+#, fuzzy
+msgid "Buffer"
+msgstr "បំពេញ​អង្គ​ចងចាំ​បណ្ដោះ​អាសន្ន"
+
+#: clutter/clutter-text.c:2979
+#, fuzzy
+msgid "The buffer for the text"
+msgstr "ឈ្មោះមេតា"
+
+#: clutter/clutter-text.c:2997
+msgid "The font to be used by the text"
+msgstr "ពុម្ពអក្សរ​ដែល​ត្រូវ​ប្រើ​ដោយ​អត្ថបទ"
+
+#: clutter/clutter-text.c:3014
+msgid "Font Description"
+msgstr "សេចក្ដី​ពិពណ៌នា​អំពី​ពុម្ពអក្សរ"
+
+#: clutter/clutter-text.c:3015
+msgid "The font description to be used"
+msgstr "សេចក្ដី​ពិពណ៌នា​អំពី​ពុម្ពអក្សរ​នឹង​ត្រូវ​បាន​ប្រើ"
+
+#: clutter/clutter-text.c:3032
+msgid "The text to render"
+msgstr "អត្ថបទ​ត្រូវ​​បង្ហាញ"
+
+#: clutter/clutter-text.c:3046
+msgid "Font Color"
+msgstr "ពណ៌​ពុម្ពអក្សរ"
+
+#: clutter/clutter-text.c:3047
+msgid "Color of the font used by the text"
+msgstr "ពណ៌​ពុម្ពអក្សរ​ដែល​ត្រូវ​ប្រើ​ដោយ​អត្ថបទ"
+
+#: clutter/clutter-text.c:3061
+msgid "Editable"
+msgstr "អាច​កែ​សម្រួល​បាន"
+
+#: clutter/clutter-text.c:3062
+msgid "Whether the text is editable"
+msgstr "ថា​តើ​អត្ថបទ​អាច​កែ​សម្រួល​បាន​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-text.c:3077
+msgid "Selectable"
+msgstr "អាច​ជ្រើស​បាន"
+
+#: clutter/clutter-text.c:3078
+msgid "Whether the text is selectable"
+msgstr "ថា​តើ​អត្ថបទ​អាច​ជ្រើស​បាន​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-text.c:3092
+msgid "Activatable"
+msgstr "អាច​ធ្វើឲ្យ​សកម្ម"
+
+#: clutter/clutter-text.c:3093
+msgid "Whether pressing return causes the activate signal to be emitted"
+msgstr "ថា​តើ​ការ​ចុច​ត្រឡប់​អាច​នឹង​​បណ្ដាល​ឲ្យ​សញ្ញា​ធ្វើឲ្យ​សកម្ម​បង្ហាញ​ឡើង​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-text.c:3110
+msgid "Whether the input cursor is visible"
+msgstr "ថា​តើ​ទស្សន៍ទ្រនិច​បញ្ចូល​អាច​មើល​ឃើញ​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-text.c:3124 clutter/clutter-text.c:3125
+msgid "Cursor Color"
+msgstr "ពណ៌​ទស្សន៍ទ្រនិច"
+
+#: clutter/clutter-text.c:3139
+msgid "Cursor Color Set"
+msgstr "កំណត់​ពណ៌​ទស្សន៍ទ្រនិច"
+
+#: clutter/clutter-text.c:3140
+msgid "Whether the cursor color has been set"
+msgstr "ថា​តើ​ពណ៌​ទស្សន៍ទ្រនិច​ត្រូវ​បាន​កំណត់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-text.c:3155
+msgid "Cursor Size"
+msgstr "ទំហំ​ទស្សន៍ទ្រនិច"
+
+#: clutter/clutter-text.c:3156
+msgid "The width of the cursor, in pixels"
+msgstr "ទទឹង​ទស្សន៍ទ្រនិច​គិត​ជា​ភីកសែល"
+
+#: clutter/clutter-text.c:3170
+msgid "Cursor Position"
+msgstr "ទីតាំង​ទស្សន៍ទ្រនិច"
+
+#: clutter/clutter-text.c:3171
+msgid "The cursor position"
+msgstr "ទីតាំង​ទស្សន៍ទ្រនិច"
+
+#: clutter/clutter-text.c:3186
+msgid "Selection-bound"
+msgstr "ព្រំដែន​ជម្រើស"
+
+#: clutter/clutter-text.c:3187
+msgid "The cursor position of the other end of the selection"
+msgstr "ទីតាំង​ទស្សន៍ទ្រនិច​នៅ​ចុង​ម្ខាង​នៃ​ជម្រើស​ផ្សេងទៀត"
+
+#: clutter/clutter-text.c:3202 clutter/clutter-text.c:3203
+msgid "Selection Color"
+msgstr "ពណ៌​ជម្រើស"
+
+#: clutter/clutter-text.c:3217
+msgid "Selection Color Set"
+msgstr "កំណត់​ពណ៌​ជម្រើស"
+
+#: clutter/clutter-text.c:3218
+msgid "Whether the selection color has been set"
+msgstr "ថា​តើ​ពណ៌​ជម្រើស​ត្រូវ​បាន​កំណត់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-text.c:3233
+msgid "Attributes"
+msgstr "គុណ​លក្ខណៈ"
+
+#: clutter/clutter-text.c:3234
+msgid "A list of style attributes to apply to the contents of the actor"
+msgstr "បញ្ជី​គុណ​លក្ខណៈ​រចនាប័ទ្ម​ដែល​ត្រូវ​អនុវត្ត​ទៅ​មាតិកា​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-text.c:3256
+msgid "Use markup"
+msgstr "ប្រើ markup"
+
+#: clutter/clutter-text.c:3257
+msgid "Whether or not the text includes Pango markup"
+msgstr "ថា​តើ​អត្ថបទ​ត្រូវ​រួមបញ្ចូល ឬ​មិន​រួមបញ្ចូល Pango markup"
+
+#: clutter/clutter-text.c:3273
+msgid "Line wrap"
+msgstr "រុំ​បន្ទាត់"
+
+#: clutter/clutter-text.c:3274
+msgid "If set, wrap the lines if the text becomes too wide"
+msgstr "ប្រសិនបើ​បាន​កំណត់ រុំ​បន្ទាត់​ប្រសិនបើ​ជា​អត្ថបទ​ធំ​ពេក"
+
+#: clutter/clutter-text.c:3289
+msgid "Line wrap mode"
+msgstr "របៀប​រុំ​បន្ទាត់"
+
+#: clutter/clutter-text.c:3290
+msgid "Control how line-wrapping is done"
+msgstr "ត្រួតពិនិត្យ​របៀប​រុំ​បន្ទាត់​ដែល​បាន​ធ្វើរួច"
+
+#: clutter/clutter-text.c:3305
+msgid "Ellipsize"
+msgstr "ធ្វើឲ្យ​ទៅជា​រាង​ពង​ក្រពើ"
+
+#: clutter/clutter-text.c:3306
+msgid "The preferred place to ellipsize the string"
+msgstr "កន្លែង​សំណព្វ​ដែល​ត្រូវ​ធ្វើឲ្យ​ខ្សែ​អក្សរ​មាន​រាង​ជា​ពងក្រពើ"
+
+#: clutter/clutter-text.c:3322
+msgid "Line Alignment"
+msgstr "ការ​តម្រឹម​បន្ទាត់"
+
+#: clutter/clutter-text.c:3323
+msgid "The preferred alignment for the string, for multi-line text"
+msgstr "ការ​តម្រឹម​សម្រាប់​ខ្សែ​អក្សរ និង​សម្រាប់​អត្ថបទ​ដែល​មាន​ច្រើន​បន្ទាត់"
+
+#: clutter/clutter-text.c:3339
+msgid "Justify"
+msgstr "តម្រឹម​សងខាង"
+
+#: clutter/clutter-text.c:3340
+msgid "Whether the text should be justified"
+msgstr "ថា​តើ​អត្ថបទ​គួរតែ​ត្រូវ​បាន​តម្រឹម​សង​ខាង​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-text.c:3355
+msgid "Password Character"
+msgstr "តួអក្សរ​ពាក្យសម្ងាត់"
+
+#: clutter/clutter-text.c:3356
+msgid "If non-zero, use this character to display the actor's contents"
+msgstr "ប្រសិនបើ​មិនមែន​សូន្យ ប្រើ​តួអក្សរ​នេះ ដើម្បី​បង្ហាញ​មាតិកា​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-text.c:3370
+msgid "Max Length"
+msgstr "ប្រវែង​អតិបរមា"
+
+#: clutter/clutter-text.c:3371
+msgid "Maximum length of the text inside the actor"
+msgstr "ប្រវែង​អត្ថបទ​អតិបរមា​នៅ​ខាងក្នុង​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-text.c:3394
+msgid "Single Line Mode"
+msgstr "របៀប​បន្ទាត់​តែមួយ"
+
+#: clutter/clutter-text.c:3395
+msgid "Whether the text should be a single line"
+msgstr "ថា​តើ​អត្ថបទ​គួរតែ​ជា​បន្ទាត់​តែមួយ​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-text.c:3409 clutter/clutter-text.c:3410
+msgid "Selected Text Color"
+msgstr "ពណ៌​អត្ថបទ​ដែល​បាន​ជ្រើស"
+
+#: clutter/clutter-text.c:3424
+msgid "Selected Text Color Set"
+msgstr "កំណត់​ពណ៌​អត្ថបទ​ដែល​បាន​ជ្រើស"
+
+#: clutter/clutter-text.c:3425
+msgid "Whether the selected text color has been set"
+msgstr "ថា​តើ​ពណ៌​អត្ថបទ​ដែល​បាន​ជ្រើស​ត្រូវ​បាន​កំណត់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-texture.c:992
+msgid "Sync size of actor"
+msgstr "ធ្វើ​សមកាលកម្ម​ទំហំ​របស់​កម្មវិធី​អនុវត្ត"
+
+#: clutter/clutter-texture.c:993
+msgid "Auto sync size of actor to underlying pixbuf dimensions"
+msgstr "ធ្វើ​សមកាលកម្ម​ទំហំ​​​របស់​កម្មវិធី​អនុវត្ត​ដោយ​​ស្វ័យប្រវត្តិ ដើម្បី​កំណត់​មូលដ្ឋាន​វិមាត្រ pixbuf"
+
+#: clutter/clutter-texture.c:1000
+msgid "Disable Slicing"
+msgstr "បិទ​ការ​ចិត"
+
+#: clutter/clutter-texture.c:1001
+msgid ""
+"Forces the underlying texture to be singular and not made of smaller space "
+"saving individual textures"
+msgstr ""
+"បង្ខំ​វាយនភាព​ដែល​មាន​មូលដ្ឋាន​ឲ្យ​ក្លាយ​ទៅជា​តែមួយ ហើយ​មិនមែន​​បង្កើត​មក​ពី​ទំហំ​តូច​ៗ​ដែល​រក្សាទុក​វាយនភាព​"
+"ផ្សេងៗ​គ្នា"
+
+#: clutter/clutter-texture.c:1010
+msgid "Tile Waste"
+msgstr "សំណល់​ក្រឡា​ក្បឿង"
+
+#: clutter/clutter-texture.c:1011
+msgid "Maximum waste area of a sliced texture"
+msgstr "តំបន់​សំណល់​អតិបរមា​នៃ​វាយនភាព​ដែល​បាន​ចិត"
+
+#: clutter/clutter-texture.c:1019
+msgid "Horizontal repeat"
+msgstr "ធ្វើផ្ដេក​ម្ដងទៀត"
+
+#: clutter/clutter-texture.c:1020
+msgid "Repeat the contents rather than scaling them horizontally"
+msgstr "បង្កើត​មាតិកា​ម្ដងទៀត​ជាជាង​ធ្វើ​មាត្រដ្ឋាន​ពួកវា​តាម​ទិស​ផ្ដេក"
+
+#: clutter/clutter-texture.c:1027
+msgid "Vertical repeat"
+msgstr "ធ្វើ​បញ្ឈរ​ម្ដងទៀត"
+
+#: clutter/clutter-texture.c:1028
+msgid "Repeat the contents rather than scaling them vertically"
+msgstr "បង្កើត​មាតិកា​ម្ដងទៀត​ជាជាង​ធ្វើ​មាត្រដ្ឋាន​ពួកវា​តាម​ទិសបញ្ឈរ"
+
+#: clutter/clutter-texture.c:1035
+msgid "Filter Quality"
+msgstr "គុណភាព​​តម្រង"
+
+#: clutter/clutter-texture.c:1036
+msgid "Rendering quality used when drawing the texture"
+msgstr "គុណភាព​ដែល​​បង្ហាញ​នឹង​ត្រូវ​បាន​ប្រើ​នៅ​ពេល​គូរ​វាយនភាព"
+
+#: clutter/clutter-texture.c:1044
+msgid "Pixel Format"
+msgstr "ទ្រង់ទ្រាយ​ភីកសែល"
+
+#: clutter/clutter-texture.c:1045
+msgid "The Cogl pixel format to use"
+msgstr "ទ្រង់ទ្រាយ​ភីកសែល Cogl ដែល​ត្រូវ​ប្រើ"
+
+#: clutter/clutter-texture.c:1053
+#: clutter/wayland/clutter-wayland-surface.c:430
+msgid "Cogl Texture"
+msgstr "វាយនភាព Cogl"
+
+#: clutter/clutter-texture.c:1054
+#: clutter/wayland/clutter-wayland-surface.c:431
+msgid "The underlying Cogl texture handle used to draw this actor"
+msgstr "ការ​គ្រប់គ្រង​វាយនភាព Cogl ជា​​មូលដ្ឋាន​នឹង​ត្រូវ​ប្រើ ដើម្បី​គូរ​កម្មវិធី​អនុវត្ត​នេះ"
+
+#: clutter/clutter-texture.c:1061
+msgid "Cogl Material"
+msgstr "វត្ថុ Cogl"
+
+#: clutter/clutter-texture.c:1062
+msgid "The underlying Cogl material handle used to draw this actor"
+msgstr "ការ​គ្រប់គ្រង​វត្ថុ Cogl ជា​មូលដ្ឋាន​នឹង​ត្រូវ​ប្រើ ដើម្បី​គូរ​កម្មវិធី​អនុវត្ត​នេះ"
+
+#: clutter/clutter-texture.c:1079
+msgid "The path of the file containing the image data"
+msgstr "ផ្លូវ​ឯកសារ​ដែល​មាន​ទិន្នន័យ​រូបភាព"
+
+#: clutter/clutter-texture.c:1086
+msgid "Keep Aspect Ratio"
+msgstr "រក្សាទុក​សមាមាត្រ"
+
+#: clutter/clutter-texture.c:1087
+msgid ""
+"Keep the aspect ratio of the texture when requesting the preferred width or "
+"height"
+msgstr "រក្សាទុក​សមាមាត្រ​វាយនភាព នៅ​ពេល​ស្នើ​ទទឹង ឬ​កម្ពស់​ដែល​ពេញចិត្ត"
+
+#: clutter/clutter-texture.c:1113
+msgid "Load asynchronously"
+msgstr "ផ្ទុក​បែប​អសមកាលកម្ម"
+
+#: clutter/clutter-texture.c:1114
+msgid ""
+"Load files inside a thread to avoid blocking when loading images from disk"
+msgstr "ផ្ទុក​ឯកសារ​នៅ​ក្នុង​ខ្សែស្រឡាយ ដើម្បី​ជៀសវាង​ការ​ទប់ស្កាត់នៅ​ពេល​ផ្ទុក​រូបភាព​ពី​ថាស"
+
+#: clutter/clutter-texture.c:1130
+msgid "Load data asynchronously"
+msgstr "ផ្ទុក​ទិន្នន័យ​បែប​អសមកាលកម្ម"
+
+#: clutter/clutter-texture.c:1131
+msgid ""
+"Decode image data files inside a thread to reduce blocking when loading "
+"images from disk"
+msgstr "ឌិកូដ​ឯកសារ​ទិន្នន័យ​រូបភាព​នៅ​ក្នុង​ខ្សែស្រឡាយ ដើម្បីកាត់បន្ថយ​ការ​ទប់ស្កាត់​នៅ​ពេល​ផ្ទុក​រូបភាព​ពី​ថាស"
+
+#: clutter/clutter-texture.c:1155
+msgid "Pick With Alpha"
+msgstr "ជ្រើស​ជាមួយ​អាល់ហ្វា"
+
+#: clutter/clutter-texture.c:1156
+msgid "Shape actor with alpha channel when picking"
+msgstr "ធ្វើឲ្យ​កម្មវិធី​អនុវត្ត​មាន​រាង​ជាមួយ​ឆានែល​អាល់ហ្វា​នៅ​ពេល​ជ្រើស"
+
+#: clutter/clutter-texture.c:1576 clutter/clutter-texture.c:1969
+#: clutter/clutter-texture.c:2063 clutter/clutter-texture.c:2347
+msgid "Failed to load the image data"
+msgstr "បាន​បរាជ័យ​ក្នុង​ការ​ផ្ទុក​ទិន្នន័យ​រូបភាព"
+
+#: clutter/clutter-texture.c:1733
+msgid "YUV textures are not supported"
+msgstr "វាយនភាព YUV មិន​ត្រូវ​បាន​គាំទ្រ"
+
+#: clutter/clutter-texture.c:1742
+msgid "YUV2 textues are not supported"
+msgstr "វាយនភាព YUV2 មិន​ត្រូវ​បាន​គាំទ្រ"
+
+#: clutter/clutter-timeline.c:551
+msgid "Should the timeline automatically restart"
+msgstr "ប្រសិនបើ​​បន្ទាត់​ពេលវេលា​ចាប់ផ្ដើម​ឡើងវិញ​ដោយ​ស្វ័យប្រវត្តិ"
+
+#: clutter/clutter-timeline.c:565
+msgid "Delay"
+msgstr "ពន្យារ​ពេល"
+
+#: clutter/clutter-timeline.c:566
+msgid "Delay before start"
+msgstr "ពន្យារពេល​មុន​ចាប់ផ្ដើម"
+
+#: clutter/clutter-timeline.c:582
+msgid "Duration of the timeline in milliseconds"
+msgstr "ថិរវេលា​នៃ​បន្ទាត់​ពេលវេលា​គិតជា​មិល្លីវិនាទី"
+
+#: clutter/clutter-timeline.c:597
+#: clutter/deprecated/clutter-behaviour-ellipse.c:526
+#: clutter/deprecated/clutter-behaviour-rotate.c:335
+msgid "Direction"
+msgstr "ទិស"
+
+#: clutter/clutter-timeline.c:598
+msgid "Direction of the timeline"
+msgstr "ទិស​បន្ទាត់​ពេលវេលា"
+
+#: clutter/clutter-timeline.c:613
+msgid "Auto Reverse"
+msgstr "បញ្ច្រាស​ស្វ័យប្រវត្តិ"
+
+#: clutter/clutter-timeline.c:614
+msgid "Whether the direction should be reversed when reaching the end"
+msgstr "ថា​តើ​ទិស​គួរតែ​ត្រូវ​បាន​បញ្ច្រាស​នៅ​ពេល​ឈាន​ដល់​ចំណុច​ចុង​បញ្ចប់​ដែរ​ឬ​ទេ"
+
+#: clutter/clutter-timeline.c:632
+msgid "Repeat Count"
+msgstr ""
+
+#: clutter/clutter-timeline.c:633
+msgid "How many times the timeline should repeat"
+msgstr ""
+
+#: clutter/clutter-timeline.c:647
+#, fuzzy
+msgid "Progress Mode"
+msgstr "របៀប​វឌ្ឍនភាព"
+
+#: clutter/clutter-timeline.c:648
+msgid "How the timeline should compute the progress"
+msgstr ""
+
+#: clutter/clutter-transition.c:249
+msgid "Interval"
+msgstr ""
+
+#: clutter/clutter-transition.c:250
+#, fuzzy
+msgid "The interval of values to transition"
+msgstr "បន្ទាត់​ពេលវេលា​របស់​ចលនា"
+
+#: clutter/clutter-transition.c:264
+#, fuzzy
+msgid "Animatable"
+msgstr "អាច​ធ្វើឲ្យ​សកម្ម"
+
+#: clutter/clutter-transition.c:265
+msgid "The animatable object"
+msgstr ""
+
+#: clutter/clutter-transition.c:286
+msgid "Remove on Complete"
+msgstr ""
+
+#: clutter/clutter-transition.c:287
+#, fuzzy
+msgid "Detach the transition when completed"
+msgstr "ថា​តើ​កម្មវិធី​បង្ហាញ​ត្រូវ​បាន​បង្ហាញ​នៅ​ពេល​កំណត់ជា​មេ​ដែរ​ឬទេ"
+
+#: clutter/deprecated/clutter-behaviour.c:241
+msgid "Alpha Object to drive the behaviour"
+msgstr "វត្ថុ​អាល់ហ្វា​សម្រាប់​បញ្ជា​ឥរិយាបថ"
+
+#: clutter/deprecated/clutter-behaviour-depth.c:180
+msgid "Start Depth"
+msgstr "ជម្រៅ​ចាប់ផ្ដើម"
+
+#: clutter/deprecated/clutter-behaviour-depth.c:181
+msgid "Initial depth to apply"
+msgstr "ជម្រៅ​ដំបូង​ត្រូវ​អនុវត្ត"
+
+#: clutter/deprecated/clutter-behaviour-depth.c:196
+msgid "End Depth"
+msgstr "ជម្រៅ​ចុង"
+
+#: clutter/deprecated/clutter-behaviour-depth.c:197
+msgid "Final depth to apply"
+msgstr "ជម្រៅ​បញ្ចប់​ត្រូវ​អនុវត្ត"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:399
+msgid "Start Angle"
+msgstr "មុំ​ចាប់ផ្ដើម"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:400
+#: clutter/deprecated/clutter-behaviour-rotate.c:282
+msgid "Initial angle"
+msgstr "មុំ​ដំបូង"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:415
+msgid "End Angle"
+msgstr "មុំ​ចុង"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:416
+#: clutter/deprecated/clutter-behaviour-rotate.c:300
+msgid "Final angle"
+msgstr "មុំ​បញ្ចប់"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:431
+msgid "Angle x tilt"
+msgstr "ផ្អៀង​មុំ x"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:432
+msgid "Tilt of the ellipse around x axis"
+msgstr "ផ្អៀង​រង្វង់​ពងក្រពើ​ជុំវិញ​អ័ក្ស x"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:447
+msgid "Angle y tilt"
+msgstr "ផ្អៀង​មុំ y"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:448
+msgid "Tilt of the ellipse around y axis"
+msgstr "ផ្អៀង​រង្វង់​ពងក្រពើ​ជុំវិញ​អ័ក្ស y"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:463
+msgid "Angle z tilt"
+msgstr "ផ្អៀង​មុំ z"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:464
+msgid "Tilt of the ellipse around z axis"
+msgstr "ផ្អៀង​រង្វង់​ពងក្រពើ​ជុំវិញ​អ័ក្ស z"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:480
+msgid "Width of the ellipse"
+msgstr "ទទឹង​របស់​រង្វង់​ពងក្រពើ"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:496
+msgid "Height of ellipse"
+msgstr "កម្ពស់​របស់​រង្វង់​ពងក្រពើ"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:511
+msgid "Center"
+msgstr "ផ្ចិត"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:512
+msgid "Center of ellipse"
+msgstr "ផ្ចិត​រង្វង់​ពងក្រពើ"
+
+#: clutter/deprecated/clutter-behaviour-ellipse.c:527
+#: clutter/deprecated/clutter-behaviour-rotate.c:336
+msgid "Direction of rotation"
+msgstr "ទិស​បង្វិល"
+
+#: clutter/deprecated/clutter-behaviour-opacity.c:183
+msgid "Opacity Start"
+msgstr "ការ​ចាប់ផ្ដើម​ភាពស្រអាប់"
+
+#: clutter/deprecated/clutter-behaviour-opacity.c:184
+msgid "Initial opacity level"
+msgstr "កម្រិត​​​ស្រអាប់​ដំបូង"
+
+#: clutter/deprecated/clutter-behaviour-opacity.c:201
+msgid "Opacity End"
+msgstr "ការ​បញ្ចប់​ភាព​ស្រអាប់"
+
+#: clutter/deprecated/clutter-behaviour-opacity.c:202
+msgid "Final opacity level"
+msgstr "កម្រិត​ស្រអាប់​ចុង​ក្រោយ"
+
+#: clutter/deprecated/clutter-behaviour-path.c:225
+msgid "The ClutterPath object representing the path to animate along"
+msgstr "វត្ថុ ClutterPath តំណាង​ឲ្យ​ផ្លូវ​ដែល​​ត្រូវ​ធ្វើ​ចលនាតាម"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:281
+msgid "Angle Begin"
+msgstr "ដើម​មុំ"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:299
+msgid "Angle End"
+msgstr "ចុង​មុំ"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:317
+msgid "Axis"
+msgstr "អ័ក្ស"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:318
+msgid "Axis of rotation"
+msgstr "អ័ក្ស​បង្វិល"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:353
+msgid "Center X"
+msgstr "ចំណុច​កណ្ដាល X"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:354
+msgid "X coordinate of the center of rotation"
+msgstr "កូអរដោនេ X នៃ​ចំណុច​បង្វិល"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:371
+msgid "Center Y"
+msgstr "ចំណុច​កណ្ដាល Y"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:372
+msgid "Y coordinate of the center of rotation"
+msgstr "កូអរដោនេ Y នៃ​ចំណុច​បង្វិល"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:389
+msgid "Center Z"
+msgstr "ចំណុច​កណ្ដាល Z"
+
+#: clutter/deprecated/clutter-behaviour-rotate.c:390
+msgid "Z coordinate of the center of rotation"
+msgstr "កូអរដោនេ Z នៃ​ចំណុច​បង្វិល"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:224
+msgid "X Start Scale"
+msgstr "មាត្រដ្ឋាន​ចាប់ផ្ដើម X"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:225
+msgid "Initial scale on the X axis"
+msgstr "មាត្រដ្ឋាន​ដំបូង​នៅ​លើ​អ័ក្ស X"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:243
+msgid "X End Scale"
+msgstr "មាត្រដ្ឋាន​បញ្ចប់ X"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:244
+msgid "Final scale on the X axis"
+msgstr "មាត្រដ្ឋាន​ចុងក្រោយ​នៅ​លើ​អ័ក្ស X"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:262
+msgid "Y Start Scale"
+msgstr "មាត្រដ្ឋាន​ចាប់ផ្ដើម Y"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:263
+msgid "Initial scale on the Y axis"
+msgstr "មាត្រដ្ឋាន​ដំបូង​នៅ​លើ​អ័ក្ស Y"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:281
+msgid "Y End Scale"
+msgstr "មាត្រដ្ឋាន​បញ្ចប់ Y"
+
+#: clutter/deprecated/clutter-behaviour-scale.c:282
+msgid "Final scale on the Y axis"
+msgstr "មាត្រដ្ឋាន​ចុងក្រោយ​នៅ​លើ​អ័ក្ស Y"
+
+#: clutter/deprecated/clutter-box.c:261
+msgid "The background color of the box"
+msgstr "ពណ៌​ផ្ទៃ​ខាងក្រោយ​ប្រអប់"
+
+#: clutter/deprecated/clutter-box.c:274
+msgid "Color Set"
+msgstr "សំណុំ​ពណ៌"
+
+#: clutter/deprecated/clutter-rectangle.c:273
+msgid "The color of the rectangle"
+msgstr "ពណ៌​ចតុកោណ"
+
+#: clutter/deprecated/clutter-rectangle.c:286
+msgid "Border Color"
+msgstr "ពណ៌ស៊ុម"
+
+#: clutter/deprecated/clutter-rectangle.c:287
+msgid "The color of the border of the rectangle"
+msgstr "ពណ៌​ស៊ុម​ចតុកោណ"
+
+#: clutter/deprecated/clutter-rectangle.c:302
+msgid "Border Width"
+msgstr "ទទឹង​ស៊ុម"
+
+#: clutter/deprecated/clutter-rectangle.c:303
+msgid "The width of the border of the rectangle"
+msgstr "ទទឹង​ស៊ុម​ចតុកោណ"
+
+#: clutter/deprecated/clutter-rectangle.c:317
+msgid "Has Border"
+msgstr "មាន​ស៊ុម"
+
+#: clutter/deprecated/clutter-rectangle.c:318
+msgid "Whether the rectangle should have a border"
+msgstr "ថា​តើ​ចតុកោណ​គួរតែ​មាន​ស៊ុម​ដែរ​ឬ​ទេ"
+
+#: clutter/deprecated/clutter-shader.c:261
+msgid "Vertex Source"
+msgstr "ប្រភព​កំពូល"
+
+#: clutter/deprecated/clutter-shader.c:262
+msgid "Source of vertex shader"
+msgstr "ប្រភព​នៃ​ស្រមោល​កំពូល"
+
+#: clutter/deprecated/clutter-shader.c:278
+msgid "Fragment Source"
+msgstr "ប្រភព​ភាគ"
+
+#: clutter/deprecated/clutter-shader.c:279
+msgid "Source of fragment shader"
+msgstr "ប្រភព​នៃ​ស្រមោល​ភាគ"
+
+#: clutter/deprecated/clutter-shader.c:296
+msgid "Compiled"
+msgstr "បាន​ចងក្រង"
+
+#: clutter/deprecated/clutter-shader.c:297
+msgid "Whether the shader is compiled and linked"
+msgstr "ថា​តើ​ស្រមោល​ត្រូវ​បាន​ចងក្រង និង​តភ្ជាប់​ដែរ​ឬ​ទេ"
+
+#: clutter/deprecated/clutter-shader.c:314
+msgid "Whether the shader is enabled"
+msgstr "ថា​​តើ​ស្រមោល​ត្រូវ​បាន​បើក​ដែរ​ឬ​ទេ"
+
+#: clutter/deprecated/clutter-shader.c:525
+#, c-format
+msgid "%s compilation failed: %s"
+msgstr "%s ការ​ចងក្រង​បាន​បរាជ័យ ៖ %s"
+
+#: clutter/deprecated/clutter-shader.c:526
+msgid "Vertex shader"
+msgstr "ស្រមោល​កំពូល"
+
+#: clutter/deprecated/clutter-shader.c:527
+msgid "Fragment shader"
+msgstr "ស្រមោល​ភាគ"
+
+#: clutter/evdev/clutter-input-device-evdev.c:159
+msgid "sysfs Path"
+msgstr "ផ្លូវ sysfs"
+
+#: clutter/evdev/clutter-input-device-evdev.c:160
+msgid "Path of the device in sysfs"
+msgstr "ផ្លូវ​ឧបករណ៍​នៅ​ក្នុង sysfs"
+
+#: clutter/evdev/clutter-input-device-evdev.c:175
+msgid "Device Path"
+msgstr "ផ្លូវ​ឧបករណ៍"
+
+#: clutter/evdev/clutter-input-device-evdev.c:176
+msgid "Path of the device node"
+msgstr "ផ្លូវ​ថ្នាំង​ឧបករណ៍"
+
+#: clutter/gdk/clutter-backend-gdk.c:294
+#, c-format
+msgid "Could not find a suitable CoglWinsys for a GdkDisplay of type %s"
+msgstr "មិន​អាច​ស្វែងរក CoglWinsys ដែល​សមស្រប​សម្រាប់​ប្រភេទ GdkDisplay %s"
+
+#: clutter/wayland/clutter-wayland-surface.c:404
+msgid "Surface"
+msgstr "ផ្ទៃ​ខាងក្រៅ"
+
+#: clutter/wayland/clutter-wayland-surface.c:405
+msgid "The underlying wayland surface"
+msgstr "ផ្ទៃ​ខាងក្រៅ​នៃ wayland ជា​មូលដ្ឋាន"
+
+#: clutter/wayland/clutter-wayland-surface.c:412
+msgid "Surface width"
+msgstr "ទទឹង​ផ្ទៃ​ខាងក្រៅ"
+
+#: clutter/wayland/clutter-wayland-surface.c:413
+msgid "The width of the underlying wayland surface"
+msgstr "ទទឹង​ផ្ទៃ​ខាងក្រៅ​ wayland ជា​មូលដ្ឋាន"
+
+#: clutter/wayland/clutter-wayland-surface.c:421
+msgid "Surface height"
+msgstr "កម្ពស់​ផ្ទៃ​ខាងក្រៅ"
+
+#: clutter/wayland/clutter-wayland-surface.c:422
+msgid "The height of the underlying wayland surface"
+msgstr "កម្ពស់​ផ្ទៃ​ខាងក្រៅ wayland ជា​មូលដ្ឋាន"
+
+#: clutter/x11/clutter-backend-x11.c:516
+msgid "X display to use"
+msgstr "ទិដ្ឋភាព X ត្រូវ​ប្រើ"
+
+#: clutter/x11/clutter-backend-x11.c:522
+msgid "X screen to use"
+msgstr "អេក្រង់ X ត្រូវ​ប្រើ"
+
+#: clutter/x11/clutter-backend-x11.c:527
+msgid "Make X calls synchronous"
+msgstr "បង្កើត​ការ​ហៅ X តាម​បែប​អសមកាលកម្ម"
+
+#: clutter/x11/clutter-backend-x11.c:534
+msgid "Enable XInput support"
+msgstr "បើក​ការ​គាំទ្រ XInput"
+
+#: clutter/x11/clutter-keymap-x11.c:317
+msgid "The Clutter backend"
+msgstr "កម្មវិធី​ខាងក្រោយ​របស់ Clutter"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:538
+msgid "Pixmap"
+msgstr "ផែនទី​ចំណុច"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:539
+msgid "The X11 Pixmap to be bound"
+msgstr "ផែនទី​ចំណុច X11 ដែល​ត្រូវ​កំណត់​ដែន"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:547
+msgid "Pixmap width"
+msgstr "ទទឹង​ផែនទី​ចំណុច"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:548
+msgid "The width of the pixmap bound to this texture"
+msgstr "ទទឹង​ផែនទី​ចំណុច​បាន​កំណត់​ដែន​សម្រាប់​វាយនភាព​នេះ"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:556
+msgid "Pixmap height"
+msgstr "កម្ពស់​ផែនទី​ចំណុច"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:557
+msgid "The height of the pixmap bound to this texture"
+msgstr "កម្ពស់​ផែនទី​ចំណុច​ដែល​បាន​កំណត់​ដែន​សម្រាប់​វាយនភាព​នេះ"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:565
+msgid "Pixmap Depth"
+msgstr "ជម្រៅ​ផែនទី​ចំណុច"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:566
+msgid "The depth (in number of bits) of the pixmap bound to this texture"
+msgstr "ជម្រៅ (គិតជា​ចំនួន​ប៊ីត) នៃ​ផែនទី​ចំណុច​ដែល​បាន​កំណត់​ដែន​សម្រាប់​វាយនភាព​នេះ"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:574
+msgid "Automatic Updates"
+msgstr "ធ្វើ​បច្ចុប្បន្នភាព​ស្វ័យប្រវត្តិ"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:575
+msgid "If the texture should be kept in sync with any pixmap changes."
+msgstr "ប្រសិនបើ​វាយនភាព​នឹង​ត្រូវ​បាន​រក្សាទុក​នៅ​ក្នុង​សមកាលកម្ម​ជាមួយ​ការ​ផ្លាស់ប្ដូរ​ចំណុច​ផែនទី​ណាមួយ ។"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:583
+msgid "Window"
+msgstr "បង្អួច"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:584
+msgid "The X11 Window to be bound"
+msgstr "បង្អួច X11 ដែល​នឹង​ត្រូវ​កំណត់​ដែន"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:592
+msgid "Window Redirect Automatic"
+msgstr "ប្ដូរ​ទិស​បង្អួច​ស្វ័យប្រវត្តិ"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:593
+msgid "If composite window redirects are set to Automatic (or Manual if false)"
+msgstr "ប្រសិនបើ​ការ​ប្ដូរ​ទិស​បង្អួច​ត្រូវ​បាន​កំណត់​ទៅជា​ស្វ័យប្រវត្តិ (ឬ​ដោយ​ដៃ​ ប្រសិនបើ​មិន​ពិត)"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:603
+msgid "Window Mapped"
+msgstr "បង្អួច​ត្រូវ​បាន​ផ្គូផ្គង"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:604
+msgid "If window is mapped"
+msgstr "ប្រសិនបើ​បង្អួច​ត្រូវ​បាន​ផ្គូផ្គង"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:613
+msgid "Destroyed"
+msgstr "បាន​បំផ្លាញ"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:614
+msgid "If window has been destroyed"
+msgstr "ប្រសិនបើ​បង្អួច​ត្រូវ​បាន​បំផ្លាញ"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:622
+msgid "Window X"
+msgstr "បង្អួច X"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:623
+msgid "X position of window on screen according to X11"
+msgstr "ទីតាំង​បង្អួច X ​នៅ​លើ​អេក្រង់​ស្រប​តាម X11"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:631
+msgid "Window Y"
+msgstr "បង្អួច Y"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:632
+msgid "Y position of window on screen according to X11"
+msgstr "ទីតាំង​បង្អួច Y នៅ​លើ​អេក្រង់​ស្រប​តាម X11"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:639
+msgid "Window Override Redirect"
+msgstr "បង្អួច​បដិសេធ​ការ​ប្ដូរ​ទិស"
+
+#: clutter/x11/clutter-x11-texture-pixmap.c:640
+msgid "If this is an override-redirect window"
+msgstr "ប្រសិនបើ​វា​ជា​បង្អួច​បដិសេធ​ការ​ប្ដូរ​ទិស"
+
+#~ msgid "The layout manager used by the box"
+#~ msgstr "កម្មវិធី​គ្រប់គ្រង​ប្លង់​ត្រូវ​បាន​ប្រើ​ដោយ​ប្រអប់"
