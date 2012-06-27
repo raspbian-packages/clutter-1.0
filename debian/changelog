@@ -1,6 +1,7 @@
 clutter-1.0 (1.10.8-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * Refresh debian/patches/fix_test_data_path.patch.
 
  -- Michael Biebl <biebl@debian.org>  Wed, 27 Jun 2012 23:38:55 +0200
 
