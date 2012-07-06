@@ -1,3 +1,9 @@
+clutter-1.0 (1.10.8-2) UNRELEASED; urgency=low
+
+  * Add missing epoch on libxcomposite-dev build-dependency.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 06 Jul 2012 11:40:27 +0200
+
 clutter-1.0 (1.10.8-1) unstable; urgency=low
 
   * New upstream release.
