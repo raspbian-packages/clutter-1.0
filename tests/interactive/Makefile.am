@@ -159,7 +159,7 @@ noinst_PROGRAMS = test-interactive
 test_interactive_SOURCES = test-main.c test-unit-names.h $(UNIT_TESTS)
 test_interactive_CFLAGS = $(CLUTTER_CFLAGS) $(GDK_PIXBUF_CFLAGS)
 test_interactive_CPPFLAGS = \
-	-DTESTS_DATADIR=\""$(abs_top_srcdir)/tests/data"\" \
+	-DTESTS_DATADIR=\""/usr/share/clutter-1.0/tests/data"\" \
 	-DG_DISABLE_SINGLE_INCLUDES \
 	-DGLIB_DISABLE_DEPRECATION_WARNINGS \
 	-DCLUTTER_DISABLE_DEPRECATION_WARNINGS
