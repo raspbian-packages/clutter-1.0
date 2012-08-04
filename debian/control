@@ -7,7 +7,7 @@ Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Laurent Bigonville <bigon@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
+Uploaders: Josselin Mouette <joss@debian.org>, Laurent Bigonville <bigon@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
 Build-Depends: debhelper (>= 8.1.3~),
                cdbs (>= 0.4.93~),
                dh-autoreconf,

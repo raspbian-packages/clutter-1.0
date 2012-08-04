@@ -1,15 +1,14 @@
-clutter-1.0 (1.10.8-2) UNRELEASED; urgency=low
+clutter-1.0 (1.10.8-2) unstable; urgency=low
 
   [ Josselin Mouette ]
   * Add missing epoch on libxcomposite-dev build-dependency.
-
 
   [ Jordi Mallach ]
   * 01_a11y-atk_add_key_event_listener-listener_id-return-value.patch,
     02_a11y-Remove-key-event-listener-hash-table-if-no-longer-required.patch:
     add patches from git to fix duplicate accessible key events.
 
- -- Josselin Mouette <joss@debian.org>  Fri, 06 Jul 2012 11:40:27 +0200
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 04 Aug 2012 22:36:28 +0200
 
 clutter-1.0 (1.10.8-1) unstable; urgency=low
 
