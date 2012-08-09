@@ -1,3 +1,45 @@
+clutter-1.0 (1.10.8-2) unstable; urgency=low
+
+  [ Josselin Mouette ]
+  * Add missing epoch on libxcomposite-dev build-dependency.
+
+  [ Jordi Mallach ]
+  * 01_a11y-atk_add_key_event_listener-listener_id-return-value.patch,
+    02_a11y-Remove-key-event-listener-hash-table-if-no-longer-required.patch:
+    add patches from git to fix duplicate accessible key events.
+
+ -- Laurent Bigonville <bigon@debian.org>  Sat, 04 Aug 2012 22:36:28 +0200
+
+clutter-1.0 (1.10.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * Refresh debian/patches/fix_test_data_path.patch.
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 28 Jun 2012 00:09:06 +0200
+
+clutter-1.0 (1.10.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 02 Jun 2012 14:13:10 +0200
+
+clutter-1.0 (1.10.4-3) unstable; urgency=low
+
+  * Bump all symbol versions to 1.10.0. The library was renamed from
+    libclutter-glx-1.0.so.0 to libclutter-1.0.so.0 and while a compat symlink
+    is provided for backwards compatibility, we need a tight dependency for
+    packages which have been recompiled against the new clutter version since
+    they will link against libclutter-1.0.so.0 and this library is not
+    provided by older versions of libclutter-1.0-0.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 06 May 2012 01:47:55 +0200
+
+clutter-1.0 (1.10.4-2) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 01 May 2012 23:50:39 +0200
+
 clutter-1.0 (1.10.4-1) experimental; urgency=low
 
   * New upstream release.
