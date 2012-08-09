@@ -1,3 +1,15 @@
+clutter-1.0 (1.11.10-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * Sync from ubuntu:
+    + debian/control.in: bump libpango1.0-dev and libatk1.0-dev build-depends
+    + 01_a11y-atk_add_key_event_listener-listener_id-return-value.patch,
+      02_a11y-Remove-key-event-listener-hash-table-if-no-longer-required.patch:
+        Removed, fixed upstream
+    + fix_test_data_path.patch: Refreshed
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Thu, 09 Aug 2012 13:51:06 +0200
+
 clutter-1.0 (1.10.8-2) unstable; urgency=low
 
   [ Josselin Mouette ]
