@@ -1,3 +1,11 @@
+clutter-1.0 (1.11.10-2) experimental; urgency=low
+
+  * debian/control.in:
+  - make also libclutter-1.0-dev also depend on the new required versions
+    of pango and atk dev packages
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Wed, 15 Aug 2012 16:19:23 -0300
+
 clutter-1.0 (1.11.10-1) experimental; urgency=low
 
   * New upstream release
