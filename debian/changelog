@@ -1,3 +1,12 @@
+clutter-1.0 (1.13.6-1) UNRELEASED; urgency=low
+
+  * New upstream release.
+  * debian/libclutter-1.0-0.symbols: Added new symbols
+  * Build-depend on cogl 1.13.4 and have libclutter-1.0 break
+    libcogl11 to ensure complete soname transition
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Fri, 22 Feb 2013 23:01:03 -0500
+
 clutter-1.0 (1.12.0-1) experimental; urgency=low
 
   * New upstream release

@@ -735,6 +735,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_geometry_union@Base 1.10.0
  clutter_gesture_action_cancel@Base 1.12.0
  clutter_gesture_action_get_device@Base 1.12.0
+ clutter_gesture_action_get_last_event@Base 1.13.2
  clutter_gesture_action_get_motion_coords@Base 1.10.0
  clutter_gesture_action_get_motion_delta@Base 1.12.0
  clutter_gesture_action_get_n_current_points@Base 1.12.0
@@ -1021,6 +1022,8 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_pan_action_get_interpolate@Base 1.12.0
  clutter_pan_action_get_interpolated_coords@Base 1.12.0
  clutter_pan_action_get_interpolated_delta@Base 1.12.0
+ clutter_pan_action_get_motion_coords@Base 1.13.2
+ clutter_pan_action_get_motion_delta@Base 1.13.2
  clutter_pan_action_get_pan_axis@Base 1.12.0
  clutter_pan_action_get_type@Base 1.12.0
  clutter_pan_action_new@Base 1.12.0
@@ -1265,12 +1268,14 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_stage_set_motion_events_enabled@Base 1.10.0
  clutter_stage_set_no_clear_hint@Base 1.10.0
  clutter_stage_set_perspective@Base 1.10.0
+ clutter_stage_set_sync_delay@Base 1.13.6-0ubuntu1~raring1
  clutter_stage_set_throttle_motion_events@Base 1.10.0
  clutter_stage_set_title@Base 1.10.0
  clutter_stage_set_use_alpha@Base 1.10.0
  clutter_stage_set_use_fog@Base 1.10.0
  clutter_stage_set_user_resizable@Base 1.10.0
  clutter_stage_show_cursor@Base 1.10.0
+ clutter_stage_skip_sync_delay@Base 1.13.6-0ubuntu1~raring1
  clutter_stage_state_get_type@Base 1.10.0
  clutter_state_get_animator@Base 1.10.0
  clutter_state_get_duration@Base 1.10.0
@@ -1327,6 +1332,8 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_table_layout_set_row_spacing@Base 1.10.0
  clutter_table_layout_set_span@Base 1.10.0
  clutter_table_layout_set_use_animations@Base 1.10.0
+ clutter_tap_action_get_type@Base 1.13.2
+ clutter_tap_action_new@Base 1.13.2
  clutter_text_activate@Base 1.10.0
  clutter_text_buffer_delete_text@Base 1.10.0
  clutter_text_buffer_emit_deleted_text@Base 1.10.0
