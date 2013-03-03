@@ -1,11 +1,16 @@
 clutter-1.0 (1.13.6-1) UNRELEASED; urgency=low
 
+  [ Jeremy Bicha ]
   * New upstream release.
   * debian/libclutter-1.0-0.symbols: Added new symbols
   * Build-depend on cogl 1.13.4 and have libclutter-1.0 break
     libcogl11 to ensure complete soname transition
 
- -- Jeremy Bicha <jbicha@ubuntu.com>  Fri, 22 Feb 2013 23:01:03 -0500
+  [ Sjoerd Simons ]
+  * Don't break libcogl11 for now as it makes having gnome 3 in experimental
+    almost impossible
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sun, 03 Mar 2013 17:18:03 +0100
 
 clutter-1.0 (1.12.0-1) experimental; urgency=low
 

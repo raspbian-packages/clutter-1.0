@@ -2,11 +2,12 @@
 # 
 # Modifications should be made to debian/control.in instead.
 # This file is regenerated automatically in the clean target.
+
 Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Gustavo Noronha Silva <kov@debian.org>, Jeremy Bicha <jbicha@ubuntu.com>, Laurent Bigonville <bigon@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
+Uploaders: Gustavo Noronha Silva <kov@debian.org>, Laurent Bigonville <bigon@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
 Build-Depends: debhelper (>= 8.1.3~),
                cdbs (>= 0.4.93~),
                dh-autoreconf,
@@ -41,7 +42,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Recommends: libclutter-1.0-common
-Breaks: python-clutter (<< 1.3.2), libcogl11
+Breaks: python-clutter (<< 1.3.2)
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: Open GL based interactive canvas library
