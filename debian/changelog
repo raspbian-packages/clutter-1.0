@@ -1,4 +1,4 @@
-clutter-1.0 (1.13.6-1) UNRELEASED; urgency=low
+clutter-1.0 (1.13.8-1) UNRELEASED; urgency=low
 
   [ Jeremy Bicha ]
   * New upstream release.
@@ -9,6 +9,9 @@ clutter-1.0 (1.13.6-1) UNRELEASED; urgency=low
   [ Sjoerd Simons ]
   * Don't break libcogl11 for now as it makes having gnome 3 in experimental
     almost impossible
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release.
 
  -- Sjoerd Simons <sjoerd@debian.org>  Sun, 03 Mar 2013 17:18:03 +0100
 
