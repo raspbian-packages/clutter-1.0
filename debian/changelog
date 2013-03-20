@@ -1,4 +1,4 @@
-clutter-1.0 (1.13.10-1) UNRELEASED; urgency=low
+clutter-1.0 (1.13.10-1) experimental; urgency=low
 
   * New upstream release.
     + debian/libclutter-1.0-0.symbols:
@@ -10,7 +10,7 @@ clutter-1.0 (1.13.10-1) UNRELEASED; urgency=low
     + Build with gobject-introspection from experimental to pick the
       new ABI.
 
- -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 20 Mar 2013 11:37:13 +0100
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 20 Mar 2013 12:41:57 +0100
 
 clutter-1.0 (1.13.8-1) experimental; urgency=low
 
