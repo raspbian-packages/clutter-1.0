@@ -1,6 +1,9 @@
 clutter-1.0 (1.13.10-1) UNRELEASED; urgency=low
 
   * New upstream release.
+  * debian/libclutter-1.0-doc.install,
+    debian/rules:
+    + Build and ship the Clutter cookbook.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 20 Mar 2013 11:37:13 +0100
 
