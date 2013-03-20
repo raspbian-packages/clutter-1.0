@@ -1,6 +1,8 @@
 clutter-1.0 (1.13.10-1) UNRELEASED; urgency=low
 
   * New upstream release.
+    + debian/libclutter-1.0-0.symbols:
+      - Added a new symbol.
   * debian/libclutter-1.0-doc.install,
     debian/rules:
     + Build and ship the Clutter cookbook.
