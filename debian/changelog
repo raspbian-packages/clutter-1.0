@@ -1,4 +1,4 @@
-clutter-1.0 (1.14.0-1) UNRELEASED; urgency=low
+clutter-1.0 (1.14.0-1) experimental; urgency=low
 
   [ Emilio Pozuelo Monfort ]
   * New upstream release.
@@ -10,7 +10,7 @@ clutter-1.0 (1.14.0-1) UNRELEASED; urgency=low
     libcogl{9,11} also use clutter. But loading two different libcogl versions
     into one applications causes little explosions.. Hence adding a breaks.
 
- -- Sjoerd Simons <sjoerd@debian.org>  Mon, 25 Mar 2013 21:16:33 +0100
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 26 Mar 2013 01:28:45 +0100
 
 clutter-1.0 (1.13.10-1) experimental; urgency=low
 
