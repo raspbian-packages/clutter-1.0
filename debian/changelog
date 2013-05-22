@@ -1,3 +1,11 @@
+clutter-1.0 (1.14.4-1) experimental; urgency=low
+
+  * New upstream release
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Wed, 22 May 2013 11:59:53 +0200
+
 clutter-1.0 (1.14.0-1) experimental; urgency=low
 
   [ Emilio Pozuelo Monfort ]
