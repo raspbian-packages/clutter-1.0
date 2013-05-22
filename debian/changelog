@@ -3,6 +3,12 @@ clutter-1.0 (1.14.4-1) experimental; urgency=low
   * New upstream release
     + debian/libclutter-1.0-0.symbols:
       - Updated.
+  * debian/patches/git_limit_offscreen_fbo_size.patch:
+    - offscreen-effect: limit offscreen fbo size to the stage's size
+  * debian/patches/git_fbo_size_check.patch:
+    - conform: add offscreen effects fbo size check
+  * debian/patches/git_cally_weak_pointer.patch:
+    - cally: Use a weak pointer to hold the key focus in CallyStage
 
  -- Rico Tzschichholz <ricotz@ubuntu.com>  Wed, 22 May 2013 11:59:53 +0200
 

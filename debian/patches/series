@@ -1,1 +1,4 @@
 fix_test_data_path.patch
+git_limit_offscreen_fbo_size.patch
+git_fbo_size_check.patch
+git_cally_weak_pointer.patch
