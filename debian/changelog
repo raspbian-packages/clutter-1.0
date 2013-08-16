@@ -1,3 +1,90 @@
+clutter-1.0 (1.14.4-1) experimental; urgency=low
+
+  * New upstream release
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+  * debian/patches/git_limit_offscreen_fbo_size.patch:
+    - offscreen-effect: limit offscreen fbo size to the stage's size
+  * debian/patches/git_fbo_size_check.patch:
+    - conform: add offscreen effects fbo size check
+  * debian/patches/git_cally_weak_pointer.patch:
+    - cally: Use a weak pointer to hold the key focus in CallyStage
+
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Wed, 22 May 2013 11:59:53 +0200
+
+clutter-1.0 (1.14.0-1) experimental; urgency=low
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release.
+    + debian/control.in:
+      - Bump build dependencies.
+
+  [ Sjoerd Simons ]
+  * debian/control.in: Add Breaks on libcogl9 and libcogl11, all rdepends of
+    libcogl{9,11} also use clutter. But loading two different libcogl versions
+    into one applications causes little explosions.. Hence adding a breaks.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Tue, 26 Mar 2013 01:28:45 +0100
+
+clutter-1.0 (1.13.10-1) experimental; urgency=low
+
+  * New upstream release.
+    + debian/libclutter-1.0-0.symbols:
+      - Added a new symbol.
+  * debian/libclutter-1.0-doc.install,
+    debian/rules:
+    + Build and ship the Clutter cookbook.
+  * debian/control.in:
+    + Build with gobject-introspection from experimental to pick the
+      new ABI.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 20 Mar 2013 12:41:57 +0100
+
+clutter-1.0 (1.13.8-1) experimental; urgency=low
+
+  [ Jeremy Bicha ]
+  * New upstream release.
+  * debian/libclutter-1.0-0.symbols: Added new symbols
+  * Build-depend on cogl 1.13.4 and have libclutter-1.0 break
+    libcogl11 to ensure complete soname transition
+
+  [ Sjoerd Simons ]
+  * Don't break libcogl11 for now as it makes having gnome 3 in experimental
+    almost impossible
+
+  [ Emilio Pozuelo Monfort ]
+  * New upstream release.
+    + debian/libclutter-1.0-0.symbols:
+      - Updated.
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Fri, 15 Mar 2013 23:20:40 +0100
+
+clutter-1.0 (1.12.0-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Fri, 05 Oct 2012 20:59:17 +0200
+
+clutter-1.0 (1.11.10-2) experimental; urgency=low
+
+  * debian/control.in:
+  - make also libclutter-1.0-dev also depend on the new required versions
+    of pango and atk dev packages
+
+ -- Gustavo Noronha Silva <kov@debian.org>  Wed, 15 Aug 2012 16:19:23 -0300
+
+clutter-1.0 (1.11.10-1) experimental; urgency=low
+
+  * New upstream release
+  * Sync from ubuntu:
+    + debian/control.in: bump libpango1.0-dev and libatk1.0-dev build-depends
+    + 01_a11y-atk_add_key_event_listener-listener_id-return-value.patch,
+      02_a11y-Remove-key-event-listener-hash-table-if-no-longer-required.patch:
+        Removed, fixed upstream
+    + fix_test_data_path.patch: Refreshed
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Thu, 09 Aug 2012 16:06:34 +0200
+
 clutter-1.0 (1.10.8-2) unstable; urgency=low
 
   [ Josselin Mouette ]

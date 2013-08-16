@@ -1,0 +1,76 @@
+From 7f42f0e871494f460eef5bc92632ff720c3e3ea5 Mon Sep 17 00:00:00 2001
+From: Lionel Landwerlin <llandwerlin@gmail.com>
+Date: Sat, 04 May 2013 16:37:33 +0000
+Subject: offscreen-effect: limit offscreen fbo size to the stage's size
+
+When using a ClutterOffscreenEffect, the size of the offscreen buffer
+allocated to perform the effect is currently computed using the paint
+volume of the actor it's attached to and in the case the paint volume
+cannot be computed, the effect falls back to using the stage's size.
+
+If you scale an actor enough so its paint volume is much bigger that
+the size of the stage, you can end up running out of memory (which
+leads to your application crashing).
+
+https://bugzilla.gnome.org/show_bug.cgi?id=699675
+(cherry picked from commit 9c6f3793e832e03ec72c63cd11f28601bf760f5b)
+
+Signed-off-by: Emmanuele Bassi <ebassi@gnome.org>
+---
+diff --git a/clutter/clutter-offscreen-effect.c b/clutter/clutter-offscreen-effect.c
+index d58227f..b655b5d 100644
+--- a/clutter/clutter-offscreen-effect.c
++++ b/clutter/clutter-offscreen-effect.c
+@@ -223,9 +223,11 @@ clutter_offscreen_effect_pre_paint (ClutterEffect *effect)
+   ClutterOffscreenEffect *self = CLUTTER_OFFSCREEN_EFFECT (effect);
+   ClutterOffscreenEffectPrivate *priv = self->priv;
+   ClutterActorBox box;
++  ClutterActor *stage;
+   CoglMatrix projection;
+   CoglColor transparent;
+-  gfloat fbo_width, fbo_height;
++  gfloat stage_width, stage_height;
++  gfloat fbo_width = -1, fbo_height = -1;
+   gfloat width, height;
+   gfloat xexpand, yexpand;
+   int texture_width, texture_height;
+@@ -236,6 +238,9 @@ clutter_offscreen_effect_pre_paint (ClutterEffect *effect)
+   if (priv->actor == NULL)
+     return FALSE;
+ 
++  stage = _clutter_actor_get_stage_internal (priv->actor);
++  clutter_actor_get_size (stage, &stage_width, &stage_height);
++
+   /* The paint box is the bounding box of the actor's paint volume in
+    * stage coordinates. This will give us the size for the framebuffer
+    * we need to redirect its rendering offscreen and its position will
+@@ -244,17 +249,21 @@ clutter_offscreen_effect_pre_paint (ClutterEffect *effect)
+     {
+       clutter_actor_box_get_size (&box, &fbo_width, &fbo_height);
+       clutter_actor_box_get_origin (&box, &priv->x_offset, &priv->y_offset);
++
++      fbo_width = MIN (fbo_width, stage_width);
++      fbo_height = MIN (fbo_height, stage_height);
+     }
+   else
+     {
+-      /* If we can't get a valid paint box then we fallback to
+-       * creating a full stage size fbo. */
+-      ClutterActor *stage = _clutter_actor_get_stage_internal (priv->actor);
+-      clutter_actor_get_size (stage, &fbo_width, &fbo_height);
+-      priv->x_offset = 0.0f;
+-      priv->y_offset = 0.0f;
++      fbo_width = stage_width;
++      fbo_height = stage_height;
+     }
+ 
++  if (fbo_width == stage_width)
++    priv->x_offset = 0.0f;
++  if (fbo_height == stage_height)
++    priv->y_offset = 0.0f;
++
+   /* First assert that the framebuffer is the right size... */
+   if (!update_fbo (effect, fbo_width, fbo_height))
+     return FALSE;
+--
+cgit v0.9.1

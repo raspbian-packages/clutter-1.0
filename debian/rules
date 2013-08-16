@@ -17,6 +17,7 @@ DEB_CONFIGURE_EXTRA_FLAGS += \
 	--enable-x11-backend=yes \
 	--enable-gdk-backend=yes \
 	--enable-gtk-doc \
+	--enable-docs \
 	--enable-introspection=yes
 DEB_DBG_PACKAGE_libclutter-1.0-0 := libclutter-1.0-dbg
 
