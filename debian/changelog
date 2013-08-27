@@ -1,3 +1,13 @@
+clutter-1.0 (1.14.4-3) UNRELEASED; urgency=low
+
+  * debian/patches/git_x11_trap_errors_when_calling_XIQueryDevice.patch:
+    - x11: trap errors when calling XIQueryDevice. Patch cherry-picked from
+      upstream Git. (Closes: #714264)
+    - Fixes: CVE-2013-2190, gnome-shell crash after system resume leaves
+      screen unlocked.
+
+ -- Michael Biebl <biebl@debian.org>  Tue, 27 Aug 2013 18:47:45 +0200
+
 clutter-1.0 (1.14.4-2) unstable; urgency=low
 
   * Upload to unstable.
