@@ -9,6 +9,9 @@ clutter-1.0 (1.15.90-1) UNRELEASED; urgency=low
     - git_limit_offscreen_fbo_size.patch
     - git_fbo_size_check.patch
     - git_cally_weak_pointer.patch
+  * Add --enable-installed-tests to configure arguments
+  * Install new tests in clutter-1.0-tests package
+  * Update libclutter-1.0-0.symbols with newly added symbols
 
  -- Andreas Henriksson <andreas@fatal.se>  Tue, 27 Aug 2013 16:06:33 +0200
 

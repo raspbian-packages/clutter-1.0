@@ -125,12 +125,12 @@ Architecture: any
 Depends: libclutter-1.0-0 (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
-Description: Open GL based interactive canvas library (test programs)
+Description: Open GL based interactive canvas library (installed test programs)
  Clutter is an Open GL based interactive canvas library, designed for creating
  fast, mainly 2D single window applications such as media box UIs,
  presentations, kiosk style applications and so on.
  .
- This package contains test programs.
+ This package contains installed test programs.
 
 Package: gir1.2-clutter-1.0
 Section: introspection

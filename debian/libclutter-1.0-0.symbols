@@ -176,6 +176,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_has_constraints@Base 1.10.0
  clutter_actor_has_effects@Base 1.10.0
  clutter_actor_has_key_focus@Base 1.10.0
+ clutter_actor_has_mapped_clones@Base 1.15.90
  clutter_actor_has_overlaps@Base 1.10.0
  clutter_actor_has_pointer@Base 1.10.0
  clutter_actor_hide@Base 1.10.0
@@ -711,6 +712,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_flow_layout_get_orientation@Base 1.10.0
  clutter_flow_layout_get_row_height@Base 1.10.0
  clutter_flow_layout_get_row_spacing@Base 1.10.0
+ clutter_flow_layout_get_snap_to_grid@Base 1.15.90
  clutter_flow_layout_get_type@Base 1.10.0
  clutter_flow_layout_new@Base 1.10.0
  clutter_flow_layout_set_column_spacing@Base 1.10.0
@@ -719,6 +721,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_flow_layout_set_orientation@Base 1.10.0
  clutter_flow_layout_set_row_height@Base 1.10.0
  clutter_flow_layout_set_row_spacing@Base 1.10.0
+ clutter_flow_layout_set_snap_to_grid@Base 1.15.90
  clutter_flow_orientation_get_type@Base 1.10.0
  clutter_fog_get_type@Base 1.10.0
  clutter_font_flags_get_type@Base 1.10.0
@@ -980,6 +983,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_modifier_type_get_type@Base 1.10.0
  clutter_offscreen_effect_create_texture@Base 1.10.0
  clutter_offscreen_effect_get_target@Base 1.10.0
+ clutter_offscreen_effect_get_target_rect@Base 1.15.90
  clutter_offscreen_effect_get_target_size@Base 1.10.0
  clutter_offscreen_effect_get_texture@Base 1.10.0
  clutter_offscreen_effect_get_type@Base 1.10.0
@@ -1362,6 +1366,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_text_get_color@Base 1.10.0
  clutter_text_get_cursor_color@Base 1.10.0
  clutter_text_get_cursor_position@Base 1.10.0
+ clutter_text_get_cursor_rect@Base 1.15.90
  clutter_text_get_cursor_size@Base 1.10.0
  clutter_text_get_cursor_visible@Base 1.10.0
  clutter_text_get_editable@Base 1.10.0
