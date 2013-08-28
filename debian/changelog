@@ -13,6 +13,7 @@ clutter-1.0 (1.15.90-1) UNRELEASED; urgency=low
   * Install new tests in clutter-1.0-tests package
   * Update libclutter-1.0-0.symbols with newly added symbols
   * Make libclutter-1.0-0 also break libcogl12
+  * Install cookbook examples in libclutter-1.0-doc
 
  -- Andreas Henriksson <andreas@fatal.se>  Tue, 27 Aug 2013 16:06:33 +0200
 
