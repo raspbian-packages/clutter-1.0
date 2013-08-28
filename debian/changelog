@@ -4,6 +4,11 @@ clutter-1.0 (1.15.90-1) UNRELEASED; urgency=low
   * Bump build-dependencies according to configure.ac
     - libcogl-dev (>= 1.15.1)
     - libglib2.0-dev (>= 2.37.3)
+  * Unfuzz fix_test_data_path.patch
+  * Drop patches from upstream now included in release:
+    - git_limit_offscreen_fbo_size.patch
+    - git_fbo_size_check.patch
+    - git_cally_weak_pointer.patch
 
  -- Andreas Henriksson <andreas@fatal.se>  Tue, 27 Aug 2013 16:06:33 +0200
 
