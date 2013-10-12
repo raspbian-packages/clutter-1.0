@@ -675,6 +675,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_event_get_source_device@Base 1.10.0
  clutter_event_get_stage@Base 1.10.0
  clutter_event_get_state@Base 1.10.0
+ clutter_event_get_state_full@Base 1.16.0
  clutter_event_get_time@Base 1.10.0
  clutter_event_get_type@Base 1.10.0
  clutter_event_has_control_modifier@Base 1.11.10
@@ -830,6 +831,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_input_device_get_grabbed_actor@Base 1.10.0
  clutter_input_device_get_has_cursor@Base 1.10.0
  clutter_input_device_get_key@Base 1.10.0
+ clutter_input_device_get_modifier_state@Base 1.16.0
  clutter_input_device_get_n_axes@Base 1.10.0
  clutter_input_device_get_n_keys@Base 1.10.0
  clutter_input_device_get_pointer_actor@Base 1.10.0
@@ -1187,6 +1189,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_set_default_frame_rate@Base 1.10.0
  clutter_set_font_flags@Base 1.10.0
  clutter_set_motion_events_enabled@Base 1.10.0
+ clutter_set_windowing_backend@Base 1.16.0
  clutter_settings_get_default@Base 1.10.0
  clutter_settings_get_type@Base 1.10.0
  clutter_shader_compile@Base 1.10.0

@@ -1,6 +1,6 @@
-clutter-1.0 (1.15.90-1) UNRELEASED; urgency=low
+clutter-1.0 (1.16.0-1) UNRELEASED; urgency=low
 
-  * New upstream development release.
+  * New upstream release.
   * Bump build-dependencies according to configure.ac
     - libcogl-dev (>= 1.15.1)
     - libglib2.0-dev (>= 2.37.3)
