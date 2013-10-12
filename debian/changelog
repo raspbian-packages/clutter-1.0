@@ -1,4 +1,4 @@
-clutter-1.0 (1.16.0-1) UNRELEASED; urgency=low
+clutter-1.0 (1.16.0-1) experimental; urgency=low
 
   * New upstream release.
   * Bump build-dependencies according to configure.ac
@@ -15,7 +15,7 @@ clutter-1.0 (1.16.0-1) UNRELEASED; urgency=low
   * Make libclutter-1.0-0 also break libcogl12
   * Install cookbook examples in libclutter-1.0-doc
 
- -- Andreas Henriksson <andreas@fatal.se>  Tue, 27 Aug 2013 16:06:33 +0200
+ -- Andreas Henriksson <andreas@fatal.se>  Sat, 12 Oct 2013 20:34:49 +0200
 
 clutter-1.0 (1.14.4-2) unstable; urgency=low
 
