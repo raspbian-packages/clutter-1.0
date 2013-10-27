@@ -1581,6 +1581,20 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_vertex_get_type@Base 1.10.0
  clutter_vertex_init@Base 1.10.0
  clutter_vertex_new@Base 1.10.0
+ (arch=linux-any)clutter_wayland_disable_event_retrieval@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_input_device_get_wl_seat@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_set_compositor_display@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_set_display@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_stage_get_wl_shell_surface@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_stage_get_wl_surface@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_stage_set_wl_surface@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_surface_attach_buffer@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_surface_damage_buffer@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_surface_get_cogl_texture@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_surface_get_surface@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_surface_get_type@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_surface_new@Base 1.16.0-1
+ (arch=linux-any)clutter_wayland_surface_set_surface@Base 1.16.0-1
  clutter_x11_add_filter@Base 1.10.0
  clutter_x11_disable_event_retrieval@Base 1.10.0
  clutter_x11_enable_xinput@Base 1.10.0

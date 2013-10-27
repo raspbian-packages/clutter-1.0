@@ -22,4 +22,10 @@ DEB_CONFIGURE_EXTRA_FLAGS += \
 	--enable-introspection=yes
 DEB_DBG_PACKAGE_libclutter-1.0-0 := libclutter-1.0-dbg
 
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+	DEB_CONFIGURE_EXTRA_FLAGS += \
+		--enable-wayland-backend=yes \
+		--enable-wayland-compositor=yes
+endif
+
 common-binary-predeb-arch:: list-missing
