@@ -623,6 +623,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_desaturate_effect_get_type@Base 1.10.0
  clutter_desaturate_effect_new@Base 1.10.0
  clutter_desaturate_effect_set_factor@Base 1.10.0
+ (arch=linux-any)clutter_device_manager_evdev_get_type@Base 1.16.0
  clutter_device_manager_get_core_device@Base 1.10.0
  clutter_device_manager_get_default@Base 1.10.0
  clutter_device_manager_get_device@Base 1.10.0
@@ -652,6 +653,11 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_egl_display@Base 1.16.0-2
  clutter_egl_get_egl_display@Base 1.16.0-2
  clutter_eglx_display@Base 1.16.0-2
+ (arch=linux-any)clutter_evdev_reclaim_devices@Base 1.16.0
+ (arch=linux-any)clutter_evdev_release_devices@Base 1.16.0
+ (arch=linux-any)clutter_evdev_set_keyboard_map@Base 1.16.0
+ (arch=linux-any)clutter_evdev_set_open_callback@Base 1.16.0
+ (arch=linux-any)clutter_evdev_set_pointer_constrain_callback@Base 1.16.0
  clutter_event_copy@Base 1.10.0
  clutter_event_flags_get_type@Base 1.10.0
  clutter_event_free@Base 1.10.0
@@ -821,6 +827,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_init_error_quark@Base 1.10.0
  clutter_init_with_args@Base 1.10.0
  clutter_input_axis_get_type@Base 1.10.0
+ (arch=linux-any)clutter_input_device_evdev_get_type@Base 1.16.0
  clutter_input_device_get_associated_device@Base 1.10.0
  clutter_input_device_get_axis@Base 1.10.0
  clutter_input_device_get_axis_value@Base 1.10.0
