@@ -16,6 +16,7 @@ DEB_CONFIGURE_EXTRA_FLAGS += \
 	--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH) \
 	--enable-x11-backend=yes \
 	--enable-gdk-backend=yes \
+	--enable-egl-backend=yes \
 	--enable-gtk-doc \
 	--enable-docs \
 	--enable-installed-tests \

@@ -649,6 +649,9 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_effect_get_type@Base 1.10.0
  clutter_effect_paint_flags_get_type@Base 1.10.0
  clutter_effect_queue_repaint@Base 1.10.0
+ clutter_egl_display@Base 1.16.0-2
+ clutter_egl_get_egl_display@Base 1.16.0-2
+ clutter_eglx_display@Base 1.16.0-2
  clutter_event_copy@Base 1.10.0
  clutter_event_flags_get_type@Base 1.10.0
  clutter_event_free@Base 1.10.0
