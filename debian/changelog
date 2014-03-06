@@ -11,7 +11,7 @@ clutter-1.0 (1.17.6-1) UNRELEASED; urgency=low
   * New upstream release.
   * Update build-dependencies according to configure.ac changes:
     - drop libxfixes-dev
-    - bump cogl 1.17.3
+    - bump cogl 1.17.3, add libcogl-path-dev
     - bump cairo 1.12.0
     - drop libevdev, bump libudev >= 136, add libinput >= 0.1.0
   * Update libclutter-1.0-0.symbols
