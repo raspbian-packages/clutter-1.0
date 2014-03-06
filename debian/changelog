@@ -25,9 +25,8 @@ clutter-1.0 (1.17.6-1) UNRELEASED; urgency=low
     + Re-add evdev symbols.
   * debian/control.in:
     + Let libclutter-1.0-dev depend on libcogl-path-dev.
-    + Also depend on libudev-dev, libxkbcommon-dev, libwayland-client-dev,
-      libwayland-cursor-dev, libwayland-server-dev and libinput-dev, as
-      needed by clutter-1.0.pc.
+    + Also depend on libudev-dev, libxkbcommon-dev, libwayland-dev
+      and libinput-dev, as needed by clutter-1.0.pc.
 
  -- Andreas Henriksson <andreas@fatal.se>  Tue, 04 Mar 2014 23:28:24 +0100
 
