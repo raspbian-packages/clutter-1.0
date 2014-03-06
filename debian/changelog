@@ -17,6 +17,13 @@ clutter-1.0 (1.17.6-1) UNRELEASED; urgency=low
   * Update libclutter-1.0-0.symbols
   * Drop debian/patches/fix_test_data_path.patch, obsolete.
 
+  [ Emilio Pozuelo Monfort ]
+  * debian/control.in:
+    + Add missing build-depend for the evdev/libinput based input backend:
+      libgudev-1.0-dev and libxkbcommon-dev.
+  * debian/libclutter-1.0-0.symbols:
+    + Re-add evdev symbols.
+
  -- Andreas Henriksson <andreas@fatal.se>  Tue, 04 Mar 2014 23:28:24 +0100
 
 clutter-1.0 (1.16.0-1) experimental; urgency=low
