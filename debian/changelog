@@ -23,6 +23,8 @@ clutter-1.0 (1.17.6-1) UNRELEASED; urgency=low
       libgudev-1.0-dev and libxkbcommon-dev.
   * debian/libclutter-1.0-0.symbols:
     + Re-add evdev symbols.
+  * debian/control.in:
+    + Let libclutter-1.0-dev depend on libcogl-path-dev.
 
  -- Andreas Henriksson <andreas@fatal.se>  Tue, 04 Mar 2014 23:28:24 +0100
 
