@@ -3,6 +3,7 @@ clutter-1.0 (1.18.0-1) UNRELEASED; urgency=medium
   * New upstream release.
   * debian/control.in:
     + Bump gtk-doc-tools build dependency.
+    + Also break libcogl15.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 23 Mar 2014 15:50:21 +0100
 

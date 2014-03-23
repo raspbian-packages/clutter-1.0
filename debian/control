@@ -47,7 +47,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Recommends: libclutter-1.0-common
-Breaks: libcogl9, libcogl11, libcogl12
+Breaks: libcogl9, libcogl11, libcogl12, libcogl15
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: Open GL based interactive canvas library
