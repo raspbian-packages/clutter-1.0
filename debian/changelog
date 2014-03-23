@@ -1,12 +1,53 @@
-clutter-1.0 (1.14.4-3) unstable; urgency=low
+clutter-1.0 (1.17.6-1) experimental; urgency=low
 
-  * debian/patches/git_x11_trap_errors_when_calling_XIQueryDevice.patch:
-    - x11: trap errors when calling XIQueryDevice. Patch cherry-picked from
-      upstream Git. (Closes: #714264)
-    - Fixes CVE-2013-2190: screen unlocked after system resume due to
-      gnome-shell crash.
+  [ Sjoerd Simons ]
+  * debian/rules, debian/libclutter-1.0-0.symbols: Enable wayland backend and
+    wayland compositor support on linux
+  * debian/rules, debian/libclutter-1.0-0.symbols: Enable native EGL backend
+  * debian/rules, debian/libclutter-1.0-0.symbols: Enable evdev input backend
+    support on linux
 
- -- Michael Biebl <biebl@debian.org>  Tue, 27 Aug 2013 18:55:26 +0200
+  [ Andreas Henriksson ]
+  * New upstream release.
+  * Update build-dependencies according to configure.ac changes:
+    - drop libxfixes-dev
+    - bump cogl 1.17.3, add libcogl-path-dev
+    - bump cairo 1.12.0
+    - drop libevdev, bump libudev >= 136, add libinput >= 0.1.0
+  * Update libclutter-1.0-0.symbols
+  * Drop debian/patches/fix_test_data_path.patch, obsolete.
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/control.in:
+    + Add missing build-depend for the evdev/libinput based input backend:
+      libgudev-1.0-dev and libxkbcommon-dev.
+  * debian/libclutter-1.0-0.symbols:
+    + Re-add evdev symbols.
+  * debian/control.in:
+    + Let libclutter-1.0-dev depend on libcogl-path-dev.
+    + Also depend on libudev-dev, libxkbcommon-dev, libwayland-dev
+      and libinput-dev, as needed by clutter-1.0.pc.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sun, 16 Mar 2014 21:23:06 +0100
+
+clutter-1.0 (1.16.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Bump build-dependencies according to configure.ac
+    - libcogl-dev (>= 1.15.1)
+    - libglib2.0-dev (>= 2.37.3)
+  * Unfuzz fix_test_data_path.patch
+  * Drop patches from upstream now included in release:
+    - git_limit_offscreen_fbo_size.patch
+    - git_fbo_size_check.patch
+    - git_cally_weak_pointer.patch
+  * Add --enable-installed-tests to configure arguments
+  * Install new tests in clutter-1.0-tests package
+  * Update libclutter-1.0-0.symbols with newly added symbols
+  * Make libclutter-1.0-0 also break libcogl12
+  * Install cookbook examples in libclutter-1.0-doc
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sat, 12 Oct 2013 20:34:49 +0200
 
 clutter-1.0 (1.14.4-2) unstable; urgency=low
 
