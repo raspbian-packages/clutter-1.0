@@ -8,6 +8,13 @@ clutter-1.0 (1.18.0-1) UNRELEASED; urgency=medium
     + Drop a few symbols that were accidentally exported in the DSO because
       they had a clutter_ prefix but were not in the public headers.
     + Add one new symbol.
+  * debian/control.in,
+    debian/rules,
+    debian/libclutter-1.0-0.symbols:
+    + Temporarily disable evdev input support. It was only enabled in 1.17.6-1
+      in experimental and there is nothing using it yet, and I would like to
+      wait a bit before uploading libinput to unstable as the ABI isn't stable
+      yet.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 23 Mar 2014 15:50:21 +0100
 
