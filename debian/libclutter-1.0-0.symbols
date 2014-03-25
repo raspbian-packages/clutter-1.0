@@ -445,7 +445,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_behaviour_scale_set_bounds@Base 1.10.0
  clutter_behaviour_set_alpha@Base 1.10.0
  clutter_bin_alignment_get_type@Base 1.10.0
- clutter_bin_layer_get_type@Base 1.10.0
  clutter_bin_layout_add@Base 1.10.0
  clutter_bin_layout_get_alignment@Base 1.10.0
  clutter_bin_layout_get_type@Base 1.10.0
@@ -476,7 +475,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_blur_effect_get_type@Base 1.10.0
  clutter_blur_effect_new@Base 1.10.0
  clutter_box_alignment_get_type@Base 1.10.0
- clutter_box_child_get_type@Base 1.10.0
  clutter_box_get_color@Base 1.10.0
  clutter_box_get_layout_manager@Base 1.10.0
  clutter_box_get_type@Base 1.10.0
@@ -614,7 +612,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_content_gravity_get_type@Base 1.10.0
  clutter_content_invalidate@Base 1.10.0
  clutter_content_repeat_get_type@Base 1.11.10
- clutter_debug_flags@Base 1.10.0
  clutter_deform_effect_get_back_material@Base 1.10.0
  clutter_deform_effect_get_n_tiles@Base 1.10.0
  clutter_deform_effect_get_type@Base 1.10.0
@@ -654,6 +651,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_effect_queue_repaint@Base 1.10.0
  clutter_egl_display@Base 1.16.0-2
  clutter_egl_get_egl_display@Base 1.16.0-2
+ clutter_egl_set_kms_fd@Base 1.18.0-1
  clutter_eglx_display@Base 1.16.0-2
  (arch=linux-any)clutter_evdev_get_keyboard_map@Base 1.17.6
  (arch=linux-any)clutter_evdev_reclaim_devices@Base 1.16.0
@@ -800,7 +798,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_grab_pointer@Base 1.10.0
  clutter_grab_pointer_for_device@Base 1.10.0
  clutter_gravity_get_type@Base 1.10.0
- clutter_grid_child_get_type@Base 1.11.10
  clutter_grid_layout_attach@Base 1.11.10
  clutter_grid_layout_attach_next_to@Base 1.11.10
  clutter_grid_layout_get_child_at@Base 1.11.10
@@ -924,7 +921,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_layout_meta_get_manager@Base 1.10.0
  clutter_layout_meta_get_type@Base 1.10.0
  clutter_list_model_get_type@Base 1.10.0
- clutter_list_model_iter_get_type@Base 1.10.0
  clutter_list_model_new@Base 1.10.0
  clutter_list_model_newv@Base 1.10.0
  clutter_long_press_state_get_type@Base 1.10.0
@@ -1020,7 +1016,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_page_turn_effect_set_angle@Base 1.10.0
  clutter_page_turn_effect_set_period@Base 1.10.0
  clutter_page_turn_effect_set_radius@Base 1.10.0
- clutter_paint_debug_flags@Base 1.10.0
  clutter_paint_node_add_child@Base 1.10.0
  clutter_paint_node_add_path@Base 1.10.0
  clutter_paint_node_add_primitive@Base 1.10.0
@@ -1103,7 +1098,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_path_set_description@Base 1.10.0
  clutter_path_to_cairo_path@Base 1.10.0
  clutter_perspective_get_type@Base 1.10.0
- clutter_pick_debug_flags@Base 1.10.0
  clutter_pick_mode_get_type@Base 1.10.0
  clutter_pipeline_node_get_type@Base 1.10.0
  clutter_pipeline_node_new@Base 1.10.0
@@ -1115,7 +1109,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_point_get_type@Base 1.11.10
  clutter_point_init@Base 1.11.10
  clutter_point_zero@Base 1.11.10
- clutter_profile_flags@Base 1.10.0
  clutter_property_transition_get_property_name@Base 1.10.0
  clutter_property_transition_get_type@Base 1.10.0
  clutter_property_transition_new@Base 1.10.0
@@ -1337,7 +1330,6 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_swipe_action_new@Base 1.10.0
  clutter_swipe_direction_get_type@Base 1.10.0
  clutter_table_alignment_get_type@Base 1.10.0
- clutter_table_child_get_type@Base 1.10.0
  clutter_table_layout_get_alignment@Base 1.10.0
  clutter_table_layout_get_column_count@Base 1.10.0
  clutter_table_layout_get_column_spacing@Base 1.10.0
