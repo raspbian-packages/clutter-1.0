@@ -650,7 +650,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_effect_queue_repaint@Base 1.10.0
  clutter_egl_display@Base 1.16.0
  clutter_egl_get_egl_display@Base 1.16.0
- clutter_egl_set_kms_fd@Base 1.18.0
+ (arch=linux-any)clutter_egl_set_kms_fd@Base 1.18.0
  clutter_eglx_display@Base 1.16.0
  clutter_event_add_filter@Base 1.17.6
  clutter_event_copy@Base 1.10.0
