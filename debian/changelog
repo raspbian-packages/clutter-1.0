@@ -1,3 +1,10 @@
+clutter-1.0 (1.18.0-2) UNRELEASED; urgency=medium
+
+  * Brown paper bug release.
+  * Drop libclutter-1.0-dev depends on libinput-dev.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 26 Mar 2014 18:16:50 +0100
+
 clutter-1.0 (1.18.0-1) unstable; urgency=medium
 
   * New upstream release.
