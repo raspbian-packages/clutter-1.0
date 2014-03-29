@@ -1,3 +1,39 @@
+clutter-1.0 (1.18.0-2) unstable; urgency=medium
+
+  * Brown paper bug release.
+  * debian/control.in:
+    + Drop libclutter-1.0-dev depends on libinput-dev.
+  * debian/libclutter-1.0-0.symbols:
+    + Mark clutter_egl_set_kms_fd as linux-any.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 26 Mar 2014 18:18:11 +0100
+
+clutter-1.0 (1.18.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control.in:
+    + Bump gtk-doc-tools build dependency.
+    + Also break libcogl15.
+    + Standards-Version is 3.9.5, no changes needed.
+  * debian/libclutter-1.0-0.symbols:
+    + Drop a few symbols that were accidentally exported in the DSO because
+      they had a clutter_ prefix but were not in the public headers.
+    + Add one new symbol.
+    + Drop unnecessary debian revisions from some symbols.
+  * debian/control.in,
+    debian/rules,
+    debian/libclutter-1.0-0.symbols:
+    + Temporarily disable evdev input support. It was only enabled in 1.17.6-1
+      in experimental and there is nothing using it yet, and I would like to
+      wait a bit before uploading libinput to unstable as the ABI isn't stable
+      yet.
+  * d/p/0001-wayland-Add-missing-CLUTTER_AVAILABLE-annotations.patch:
+    + Add missing annotations so that a few symbols are exported in the DSO.
+
+  * Upload to unstable.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 26 Mar 2014 11:51:28 +0100
+
 clutter-1.0 (1.17.6-1) experimental; urgency=low
 
   [ Sjoerd Simons ]
