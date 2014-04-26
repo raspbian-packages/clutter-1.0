@@ -1,6 +1,8 @@
 clutter-1.0 (1.18.2-1) unstable; urgency=medium
 
   * New upstrema release
+  * d/p/0001-wayland-Add-missing-CLUTTER_AVAILABLE-annotations.patch:
+    + Dropped, merged upstream
 
  -- Sjoerd Simons <sjoerd@debian.org>  Sat, 26 Apr 2014 16:31:33 +0200
 
