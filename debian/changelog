@@ -1,3 +1,11 @@
+clutter-1.0 (1.18.4-1) unstable; urgency=medium
+
+  * New upstream release 1.18.4
+    - Improve touch events handling on X11
+    - Fix opacity issues with canvas contents
+
+ -- Iain Lane <iain@orangesquash.org.uk>  Thu, 14 Aug 2014 18:03:48 +0100
+
 clutter-1.0 (1.18.2-2) unstable; urgency=medium
 
   * Re-enable libinput support.
