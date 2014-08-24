@@ -1,8 +1,24 @@
-clutter-1.0 (1.18.0-3) experimental; urgency=medium
+clutter-1.0 (1.18.4-1) unstable; urgency=medium
 
-  * Re-enable evdev input support.
+  * New upstream release 1.18.4
+    - Improve touch events handling on X11
+    - Fix opacity issues with canvas contents
 
- -- Andreas Henriksson <andreas@fatal.se>  Sat, 29 Mar 2014 22:49:37 +0100
+ -- Iain Lane <iain@orangesquash.org.uk>  Thu, 14 Aug 2014 18:03:48 +0100
+
+clutter-1.0 (1.18.2-2) unstable; urgency=medium
+
+  * Re-enable libinput support.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Mon, 09 Jun 2014 19:33:46 +0200
+
+clutter-1.0 (1.18.2-1) unstable; urgency=medium
+
+  * New upstrema release
+  * d/p/0001-wayland-Add-missing-CLUTTER_AVAILABLE-annotations.patch:
+    + Dropped, merged upstream
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Sat, 26 Apr 2014 16:31:33 +0200
 
 clutter-1.0 (1.18.0-2) unstable; urgency=medium
 
