@@ -649,16 +649,24 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_effect_paint_flags_get_type@Base 1.10.0
  clutter_effect_queue_repaint@Base 1.10.0
  clutter_egl_display@Base 1.16.0
+ clutter_egl_freeze_master_clock@Base 1.19.8
  clutter_egl_get_egl_display@Base 1.16.0
  (arch=linux-any)clutter_egl_set_kms_fd@Base 1.18.0
+ clutter_egl_thaw_master_clock@Base 1.19.8
  clutter_eglx_display@Base 1.16.0
+ (arch=linux-any)clutter_evdev_add_filter@Base 1.19.8
+ (arch=linux-any)clutter_evdev_event_sequence_get_slot@Base 1.19.8
  (arch=linux-any)clutter_evdev_get_keyboard_map@Base 1.18.2-2~
+ (arch=linux-any)clutter_evdev_input_device_get_libinput_device@Base 1.19.8
  (arch=linux-any)clutter_evdev_reclaim_devices@Base 1.18.2-2~
  (arch=linux-any)clutter_evdev_release_devices@Base 1.18.2-2~
+ (arch=linux-any)clutter_evdev_remove_filter@Base 1.19.8
  (arch=linux-any)clutter_evdev_set_device_callbacks@Base 1.18.2-2~
+ (arch=linux-any)clutter_evdev_set_keyboard_layout_index@Base 1.19.8
  (arch=linux-any)clutter_evdev_set_keyboard_map@Base 1.18.2-2~
  (arch=linux-any)clutter_evdev_set_keyboard_repeat@Base 1.18.2-2~
  (arch=linux-any)clutter_evdev_set_pointer_constrain_callback@Base 1.18.2-2~
+ (arch=linux-any)clutter_evdev_warp_pointer@Base 1.19.8
  clutter_event_add_filter@Base 1.17.6
  clutter_event_copy@Base 1.10.0
  clutter_event_flags_get_type@Base 1.10.0
@@ -696,6 +704,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_event_peek@Base 1.10.0
  clutter_event_put@Base 1.10.0
  clutter_event_remove_filter@Base 1.17.6
+ clutter_event_sequence_get_type@Base 1.19.8
  clutter_event_set_button@Base 1.10.0
  clutter_event_set_coords@Base 1.10.0
  clutter_event_set_device@Base 1.10.0
@@ -761,7 +770,8 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_gesture_action_get_release_coords@Base 1.10.0
  clutter_gesture_action_get_sequence@Base 1.12.0
  clutter_gesture_action_get_threshold_trigger_distance@Base 1.17.6
- clutter_gesture_action_get_threshold_trigger_egde@Base 1.17.6
+ clutter_gesture_action_get_threshold_trigger_edge@Base 1.19.8
+#MISSING: 1.19.8-1# clutter_gesture_action_get_threshold_trigger_egde@Base 1.17.6
  clutter_gesture_action_get_type@Base 1.10.0
  clutter_gesture_action_get_velocity@Base 1.12.0
  clutter_gesture_action_new@Base 1.10.0
@@ -1287,7 +1297,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_stage_set_minimum_size@Base 1.10.0
  clutter_stage_set_motion_events_enabled@Base 1.10.0
  clutter_stage_set_no_clear_hint@Base 1.10.0
- clutter_stage_set_paint_callback@Base 1.14.4
+#MISSING: 1.19.8-1# clutter_stage_set_paint_callback@Base 2.14.4
  clutter_stage_set_perspective@Base 1.10.0
  clutter_stage_set_sync_delay@Base 1.13.6
  clutter_stage_set_throttle_motion_events@Base 1.10.0
