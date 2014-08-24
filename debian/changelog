@@ -6,6 +6,7 @@ clutter-1.0 (1.19.8-1) UNRELEASED; urgency=medium
     - many additions, 2 missing symbols.
   * libclutter-1.0-0: add breaks against mutter version older then 3.14
     - "the symbol was marked as experimental, and also used only by mutter".
+  * libclutter-1.0-dev: bump libinput-dev dependency to >= 0.4.0
 
  -- Andreas Henriksson <andreas@fatal.se>  Sat, 23 Aug 2014 11:39:00 -0700
 
