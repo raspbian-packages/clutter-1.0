@@ -1,5 +1,6 @@
 clutter-1.0 (1.19.8-1) UNRELEASED; urgency=medium
 
+  [ Andreas Henriksson ]
   * New upstream development release.
   * Bump libinput-dev build-dependency to >= 0.4.0
   * Update debian/libclutter-1.0-0.symbols
@@ -7,6 +8,9 @@ clutter-1.0 (1.19.8-1) UNRELEASED; urgency=medium
   * libclutter-1.0-0: add breaks against mutter version older then 3.14
     - "the symbol was marked as experimental, and also used only by mutter".
   * libclutter-1.0-dev: bump libinput-dev dependency to >= 0.4.0
+
+  [ Rico Tzschichholz ]
+  * libclutter-1.0-0: Adjust breaks on mutter (<< 3.13.4) to match reality
 
  -- Andreas Henriksson <andreas@fatal.se>  Sat, 23 Aug 2014 11:39:00 -0700
 
