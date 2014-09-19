@@ -2,7 +2,6 @@
 # 
 # Modifications should be made to debian/control.in instead.
 # This file is regenerated automatically in the clean target.
-
 Source: clutter-1.0
 Section: libs
 Priority: optional
@@ -33,7 +32,7 @@ Build-Depends: debhelper (>= 8.1.3~),
                libatk1.0-dev (>= 2.5.3),
                libgdk-pixbuf2.0-dev (>= 2.0),
                libgtk-3-dev (>= 3.3.18),
-               libinput-dev (>= 0.5.0) [linux-any],
+               libinput-dev (>= 0.4.0) [linux-any],
                libudev-dev (>= 136) [linux-any],
                libgudev-1.0-dev [linux-any],
                libxkbcommon-dev,
@@ -47,7 +46,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Recommends: libclutter-1.0-common
-Breaks: libcogl9, libcogl11, libcogl12, libcogl15
+Breaks: libcogl9, libcogl11, libcogl12, libcogl15, libmutter0d, libmutter0e (<< 3.13.4)
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: Open GL based interactive canvas library
@@ -90,7 +89,7 @@ Depends: libclutter-1.0-0 (= ${binary:Version}),
          libxi-dev,
          libjson-glib-dev (>= 0.12),
          libwayland-dev [linux-any],
-         libinput-dev (>= 0.5.0) [linux-any],
+         libinput-dev (>= 0.4.0) [linux-any],
          libudev-dev (>= 136) [linux-any],
          libxkbcommon-dev,
          ${misc:Depends},
