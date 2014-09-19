@@ -771,7 +771,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_gesture_action_get_sequence@Base 1.12.0
  clutter_gesture_action_get_threshold_trigger_distance@Base 1.17.6
  clutter_gesture_action_get_threshold_trigger_edge@Base 1.19.8
-#MISSING: 1.19.8-1# clutter_gesture_action_get_threshold_trigger_egde@Base 1.17.6
+ clutter_gesture_action_get_threshold_trigger_egde@Base 1.17.6
  clutter_gesture_action_get_type@Base 1.10.0
  clutter_gesture_action_get_velocity@Base 1.12.0
  clutter_gesture_action_new@Base 1.10.0

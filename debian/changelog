@@ -1,3 +1,11 @@
+clutter-1.0 (1.19.10-1) unstable; urgency=medium
+
+  * New upstream release candidate.
+  * debian/libclutter-1.0-0.symbols: uncomment misspelled symbol that
+    went missing but are now back!
+
+ -- Andreas Henriksson <andreas@fatal.se>  Fri, 19 Sep 2014 21:07:44 +0200
+
 clutter-1.0 (1.19.8-1) experimental; urgency=medium
 
   [ Andreas Henriksson ]
