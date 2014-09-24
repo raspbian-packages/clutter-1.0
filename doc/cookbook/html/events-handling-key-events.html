@@ -1,0 +1,143 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>2. Handling key events</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="events.html" title="Chapter 3. Events"><link rel="prev" href="events.html" title="Chapter 3. Events"><link rel="next" href="events-mouse-scroll.html" title="3. Detecting mouse scrolling on an actor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Handling key events</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="events.html">Prev</a> </td><th width="60%" align="center">Chapter 3. Events</th><td width="20%" align="right"> <a accesskey="n" href="events-mouse-scroll.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="events-handling-key-events"></a>2. Handling key events</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236916027792"></a>2.1. Problem</h3></div></div></div><p>You want to respond to key presses on an actor.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236916026480"></a>2.2. Solutions</h3></div></div></div><p>There are two possible solutions:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span class="emphasis"><em>Solution 1:</em></span> Connect a callback to the
+          actor; inside the callback, manually analyse which key and
+          modifier(s) were pressed and react accordingly.</p></li><li class="listitem"><p><span class="emphasis"><em>Solution 2:</em></span> Use an actor's
+          <span class="type">ClutterBindingPool</span> to declaratively assign
+          actions to specific key and modifier combinations.</p></li></ol></div><p>Each solution is covered below.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236911742144"></a>2.2.1. Solution 1</h4></div></div></div><p>Connect the <span class="emphasis"><em>key-press-event</em></span>
+        signal for an actor to a callback; then examine the event
+        in the callback to determine which key and modifiers were
+        pressed.</p><p>First, connect an actor's
+        <span class="emphasis"><em>key-press-event</em></span> signal to a callback:</p><div class="informalexample"><pre class="programlisting">g_signal_connect (actor, "key-press-event", G_CALLBACK (_key_press_cb), NULL);</pre></div><p>Then, in the callback, check which key was pressed and which
+        modifiers were down at the same time. For example, this callback
+        checks for a press on the up arrow key and whether
+        the <span class="keycap"><strong>Shift</strong></span> and/or <span class="keycap"><strong>Ctrl</strong></span>
+        key were down:</p><div class="informalexample"><pre class="programlisting">static gboolean
+_key_press_cb (ClutterActor *actor,
+               ClutterEvent *event,
+               gpointer      user_data)
+{
+  guint keyval = clutter_event_get_key_symbol (event);
+
+  ClutterModifierType state = clutter_event_get_state (event);
+  gboolean shift_pressed = (state &amp; CLUTTER_SHIFT_MASK ? TRUE : FALSE);
+  gboolean ctrl_pressed = (state &amp; CLUTTER_CONTROL_MASK ? TRUE : FALSE);
+
+  if (CLUTTER_KEY_Up == keyval)
+    {
+      if (shift_pressed &amp; ctrl_pressed)
+        g_debug ("Up and shift and control pressed");
+      else if (shift_pressed)
+        g_debug ("Up and shift pressed");
+      else
+        g_debug ("Up pressed");
+
+      /* The event was handled, and the emission should stop */
+      return CLUTTER_EVENT_STOP;
+    }
+
+  /* The event was not handled, and the emission should continue */
+  return CLUTTER_EVENT_PROPAGATE;
+}</pre></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Clutter provides a range of key value definitions
+          (like <code class="constant">CLUTTER_KEY_Up</code>, used above). These are
+          generated from the list in the
+          <a class="ulink" href="http://cgit.freedesktop.org/xorg/proto/x11proto/plain/keysymdef.h" target="_top">X.Org source code</a>
+          (replace "XK" with "CLUTTER_KEY" in the definitions there to get the
+          Clutter equivalents; alternatively, look at the
+          <code class="filename">clutter-keysyms.h</code> header file for the
+          list).</p><p><code class="constant">CLUTTER_SHIFT_MASK</code>,
+          <code class="constant">CLUTTER_CONTROL_MASK</code> and other modifiers are
+          defined in the <span class="type">ClutterModifierType</span> enum.</p></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236913533440"></a>2.2.2. Solution 2</h4></div></div></div><p>Assign actions to an actor's <span class="type">ClutterBindingPool</span>.
+        A binding pool stores mappings from a key press (either a single key
+        or a key plus modifiers) to actions; an action is simply a callback
+        function with a specific signature.</p><p>While this approach is trickier to implement, it is more
+        flexible and removes the drudgery of writing branching code to
+        handle different key presses. See the
+        <a class="link" href="events-handling-key-events.html#events-handling-key-events-discussion" title="2.3. Discussion">Discussion</a>
+        section for more details.</p><p>To use this approach with an actor which will receive key press
+        events, first get that actor's binding pool. In the example below,
+        we're using the binding pool for the default
+        <span class="type">ClutterStage</span>:</p><div class="informalexample"><pre class="programlisting">ClutterBindingPool *binding_pool;
+GObjectClass *stage_class;
+
+stage_class = CLUTTER_STAGE_GET_CLASS (stage);
+binding_pool = clutter_binding_pool_get_for_class (stage_class);</pre></div><p>Next, install actions into the binding pool. For example, to
+        install an action bound to the up arrow key, which calls the
+        <code class="function">_move_up()</code> function when that key is pressed,
+        you would do:</p><div class="informalexample"><pre class="programlisting">clutter_binding_pool_install_action (binding_pool,
+                                     "move-up",      /* identifier */
+                                     CLUTTER_KEY_Up, /* up arrow pressed */
+                                     0,              /* no modifiers pressed */
+                                     G_CALLBACK (_move_up),
+                                     NULL,           /* no user data passed */
+                                     NULL);</pre></div><p>Another example, binding up arrow +
+        <span class="keycap"><strong>Shift</strong></span> + <span class="keycap"><strong>Ctrl</strong></span> to an action
+        which calls <code class="function">_move_up_shift_control()</code> when
+        activated:</p><div class="informalexample"><pre class="programlisting">clutter_binding_pool_install_action (binding_pool,
+                                     "move-up-shift-control",
+                                     CLUTTER_KEY_Up,
+                                     CLUTTER_SHIFT_MASK + CLUTTER_CONTROL_MASK,
+                                     G_CALLBACK (_move_up_shift_control),
+                                     NULL,
+                                     NULL);</pre></div><p>The function called when an action is activated looks
+        like this (for <code class="function">_move_up()</code>):</p><div class="informalexample"><pre class="programlisting">static void
+_move_up (GObject             *instance,
+          const gchar         *action_name,
+          guint                key_val,
+          ClutterModifierType  modifiers,
+          gpointer             user_data)
+{
+  g_debug ("Up pressed");
+}</pre></div><p>Then bind the <span class="emphasis"><em>key-press-event</em></span> signal
+        for the actor (in our case, the stage) to a callback:</p><div class="informalexample"><pre class="programlisting">g_signal_connect (stage,
+                  "key-press-event",
+                  G_CALLBACK (_key_press_cb),
+                  NULL);</pre></div><p>Finally, inside the callback, pass control to the actor's
+        binding pool rather than dissecting the key press event
+        yourself:</p><div class="informalexample"><pre class="programlisting">static gboolean
+_key_press_cb (ClutterActor *actor,
+             ClutterEvent *event,
+             gpointer      user_data)
+{
+  ClutterBindingPool *pool;
+
+  pool = clutter_binding_pool_find (G_OBJECT_TYPE_NAME (actor));
+
+  return clutter_binding_pool_activate (pool,
+                                        clutter_event_get_key_symbol (event),
+                                        clutter_event_get_state (event),
+                                        G_OBJECT (actor));
+}</pre></div><p>Now, when a key + modifiers that have been bound to an action
+        are pressed on the actor, the appropriate action is activated.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="events-handling-key-events-discussion"></a>2.3. Discussion</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236913332000"></a>2.3.1. Pros and cons of Solution 1 and Solution 2</h4></div></div></div><p>Solution 1 is the simplest (in terms of the amount of code you
+        have to write for simple cases), but could quickly turn into a mess if
+        you need many conditions or want to capture many key combinations.
+        Also, if multiple actors need to respond to key press events, you'll
+        need similar event dissection code in each callback.</p><p>Solution 2 is more complicated to implement, but scales better
+        if you have many different key combinations on multiple actors.
+        The binding pool protects you from the minutiae of detecting which
+        keys were pressed, leaving you to concentrate on the
+        triggered actions instead. This could simplify your control
+        logic.</p><p>In addition, Solution 2 lets you write a single callback to
+        handle all key press events for all actors. This callback could then
+        use <code class="function">clutter_binding_pool_find()</code>
+        (as in the example code) to determine which binding pool to
+        activate (depending on which actor received the key press
+        event).</p><p>Finally, a binding pool allows you to block and unblock actions.
+        This means you can make the response to a key press event conditional
+        on application state. For example, let's say you wanted the up arrow
+        key to move an actor, but only when the actor is at the bottom
+        of the stage. To implement this, you could disable the up arrow key
+        action in the binding pool initially; then, once the actor reaches the
+        bottom of the stage, enable the up arrow key action again. While this
+        is possible with Solution 1, you would have to implement more of the
+        state management code yourself.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236911712048"></a>2.3.2. Other useful things to know about key press events</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>A <span class="type">ClutterKeyEvent</span> contains only a
+            <span class="emphasis"><em>single</em></span> key value, plus possibly one
+            or more modifier keys (like <span class="keycap"><strong>Shift</strong></span>,
+            <span class="keycap"><strong>Ctrl</strong></span>, <span class="keycap"><strong>Alt</strong></span> etc.).
+            There are no functions in the Clutter API which return
+            events for tracking near-simultaneous presses on multiple
+            keys.</p></li><li class="listitem"><p>By default, the stage receives all key events.
+            To make another actor receive key events, use
+            <code class="function">clutter_stage_set_key_focus()</code>:</p><div class="informalexample"><pre class="programlisting">/*
+ * stage is a ClutterStage instance;
+ * actor is the ClutterActor instance which should receive key events
+ */
+clutter_stage_set_key_focus (stage, actor);</pre></div></li></ul></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="events.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="events.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="events-mouse-scroll.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 3. Events </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 3. Detecting mouse scrolling on an actor</td></tr></table></div></body></html>

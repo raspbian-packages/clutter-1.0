@@ -1,0 +1,354 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>3. Binding the size of one actor to the size of another</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="layouts.html" title="Chapter 7. Layout management"><link rel="prev" href="layouts-stacking.html" title="2. Stacking actors on top of each other"><link rel="next" href="layouts-box.html" title="4. Arranging actors in a single row or column"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Binding the size of one actor to the size of another</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="layouts-stacking.html">Prev</a> </td><th width="60%" align="center">Chapter 7. Layout management</th><td width="20%" align="right"> <a accesskey="n" href="layouts-box.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="layouts-bind-constraint"></a>3. Binding the size of one actor to the size of another</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911005936"></a>3.1. Problem</h3></div></div></div><p>You want one actor (the "target") to automatically change
+      its width or height (or both) when the size of another
+      actor (the "source") changes.</p><p>Example use cases:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Making an actor adjust itself to the size of the stage
+          (particularly when the stage is resizable).</p></li><li class="listitem"><p>Putting one actor on top of another and keeping their
+          sizes in sync.</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911001696"></a>3.2. Solution</h3></div></div></div><p>Create a <span class="type">ClutterBindConstraint</span> bound to the
+      width and/or height of one actor (the "source"). Add that constraint
+      to an actor (the "target") whose size should follow the
+      size of the source.</p><p>This short example shows how to create and add a constraint;
+      <code class="varname">source</code> and <code class="varname">target</code> can
+      be any two <span class="type">ClutterActors</span>:</p><div class="informalexample"><pre class="programlisting"><span class="emphasis"><em>ClutterConstraint *width_constraint;</em></span>
+
+/* create a constraint which binds a target actor's width to 100px less than
+ * the width of the source actor (use CLUTTER_BIND_HEIGHT to create a
+ * constraint based on an actor's height)
+ *
+ * the third argument is a positive or negative offset from the actor's
+ * dimension, in pixels; this is added to the height or width of the source
+ * actor before the constraint is applied to the target actor
+ */
+<span class="emphasis"><em>width_constraint = clutter_bind_constraint_new (source, CLUTTER_BIND_WIDTH, -100);</em></span>
+
+/* add the constraint to an actor */
+<span class="emphasis"><em>clutter_actor_add_constraint (target, width_constraint);</em></span></pre></div><p>Below is a full example, showing how to incorporate a
+      constraint into a Clutter application.</p><div class="example"><a name="layouts-bind-constraint-example-1"></a><p class="title"><b>Example 7.3. Constraining the size of a texture to
+        the size of the stage using <span class="type">ClutterBindConstraint</span></b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor rectangle_color = { 0xaa, 0x99, 0x00, 0xff };
+
+int
+main (int argc, char *argv[])
+{
+  /* the stage is the "source" for constraints on the texture */
+  ClutterActor *stage;
+
+  /* the "target" actor which will be bound by the constraints */
+  ClutterActor *texture;
+
+  ClutterConstraint *width_binding;
+  ClutterConstraint *height_binding;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  /* make the stage resizable */
+  clutter_stage_set_user_resizable (CLUTTER_STAGE (stage), TRUE);
+
+  texture = clutter_texture_new ();
+  clutter_actor_set_opacity (texture, 50);
+  clutter_texture_set_repeat (CLUTTER_TEXTURE (texture), TRUE, TRUE);
+  clutter_texture_set_from_file (CLUTTER_TEXTURE (texture), "smiley.png", NULL);
+
+  /* the texture's width will be 100px less than the stage's */
+  width_binding = clutter_bind_constraint_new (stage, CLUTTER_BIND_WIDTH, -100);
+
+  /* the texture's height will be 100px less than the stage's */
+  height_binding = clutter_bind_constraint_new (stage, CLUTTER_BIND_HEIGHT, -100);
+
+  /* add the constraints to the texture */
+  clutter_actor_add_constraint (texture, width_binding);
+  clutter_actor_add_constraint (texture, height_binding);
+
+  /* add some alignment constraints */
+  clutter_actor_add_constraint (texture, clutter_align_constraint_new (stage, CLUTTER_ALIGN_X_AXIS, 0.5));
+  clutter_actor_add_constraint (texture, clutter_align_constraint_new (stage, CLUTTER_ALIGN_Y_AXIS, 0.5));
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), texture);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><p>The texture in this example is 100px smaller than the stage,
+      leaving a border of visible stage around the texture; and the texture
+      has a tiled image on it. The tiling changes as the texture changes
+      size. Also note that two <span class="type">ClutterAlignConstraints</span> are
+      added to center the actor on the stage.</p><p>The result looks like this:</p><div class="screenshot"><div class="mediaobject"><img src="images/layouts-bind-constraint-stage.png" alt="A texture bound to the height and width of the stage using ClutterBindConstraint"></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910984288"></a>3.3. Discussion</h3></div></div></div><p>Sizing constraints are a good solution in these cases:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Where you can't use a layout manager. For
+          example, you can't apply a layout manager to the stage
+          directly; so if you want to control the size of an actor
+          based on the size of the stage (as in
+          <a class="link" href="layouts-bind-constraint.html#layouts-bind-constraint-example-1" title="Example 7.3. Constraining the size of a texture to the size of the stage using ClutterBindConstraint">the example
+          above</a>), constraints are a good substitute for a layout
+          manager .</p></li><li class="listitem"><p>Where the layout of a UI is fairly simple (perhaps
+          up to half a dozen actors) and fairly static. An example
+          might be something like a text editor, where the arrangement
+          of the UI (menu bar, toolbar, editing panel, footer) changes
+          infrequently. Of course, it is possible to arrange top-level
+          components using constraints, but still use layout
+          managers inside individual components (e.g. a flow layout
+          manager to manage buttons in the toolbar).</p></li><li class="listitem"><p>Where you have an actor whose size can change erratically,
+          but you still want to be able to track its size to control
+          another actor's size. An example might be an application like
+          a drawing program, where a user can create their own actors:
+          you might want the user to be able to describe loose, custom
+          constraints between actors like "keep these actors at the
+          same width", then allow those actors to be moved around and
+          resized in a free-form way as a group. In this situation, a
+          layout manager is too rigid and not appropriate;
+          but adding <span class="type">ClutterConstraints</span> to actors
+          in response to user actions could work well.</p><p>The <a class="link" href="layouts-bind-constraint.html#layouts-bind-constraint-example-2" title="Example 7.4. Creating an automatically-resizing overlay for a texture using ClutterBindConstraint">sample
+          code in the appendix</a> is the kind of thing you might include
+          in a drawing program: you can resize a texture with a key press
+          (<code class="code">+</code> to increase size, <code class="code">-</code> to decrease), and
+          click on the actor to select/deselect it (a semi-transparent overlay is
+          toggled on the texture). The size of the overlay is bound and
+          aligned to the texture, so that it covers and slightly overlaps the
+          texture regardless of its size.</p></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>You can bind an actor to a single dimension (just height or
+        depth) of another actor: you don't have to bind both height
+        and width. Also, you don't have to bind both dimensions of the
+        target to the same source: for example, you could bind the target's
+        height to one source (actor A) and its width to another source
+        (actor B).</p><p>A <span class="type">ClutterBindConstraint</span> can also be used to
+        constrain a target actor's position on the <code class="code">x</code> and
+        <code class="code">y</code> axes to the position of a source actor. This is
+        covered in another recipe.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236910971888"></a>3.3.1. Another way to bind actors' sizes together</h4></div></div></div><p>There is another way to control the size of a target
+        actor, based on the size of a source: you can create a handler
+        for the <code class="code">allocation-changed</code> signal
+        of the source, emitted when its size and/or position
+        changes. This signal includes all the data
+        about the source's new allocation (height, width, x and y
+        coordindates), which the handler function can then use to
+        resize the target.</p><p>Alternatively, if you're only interested in
+        a change to width or height, you can create a handler
+        for the <code class="code">notify::width</code> or
+        <code class="code">notify::height</code> signal (respectively), and modify
+        the target's width/height in the handler.</p><p>This approach may be useful if you need a type of
+        control over alignment and size which is not possible using
+        constraints alone (e.g. one actor's size should be
+        a proportion of another's). See
+        <a class="link" href="layouts-bind-constraint.html#layouts-bind-constraint-example-3" title="Example 7.5. Using the allocation-changed signal of one actor to trigger proportional size changes in another">the code in
+        this section</a> for an example where the size
+        of one actor is dynamically set to 10% more than the
+        size of another.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p><a class="link" href="actors-allocation-notify.html" title="3. Knowing when an actor's position or size changes">This recipe</a>
+          explains more about monitoring changes to an actor's size.</p></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910965120"></a>3.4. Full examples</h3></div></div></div><div class="example"><a name="layouts-bind-constraint-example-2"></a><p class="title"><b>Example 7.4. Creating an automatically-resizing overlay for a
+        texture using <span class="type">ClutterBindConstraint</span></b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#define STAGE_SIDE 400
+#define RECTANGLE_SIDE STAGE_SIDE * 0.5
+#define TEXTURE_SIZE_MAX STAGE_SIDE * 0.9
+#define TEXTURE_SIZE_MIN STAGE_SIDE * 0.1
+#define TEXTURE_SIZE_STEP 0.2
+#define OVERLAY_OPACITY_OFF 0
+#define OVERLAY_OPACITY_ON 100
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor overlay_color = { 0xaa, 0x99, 0x00, 0xff };
+
+/* change the texture size with +/- */
+static gboolean
+key_press_cb (ClutterActor *actor,
+              ClutterEvent *event,
+              gpointer      user_data)
+{
+  ClutterActor *texture;
+  gfloat texture_width, texture_height;
+  guint key_pressed;
+
+  texture = CLUTTER_ACTOR (user_data);
+  clutter_actor_get_size (texture, &amp;texture_width, &amp;texture_height);
+
+  key_pressed = clutter_event_get_key_symbol (event);
+
+  if (key_pressed == CLUTTER_KEY_plus)
+    {
+      texture_width *= 1.0 + TEXTURE_SIZE_STEP;
+      texture_height *= 1.0 + TEXTURE_SIZE_STEP;
+    }
+  else if (key_pressed == CLUTTER_KEY_minus)
+    {
+      texture_width *= 1.0 - TEXTURE_SIZE_STEP;
+      texture_height *= 1.0 - TEXTURE_SIZE_STEP;
+    }
+
+  if (texture_width &lt;= TEXTURE_SIZE_MAX &amp;&amp; texture_width &gt;= TEXTURE_SIZE_MIN)
+    clutter_actor_animate (texture, CLUTTER_EASE_OUT_CUBIC, 500,
+                           "width", texture_width,
+                           "height", texture_height,
+                           NULL);
+
+  return TRUE;
+}
+
+/* turn overlay opacity on/off */
+static void
+click_cb (ClutterClickAction *action,
+          ClutterActor       *actor,
+          gpointer            user_data)
+{
+  ClutterActor *overlay = CLUTTER_ACTOR (user_data);
+  guint8 opacity = clutter_actor_get_opacity (overlay);
+
+  if (opacity &lt; OVERLAY_OPACITY_ON)
+    opacity = OVERLAY_OPACITY_ON;
+  else
+    opacity = OVERLAY_OPACITY_OFF;
+
+  clutter_actor_set_opacity (overlay, opacity);
+}
+
+int
+main (int argc, char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *texture;
+  ClutterActor *overlay;
+  ClutterAction *click;
+  GError *error = NULL;
+
+  const gchar *filename = "redhand.png";
+
+  if (argc &gt; 1)
+    filename = argv[1];
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, STAGE_SIDE, STAGE_SIDE);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  texture = clutter_texture_new ();
+  clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture), TRUE);
+  clutter_actor_set_reactive (texture, TRUE);
+  clutter_actor_set_size (texture, RECTANGLE_SIDE, RECTANGLE_SIDE);
+  clutter_actor_add_constraint (texture, clutter_align_constraint_new (stage, CLUTTER_ALIGN_X_AXIS, 0.5));
+  clutter_actor_add_constraint (texture, clutter_align_constraint_new (stage, CLUTTER_ALIGN_Y_AXIS, 0.5));
+
+  clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                                 filename,
+                                 &amp;error);
+
+  if (error != NULL)
+    {
+      g_warning ("Error loading %s\n%s", filename, error-&gt;message);
+      g_error_free (error);
+      exit (EXIT_FAILURE);
+    }
+
+  /* overlay is 10px wider and taller than the texture, and centered on it;
+   * initially, it is transparent; but it is made semi-opaque when the
+   * texture is clicked
+   */
+  overlay = clutter_rectangle_new_with_color (&amp;overlay_color);
+  clutter_actor_set_opacity (overlay, OVERLAY_OPACITY_OFF);
+  clutter_actor_add_constraint (overlay, clutter_bind_constraint_new (texture, CLUTTER_BIND_WIDTH, 10));
+  clutter_actor_add_constraint (overlay, clutter_bind_constraint_new (texture, CLUTTER_BIND_HEIGHT, 10));
+  clutter_actor_add_constraint (overlay, clutter_align_constraint_new (texture, CLUTTER_ALIGN_X_AXIS, 0.5));
+  clutter_actor_add_constraint (overlay, clutter_align_constraint_new (texture, CLUTTER_ALIGN_Y_AXIS, 0.5));
+
+  click = clutter_click_action_new ();
+  clutter_actor_add_action (texture, click);
+
+  clutter_container_add (CLUTTER_CONTAINER (stage), texture, overlay, NULL);
+  clutter_actor_raise_top (overlay);
+
+  g_signal_connect (click, "clicked", G_CALLBACK (click_cb), overlay);
+
+  g_signal_connect (stage,
+                    "key-press-event",
+                    G_CALLBACK (key_press_cb),
+                    texture);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="layouts-bind-constraint-example-3"></a><p class="title"><b>Example 7.5. Using the <code class="code">allocation-changed</code>
+        signal of one actor to trigger proportional size changes in
+        another</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#define OVERLAY_FACTOR 1.1
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+
+void
+allocation_changed_cb (ClutterActor           *actor,
+                       const ClutterActorBox  *allocation,
+                       ClutterAllocationFlags  flags,
+                       gpointer                user_data)
+{
+  ClutterActor *overlay = CLUTTER_ACTOR (user_data);
+
+  gfloat width, height, x, y;
+  clutter_actor_box_get_size (allocation, &amp;width, &amp;height);
+  clutter_actor_box_get_origin (allocation, &amp;x, &amp;y);
+
+  clutter_actor_set_size (overlay,
+                          width * OVERLAY_FACTOR,
+                          height * OVERLAY_FACTOR);
+
+  clutter_actor_set_position (overlay,
+                              x - ((OVERLAY_FACTOR - 1) * width * 0.5),
+                              y - ((OVERLAY_FACTOR - 1) * width * 0.5));
+}
+
+int
+main (int argc, char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *actor;
+  ClutterActor *overlay;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  actor = clutter_actor_new ();
+  clutter_actor_set_background_color (actor, CLUTTER_COLOR_Red);
+  clutter_actor_set_size (actor, 100, 100);
+  clutter_actor_set_position (actor, 150, 150);
+  clutter_actor_add_child (stage, actor);
+
+  overlay = clutter_actor_new ();
+  clutter_actor_set_background_color (overlay, CLUTTER_COLOR_Blue);
+  clutter_actor_set_opacity (overlay, 128);
+
+  g_signal_connect (actor,
+                    "allocation-changed",
+                    G_CALLBACK (allocation_changed_cb),
+                    overlay);
+
+  clutter_actor_add_child (stage, overlay);
+
+  clutter_actor_animate (actor, CLUTTER_LINEAR, 2000,
+                         "width", 300.0,
+                         "height", 300.0,
+                         "x", 50.0,
+                         "y", 50.0,
+                         NULL);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="layouts-stacking.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="layouts.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="layouts-box.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2. Stacking actors on top of each other </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 4. Arranging actors in a single row or column</td></tr></table></div></body></html>

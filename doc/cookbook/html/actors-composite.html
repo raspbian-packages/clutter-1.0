@@ -1,0 +1,757 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>2. Implementing a simple custom actor</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="actors.html" title="Chapter 2. Actors"><link rel="prev" href="actors.html" title="Chapter 2. Actors"><link rel="next" href="actors-allocation-notify.html" title="3. Knowing when an actor's position or size changes"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Implementing a simple custom actor</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="actors.html">Prev</a> </td><th width="60%" align="center">Chapter 2. Actors</th><td width="20%" align="right"> <a accesskey="n" href="actors-allocation-notify.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="actors-composite"></a>2. Implementing a simple custom actor</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="actors-composite-problem"></a>2.1. Problem</h3></div></div></div><p>You want to implement your own <span class="type">ClutterActor</span>;
+      for example, a very simple button widget. But you want to base it
+      on existing Clutter primitives (rectangles, text) to minimise
+      the work required.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="actors-composite-solution"></a>2.2. Solution</h3></div></div></div><p>Implement a custom actor composed from a <span class="type">ClutterBox</span>
+      packed with other <span class="type">ClutterActors</span>. The custom actor
+      provides a facade over these internal actors, simplifying
+      access to their properties and behavior.</p><p>In this recipe, we subclass <span class="type">ClutterActor</span> using this
+      approach to create a very simple button widget, <span class="type">CbButton</span>.
+      It is not a complete button implementation: see
+      <a class="ulink" href="http://git.clutter-project.org/mx/tree/mx/mx-button.c" target="_top">
+      <span class="type">MxButton</span></a> for a more comprehensive example
+      (and the basis for this recipe). But this recipe does cover the most
+      important parts of a <span class="type">ClutterActor</span> implementation,
+      as well some useful <span class="type">GObject</span>-related code.</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>As Clutter is a GObject-based library, it relies
+        heavily on GObject concepts and idioms. If you are unfamiliar with
+        GObject, please read
+        <a class="ulink" href="http://developer.gnome.org/gobject/stable/" target="_top">the GObject
+        Reference Manual</a> before proceeding.</p></div><p>The code for this solution is structured like standard GObject
+      C library code:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The header file <code class="filename">cb-button.h</code>
+          declares the class' public API (function prototypes, macros,
+          structs).</p></li><li class="listitem"><p>The code file <code class="filename">cb-button.c</code>
+          contains the class implementation.</p></li></ul></div><p>One more example file, <code class="filename">actors-composite-main.c</code>,
+      shows how to use <span class="type">CbButton</span> in an application.</p><p>Each of these files is described in more detail below.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>In a more realistic context, <span class="type">CbButton</span> would
+        have some build infrastructure (for example, autotooling)
+        so it could be compiled, installed, and reused in a variety of
+        applications. However, for the purposes of cookbook examples,
+        these issues are ignored here.</p><p>If you <span class="emphasis"><em>are</em></span> planning on building
+        your own widgets using Clutter as part of an application, or
+        to create your own library, the
+        <a class="ulink" href="http://git.clutter-project.org/mx/" target="_top">Mx toolkit</a>
+        provides an excellent example of how to autotool your project.</p></div><div class="example"><a name="actors-composite-cb-button-h"></a><p class="title"><b>Example 2.1. <code class="filename">cb-button.h</code>: header file</b></p><div class="example-contents"><p>This defines the public API for the class, including
+        GObject type macros, class and object structures, and
+        function prototypes.</p><pre class="programlisting">/* inclusion guard */
+#ifndef __CB_BUTTON_H__
+#define __CB_BUTTON_H__
+
+/* include any dependencies */
+#include &lt;clutter/clutter.h&gt;
+
+/* GObject implementation */
+
+/* declare this function signature to remove compilation errors with -Wall;
+ * the cb_button_get_type() function is actually added via the
+ * G_DEFINE_TYPE macro in the .c file
+ */
+GType cb_button_get_type (void);
+
+/* GObject type macros */
+/* returns the class type identifier (GType) for CbButton */
+#define CB_TYPE_BUTTON            (cb_button_get_type ())
+
+/* cast obj to a CbButton object structure*/
+#define CB_BUTTON(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), CB_TYPE_BUTTON, CbButton))
+
+/* check whether obj is a CbButton */
+#define CB_IS_BUTTON(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), CB_TYPE_BUTTON))
+
+/* cast klass to CbButtonClass class structure */
+#define CB_BUTTON_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), CB_TYPE_BUTTON, CbButtonClass))
+
+/* check whether klass is a member of the CbButtonClass */
+#define CB_IS_BUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), CB_TYPE_BUTTON))
+
+/* get the CbButtonClass structure for a CbButton obj */
+#define CB_BUTTON_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), CB_TYPE_BUTTON, CbButtonClass))
+
+/*
+ * Private instance fields; see
+ * http://www.gotw.ca/gotw/024.htm for the rationale
+ */
+typedef struct _CbButtonPrivate CbButtonPrivate;
+typedef struct _CbButton        CbButton;
+typedef struct _CbButtonClass   CbButtonClass;
+
+/* object structure */
+struct _CbButton
+{
+  /*&lt;private&gt;*/
+  ClutterActor parent_instance;
+
+  /* structure containing private members */
+  /*&lt;private&gt;*/
+  CbButtonPrivate *priv;
+};
+
+/* class structure */
+struct _CbButtonClass
+{
+  /* signals */
+  void (* clicked)(CbButton *button);
+
+  /*&lt;private&gt;*/
+  ClutterActorClass parent_class;
+};
+
+/* public API */
+
+/* constructor - note this returns a ClutterActor instance */
+ClutterActor *cb_button_new (void);
+
+/* getter */
+const gchar *cb_button_get_text (CbButton *self);
+
+/* setters - these are wrappers round functions
+ * which change properties of the internal actors
+ */
+void cb_button_set_text (CbButton    *self,
+                         const gchar *text);
+
+void cb_button_set_background_color (CbButton           *self,
+                                     const ClutterColor *color);
+
+void cb_button_set_text_color (CbButton           *self,
+                               const ClutterColor *color);
+
+#endif /* __CB_BUTTON_H__ */
+</pre></div></div><br class="example-break"><div class="example"><a name="actors-composite-cb-button-c"></a><p class="title"><b>Example 2.2. <code class="filename">cb-button.c</code>: <span class="type">ClutterActor</span>
+        and GObject implementation</b></p><div class="example-contents"><p>This is the main C code file which implements both
+        the GObject and Clutter elements of <span class="type">CbButton</span>.
+        The example below is liberally commented, and also gives some samples
+        of annotations to generate
+        <a class="ulink" href="http://www.gtk.org/gtk-doc/" target="_top">gtk-docs</a> for the
+        widget. The
+        <a class="link" href="actors-composite.html#actors-composite-discussion-clutter-virtual-functions" title="2.3.1. Implementing ClutterActor virtual functions">discussion
+        section</a> comments more specifically about the Clutter-specific
+        parts of it.</p><pre class="programlisting">#include "cb-button.h"
+
+/**
+ * SECTION:cb-button
+ * @short_description: Button widget
+ *
+ * A button widget with support for a text label and background color.
+ */
+
+/* convenience macro for GType implementations; see:
+ * http://library.gnome.org/devel/gobject/2.27/gobject-Type-Information.html#G-DEFINE-TYPE:CAPS
+ */
+G_DEFINE_TYPE (CbButton, cb_button, CLUTTER_TYPE_ACTOR);
+
+/* macro for accessing the object's private structure */
+#define CB_BUTTON_GET_PRIVATE(obj) \
+  (G_TYPE_INSTANCE_GET_PRIVATE ((obj), CB_TYPE_BUTTON, CbButtonPrivate))
+
+/* private structure - should only be accessed through the public API;
+ * this is used to store member variables whose properties
+ * need to be accessible from the implementation; for example, if we
+ * intend to create wrapper functions which modify properties on the
+ * actors composing an object, we should keep a reference to the actors
+ * here
+ *
+ * this is also the place where other state variables go:
+ * for example, you might record the current state of the button
+ * (toggled on or off) or a background image
+ */
+struct _CbButtonPrivate
+{
+  ClutterActor  *child;
+  ClutterActor  *label;
+  ClutterAction *click_action;
+  gchar         *text;
+};
+
+/* enumerates property identifiers for this class;
+ * note that property identifiers should be non-zero integers,
+ * so we add an unused PROP_0 to occupy the 0 position in the enum
+ */
+enum {
+  PROP_0,
+  PROP_TEXT
+};
+
+/* enumerates signal identifiers for this class;
+ * LAST_SIGNAL is not used as a signal identifier, but is instead
+ * used to delineate the size of the cache array for signals (see below)
+ */
+enum {
+  CLICKED,
+  LAST_SIGNAL
+};
+
+/* cache array for signals */
+static guint cb_button_signals[LAST_SIGNAL] = { 0, };
+
+/* from http://mail.gnome.org/archives/gtk-devel-list/2004-July/msg00158.html:
+ *
+ * "The finalize method finishes releasing the remaining
+ * resources just before the object itself will be freed from memory, and
+ * therefore it will only be called once. The two step process helps break
+ * cyclic references. Both dispose and finalize must chain up to their
+ * parent objects by calling their parent's respective methods *after* they
+ * have disposed or finalized their own members."
+ */
+static void
+cb_button_finalize (GObject *gobject)
+{
+  CbButtonPrivate *priv = CB_BUTTON (gobject)-&gt;priv;
+
+  g_free (priv-&gt;text);
+
+  /* call the parent class' finalize() method */
+  G_OBJECT_CLASS (cb_button_parent_class)-&gt;finalize (gobject);
+}
+
+/* enables objects to be uniformly treated as GObjects;
+ * also exposes properties so they become scriptable, e.g.
+ * through ClutterScript
+ */
+static void
+cb_button_set_property (GObject      *gobject,
+                        guint         prop_id,
+                        const GValue *value,
+                        GParamSpec   *pspec)
+{
+  CbButton *button = CB_BUTTON (gobject);
+
+  switch (prop_id)
+    {
+    case PROP_TEXT:
+      cb_button_set_text (button, g_value_get_string (value));
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+    }
+}
+
+/* enables objects to be uniformly treated as GObjects */
+static void
+cb_button_get_property (GObject    *gobject,
+                        guint       prop_id,
+                        GValue     *value,
+                        GParamSpec *pspec)
+{
+  CbButtonPrivate *priv = CB_BUTTON (gobject)-&gt;priv;
+
+  switch (prop_id)
+    {
+    case PROP_TEXT:
+      g_value_set_string (value, priv-&gt;text);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+    }
+}
+
+/* ClutterActor implementation
+ *
+ * we only implement destroy(), get_preferred_height(), get_preferred_width(),
+ * allocate(), and paint(), as this is the minimum we can get away with
+ */
+
+/* composite actors should implement destroy(), and inside their
+ * implementation destroy any actors they are composed from;
+ * in this case, we just destroy the child ClutterBox
+ */
+static void
+cb_button_destroy (ClutterActor *self)
+{
+  CbButtonPrivate *priv = CB_BUTTON (self)-&gt;priv;
+
+  /* we just destroy the child, and let the child
+   * deal with destroying _its_ children; note that we have a guard
+   * here in case the child has already been destroyed
+   */
+  if (priv-&gt;child)
+    {
+      clutter_actor_destroy (priv-&gt;child);
+      priv-&gt;child = NULL;
+    }
+
+  /* chain up to destroy() on the parent ClutterActorClass;
+   * note that we check the parent class has a destroy() implementation
+   * before calling it
+   */
+  if (CLUTTER_ACTOR_CLASS (cb_button_parent_class)-&gt;destroy)
+    CLUTTER_ACTOR_CLASS (cb_button_parent_class)-&gt;destroy (self);
+}
+
+/* get_preferred_height and get_preferred_width defer to the
+ * internal ClutterBox, adding 20px padding on each axis;
+ * min_*_p is the minimum height or width the actor should occupy
+ * to be useful; natural_*_p is the height or width the actor
+ * would occupy if not constrained
+ *
+ * note that if we required explicit sizing for CbButtons
+ * (i.e. a developer must set their height and width),
+ * we wouldn't need to implement these functions
+ */
+static void
+cb_button_get_preferred_height (ClutterActor *self,
+                                gfloat for_width,
+                                gfloat *min_height_p,
+                                gfloat *natural_height_p)
+{
+  CbButtonPrivate *priv = CB_BUTTON (self)-&gt;priv;
+
+  clutter_actor_get_preferred_height (priv-&gt;child,
+                                      for_width,
+                                      min_height_p,
+                                      natural_height_p);
+
+  *min_height_p += 20.0;
+  *natural_height_p += 20.0;
+}
+
+static void
+cb_button_get_preferred_width (ClutterActor *self,
+                               gfloat for_height,
+                               gfloat *min_width_p,
+                               gfloat *natural_width_p)
+{
+  CbButtonPrivate *priv = CB_BUTTON (self)-&gt;priv;
+
+  clutter_actor_get_preferred_width (priv-&gt;child,
+                                     for_height,
+                                     min_width_p,
+                                     natural_width_p);
+
+  *min_width_p += 20.0;
+  *natural_width_p += 20.0;
+}
+
+/* use the actor's allocation for the ClutterBox */
+static void
+cb_button_allocate (ClutterActor          *actor,
+                    const ClutterActorBox *box,
+                    ClutterAllocationFlags flags)
+{
+  CbButtonPrivate *priv = CB_BUTTON (actor)-&gt;priv;
+  ClutterActorBox child_box = { 0, };
+
+  /* set the allocation for the whole button */
+  CLUTTER_ACTOR_CLASS (cb_button_parent_class)-&gt;allocate (actor, box, flags);
+
+  /* make the child (the ClutterBox) fill the parent;
+   * note that this allocation box is relative to the
+   * coordinates of the whole button actor, so we can't just
+   * use the box passed into this function; instead, it
+   * is adjusted to span the whole of the actor, from its
+   * top-left corner (0,0) to its bottom-right corner
+   * (width,height)
+   */
+  child_box.x1 = 0.0;
+  child_box.y1 = 0.0;
+  child_box.x2 = clutter_actor_box_get_width (box);
+  child_box.y2 = clutter_actor_box_get_height (box);
+
+  clutter_actor_allocate (priv-&gt;child, &amp;child_box, flags);
+}
+
+/* paint function implementation: just calls paint() on the ClutterBox */
+static void
+cb_button_paint (ClutterActor *actor)
+{
+  CbButtonPrivate *priv = CB_BUTTON (actor)-&gt;priv;
+
+  clutter_actor_paint (priv-&gt;child);
+}
+
+/* proxy ClickAction signals so they become signals from the actor */
+static void
+cb_button_clicked (ClutterClickAction *action,
+                   ClutterActor       *actor,
+                   gpointer            user_data)
+{
+  /* emit signal via the cache array */
+  g_signal_emit (actor, cb_button_signals[CLICKED], 0);
+}
+
+/* GObject class and instance initialization functions; note that
+ * these have been placed after the Clutter implementation, as
+ * they refer to the static function implementations above
+ */
+
+/* class init: attach functions to superclasses, define properties
+ * and signals
+ */
+static void
+cb_button_class_init (CbButtonClass *klass)
+{
+  ClutterActorClass *actor_class = CLUTTER_ACTOR_CLASS (klass);
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+  GParamSpec *pspec;
+
+  gobject_class-&gt;finalize = cb_button_finalize;
+  gobject_class-&gt;set_property = cb_button_set_property;
+  gobject_class-&gt;get_property = cb_button_get_property;
+
+  actor_class-&gt;destroy = cb_button_destroy;
+  actor_class-&gt;get_preferred_height = cb_button_get_preferred_height;
+  actor_class-&gt;get_preferred_width = cb_button_get_preferred_width;
+  actor_class-&gt;allocate = cb_button_allocate;
+  actor_class-&gt;paint = cb_button_paint;
+
+  g_type_class_add_private (klass, sizeof (CbButtonPrivate));
+
+  /**
+   * CbButton:text:
+   *
+   * The text shown on the #CbButton
+   */
+  pspec = g_param_spec_string ("text",
+                               "Text",
+                               "Text of the button",
+                               NULL,
+                               G_PARAM_READWRITE);
+  g_object_class_install_property (gobject_class, PROP_TEXT, pspec);
+
+  /**
+   * CbButton::clicked:
+   * @button: the #CbButton that emitted the signal
+   *
+   * The ::clicked signal is emitted when the internal #ClutterClickAction
+   * associated with a #CbButton emits its own ::clicked signal
+   */
+  cb_button_signals[CLICKED] =
+    g_signal_new ("clicked",
+                  G_TYPE_FROM_CLASS (klass),
+                  G_SIGNAL_RUN_LAST,
+                  G_STRUCT_OFFSET (CbButtonClass, clicked),
+                  NULL,
+                  NULL,
+                  g_cclosure_marshal_VOID__VOID,
+                  G_TYPE_NONE,
+                  0);
+}
+
+/* object init: create a private structure and pack
+ * composed ClutterActors into it
+ */
+static void
+cb_button_init (CbButton *self)
+{
+  CbButtonPrivate *priv;
+  ClutterLayoutManager *layout;
+
+  priv = self-&gt;priv = CB_BUTTON_GET_PRIVATE (self);
+
+  clutter_actor_set_reactive (CLUTTER_ACTOR (self), TRUE);
+
+  /* the only child of this actor is a ClutterBox with a
+   * ClutterBinLayout: painting and allocation of the actor basically
+   * involves painting and allocating this child box
+   */
+  layout = clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_CENTER,
+                                   CLUTTER_BIN_ALIGNMENT_CENTER);
+
+  priv-&gt;child = clutter_actor_new ();
+  clutter_actor_set_layout_manager (priv-&gt;child, layout);
+
+  /* set the parent of the ClutterBox to this instance */
+  clutter_actor_add_child (CLUTTER_ACTOR (self), priv-&gt;child);
+
+  /* add text label to the button; see the ClutterText API docs
+   * for more information about available properties
+   */
+  priv-&gt;label = g_object_new (CLUTTER_TYPE_TEXT,
+                              "line-alignment", PANGO_ALIGN_CENTER,
+                              "ellipsize", PANGO_ELLIPSIZE_END,
+                              NULL);
+
+  clutter_actor_add_child (priv-&gt;child, priv-&gt;label);
+
+  /* add a ClutterClickAction on this actor, so we can proxy its
+   * "clicked" signal into a signal from this actor
+   */
+  priv-&gt;click_action = clutter_click_action_new ();
+  clutter_actor_add_action (CLUTTER_ACTOR (self), priv-&gt;click_action);
+
+  g_signal_connect (priv-&gt;click_action,
+                    "clicked",
+                    G_CALLBACK (cb_button_clicked),
+                    NULL);
+}
+
+/* public API */
+/* examples of public API functions which wrap functions
+ * on internal actors
+ */
+
+/**
+ * cb_button_set_text:
+ * @self: a #CbButton
+ * @text: the text to display on the button
+ *
+ * Set the text on the button
+ */
+void
+cb_button_set_text (CbButton    *self,
+                    const gchar *text)
+{
+  CbButtonPrivate *priv;
+
+  /* public API should check its arguments;
+   * see also g_return_val_if_fail for functions which
+   * return a value
+   */
+  g_return_if_fail (CB_IS_BUTTON (self));
+
+  priv = self-&gt;priv;
+
+  g_free (priv-&gt;text);
+
+  if (text)
+    priv-&gt;text = g_strdup (text);
+  else
+    priv-&gt;text = g_strdup ("");
+
+  /* call a function on the ClutterText inside the layout */
+  clutter_text_set_text (CLUTTER_TEXT (priv-&gt;label), priv-&gt;text);
+}
+
+/**
+ * cb_button_set_background_color:
+ * @self: a #CbButton
+ * @color: the #ClutterColor to use for the button's background
+ *
+ * Set the color of the button's background
+ */
+void
+cb_button_set_background_color (CbButton           *self,
+                                const ClutterColor *color)
+{
+  g_return_if_fail (CB_IS_BUTTON (self));
+
+  clutter_actor_set_background_color (self-&gt;priv-&gt;child, color);
+}
+
+/**
+ * cb_button_set_text_color:
+ * @self: a #CbButton
+ * @color: the #ClutterColor to use as the color for the button text
+ *
+ * Set the color of the text on the button
+ */
+void
+cb_button_set_text_color (CbButton           *self,
+                          const ClutterColor *color)
+{
+  g_return_if_fail (CB_IS_BUTTON (self));
+
+  clutter_text_set_color (CLUTTER_TEXT (self-&gt;priv-&gt;label), color);
+}
+
+/**
+ * cb_button_get_text:
+ * @self: a #CbButton
+ *
+ * Get the text displayed on the button
+ *
+ * Returns: the button's text. This must not be freed by the application.
+ */
+const gchar *
+cb_button_get_text (CbButton *self)
+{
+  g_return_val_if_fail (CB_IS_BUTTON (self), NULL);
+
+  return self-&gt;priv-&gt;text;
+}
+
+/**
+ * cb_button_new:
+ *
+ * Creates a new #CbButton instance
+ *
+ * Returns: a new #CbButton
+ */
+ClutterActor *
+cb_button_new (void)
+{
+  return g_object_new (CB_TYPE_BUTTON, NULL);
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="actors-composite-actors-composite-main-c"></a><p class="title"><b>Example 2.3. <code class="filename">actors-composite-main.c</code>: trivial
+        application demonstrating usage of <span class="type">CbButton</span></b></p><div class="example-contents"><p>Note how any of the <span class="type">ClutterActor</span>
+        functions (like <code class="function">clutter_actor_set_size()</code>
+        and <code class="function">clutter_actor_add_constraint()</code>) can
+        be applied to instances of our <span class="type">ClutterActor</span>
+        implementation.</p><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include "cb-button.h"
+
+/* colors */
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor white_color = { 0xff, 0xff, 0xff, 0xff };
+static const ClutterColor yellow_color = { 0x88, 0x88, 0x00, 0xff };
+
+/* click handler */
+static void
+clicked (CbButton *button,
+         gpointer  data)
+{
+  const gchar *current_text;
+
+  g_debug ("Clicked");
+
+  current_text = cb_button_get_text (button);
+
+  if (g_strcmp0 (current_text, "hello") == 0)
+    cb_button_set_text (button, "world");
+  else
+    cb_button_set_text (button, "hello");
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *button;
+  ClutterConstraint *align_x_constraint;
+  ClutterConstraint *align_y_constraint;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  button = cb_button_new ();
+  cb_button_set_text (CB_BUTTON (button), "hello");
+
+  /* the following is equivalent to the two lines above:
+   *
+   *  button = g_object_new (CB_TYPE_BUTTON,
+   *                         "text", "winkle",
+   *                         NULL);
+   *
+   * because we defined a set_property function, which can accept
+   * a PROP_TEXT parameter, GObject can create a button and set one
+   * or more properties with a single call to g_object_new()
+   */
+
+  /* note that the size of the button is left to Clutter's size requisition */
+  cb_button_set_text_color (CB_BUTTON (button), &amp;white_color);
+  cb_button_set_background_color (CB_BUTTON (button), &amp;yellow_color);
+  g_signal_connect (button, "clicked", G_CALLBACK (clicked), NULL);
+
+  align_x_constraint = clutter_align_constraint_new (stage,
+                                                     CLUTTER_ALIGN_X_AXIS,
+                                                     0.5);
+
+  align_y_constraint = clutter_align_constraint_new (stage,
+                                                     CLUTTER_ALIGN_Y_AXIS,
+                                                     0.5);
+
+  clutter_actor_add_constraint (button, align_x_constraint);
+  clutter_actor_add_constraint (button, align_y_constraint);
+
+  clutter_actor_add_child (stage, button);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="actors-composite-discussion"></a>2.3. Discussion</h3></div></div></div><p>The actor implemented here is based on
+      simple composition: bundling several actors together and wrapping
+      their behavior and properties. In the example here, we make use of a
+      <span class="type">ClutterLayoutManager</span> to handle positioning of
+      the <span class="type">ClutterText</span>; we change the background color of
+      the button by changing the color of the
+      <span class="type">ClutterBox</span>; and we use a <span class="type">ClutterClickAction</span>
+      to simplify implementation of a click signal.</p><p>You may find that this approach is appropriate if you need
+      to implement a simple rectangular actor. However, it puts some
+      constraints on the outline of the actor, making it harder to
+      use a custom outline: for example, a rectangle with rounded corners
+      or a shape which can't be approximated by a rectangle. Such cases
+      require both <code class="function">pick()</code> and <code class="function">paint()</code>
+      implementations using Cogl (or similar): see
+      <a class="link" href="actors-non-rectangular.html" title="6. Creating an actor with a non-rectangular shape">this recipe</a>
+      for more details.</p><p>The composition approach may also be inappropriate where
+      you need to do a lot of custom animation and drawing; and it is
+      likely to be inappropriate for implementing a container
+      actor. See the notes on implementing a new actor in the Clutter
+      reference manual for more details of what may be required
+      in these cases.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="actors-composite-discussion-clutter-virtual-functions"></a>2.3.1. Implementing <span class="type">ClutterActor</span> virtual functions</h4></div></div></div><p>While most of the <span class="type">CbButton</span> implementation
+        revolves around GObject, there are some elements of it
+        specific to Clutter. Due to the simplicity of
+        the <span class="type">CbButton</span> actor, the implementation of
+        these functions is fairly trivial, as explained below:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><b>Object destruction:
+              <code class="function">cb_button_destroy()</code>. </b><span class="type">ClutterActor</span> subclasses based
+              on composition should implement the <code class="function">destroy()</code>
+              virtual function. This is called on an actor when its
+              container is destroyed to clean up the resources
+              allocated to the actor; it also emits a
+              <span class="emphasis"><em>destroy</em></span> signal which other code can
+              hook onto.</p><p>In the case of <span class="type">CbButton</span>, the
+            <code class="function">destroy()</code> implementation calls
+            <code class="function">clutter_actor_destroy()</code> on the child
+            <span class="type">ClutterBox</span>, then sets that child to
+            <code class="constant">NULL</code>. Finally, it checks for a
+            <code class="function">destroy()</code> implementation on the parent
+            class, then calls it if one exists.</p></li><li class="listitem"><p><b>Size requisition:
+              <code class="function">cb_button_get_preferred_height()</code>
+              and <code class="function">cb_button_get_preferred_width()</code>. </b>During the size requisition phase, Clutter asks each
+              actor the minimum size it should be to remain useful,
+              and the maximum size it would be if unconstrained. This is done
+              by calling the <code class="function">get_preferred_height()</code>
+              and <code class="function">get_preferred_width()</code> functions
+              on each actor in turn.</p><p>If an actor will only ever be explictly sized
+            (via <code class="function">clutter_actor_set_size()</code>,
+            <code class="function">clutter_actor_set_height()</code> and/or
+            <code class="function">clutter_actor_set_width()</code>),
+            there is no need to implement the <code class="function">get_preferred_*()</code>
+            functions. (Some actors like <span class="type">ClutterRectangle</span>
+            work this way and require explicit sizing.)</p><p>However, if an actor's size should be negotiated during
+            the size requisition phase, you can implement these functions,
+            using the size of the child actors as a basis for the
+            preferred height and width. In the case of
+            <span class="type">CbButton</span>, a preferred height and width can be
+            computed; these are based on the height and width of
+            the child <span class="type">ClutterBox</span>, plus 20 pixels on each
+            axis. Because the size of the box is itself dependent on
+            the size of the <span class="type">ClutterText</span> inside it, the net
+            result is that the <span class="type">CbButton</span> preferred size
+            is the size of the text actor inside it, plus 20 pixels on each
+            axis.</p></li><li class="listitem"><p><b>Allocation:
+              <code class="function">cb_button_allocate()</code>. </b>The requests gathered during size requisition
+              are then negotiated by Clutter, each actor
+              receiving some allocation of the available space. At the
+              end of this process, each actor is allocated a
+              <span class="emphasis"><em>box</em></span>, representing the space available
+              to it on the stage.</p><p>An actor implementation is responsible for distributing
+            space from its allocation box to its children as it sees
+            fit. In the case of <span class="type">CbButton</span>, there is only a single
+            <span class="type">ClutterBox</span> actor which needs allocation;
+            <code class="function">cb_button_allocate()</code> therefore
+            allocates all of the button's space to its child
+            <span class="type">ClutterBox</span>.</p></li><li class="listitem"><p><b>Painting and picking:
+              <code class="function">cb_button_paint()</code>. </b>Clutter works its way through the actors on the
+              stage, following the actor hierarchy (top level
+              actors directly inside the stage first);
+              <code class="function">clutter_actor_paint()</code>
+              is called on each actor. This, in turn, calls the actor's
+              <code class="function">paint()</code> implementation. If the actor
+              is a container, it may iterate over its children,
+              calling <code class="function">paint()</code> on each; the children
+              may call <code class="function">paint()</code> on their children...;
+              and so on, until the leaves of the actor hierarchy are
+              reached.</p><p>As our actor consists of a single <span class="type">ClutterBox</span>
+            child, its <code class="function">paint()</code> implementation simply
+            has to retrieve the reference to that <span class="type">ClutterBox</span>
+            (from its private structure) and call
+            <code class="function">clutter_actor_paint()</code>
+            on it. Painting of the <span class="type">ClutterBox's</span> child
+            (the <span class="type">ClutterText</span>) is handled by the
+            <span class="type">ClutterBox</span>.</p><p>In cases where an actor is non-rectangular, you also
+            need to implement a <code class="function">pick()</code> function.
+            (This is used to determine which actor was the recipient of
+            an event occurring within the stage.) However, because
+            the actor in this recipe is a simple rectangle, there is no
+            need to implement <code class="function">pick()</code>.</p></li></ul></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="actors.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="actors.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="actors-allocation-notify.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 2. Actors </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 3. Knowing when an actor's position or size changes</td></tr></table></div></body></html>

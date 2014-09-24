@@ -1,0 +1,59 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>3. Maintaining the aspect ratio when loading an image into a texture</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="textures.html" title="Chapter 4. Textures"><link rel="prev" href="textures-drawing-with-cairo.html" title="2. Drawing 2D graphics onto a texture"><link rel="next" href="textures-image-loading.html" title="4. Loading image data into a texture"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Maintaining the aspect ratio when loading an
+    image into a texture</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="textures-drawing-with-cairo.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Textures</th><td width="20%" align="right"> <a accesskey="n" href="textures-image-loading.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="textures-aspect-ratio"></a>3. Maintaining the aspect ratio when loading an
+    image into a texture</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911435792"></a>3.1. Problem</h3></div></div></div><p>You want want to load an image into a texture
+      and scale it, while retaining the underlying image's aspect ratio.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911434352"></a>3.2. Solution</h3></div></div></div><p>Set the texture to keep the aspect ratio of the
+      underlying image (so it doesn't distort when it's scaled); use
+      the actor's <span class="property">request-mode</span> property to set
+      the correct geometry management (see the discussion section); then
+      resize the texture along one dimension (height or width).
+      Now, when an image is loaded into the texture, the image is
+      scaled to fit the set height or width; the other dimension
+      is automatically scaled by the same factor so the image fits
+      the texture:</p><div class="informalexample"><pre class="programlisting">ClutterActor *texture;
+texture = clutter_texture_new ();
+
+clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture), TRUE);
+
+/*
+ * this setting means the height of the scaled image is based on its width;
+ * it's not strictly necessary to set this, as this is the default
+ */
+clutter_actor_set_request_mode (texture, CLUTTER_REQUEST_HEIGHT_FOR_WIDTH);
+
+/* set the width, which causes height to be scaled by the same factor */
+clutter_actor_set_width (texture, 300);
+
+clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                               "/path/to/image.jpg",
+                               NULL);</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911430032"></a>3.3. Discussion</h3></div></div></div><p>The <span class="property">request-mode</span> for an actor
+      determines how geometry requisition is performed; in this case, this
+      includes how scaling is applied if you change the actor's
+      width or height. There are two possible values for
+      request-mode:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>If set to <code class="constant">CLUTTER_REQUEST_HEIGHT_FOR_WIDTH</code>
+          (the default), changing the width causes the height
+          to be scaled by the same factor as the width.</p></li><li class="listitem"><p>If set to <code class="constant">CLUTTER_REQUEST_WIDTH_FOR_HEIGHT</code>,
+          changing the height causes the width to be scaled by the
+          same factor as the height.</p></li></ol></div><p>In the example above, the texture is set to keep its
+      aspect ratio then fixed to a width of 300 pixels; the
+      request-mode is set to <code class="constant">CLUTTER_REQUEST_HEIGHT_FOR_WIDTH</code>.
+      If a standard, photo-sized image in landscape orientation were
+      loaded into it (2848 pixels wide x 2136 high), it would be scaled
+      down to 300 pixels wide; then, its height would be scaled by the
+      same factor as the width (i.e. scaled down to 225 pixels).</p><p>With request-mode set to
+      <code class="constant">CLUTTER_REQUEST_WIDTH_FOR_HEIGHT</code>,
+      you would get the same effect by setting the height first;
+      then, computation of the width for the scaled image would be
+      based on the scaling factor applied to its height instead.</p><p>You can work out which side of the source image is longest using
+      <code class="function">clutter_texture_base_size()</code> to get its
+      width and height. This can be useful when trying to scale images
+      with different orientations to fit into uniform rows or columns:</p><div class="informalexample"><pre class="programlisting">gint width;
+gint height;
+
+clutter_texture_get_base_size (CLUTTER_TEXTURE (texture), &amp;width, &amp;height);</pre></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>If you explicitly set the size (both width and height)
+      of a texture with <code class="function">clutter_actor_set_size()</code> (or
+      with <code class="function">clutter_actor_set_width()</code> and
+      <code class="function">clutter_actor_set_height()</code>), any
+      image loaded into the texture is automatically stretched/shrunk to
+      fit the texture. This is the case regardless of any other settings
+      (like whether to keep aspect ratio).</p></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Since a texture can scale down its contents, its minimum
+      preferred size is 0.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="textures-drawing-with-cairo.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="textures.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="textures-image-loading.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2. Drawing 2D graphics onto a texture </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 4. Loading image data into a texture</td></tr></table></div></body></html>

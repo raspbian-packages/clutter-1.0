@@ -1,0 +1,308 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>3. Detecting mouse scrolling on an actor</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="events.html" title="Chapter 3. Events"><link rel="prev" href="events-handling-key-events.html" title="2. Handling key events"><link rel="next" href="events-pointer-motion.html" title="4. Detecting pointer movements on an actor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Detecting mouse scrolling on an actor</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="events-handling-key-events.html">Prev</a> </td><th width="60%" align="center">Chapter 3. Events</th><td width="20%" align="right"> <a accesskey="n" href="events-pointer-motion.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="events-mouse-scroll"></a>3. Detecting mouse scrolling on an actor</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911702224"></a>3.1. Problem</h3></div></div></div><p>You want to detect when the mouse is scrolled on an
+      actor (e.g. the pointer is over an actor when a mouse
+      wheel is scrolled).</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911700752"></a>3.2. Solution</h3></div></div></div><p>Connect a callback handler to the <code class="code">scroll-event</code>
+      signal of an actor.</p><p>First, ensure that the actor is reactive (i.e. will
+      respond to events):</p><div class="informalexample"><pre class="programlisting">clutter_actor_set_reactive (actor, TRUE);</pre></div><p>Next, create a callback handler to examine the scroll
+      event and respond to it:</p><div class="informalexample"><pre class="programlisting">static gboolean
+_scroll_event_cb (ClutterActor *actor,
+                  ClutterEvent *event,
+                  gpointer      user_data)
+{
+  /* determine the direction the mouse was scrolled */
+  ClutterScrollDirection direction;
+  direction = clutter_event_get_scroll_direction (event);
+
+  /* replace these stubs with real code to move the actor etc. */
+  switch (direction)
+    {
+    case CLUTTER_SCROLL_UP:
+      g_debug ("Scrolled up");
+      break;
+    case CLUTTER_SCROLL_DOWN:
+      g_debug ("Scrolled down");
+      break;
+    case CLUTTER_SCROLL_RIGHT:
+      g_debug ("Scrolled right");
+      break;
+    case CLUTTER_SCROLL_LEFT:
+      g_debug ("Scrolled left");
+      break;
+    }
+
+  return CLUTTER_EVENT_STOP; /* event has been handled */
+}</pre></div><p>Finally, connect the callback handler to the
+      <code class="code">scroll-event</code> signal of the actor:</p><div class="informalexample"><pre class="programlisting">g_signal_connect (actor,
+                  "scroll-event",
+                  G_CALLBACK (_scroll_event_cb),
+                  NULL);</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911692880"></a>3.3. Discussion</h3></div></div></div><p>A standard mouse wheel will only return up and
+      down movements; but in cases where the mouse has left and
+      right scrolling (e.g. a trackball mouse or trackpad), left and
+      right scroll events may also be emitted.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236911691488"></a>3.3.1. Creating a scrolling viewport for an actor</h4></div></div></div><p>While the simple outline above explains the basics
+        of how to connect to scroll events, it doesn't do much to
+        help with <span class="emphasis"><em>really</em></span> implementing scrolling
+        over an actor. That's what we'll do in this section.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The full code for the example we'll walk through here is
+          available in <a class="link" href="events-mouse-scroll.html#events-mouse-scroll-example" title="Example 3.1. Mouse scrolling over a ClutterActor">this later
+          section</a>.</p></div><p>Scrolling over an actor actually requires coordination
+        between two components:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><b>Scrollable actor. </b>An actor which is too large to fit on the stage
+              or inside the area of the UI assigned to it (otherwise
+              there's no need to scroll over it...).</p></li><li class="listitem"><p><b>Viewport. </b>This displays a cropped view of part of the scrollable
+              actor, revealing different parts of it as scroll events
+              occur.</p></li></ol></div><p>Here are the steps required to set up the two actors:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Create the scrollable actor; it should be larger
+            than the viewport. This example uses a <span class="type">ClutterTexture</span>,
+            but any <span class="type">ClutterActor</span> will work:</p><div class="informalexample"><pre class="programlisting">/* get image file path, set up stage etc. */
+
+ClutterActor *texture;
+texture = clutter_texture_new ();
+clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture),
+                                       TRUE);
+
+/*
+ * set the texture's height so it's as tall as the stage
+ * (STAGE_HEIGHT is define'd at the top of the file)
+ */
+clutter_actor_set_request_mode (texture, CLUTTER_REQUEST_WIDTH_FOR_HEIGHT);
+clutter_actor_set_height (texture, STAGE_HEIGHT);
+
+/*
+ * load the image file;
+ * see <a class="link" href="textures-aspect-ratio.html" title="3. Maintaining the aspect ratio when loading an image into a texture">this recipe</a> for more about loading images into textures
+ */
+clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                               image_file_path,
+                               NULL);</pre></div></li><li class="listitem"><p>Create the viewport. The simplest way to do
+            this is with a <span class="type">ClutterGroup</span>:</p><div class="informalexample"><pre class="programlisting">ClutterActor *viewport;
+viewport = clutter_group_new ();
+
+/* viewport is _shorter_ than the stage (and the texture) */
+clutter_actor_set_size (viewport, STAGE_WIDTH, STAGE_HEIGHT * 0.5);
+
+/* align the viewport to the center of the stage's y axis */
+clutter_actor_add_constraint (viewport,
+                              clutter_align_constraint_new (stage, CLUTTER_BIND_Y, 0.5));
+
+/* viewport needs to respond to scroll events */
+clutter_actor_set_reactive (viewport, TRUE);
+
+/* clip all actors inside the viewport to that group's allocation */
+clutter_actor_set_clip_to_allocation (viewport, TRUE);</pre></div><p>The key here is calling
+              <code class="code">clutter_actor_set_clip_to_allocation (viewport, TRUE)</code>.
+              This configures the <code class="varname">viewport</code> group so
+              that any of its children are clipped: i.e. only parts of
+              its children which fit inside its allocation are visible. This
+              in turn requires setting an explicit size on the group,
+              rather than allowing it to size itself to fit its
+              children (the latter is the default).</p></li><li class="listitem"><p>Put the scrollable actor into the viewport; and
+            the viewport into its container (in this case,
+            the default stage):</p><div class="informalexample"><pre class="programlisting">clutter_actor_add_child (viewport, texture);
+
+clutter_actor_add_child (stage, viewport);</pre></div></li><li class="listitem"><p>Create a callback handler for <code class="code">scroll-event</code>
+            signals emitted by the viewport:</p><div class="informalexample"><pre class="programlisting">static gboolean
+_scroll_event_cb (ClutterActor *viewport,
+                  ClutterEvent *event,
+                  gpointer      user_data)
+{
+  ClutterActor *scrollable = CLUTTER_ACTOR (user_data);
+
+  gfloat viewport_height = clutter_actor_get_height (viewport);
+  gfloat scrollable_height = clutter_actor_get_height (scrollable);
+
+  /* no need to scroll if the scrollable is shorter than the viewport */
+  if (scrollable_height &lt; viewport_height)
+    return CLUTTER_EVENT_STOP;
+
+  gfloat y = clutter_actor_get_y (scrollable);
+
+  ClutterScrollDirection direction;
+  direction = clutter_event_get_scroll_direction (event);
+
+  switch (direction)
+    {
+    case CLUTTER_SCROLL_UP:
+      y -= SCROLL_AMOUNT;
+      break;
+    case CLUTTER_SCROLL_DOWN:
+      y += SCROLL_AMOUNT;
+      break;
+
+    /* we're only interested in up and down */
+    case CLUTTER_SCROLL_LEFT:
+    case CLUTTER_SCROLL_RIGHT:
+      break;
+    }
+
+  /*
+   * the CLAMP macro returns a value for the first argument
+   * that falls within the range specified by the second and
+   * third arguments
+   *
+   * we allow the scrollable's y position to be decremented to the point
+   * where its base is aligned with the base of the viewport
+   */
+  y = CLAMP (y,
+             viewport_height - scrollable_height,
+             0.0);
+
+  /* animate the change to the scrollable's y coordinate */
+  clutter_actor_animate (scrollable,
+                         CLUTTER_EASE_OUT_CUBIC,
+                         300,
+                         "y", y,
+                         NULL);
+
+  return CLUTTER_EVENT_STOP;
+}</pre></div><p>The approach taken here is to move the scrollable
+            actor up, relative to the viewport. Initially, the
+            scrollable will have a <code class="code">y</code> coordinate value
+            of <code class="code">0.0</code> (aligned to the top of the viewport).
+            Scrolling up decrements the
+            <code class="code">y</code> coordinate (down to a minumum of
+            <code class="code">viewport_height - scrollable_height</code>). This moves
+            the top of the scrollable actor "outside" the clip area of the
+            viewport; simultaneously, more of the bottom part of the
+            scrollable moves into the clip area, becoming visible.</p><p>Scrolling down increments the <code class="code">y</code> coordinate
+            (but only up to a maximum value of <code class="code">0.0</code>).</p><p>To see how this works in practice, look at
+            <a class="link" href="events-mouse-scroll.html#events-mouse-scroll-example" title="Example 3.1. Mouse scrolling over a ClutterActor">the code
+            sample</a>. There, the height of the scrollable actor is
+            set to <code class="code">300</code> and the height of the viewport to
+            <code class="code">150</code>. This means that the <code class="code">y</code>
+            coordinate value for the scrollable actor will vary between
+            <code class="code">-150.0</code>: <code class="code">150</code> (the viewport's height)
+            <code class="code">- 300</code> (the scrollable actor's height), making
+            its base visible and clipping its top; and
+            <code class="code">0.0</code>, where its top is visible and its base
+            clipped.</p></li><li class="listitem"><p>Connect the callback handler to the signal; note
+            that we pass the scrollable actor (the texture) to the callback,
+            as we're moving the texture relative to the viewport to
+            create the scrolling effect:</p><div class="informalexample"><pre class="programlisting">g_signal_connect (viewport,
+                  "scroll-event",
+                  G_CALLBACK (_scroll_event_cb),
+                  texture);</pre></div></li></ol></div><p>Here's a video of the result:</p><p><video controls="controls" src="videos/events-mouse-scroll.ogv"><a href="videos/events-mouse-scroll.ogv"></a></video></p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911652544"></a>3.4. Full example</h3></div></div></div><div class="example"><a name="events-mouse-scroll-example"></a><p class="title"><b>Example 3.1. Mouse scrolling over a <span class="type">ClutterActor</span></b></p><div class="example-contents"><pre class="programlisting">#include &lt;clutter/clutter.h&gt;
+
+#define STAGE_HEIGHT 300
+#define STAGE_WIDTH STAGE_HEIGHT
+#define SCROLL_AMOUNT STAGE_HEIGHT * 0.125
+
+static gboolean
+_scroll_event_cb (ClutterActor *viewport,
+                  ClutterEvent *event,
+                  gpointer      user_data)
+{
+  ClutterActor *scrollable = CLUTTER_ACTOR (user_data);
+
+  gfloat viewport_height = clutter_actor_get_height (viewport);
+  gfloat scrollable_height = clutter_actor_get_height (scrollable);
+  gfloat y;
+  ClutterScrollDirection direction;
+
+  /* no need to scroll if the scrollable is shorter than the viewport */
+  if (scrollable_height &lt; viewport_height)
+    return TRUE;
+
+  y = clutter_actor_get_y (scrollable);
+
+  direction = clutter_event_get_scroll_direction (event);
+
+  switch (direction)
+    {
+    case CLUTTER_SCROLL_UP:
+      y -= SCROLL_AMOUNT;
+      break;
+    case CLUTTER_SCROLL_DOWN:
+      y += SCROLL_AMOUNT;
+      break;
+
+    /* we're only interested in up and down */
+    case CLUTTER_SCROLL_LEFT:
+    case CLUTTER_SCROLL_RIGHT:
+      break;
+    }
+
+  /*
+   * the CLAMP macro returns a value for the first argument
+   * that falls within the range specified by the second and
+   * third arguments
+   *
+   * we allow the scrollable's y position to be decremented to the point
+   * where its base is aligned with the base of the viewport
+   */
+  y = CLAMP (y,
+             viewport_height - scrollable_height,
+             0.0);
+
+  /* animate the change to the scrollable's y coordinate */
+  clutter_actor_animate (scrollable,
+                         CLUTTER_EASE_OUT_CUBIC,
+                         300,
+                         "y", y,
+                         NULL);
+
+  return TRUE;
+}
+
+int
+main (int argc, char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *viewport;
+  ClutterActor *texture;
+
+  const gchar *image_file_path = "redhand.png";
+
+  if (argc &gt; 1)
+    {
+      image_file_path = argv[1];
+    }
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, STAGE_WIDTH, STAGE_HEIGHT);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  /* the scrollable actor */
+  texture = clutter_texture_new ();
+  clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture),
+                                         TRUE);
+
+  /* set the texture's height so it's as tall as the stage */
+  clutter_actor_set_request_mode (texture, CLUTTER_REQUEST_WIDTH_FOR_HEIGHT);
+  clutter_actor_set_height (texture, STAGE_HEIGHT);
+
+  clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                                 image_file_path,
+                                 NULL);
+
+  /* the viewport which the box is scrolled within */
+  viewport = clutter_actor_new ();
+
+  /* viewport is shorter than the stage */
+  clutter_actor_set_size (viewport, STAGE_WIDTH, STAGE_HEIGHT * 0.5);
+
+  /* align the viewport to the center of the stage's y axis */
+  clutter_actor_add_constraint (viewport, clutter_align_constraint_new (stage, CLUTTER_BIND_Y, 0.5));
+
+  /* viewport needs to respond to scroll events */
+  clutter_actor_set_reactive (viewport, TRUE);
+
+  /* clip all actors inside the viewport to that group's allocation */
+  clutter_actor_set_clip_to_allocation (viewport, TRUE);
+
+  /* put the texture inside the viewport */
+  clutter_actor_add_child (viewport, texture);
+
+  /* add the viewport to the stage */
+  clutter_actor_add_child (stage, viewport);
+
+  g_signal_connect (viewport,
+                    "scroll-event",
+                    G_CALLBACK (_scroll_event_cb),
+                    texture);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return 0;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="events-handling-key-events.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="events.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="events-pointer-motion.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2. Handling key events </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 4. Detecting pointer movements on an actor</td></tr></table></div></body></html>

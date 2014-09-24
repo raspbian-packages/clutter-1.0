@@ -1,0 +1,129 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Chapter 7. Layout management</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="index.html" title="The Clutter Cookbook"><link rel="prev" href="text-shadow.html" title="2. Drawing a shadow under the text"><link rel="next" href="layouts-stacking.html" title="2. Stacking actors on top of each other"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 7. Layout management</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="text-shadow.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="layouts-stacking.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="layouts"></a>Chapter 7. Layout management</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="layouts.html#layouts-introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="layouts.html#idm236913845936">1.1. Using layouts</a></span></dt><dt><span class="section"><a href="layouts.html#layouts-introduction-manager-types">1.2. Types of layout manager</a></span></dt><dt><span class="section"><a href="layouts.html#layouts-introduction-layout-properties">1.3. Layout properties</a></span></dt><dt><span class="section"><a href="layouts.html#layouts-introduction-not-using-layout-managers">1.4. Not using layout managers</a></span></dt></dl></dd><dt><span class="section"><a href="layouts-stacking.html">2. Stacking actors on top of each other</a></span></dt><dd><dl><dt><span class="section"><a href="layouts-stacking.html#idm236911056528">2.1. Problem</a></span></dt><dt><span class="section"><a href="layouts-stacking.html#layouts-stacking-solution">2.2. Solution</a></span></dt><dt><span class="section"><a href="layouts-stacking.html#idm236911049440">2.3. Discussion</a></span></dt><dt><span class="section"><a href="layouts-stacking.html#idm236911019760">2.4. Full examples</a></span></dt></dl></dd><dt><span class="section"><a href="layouts-bind-constraint.html">3. Binding the size of one actor to the size of another</a></span></dt><dd><dl><dt><span class="section"><a href="layouts-bind-constraint.html#idm236911005936">3.1. Problem</a></span></dt><dt><span class="section"><a href="layouts-bind-constraint.html#idm236911001696">3.2. Solution</a></span></dt><dt><span class="section"><a href="layouts-bind-constraint.html#idm236910984288">3.3. Discussion</a></span></dt><dt><span class="section"><a href="layouts-bind-constraint.html#idm236910965120">3.4. Full examples</a></span></dt></dl></dd><dt><span class="section"><a href="layouts-box.html">4. Arranging actors in a single row or column</a></span></dt><dd><dl><dt><span class="section"><a href="layouts-box.html#idm236910949456">4.1. Problem</a></span></dt><dt><span class="section"><a href="layouts-box.html#idm236910945520">4.2. Solution</a></span></dt><dt><span class="section"><a href="layouts-box.html#idm236910932704">4.3. Discussion</a></span></dt><dt><span class="section"><a href="layouts-box.html#idm236910873216">4.4. Full examples</a></span></dt></dl></dd></dl></div><div class="epigraph"><p>If we do not lay out ourselves in the service of mankind,
+    whom should we serve?</p><div class="attribution"><span>—<span class="attribution">Abigail Adams, wife of John Adams, in a letter to John
+    Thaxter (1778-09-29)</span></span></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="layouts-introduction"></a>1. Introduction</h2></div></div></div><p>Layout management in Clutter controls how an actor and
+    children "inside" that actor are sized and positioned. More
+    specifically, layouts are managed by associating a parent with a
+    <span class="type">ClutterLayoutManager</span>; the parent is usually either a
+    composite <span class="type">ClutterActor</span> (composed of several
+    <span class="type">ClutterActors</span>) or a <span class="type">ClutterContainer</span>
+    (containing child <span class="type">ClutterActors</span>). The
+    <span class="type">ClutterLayoutManager</span> then manages:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>The <span class="emphasis"><em>size requisition</em></span>
+        (determination of the desired height and width) of the
+        parent.</p></li><li class="listitem"><p>The <span class="emphasis"><em>allocation</em></span> (size and position)
+        assigned to each composed or child ClutterActor.</p></li></ol></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>To make this more concrete, imagine you have a sheet of
+      paper and some coloured squares to place on it. Someone stands
+      next to you telling you how big the piece of paper should be,
+      how big the squares should be, and where to put each square on the
+      piece of paper.</p><p>The sheet of paper is analogous to the container or
+      composite actor; the squares are analogous to the child
+      <span class="type">ClutterActors</span>; and the person giving you instructions
+      is analogous to the layout manager.</p></div><p>The following sections give an overview of how layout
+    management works in Clutter.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236913845936"></a>1.1. Using layouts</h3></div></div></div><p>Although Clutter provides plenty of flexibility in how you
+      can use layout management, the simplest way to get started is to
+      use the built-in <span class="type">ClutterActor</span> class with one of the
+      provided <span class="type">ClutterLayoutManager</span> implementations.</p><p>The pattern for doing this is:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Create an instance of one of the
+          <span class="type">ClutterLayoutManager</span> implementations (see
+          <a class="link" href="layouts.html#layouts-introduction-manager-types" title="1.2. Types of layout manager">the
+          following section</a>).</p></li><li class="listitem"><p>Configure the layout manager's default policies
+          (e.g. how actors are aligned by default, whether to pack
+          actors horizontally or vertically, spacing between actors
+          in the layout).</p></li><li class="listitem"><p>Create a <span class="type">ClutterActor</span>, setting its layout
+          manager to the one you just created.</p></li><li class="listitem"><p>Pack actors into the <span class="type">ClutterActor</span>,
+          setting layout properties (if required) as each is added.</p></li><li class="listitem"><p>Modify layout properties of child actors using
+          <code class="function">clutter_layout_manager_child_set()</code>
+          (if required).</p></li></ul></div><p>Individual recipes in this section give more examples of
+      how to make use of the different layout manager
+      implementations.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="layouts-introduction-manager-types"></a>1.2. Types of layout manager</h3></div></div></div><p>Clutter provides a range of layout managers suitable
+      for different use cases:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="type">ClutterFixedLayout</span> arranges actors
+          at fixed positions on the stage. No alignment options are
+          available, so you have to manually compute and manage the
+          coordinates (or use <span class="type">ClutterConstraints</span>) which
+          will align actors how you want them.</p></li><li class="listitem"><p><span class="type">ClutterBinLayout</span> arranges actors in a
+          depth-ordered stack on top of each other, aligned to the container.
+          This is useful for arranging actors inside composites (e.g.
+          creating a button widget from a <span class="type">ClutterTexture</span>
+          with a <span class="type">ClutterText</span> on top of it).</p></li><li class="listitem"><p><span class="type">ClutterBoxLayout</span> arranges actors in a
+          single horizontal row or vertical column. This type of layout is
+          common in UI elements like toolbars and menus.</p></li><li class="listitem"><p><span class="type">ClutterFlowLayout</span> arranges actors
+          in reflowing columns and rows. If the container's allocation
+          changes, the child actors are rearranged to fit inside its
+          new allocation. This can be useful for arranging actors
+          where you're not sure how many there might be; or where
+          new ones are going to be added into the UI, perhaps displacing
+          others. An example might be a photo viewer or an
+          RSS feed display.</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="layouts-introduction-layout-properties"></a>1.3. Layout properties</h3></div></div></div><p>How actors are sized and positioned inside a container
+      associated with a layout manager depends on two things:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><b>Properties which apply to all actors added to the layout. </b>There will be one setting at the layout level which can't
+            be overridden per actor. This includes properties like spacing
+            between rows and columns, whether the layout is homogenous
+            (each actor gets the same allocation), etc.</p></li><li class="listitem"><p><b>Properties for each actor added to the layout. </b>These are properties of the relationship between the
+            layout, the container associated with the layout, and the
+            children of the container. Each layout/container/actor
+            combination can have different settings for each of these
+            properties.</p></li></ol></div><p>Each layout manager implementation supports a subset of the
+      following layout properties; different managers may have different
+      names or functions for setting them, but the functionality remains
+      the same. Individual recipes give more details about which
+      properties can be set for each layout manager implementation.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><b>Alignment. </b>How an actor aligns to the container's axes, e.g.
+            aligned to the container's left, right, or center. For some
+            layouts (like <span class="type">ClutterBinLayout</span>) alignment
+            is also used to set expand and fill properties.</p></li><li class="listitem"><p><b>Horizontal/vertical orientation. </b>Whether actors are arranged in a horizontal row or
+            vertical column.</p></li><li class="listitem"><p><b>Homogenous rows and columns. </b>Grid-like layouts (e.g. <span class="type">ClutterFlowLayout</span>)
+            can be configured to have uniform rows and/or columns,
+            expanding to fit the largest actor they contain.</p></li><li class="listitem"><p><b>Row height and column width. </b>Grid-like layouts arranged in rows and columns
+            can be configured with maximum and minimum row height and
+            column width.</p></li><li class="listitem"><p><b>Row and column spacing. </b>Grid-like layouts enable you to define a space (in pixels)
+            between rows and columns.</p></li><li class="listitem"><p><b>Expand. </b>Some layouts can be configured to minimize their size request
+            to fit the actors they contain (<span class="emphasis"><em>expand is FALSE</em></span>);
+            or to increase the allocation of actors they contain so
+            that all available space in the layout is used
+            (<span class="emphasis"><em>expand is TRUE</em></span>). In the latter case, you'd
+            also need to set a size for the container associated with
+            the layout, otherwise the container will just fit itself to the
+            actors inside it.</p></li><li class="listitem"><p><b>Fill. </b>This property only has an effect when
+            <span class="emphasis"><em>expand</em></span> is on. The <span class="emphasis"><em>fill</em></span>
+            setting controls whether actors are resized to fill their
+            allocation (<span class="emphasis"><em>fill is TRUE</em></span>); or if the
+            space around the actor is increased (<span class="emphasis"><em>fill is
+            FALSE</em></span>).</p></li><li class="listitem"><p><b>Pack at start/end. </b>This controls whether actors at prepended or appended
+            to the layout.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>If the orientation is vertical, prepended
+                actors are added to the top of the layout and appended
+                actors to the bottom.</p></li><li class="listitem"><p>If the orientation is horizontal, prepended
+                actors are added at the left of the layout and appended actors
+                on the right.</p></li></ul></div></li></ul></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236911082416"></a>1.3.1. Setting layout properties</h4></div></div></div><p>Layout properties can be set in one or more of the following ways
+        (depending on the type of property and the layout manager):</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>By setting a default value for the property on the
+            layout manager (e.g. using
+            <code class="function">clutter_bin_layout_set_alignment()</code>,
+            <code class="function">clutter_box_layout_set_expand()</code>). Any
+            actor added to the layout gets this value for the property,
+            unless it is overridden for that actor.</p></li><li class="listitem"><p>When adding an actor to a <span class="type">ClutterBox</span> container
+            using <code class="function">clutter_box_pack()</code>, you can set
+            properties on the actor which you're adding.</p></li><li class="listitem"><p>When adding an actor to a layout you can use a function
+            which enables setting properties simultaneously (e.g.
+            <code class="function">clutter_box_layout_pack()</code>,
+            <code class="function">clutter_bin_layout_add()</code>).</p></li><li class="listitem"><p>By using
+            <code class="function">clutter_layout_manager_child_set()</code> on
+            the child of a layout.</p></li></ol></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="layouts-introduction-not-using-layout-managers"></a>1.4. Not using layout managers</h3></div></div></div><p>It is perfectly possible to arrange <span class="type">ClutterActors</span>
+      without using layout managers; however, you may have to do
+      more of your own calculations about actor sizes and positions.</p><p>There are two (not mutually-exclusive) approaches you can
+      take to do this, described below.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236911068496"></a>1.4.1. Manual positioning and alignment</h4></div></div></div><p>This basically means using the <span class="type">ClutterActor</span>
+        bounding box mechanism (see the <span class="type">ClutterActor</span>
+        documentation for details) to set actor sizes and positions.
+        This is the approach you will see in a lot of older Clutter
+        code (written before layout managers were available).</p><p>This approach is simplest where the UI is relatively static
+        and is composed of a few known actors. It will work in larger,
+        more complex scenarios, but in those sorts of cases it is better
+        to make use of layout managers and constraints (see below) instead.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236911065376"></a>1.4.2. Using <span class="type">ClutterConstraint</span></h4></div></div></div><p>Constraints provide mechanisms for:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Aligning actors with each other
+            (<span class="type">ClutterAlignConstraint</span>). For example, you
+            can align the top, bottom or center of one actor with the
+            top, bottom or center of another (on the <code class="code">y</code>
+            axis). Similarly, you can align one actor to another
+            on the <code class="code">x</code> axis.</p></li><li class="listitem"><p>Binding properties of one actor to those of
+            another. For example, you could ensure that two actors
+            always remain the same width; or you could specify
+            that two actors always have the same <code class="code">x</code>
+            coordinate. In both these cases and others, you can
+            specify that the properties should be the same, or the same
+            +/- some offset.</p></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p><span class="type">ClutterConstraints</span> can be used in combination
+          with some layout managers, but you need to be careful that
+          constraints don't fight with the layout manager policies.
+          Unpredictable results could ensue.</p></div></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="text-shadow.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="layouts-stacking.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2. Drawing a shadow under the text </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2. Stacking actors on top of each other</td></tr></table></div></body></html>

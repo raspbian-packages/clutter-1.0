@@ -1,0 +1,111 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>2. Drawing a shadow under the text</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="text.html" title="Chapter 6. Text"><link rel="prev" href="text.html" title="Chapter 6. Text"><link rel="next" href="layouts.html" title="Chapter 7. Layout management"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Drawing a shadow under the text</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="text.html">Prev</a> </td><th width="60%" align="center">Chapter 6. Text</th><td width="20%" align="right"> <a accesskey="n" href="layouts.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="text-shadow"></a>2. Drawing a shadow under the text</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236915137216"></a>2.1. Problem</h3></div></div></div><p>You want to draw a shadow under the text displayed by a
+      ClutterText actor.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236912970880"></a>2.2. Solution</h3></div></div></div><p>Override the <code class="function">paint</code> signal of
+      <span class="type">ClutterText</span> and use the CoglPango API to paint the
+      <span class="type">PangoLayout</span> of the actor with the color of the
+      shadow at a given offset.</p><div class="screenshot"><div class="mediaobject"><img src="images/text-shadow.png" alt="A ClutterText actor painting a shadow underneath its contents"></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236912447776"></a>2.3. Discussion</h3></div></div></div><p>The <span class="type">ClutterText</span> class provides an actor that
+      transforms the <span class="type">PangoLayout</span> object into an element of
+      the Clutter scene graph. The underlying layout is painted, though,
+      through a subset of the Cogl API, called
+      <span class="emphasis"><em>CoglPango</em></span>.</p><p>It is possible to paint <span class="type">PangoLayout</span> created by a
+      <span class="type">ClutterText</span> by invoking
+      <code class="function">cogl_pango_render_layout()</code>:</p><div class="informalexample"><pre class="programlisting">void
+cogl_pango_render_layout (PangoLayout *layout,
+                          int          x_offset,
+                          int          y_offset,
+                          CoglColor   *text_color,
+                          int          flags);</pre></div><p>This function will paint the layout at the given offsets using the
+      provided color.</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>The <code class="function">cogl_pango_render_layout()</code>
+      function will only work with <span class="type">PangoLayout</span>s created by
+      Clutter.</p></div><p>Since the shadow of the text is literally the same text but painted
+      with a different color and at an offset, we can use the
+      <code class="function">paint</code> signal of <span class="type">ClutterText</span> to paint
+      the shadow, and then let <span class="type">ClutterText</span> paint its contents on
+      top:</p><div class="informalexample"><pre class="programlisting">static void
+_text_paint_cb (ClutterActor *actor)
+{
+  ClutterText *text = CLUTTER_TEXT (actor);
+
+  /* Get the PangoLayout that the Text actor is going to paint... */
+  PangoLayout *layout;
+  layout = clutter_text_get_layout (text);
+
+  /* ... Create the color of the shadow... */
+
+  /* ... Finally, render the Text layout at a given
+   * offset using the color of the shadow
+   */
+  cogl_pango_render_layout (layout,
+                            SHADOW_X_OFFSET, SHADOW_Y_OFFSET,
+                            &amp;color, 0);
+}</pre></div><p>Note that we are using the <span class="type">PangoLayout</span> of the
+      <span class="type">ClutterText</span> because the <span class="type">ClutterText</span> actor
+      always keeps an updated layout internally. It is, however, possible for
+      any <span class="type">ClutterActor</span> to create a <span class="type">PangoLayout</span> using
+      <code class="function">clutter_actor_create_pango_layout()</code>, and then paint
+      that layout using <code class="function">cogl_pango_render_layout()</code> in
+      their implementation of the <code class="function">paint</code> virtual
+      function.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236913890864"></a>2.4. Full example</h3></div></div></div><div class="example"><a name="text-shadow-example"></a><p class="title"><b>Example 6.1. Creating a shadow of a text</b></p><div class="example-contents"><pre class="programlisting">          #include &lt;stdlib.h&gt;
+#include &lt;cogl/cogl.h&gt;
+#include &lt;cogl-pango/cogl-pango.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#define SHADOW_X_OFFSET         3
+#define SHADOW_Y_OFFSET         3
+
+static void
+_text_paint_cb (ClutterActor *actor)
+{
+  PangoLayout *layout;
+  guint8 real_opacity;
+  CoglColor color;
+  ClutterText *text = CLUTTER_TEXT (actor);
+  ClutterColor text_color = { 0, };
+
+  /* Get the PangoLayout that the Text actor is going to paint */
+  layout = clutter_text_get_layout (text);
+
+  /* Get the color of the text, to extract the alpha component */
+  clutter_text_get_color (text, &amp;text_color);
+
+  /* Composite the opacity so that the shadow is correctly blended */
+  real_opacity = clutter_actor_get_paint_opacity (actor)
+               * text_color.alpha
+               / 255;
+
+  /* Create a #ccc color and premultiply it */
+  cogl_color_init_from_4ub (&amp;color, 0xcc, 0xcc, 0xcc, real_opacity);
+  cogl_color_premultiply (&amp;color);
+
+  /* Finally, render the Text layout at a given offset using the color */
+  cogl_pango_render_layout (layout, SHADOW_X_OFFSET, SHADOW_Y_OFFSET, &amp;color, 0);
+}
+
+int
+main (int argc, char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *text;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_stage_set_title (CLUTTER_STAGE (stage), "Text shadow");
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  text = clutter_text_new ();
+  clutter_text_set_text (CLUTTER_TEXT (text), "Hello, World!");
+  clutter_text_set_font_name (CLUTTER_TEXT (text), "Sans 64px");
+  clutter_actor_add_constraint (text, clutter_align_constraint_new (stage, CLUTTER_ALIGN_X_AXIS, 0.5));
+  clutter_actor_add_constraint (text, clutter_align_constraint_new (stage, CLUTTER_ALIGN_Y_AXIS, 0.5));
+  g_signal_connect (text, "paint", G_CALLBACK (_text_paint_cb), NULL);
+
+  clutter_container_add (CLUTTER_CONTAINER (stage), text, NULL);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="text.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="text.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="layouts.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 6. Text </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 7. Layout management</td></tr></table></div></body></html>

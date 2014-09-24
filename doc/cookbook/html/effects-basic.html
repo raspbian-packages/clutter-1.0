@@ -1,0 +1,895 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>2. Changing an actor's paint sequence using ClutterEffect</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="effects.html" title="Chapter 9. Effects"><link rel="prev" href="effects.html" title="Chapter 9. Effects"><link rel="next" href="effects-custom-deform.html" title="3. Creating and animating a custom ClutterDeformEffect"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Changing an actor's paint sequence using
+    <span class="type">ClutterEffect</span></th></tr><tr><td width="20%" align="left"><a accesskey="p" href="effects.html">Prev</a> </td><th width="60%" align="center">Chapter 9. Effects</th><td width="20%" align="right"> <a accesskey="n" href="effects-custom-deform.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="effects-basic"></a>2. Changing an actor's paint sequence using
+    <span class="type">ClutterEffect</span></h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911099264"></a>2.1. Problem</h3></div></div></div><p>You want to paint on top of or under an actor in a generic
+      way, without editing the actor's <code class="function">paint()</code>
+      implementation. Example use cases are:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Adding a border on top of an actor.</p></li><li class="listitem"><p>Drawing a background for an actor.</p></li></ul></div><p>A quick way to achieve the same thing (though not
+      readily portable between actors) is to connect a callback
+      before or after an actor's <span class="emphasis"><em>paint</em></span> signal.
+      See <a class="link" href="actors-paint-wrappers.html" title="4. Overriding the paint sequence">this recipe</a> for
+      more details. However, using a <span class="type">ClutterEffect</span>
+      implementation, as explained in this recipe, is the preferred
+      approach.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911092800"></a>2.2. Solution</h3></div></div></div><p>Create a subclass of the <span class="type">ClutterEffect</span> abstract
+      class; then implement the <code class="function">pre_paint()</code> and/or
+      <code class="function">post_paint()</code> virtual functions. When the
+      effect is applied to an actor, these functions will paint
+      before and after the actor's own <code class="function">paint()</code>
+      implementation.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>For this solution, we implement a simple
+        <span class="type">CbBackgroundEffect</span> which draws a gray rectangle
+        under an actor. The full source is in
+        <a class="link" href="effects-basic.html#effects-basic-example-cbbackgroundeffect" title="2.4.1. CbBackgroundEffect">this
+        section</a>. To keep it simple, the effect has no properties
+        and isn't configurable (the background is always gray); see the
+        <a class="link" href="effects-basic.html#effects-basic-example-cbbordereffect" title="2.4.2. CbBorderEffect">border
+        effect</a> for a more detailed implementation with GObject
+        trimmings.</p></div><p>First, create a <span class="type">ClutterEffect</span> subclass. This
+      requires the trappings of a GObject class; in particular,
+      it needs a private struct to hold the effect's state. This
+      should include any <span class="type">CoglMaterials</span>,
+      <span class="type">CoglColors</span> or other private member variables
+      you intend to use to draw the effect.</p><p>In the case of the background effect, we have a background
+      <span class="type">CoglMaterial</span> and a <span class="type">CoglColor</span> for that
+      material:</p><div class="informalexample"><pre class="programlisting">struct _CbBackgroundEffectPrivate
+{
+  CoglMaterial *background;
+  CoglColor    *color;
+};</pre></div><p>In the <code class="function">init()</code> function for objects of
+      your class, create any Cogl resources which you need to draw the
+      effect. In the case of the background effect,
+      we need to create the <span class="type">CoglMaterial</span> and
+      <span class="type">CoglColor</span> for the private struct:</p><div class="informalexample"><pre class="programlisting">static void
+cb_background_effect_init (CbBackgroundEffect *self)
+{
+  /* get the private struct for the object
+  CbBackgroundEffectPrivate *priv;
+  priv = self-&gt;priv = CB_BACKGROUND_EFFECT_GET_PRIVATE (self);
+
+  /* create the background material */
+  priv-&gt;background = cogl_material_new ();
+
+  /* gray color for filling the background material */
+  priv-&gt;color = cogl_color_new ();
+  cogl_color_init_from_4ub (priv-&gt;color, 122, 122, 122, 255);
+
+  /* set the color on the material; NB this isn't configurable
+   * for this effect, and is always gray
+   */
+  cogl_material_set_color (priv-&gt;background, priv-&gt;color);
+}</pre></div><p>Optionally, you can create GObject properties for
+      the class, if you want a configurable effect: see
+      <a class="link" href="effects-basic.html#effects-basic-discussion-properties" title="2.3.1. Effect properties">this
+      section</a> for details.</p><p>The <code class="function">dispose()</code> function for your effect
+      should clean up any Cogl resources:</p><div class="informalexample"><pre class="programlisting">static void
+cb_background_effect_dispose (GObject *gobject)
+{
+  CbBackgroundEffectPrivate *priv = CB_BACKGROUND_EFFECT (gobject)-&gt;priv;
+
+  if (priv-&gt;background != COGL_INVALID_HANDLE)
+    {
+      cogl_handle_unref (priv-&gt;background);
+      priv-&gt;background = COGL_INVALID_HANDLE;
+    }
+
+  if (priv-&gt;color != NULL)
+    {
+      cogl_color_free (priv-&gt;color);
+      priv-&gt;color = NULL;
+    }
+
+  G_OBJECT_CLASS (cb_background_effect_parent_class)-&gt;dispose (gobject);
+}</pre></div><p>Now, the important part: implement <code class="function">pre_paint()</code>
+      and/or <code class="function">post_paint()</code>, using Cogl to draw on the
+      material(s) set up for the effect.</p><p>For the background effect, we implement <code class="function">pre_paint()</code>,
+      to draw a gray rectangle under the actor:</p><div class="informalexample"><pre class="programlisting">/* note that if pre_paint() returns FALSE
+ * any post_paint() defined for the effect will not be called
+ */
+static gboolean
+cb_background_effect_pre_paint (ClutterEffect *self)
+{
+  ClutterActor *actor;
+  gfloat width;
+  gfloat height;
+  CbBackgroundEffectPrivate *priv;
+
+  priv = CB_BACKGROUND_EFFECT (self)-&gt;priv;
+
+  /* get the associated actor's dimensions */
+  actor = clutter_actor_meta_get_actor (CLUTTER_ACTOR_META (self));
+  clutter_actor_get_size (actor, &amp;width, &amp;height);
+
+  /* draw a Cogl rectangle in the background using the default color */
+  cogl_set_source (priv-&gt;background);
+
+  /* the rectangle has the same dimensions as the actor */
+  cogl_rectangle (0, 0, width, height);
+
+  return TRUE;
+}</pre></div><p>Now, in the <code class="function">init()</code> function for the
+      effect <span class="emphasis"><em>class</em></span>, assign your implementations to the
+      virtual methods of the <span class="type">ClutterEffect</span> abstract class:</p><div class="informalexample"><pre class="programlisting">static void
+cb_background_effect_class_init (CbBackgroundEffectClass *klass)
+{
+  ClutterEffectClass *effect_class = CLUTTER_EFFECT_CLASS (klass);
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+  effect_class-&gt;pre_paint = cb_background_effect_pre_paint;
+  gobject_class-&gt;dispose = cb_background_effect_dispose;
+
+  g_type_class_add_private (klass, sizeof (CbBackgroundEffectPrivate));
+}</pre></div><p>If you intend to make your effect reusable, provide
+      a public constructor (as is done for the example effects in this
+      recipe):</p><div class="informalexample"><pre class="programlisting">ClutterEffect *
+cb_background_effect_new ()
+{
+  return g_object_new (CB_TYPE_BACKGROUND_EFFECT,
+                       NULL);
+}</pre></div><p>The effect is now ready to be used. The application code
+      for applying your effect to an actor is the same as for any
+      other effect:</p><div class="informalexample"><pre class="programlisting">ClutterActor *texture;
+ClutterEffect *background_effect;
+
+/* ...initialize texture, load image file etc... */
+
+/* create a gray background effect */
+background_effect = cb_background_effect_new ();
+
+/* apply the effect to the actor */
+clutter_actor_add_effect (texture, background_effect);</pre></div><p>Below is an example of applying this effect to a texture loaded
+      with an image; the image has a transparent background, so the
+      background is visible through it. The screenshot is from
+      the <a class="link" href="effects-basic.html#effects-basic-example-5" title="Example 9.6. Application which applies CbBorderEffect and CbBackgroundEffect to a group of ClutterTextures.">example
+      application</a>:</p><div class="screenshot"><div class="mediaobject"><img src="images/effects-basic-background.png" alt="Applying CbBackgroundEffect to a texture loaded with an image that has a transparent background"></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910326464"></a>2.3. Discussion</h3></div></div></div><p>A basic <span class="type">ClutterEffect</span> is particularly useful for
+      amending the appearance of an actor on the fly: for example,
+      to highlight an actor in response to a button presses. This
+      <span class="emphasis"><em>could</em></span> be done by creating a custom widget
+      whose appearance could be toggled. But what if you wanted to make
+      an arbitrary actor's appearance "togglable"? A generic effect
+      in the style of the border effect in this recipe can be applied
+      to any actor, and easily toggled by enabling/disabling the
+      effect.</p><p><span class="type">ClutterEffect</span> works best where
+      you want to overlay or underlay the actor with Cogl paths or
+      primitives, without changing the actor's geometry. If you want
+      to do complicated geometry transformations, or other subtle
+      manipulations of an actor's appearance, it is better to use
+      a <span class="type">ClutterEffect</span> subclass like
+      <span class="type">ClutterOffscreenEffect</span>, <span class="type">ClutterDeformEffect</span>,
+      or <span class="type">ClutterShaderEffect</span>.</p><p>In a similar vein, when a <span class="type">ClutterEffect</span> is
+      applied to an actor, the effect shouldn't paint outside the actor's
+      allocation. However, if the effect provides a
+      <code class="function">get_paint_volume()</code> implementation which
+      returns a volume larger than the actor's allocation, the effect
+      <span class="emphasis"><em>can</em></span> paint anywhere within that volume. Though
+      in most cases, creating a custom paint volume is only going to be
+      useful for offscreen effects, where you are changing the
+      actor's geometry.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="effects-basic-discussion-properties"></a>2.3.1. Effect properties</h4></div></div></div><p>If your effect has GObject properties, you should
+        ensure that an actor associated with the effect is queued
+        for a redraw when those properties change. (You only need to
+        do this for properties which change the effect's appearance;
+        but this is likely to include most of an effect's properties.)</p><p>In most cases, you're likely define standard GObject
+        properties for the class; for example,
+        <a class="link" href="effects-basic.html#effects-basic-example-2" title="Example 9.3. cb-background-effect.c (code file)"><span class="type">CbBorderEffect</span></a>
+        defines a <code class="varname">width</code> property like this:</p><div class="informalexample"><pre class="programlisting">static void
+cb_border_effect_class_init (CbBorderEffectClass *klass)
+{
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+  GParamSpec *pspec;
+
+  /* ...more class initialization code here... */
+
+  pspec = g_param_spec_float ("width",
+                              "Width",
+                              "The width of the border (in pixels)",
+                              1.0, 100.0,
+                              10.0,
+                              G_PARAM_READWRITE);
+  obj_props[PROP_WIDTH] = pspec;
+  g_object_class_install_property (gobject_class, PROP_WIDTH, pspec);
+
+  /* ...more property definitions...*/
+}</pre></div><p>It also defines a standard GObject
+        <code class="function">set_property()</code> function for
+        <code class="varname">width</code>:</p><div class="informalexample"><pre class="programlisting">static void
+cb_border_effect_set_property (GObject      *gobject,
+                               guint         prop_id,
+                               const GValue *value,
+                               GParamSpec   *pspec)
+{
+  CbBorderEffect *effect = CB_BORDER_EFFECT (gobject);
+
+  switch (prop_id)
+    {
+    /* ...other cases here ... */
+
+    case PROP_WIDTH:
+      cb_border_effect_set_width (effect, g_value_get_float (value));
+      break;
+
+    /* ...default case ... */
+    }
+}</pre></div><p>Note that this calls
+        <code class="function">cb_border_effect_set_width()</code>, which is
+        also exposed in the public API. This is where the
+        <code class="varname">width</code> member variable is actually set in
+        the private struct; and also where the redraw for the actor
+        associated with the effect should be queued:</p><div class="informalexample"><pre class="programlisting">/* queues a redraw of the actor associated with the effect, if there is one */
+static void
+cb_border_effect_update (CbBorderEffect *self)
+{
+  ClutterActor *actor = clutter_actor_meta_get_actor (CLUTTER_ACTOR_META (self));
+
+  /* this guard is necessary as an effect's properties can be manipulated
+   * before it has an actor associated with it
+   */
+  if (actor != NULL)
+    clutter_actor_queue_redraw (actor);
+}
+
+/* public setter for the width property, which calls the update function */
+void
+cb_border_effect_set_width (CbBorderEffect *self,
+                            gfloat          width)
+{
+  CbBorderEffectPrivate *priv;
+
+  g_return_if_fail (CB_IS_BORDER_EFFECT (self));
+
+  priv = CB_BORDER_EFFECT_GET_PRIVATE (self);
+
+  priv-&gt;width = width;
+
+  /* the property has been updated, so queue a redraw of the actor (if set) */
+  cb_border_effect_update (self);
+}</pre></div><p>Any other property setters which affect the associated
+        actor's appearance (i.e. color in the case of
+        <span class="type">CbBorderEffect</span>) should also call the update
+        function after setting the property.</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>If your effect exposes GObject properties in this way,
+          it can also be animated with the Clutter animation API as usual.
+          For example, you could animate the border effect in this recipe
+          so that the border gradually becomes thinner or thicker.</p></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="effects-basic-example"></a>2.4. Full example</h3></div></div></div><p>The example application applies two effects to a
+      group of <span class="type">ClutterTextures</span>:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>A <span class="type">CbBackgroundEffect</span> which draws a gray
+          background under each actor. The effect is implemented in
+          <a class="link" href="effects-basic.html#effects-basic-example-1" title="Example 9.2. cb-background-effect.h (header file)">a header
+          file</a> and <a class="link" href="effects-basic.html#effects-basic-example-2" title="Example 9.3. cb-background-effect.c (code file)">a C
+          code file</a>.</p></li><li class="listitem"><p>A <span class="type">CbBorderEffect</span> which draws a
+          red border on top of an actor; this is toggled by clicking
+          on the actor. The effect is implemented in
+          <a class="link" href="effects-basic.html#effects-basic-example-3" title="Example 9.4. cb-border-effect.h (header file)">a header
+          file</a> and <a class="link" href="effects-basic.html#effects-basic-example-4" title="Example 9.5. cb-border-effect.c (code file)">a C
+          code file</a>.</p></li></ul></div><p>The <a class="link" href="effects-basic.html#effects-basic-example-5" title="Example 9.6. Application which applies CbBorderEffect and CbBackgroundEffect to a group of ClutterTextures.">application</a>
+      creates textures from the file paths specified
+      on the command line then applies both of these effects to
+      each texture. In the case of the <span class="type">CbBorderEffect</span>,
+      a 5 pixel red border is applied; this is also disabled by default,
+      and enabled when a texture is clicked.</p><p>Here is an example of the output when the application is loaded
+      with four images:</p><div class="screenshot"><div class="mediaobject"><img src="images/effects-basic.png" alt="Applying CbBackgroundEffect and a togglable CbBorderEffect to a several textures"></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="effects-basic-example-cbbackgroundeffect"></a>2.4.1. <span class="type">CbBackgroundEffect</span></h4></div></div></div><div class="example"><a name="effects-basic-example-1"></a><p class="title"><b>Example 9.2. <code class="filename">cb-background-effect.h</code> (header file)</b></p><div class="example-contents"><pre class="programlisting">#ifndef __CB_BACKGROUND_EFFECT_H__
+#define __CB_BACKGROUND_EFFECT_H__
+
+#include &lt;clutter/clutter.h&gt;
+
+GType cb_background_effect_get_type (void);
+
+#define CB_TYPE_BACKGROUND_EFFECT (cb_background_effect_get_type ())
+#define CB_BACKGROUND_EFFECT(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), \
+                                                               CB_TYPE_BACKGROUND_EFFECT, \
+                                                               CbBackgroundEffect))
+#define CB_IS_BACKGROUND_EFFECT(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), \
+                                                                          CB_TYPE_BACKGROUND_EFFECT))
+#define CB_BACKGROUND_EFFECT_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), \
+                                                                       CB_TYPE_BACKGROUND_EFFECT, \
+                                                                       CbBackgroundEffectClass))
+#define CB_IS_BACKGROUND_EFFECT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), \
+                                                                       CB_TYPE_BACKGROUND_EFFECT))
+#define CB_BACKGROUND_EFFECT_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), \
+                                                                         CB_TYPE_BACKGROUND_EFFECT, \
+                                                                         CbBackgroundEffectClass))
+
+typedef struct _CbBackgroundEffectPrivate CbBackgroundEffectPrivate;
+typedef struct _CbBackgroundEffect        CbBackgroundEffect;
+typedef struct _CbBackgroundEffectClass   CbBackgroundEffectClass;
+
+/* object */
+struct _CbBackgroundEffect
+{
+  ClutterEffect              parent_instance;
+  CbBackgroundEffectPrivate *priv;
+};
+
+/* class */
+struct _CbBackgroundEffectClass
+{
+  ClutterEffectClass parent_class;
+};
+
+ClutterEffect *cb_background_effect_new ();
+
+#endif /* __CB_BACKGROUND_EFFECT_H__ */
+</pre></div></div><br class="example-break"><div class="example"><a name="effects-basic-example-2"></a><p class="title"><b>Example 9.3. <code class="filename">cb-background-effect.c</code> (code file)</b></p><div class="example-contents"><pre class="programlisting">#include "cb-background-effect.h"
+
+G_DEFINE_TYPE (CbBackgroundEffect, cb_background_effect, CLUTTER_TYPE_EFFECT);
+
+#define CB_BACKGROUND_EFFECT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+                                                                            CB_TYPE_BACKGROUND_EFFECT, \
+                                                                            CbBackgroundEffectPrivate))
+
+struct _CbBackgroundEffectPrivate
+{
+  CoglMaterial *background;
+  CoglColor    *color;
+};
+
+/* ClutterEffect implementation */
+
+/* note that if pre_paint() returns FALSE
+ * any post_paint() defined for the effect will not be called
+ */
+static gboolean
+cb_background_effect_pre_paint (ClutterEffect *self)
+{
+  ClutterActor *actor;
+  gfloat width;
+  gfloat height;
+  CbBackgroundEffectPrivate *priv;
+
+  priv = CB_BACKGROUND_EFFECT (self)-&gt;priv;
+
+  /* get the associated actor's dimensions */
+  actor = clutter_actor_meta_get_actor (CLUTTER_ACTOR_META (self));
+  clutter_actor_get_size (actor, &amp;width, &amp;height);
+
+  /* draw a grey Cogl rectangle in the background */
+  cogl_set_source (priv-&gt;background);
+
+  cogl_rectangle (0, 0, width, height);
+
+  return TRUE;
+}
+
+/* GObject implementation */
+static void
+cb_background_effect_dispose (GObject *gobject)
+{
+  CbBackgroundEffectPrivate *priv = CB_BACKGROUND_EFFECT (gobject)-&gt;priv;
+
+  if (priv-&gt;background != COGL_INVALID_HANDLE)
+    {
+      cogl_handle_unref (priv-&gt;background);
+      priv-&gt;background = COGL_INVALID_HANDLE;
+    }
+
+  if (priv-&gt;color != NULL)
+    {
+      cogl_color_free (priv-&gt;color);
+      priv-&gt;color = NULL;
+    }
+
+  G_OBJECT_CLASS (cb_background_effect_parent_class)-&gt;dispose (gobject);
+}
+
+static void
+cb_background_effect_class_init (CbBackgroundEffectClass *klass)
+{
+  ClutterEffectClass *effect_class = CLUTTER_EFFECT_CLASS (klass);
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+  effect_class-&gt;pre_paint = cb_background_effect_pre_paint;
+  gobject_class-&gt;dispose = cb_background_effect_dispose;
+
+  g_type_class_add_private (klass, sizeof (CbBackgroundEffectPrivate));
+}
+
+static void
+cb_background_effect_init (CbBackgroundEffect *self)
+{
+  CbBackgroundEffectPrivate *priv;
+
+  priv = self-&gt;priv = CB_BACKGROUND_EFFECT_GET_PRIVATE (self);
+
+  priv-&gt;background = cogl_material_new ();
+
+  /* grey color for filling the background material */
+  priv-&gt;color = cogl_color_new ();
+  cogl_color_init_from_4ub (priv-&gt;color, 122, 122, 122, 255);
+
+  cogl_material_set_color (priv-&gt;background, priv-&gt;color);
+}
+
+/* public API */
+
+/**
+ * cb_background_effect_new:
+ *
+ * Creates a new #ClutterEffect which adds a grey background
+ * when applied to a rectangular actor.
+ */
+ClutterEffect *
+cb_background_effect_new ()
+{
+  return g_object_new (CB_TYPE_BACKGROUND_EFFECT,
+                       NULL);
+}
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="effects-basic-example-cbbordereffect"></a>2.4.2. <span class="type">CbBorderEffect</span></h4></div></div></div><p>This is a more sophisticated effect with configurable
+        border color and width.</p><div class="example"><a name="effects-basic-example-3"></a><p class="title"><b>Example 9.4. <code class="filename">cb-border-effect.h</code> (header file)</b></p><div class="example-contents"><pre class="programlisting">#ifndef __CB_BORDER_EFFECT_H__
+#define __CB_BORDER_EFFECT_H__
+
+#include &lt;clutter/clutter.h&gt;
+
+GType cb_border_effect_get_type (void);
+
+#define CB_TYPE_BORDER_EFFECT (cb_border_effect_get_type ())
+#define CB_BORDER_EFFECT(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), \
+                                                           CB_TYPE_BORDER_EFFECT, \
+                                                           CbBorderEffect))
+#define CB_IS_BORDER_EFFECT(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), \
+                                                                      CB_TYPE_BORDER_EFFECT))
+#define CB_BORDER_EFFECT_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), \
+                                                                   CB_TYPE_BORDER_EFFECT, \
+                                                                   CbBorderEffectClass))
+#define CB_IS_BORDER_EFFECT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), \
+                                                                   CB_TYPE_BORDER_EFFECT))
+#define CB_BORDER_EFFECT_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), \
+                                                                     CB_TYPE_BORDER_EFFECT, \
+                                                                     CbBorderEffectClass))
+
+typedef struct _CbBorderEffectPrivate CbBorderEffectPrivate;
+typedef struct _CbBorderEffect        CbBorderEffect;
+typedef struct _CbBorderEffectClass   CbBorderEffectClass;
+
+/* object */
+struct _CbBorderEffect
+{
+  ClutterEffect          parent_instance;
+  CbBorderEffectPrivate *priv;
+};
+
+/* class */
+struct _CbBorderEffectClass
+{
+  ClutterEffectClass parent_class;
+};
+
+ClutterEffect *cb_border_effect_new (gfloat              width,
+                                     const ClutterColor *color);
+
+void cb_border_effect_set_color (CbBorderEffect     *self,
+                                 const ClutterColor *color);
+
+void cb_border_effect_get_color (CbBorderEffect *self,
+                                 ClutterColor   *color);
+
+void cb_border_effect_set_width (CbBorderEffect *self,
+                                 gfloat          width);
+
+gfloat cb_border_effect_get_width (CbBorderEffect *self);
+
+#endif /* __CB_BORDER_EFFECT_H__ */
+</pre></div></div><br class="example-break"><div class="example"><a name="effects-basic-example-4"></a><p class="title"><b>Example 9.5. <code class="filename">cb-border-effect.c</code> (code file)</b></p><div class="example-contents"><pre class="programlisting">#include "cb-border-effect.h"
+
+G_DEFINE_TYPE (CbBorderEffect, cb_border_effect, CLUTTER_TYPE_EFFECT);
+
+#define CB_BORDER_EFFECT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+                                                                        CB_TYPE_BORDER_EFFECT, \
+                                                                        CbBorderEffectPrivate))
+
+static const ClutterColor grey = { 0xaa, 0xaa, 0xaa, 0xff };
+
+struct _CbBorderEffectPrivate
+{
+  CoglMaterial *border;
+  ClutterColor  color;
+  gfloat        width;
+};
+
+enum {
+  PROP_0,
+
+  PROP_COLOR,
+  PROP_WIDTH,
+
+  PROP_LAST
+};
+
+static GParamSpec *obj_props[PROP_LAST];
+
+/* ClutterEffect implementation */
+static void
+cb_border_effect_post_paint (ClutterEffect *self)
+{
+  ClutterActor *actor;
+  gfloat width;
+  gfloat height;
+  CbBorderEffectPrivate *priv;
+
+  priv = CB_BORDER_EFFECT (self)-&gt;priv;
+
+  /* get the associated actor's dimensions */
+  actor = clutter_actor_meta_get_actor (CLUTTER_ACTOR_META (self));
+  clutter_actor_get_size (actor, &amp;width, &amp;height);
+
+  /* draw Cogl rectangles on top */
+  cogl_set_source (priv-&gt;border);
+  cogl_path_new ();
+
+  /* left rectangle */
+  cogl_path_rectangle (0, 0, priv-&gt;width, height);
+
+  /* top rectangle */
+  cogl_path_rectangle (priv-&gt;width, 0, width, priv-&gt;width);
+
+  /* right rectangle */
+  cogl_path_rectangle (width - priv-&gt;width, priv-&gt;width, width, height);
+
+  /* bottom rectangle */
+  cogl_path_rectangle (priv-&gt;width,
+                       height - priv-&gt;width,
+                       width - priv-&gt;width,
+                       height);
+
+  cogl_path_fill ();
+}
+
+/* GObject implementation */
+static void
+cb_border_effect_dispose (GObject *gobject)
+{
+  CbBorderEffectPrivate *priv = CB_BORDER_EFFECT (gobject)-&gt;priv;
+
+  if (priv-&gt;border != COGL_INVALID_HANDLE)
+    {
+      cogl_handle_unref (priv-&gt;border);
+      priv-&gt;border = COGL_INVALID_HANDLE;
+    }
+
+  G_OBJECT_CLASS (cb_border_effect_parent_class)-&gt;dispose (gobject);
+}
+
+static void
+cb_border_effect_set_property (GObject      *gobject,
+                               guint         prop_id,
+                               const GValue *value,
+                               GParamSpec   *pspec)
+{
+  CbBorderEffect *effect = CB_BORDER_EFFECT (gobject);
+
+  switch (prop_id)
+    {
+    case PROP_COLOR:
+      cb_border_effect_set_color (effect, clutter_value_get_color (value));
+      break;
+
+    case PROP_WIDTH:
+      cb_border_effect_set_width (effect, g_value_get_float (value));
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+    }
+}
+
+static void
+cb_border_effect_get_property (GObject    *gobject,
+                               guint       prop_id,
+                               GValue     *value,
+                               GParamSpec *pspec)
+{
+  CbBorderEffectPrivate *priv = CB_BORDER_EFFECT (gobject)-&gt;priv;
+
+  switch (prop_id)
+    {
+    case PROP_COLOR:
+      g_value_set_object (value, &amp;(priv-&gt;color));
+      break;
+
+    case PROP_WIDTH:
+      g_value_set_float (value, priv-&gt;width);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+    }
+}
+
+/* GObject class and instance init */
+static void
+cb_border_effect_class_init (CbBorderEffectClass *klass)
+{
+  ClutterEffectClass *effect_class = CLUTTER_EFFECT_CLASS (klass);
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+  GParamSpec *pspec;
+
+  effect_class-&gt;post_paint = cb_border_effect_post_paint;
+
+  gobject_class-&gt;set_property = cb_border_effect_set_property;
+  gobject_class-&gt;get_property = cb_border_effect_get_property;
+  gobject_class-&gt;dispose = cb_border_effect_dispose;
+
+  g_type_class_add_private (klass, sizeof (CbBorderEffectPrivate));
+
+  /**
+   * CbBorderEffect:width:
+   *
+   * The width of the border
+   */
+  pspec = g_param_spec_float ("width",
+                              "Width",
+                              "The width of the border (in pixels)",
+                              1.0, 100.0,
+                              10.0,
+                              G_PARAM_READWRITE);
+  obj_props[PROP_WIDTH] = pspec;
+  g_object_class_install_property (gobject_class, PROP_WIDTH, pspec);
+
+  /**
+   * CbBorderEffect:color:
+   *
+   * The color of the border
+   */
+  pspec = clutter_param_spec_color ("color",
+                                    "Color",
+                                    "The border color",
+                                    &amp;grey,
+                                    G_PARAM_READWRITE);
+  obj_props[PROP_COLOR] = pspec;
+  g_object_class_install_property (gobject_class, PROP_COLOR, pspec);
+}
+
+static void
+cb_border_effect_init (CbBorderEffect *self)
+{
+  CbBorderEffectPrivate *priv;
+
+  priv = self-&gt;priv = CB_BORDER_EFFECT_GET_PRIVATE (self);
+
+  priv-&gt;border = cogl_material_new ();
+
+  priv-&gt;color = grey;
+}
+
+/* called each time a property is set on the effect */
+static void
+cb_border_effect_update (CbBorderEffect *self)
+{
+  ClutterActor *actor = clutter_actor_meta_get_actor (CLUTTER_ACTOR_META (self));
+
+  if (actor != NULL)
+    clutter_actor_queue_redraw (actor);
+}
+
+/* public API */
+
+/**
+ * cb_border_effect_new:
+ * @width: width of the border applied by the effect
+ * @color: a #ClutterColor
+ *
+ * Creates a new #ClutterEffect with the given @width
+ * and of the given @color.
+ */
+ClutterEffect *
+cb_border_effect_new (gfloat              width,
+                      const ClutterColor *color)
+{
+  return g_object_new (CB_TYPE_BORDER_EFFECT,
+                       "width", width,
+                       "color", color,
+                       NULL);
+}
+
+/**
+ * cb_border_effect_set_color:
+ * @self: a #CbBorderEffect
+ * @color: a #ClutterColor
+ *
+ * Sets the color of the border provided by the effect @self.
+ */
+void
+cb_border_effect_set_color (CbBorderEffect     *self,
+                            const ClutterColor *color)
+{
+  CbBorderEffectPrivate *priv;
+
+  g_return_if_fail (CB_IS_BORDER_EFFECT (self));
+  g_return_if_fail (color != NULL);
+
+  priv = CB_BORDER_EFFECT_GET_PRIVATE (self);
+
+  priv-&gt;color.red = color-&gt;red;
+  priv-&gt;color.green = color-&gt;green;
+  priv-&gt;color.blue = color-&gt;blue;
+  priv-&gt;color.alpha = color-&gt;alpha;
+
+  cogl_material_set_color4ub (priv-&gt;border,
+                              color-&gt;red,
+                              color-&gt;green,
+                              color-&gt;blue,
+                              color-&gt;alpha);
+
+  cb_border_effect_update (self);
+}
+
+/**
+ * cb_border_effect_get_color:
+ * @self: a #CbBorderEffect
+ * @color: return location for a #ClutterColor
+ *
+ * Retrieves the color of the border applied by the effect @self.
+ */
+void
+cb_border_effect_get_color (CbBorderEffect *self,
+                            ClutterColor   *color)
+{
+  CbBorderEffectPrivate *priv;
+
+  g_return_if_fail (CB_IS_BORDER_EFFECT (self));
+
+  priv = CB_BORDER_EFFECT_GET_PRIVATE (self);
+
+  color-&gt;red = priv-&gt;color.red;
+  color-&gt;green = priv-&gt;color.green;
+  color-&gt;blue = priv-&gt;color.blue;
+  color-&gt;alpha = priv-&gt;color.alpha;
+}
+
+/**
+ * cb_border_effect_set_width:
+ * @self: a #CbBorderEffect
+ * @width: the width of the border
+ *
+ * Sets the width (in pixels) of the border applied by the effect @self.
+ */
+void
+cb_border_effect_set_width (CbBorderEffect *self,
+                            gfloat          width)
+{
+  CbBorderEffectPrivate *priv;
+
+  g_return_if_fail (CB_IS_BORDER_EFFECT (self));
+
+  priv = CB_BORDER_EFFECT_GET_PRIVATE (self);
+
+  priv-&gt;width = width;
+
+  cb_border_effect_update (self);
+}
+
+/**
+ * cb_border_effect_get_width:
+ * @self: a #CbBorderEffect
+ *
+ * Gets the width (in pixels) of the border applied by the effect @self.
+ *
+ * Return value: the border's width, or 0.0 if @self is not
+ * a #CbBorderEffect
+ */
+gfloat
+cb_border_effect_get_width (CbBorderEffect *self)
+{
+  CbBorderEffectPrivate *priv;
+
+  g_return_val_if_fail (CB_IS_BORDER_EFFECT (self), 0.0);
+
+  priv = CB_BORDER_EFFECT_GET_PRIVATE (self);
+
+  return priv-&gt;width;
+}
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="effects-basic-example-application"></a>2.4.3. Application</h4></div></div></div><div class="example"><a name="effects-basic-example-5"></a><p class="title"><b>Example 9.6. Application which applies <span class="type">CbBorderEffect</span>
+          and <span class="type">CbBackgroundEffect</span> to a group of
+          <span class="type">ClutterTextures</span>.</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#include "cb-border-effect.h"
+#include "cb-background-effect.h"
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+
+static gboolean
+toggle_highlight (ClutterActor *actor,
+                  ClutterEvent *event,
+                  gpointer      user_data)
+{
+  ClutterActorMeta *meta = CLUTTER_ACTOR_META (user_data);
+
+  gboolean effect_enabled = clutter_actor_meta_get_enabled (meta);
+
+  clutter_actor_meta_set_enabled (meta, !effect_enabled);
+
+  return CLUTTER_EVENT_STOP;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *box;
+  ClutterLayoutManager *layout_manager;
+  ClutterActor *texture;
+  ClutterEffect *background_effect;
+  ClutterEffect *border_effect;
+  ClutterConstraint *width_constraint;
+  gchar *filename;
+  guint i;
+  GError *error = NULL;
+
+  if (argc &lt; 2)
+    {
+      g_print ("Usage: %s &lt;image files&gt;\n", argv[0]);
+      return EXIT_FAILURE;
+    }
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return EXIT_FAILURE;
+
+  stage = clutter_stage_new ();
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  clutter_stage_set_user_resizable (CLUTTER_STAGE (stage), TRUE);
+  clutter_actor_set_size (stage, 600, 400);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  layout_manager = clutter_flow_layout_new (CLUTTER_FLOW_HORIZONTAL);
+  clutter_flow_layout_set_column_spacing (CLUTTER_FLOW_LAYOUT (layout_manager),
+                                          10);
+  clutter_flow_layout_set_row_spacing (CLUTTER_FLOW_LAYOUT (layout_manager),
+                                       10);
+
+  box = clutter_actor_new ();
+  clutter_actor_set_layout_manager (box, layout_manager);
+  width_constraint = clutter_bind_constraint_new (stage,
+                                                  CLUTTER_BIND_WIDTH,
+                                                  0.0);
+  clutter_actor_add_constraint (box, width_constraint);
+
+  /* loop through the files specified on the command line, adding
+   * each one into the box
+   */
+  for (i = 1; i &lt; argc; i++)
+    {
+      filename = argv[i];
+
+      texture = clutter_texture_new ();
+      clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture), TRUE);
+      clutter_actor_set_width (texture, 150);
+      clutter_actor_set_reactive (texture, TRUE);
+
+      clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                                     filename,
+                                     &amp;error);
+
+      if (error != NULL)
+        g_warning ("Error loading file %s:\n%s",
+                   filename,
+                   error-&gt;message);
+
+      /* create a grey background effect */
+      background_effect = cb_background_effect_new ();
+
+      /* apply the effect to the actor */
+      clutter_actor_add_effect (texture, background_effect);
+
+      /* create a 5 pixel red border effect */
+      border_effect = cb_border_effect_new (5.0, &amp;red_color);
+
+      /* apply the effect to the actor, but disabled */
+      clutter_actor_add_effect (texture, border_effect);
+      clutter_actor_meta_set_enabled (CLUTTER_ACTOR_META (border_effect),
+                                      FALSE);
+
+      /* on mouse click, toggle the "enabled" property of the border effect */
+      g_signal_connect (texture,
+                        "button-press-event",
+                        G_CALLBACK (toggle_highlight),
+                        border_effect);
+
+      clutter_container_add_actor (CLUTTER_CONTAINER (box), texture);
+    }
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), box);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="effects.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="effects.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="effects-custom-deform.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 9. Effects </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 3. Creating and animating a custom <span class="type">ClutterDeformEffect</span></td></tr></table></div></body></html>

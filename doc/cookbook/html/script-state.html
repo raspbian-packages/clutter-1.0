@@ -1,0 +1,190 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>4. Connecting ClutterState states in ClutterScript</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="script.html" title="Chapter 8. Script"><link rel="prev" href="script-signals.html" title="3. Connecting to signals in ClutterScript"><link rel="next" href="effects.html" title="Chapter 9. Effects"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. Connecting <span class="type">ClutterState</span> states in <span class="type">ClutterScript</span></th></tr><tr><td width="20%" align="left"><a accesskey="p" href="script-signals.html">Prev</a> </td><th width="60%" align="center">Chapter 8. Script</th><td width="20%" align="right"> <a accesskey="n" href="effects.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="script-state"></a>4. Connecting <span class="type">ClutterState</span> states in <span class="type">ClutterScript</span></h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910508368"></a>4.1. Problem</h3></div></div></div><p>You have declared an actor using JSON, and want to connect
+      signals to <span class="type">ClutterState</span> transitions.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910506512"></a>4.2. Solution</h3></div></div></div><p>Connect the <span class="type">ClutterState</span> states to the signals
+      using the <code class="varname">states</code> and <code class="varname">target-state</code>
+      keys of the <code class="varname">signals</code> definition, and call
+      <code class="function">clutter_script_connect_signals()</code>; for instance,
+      the following JSON declares that the <span class="emphasis"><em>enter-event</em></span>
+      signal should transition to the <span class="emphasis"><em>hover</em></span> state
+      and the <span class="emphasis"><em>leave-event</em></span> should transition to the
+      <span class="emphasis"><em>base</em></span> state:</p><div class="informalexample"><pre class="programlisting">{
+  "id" : "rectangle",
+  "type" : "ClutterRectangle",
+  "width" : 200,
+  "height" : 200,
+  "reactive" : true,
+
+  <span class="emphasis"><em>"signals" : [
+    { "name" : "enter-event", "states" : "rectangle-states", "target-state" : "hover" },
+    { "name" : "leave-event", "states" : "rectangle-states", "target-state" : "base" }
+  ]</em></span>
+}</pre></div><p>The <span class="emphasis"><em>rectangle-states</em></span> state machine holds
+      the various states.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910497984"></a>4.3. Discussion</h3></div></div></div><p>Connecting a <span class="type">ClutterState</span> state transition to
+      a signal defined inside a <span class="type">ClutterScript</span> JSON without
+      requiring a real function to wrap <code class="function">clutter_state_set_state()</code>
+      allows to minimize the amount of code that has to be written, and
+      ties the state to the UI element being defined.</p><p>The connection between a signal and a <span class="type">ClutterState</span>
+      state is similar to the connection between a signal and a handler
+      function. Each definition must contain the name of the signal; the
+      script id of the <span class="type">ClutterState</span> object that is used to
+      store the target state definition; and the target state of the
+      transition.</p><p>The <span class="emphasis"><em>states</em></span> key can also contain a full
+      definition of the <span class="type">ClutterState</span>.</p><p>The <span class="emphasis"><em>target-state</em></span> key works exactly like
+      the argument of <code class="function">clutter_state_set_state()</code>: it
+      will transition the <span class="type">ClutterState</span> from the current state
+      to the desired state.</p><p>The <span class="type">ClutterState</span> instance that will be used to
+      resolve the target state can be defined in JSON like any other
+      object, but it is also possible to create a <span class="type">ClutterState</span>
+      in code, and associate it to a <span class="type">ClutterScript</span> instance
+      prior to parsing the signal connection JSON, through the
+      <code class="function">clutter_script_add_states()</code> function of
+      <span class="type">ClutterScript</span>.</p><p>The <span class="emphasis"><em>warp</em></span> boolean key can be used to
+      perform a transition to the target state without an animation,
+      similarly to what <code class="function">clutter_state_warp_to_state()</code>
+      does, for instance:</p><div class="informalexample"><pre class="programlisting">{
+  <span class="emphasis"><em>"signals" : [
+    {
+      "name" : "enter-event",
+      "states" : "rectangle-states",
+      "target-state" : "hover",
+      "warp" : true
+    }
+  ]</em></span>
+}</pre></div><p>will not animate the transition between the current state
+      and the target <span class="emphasis"><em>hover</em></span> state when the signal
+      is emitted.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910482384"></a>4.4. Full examples</h3></div></div></div><div class="example"><a name="script-states-example-1"></a><p class="title"><b>Example 8.5. <span class="type">ClutterScript</span> JSON with state definitions</b></p><div class="example-contents"><pre class="programlisting">[
+  {
+    "id" : "stage",
+    "type" : "ClutterStage",
+    "width" : 300,
+    "height" : 300,
+    "color" : "#335",
+
+    "signals" : [
+      { "name" : "destroy", "handler" : "clutter_main_quit" }
+    ],
+
+    "children" : [ "rectangle" ]
+  },
+
+  {
+    "id" : "rectangle-states",
+    "type" : "ClutterState",
+    "duration" : 1000,
+
+    "transitions" : [
+      {
+        "source" : null,
+        "target" : "base",
+
+        "keys" : [
+          [ "rectangle", "scale-x", "ease-in-cubic", 0.7 ],
+          [ "rectangle", "scale-y", "ease-in-cubic", 0.7 ],
+          [ "rectangle", "rotation-angle-z", "ease-out-cubic", 0.0 ]
+        ]
+      },
+      {
+        "source" : null,
+        "target" : "hover",
+
+        "keys" : [
+          [ "rectangle", "scale-x", "ease-in-cubic", 1.2 ],
+          [ "rectangle", "scale-y", "ease-in-cubic", 1.2 ]
+        ]
+      },
+      {
+        "source" : null,
+        "target" : "clicked",
+
+        "keys" : [
+          [ "rectangle", "rotation-angle-z", "ease-out-bounce", 90.0 ]
+        ]
+      }
+    ]
+  },
+
+  {
+    "id" : "rectangle",
+    "type" : "ClutterRectangle",
+    "width" : 200,
+    "height" : 200,
+    "x" : 50,
+    "y" : 50,
+    "color" : "#a90",
+    "rotation-center-z-gravity" : "center",
+    "scale-gravity" : "center",
+    "scale-x" : 0.7,
+    "scale-y" : 0.7,
+    "reactive" : true,
+
+    "signals" : [
+      {
+        "name" : "enter-event",
+        "states" : "rectangle-states",
+        "target-state" : "hover"
+      },
+      {
+        "name" : "leave-event",
+        "states" : "rectangle-states",
+        "target-state" : "base"
+      }
+    ],
+
+    "actions" : [
+      {
+        "type" : "ClutterClickAction",
+        "signals" : [
+          {
+            "name" : "clicked",
+            "states" : "rectangle-states",
+            "target-state" : "clicked"
+          }
+        ]
+      }
+    ]
+  }
+]
+</pre></div></div><br class="example-break"><div class="example"><a name="script-states-examples-2"></a><p class="title"><b>Example 8.6. Loading a JSON file into a <span class="type">ClutterScript</span> and connecting states</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+int
+main (int argc, char *argv[])
+{
+  ClutterActor *stage;
+  ClutterScript *ui;
+
+  gchar *filename = "script-states.json";
+  GError *error = NULL;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  ui = clutter_script_new ();
+
+  clutter_script_load_from_file (ui, filename, &amp;error);
+
+  if (error != NULL)
+    {
+      g_critical ("Error loading ClutterScript file %s\n%s", filename, error-&gt;message);
+      g_error_free (error);
+      exit (EXIT_FAILURE);
+    }
+
+  clutter_script_get_objects (ui,
+                              "stage", &amp;stage,
+                              NULL);
+
+  /* make the objects in the script available to all signals
+   * by passing the script as the second argument
+   * to clutter_script_connect_signals()
+   */
+  clutter_script_connect_signals (ui, ui);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (ui);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="script-signals.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="script.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="effects.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">3. Connecting to signals in <span class="type">ClutterScript</span> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 9. Effects</td></tr></table></div></body></html>

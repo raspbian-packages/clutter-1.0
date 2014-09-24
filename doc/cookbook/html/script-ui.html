@@ -1,0 +1,111 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>2. Defining a user interface with JSON</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="script.html" title="Chapter 8. Script"><link rel="prev" href="script.html" title="Chapter 8. Script"><link rel="next" href="script-signals.html" title="3. Connecting to signals in ClutterScript"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Defining a user interface with JSON</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="script.html">Prev</a> </td><th width="60%" align="center">Chapter 8. Script</th><td width="20%" align="right"> <a accesskey="n" href="script-signals.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="script-ui"></a>2. Defining a user interface with JSON</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910593616"></a>2.1. Problem</h3></div></div></div><p>You want to create a user interface as quickly as
+      possible; you also need to change it easily as requirements shift.</p><p>This need can arise when:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>you are prototyping a user interface, and you need to
+          quickly test new ideas.</p></li><li class="listitem"><p>the user interface you are building is likely to contain many
+          elements and relationships between them.</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910589392"></a>2.2. Solution</h3></div></div></div><p>Define the user interface in an external JSON file. Then
+      create a <span class="type">ClutterScript</span> object and load the JSON
+      into it from the file.</p><p>This keeps the UI definition separate from the application
+      logic and makes it easier to manage.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>See <a class="link" href="script.html#script-introduction" title="1. Introduction">the introduction</a>
+        for the reasons why <span class="type">ClutterScript</span> is a good solution,
+        and for an overview of how JSON definitions work.</p></div><p>Here's an example JSON definition to put in the file:</p><div class="informalexample"><pre class="programlisting">[
+  {
+    "id" : "stage",
+    "type" : "ClutterStage",
+    "width" : 400,
+    "height" : 400,
+    "color" : "#333355ff",
+    "children" : [ "box" ]
+  },
+
+  {
+    "id" : "box",
+    "type" : "ClutterBox",
+    "width" : 400,
+    "height" : 400,
+
+    "layout-manager" : {
+      "type" : "ClutterBinLayout",
+      "x-align" : "center",
+      "y-align" : "center"
+    },
+
+    "children" : [
+      {
+        "id" : "rectangle",
+        "type" : "ClutterRectangle",
+        "width" : 200,
+        "height" : 200,
+        "color" : "red"
+      }
+    ]
+  }
+
+]
+</pre></div><p>In the application, load the JSON from the file with
+      <code class="function">clutter_script_load_from_file()</code>. (You can
+      also load JSON from a string (<span class="type">gchar*</span>) with
+      <code class="function">clutter_script_load_from_data()</code>.)</p><p>Then retrieve objects by ID to use them in your code:</p><div class="example"><a name="idm236910579264"></a><p class="title"><b>Example 8.2. Loading JSON from a file and retrieving objects
+        defined by it</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+int
+main (int argc, char *argv[])
+{
+  ClutterActor *stage;
+  ClutterScript *ui;
+
+  gchar *filename = "script-ui.json";
+  GError *error = NULL;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  ui = clutter_script_new ();
+
+  /* load a JSON file into the script */
+  clutter_script_load_from_file (ui, filename, &amp;error);
+
+  if (error != NULL)
+    {
+      g_critical ("Error loading ClutterScript file %s\n%s", filename, error-&gt;message);
+      g_error_free (error);
+      exit (EXIT_FAILURE);
+    }
+
+  /* retrieve objects from the script */
+  clutter_script_get_objects (ui,
+                              "stage", &amp;stage,
+                              NULL);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><p>Although we only retrieved the stage in the example above,
+      <code class="function">clutter_script_get_objects()</code> can
+      retrieve multiple objects with a single call:</p><div class="informalexample"><pre class="programlisting">ClutterScript *script;
+script = clutter_script_new ();
+
+/* ...load JSON file etc. */
+
+ClutterStage *stage;
+ClutterActor *actor1;
+ClutterActor *actor2;
+
+/* use a NULL-terminated argument list of id,variable pairs */
+clutter_script_get_objects (script,
+                            "stage", &amp;stage,
+                            "actor1", &amp;actor1,
+                            "actor2", &amp;actor2,
+                            NULL);</pre></div><p>You can also use <code class="function">clutter_script_get_object()</code>
+      to retrieve a single object, though you may have to cast
+      it to the right type before use; for example:</p><div class="informalexample"><pre class="programlisting">ClutterStage *stage = CLUTTER_STAGE (clutter_script_get_object (script, "stage));</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910570256"></a>2.3. Discussion</h3></div></div></div><p>In the sample code, the stage is part of the JSON definition.
+      However, it doesn't have to be: it is possible to create the
+      stage in application code; then load more components from one
+      or more JSON definitions and attach them to the stage you
+      constructed in code.</p><p>However, keeping most of the user interface definition
+      in external JSON files makes it easier to change
+      the UI without having to touch any code. If you have some user
+      interface elements constructed in code and some in JSON, it can
+      make refactoring more difficult.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="script.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="script.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="script-signals.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 8. Script </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 3. Connecting to signals in <span class="type">ClutterScript</span></td></tr></table></div></body></html>

@@ -1,0 +1,79 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>2. Drawing 2D graphics onto a texture</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="textures.html" title="Chapter 4. Textures"><link rel="prev" href="textures.html" title="Chapter 4. Textures"><link rel="next" href="textures-aspect-ratio.html" title="3. Maintaining the aspect ratio when loading an image into a texture"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Drawing 2D graphics onto a texture</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="textures.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Textures</th><td width="20%" align="right"> <a accesskey="n" href="textures-aspect-ratio.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="textures-drawing-with-cairo"></a>2. Drawing 2D graphics onto a texture</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911719056"></a>2.1. Problem</h3></div></div></div><p>You want to draw 2D graphics inside a Clutter application.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236914284288"></a>2.2. Solution</h3></div></div></div><p>Create a <span class="type">ClutterCairoTexture</span>, then draw onto
+      the Cairo context it wraps using the Cairo API:</p><div class="informalexample"><pre class="programlisting">ClutterActor *texture;
+cairo_t *cr;
+
+guint width, height;
+width = 800;
+height = 600;
+
+texture = clutter_cairo_texture_new (width, height);
+
+cr = clutter_cairo_texture_create (CLUTTER_CAIRO_TEXTURE (texture));
+
+/*
+ * write onto the Cairo context cr using the Cairo API;
+ * see <a class="ulink" href="http://cairographics.org/manual/" target="_top">the Cairo API reference</a> for details
+ */
+cairo_move_to (cr, 0, 0);
+cairo_line_to (cr, 800, 600);
+cairo_stroke (cr);
+
+/* does the actual drawing onto the texture */
+cairo_destroy (cr);</pre></div><p>Here's a <a class="ulink" href="http://cairographics.org/tutorial/" target="_top">useful
+      Cairo tutorial</a> if you want to learn more about the Cairo API
+      itself.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236913575552"></a>2.3. Discussion</h3></div></div></div><p>A <span class="type">ClutterCairoTexture</span> is a standard
+      <span class="type">ClutterActor</span>, so it can be added to a
+      <span class="type">ClutterContainer</span> (e.g. a <span class="type">ClutterStage</span>
+      or <span class="type">ClutterGroup</span>), animated, resized etc. in the
+      usual ways.</p><p>Other useful operations:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>To draw on part of the texture:</em></span>
+          use <code class="function">clutter_cairo_texture_create_region()</code> to
+          retrieve a Cairo context for the region you want to draw on.</p></li><li class="listitem"><p><span class="emphasis"><em>To clear existing content from a texture:</em></span>
+          use <code class="function">clutter_cairo_texture_clear()</code>.</p><p>You may need to do this as the texture reuses the same
+          Cairo context each time you call
+          <code class="function">clutter_cairo_texture_create()</code> or
+          <code class="function">clutter_cairo_texture_create_region()</code>.</p></li><li class="listitem"><p><span class="emphasis"><em>To resize the Cairo context wrapped
+          by a texture</em></span>, use
+          <code class="function">clutter_cairo_texture_set_surface_size()</code>.</p></li></ul></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236914376960"></a>2.3.1. Drawing pages from a PDF onto a ClutterCairoContext</h4></div></div></div><p>Other libraries may provide an API for writing onto a
+        Cairo context; you can make use of these APIs on the exposed
+        Cairo context of a ClutterCairoTexture. For example, you
+        can use the poppler-glib API to display pages
+        from a PopplerDocument inside a Clutter application:</p><div class="informalexample"><pre class="programlisting">#include &lt;poppler/glib/poppler.h&gt;
+
+/* snipped setup code (as above) */
+
+/*
+ * cast to CLUTTER_CAIRO_TEXTURE, as the functions
+ * used below require that type
+ */
+ClutterCairoTexture *cc_texture = CLUTTER_CAIRO_TEXTURE (texture);
+
+clutter_cairo_texture_clear (cc_texture);
+
+gchar *file_uri = "file:///path/to/file.pdf";
+guint page_num = 0;
+double page_width, page_height;
+
+PopplerDocument *doc;
+PopplerPage *page;
+GError *error = NULL;
+
+doc = poppler_document_new_from_file (file_uri, NULL, &amp;error);
+
+page = poppler_document_get_page (doc, page_num);
+
+poppler_page_get_size (page, &amp;page_width, &amp;page_height);
+
+cr = clutter_cairo_texture_create (cc_texture);
+
+/* render the page to the context */
+poppler_page_render (page, cr);
+
+cairo_destroy (cr);</pre></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>If the page is larger than the Cairo context,
+        some of it might not be visible. Similarly, if the
+        <span class="type">ClutterCairoTexture</span> is larger than the stage,
+        some of that might not be visible. So you
+        may need to do some work to make the <span class="type">ClutterCairoTexture</span>
+        fit inside the stage properly (e.g. resize the stage), and/or some work
+        to make the PDF page sit inside the Cairo context (e.g. scale the PDF
+        page or put it inside a scrollable actor).</p></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="textures.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="textures.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="textures-aspect-ratio.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 4. Textures </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 3. Maintaining the aspect ratio when loading an
+    image into a texture</td></tr></table></div></body></html>

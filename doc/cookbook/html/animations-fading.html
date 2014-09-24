@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>3. Fading an actor out of or into view</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="animations.html" title="Chapter 5. Animations"><link rel="prev" href="animations-inversion.html" title="2. Inverting Animations"><link rel="next" href="animations-rotating.html" title="4. Rotating an actor"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Fading an actor out of or into view</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="animations-inversion.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Animations</th><td width="20%" align="right"> <a accesskey="n" href="animations-rotating.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="animations-fading"></a>3. Fading an actor out of or into view</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911306544"></a>3.1. Problem</h3></div></div></div><p>You want to animate an actor so that it fades out of or into
+      view.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911305232"></a>3.2. Solution</h3></div></div></div><p>Animate the actor's opacity property.</p><p>You can do this using any of the approaches provided
+      by the animation API. Here's how to fade out an actor (until it's
+      completely transparent) using implicit animations:</p><div class="informalexample"><pre class="programlisting">/* fade out actor over 4000 milliseconds */
+clutter_actor_animate (actor,
+                       CLUTTER_EASE_OUT_CUBIC,
+                       4000,
+                       "opacity", 0,
+                       NULL);</pre></div><p>Here's an example of a rectangle fading out using this
+      animation:</p><p><video controls="controls" src="videos/animations-fading-out.ogv"><a href="videos/animations-fading-out.ogv"></a></video></p><p><code class="constant">CLUTTER_EASE_OUT_CUBIC</code> is one of the
+      Clutter easing modes; see
+      <a class="link" href="animations.html#animations-introduction-alphas" title="1.2. Alphas">the introduction</a>
+      for more details about what these are and how to choose one.</p><p>Here's an example of the transitions you could use to
+      fade an actor in and out using <span class="type">ClutterState</span>:</p><div class="informalexample"><pre class="programlisting">ClutterState *transitions = clutter_state_new ();
+
+/* all transitions last for 2000 milliseconds */
+clutter_state_set_duration (transitions, NULL, NULL, 2000);
+
+/* transition from any state to "fade-out" state */
+clutter_state_set (transitions,
+                   NULL,        /* from state (NULL means "any") */
+                   "fade-out",  /* to state */
+                   actor, "opacity", CLUTTER_EASE_OUT_QUAD, 0,
+                   NULL);
+
+/* transition from any state to "fade-in" state */
+clutter_state_set (transitions, NULL, "fade-in",
+                   actor, "opacity", CLUTTER_EASE_OUT_QUAD, 255,
+                   NULL);
+
+/* put the actor into the "fade-out" state with no animation */
+clutter_state_warp_to_state (transitions, "fade-out");</pre></div><p>You would then trigger an animated state change as events
+      occur in the application (e.g. mouse button clicks):</p><div class="informalexample"><pre class="programlisting">clutter_state_set_state (transitions, "fade-in");</pre></div><p>Here's an example of this animation fading in then out again:</p><p><video controls="controls" src="videos/animations-fading-in-then-out.ogv"><a href="videos/animations-fading-in-then-out.ogv"></a></video></p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p><span class="type">ClutterState</span> is most useful where you
+        need to animate an actor backwards and forwards between multiple
+        states (e.g. fade an actor in and out of view). Where you just
+        want to fade an actor in or out once,
+        <code class="function">clutter_actor_animate()</code> is adequate.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236911288048"></a>3.3. Discussion</h3></div></div></div><p>Reducing an actor's transparency to zero does not make it
+      inactive: the actor will still be reactive even if it's not
+      visible (responding to key events, mouse clicks etc.).
+      To make it really "disappear", you could use
+      <code class="function">clutter_actor_hide()</code> once you'd made the actor
+      fully transparent.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="animations-inversion.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="animations.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="animations-rotating.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2. Inverting Animations </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 4. Rotating an actor</td></tr></table></div></body></html>

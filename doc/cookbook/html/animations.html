@@ -1,0 +1,106 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Chapter 5. Animations</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="index.html" title="The Clutter Cookbook"><link rel="prev" href="textures-crossfade.html" title="7. Cross-fading between two images"><link rel="next" href="animations-inversion.html" title="2. Inverting Animations"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 5. Animations</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="textures-crossfade.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="animations-inversion.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="animations"></a>Chapter 5. Animations</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="animations.html#animations-introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="animations.html#idm236913412000">1.1. High level overview</a></span></dt><dt><span class="section"><a href="animations.html#animations-introduction-alphas">1.2. Alphas</a></span></dt><dt><span class="section"><a href="animations.html#animations-introduction-api">1.3. Clutter's animation API</a></span></dt></dl></dd><dt><span class="section"><a href="animations-inversion.html">2. Inverting Animations</a></span></dt><dd><dl><dt><span class="section"><a href="animations-inversion.html#idm236913652384">2.1. Problem</a></span></dt><dt><span class="section"><a href="animations-inversion.html#idm236913651072">2.2. Solution</a></span></dt><dt><span class="section"><a href="animations-inversion.html#idm236911315200">2.3. Discussion</a></span></dt></dl></dd><dt><span class="section"><a href="animations-fading.html">3. Fading an actor out of or into view</a></span></dt><dd><dl><dt><span class="section"><a href="animations-fading.html#idm236911306544">3.1. Problem</a></span></dt><dt><span class="section"><a href="animations-fading.html#idm236911305232">3.2. Solution</a></span></dt><dt><span class="section"><a href="animations-fading.html#idm236911288048">3.3. Discussion</a></span></dt></dl></dd><dt><span class="section"><a href="animations-rotating.html">4. Rotating an actor</a></span></dt><dd><dl><dt><span class="section"><a href="animations-rotating.html#idm236911284592">4.1. Problem</a></span></dt><dt><span class="section"><a href="animations-rotating.html#idm236911280016">4.2. Solution</a></span></dt><dt><span class="section"><a href="animations-rotating.html#idm236911252832">4.3. Discussion</a></span></dt><dt><span class="section"><a href="animations-rotating.html#idm236911191728">4.4. Full example</a></span></dt></dl></dd><dt><span class="section"><a href="animations-complex.html">5. Creating complex animations with
+    <span class="type">ClutterAnimator</span></a></span></dt><dd><dl><dt><span class="section"><a href="animations-complex.html#idm236911180976">5.1. Problem</a></span></dt><dt><span class="section"><a href="animations-complex.html#idm236911178848">5.2. Solution</a></span></dt><dt><span class="section"><a href="animations-complex.html#animations-complex-discussion">5.3. Discussion</a></span></dt><dt><span class="section"><a href="animations-complex.html#idm236909921056">5.4. Full example</a></span></dt></dl></dd><dt><span class="section"><a href="animations-reuse.html">6. Reusing a complex animation on different actors</a></span></dt><dd><dl><dt><span class="section"><a href="animations-reuse.html#animations-reuse-problem">6.1. Problem</a></span></dt><dt><span class="section"><a href="animations-reuse.html#animations-reuse-solution">6.2. Solution</a></span></dt><dt><span class="section"><a href="animations-reuse.html#animations-reuse-discussion">6.3. Discussion</a></span></dt><dt><span class="section"><a href="animations-reuse.html#animations-reuse-examples">6.4. Full example</a></span></dt></dl></dd><dt><span class="section"><a href="animations-moving.html">7. Moving actors</a></span></dt><dd><dl><dt><span class="section"><a href="animations-moving.html#idm236909837056">7.1. Problem</a></span></dt><dt><span class="section"><a href="animations-moving.html#idm236909832688">7.2. Solutions</a></span></dt><dt><span class="section"><a href="animations-moving.html#idm236909811024">7.3. Discussion</a></span></dt><dt><span class="section"><a href="animations-moving.html#animations-moving-examples">7.4. Full examples</a></span></dt></dl></dd><dt><span class="section"><a href="animations-looping.html">8. Looping an animation</a></span></dt><dd><dl><dt><span class="section"><a href="animations-looping.html#idm236909730800">8.1. Problem</a></span></dt><dt><span class="section"><a href="animations-looping.html#idm236909729568">8.2. Solutions</a></span></dt><dt><span class="section"><a href="animations-looping.html#idm236909684096">8.3. Discussion</a></span></dt><dt><span class="section"><a href="animations-looping.html#animations-looping-examples">8.4. Full examples</a></span></dt></dl></dd><dt><span class="section"><a href="animations-scaling.html">9. Animated scaling</a></span></dt><dd><dl><dt><span class="section"><a href="animations-scaling.html#idm236909642208">9.1. Problem</a></span></dt><dt><span class="section"><a href="animations-scaling.html#idm236909638800">9.2. Solution</a></span></dt><dt><span class="section"><a href="animations-scaling.html#idm236909632016">9.3. Discussion</a></span></dt><dt><span class="section"><a href="animations-scaling.html#animations-scaling-examples">9.4. Full examples</a></span></dt></dl></dd><dt><span class="section"><a href="animations-path.html">10. Animating an actor along a curved path</a></span></dt><dd><dl><dt><span class="section"><a href="animations-path.html#idm236909571376">10.1. Problem</a></span></dt><dt><span class="section"><a href="animations-path.html#idm236909570096">10.2. Solution</a></span></dt><dt><span class="section"><a href="animations-path.html#idm236909554928">10.3. Discussion</a></span></dt><dt><span class="section"><a href="animations-path.html#animations-path-examples">10.4. Full examples</a></span></dt></dl></dd></dl></div><div class="epigraph"><p>Animation can explain whatever the mind of man can conceive.</p><div class="attribution"><span>—<span class="attribution">Walt Disney</span></span></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="animations-introduction"></a>1. Introduction</h2></div></div></div><p>Clutter actors have a variety of <span class="emphasis"><em>properties</em></span>
+    (position, size, rotation in 3D space, scale, opacity) which govern
+    their visual appearance in the UI. They may also have
+    <span class="emphasis"><em>constraints</em></span> on how they are aligned
+    and/or positioned relative to each other.</p><p>The Clutter animation API provides a means of changing
+    properties and constraints as a function of time: moving, scaling,
+    rotating, changing opacity and colour, modifying postional
+    constraints, etc.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Clutter also makes it possible to animate non-visual
+    properties if desired.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236913412000"></a>1.1. High level overview</h3></div></div></div><p>Here are the main concepts behind animation in Clutter:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>An <span class="emphasis"><em>animation</em></span> changes one or more
+          properties of one or more actors over time: their rotation in
+          a particular dimension (<code class="varname">x</code>, <code class="varname">y</code>,
+          <code class="varname">z</code>), scale, size, opacity etc.</p></li><li class="listitem"><p>An animation has an associated <span class="emphasis"><em>timeline</em></span>.
+          Think of this as analogous to the "thing" you're controlling when
+          you watch a video on the internet: it's what you control with
+          the play/pause button and what is measured by the bar
+          showing how far through the video you are. As with the
+          controls on a video player, you can play/pause/skip a Clutter
+          timeline; you can also rewind it, loop it, and play it
+          backwards.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>If a timeline is reversed, the progress along the
+            timeline is still measured the same way as it is in the forward
+            direction: so if you start from the end of the timeline and run
+            it backwards for 75% of its length, the progress is reported
+            as 0.25 (i.e. 25% of the way from the start of the
+            timeline).</p></div></li><li class="listitem"><p>The <span class="emphasis"><em>duration</em></span> of a timeline
+          (e.g. 500 milliseconds, 1 second, 10 seconds) specifies how
+          long its animation will last. The timeline can be inspected
+          to find out how much of it has elapsed, either as a value in
+          milliseconds or as a fraction (between 0 and 1) of the total
+          length of the timeline.</p></li><li class="listitem"><p>An animation is divided into <span class="emphasis"><em>frames</em></span>.
+          The number of frames which make up the animation isn't
+          constant: it depends on various factors, like how powerful
+          your machine is, the state of the drivers for your hardware,
+          and the load on he system. So you won't always get the same
+          number of frames in an animation of a particular duration.</p></li><li class="listitem"><p>The change to a property in an animation occurs over
+          the course of the timeline: the start value of the property
+          heads toward some target value. When it reaches the end of
+          the timeline, the property should have reached the target
+          value.</p></li><li class="listitem"><p>Exactly how the property changes over the course of the
+          timeline is governed by an <span class="emphasis"><em>alpha</em></span>. This
+          is the trickiest idea to explain, so it has its own section
+          below.</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="animations-introduction-alphas"></a>1.2. Alphas</h3></div></div></div><p>An alpha is generated for each frame of the animation.
+      The alpha varies between -1.0 and 2.0, and changes during the
+      course of the animation's timeline; ideally, the value should
+      start at 0.0 and reach 1.0 by the end of the timeline.</p><p>The alpha for any given frame of the animation is determined
+      by an <span class="emphasis"><em>alpha function</em></span>. Usually, the alpha
+      function will return a value based on progress along the timeline.
+      However, the alpha function doesn't have to respect or pay
+      attention to the timeline: it can be entirely random if desired.</p><p>To work out the value of a property at a given frame
+      somewhere along the timeline for a given alpha:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Determine the difference between the start value and
+          the target end value for the property.</p></li><li class="listitem"><p>Multiply the difference by the alpha for the current
+          frame.</p></li><li class="listitem"><p>Add the result to the start value.</p></li></ol></div><p>The shape of the plot of the alpha function over time is
+      called its <span class="emphasis"><em>easing mode</em></span>. Clutter provides
+      various modes ranging from <code class="constant">CLUTTER_LINEAR</code>
+      (the alpha value is equal to progress along the timeline),
+      to modes based on various polynomial and exponential functions,
+      to modes providing elastic and bounce shapes. See the
+      ClutterAlpha documentation for examples of the shapes produced
+      by these functions. There is also a good interactive demo
+      of the modes on
+      <a class="ulink" href="http://www.robertpenner.com/easing/easing_demo.html" target="_top">Robert Penner's site</a>.
+      </p><p>Most of the time, you can use the built-in Clutter easing
+      modes to get the kind of animation effect you want. However,
+      in some cases you may want to provide your own alpha function.
+      Here's an example (based on the quintic ease in mode from
+      <code class="filename">clutter-alpha.c</code>):</p><div class="informalexample"><pre class="programlisting">static gdouble
+_alpha_ease_in_sextic (ClutterAlpha *alpha,
+                       gpointer      dummy G_GNUC_UNUSED)
+ {
+  ClutterTimeline *timeline = clutter_alpha_get_timeline (alpha);
+  gdouble p = clutter_timeline_get_progress (timeline);
+
+  return p * p * p * p * p * p;
+}</pre></div><p>An alpha function just has to have a specified method
+      signature and return a <span class="type">gdouble</span> value when called.
+      As stated above, you'd typically base the return value on the
+      timeline progress; the function above shows how you get the
+      timeline associated with the alpha, so you can apply the alpha
+      function to it.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="animations-introduction-api"></a>1.3. Clutter's animation API</h3></div></div></div><p>All of the animation approaches in Clutter use the same
+      basic underpinnings (as explained above), but the API provides
+      varying levels of abstraction and/or ease of use on top of those
+      underpinnings.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>Implicit animations</em></span> (created using
+          <code class="function">clutter_actor_animate()</code> and related
+          functions) are useful where you want to apply
+          a simple or one-off animation to an actor. They enable you
+          to animate one or more properties using a single easing mode;
+          however, you only specify the target values for the properties
+          you're animating, not the start values.</p></li><li class="listitem"><p><span class="emphasis"><em>ClutterAnimator</em></span> provides support
+          for declarative animations (defined using <span class="type">ClutterScript</span>).
+          You can animate multiple actors with this approach, and
+          have more control over the easing modes used during an
+          animation: while implicit animations only allow a single
+          easing mode for all properties, <span class="type">ClutterAnimator</span>
+          supports <span class="emphasis"><em>multiple</em></span> easing modes for
+          <span class="emphasis"><em>each</em></span> property; <span class="emphasis"><em>key frames</em></span>
+          are used to indicate where in the animation each easing mode
+          should be applied.</p></li><li class="listitem"><p><span class="emphasis"><em>ClutterState</em></span> enables you to describe
+          <span class="emphasis"><em>states</em></span>: property values across one or
+          more actors, plus the easing modes used to transition to
+          those values. It can also be combined with <span class="type">ClutterAnimator</span>
+          for finer grained definition of transitions if desired.</p><p>States are particularly useful if you need actors to
+          animate between a known set of positions/sizes/opacities etc.
+          during their lifecycles (e.g. animating a list of items in
+          a menu, or for animations in a picture viewer where you
+          click on thumbnails to display a full view of a photograph).</p></li></ul></div><p>The recipes in this section show when and where it is
+      appropriate to use each of these approaches.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="textures-crossfade.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="animations-inversion.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">7. Cross-fading between two images </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2. Inverting Animations</td></tr></table></div></body></html>

@@ -1,0 +1,512 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>9. Animated scaling</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="animations.html" title="Chapter 5. Animations"><link rel="prev" href="animations-looping.html" title="8. Looping an animation"><link rel="next" href="animations-path.html" title="10. Animating an actor along a curved path"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">9. Animated scaling</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="animations-looping.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Animations</th><td width="20%" align="right"> <a accesskey="n" href="animations-path.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="animations-scaling"></a>9. Animated scaling</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236909642208"></a>9.1. Problem</h3></div></div></div><p>You want to animate scaling of an actor. Example use
+      cases:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>To animate zooming in/out of a texture in an
+          image viewer application.</p></li><li class="listitem"><p>To add an animated "bounce" effect (quick scale up
+          followed by scale down) to a UI element
+          to indicate it has received focus.</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236909638800"></a>9.2. Solution</h3></div></div></div><p>Animate the actor's <code class="varname">scale-x</code> and
+      <code class="varname">scale-y</code> properties to change the scaling on
+      the <code class="varname">x</code> and <code class="varname">y</code> axes
+      respectively.</p><p>For example, to animate an actor to twice its current scale
+      with implicit animations:</p><div class="informalexample"><pre class="programlisting">gdouble scale_x;
+gdouble scale_y;
+
+/* get the actor's current scale */
+clutter_actor_get_scale (actor, &amp;scale_x, &amp;scale_y);
+
+/* animate to twice current scale on both axes */
+clutter_actor_animate (actor, CLUTTER_LINEAR, 1000,
+                       "scale-x", scale_x * 2,
+                       "scale-y", scale_y * 2);</pre></div><p>Alternatively, <span class="type">ClutterAnimator</span> or
+      <span class="type">ClutterState</span> can be used to animate an actor's scale
+      properties. See <a class="link" href="animations-scaling.html#animations-scaling-example-1" title="Example 5.14. Animated scaling of an actor using each of the scale gravities. Press any key to start the animation.">this
+      example</a> which uses <span class="type">ClutterState</span> to animate
+      scaling.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236909632016"></a>9.3. Discussion</h3></div></div></div><p>Scaling an actor is done through its <code class="varname">scale-x</code>
+      and <code class="varname">scale-y</code> properties, each of which takes
+      a <code class="code">double</code> value. A value of less than
+      <code class="code">1.0</code> for an axis scales an actor down on that axis,
+      reducing its apparent size; values greater than <code class="code">1.0</code>
+      scale an actor up, increasing its apparent size.</p><p>Why "apparent" size? Because scaling applies a transform
+      to an actor which changes how it appears on the
+      stage, without changing its "real" size. Similarly, scaling an
+      actor may transform its position: it could appear to move to a
+      different position within its container,
+      although it is "really" at its original position. Run
+      <a class="link" href="animations-scaling.html#animations-scaling-example-1" title="Example 5.14. Animated scaling of an actor using each of the scale gravities. Press any key to start the animation.">the
+      example</a> to see how size and position are
+      transformed by scaling.</p><p>It can be useful to know an actor's
+      <span class="emphasis"><em>transformed</em></span> position and size after scaling:
+      for example, if you were implementing a reflowing layout manager
+      which used scaling as part of its allocation algorithm.
+      Here's an example of how to get these properties for an
+      actor:</p><div class="informalexample"><pre class="programlisting">gfloat transformed_x;
+gfloat transformed_y;
+
+gfloat transformed_width;
+gfloat transformed_height;
+
+clutter_actor_get_transformed_position (actor, &amp;transformed_x, &amp;transformed_y);
+clutter_actor_get_transformed_size (actor, &amp;transformed_width, &amp;transformed_height);</pre></div><p>Note that you can scale an actor on both axes by the same
+      amount (uniform scaling), or by a different amount on each axis
+      (differential scaling).</p><p>Use <code class="function">clutter_actor_is_scaled()</code> to determine
+      whether scaling has been applied to an actor: this function returns
+      <code class="code">FALSE</code> if both <code class="varname">scale-x</code> and
+      <code class="varname">scale-y</code> are <code class="code">1.0</code>; otherwise, it
+      returns <code class="code">TRUE</code>.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236909621568"></a>9.3.1. Scaling vs. resizing</h4></div></div></div><p>Scaling changes the <span class="emphasis"><em>apparent</em></span> size
+        of an actor, while leaving its real size unchanged. By contrast,
+        resizing changes the <span class="emphasis"><em>real</em></span> size of the actor,
+        by modifying its <code class="varname">width</code> and
+        <code class="varname">height</code> properties.</p><p>Resizing and scaling produce the same visual
+        effect, as both make an actor appear to be larger or
+        smaller. Therefore, for most purposes, they are interchangeable
+        if you just want to change an actor's apparent size.</p><p>So why would you scale an actor rather than resize it?</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>If you've scaled an actor, you can easily reset it
+            to its original size, by setting its
+            scale back to <code class="code">1.0</code> on both axes. By contrast,
+            to reset a resized actor to its original size,
+            you would have to track the original size manually: the
+            actor doesn't make its original size accessible.</p></li><li class="listitem"><p>Scaling can easily change the apparent size
+            of multiple actors inside a container. For example, say you
+            wanted to shrink multiple actors inside a container
+            to half their original size. There are two ways you
+            could do this:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>The hard way would be to resize
+                each actor individually. You couldn't just resize the container,
+                as resizing a container doesn't resize its children: usually
+                they will be clipped so that they are either partially or
+                wholly hidden.</p></li><li class="listitem"><p>The easy way would be to set the container's scale
+                to half its initial value: the actors
+                in the container would retain their original sizes, but would
+                appear at half size.</p></li></ol></div></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236909611824"></a>9.3.2. Scaling, layouts and containers</h4></div></div></div><p>It is possible to scale actors inside containers. For
+        example, if you were using a <span class="type">ClutterBox</span>
+        which has a <span class="type">ClutterBoxLayout</span> layout manager,
+        you could scale the children of that layout.</p><p>However, you should remain aware that layout managers
+        don't take account of the scale of their children, only their
+        size. So if you scale up an actor inside a layout manager,
+        it may overlap other actors in the layout: the size allocated
+        by the layout manager doesn't increase as an actor's scale
+        increases.</p><p>Similarly, scaling an actor down doesn't reduce the space
+        it will be allocated by a layout.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236909608464"></a>9.3.3. Setting the scale center</h4></div></div></div><p>An actor's scale center is the point around which
+        scaling occurs: when you scale the actor, it will "shrink"
+        into (if scale &lt; 1.0) or "expand" out of (if scale &gt; 1.0)
+        its scale center.</p><p>You can change an actor's scale center using
+        either gravity (a named position on the actor; for example, the
+        middle of the top edge of the actor is
+        <code class="constant">CLUTTER_GRAVITY_NORTH</code>); or
+        x,y coordinates relative to the actor's anchor point (by default,
+        the anchor point for an actor is at <code class="code">0,0</code>).</p><p>Setting scale gravity has the same consequences as
+        setting both the <code class="varname">scale-center-x</code> and
+        <code class="varname">scale-center-y</code> properties for an actor.
+        For example, <code class="constant">CLUTTER_GRAVITY_NORTH_EAST</code>
+        sets the scale center to <code class="code">&lt;width of the actor&gt;, 0</code>,
+        relative to the actor's anchor point (defaults to the top-right
+        corner of the actor). However, the advantage of scale
+        gravities is that they change with the actor: so if the
+        actor is resized, you don't have to manually reset the scale
+        center. This means that <code class="constant">CLUTTER_GRAVITY_NORTH_EAST</code>
+        will always represent the top-right corner of the actor,
+        regardless of how it is scaled or resized. The same is true
+        of each of the other scale gravities.</p><p>If you're animating an actor's scale but want a different
+        scale center, set it before the animation begins. One way to
+        do this is to leave the actor's scale unchanged, but with
+        a different scale center:</p><div class="informalexample"><pre class="programlisting">gdouble scale_x;
+gdouble scale_y;
+
+/* get the actor's current scale */
+clutter_actor_get_scale (actor, &amp;scale_x, &amp;scale_y);
+
+/* set scale center using x,y coordinates, leaving scale unchanged;
+ * the actor's size here is assumed to be 200x200
+ */
+clutter_actor_set_scale_full (actor,
+                              scale_x,
+                              scale_y,
+                              100.0,  /* center x */
+                              100.0   /* center y */);
+
+/* set scale center using gravity, leaving scale unchanged */
+clutter_actor_set_scale_with_gravity (actor,
+                                      scale_x,
+                                      scale_y,
+                                      CLUTTER_GRAVITY_CENTER);</pre></div><p>Another approach is to set scale center properties
+        via GObject, which doesn't require you to figure out the
+        actor's scale first:</p><div class="informalexample"><pre class="programlisting">/* set scale center using x,y coordinates */
+g_object_set (actor,
+              "scale-center-x", 100.0, /* center x */
+              "scale-center-y", 100.0, /* center y */
+              NULL);
+
+/* set scale center using gravity */
+g_object_set (actor,
+              "scale-gravity", CLUTTER_GRAVITY_CENTER,
+              NULL);</pre></div><p>Once the scale center is set, you can animate the
+        scaling as per usual.</p><p>It is even possible to animate the
+        <code class="varname">scale-center-*</code> properties, which can
+        produce interesting, though slightly
+        unpredictable, effects. It's usually better to change the
+        scale center before the animation starts.</p><p><a class="link" href="animations-scaling.html#animations-scaling-example-1" title="Example 5.14. Animated scaling of an actor using each of the scale gravities. Press any key to start the animation.">The
+        example</a> cycles through the available scale gravities,
+        showing the effect on the animation of each of the scale
+        centers.</p><p>The <a class="link" href="animations-scaling.html#animations-scaling-example-2" title="Example 5.15. Animated scaling (up and down) of a texture in response to button presses. Call with the path to an image as the first argument.">second
+        example</a> shows how to combine scaling in and out on a
+        texture, in response to mouse button presses. In this case,
+        the scale gravity remains at <code class="constant">CLUTTER_GRAVITY_NORTH_WEST</code>
+        (i.e. at the anchor point of the actor). However, the anchor
+        point is moved to the coordinates of each double click on button 1
+        (usually the left mouse button) or button 3 (usually the right
+        mouse button); which in turn automatically moves the scale center
+        before the texture is scaled. As a result, the texture
+        "expands" or "contracts" around the clicked point,
+        while the point remains still.</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>One final caveat about scale centers: if an actor is
+          already scaled, the scale center coordinates are relative to
+          the <span class="emphasis"><em>real size</em></span> of the actor, rather than
+          its <span class="emphasis"><em>transformed</em></span> size. This can result in
+          a "jumping" effect if you change the scale center on
+          a scaled actor.</p><p>For example, you might set the scale gravity of an actor
+          to <code class="constant">CLUTTER_GRAVITY_WEST</code>, then
+          scale the actor to <code class="code">0.5</code> on both axes. Later, you
+          change the actor's scale gravity to
+          <code class="constant">CLUTTER_GRAVITY_EAST</code>. The effect of this
+          is to "jump" the actor to the right, so its right-hand edge
+          is aligned with where it was at scale <code class="code">1.0</code>.</p><p>If this isn't desirable, you can just retain the scale
+          center on a scaled actor, and only change it when the actor
+          is unscaled.</p></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="animations-scaling-examples"></a>9.4. Full examples</h3></div></div></div><div class="example"><a name="animations-scaling-example-1"></a><p class="title"><b>Example 5.14. Animated scaling of an actor using each of the
+        scale gravities. Press any key to start the animation.</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+typedef struct
+{
+  ClutterState *transitions;
+  ClutterActor *actor;
+  ClutterActor *props_display;
+  guint         scale_gravity;
+  gboolean      transitions_running;
+} State;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+static const ClutterColor yellow_color = { 0xff, 0xff, 0x00, 0xff };
+
+static void
+show_scale_properties_cb (ClutterActor *actor,
+                          gpointer      user_data)
+{
+  State *state = (State *) user_data;
+
+  gfloat transformed_x, transformed_y;
+  gfloat transformed_width, transformed_height;
+  gfloat scale_center_x, scale_center_y;
+
+  gchar *message;
+
+  clutter_actor_get_transformed_position (state-&gt;actor,
+                                          &amp;transformed_x,
+                                          &amp;transformed_y);
+
+  clutter_actor_get_transformed_size (state-&gt;actor,
+                                      &amp;transformed_width,
+                                      &amp;transformed_height);
+
+  g_object_get (G_OBJECT (actor),
+                "scale-center-x", &amp;scale_center_x,
+                "scale-center-y", &amp;scale_center_y,
+                NULL);
+
+  /* draw cross on the scale center */
+  cogl_set_source_color4ub (255, 255, 0, 255);
+
+  cogl_path_move_to (scale_center_x, scale_center_y);
+  cogl_path_rel_line_to (10, 10);
+  cogl_path_rel_line_to (-20, -20);
+  cogl_path_move_to (scale_center_x, scale_center_y);
+  cogl_path_rel_line_to (10, -10);
+  cogl_path_rel_line_to (-20, 20);
+
+  cogl_path_stroke ();
+
+  /* show actor properties */
+  message = g_strdup_printf ("Scale center: %.0f, %.0f\n"
+                             "Transformed position: %.2f, %.2f\n"
+                             "Transformed size: %.2f, %.2f",
+                             scale_center_x, scale_center_y,
+                             transformed_x, transformed_y,
+                             transformed_width, transformed_height);
+
+  clutter_text_set_text (CLUTTER_TEXT (state-&gt;props_display), message);
+
+  g_free (message);
+}
+
+static void
+next_transition_cb (ClutterState *transitions,
+                    gpointer      user_data)
+{
+  State *state = (State *) user_data;
+
+  if (clutter_actor_is_scaled (state-&gt;actor))
+    clutter_state_set_state (state-&gt;transitions, "not-scaled");
+  else if (state-&gt;scale_gravity &gt; 9)
+    {
+      /* gravity is at center, so reset ready for next key press */
+      state-&gt;scale_gravity = CLUTTER_GRAVITY_NORTH;
+
+      state-&gt;transitions_running = FALSE;
+    }
+  else
+    {
+      g_object_set (G_OBJECT (state-&gt;actor),
+                    "scale-gravity", state-&gt;scale_gravity,
+                    NULL);
+
+      state-&gt;scale_gravity++;
+
+      clutter_state_set_state (state-&gt;transitions, "scaled-down");
+    }
+}
+
+static gboolean
+key_pressed_cb (ClutterActor *actor,
+                ClutterEvent *event,
+                gpointer      user_data)
+{
+  State *state = (State *) user_data;
+
+  if (!state-&gt;transitions_running)
+    {
+      state-&gt;transitions_running = TRUE;
+      next_transition_cb (NULL, state);
+    }
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  State *state = g_new0 (State, 1);
+  ClutterActor *stage;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 350, 350);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  state-&gt;scale_gravity = CLUTTER_GRAVITY_NORTH;
+  state-&gt;transitions_running = FALSE;
+
+  state-&gt;props_display = clutter_text_new ();
+  clutter_actor_set_size (state-&gt;props_display, 340, 80);
+  clutter_actor_set_position (state-&gt;props_display, 5, 280);
+  clutter_text_set_color (CLUTTER_TEXT (state-&gt;props_display), &amp;yellow_color);
+
+  state-&gt;actor = clutter_rectangle_new_with_color (&amp;red_color);
+  clutter_actor_set_size (state-&gt;actor, 200, 200);
+  clutter_actor_set_position (state-&gt;actor, 75, 50);
+
+  g_object_set (G_OBJECT (state-&gt;actor),
+                "scale-gravity", state-&gt;scale_gravity,
+                NULL);
+
+  state-&gt;transitions = clutter_state_new ();
+  clutter_state_set_duration (state-&gt;transitions, NULL, NULL, 400);
+
+  clutter_state_set (state-&gt;transitions, NULL, "not-scaled",
+                     state-&gt;actor, "scale-x", CLUTTER_LINEAR, 1.0,
+                     state-&gt;actor, "scale-y", CLUTTER_LINEAR, 1.0,
+                     NULL);
+
+  clutter_state_set (state-&gt;transitions, NULL, "scaled-down",
+                     state-&gt;actor, "scale-x", CLUTTER_LINEAR, 0.25,
+                     state-&gt;actor, "scale-y", CLUTTER_LINEAR, 0.25,
+                     NULL);
+
+  clutter_state_warp_to_state (state-&gt;transitions, "not-scaled");
+
+  g_signal_connect (stage,
+                    "key-press-event",
+                    G_CALLBACK (key_pressed_cb),
+                    state);
+
+  g_signal_connect (state-&gt;transitions,
+                    "completed",
+                    G_CALLBACK (next_transition_cb),
+                    state);
+
+  g_signal_connect_after (state-&gt;actor,
+                          "paint",
+                          G_CALLBACK (show_scale_properties_cb),
+                          state);
+
+  clutter_container_add (CLUTTER_CONTAINER (stage),
+                         state-&gt;actor,
+                         state-&gt;props_display,
+                         NULL);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (state-&gt;transitions);
+  g_free (state);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="animations-scaling-example-2"></a><p class="title"><b>Example 5.15. Animated scaling (up and down) of a texture in response
+        to button presses. Call with the path to an image as the
+        first argument.</b></p><div class="example-contents"><pre class="programlisting">/*
+ * Load an image into a texture, which can then be zoomed in/out
+ * (double click on button 1, double click on button 3 respectively);
+ * also resets the texture to the stage center when a key is pressed
+ * (better would be to prevent drags taking the actor off-stage,
+ * but the implementation is much more complicated)
+ */
+#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#define STAGE_SIDE 400.0
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+
+/* on key press, center the actor on the stage;
+ * useful if you drag it off-stage accidentally
+ */
+static gboolean
+key_press_cb (ClutterActor *actor,
+              ClutterEvent *event,
+              gpointer      user_data)
+{
+  gfloat width, height;
+
+  clutter_actor_get_size (actor, &amp;width, &amp;height);
+
+  clutter_actor_set_anchor_point (actor, width / 2, height / 2);
+
+  clutter_actor_set_position (actor,
+                              STAGE_SIDE / 2,
+                              STAGE_SIDE / 2);
+
+  return TRUE;
+}
+
+/* on double click, zoom in on the clicked point;
+ * also keeps scale in the range 0.1 to 20
+ */
+static gboolean
+clicked_cb (ClutterActor *actor,
+            ClutterEvent *event,
+            gpointer      user_data)
+{
+  gdouble scale;
+  gfloat click_x, click_y;
+  gfloat click_target_x, click_target_y;
+  guint32 button;
+
+  /* don't do anything unless there was a double click */
+  if (clutter_event_get_click_count (event) &lt; 2)
+    return TRUE;
+
+  /* work out new scale */
+  button = clutter_event_get_button (event);
+
+  clutter_actor_get_scale (actor, &amp;scale, NULL);
+
+  if (button == CLUTTER_BUTTON_PRIMARY)
+    scale *= 1.2;
+  else if (button == CLUTTER_BUTTON_SECONDARY)
+    scale /= 1.2;
+
+  /* don't do anything if scale is outside bounds */
+  if (scale &lt; 0.1 || scale &gt; 20.0)
+    return TRUE;
+
+  /* get the location of the click on the scaled actor */
+  clutter_event_get_coords (event, &amp;click_x, &amp;click_y);
+  clutter_actor_transform_stage_point (actor,
+                                       click_x, click_y,
+                                       &amp;click_target_x, &amp;click_target_y);
+
+  /* anchor the actor on the clicked point on its surface */
+  clutter_actor_set_anchor_point (actor, click_target_x, click_target_y);
+
+  /* set the actor's position to the click coords: it won't move,
+   * because the anchor point is already there; but
+   * the scale will now be centered on these coords (as the
+   * scale center defaults to the anchor point); so the anchor point
+   * on the actor won't move from under the pointer
+   */
+  clutter_actor_set_position (actor, click_x, click_y);
+
+  clutter_actor_animate (actor, CLUTTER_LINEAR, 500,
+                         "scale-x", scale,
+                         "scale-y", scale,
+                         NULL);
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *texture;
+  gchar *image_path;
+  GError *error = NULL;
+
+  if (argc &lt; 2)
+    {
+      g_print ("Usage: %s &lt;path to image file&gt;\n", argv[0]);
+      exit (EXIT_FAILURE);
+    }
+
+  image_path = argv[1];
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, STAGE_SIDE, STAGE_SIDE);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  texture = clutter_texture_new ();
+  clutter_actor_set_reactive (texture, TRUE);
+  clutter_actor_set_width (texture, STAGE_SIDE);
+  clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture), TRUE);
+
+  clutter_actor_add_action (texture, clutter_drag_action_new ());
+
+  g_object_set (G_OBJECT (texture),
+                "scale-gravity", CLUTTER_GRAVITY_NORTH_WEST,
+                NULL);
+
+  clutter_texture_set_from_file (CLUTTER_TEXTURE (texture), image_path, &amp;error);
+
+  if (error != NULL)
+    {
+      g_warning ("Error loading %s\n%s", image_path, error-&gt;message);
+      g_error_free (error);
+      exit (EXIT_FAILURE);
+    }
+
+  clutter_actor_set_y (texture, (STAGE_SIDE - clutter_actor_get_height (texture)) * 0.5);
+
+  g_signal_connect (texture,
+                    "button-release-event",
+                    G_CALLBACK (clicked_cb),
+                    NULL);
+
+  g_signal_connect_swapped (stage,
+                            "key-press-event",
+                            G_CALLBACK (key_press_cb),
+                            texture);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), texture);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="animations-looping.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="animations.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="animations-path.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">8. Looping an animation </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 10. Animating an actor along a curved path</td></tr></table></div></body></html>

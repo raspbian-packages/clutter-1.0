@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>3. Creating and animating a custom ClutterDeformEffect</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="effects.html" title="Chapter 9. Effects"><link rel="prev" href="effects-basic.html" title="2. Changing an actor's paint sequence using ClutterEffect"><link rel="next" href="contributing.html" title="Appendix 1. Contributing to this document"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Creating and animating a custom <span class="type">ClutterDeformEffect</span></th></tr><tr><td width="20%" align="left"><a accesskey="p" href="effects-basic.html">Prev</a> </td><th width="60%" align="center">Chapter 9. Effects</th><td width="20%" align="right"> <a accesskey="n" href="contributing.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="effects-custom-deform"></a>3. Creating and animating a custom <span class="type">ClutterDeformEffect</span></h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910423536"></a>3.1. Problem</h3></div></div></div><p>You want to deform an actor's geometry: for example,
+      to make it appear stretched, twisted or folded.</p><p>This recipe demonstrates how to do this with a simple page
+      fold effect, which folds one half of the actor over its other half.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="effects-custom-deform-solution"></a>3.2. Solution</h3></div></div></div><p>Subclass <span class="type">ClutterDeformEffect</span> and
+      implement a <code class="function">deform_vertex()</code> function
+      to modify the actor's vertices.</p><p>The signature for <code class="function">deform_vertex()</code>
+      is:</p><div class="informalexample"><pre class="programlisting">void
+deform_vertex (ClutterDeformEffect *effect,
+               gfloat               width,
+               gfloat               height,
+               CoglTextureVertex   *vertex);</pre></div><p>The <code class="varname">width</code> and <code class="varname">height</code>
+      are the width and height of the target material, stored in
+      the offscreen buffer. Usually the target material's size will
+      match the actor's transformed size; however, if the effect
+      implements <code class="function">create_texture()</code>, the target
+      material's size may differ from the actor's transformed size.</p><p>The <code class="varname">vertex</code> contains the position
+      and color of a vertex, to be deformed by your effect.
+      Your <code class="function">deform_vertex()</code>
+      function should modify the member variables of this
+      <span class="type">CoglTextureVertex</span> in place. Usually, this will
+      mean modifying the <code class="varname">x</code>, <code class="varname">y</code>
+      and <code class="varname">y</code> member variables of the vertex,
+      which describe its position in 3D space.</p><p>The example function below, taken from
+      <a class="link" href="effects-custom-deform.html#effects-custom-deform-example-2" title="Example 9.8. cb-page-fold-effect.c (code file)">the
+      full example</a>, applies a transformation to vertices falling
+      in the "right-hand" half of the actor (i.e. vertices with an
+      <code class="varname">x</code> value greater than or equal to half the
+      width of the actor).</p><div class="informalexample"><pre class="programlisting">static void
+cb_page_fold_effect_deform_vertex (ClutterDeformEffect *effect,
+                                   gfloat               width,
+                                   gfloat               height,
+                                   CoglTextureVertex   *vertex)
+{
+  CbPageFoldEffectPrivate *priv = CB_PAGE_FOLD_EFFECT (effect)-&gt;priv;
+
+  /* the rotation angle is modified by the percentage progress of the fold,
+   * as represented by the period variable
+   */
+  gfloat radians = (priv-&gt;angle * priv-&gt;period) / (180.0f / G_PI);
+
+  /* rotate from the center of the actor on the y axis */
+  gfloat adjusted_x = vertex-&gt;x - (width / 2);
+
+  /* only rotate vertices to the right of the middle of the actor */
+  if (adjusted_x &gt;= 0.0)
+    {
+      vertex-&gt;x = (vertex-&gt;z * sin (radians))
+                  + (adjusted_x * cos (radians))
+                  + width / 2;
+
+      /* NB add 1 to z to prevent "z fighting"; otherwise, when fully-folded
+       * the image has "stripes" where vertices from the folded part
+       * of the actor interfere with vertices from the unfolded part
+       */
+      vertex-&gt;z = (vertex-&gt;z * cos (radians))
+                  + (adjusted_x * sin (radians))
+                  + 1;
+    }
+
+  /* adjust depth of all vertices so they fit inside the actor while folding;
+   * this has the effect of making the image smaller within the texture,
+   * but does produce a cleaner fold animation
+   */
+  vertex-&gt;z -= width / 2;
+}</pre></div><p>Note that this effect has two properties set in its
+      constructor or through setters:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><code class="varname">angle</code>, representing the angle of
+          the full fold; for the actor to fully fold in half, this
+          would be set to 180.0</p></li><li class="listitem"><p><code class="varname">period</code>, representing the percentage
+          of the fold to apply</p></li></ol></div><p>As well as rotating the vertex, the
+      <code class="function">deform_vertex()</code> function also shifts
+      the <code class="varname">z</code> coordinate "up" by 1
+      (towards the viewpoint) for vertices on the right-hand side of the
+      actor. This is so that the "folded over" vertices
+      are above vertices on the left-hand side. Without this small
+      shift, the vertices interfere with each other, which can cause striping
+      artefacts.</p><p><span class="emphasis"><em>All</em></span> vertices are also shifted "down",
+      so that the the folding part of the actor remains within the texture.
+      Otherwise the part which is folding may be clipped to the allocation of
+      the actor.</p><p>This effect can now be applied to an actor, using the
+      approach
+      <a class="link" href="effects.html#effects-introduction-using-the-built-in-effects" title="1.2. Using the built-in effects">outlined
+      in the introduction</a>. The result looks like this when
+      <code class="varname">period</code> is set to 0.25 and <code class="varname">angle</code>
+      to 180.0 (i.e. the page is folded by 45 degrees):</p><div class="screenshot"><div class="mediaobject"><img src="images/effects-custom-deform.png" alt="Applying a custom ClutterDeformEffect to a texture loaded with an image"></div></div><p>Because the effect is a GObject which exposes its
+      properties, it can easily be animated, as described in
+      <a class="link" href="effects-custom-deform.html#effects-custom-deform-discussion-animating" title="3.3.2. Animating a custom deform effect">the
+      discussion section</a>.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="effects-custom-deform-discussion"></a>3.3. Discussion</h3></div></div></div><p>A deform effect processes an actor as follows:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The actor is divided into a series of
+          triangular tiles. The number of
+          horizontal and vertical tiles is configurable;
+          more tiles implies more vertices. See
+          <a class="link" href="effects-custom-deform.html#effects-custom-deform-discussion-tiles" title="3.3.3. Tiles">this
+          section</a> for more details about tiles.</p></li><li class="listitem"><p>The position of each vertex of each
+          tile is then modified (or not) by the
+          <code class="function">deform_vertex()</code> function. In this
+          function, you can change the vertex's position
+          (<code class="varname">x</code>, <code class="varname">y</code>,
+          <code class="varname">z</code> coordinates). You can also
+          modify the color at the vertex if desired.</p><p>The resulting deformed vertices are stored
+          in an offscreen buffer.</p></li><li class="listitem"><p>Once the deformation has been applied to
+          all vertices, the content of the offscreen buffer
+          is painted at the onscreen position of the actor.</p></li></ul></div><p>You may find it useful to visualise this process by imagining
+      your actor's surface as a net, composed of triangles. (Something
+      like a fishing net, not a mathematical one.) At each corner of
+      each triangle is a marble; and between each pair of corners
+      is an infinitely flexible length of elastic. Moving a marble
+      doesn't change the position of its neighbours; it just stretches
+      or relaxes the elastic.</p><p>In this analogy, the marbles are the vertices; and the
+      surfaces between the marbles, bordered by triangles of
+      elastic, are the tiles. More triangles (tiles) means more
+      marbles (vertices).</p><p>When you create a <span class="type">ClutterDeformEffect</span>,
+      think of it as specifying movements of marbles in the net.
+      Changing the position of a vertex corresponds to moving a marble
+      up/down (-/+ <code class="varname">y</code> position), left/right
+      (-/+ <code class="varname">x</code> position) or away/towards
+      you (-/+ <code class="varname">z</code> position) (ignoring color for the
+      moment).</p><p>Now imagine that you are asked to fold the whole net of
+      marbles; but you can't just grab the edge of the net and pull
+      it over: you can only move one marble at a time. However, once moved,
+      each marble magically stays where you put it in 3D space.</p><p>To do this, you could project where each marble would be if
+      you could fold the whole sheet in one go; then move the
+      marbles one by one to their projected positions. Even though
+      you'd be moving the marbles one at a time, it would eventually
+      look as though you'd folded the whole net with a single movement.</p><p>When you write a <span class="type">ClutterDeformEffect</span>, you have
+      to accomplish a similar feat: change the shape of an actor
+      by individually modifying the positions of points on its surface. In
+      most cases, your <code class="function">deform_vertex()</code> implementation
+      can take advantage of an existing geometric transformation
+      method to achieve this. (For example, the page fold in this recipe
+      is based on equations from p.412 of <em class="citetitle">Computer
+      Graphics (C Version), 2nd Edition</em> by Hearn and
+      Baker, 1996.)</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm236910725040"></a>3.3.1. Customising the back material</h4></div></div></div><p>When you set up a deform effect, you
+        can optionally specify a material to use for the "back" of
+        any actor it is applied to.</p><p>If you think of an actor as a sheet of paper with a
+        picture on it, specifying a back is similar to turning the
+        sheet of paper over (rotating it around the
+        <code class="varname">y</code> axis) and drawing another picture on
+        the other side. If you then folded or twisted the paper,
+        you would be able to see parts of the pictures on both the
+        front and back of the paper.</p><p>Similarly, during deformation of an actor, if any
+        vertices of the actor are deformed such that the actor's surface
+        is folded or twisted over itself, parts of its back
+        become visible. If you set a back material, you will see parts
+        of that where the surface is folded over. If you don't set a back
+        material, you will instead see mirror images of parts of the actor's
+        front: as if the actor was flexible stained glass, rather than paper.
+        You can see this if you watch the animation in
+        <a class="link" href="effects-custom-deform.html#effects-custom-deform-discussion-animating" title="3.3.2. Animating a custom deform effect">this
+        section</a>.</p><p>The back material should be an instance of
+        <span class="type">CoglMaterial</span>. You can either create this via
+        the Cogl API directly; or indirectly through the Clutter API
+        (for example, by getting the material from a
+        <span class="type">ClutterTexture</span>). The code below gives an example
+        of how to do the latter:</p><div class="informalexample"><pre class="programlisting">/* create a texture */
+ClutterActor *back = clutter_texture_new ();
+clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (back), TRUE);
+clutter_actor_set_width (back, 400);
+
+/* load image into texture (ignoring errors for brevity) */
+clutter_texture_set_from_file (CLUTTER_TEXTURE (back),
+                               back_image_file,
+                               NULL);
+
+/* get a handle to the texture's Cogl material */
+CoglHandle material = clutter_texture_get_cogl_material (CLUTTER_TEXTURE (back));
+
+/* cast the effect to ClutterDeformEffect and set its back material
+ * to the handle
+ */
+clutter_deform_effect_set_back_material (CLUTTER_DEFORM_EFFECT (effect),
+                                         material);</pre></div><p>See the <span class="type">ClutterDeformEffect</span> API reference
+        for more details about back materials.</p><p>Here's a screenshot of the
+        <a class="link" href="effects-custom-deform.html#effects-custom-deform-example-3" title="Example 9.9. Application which uses CbPageFoldEffect to do animated folding of a ClutterTexture">example</a>
+        with the addition of a back material, folded at an angle
+        of 60 degrees:</p><div class="screenshot"><div class="mediaobject"><img src="images/effects-custom-deform-back-material.png" alt="Applying a custom ClutterDeformEffect to a texture loaded with an image"></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="effects-custom-deform-discussion-animating"></a>3.3.2. Animating a custom deform effect</h4></div></div></div><p>Clutter's animation API can animate any GObject which
+        exposes its properties. In the case of the page fold effect,
+        we can expose the <code class="varname">period</code> property using
+        standard GObject property installation:</p><div class="informalexample"><pre class="programlisting">/* GObject class init */
+static void
+cb_page_fold_effect_class_init (CbPageFoldEffectClass *klass)
+{
+  GParamSpec *pspec;
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+  /* ...other class setup code... */
+
+  /* expose the period as a GObject property */
+  pspec = g_param_spec_double ("period",
+                               "Period",
+                               "The period of the page fold",
+                               0.0, 1.0,
+                               0.0,
+                               G_PARAM_READWRITE);
+  obj_props[PROP_PERIOD] = pspec;
+  g_object_class_install_property (gobject_class, PROP_PERIOD, pspec);
+
+  /* ...install other properties... */
+}</pre></div><p>We also add a <code class="function">get_property()</code>
+        implementation, as well as a setter (see
+        <a class="link" href="effects-custom-deform.html#effects-custom-deform-example-2" title="Example 9.8. cb-page-fold-effect.c (code file)">the full
+        GObject implementation</a> for details).</p><p>Then set up an animation for the property; in this case,
+        using a <span class="type">ClutterState</span>:</p><div class="informalexample"><pre class="programlisting">ClutterEffect *effect = cb_page_fold_effect_new (180.0, 0.0);
+
+ClutterState *transitions = clutter_state_new ();
+clutter_state_set_duration (transitions, NULL, NULL, 500);
+
+clutter_state_set (transitions, NULL, "unfolded",
+                   effect, "period", CLUTTER_LINEAR, 0.0,
+                   NULL);
+
+clutter_state_set (transitions, NULL, "folded",
+                   effect, "period", CLUTTER_LINEAR, 1.0,
+                   NULL);</pre></div><p>To start the animation, warp the <span class="type">ClutterState</span>
+        into its <span class="emphasis"><em>"unfolded"</em></span> state, then set it to
+        <span class="emphasis"><em>"folded"</em></span>:</p><div class="informalexample"><pre class="programlisting">/* this changes state instantaneously */
+clutter_state_warp_to_state (transitions, "unfolded");
+
+/* this starts an animation to the state */
+clutter_state_set_state (transitions, "folded");</pre></div><p>Note that the
+        <a class="link" href="effects-custom-deform.html#effects-custom-deform-example-3" title="Example 9.9. Application which uses CbPageFoldEffect to do animated folding of a ClutterTexture">full code
+        sample</a> is slightly more complex, as it triggers state
+        changes when a mouse button is pressed on the texture. There is
+        also a third "partially folded" state (used to create
+        the screenshot for the
+        <a class="link" href="effects-custom-deform.html#effects-custom-deform-solution" title="3.2. Solution">previous
+        section</a>).</p><p>Here's what the resulting animation looks like:</p><p><video controls="controls" src="videos/effects-custom-deform.ogv"><a href="videos/effects-custom-deform.ogv"></a></video></p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="effects-custom-deform-discussion-tiles"></a>3.3.3. Tiles</h4></div></div></div><p>A <span class="type">ClutterDeformEffect</span> divides the actor
+        being deformed into a number of tiles: the larger the number
+        of tiles, the larger the number of vertices to be manipulated
+        by the effect. Increasing the number of tiles increases the number of
+        vertex computations required, which can slow down animations;
+        at the same time, finer-grained tiles can make an effect appear
+        smoother, particularly when animated.</p><p>Most of the time, the default number
+        of tiles in the <code class="varname">x</code> and <code class="varname">y</code>
+        axes should suffice. You can get the current number of
+        tiles associated with an effect with:</p><div class="informalexample"><pre class="programlisting">guint x_tiles;
+guint y_tiles;
+
+/* effect must be a subclass of ClutterDeformEffect */
+clutter_deform_effect_get_n_tiles (CLUTTER_DEFORM_EFFECT (effect),
+                                   &amp;x_tiles,
+                                   &amp;y_tiles);</pre></div><p>However, if an effect produces jerky or fragmented output,
+        you want to tweak the number of tiles. Use the
+        <code class="function">clutter_deform_effect_set_n_tiles()</code> function
+        to do this:</p><div class="informalexample"><pre class="programlisting">/* 64 tiles in both axes */
+guint x_tiles = 64;
+guint y_tiles = 64;
+
+clutter_deform_effect_set_n_tiles (CLUTTER_DEFORM_EFFECT (effect),
+                                   x_tiles,
+                                   y_tiles);</pre></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236910686896"></a>3.4. Full example</h3></div></div></div><p>This example consists of three files:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="link" href="effects-custom-deform.html#effects-custom-deform-example-1" title="Example 9.7. cb-page-fold-effect.h (header file)">A header
+          file</a> for the <span class="type">CbPageFoldEffect</span> GObject.</p></li><li class="listitem"><p><a class="link" href="effects-custom-deform.html#effects-custom-deform-example-2" title="Example 9.8. cb-page-fold-effect.c (code file)">The
+          code file</a> implementing <span class="type">CbPageFoldEffect</span>.</p></li><li class="listitem"><p><a class="link" href="effects-custom-deform.html#effects-custom-deform-example-3" title="Example 9.9. Application which uses CbPageFoldEffect to do animated folding of a ClutterTexture">A short
+          sample application</a> which applies a <span class="type">CbPageFoldEffect</span>
+          instance to an actor and animates the fold when the actor is
+          clicked.</p></li></ul></div><p>As Clutter effect subclasses are written using GObject,
+      you might find <a class="link" href="actors-composite.html" title="2. Implementing a simple custom actor">this recipe</a>
+      (which goes into GObject in more detail) a useful introduction.</p><div class="example"><a name="effects-custom-deform-example-1"></a><p class="title"><b>Example 9.7. <code class="filename">cb-page-fold-effect.h</code> (header file)</b></p><div class="example-contents"><pre class="programlisting">#ifndef __CB_PAGE_FOLD_EFFECT_H__
+#define __CB_PAGE_FOLD_EFFECT_H__
+
+#include &lt;clutter/clutter.h&gt;
+
+GType cb_page_fold_effect_get_type (void);
+
+#define CB_TYPE_PAGE_FOLD_EFFECT (cb_page_fold_effect_get_type ())
+#define CB_PAGE_FOLD_EFFECT(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), \
+                                                                         CB_TYPE_PAGE_FOLD_EFFECT, \
+                                                                         CbPageFoldEffect))
+#define CB_IS_PAGE_FOLD_EFFECT(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), \
+                                                                         CB_TYPE_PAGE_FOLD_EFFECT))
+#define CB_PAGE_FOLD_EFFECT_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass), \
+                                                                      CB_TYPE_PAGE_FOLD_EFFECT, \
+                                                                      CbPageFoldEffectClass))
+#define CB_IS_PAGE_FOLD_EFFECT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), \
+                                                                      CB_TYPE_PAGE_FOLD_EFFECT))
+#define CB_PAGE_FOLD_EFFECT_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), \
+                                                                        CB_TYPE_PAGE_FOLD_EFFECT, \
+                                                                        CbPageFoldEffectClass))
+
+typedef struct _CbPageFoldEffectPrivate CbPageFoldEffectPrivate;
+typedef struct _CbPageFoldEffect        CbPageFoldEffect;
+typedef struct _CbPageFoldEffectClass   CbPageFoldEffectClass;
+
+/* object */
+struct _CbPageFoldEffect
+{
+  ClutterDeformEffect      parent_instance;
+  CbPageFoldEffectPrivate *priv;
+};
+
+/* class */
+struct _CbPageFoldEffectClass
+{
+  ClutterDeformEffectClass parent_class;
+};
+
+ClutterEffect *cb_page_fold_effect_new (gdouble angle,
+                                        gdouble period);
+void cb_page_fold_effect_set_angle (CbPageFoldEffect *effect,
+                                    gdouble           angle);
+void cb_page_fold_effect_set_period (CbPageFoldEffect *effect,
+                                     gdouble           period);
+gdouble cb_page_fold_effect_get_period (CbPageFoldEffect *effect);
+gdouble cb_page_fold_effect_get_angle (CbPageFoldEffect *effect);
+
+#endif /* __CB_PAGE_FOLD_EFFECT_H__ */
+</pre></div></div><br class="example-break"><div class="example"><a name="effects-custom-deform-example-2"></a><p class="title"><b>Example 9.8. <code class="filename">cb-page-fold-effect.c</code> (code file)</b></p><div class="example-contents"><pre class="programlisting">#include &lt;math.h&gt;
+#include "cb-page-fold-effect.h"
+
+G_DEFINE_TYPE (CbPageFoldEffect, cb_page_fold_effect, CLUTTER_TYPE_DEFORM_EFFECT);
+
+#define CB_PAGE_FOLD_EFFECT_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE ((obj), \
+                                                                           CB_TYPE_PAGE_FOLD_EFFECT, \
+                                                                           CbPageFoldEffectPrivate))
+
+struct _CbPageFoldEffectPrivate
+{
+  gdouble angle;
+  gdouble period;
+};
+
+enum {
+  PROP_0,
+
+  PROP_PERIOD,
+  PROP_ANGLE,
+
+  PROP_LAST
+};
+
+static GParamSpec *obj_props[PROP_LAST];
+
+/* ClutterDeformEffect implementation */
+static void
+cb_page_fold_effect_deform_vertex (ClutterDeformEffect *effect,
+                                   gfloat               width,
+                                   gfloat               height,
+                                   CoglTextureVertex   *vertex)
+{
+  CbPageFoldEffectPrivate *priv = CB_PAGE_FOLD_EFFECT (effect)-&gt;priv;
+
+  gfloat radians = (priv-&gt;angle * priv-&gt;period) / (180.0f / G_PI);
+
+  /* rotate from the center of the actor on the y axis */
+  gfloat adjusted_x = vertex-&gt;x - (width / 2);
+
+  /* only rotate vertices to the right of the middle of the actor */
+  if (adjusted_x &gt;= 0.0)
+    {
+      vertex-&gt;x = (vertex-&gt;z * sin (radians))
+                  + (adjusted_x * cos (radians))
+                  + width / 2;
+
+      /* NB add 1 to z to prevent "z fighting"; otherwise, when fully-folded
+       * the image has "stripes" where vertices from the folded part
+       * of the actor interfere with vertices from the unfolded part
+       */
+      vertex-&gt;z = (vertex-&gt;z * cos (radians))
+                  + (adjusted_x * sin (radians))
+                  + 1;
+    }
+
+  /* adjust depth of all vertices so they fit inside the actor while folding;
+   * this has the effect of making the image smaller within the texture,
+   * but does produce a cleaner fold animation
+   */
+  vertex-&gt;z -= width / 2;
+}
+
+/* GObject implementation */
+static void
+cb_page_fold_effect_set_property (GObject      *gobject,
+                                  guint         prop_id,
+                                  const GValue *value,
+                                  GParamSpec   *pspec)
+{
+  CbPageFoldEffect *effect = CB_PAGE_FOLD_EFFECT (gobject);
+
+  switch (prop_id)
+    {
+    case PROP_PERIOD:
+      cb_page_fold_effect_set_period (effect, g_value_get_double (value));
+      break;
+
+    case PROP_ANGLE:
+      cb_page_fold_effect_set_angle (effect, g_value_get_double (value));
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+    }
+}
+
+static void
+cb_page_fold_effect_get_property (GObject    *gobject,
+                                  guint       prop_id,
+                                  GValue     *value,
+                                  GParamSpec *pspec)
+{
+  CbPageFoldEffectPrivate *priv = CB_PAGE_FOLD_EFFECT (gobject)-&gt;priv;
+
+  switch (prop_id)
+    {
+    case PROP_PERIOD:
+      g_value_set_double (value, priv-&gt;period);
+      break;
+
+    case PROP_ANGLE:
+      g_value_set_double (value, priv-&gt;angle);
+      break;
+
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (gobject, prop_id, pspec);
+      break;
+    }
+}
+
+/* GObject class and instance init */
+static void
+cb_page_fold_effect_class_init (CbPageFoldEffectClass *klass)
+{
+  GParamSpec *pspec;
+  ClutterDeformEffectClass *effect_class = CLUTTER_DEFORM_EFFECT_CLASS (klass);
+  GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+
+  effect_class-&gt;deform_vertex = cb_page_fold_effect_deform_vertex;
+
+  gobject_class-&gt;set_property = cb_page_fold_effect_set_property;
+  gobject_class-&gt;get_property = cb_page_fold_effect_get_property;
+
+  g_type_class_add_private (klass, sizeof (CbPageFoldEffectPrivate));
+
+  /**
+   * CbPageFoldEffect:period:
+   *
+   * The period of the page fold, between 0.0 (no fold) and
+   * 1.0 (fully folded)
+   */
+  pspec = g_param_spec_double ("period",
+                               "Period",
+                               "The period of the page fold",
+                               0.0, 1.0,
+                               0.0,
+                               G_PARAM_READWRITE);
+  obj_props[PROP_PERIOD] = pspec;
+  g_object_class_install_property (gobject_class, PROP_PERIOD, pspec);
+
+  /**
+   * CbPageFoldEffect:angle:
+   *
+   * The angle of the page fold, in degrees, between 0.0 and 180.0
+   */
+  pspec = g_param_spec_double ("angle",
+                               "Angle",
+                               "The angle of the page fold, in degrees",
+                               0.0, 180.0,
+                               0.0,
+                               G_PARAM_READWRITE);
+  obj_props[PROP_ANGLE] = pspec;
+  g_object_class_install_property (gobject_class, PROP_ANGLE, pspec);
+}
+
+static void
+cb_page_fold_effect_init (CbPageFoldEffect *self)
+{
+  CbPageFoldEffectPrivate *priv;
+
+  priv = self-&gt;priv = CB_PAGE_FOLD_EFFECT_GET_PRIVATE (self);
+
+  priv-&gt;period = 0.0;
+  priv-&gt;angle = 0.0;
+}
+
+/* public API */
+ClutterEffect *
+cb_page_fold_effect_new (gdouble angle,
+                         gdouble period)
+{
+  return g_object_new (CB_TYPE_PAGE_FOLD_EFFECT,
+                       "angle", angle,
+                       "period", period,
+                       NULL);
+}
+
+/**
+ * cb_page_fold_effect_set_period:
+ * @effect: a #CbPageFoldEffect
+ * @period: the period of the page fold, between 0.0 and 1.0
+ *
+ * Sets the period of the page fold, between 0.0 (no fold)
+ * and 1.0 (fully folded)
+ */
+void
+cb_page_fold_effect_set_period (CbPageFoldEffect *effect,
+                                gdouble           period)
+{
+  g_return_if_fail (CB_IS_PAGE_FOLD_EFFECT (effect));
+  g_return_if_fail (period &gt;= 0.0 &amp;&amp; period &lt;= 1.0);
+
+  effect-&gt;priv-&gt;period = period;
+
+  clutter_deform_effect_invalidate (CLUTTER_DEFORM_EFFECT (effect));
+}
+
+/**
+ * cb_page_fold_effect_get_period:
+ * @effect: a #CbPageFoldEffect
+ *
+ * Retrieves the value set using cb_page_fold_effect_get_period()
+ *
+ * Return value: the period of the page fold
+ */
+gdouble
+cb_page_fold_effect_get_period (CbPageFoldEffect *effect)
+{
+  g_return_val_if_fail (CB_IS_PAGE_FOLD_EFFECT (effect), 0.0);
+
+  return effect-&gt;priv-&gt;period;
+}
+
+/**
+ * cb_page_fold_effect_set_angle:
+ * @effect: #CbPageFoldEffect
+ * @angle: the angle of the page fold, in degrees
+ *
+ * Sets the angle of the page fold, in degrees; must be a value between
+ * 0.0 and 180.0
+ */
+void
+cb_page_fold_effect_set_angle (CbPageFoldEffect *effect,
+                               gdouble           angle)
+{
+  g_return_if_fail (CB_IS_PAGE_FOLD_EFFECT (effect));
+  g_return_if_fail (angle &gt;= 0.0 &amp;&amp; angle &lt;= 180.0);
+
+  effect-&gt;priv-&gt;angle = angle;
+
+  clutter_deform_effect_invalidate (CLUTTER_DEFORM_EFFECT (effect));
+}
+
+/**
+ * cb_page_fold_effect_get_angle:
+ * @effect: a #CbPageFoldEffect:
+ *
+ * Retrieves the angle of the page fold, in degrees
+ *
+ * Return value: the angle of the page fold
+ */
+gdouble
+cb_page_fold_effect_get_angle (CbPageFoldEffect *effect)
+{
+  g_return_val_if_fail (CB_IS_PAGE_FOLD_EFFECT (effect), 0.0);
+
+  return effect-&gt;priv-&gt;angle;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="effects-custom-deform-example-3"></a><p class="title"><b>Example 9.9. Application which uses <span class="type">CbPageFoldEffect</span>
+        to do animated folding of a <span class="type">ClutterTexture</span></b></p><div class="example-contents"><pre class="programlisting">/* Example of using a custom CbPageFoldEffect to do
+ * an animated fold of a texture containing an image
+ *
+ * Pass the full path to the image on the command line;
+ * click on the texture to trigger the folding animation
+ */
+#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#include "cb-page-fold-effect.h"
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+
+static gboolean
+button_pressed_cb (ClutterActor *actor,
+                   ClutterEvent *event,
+                   gpointer      user_data)
+{
+  ClutterState *transitions = CLUTTER_STATE (user_data);
+
+  if (g_strcmp0 (clutter_state_get_state (transitions), "folded") == 0)
+    clutter_state_set_state (transitions, "unfolded");
+  else
+    clutter_state_set_state (transitions, "folded");
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *texture;
+  ClutterEffect *effect;
+  ClutterState *transitions;
+  GError *error = NULL;
+
+  gchar *filename;
+
+  if (argc &lt; 2)
+    {
+      g_print ("Usage: %s &lt;path to image file&gt;\n", argv[0]);
+      return EXIT_FAILURE;
+    }
+
+  filename = argv[1];
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 300);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  texture = clutter_texture_new ();
+  clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture), TRUE);
+  clutter_actor_set_width (texture, 400);
+  clutter_actor_set_reactive (texture, TRUE);
+  clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                                 filename,
+                                 &amp;error);
+
+  if (error != NULL)
+    {
+      g_critical ("Error loading texture from file %s; error was:\n%s",
+                  filename,
+                  error-&gt;message);
+      return EXIT_FAILURE;
+    }
+
+  /* create the page fold effect instance with destination fold angle
+   * of 180 degrees and starting period of 0 (no folding)
+   */
+  effect = cb_page_fold_effect_new (180.0, 0.0);
+
+  /* add the effect to the texture actor */
+  clutter_actor_add_effect (texture, effect);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), texture);
+
+  /* animation for the period property of the effect,
+   * to animate its value between 0.0 and 1.0 and back
+   */
+  transitions = clutter_state_new ();
+  clutter_state_set_duration (transitions, NULL, NULL, 500);
+
+  clutter_state_set_duration (transitions,
+                              "partially-folded",
+                              "folded",
+                              375);
+
+  clutter_state_set (transitions, NULL, "folded",
+                     effect, "period", CLUTTER_LINEAR, 1.0,
+                     NULL);
+
+  clutter_state_set (transitions, NULL, "partially-folded",
+                     effect, "period", CLUTTER_LINEAR, 0.25,
+                     NULL);
+
+  clutter_state_set (transitions, NULL, "unfolded",
+                     effect, "period", CLUTTER_LINEAR, 0.0,
+                     NULL);
+
+  clutter_state_warp_to_state (transitions, "partially-folded");
+
+  g_signal_connect (texture,
+                    "button-press-event",
+                    G_CALLBACK (button_pressed_cb),
+                    transitions);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (transitions);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="effects-basic.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="effects.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="contributing.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">2. Changing an actor's paint sequence using
+    <span class="type">ClutterEffect</span> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Appendix 1. Contributing to this document</td></tr></table></div></body></html>

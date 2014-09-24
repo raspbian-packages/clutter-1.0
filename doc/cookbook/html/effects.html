@@ -1,0 +1,140 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Chapter 9. Effects</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="index.html" title="The Clutter Cookbook"><link rel="prev" href="script-state.html" title="4. Connecting ClutterState states in ClutterScript"><link rel="next" href="effects-basic.html" title="2. Changing an actor's paint sequence using ClutterEffect"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 9. Effects</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="script-state.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="effects-basic.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="effects"></a>Chapter 9. Effects</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="section"><a href="effects.html#effects-introduction">1. Introduction</a></span></dt><dd><dl><dt><span class="section"><a href="effects.html#idm236914570528">1.1. Creating effects using the abstract effect classes</a></span></dt><dt><span class="section"><a href="effects.html#effects-introduction-using-the-built-in-effects">1.2. Using the built-in effects</a></span></dt></dl></dd><dt><span class="section"><a href="effects-basic.html">2. Changing an actor's paint sequence using
+    <span class="type">ClutterEffect</span></a></span></dt><dd><dl><dt><span class="section"><a href="effects-basic.html#idm236911099264">2.1. Problem</a></span></dt><dt><span class="section"><a href="effects-basic.html#idm236911092800">2.2. Solution</a></span></dt><dt><span class="section"><a href="effects-basic.html#idm236910326464">2.3. Discussion</a></span></dt><dt><span class="section"><a href="effects-basic.html#effects-basic-example">2.4. Full example</a></span></dt></dl></dd><dt><span class="section"><a href="effects-custom-deform.html">3. Creating and animating a custom <span class="type">ClutterDeformEffect</span></a></span></dt><dd><dl><dt><span class="section"><a href="effects-custom-deform.html#idm236910423536">3.1. Problem</a></span></dt><dt><span class="section"><a href="effects-custom-deform.html#effects-custom-deform-solution">3.2. Solution</a></span></dt><dt><span class="section"><a href="effects-custom-deform.html#effects-custom-deform-discussion">3.3. Discussion</a></span></dt><dt><span class="section"><a href="effects-custom-deform.html#idm236910686896">3.4. Full example</a></span></dt></dl></dd></dl></div><div class="epigraph"><p>Don't wake me for the end of the world unless it has very
+    good special effects</p><div class="attribution"><span>—<span class="attribution">Roger Zelazny, from <em class="citetitle">Prince of Chaos</em>
+    </span></span></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="effects-introduction"></a>1. Introduction</h2></div></div></div><p>Effects modify an actor's appearance, such
+    as how it is positioned, colored and textured.</p><p>The Clutter API for effects contains several
+    abstract classes you can subclass to create your own effects.
+    It also contains several built-in effects you can use to
+    modify the visual appearance of actors in a variety of ways.</p><p>The recipes in this section of the cookbook cover how to create
+    your own effects as well as how to apply Clutter's effects.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm236914570528"></a>1.1. Creating effects using the abstract effect classes</h3></div></div></div><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>One of the original design goals of Clutter was to abstract
+        the complexity of GL. However, the effects API partially circumvents
+        these abstractions, to give you finer-grained access to the
+        graphics pipeline. Therefore, if you want to write your own effects,
+        some understanding of Cogl, OpenGL, and general graphics programming
+        is essential.</p></div><p>Each abstract effect class is tailored to modifying different
+      aspects of an actor, as explained below:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><b><span class="type">ClutterEffect</span>. </b>If you're just using the Clutter and Cogl APIs to
+            decorate an actor, this is simplest type of effect to
+            implement.</p><p>Subclassing <span class="type">ClutterEffect</span> enables you to
+          "wrap" how an actor is painted, by injecting some code before
+          and/or after the actor's own <code class="function">paint()</code>
+          implementation.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This is the preferred way to modify how an actor is
+            painted, short of creating your own actor subclass.</p></div><p><span class="emphasis"><em>Subclasses of
+          <span class="type">ClutterEffect</span></em></span>:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p><b><span class="type">ClutterOffscreenEffect</span>. </b>Use this class as a basis if you need GL textures
+                for your effect.</p><p>GL textures are required for effects which need
+              an offscreen framebuffer. The offscreen framebuffer is
+              used to store a modified rendering of an actor (e.g.
+              with its colors altered or with deformed geometry).
+              This buffer is then redirected to a texture in the
+              stage window.</p><p>An example is <span class="type">ClutterBlurEffect</span>,
+              which uses a GLSL fragment shader to blur an
+              actor's appearance in an offscreen framebuffer.</p><p><span class="emphasis"><em>Subclasses of
+              <span class="type">ClutterOffscreenEffect</span></em></span>:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: square; "><li class="listitem"><p><b><span class="type">ClutterDeformEffect</span>. </b>Use this base class if you want to modify
+                    an actor's geometry, at the level of individual
+                    vertices.</p><p><span class="type">ClutterDeformEffect</span> removes the
+                  complexity of dealing with vertex-based deformations
+                  at the OpenGL level, instead enabling you to easily plug
+                  a deformation callback into the graphics pipeline.</p><p>If you are writing your own deform effects,
+                  a good example to work from is
+                  <span class="type">ClutterPageTurnEffect</span>.</p><p>There is also a
+                  <a class="link" href="effects-custom-deform.html" title="3. Creating and animating a custom ClutterDeformEffect">recipe which
+                  explains how to implement a simple custom deform
+                  effect</a> (a page fold).</p></li><li class="listitem"><p><b><span class="type">ClutterShaderEffect</span>. </b>Use this if you want to apply custom
+                    GLSL vertex or fragment shaders to your actors.</p><p>Writing <span class="type">ClutterShaderEffects</span> gives
+                  you very fine-grained control over the GL pipeline.
+                  However, this makes them the most complex
+                  effects to implement.</p><div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Tip</h3><p>If you want to write your own GLSL shaders, the
+                    <a class="ulink" href="http://www.opengl.org/documentation/glsl/" target="_top">GLSL
+                    specification</a> is a good starting point.</p></div></li></ul></div></li></ul></div></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="effects-introduction-using-the-built-in-effects"></a>1.2. Using the built-in effects</h3></div></div></div><p>Clutter comes with a number of built-in effects
+      which can easily be applied to your actors. This section
+      explains how to do this.</p><p>First, create an actor. For this
+      example, we use a texture loaded with an image:</p><div class="informalexample"><pre class="programlisting">/* filename could be set from command line or constant */
+gchar *filename;
+
+/* create a texture */
+ClutterActor *texture = clutter_texture_new ();
+
+/* ...set texture size, keep aspect ratio etc... */
+
+/* NB ignoring missing file errors here for brevity */
+clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                               filename,
+                               NULL);
+
+/* ...add texture to the stage... */</pre></div><p>Next, create an instance of an effect; here, we're
+      creating a <span class="type">ClutterColorizeEffect</span> with a pink tint:</p><div class="informalexample"><pre class="programlisting">ClutterColor *pink = clutter_color_new (230, 187, 210, 255);
+ClutterEffect *effect = clutter_colorize_effect_new (pink);</pre></div><p>Finally, apply the effect to the actor:</p><div class="informalexample"><pre class="programlisting">clutter_actor_add_effect (texture, effect);</pre></div><p>The result in this case is an image colorized with
+      a pink tint, like this:</p><div class="screenshot"><div class="mediaobject"><img src="images/effects-built-in.png" alt="Applying a ClutterColorizeEffect to a texture loaded with an image (drawing by Madeleine Smith)"></div></div><p>The same set of steps applies for any of the built-in
+      Clutter effects. Your own custom effects classes should also
+      behave in a similar way: constructors should return
+      <span class="type">ClutterEffect</span> instances so your effect can
+      be added to an actor through the standard API.</p><p>One further thing worth mentioning is that because an
+      effect is a GObject, any properties you expose for your effect
+      can be animated  via implicit animations,
+      <span class="type">ClutterAnimator</span> or <span class="type">ClutterState</span>. For
+      example, the <span class="type">ClutterPageTurnEffect</span> can be animated
+      by manipulating its <code class="varname">period</code> property. An example
+      of how to do this for your own effect is given in the
+      <a class="link" href="effects-custom-deform.html" title="3. Creating and animating a custom ClutterDeformEffect">custom deform effect
+      recipe</a>.</p><p>The full code for the <span class="type">ClutterColorizeEffect</span>
+      example is below.</p><div class="example"><a name="effects-introduction-example-1"></a><p class="title"><b>Example 9.1. Applying a <span class="type">ClutterColorizeEffect</span> to
+        a texture loaded with an image</b></p><div class="example-contents"><pre class="programlisting">#include &lt;clutter/clutter.h&gt;
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *texture;
+  ClutterConstraint *constraint_x;
+  ClutterConstraint *constraint_y;
+  ClutterColor *pink;
+  ClutterEffect *effect;
+  gchar *filename;
+
+  if (argc &lt; 2)
+    {
+      g_print ("Usage: %s &lt;path to image file&gt;\n", argv[0]);
+      return 1;
+    }
+
+  filename = argv[1];
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  texture = clutter_texture_new ();
+  clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture), TRUE);
+  clutter_actor_set_width (texture, 300);
+
+  /* NB ignoring missing file errors here for brevity */
+  clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                                 filename,
+                                 NULL);
+
+  /* align the texture on the x and y axes */
+  constraint_x = clutter_align_constraint_new (stage, CLUTTER_ALIGN_X_AXIS, 0.5);
+  constraint_y = clutter_align_constraint_new (stage, CLUTTER_ALIGN_Y_AXIS, 0.5);
+  clutter_actor_add_constraint (texture, constraint_x);
+  clutter_actor_add_constraint (texture, constraint_y);
+
+  /* create a colorize effect with pink tint */
+  pink = clutter_color_new (230, 187, 210, 255);
+  effect = clutter_colorize_effect_new (pink);
+
+  /* apply the effect to the texture */
+  clutter_actor_add_effect (texture, effect);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), texture);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return 0;
+}
+</pre></div></div><br class="example-break"></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="script-state.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="effects-basic.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4. Connecting <span class="type">ClutterState</span> states in <span class="type">ClutterScript</span> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 2. Changing an actor's paint sequence using
+    <span class="type">ClutterEffect</span></td></tr></table></div></body></html>
