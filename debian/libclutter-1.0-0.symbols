@@ -127,6 +127,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_get_next_sibling@Base 1.10.0
  clutter_actor_get_offscreen_redirect@Base 1.10.0
  clutter_actor_get_opacity@Base 1.10.0
+ clutter_actor_get_opacity_override@Base 1.22.0
  clutter_actor_get_paint_box@Base 1.10.0
  clutter_actor_get_paint_opacity@Base 1.10.0
  clutter_actor_get_paint_visibility@Base 1.10.0
@@ -262,6 +263,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_set_name@Base 1.10.0
  clutter_actor_set_offscreen_redirect@Base 1.10.0
  clutter_actor_set_opacity@Base 1.10.0
+ clutter_actor_set_opacity_override@Base 1.22.0
  clutter_actor_set_parent@Base 1.10.0
  clutter_actor_set_pivot_point@Base 1.11.10
  clutter_actor_set_pivot_point_z@Base 1.11.10
@@ -656,16 +658,16 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_eglx_display@Base 1.16.0
  (arch=linux-any)clutter_evdev_add_filter@Base 1.19.8
  (arch=linux-any)clutter_evdev_event_sequence_get_slot@Base 1.19.8
- (arch=linux-any)clutter_evdev_get_keyboard_map@Base 1.18.2-2~
+ (arch=linux-any)clutter_evdev_get_keyboard_map@Base 1.18.2~
  (arch=linux-any)clutter_evdev_input_device_get_libinput_device@Base 1.19.8
- (arch=linux-any)clutter_evdev_reclaim_devices@Base 1.18.2-2~
- (arch=linux-any)clutter_evdev_release_devices@Base 1.18.2-2~
+ (arch=linux-any)clutter_evdev_reclaim_devices@Base 1.18.2~
+ (arch=linux-any)clutter_evdev_release_devices@Base 1.18.2~
  (arch=linux-any)clutter_evdev_remove_filter@Base 1.19.8
- (arch=linux-any)clutter_evdev_set_device_callbacks@Base 1.18.2-2~
+ (arch=linux-any)clutter_evdev_set_device_callbacks@Base 1.18.2~
  (arch=linux-any)clutter_evdev_set_keyboard_layout_index@Base 1.19.8
- (arch=linux-any)clutter_evdev_set_keyboard_map@Base 1.18.2-2~
- (arch=linux-any)clutter_evdev_set_keyboard_repeat@Base 1.18.2-2~
- (arch=linux-any)clutter_evdev_set_pointer_constrain_callback@Base 1.18.2-2~
+ (arch=linux-any)clutter_evdev_set_keyboard_map@Base 1.18.2~
+ (arch=linux-any)clutter_evdev_set_keyboard_repeat@Base 1.18.2~
+ (arch=linux-any)clutter_evdev_set_pointer_constrain_callback@Base 1.18.2~
  (arch=linux-any)clutter_evdev_warp_pointer@Base 1.19.8
  clutter_event_add_filter@Base 1.17.6
  clutter_event_copy@Base 1.10.0
@@ -862,8 +864,10 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_input_device_get_n_keys@Base 1.10.0
  clutter_input_device_get_pointer_actor@Base 1.10.0
  clutter_input_device_get_pointer_stage@Base 1.10.0
+ clutter_input_device_get_product_id@Base 1.22.0
  clutter_input_device_get_slave_devices@Base 1.10.0
  clutter_input_device_get_type@Base 1.10.0
+ clutter_input_device_get_vendor_id@Base 1.22.0
  clutter_input_device_grab@Base 1.10.0
  clutter_input_device_keycode_to_evdev@Base 1.10.0
  clutter_input_device_sequence_get_grabbed_actor@Base 1.11.10
@@ -1222,6 +1226,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_shader_effect_set_shader_source@Base 1.10.0
  clutter_shader_effect_set_uniform@Base 1.10.0
  clutter_shader_effect_set_uniform_value@Base 1.10.0
+ clutter_shader_error_get_type@Base 1.22.0
  clutter_shader_error_quark@Base 1.10.0
  clutter_shader_float_get_type@Base 1.10.0
  clutter_shader_get_cogl_fragment_shader@Base 1.10.0
@@ -1639,6 +1644,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_x11_get_stage_visual@Base 1.10.0
  clutter_x11_get_stage_window@Base 1.10.0
  clutter_x11_get_use_argb_visual@Base 1.10.0
+ clutter_x11_get_use_stereo_stage@Base 1.22.0
  clutter_x11_get_visual_info@Base 1.10.0
  clutter_x11_handle_event@Base 1.10.0
  clutter_x11_has_composite_extension@Base 1.10.0
@@ -1648,6 +1654,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_x11_set_display@Base 1.10.0
  clutter_x11_set_stage_foreign@Base 1.10.0
  clutter_x11_set_use_argb_visual@Base 1.10.0
+ clutter_x11_set_use_stereo_stage@Base 1.22.0
  clutter_x11_texture_pixmap_get_type@Base 1.10.0
  clutter_x11_texture_pixmap_new@Base 1.10.0
  clutter_x11_texture_pixmap_new_with_pixmap@Base 1.10.0
