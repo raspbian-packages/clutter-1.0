@@ -1,3 +1,16 @@
+clutter-1.0 (1.22.2-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 23 May 2015 15:57:05 +0200
+
+clutter-1.0 (1.22.0-1) experimental; urgency=medium
+
+  * New upstream release
+  * d/control: Bump build-depends
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Mon, 04 May 2015 15:15:53 +0200
+
 clutter-1.0 (1.20.0-1) unstable; urgency=medium
 
   * New upstream release.
