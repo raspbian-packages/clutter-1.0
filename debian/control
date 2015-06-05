@@ -46,7 +46,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends},
 Recommends: libclutter-1.0-common
-Breaks: libcogl9, libcogl11, libcogl12, libcogl15, libmutter0d, libmutter0e (<< 3.13.4),
+Breaks: libcogl9,
         cinnamon-session (<< 2.6.2),
 Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
@@ -123,8 +123,6 @@ Section: doc
 Architecture: all
 Depends: ${misc:Depends}
 Suggests: devhelp
-Conflicts: libclutter-0.1-doc, libclutter-doc
-Replaces: libclutter-0.1-doc
 Description: Open GL based interactive canvas library (documentation)
  Clutter is an Open GL based interactive canvas library, designed for creating
  fast, mainly 2D single window applications such as media box UIs,
@@ -152,10 +150,6 @@ Architecture: any
 Depends: ${gir:Depends},
          ${shlibs:Depends},
          ${misc:Depends}
-Breaks: libclutter-1.0-0 (<< 1.0.8),
-Conflicts: gir1.0-clutter-1.0
-Replaces: libclutter-1.0-0 (<< 1.0.8),
-          gir1.0-clutter-1.0
 Description: GObject introspection data for the Clutter 1.0 library
  This package contains introspection data for the Clutter scene
  graph library.
