@@ -1,3 +1,10 @@
+clutter-1.0 (1.22.2-2) UNRELEASED; urgency=medium
+
+  * debian/control.in:
+    + Break cinnamon-session << 2.6.2. Closes: #787088.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 05 Jun 2015 15:50:37 +0200
+
 clutter-1.0 (1.22.2-1) unstable; urgency=medium
 
   * New upstream release.
