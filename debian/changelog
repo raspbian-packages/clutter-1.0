@@ -1,3 +1,11 @@
+clutter-1.0 (1.22.2-3) unstable; urgency=medium
+
+  * Brown paper bag release.
+
+  * Really upload to unstable.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 11 Jun 2015 20:07:22 +0200
+
 clutter-1.0 (1.22.2-2) unstable; urgency=medium
 
   * debian/control.in:
