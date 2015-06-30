@@ -1,10 +1,10 @@
-clutter-1.0 (1.22.4-1) UNRELEASED; urgency=medium
+clutter-1.0 (1.22.4-1) unstable; urgency=medium
 
   * New upstream release.
   * debian/libclutter-1.0-0.symbols: Add new clutter_gdk_get_visual symbol.
   * Bump debhelper compatibility level to 9.
 
- -- Michael Biebl <biebl@debian.org>  Tue, 30 Jun 2015 22:27:45 +0200
+ -- Michael Biebl <biebl@debian.org>  Tue, 30 Jun 2015 23:31:00 +0200
 
 clutter-1.0 (1.22.2-3) unstable; urgency=medium
 
