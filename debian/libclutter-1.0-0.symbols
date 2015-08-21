@@ -755,6 +755,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_gdk_get_default_display@Base 1.10.0
  clutter_gdk_get_stage_from_window@Base 1.10.0
  clutter_gdk_get_stage_window@Base 1.10.0
+ clutter_gdk_get_visual@Base 1.22.4
  clutter_gdk_handle_event@Base 1.10.0
  clutter_gdk_set_display@Base 1.10.0
  clutter_gdk_set_stage_foreign@Base 1.10.0

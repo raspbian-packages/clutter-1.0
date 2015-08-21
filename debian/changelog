@@ -1,8 +1,36 @@
-clutter-1.0 (1.22.2-1) UNRELEASED; urgency=medium
+clutter-1.0 (1.22.4-1) unstable; urgency=medium
 
   * New upstream release.
+  * debian/libclutter-1.0-0.symbols: Add new clutter_gdk_get_visual symbol.
+  * Bump debhelper compatibility level to 9.
+  * Install typelib files into multiarch paths and mark gir1.2-clutter-1.0 as
+    Multi-Arch: same.
 
- -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 23 May 2015 15:57:05 +0200
+ -- Michael Biebl <biebl@debian.org>  Tue, 30 Jun 2015 23:31:00 +0200
+
+clutter-1.0 (1.22.2-3) unstable; urgency=medium
+
+  * Brown paper bag release.
+
+  * Really upload to unstable.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Thu, 11 Jun 2015 20:07:22 +0200
+
+clutter-1.0 (1.22.2-2) unstable; urgency=medium
+
+  * debian/control.in:
+    + Break cinnamon-session << 2.6.2. Closes: #787088.
+    + Standards-Version is 3.9.6, no changes needed.
+    + Drop some obsolete Breaks/Conflicts/Replaces.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Fri, 05 Jun 2015 15:59:07 +0200
+
+clutter-1.0 (1.22.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Upload to unstable.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Sun, 24 May 2015 09:26:15 +0200
 
 clutter-1.0 (1.22.0-1) experimental; urgency=medium
 
