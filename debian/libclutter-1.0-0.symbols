@@ -45,6 +45,8 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_animatev@Base 1.10.0
  clutter_actor_apply_relative_transform_to_point@Base 1.10.0
  clutter_actor_apply_transform_to_point@Base 1.10.0
+ clutter_actor_bind_model@Base 1.23.4
+ clutter_actor_bind_model_with_properties@Base 1.23.4
  clutter_actor_box_alloc@Base 1.11.10
  clutter_actor_box_clamp_to_pixel@Base 1.10.0
  clutter_actor_box_contains@Base 1.10.0
@@ -186,8 +188,11 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_actor_insert_child_at_index@Base 1.10.0
  clutter_actor_insert_child_below@Base 1.10.0
  clutter_actor_is_in_clone_paint@Base 1.10.0
+ clutter_actor_is_mapped@Base 1.23.4
+ clutter_actor_is_realized@Base 1.23.4
  clutter_actor_is_rotated@Base 1.10.0
  clutter_actor_is_scaled@Base 1.10.0
+ clutter_actor_is_visible@Base 1.23.4
  clutter_actor_iter_destroy@Base 1.10.0
  clutter_actor_iter_init@Base 1.10.0
  clutter_actor_iter_is_valid@Base 1.11.10
@@ -685,6 +690,11 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_event_get_distance@Base 1.11.10
  clutter_event_get_event_sequence@Base 1.10.0
  clutter_event_get_flags@Base 1.10.0
+ clutter_event_get_gesture_motion_delta@Base 1.23.4
+ clutter_event_get_gesture_phase@Base 1.23.4
+ clutter_event_get_gesture_pinch_angle_delta@Base 1.23.4
+ clutter_event_get_gesture_pinch_scale@Base 1.23.4
+ clutter_event_get_gesture_swipe_finger_count@Base 1.23.4
  clutter_event_get_key_code@Base 1.10.0
  clutter_event_get_key_symbol@Base 1.10.0
  clutter_event_get_key_unicode@Base 1.10.0
@@ -1054,6 +1064,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_paint_volume_union@Base 1.10.0
  clutter_paint_volume_union_box@Base 1.10.0
  clutter_pan_action_get_acceleration_factor@Base 1.12.0
+ clutter_pan_action_get_constrained_motion_delta@Base 1.23.4
  clutter_pan_action_get_deceleration@Base 1.12.0
  clutter_pan_action_get_interpolate@Base 1.12.0
  clutter_pan_action_get_interpolated_coords@Base 1.12.0
@@ -1557,6 +1568,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_timeout_pool_add@Base 1.10.0
  clutter_timeout_pool_new@Base 1.10.0
  clutter_timeout_pool_remove@Base 1.10.0
+ clutter_touchpad_gesture_phase_get_type@Base 1.23.4
  clutter_transition_get_animatable@Base 1.10.0
  clutter_transition_get_interval@Base 1.10.0
  clutter_transition_get_remove_on_complete@Base 1.10.0
@@ -1667,7 +1679,7 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_x11_texture_pixmap_update_area@Base 1.10.0
  clutter_x11_trap_x_errors@Base 1.10.0
  clutter_x11_untrap_x_errors@Base 1.10.0
- clutter_x11_xinput_event_types_get_type@Base 1.10.0
+#MISSING: 1.23.4-1# clutter_x11_xinput_event_types_get_type@Base 1.10.0
  clutter_zoom_action_get_focal_point@Base 1.12.0
  clutter_zoom_action_get_transformed_focal_point@Base 1.12.0
  clutter_zoom_action_get_type@Base 1.12.0
