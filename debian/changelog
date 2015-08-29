@@ -1,4 +1,4 @@
-clutter-1.0 (1.23.4-1) UNRELEASED; urgency=medium
+clutter-1.0 (1.23.6-1) experimental; urgency=medium
 
   * New upstream development release.
   * Update build-dependencies according to configure.ac changes:
@@ -11,7 +11,7 @@ clutter-1.0 (1.23.4-1) UNRELEASED; urgency=medium
     missing clutter_x11_xinput_event_types_get_type which should hopefully
     be ok. No users found (except vala wrapping) on codesearch.
 
- -- Andreas Henriksson <andreas@fatal.se>  Fri, 21 Aug 2015 15:42:49 +0200
+ -- Andreas Henriksson <andreas@fatal.se>  Sat, 29 Aug 2015 10:50:53 +0200
 
 clutter-1.0 (1.22.4-1) unstable; urgency=medium
 
