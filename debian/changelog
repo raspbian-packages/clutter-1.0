@@ -1,3 +1,9 @@
+clutter-1.0 (1.24.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Fri, 18 Sep 2015 09:53:51 +0200
+
 clutter-1.0 (1.23.6-1) experimental; urgency=medium
 
   * New upstream development release.
