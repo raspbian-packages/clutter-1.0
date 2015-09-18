@@ -1,3 +1,24 @@
+clutter-1.0 (1.24.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Fri, 18 Sep 2015 09:53:51 +0200
+
+clutter-1.0 (1.23.6-1) experimental; urgency=medium
+
+  * New upstream development release.
+  * Update build-dependencies according to configure.ac changes:
+    - bump libcogl-dev to >= 1.21.2
+    - bump libglib2.0-dev to >= 2.44.0
+    - bump libinput-dev to >= 0.19.0
+  * debian/libclutter-1.0-doc.install:
+    - drop usr/share/gtk-doc/html/cally, cally api ref now part of clutters.
+  * Update debian/libclutter-1.0-0.symbols with several additions and
+    missing clutter_x11_xinput_event_types_get_type which should hopefully
+    be ok. No users found (except vala wrapping) on codesearch.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sat, 29 Aug 2015 10:50:53 +0200
+
 clutter-1.0 (1.22.4-1) unstable; urgency=medium
 
   * New upstream release.
