@@ -662,6 +662,9 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_egl_thaw_master_clock@Base 1.19.8
  clutter_eglx_display@Base 1.16.0
  (arch=linux-any)clutter_evdev_add_filter@Base 1.19.8
+ clutter_evdev_event_get_event_code@Base 1.25.6
+ clutter_evdev_event_get_relative_motion@Base 1.25.6
+ clutter_evdev_event_get_time_usec@Base 1.25.6
  (arch=linux-any)clutter_evdev_event_sequence_get_slot@Base 1.19.8
  (arch=linux-any)clutter_evdev_get_keyboard_map@Base 1.18.2~
  (arch=linux-any)clutter_evdev_input_device_get_libinput_device@Base 1.19.8
@@ -1223,7 +1226,9 @@ libclutter-1.0.so.0 libclutter-1.0-0 #MINVER#
  clutter_scroll_actor_scroll_to_rect@Base 1.11.10
  clutter_scroll_actor_set_scroll_mode@Base 1.11.10
  clutter_scroll_direction_get_type@Base 1.10.0
+ clutter_scroll_finish_flags_get_type@Base 1.25.6
  clutter_scroll_mode_get_type@Base 1.11.10
+ clutter_scroll_source_get_type@Base 1.25.6
  clutter_set_default_frame_rate@Base 1.10.0
  clutter_set_font_flags@Base 1.10.0
  clutter_set_motion_events_enabled@Base 1.10.0
