@@ -1,0 +1,385 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>8. Looping an animation</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="animations.html" title="Chapter 5. Animations"><link rel="prev" href="animations-moving.html" title="7. Moving actors"><link rel="next" href="animations-scaling.html" title="9. Animated scaling"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">8. Looping an animation</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="animations-moving.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Animations</th><td width="20%" align="right"> <a accesskey="n" href="animations-scaling.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="animations-looping"></a>8. Looping an animation</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790504722720"></a>8.1. Problem</h3></div></div></div><p>You want to loop an animation so it plays multiple times.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790504721488"></a>8.2. Solutions</h3></div></div></div><p>Each <a class="link" href="animations.html#animations-introduction-api" title="1.3. Clutter's animation API">animation
+      approach</a> can be used to create a looping animation, as
+      described in the following sections.</p><p>The animation implemented in each case is a simple repeated
+      movement of a rectangle from the right (<code class="code">x = 150.0</code>)
+      to the left (<code class="code">x = 50.0</code>) of the stage, and back again,
+      looped; like this (just a few iterations):</p><p><video controls="controls" src="videos/animations-looping.ogv"><a href="videos/animations-looping.ogv"></a></video></p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="animations-looping-solutions-implicit"></a>8.2.1. Solution 1: looping an implicit animation</h4></div></div></div><p>Implicit animations, started using
+        <code class="function">clutter_actor_animate()</code>, can be looped via
+        their associated <span class="type">ClutterTimeline</span>.</p><p>Create a <span class="type">ClutterTimeline</span> which is
+        set to loop:</p><div class="informalexample"><pre class="programlisting">ClutterTimeline *timeline = clutter_timeline_new (1000);
+clutter_timeline_set_repeat_count (timeline, -1);</pre></div><p>Use this timeline when starting an implicit animation on an
+        actor; in this case, to animate the actor's <code class="varname">x</code>
+        coordinate from its initial value to <code class="code">50.0</code>:</p><div class="informalexample"><pre class="programlisting">/* assume <code class="varname">actor</code> is a <span class="type">ClutterActor</span> instance */
+
+/* actor's initial x value is 150.0 */
+clutter_actor_set_x (actor, 150.0);
+
+/* animate the actor (starting the timeline is implicit) */
+clutter_actor_animate_with_timeline (actor,
+                                     CLUTTER_LINEAR,
+                                     timeline,
+                                     "x", 50.0,
+                                     NULL);</pre></div><p>One further technique is to repeatedly reverse the timeline's
+        direction to create a "closed loop" animation (one which returns
+        to its origin at the end of each iteration). See
+        <a class="link" href="animations-looping.html#animations-looping-discussion-closed-loop" title='8.3.2. Creating a "closed loop" with an implicit animation'>this
+        section</a> for details.</p><p><a class="link" href="animations-looping.html#animations-looping-example-1" title="Example 5.11. Looping an implicit animation">The full
+        code example</a> shows how to run an implicit animation on
+        a loop.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504706352"></a>8.2.2. Solution 2: looping with <span class="type">ClutterAnimator</span></h4></div></div></div><p>A <span class="type">ClutterAnimator</span> animation can also be looped
+        via its <span class="type">ClutterTimeline</span>. However, as
+        <span class="type">ClutterAnimator</span> enables more complex animations,
+        you don't have to manually invert the timeline at the
+        end of each iteration. Instead, you can animate
+        an actor's properties back to their initial values
+        at the end of each iteration of the loop.</p><p>Creating the timeline and setting it to loop is the same
+        as for implicit animations:</p><div class="informalexample"><pre class="programlisting">ClutterTimeline *timeline = clutter_timeline_new (2000);
+clutter_timeline_set_repeat_count (timeline, -1);</pre></div><p>Note that the timeline is twice the length of the one for
+        the implicit animation: this is because, unlike the implicit
+        animation, the movement from right to left and back again
+        is a <span class="emphasis"><em>single</em></span> animation. By contrast, in the
+        implicit animation, the timeline runs forward, for the right to
+        left movement; and then backwards, for the left to right
+        movement. So rather than a 1000ms timeline running twice (once
+        forward,  once backward for the implicit animation),
+        we have a 2000ms timeline running once (for
+        <span class="type">ClutterAnimator</span>).</p><p>Next, create a <span class="type">ClutterAnimator</span> which animates
+        the actor from right to left, then left to right:</p><div class="informalexample"><pre class="programlisting">/* assume <code class="varname">actor</code> is a <span class="type">ClutterActor</span> instance */
+ClutterAnimator *animator = clutter_animator_new ();
+
+/* use the looping timeline as the timeline for the animator */
+clutter_animator_set_timeline (animator, timeline);
+
+/* set positions for the actor at various points through the animation:
+ * at progress 0.0, x = 150.0 (right of the stage)
+ * at progress 0.5, x = 50.0 (left of the stage)
+ * at progress 1.0, x = 150.0 again (back to the right)
+ */
+clutter_animator_set (animator,
+                      actor, "x", CLUTTER_LINEAR, 0.0, 150.0,
+                      actor, "x", CLUTTER_LINEAR, 0.5, 50.0,
+                      actor, "x", CLUTTER_LINEAR, 1.0, 150.0,
+                      NULL);</pre></div><p>Finally, start the animation:</p><div class="informalexample"><pre class="programlisting">clutter_animator_start (animator);</pre></div><p>See <a class="link" href="animations-looping.html#animations-looping-example-2" title="Example 5.12. Looping with ClutterAnimator">the full
+        example</a> for more details.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504694400"></a>8.2.3. Solution 3: looping with <span class="type">ClutterState</span></h4></div></div></div><p>You can loop <span class="type">ClutterState</span> animations by
+        creating a cycle of states which
+        <a class="ulink" href="http://en.wikipedia.org/wiki/Ouroboros" target="_top">"swallows
+        its own tail"</a>: i.e. goes from a start state, through
+        intermediate state(s), back to the start state, then again
+        through the intermediate states(s), back to the start state,
+        etc., ad infinitum.</p><p>For the animation we're implementing, there are two states
+        the actor transitions between:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>The actor's <code class="varname">x</code> value
+            is <code class="code">150.0</code> (the start/end state, on the right
+            of the stage).</p></li><li class="listitem"><p>The actor's <code class="varname">x</code> value is
+            <code class="code">50.0</code> (the intermediate state, on the left
+            of the stage).</p></li></ol></div><p>Here is how to add those states to a
+        <span class="type">ClutterState</span> instance:</p><div class="informalexample"><pre class="programlisting">ClutterState *transitions = clutter_state_new ();
+
+/* the duration for a transition from any state to any other is 1 second */
+clutter_state_set_duration (transitions, NULL, NULL, 1000);
+
+clutter_state_set (transitions, NULL, "right",
+                   actor, "x", CLUTTER_LINEAR, 150.0,
+                   NULL);
+
+clutter_state_set (transitions, NULL, "left",
+                   actor, "x", CLUTTER_LINEAR, 50.0,
+                   NULL);</pre></div><p>You also need a handler to move the <span class="type">ClutterState</span>
+        to its next state, called each time a state transition
+        is completed:</p><div class="informalexample"><pre class="programlisting">/* handler to move the <span class="type">ClutterState</span> to its next state */
+static void
+next_state (ClutterState *transitions,
+            gpointer      user_data)
+{
+  const gchar *state = clutter_state_get_state (transitions);
+
+  if (g_strcmp0 (state, "right") == 0)
+    clutter_state_set_state (transitions, "left");
+  else
+    clutter_state_set_state (transitions, "right");
+}</pre></div><p>Then connect the <span class="type">ClutterState's</span>
+        <code class="code">completed</code> signal to the handler, so that each time
+        a state is reached, the transition to the next state begins:</p><div class="informalexample"><pre class="programlisting">/* connect the <span class="type">ClutterState</span> <code class="code">completed</code> signal to the handler */
+g_signal_connect (transitions,
+                  "completed",
+                  G_CALLBACK (next_state),
+                  NULL);</pre></div><p>Finally, put the <span class="type">ClutterState</span> into the start
+        state to begin the animation:</p><div class="informalexample"><pre class="programlisting">clutter_state_warp_to_state (transitions, "right");</pre></div><p>See <a class="link" href="animations-looping.html#animations-looping-example-3" title="Example 5.13. Looping with ClutterState">the full
+        example</a> for more details.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790504676016"></a>8.3. Discussion</h3></div></div></div><p>We use two different approaches to looping in the solutions:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Setting the <span class="type">ClutterTimeline</span> to loop
+          (via <code class="function">clutter_timeline_set_repeat_count()</code>). This
+          is the best approach where the timeline is explicit (for
+          <span class="type">ClutterAnimator</span> and implicit animations).</p></li><li class="listitem"><p>Cycling through states in a <span class="type">ClutterState</span>. In
+          this case, the timeline is implicit and we don't need to
+          manually control it: the loop is a consequence of cycling
+          repeatedly through a series of states.</p></li></ol></div><p>The following sections cover some other aspects of looping
+      animations.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504669952"></a>8.3.1. Looping a fixed number of times</h4></div></div></div><p><span class="type">ClutterTimeline</span> doesn't have any built-in
+        functionality to support looping a certain number of times. But
+        it is reasonably easy to count the number of iterations completed and
+        stop the animation when some limit is reached.</p><p>For example, you could use a static counter to keep track
+        of the iteration count:</p><div class="informalexample"><pre class="programlisting">static guint counter = 0;</pre></div><p>Implement the looping behaviour as in the above solutions,
+        but use a callback function to set/reset the counter each time
+        the timeline completes. For example, for the
+        <span class="type">ClutterAnimator</span> solution, you would connect the
+        <code class="code">completed</code> signal of the timeline
+        to a callback function:</p><div class="informalexample"><pre class="programlisting">g_signal_connect (timeline,
+                  "completed",
+                  G_CALLBACK (timeline_completed_cb),
+                  NULL);</pre></div><p>And implement a callback function which resets the counter and
+        stops the timeline if more than two iterations have been counted:</p><div class="informalexample"><pre class="programlisting">static void
+timeline_completed_cb (ClutterTimeline *timeline,
+                       gpointer         user_data)
+{
+  counter++;
+
+  if (counter &gt; 2)
+    {
+      counter = 0;
+      clutter_timeline_stop (timeline);
+    }
+}</pre></div><p>Note that it's simple to count iterations and
+        control the timeline using <span class="type">ClutterAnimator</span> or
+        <span class="type">ClutterState</span>, as the whole animation (right to left
+        and back) is a discrete unit. Doing the same with implicit
+        animations is possible (one forward + one backward run along the
+        timeline is one iteration). But you will be really stretching the
+        implicit animation API beyond its intended use cases.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="animations-looping-discussion-closed-loop"></a>8.3.2. Creating a "closed loop" with an implicit animation</h4></div></div></div><p>When using implicit animations, at the end of the timeline
+        (before the next iteration of the loop), an actor's properties
+        "jump" back to their initial values (as they were when the timeline
+        started). For example, in the
+        <a class="link" href="animations-looping.html#animations-looping-solutions-implicit" title="8.2.1. Solution 1: looping an implicit animation">earlier
+        solution</a>, the actor's initial <code class="varname">x</code> value was
+        <code class="code">150.0</code>; so the default behaviour on each iteration
+        of the loop would be to animate the actor to <code class="code">x = 50.0</code>
+        then jump it immediately back to <code class="code">x = 150.0</code>, before
+        continuing the loop.</p><p>To prevent this happening, you can create a "closed" loop:
+        animate the actor's properties away from their initial values, then
+        back again.</p><p>This could be done manually, by creating two separate
+        animations, one the inverse of the other, and chaining them together.</p><p>However, a simpler solution is to run forward through the timeline
+        once, and have the timeline invert itself when its end is reached.
+        The animation then continues, but in reverse. Once the backward iteration
+        completes, the timeline sets itself to run forward again, etc.</p><p>To make a timeline reverse its direction each time it
+        completes, use the <code class="function">clutter_timeline_set_auto_reverse()</code>
+        function:</p><div class="informalexample"><pre class="programlisting">clutter_timeline_set_auto_reverse (timeline, TRUE);</pre></div><p>This is the approach used in
+        <a class="link" href="animations-looping.html#animations-looping-example-1" title="Example 5.11. Looping an implicit animation">the example</a>,
+        which results in a smooth, repeated right to left,
+        left to right motion.</p><p>See <a class="link" href="animations-inversion.html" title="2. Inverting Animations">this
+        recipe</a> for more details about inverting a timeline.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="animations-looping-examples"></a>8.4. Full examples</h3></div></div></div><div class="example"><a name="animations-looping-example-1"></a><p class="title"><b>Example 5.11. Looping an implicit animation</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+
+typedef struct
+{
+  ClutterActor    *actor;
+  ClutterTimeline *timeline;
+} State;
+
+static gboolean
+key_pressed_cb (ClutterActor *actor,
+                ClutterEvent *event,
+                gpointer      user_data)
+{
+  State *state = (State *) user_data;
+
+  /* only start animating if actor isn't animating already */
+  if (clutter_actor_get_animation (state-&gt;actor) == NULL)
+    clutter_actor_animate_with_timeline (state-&gt;actor,
+                                         CLUTTER_LINEAR,
+                                         state-&gt;timeline,
+                                         "x", 50.0,
+                                         NULL);
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  State *state = g_new0 (State, 1);
+
+  ClutterActor *stage;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 300, 200);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  state-&gt;actor = clutter_rectangle_new_with_color (&amp;red_color);
+  clutter_actor_set_size (state-&gt;actor, 100, 100);
+  clutter_actor_set_position (state-&gt;actor, 150, 50);
+
+  state-&gt;timeline = clutter_timeline_new (1000);
+  clutter_timeline_set_repeat_count (state-&gt;timeline, -1);
+  clutter_timeline_set_auto_reverse (state-&gt;timeline, TRUE);
+
+  g_signal_connect (stage,
+                    "key-press-event",
+                    G_CALLBACK (key_pressed_cb),
+                    state);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), state-&gt;actor);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (state-&gt;timeline);
+  g_free (state);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="animations-looping-example-2"></a><p class="title"><b>Example 5.12. Looping with <span class="type">ClutterAnimator</span></b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+
+static gboolean
+key_pressed_cb (ClutterActor *actor,
+                ClutterEvent *event,
+                gpointer      user_data)
+{
+  ClutterTimeline *timeline = CLUTTER_TIMELINE (user_data);
+
+  if (!clutter_timeline_is_playing (timeline))
+    clutter_timeline_start (timeline);
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *actor;
+  ClutterTimeline *timeline;
+  ClutterAnimator *animator;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 300, 200);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  actor = clutter_rectangle_new_with_color (&amp;red_color);
+  clutter_actor_set_size (actor, 100, 100);
+  clutter_actor_set_position (actor, 150, 50);
+
+  timeline = clutter_timeline_new (2000);
+  clutter_timeline_set_repeat_count (timeline, -1);
+
+  animator = clutter_animator_new ();
+  clutter_animator_set_timeline (animator, timeline);
+
+  clutter_animator_set (animator,
+                        actor, "x", CLUTTER_LINEAR, 0.0, 150.0,
+                        actor, "x", CLUTTER_LINEAR, 0.5, 50.0,
+                        actor, "x", CLUTTER_LINEAR, 1.0, 150.0,
+                        NULL);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), actor);
+
+  g_signal_connect (stage,
+                    "key-press-event",
+                    G_CALLBACK (key_pressed_cb),
+                    timeline);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (animator);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="animations-looping-example-3"></a><p class="title"><b>Example 5.13. Looping with <span class="type">ClutterState</span></b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+
+static void
+next_state (ClutterState *transitions,
+            gpointer      user_data)
+{
+  const gchar *state = clutter_state_get_state (transitions);
+
+  if (g_strcmp0 (state, "right") == 0)
+    clutter_state_set_state (transitions, "left");
+  else
+    clutter_state_set_state (transitions, "right");
+}
+
+static gboolean
+key_pressed_cb (ClutterActor *actor,
+                ClutterEvent *event,
+                gpointer      user_data)
+{
+  ClutterState *transitions = CLUTTER_STATE (user_data);
+
+  if (!clutter_timeline_is_playing (clutter_state_get_timeline (transitions)))
+    next_state (transitions, NULL);
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *actor;
+  ClutterState *transitions;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 300, 200);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  actor = clutter_rectangle_new_with_color (&amp;red_color);
+  clutter_actor_set_position (actor, 150, 50);
+  clutter_actor_set_size (actor, 100, 100);
+
+  transitions = clutter_state_new ();
+  clutter_state_set_duration (transitions, NULL, NULL, 1000);
+
+  clutter_state_set (transitions, NULL, "right",
+                     actor, "x", CLUTTER_LINEAR, 150.0,
+                     NULL);
+
+  clutter_state_set (transitions, NULL, "left",
+                     actor, "x", CLUTTER_LINEAR, 50.0,
+                     NULL);
+
+  clutter_state_warp_to_state (transitions, "right");
+
+  g_signal_connect (stage,
+                    "key-press-event",
+                    G_CALLBACK (key_pressed_cb),
+                    transitions);
+
+  g_signal_connect (transitions,
+                    "completed",
+                    G_CALLBACK (next_state),
+                    NULL);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), actor);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (transitions);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="animations-moving.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="animations.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="animations-scaling.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">7. Moving actors </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 9. Animated scaling</td></tr></table></div></body></html>

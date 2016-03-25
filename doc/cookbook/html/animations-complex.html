@@ -1,0 +1,424 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>5. Creating complex animations with ClutterAnimator</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="animations.html" title="Chapter 5. Animations"><link rel="prev" href="animations-rotating.html" title="4. Rotating an actor"><link rel="next" href="animations-reuse.html" title="6. Reusing a complex animation on different actors"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Creating complex animations with
+    <span class="type">ClutterAnimator</span></th></tr><tr><td width="20%" align="left"><a accesskey="p" href="animations-rotating.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Animations</th><td width="20%" align="right"> <a accesskey="n" href="animations-reuse.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="animations-complex"></a>5. Creating complex animations with
+    <span class="type">ClutterAnimator</span></h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505719056"></a>5.1. Problem</h3></div></div></div><p>You want to create a complex animation involving one or more
+      actors. The animation will consist of a sequence of transitions
+      over multiple properties on each actor.</p><p>An example might be moving several actors between points,
+      with different types of movement for each part of the path, while
+      transforming each actor (e.g. scaling or rotating it).</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505716928"></a>5.2. Solution</h3></div></div></div><p>Use a <span class="type">ClutterAnimator</span> to define the animation.</p><p>Because there are many complex animations you
+      <span class="emphasis"><em>could</em></span> implement, the example below does
+      this:</p><p><video controls="controls" src="videos/animations-complex.ogv"><a href="videos/animations-complex.ogv"></a></video></p><p>Although this uses a single actor, the animation is complex
+      enough to make it difficult to implement with implicit animations
+      or <span class="type">ClutterState</span> (see
+      <a class="link" href="animations-complex.html#animations-complex-why-clutteranimator" title="5.3.2. Why ClutterAnimator?">the Discussion
+      section</a> for reasons why).</p><p>Here is a JSON definition of the stage, actors, and
+      the <span class="type">ClutterAnimator</span> for this
+      animation:</p><div class="example"><a name="animations-complex-example-1"></a><p class="title"><b>Example 5.2. JSON definition of a complex animation using
+        <span class="type">ClutterAnimator</span></b></p><div class="example-contents"><pre class="programlisting">[
+  {
+    "type" : "ClutterStage",
+    "id" : "stage",
+    "width" : 400,
+    "height" : 400,
+    "color" : "#333355ff",
+
+    "signals" : [
+      { "name" : "destroy", "handler" : "clutter_main_quit" },
+      { "name" : "key-press-event", "handler" : "foo_key_pressed_cb" }
+    ],
+
+    "children" : [
+      {
+        "type" : "ClutterRectangle",
+        "id" : "rectangle",
+        "color" : "red",
+        "width" : 100,
+        "height" : 100,
+        "x" : 0,
+        "y" : 0,
+        "scale-gravity" : "center"
+      }
+    ]
+  },
+
+  {
+    "type" : "ClutterAnimator",
+    "id" : "animator",
+    "duration" : 3000,
+
+    "properties" : [
+      {
+        "object" : "rectangle",
+        "name" : "x",
+        "ease-in" : true,
+        "keys" : [
+          [ 0.0, "linear", 0.0 ],
+          [ 0.1, "easeInCubic", 150.0 ],
+          [ 0.8, "linear", 150.0 ],
+          [ 1.0, "easeInCubic", 0.0 ]
+        ]
+      },
+      {
+        "object" : "rectangle",
+        "name" : "y",
+        "ease-in" : true,
+        "keys" : [
+          [ 0.0, "linear", 0.0 ],
+          [ 0.1, "easeInCubic", 150.0 ],
+          [ 0.8, "linear", 150.0 ],
+          [ 1.0, "easeInCubic", 300.0 ]
+        ]
+      },
+      {
+        "object" : "rectangle",
+        "name" : "scale-x",
+        "ease-in" : true,
+        "keys" : [
+          [ 0.1, "linear", 1.0 ],
+          [ 0.3, "easeOutBounce", 2.0 ],
+          [ 0.8, "linear", 2.0 ],
+          [ 1.0, "linear", 1.0 ]
+        ]
+      },
+      {
+        "object" : "rectangle",
+        "name" : "scale-y",
+        "ease-in" : true,
+        "keys" : [
+          [ 0.1, "linear", 1.0 ],
+          [ 0.3, "easeOutBounce", 2.0 ],
+          [ 0.8, "linear", 2.0 ],
+          [ 1.0, "linear", 1.0 ]
+        ]
+      }
+    ]
+  }
+]
+</pre></div></div><br class="example-break"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The core to understanding this example is understanding
+        how to define keys for a <span class="type">ClutterAnimator</span>. As
+        this is an involved topic, further explanation
+        is given in <a class="link" href="animations-complex.html#animations-complex-discussion-keys" title="5.3.1. Understanding keys and key frames">the
+        Discussion section</a>.</p></div><p>The program for loading this JSON definition from a file
+      is as follows:</p><div class="example"><a name="animations-complex-example-2"></a><p class="title"><b>Example 5.3. Simple program for loading a JSON script;
+        any key press starts the animation</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#define UI_FILE "animations-complex.json"
+
+/*
+ * start the animation when a key is pressed;
+ * see the signals recipe in the Script chapter for more details
+ */
+gboolean
+foo_key_pressed_cb (ClutterActor *actor,
+                    ClutterEvent *event,
+                    gpointer      user_data)
+{
+  ClutterScript *script = CLUTTER_SCRIPT (user_data);
+
+  ClutterAnimator *animator;
+  clutter_script_get_objects (script,
+                              "animator", &amp;animator,
+                              NULL);
+
+  if (clutter_timeline_is_playing (clutter_animator_get_timeline (animator)))
+    return FALSE;
+
+  clutter_animator_start (animator);
+
+  return TRUE;
+}
+
+int
+main (int argc, char *argv[])
+{
+  gchar *filename = UI_FILE;
+
+  ClutterScript *script;
+  ClutterActor *stage;
+
+  GError *error = NULL;
+
+  if (argc &gt; 1)
+    filename = argv[1];
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  script = clutter_script_new ();
+  clutter_script_load_from_file (script, filename, &amp;error);
+
+  if (error != NULL)
+   {
+     g_critical ("Error loading ClutterScript file %s\n%s", filename, error-&gt;message);
+     g_error_free (error);
+     exit (EXIT_FAILURE);
+   }
+
+  /* connect signal handlers as defined in the script */
+  clutter_script_connect_signals (script, script);
+
+  clutter_script_get_objects (script,
+                              "stage", &amp;stage,
+                              NULL);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (script);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>It is also possible to use the <span class="type">ClutterAnimator</span>
+        C API to define keys for an animation, but this will
+        typically be much more verbose than the JSON equivalent.</p><p>One other advantage of JSON is that it is much simpler
+        to tweak and test an animation, as you don't have to recompile
+        the application each time you edit it (you just load
+        the new JSON file).</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="animations-complex-discussion"></a>5.3. Discussion</h3></div></div></div><p>You can think of <span class="type">ClutterAnimator</span>
+      as a way to give directions to actors. For example,
+      you could give a real (human) actor a direction like "move
+      downstage; when you get there, stop and
+      rotate 90 degrees to your right". In code,
+      this might equate to a transition in the <code class="varname">x</code>
+      and <code class="varname">y</code> properties of the actor, followed by a
+      rotation in one axis.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p><span class="type">ClutterAnimator</span> can give
+        "directions" to any type of GObject, but we concentrate
+        on animating <span class="type">ClutterActors</span> in this section.</p></div><p>Each direction like this has an implicit
+      timeline, spanning the length of time the direction should
+      take to fulfil (you set the length of the timeline through
+      the <code class="varname">duration</code> property of the
+      <span class="type">ClutterAnimator</span>). But within that timeline, you may
+      change the proportion of time spent on each action: "move
+      downstage quickly, then slowly rotate 90 degrees
+      to your right". The direction is the same, but we've
+      specified how much of the timeline should be devoted to each
+      action.</p><p>In <span class="type">ClutterAnimator</span>, this concept is
+      captured by <span class="emphasis"><em>key frames</em></span>. A
+      key frame represents a point somewhere along the timeline,
+      with one or more target property values for one or more actors.
+      A <span class="type">ClutterAnimator</span> manages the transitions
+      between property values for each object, ensuring that
+      the target values are reached when the associated key frame
+      is reached.</p><p>To change the amount of time a transition
+      should take, you change the percentage of the timeline
+      between key frames. Using our real stage directions as an
+      example, you might define the key frames like this:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>0.2 (after 20% of the timeline):</em></span>
+          arrive downstage</p></li><li class="listitem"><p><span class="emphasis"><em>1.0 (by the end of the timeline):</em></span>
+          achieve a 90 degree rotation to the right</p></li></ul></div><p>See
+      <a class="link" href="animations-complex.html#animations-complex-discussion-keys" title="5.3.1. Understanding keys and key frames">this
+      section</a> for more details about keys and key frames.</p><p>Finally, a direction might be further refined with
+      a description of the kind of movement to use:
+      rather than saying "move downstage quickly, then
+      slowly rotate 90 degrees to your right" a director could say:
+      "start off slowly, but build up to a run;
+      run downstage quickly; then stop and start rotating
+      slowly to your right, gradually speeding up, turn a little more, then slow
+      down gradually; you should end up rotated 90 degrees to your right"
+      (this granularity of description is closer to what you might
+      see in dance notation like
+      <a class="ulink" href="" target="_top">Laban</a>;
+      though of course you can't animate human opacity, scale, dimensions
+      etc...).</p><p><span class="type">ClutterAnimator</span> gives you this level of
+      granularity. Each transition to a property value between
+      key frames can have a separate <span class="emphasis"><em>easing mode</em></span>:
+      for example, starting off slowly and building to a constant
+      speed equates to an "ease in" mode; starting slowly, speeding
+      up, maintaining a constant speed, then gradually slowing down
+      equates to "ease in and ease out".</p><p>To summarise: creating a complex animation means deciding:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Which properties need to change on which actors?</p></li><li class="listitem"><p>What target value should each property transition to?</p></li><li class="listitem"><p>How quickly (by which key frame) should the property
+          reach the target value?</p></li><li class="listitem"><p>What "shape" (easing mode) should the change to
+          the target value follow?</p></li></ul></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="animations-complex-discussion-keys"></a>5.3.1. Understanding keys and key frames</h4></div></div></div><p>A <span class="type">ClutterAnimator</span> maintains a list of
+        <code class="varname">properties</code> objects, each being a unique pair
+        of <code class="varname">object</code> (an object to be animated) +
+        <code class="varname">name</code> (name of the property
+        to be animated on that object).</p><p>Each <code class="varname">properties</code> object in turn has a
+        list of keys, with each key having three elements:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The <span class="emphasis"><em>key frame</em></span>, expressed as a fraction
+            (between 0.0 and 1.0) of the duration of the animation. At this
+            point, the named property should reach a target value.</p></li><li class="listitem"><p>The <span class="emphasis"><em>easing mode</em></span> to use to transition
+            the property to that value.</p></li><li class="listitem"><p>The <span class="emphasis"><em>target value</em></span> the property
+            should transition to.</p></li></ul></div><p>For example:</p><div class="informalexample"><pre class="programlisting">{
+  "object" : "rectangle",
+  "name" : "x",
+  "ease-in" : true,
+  "keys" : [
+    [ 0.0, "linear", 0.0 ],
+    [ 0.1, "easeInCubic", 150.0 ],
+    [ 0.8, "linear", 150.0 ],
+    [ 1.0, "easeInCubic", 0.0 ]
+  ]
+}</pre></div><p>defines a sequence of transitions for the <code class="varname">x</code>
+        property (position on the x axis) of the <code class="code">rectangle</code>
+        object, as follows:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span class="emphasis"><em>[ 0.0, "linear", 0.0 ]</em></span>:
+            At the start of the animation, <code class="code">x</code> should be
+            0.0; <code class="code">linear</code> is used as the easing mode, as there
+            is no transition here.</p></li><li class="listitem"><p><span class="emphasis"><em>[ 0.1, "easeInCubic", 150.0 ]</em></span>:
+            By 10% of the way through the animation,
+            <code class="code">x</code> should reach a value of <code class="code">150.0</code>.
+            This moves the rectangle horizontally across the stage.</p><p>The <code class="code">easeInCubic</code> easing mode means that
+            the transition to the new value starts slow and speeds up.
+            This makes the movement look more "natural".</p></li><li class="listitem"><p><span class="emphasis"><em>[ 0.8, "linear", 150.0 ]</em></span>:
+            From 10% of the way through the animation to 80%
+            of the way through, the <code class="code">x</code> value remains at
+            <code class="code">150.0</code>. This makes the rectangle stay still
+            on the x axis throughout this period.</p><p>It's important to specify interim key frames if
+            in a later key frame you intend to change the value again
+            (as is done for the <code class="code">x</code> value here). Otherwise
+            you can get premature transitions to a value over longer
+            periods than you intended. By specifying the interim
+            key frames where the value remains constant, you ensure
+            that it doesn't change before you want it to.</p></li><li class="listitem"><p><span class="emphasis"><em>[ 1.0, "easeInCubic", 0.0 ]</em></span>:
+            From 80% of the way through the animation to the end,
+            the <code class="code">x</code> value should transition back to
+            <code class="code">0.0</code>. This moves the actor back to its
+            starting position on the x axis. Again, an <code class="code">easeInCubic</code>
+            easing mode is used to make the transition appear more natural.</p></li></ol></div><p>There are two more properties you can set for each
+        object/property pair:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Set <code class="varname">ease-in</code> to <code class="code">true</code> to
+            animate to the target value at the first key frame. If
+            <code class="varname">ease-in</code> is false, the animation will
+            "jump" to the target value instead (if the target value is
+            different from the current value).</p></li><li class="listitem"><p>Set <code class="varname">interpolation</code> to either
+            <code class="code">"linear"</code> (the default) or <code class="code">"cubic"</code>.
+            This sets how <span class="type">ClutterAnimator</span> transitions between
+            key frames; in effect, it further modulates any easing modes
+            set on individual keys: if set to <code class="code">"cubic"</code>, you
+            get a slightly more natural and gentle transition between
+            key frames than you do if set to <code class="code">"linear"</code>.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="animations-complex-why-clutteranimator"></a>5.3.2. Why <span class="type">ClutterAnimator</span>?</h4></div></div></div><p>Why use <span class="type">ClutterAnimator</span> and not the other
+        <a class="link" href="animations.html#animations-introduction-api" title="1.3. Clutter's animation API">Clutter animation
+        approaches</a> for complex animations?</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><span class="emphasis"><em>Implicit animations</em></span> can animate
+            properties on a single actor; however, you can only specify a
+            single transition for each property. Also, it's not possible
+            to describe complex movement along a path in a single implicit
+            animation: you would have to chain several animations together
+            to do that.</p><p>To animate multiple actors, you'd also need multiple
+            implicit animations, one for each actor. These animations would
+            also need to be synchronized (for example, by sharing a
+            single timeline).</p><p>So it would be possible, but more difficult than
+            an implementation using <span class="type">ClutterAnimator</span>.</p></li><li class="listitem"><p><span class="emphasis"><em><span class="type">ClutterState</span></em></span> can
+            be used for complex animations: each state can describe
+            transitions for multiple actors and multiple properties.
+            However, to make continuous movement (as in the example),
+            you would need to write a state for each movement between a
+            pair of points; then add a callback so that when each state
+            is reached, the animation moves onto the next state. This
+            adds some code (a handler for the <code class="code">completed</code>
+            signal emitted by the <span class="type">ClutterState</span> to set
+            the next state). This could work OK for a few states,
+            but doesn't scale as well as <span class="type">ClutterAnimator</span>
+            if you have many transitions.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p><span class="type">ClutterState</span> and
+              <span class="type">ClutterAnimator</span> are not mutually exclusive. If
+              you generally need to transition between several known states
+              (e.g. hiding/revealing menus which stay in the same place,
+              moving between two UI layouts), but want to create a
+              complex animation between states, you can use
+              <span class="type">ClutterAnimators</span> to define the transitions: see
+              the documentation for
+              <code class="function">clutter_state_set_animator()</code> for
+              details.</p></div></li></ul></div><p><span class="type">ClutterAnimator</span> is a good fit for complex
+        animations, and probably the best fit for the most complex:
+        it is the simplest way to encode a sequence of transitions
+        for a list of object/property pairs which can be treated
+        as a single animation. This is largely because
+        <span class="type">ClutterAnimator</span> is effectively managing the
+        chaining together of the individual transitions into a whole.</p><p>One other feature of <span class="type">ClutterAnimator</span> which
+        isn't demonstrated here is how it enables transitions to overlap.
+        For example, let's say you wanted an actor
+        to move along a complex path (e.g. described by five pairs of
+        x,y coordinates); but during that movement, you
+        wanted the actor to continuously transition to a scale of
+        4.0 on both the x and y axes.</p><p>To achieve this with <span class="type">ClutterState</span>, you would
+        need to set up five transitions (one to move to each pair of
+        x,y coordinates); plus a callback to chain the state transitions
+        together; and within each transition, you'd have to figure out a
+        percentage of the scaling to apply, so that the actor
+        was at a scale of 4.0 on reaching the final state.</p><p>With <span class="type">ClutterAnimator</span>, you can treat the
+        movement between the coordinates and the scaling separately
+        within the same animation, but overlap their key frames. This
+        makes coding overlapping animations of different properties
+        much more straightforward. See
+        <a class="link" href="animations-complex.html#animations-complex-example-3" title="Example 5.4. Running multiple transition sequences with different key frames in parallel using ClutterAnimator">this JSON
+        definition</a> for an example of how to do this.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790504912896"></a>5.4. Full example</h3></div></div></div><div class="example"><a name="animations-complex-example-3"></a><p class="title"><b>Example 5.4. Running multiple transition sequences with
+        different key frames in parallel using
+        <span class="type">ClutterAnimator</span></b></p><div class="example-contents"><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>This JSON file can be loaded with the same code
+          as used for <a class="link" href="animations-complex.html#animations-complex-example-2" title="Example 5.3. Simple program for loading a JSON script; any key press starts the animation">this
+          example</a>, by passing the JSON file name on the command line:</p><pre class="screen">
+            <code class="prompt">$</code> <span class="command"><strong>./animations-complex animations-complex-overlapping.json</strong></span>
+          </pre></div><pre class="programlisting">[
+  {
+    "type" : "ClutterStage",
+    "id" : "stage",
+    "width" : 550,
+    "height" : 350,
+    "color" : "#333355ff",
+
+    "signals" : [
+      { "name" : "destroy", "handler" : "clutter_main_quit" },
+      { "name" : "key-press-event", "handler" : "foo_key_pressed_cb" }
+    ],
+
+    "children" : [
+      {
+        "type" : "ClutterRectangle",
+        "id" : "rectangle",
+        "color" : "red",
+        "width" : 50,
+        "height" : 50,
+        "x" : 0,
+        "y" : 0,
+        "scale-gravity" : "center"
+      }
+    ]
+  },
+
+  {
+    "type" : "ClutterAnimator",
+    "id" : "animator",
+    "duration" : 4000,
+
+    "properties" : [
+      {
+        "object" : "rectangle",
+        "name" : "x",
+        "ease-in" : true,
+        "keys" : [
+          [ 0.0, "linear", 0.0 ],
+          [ 0.1, "easeInCubic", 50.0 ],
+          [ 0.2, "easeInCubic", 200.0 ],
+          [ 0.4, "easeInCubic", 75.0 ],
+          [ 0.5, "easeOutCubic", 300.0 ],
+          [ 1.0, "easeInCubic", 400.0 ]
+        ]
+      },
+      {
+        "object" : "rectangle",
+        "name" : "y",
+        "ease-in" : true,
+        "keys" : [
+          [ 0.0, "linear", 0.0 ],
+          [ 0.1, "easeInCubic", 50.0 ],
+          [ 0.2, "easeInCubic", 200.0 ],
+          [ 0.4, "easeInCubic", 75.0 ],
+          [ 0.5, "easeOutCubic", 150.0 ],
+          [ 1.0, "easeInCubic", 200.0 ]
+        ]
+      },
+      {
+        "object" : "rectangle",
+        "name" : "scale-x",
+        "ease-in" : true,
+        "keys" : [
+          [ 0.0, "linear", 1.0 ],
+          [ 1.0, "linear", 4.0 ]
+        ]
+      },
+      {
+        "object" : "rectangle",
+        "name" : "scale-y",
+        "ease-in" : true,
+        "keys" : [
+          [ 0.0, "linear", 1.0 ],
+          [ 1.0, "linear", 4.0 ]
+        ]
+      }
+    ]
+  }
+]
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="animations-rotating.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="animations.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="animations-reuse.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4. Rotating an actor </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 6. Reusing a complex animation on different actors</td></tr></table></div></body></html>

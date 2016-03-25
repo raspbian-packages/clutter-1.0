@@ -1,0 +1,285 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>2. Stacking actors on top of each other</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="layouts.html" title="Chapter 7. Layout management"><link rel="prev" href="layouts.html" title="Chapter 7. Layout management"><link rel="next" href="layouts-bind-constraint.html" title="3. Binding the size of one actor to the size of another"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Stacking actors on top of each other</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="layouts.html">Prev</a> </td><th width="60%" align="center">Chapter 7. Layout management</th><td width="20%" align="right"> <a accesskey="n" href="layouts-bind-constraint.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="layouts-stacking"></a>2. Stacking actors on top of each other</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505547552"></a>2.1. Problem</h3></div></div></div><p>You want to lay out several actors so that they are in
+      layers on top of each other (e.g. to create a button widget
+      composed from a rectangle with text on top of it).</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="layouts-stacking-solution"></a>2.2. Solution</h3></div></div></div><p>The most flexible approach is to use a <span class="type">ClutterBinLayout</span>
+      associated with a <span class="type">ClutterActor</span>:</p><div class="informalexample"><pre class="programlisting">/* define some colors */
+const ClutterColor background_color = { 0xaa, 0x99, 0x00, 0xff };
+const ClutterColor text_color = { 0xff, 0xff, 0xff, 0xff };
+
+ClutterLayoutManager *layout;
+ClutterActor *box;
+ClutterActor *background;
+ClutterActor *text;
+
+/*
+ * create a layout, setting the default x and y alignment;
+ * actors fill the whole allocation of the layout's container
+ * by default
+ */
+layout = clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_FILL,
+                                 CLUTTER_BIN_ALIGNMENT_FILL);
+
+/* create the box whose children the layout will manage */
+box = clutter_box_new (layout);
+
+/*
+ * fill doesn't have much effect here
+ * unless the container has height and/or width
+ */
+clutter_actor_set_size (box, 100, 30);
+
+/*
+ * background for the button; could equally be a texture
+ * with an image loaded into it or any other ClutterActor
+ */
+background = clutter_rectangle_new_with_color (&amp;background_color);
+
+/*
+ * add the background to the container;
+ * as it should use the default alignment, it can be added
+ * direct to the container, rather than via the layout
+ */
+clutter_actor_add_child (box, background);
+
+/* text for the button */
+text = clutter_text_new_full ("Sans 15px", "Click me", &amp;text_color);
+
+/*
+ * the text requires a different alignment from the background
+ * (centered on the box)
+ * so we add it via the layout so the default
+ * alignment can be overridden
+ */
+clutter_bin_layout_add (CLUTTER_BIN_LAYOUT (layout),
+                        text,
+                        CLUTTER_BIN_ALIGNMENT_CENTER,
+                        CLUTTER_BIN_ALIGNMENT_CENTER);
+
+/*
+ * ensure the actors are arranged in the correct depth order;
+ * in this case, the text is on top
+ * (NB this is not strictly necesary here as text is added after
+ * background)
+ */
+clutter_actor_raise_top (text);</pre></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790507811072"></a>2.3. Discussion</h3></div></div></div><p>This section covers some other aspects of using a
+      <span class="type">ClutterBinLayout</span>.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790505539472"></a>2.3.1. Setting and changing alignment</h4></div></div></div><p>Alignment is the only
+        <a class="link" href="layouts.html#layouts-introduction-layout-properties" title="1.3. Layout properties">layout
+        property</a> available for <span class="type">ClutterBinLayout</span>. Each
+        actor can have a different setting for its alignment in one or both
+        of the <code class="code">x</code> or <code class="code">y</code> axes. However, as shown in the
+        solution above, alignment can also be used to expand an actor to
+        fill the container (<code class="constant">CLUTTER_BIN_ALIGNMENT_FILL</code>)
+        in one or both axes.</p><p>Setting alignment does not have any effect if the container
+        is the same size as all of the actors inside it: in this case,
+        every alignment produces the same layout. But if the container
+        associated with the layout is larger than the actor being aligned,
+        alignment will have an effect; see
+        <a class="link" href="layouts-stacking.html#layouts-stacking-size-requisitioning" title="2.3.2. Size requisitioning">this
+        section</a> for more details.</p><p>Changing an actor's alignment after it has been added
+        to a <span class="type">ClutterBinLayout</span> may make the actor "jump"
+        (without animation) to a new position and/or change its size.
+        The exception is changing from some other alignment to
+        <code class="constant">CLUTTER_BIN_ALIGNMENT_FIXED</code>:
+        in this case, the actor will retain the position and size it
+        had before its alignment was fixed.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="layouts-stacking-size-requisitioning"></a>2.3.2. Size requisitioning</h4></div></div></div><p>A container with a <span class="type">ClutterBinLayout</span> will by
+        default request the width of the widest actor in it, and the
+        height of the tallest. If you add actors smaller than those
+        dimensions, they will be aligned inside the container according
+        to the layout's policies. Here's an example where a
+        <span class="type">ClutterBinLayout</span> requests a size to encompass the
+        tallest (light grey rectangle) and widest (dark grey rectangle)
+        actors inside it, with other actors aligned within
+        those bounds:</p><div class="screenshot"><div class="mediaobject"><img src="images/layouts-stacking-diff-actor-sizes.png" alt="Size requisition in a ClutterBinLayout"></div></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The screenshot also shows the 9 possible combinations
+          of start, center and end alignments on the <code class="code">x</code> and
+          <code class="code">y</code> axes. See
+          <a class="link" href="layouts-stacking.html#layouts-stacking-example-1" title="Example 7.1. ClutterBinLayout, with actors in 9 combinations of start, center and end alignment combinations">the sample
+          code</a> for more details.</p></div><p>The white space is the stage visible behind the
+        <span class="type">ClutterActor</span> holding the coloured rectangles.
+        Notice that the layout is the width of the widest actor
+        within it and the height of the tallest.</p><p>You can also manually set a size on the container associated
+        with a layout to override the automatically-computed size
+        requisition.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790505521696"></a>2.3.3. Depth ordering</h4></div></div></div><p>Another important consideration is the
+        <span class="emphasis"><em>depth ordering</em></span> of actors inside a
+        <span class="type">ClutterBinLayout</span>. By default, the depth ordering
+        mirrors the order in which actors are added to the layout: the
+        earlier an actor is added, the lower down in the depth order it
+        is. If this isn't what you want, you can fix the depth ordering using
+        <code class="function">clutter_actor_set_child_above_sibling()</code>,
+        <code class="function">clutter_actor_set_child_below_sibling()</code> and
+        their relatives.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790505517744"></a>2.3.4. Other ways to stack actors</h4></div></div></div><p><span class="type">ClutterBinLayout</span> makes it simple to lay out
+        large numbers of actors in a stack and align them to the
+        container; see <a class="link" href="layouts-stacking.html#layouts-stacking-example-2" title="Example 7.2. Layering multiple textures on top of each other inside a ClutterBinLayout">the
+        example below</a> which shows layering of many actors on
+        top of each other.</p><p>However, if you have a small number of actors and you
+        need some simple alignment, an alternative is to use
+        manual positioning inside a <span class="type">ClutterFixedLayout</span>, possibly
+        combined with <span class="type">ClutterConstraints</span> to align actors with
+        each other and bind their widths and heights together. See
+        <a class="link" href="layouts.html#layouts-introduction-not-using-layout-managers" title="1.4. Not using layout managers">this
+        section</a> for more details.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>By default, <span class="type">ClutterActor</span> uses a
+        <span class="type">ClutterFixedLayout</span> as its layout manager.</p></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505511392"></a>2.4. Full examples</h3></div></div></div><div class="example"><a name="layouts-stacking-example-1"></a><p class="title"><b>Example 7.1. <span class="type">ClutterBinLayout</span>, with actors in 9
+        combinations of start, center and end alignment combinations</b></p><div class="example-contents"><pre class="programlisting">#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor dark_grey = { 0x66, 0x66, 0x66, 0xff };
+static const ClutterColor light_grey = { 0xcc, 0xcc, 0xcc, 0xff };
+
+int
+main (int argc, char *argv[])
+{
+  ClutterActor *stage;
+  ClutterLayoutManager *layout;
+  ClutterActor *box;
+  ClutterActor *rect1, *rect2;
+  guint align_x, align_y, diff_x, diff_y;
+  ClutterColor *color;
+  ClutterActor *rect;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  layout = clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_START,
+                                   CLUTTER_BIN_ALIGNMENT_START);
+
+  box = clutter_box_new (layout);
+
+  rect1 = clutter_rectangle_new_with_color (&amp;dark_grey);
+  clutter_actor_set_size (rect1, 400, 200);
+
+  rect2 = clutter_rectangle_new_with_color (&amp;light_grey);
+  clutter_actor_set_size (rect2, 200, 400);
+
+  clutter_container_add (CLUTTER_CONTAINER (box),
+                         rect1,
+                         rect2,
+                         NULL);
+
+  /*
+   * 2 = CLUTTER_BIN_ALIGNMENT_START
+   * 3 = CLUTTER_BIN_ALIGNMENT_END
+   * 4 = CLUTTER_BIN_ALIGNMENT_CENTER
+   */
+  for (align_x = 2; align_x &lt; 5; align_x++)
+    {
+      for (align_y = 2; align_y &lt; 5; align_y++)
+        {
+          diff_x = align_x - 1;
+          if (align_x == 3)
+            diff_x = 3;
+          else if (align_x == 4)
+            diff_x = 2;
+
+          diff_y = align_y - 1;
+          if (align_y == 3)
+            diff_y = 3;
+          else if (align_y == 4)
+            diff_y = 2;
+
+          color = clutter_color_new (255 - diff_x * 50,
+                                                   100 + diff_y * 50,
+                                                   0,
+                                                   255);
+          rect = clutter_rectangle_new_with_color (color);
+          clutter_actor_set_size (rect, 100, 100);
+          clutter_bin_layout_set_alignment (CLUTTER_BIN_LAYOUT (layout),
+                                            rect,
+                                            align_x,
+                                            align_y);
+          clutter_container_add_actor (CLUTTER_CONTAINER (box), rect);
+        }
+    }
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), box);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return 0;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="layouts-stacking-example-2"></a><p class="title"><b>Example 7.2. Layering multiple textures on top of each other
+        inside a <span class="type">ClutterBinLayout</span></b></p><div class="example-contents"><pre class="programlisting">/*
+ * Display multiple rotated copies of an image on top of each other
+ *
+ * Invoke with the path to a file to load a custom image
+ */
+#include &lt;clutter/clutter.h&gt;
+
+#define STAGE_SIDE 512
+
+static const ClutterColor box_color = { 0x33, 0x33, 0x55, 0xff };
+
+int
+main (int argc, char *argv[])
+{
+  ClutterLayoutManager *layout;
+  ClutterActor *box;
+  ClutterActor *stage;
+  ClutterActor *texture;
+  CoglHandle *cogl_texture;
+  GError *error = NULL;
+  gfloat width;
+
+  const gchar *filename = "redhand.png";
+
+  if (argc &gt; 1)
+    filename = argv[1];
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, STAGE_SIDE, STAGE_SIDE);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  layout = clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_CENTER,
+                                   CLUTTER_BIN_ALIGNMENT_CENTER);
+
+  box = clutter_actor_new ();
+  clutter_actor_set_layout_manager (box, layout);
+  clutter_actor_set_background_color (box, &amp;box_color);
+
+  texture = clutter_texture_new_from_file (filename, &amp;error);
+
+  if (error != NULL)
+    g_error ("Error loading file %s; message was:\n%s",
+             filename,
+             error-&gt;message);
+
+  /*
+   * get a reference to the underlying Cogl texture
+   * for copying onto each Clutter texture placed into the layout
+   */
+  cogl_texture = clutter_texture_get_cogl_texture (CLUTTER_TEXTURE (texture));
+
+  /*
+   * add gradually turning and shrinking textures,
+   * smallest one last; each actor ends up on top
+   * of the one added just before it
+   */
+  for (width = STAGE_SIDE * 0.75; width &gt;= STAGE_SIDE * 0.0625; width -= STAGE_SIDE * 0.0625)
+    {
+      ClutterActor *texture_copy = clutter_texture_new ();
+      clutter_texture_set_cogl_texture (CLUTTER_TEXTURE (texture_copy),
+                                        cogl_texture);
+      clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (texture_copy),
+                                             TRUE);
+      clutter_actor_set_z_rotation_from_gravity (texture_copy,
+                                                 (gfloat)(width * 0.5) - (STAGE_SIDE * 0.03125),
+                                                 CLUTTER_GRAVITY_CENTER);
+      clutter_actor_set_width (texture_copy, width);
+      clutter_actor_add_child (box, texture_copy);
+    }
+
+  clutter_actor_add_constraint (box, clutter_align_constraint_new (stage, CLUTTER_ALIGN_BOTH, 0.5));
+  clutter_actor_add_child (stage, box);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return 0;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="layouts.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="layouts.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="layouts-bind-constraint.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 7. Layout management </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 3. Binding the size of one actor to the size of another</td></tr></table></div></body></html>

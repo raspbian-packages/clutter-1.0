@@ -1,0 +1,298 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>5. Creating sub-textures from an existing texture</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="textures.html" title="Chapter 4. Textures"><link rel="prev" href="textures-image-loading.html" title="4. Loading image data into a texture"><link rel="next" href="textures-reflection.html" title="6. Creating a reflection of a texture"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Creating sub-textures from an existing texture</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="textures-image-loading.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Textures</th><td width="20%" align="right"> <a accesskey="n" href="textures-reflection.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="textures-sub-textures"></a>5. Creating sub-textures from an existing texture</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790509377152"></a>5.1. Problem</h3></div></div></div><p>You want to create a new <span class="type">ClutterTexture</span> that only
+      displays a rectangular sub-region of an existing texture.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790509375376"></a>5.2. Solution</h3></div></div></div><p>A possible way of achieving this is to retrieve the
+      <span class="type">CoglHandle</span> of the underlying Cogl texture of the existing
+      <span class="type">ClutterTexture</span>, create a new handle representing the
+      sub-region with <code class="function">cogl_texture_new_from_sub_texture()</code>
+      and finally populate a new <span class="type">ClutterTexture</span> with that handle.
+      </p><div class="informalexample"><pre class="programlisting">/* Create a new ClutterTexture that shows smiley.png */
+image = clutter_texture_new_from_file ("smiley.png", NULL);
+clutter_actor_get_size (image, &amp;image_width, &amp;image_height);
+
+/* Grab the CoglHandle of the underlying Cogl texture */
+texture = clutter_texture_get_cogl_texture (CLUTTER_TEXTURE (image));
+
+/* Create a new Cogl texture from the handle above. That new texture is a
+ * rectangular region from image, more precisely the northwest corner
+ * of the image */
+sub_texture = cogl_texture_new_from_sub_texture (texture,
+                                                 0, 0,
+                                                 image_width / 2,
+                                                 image_height / 2);
+
+/* Finally, use the newly created Cogl texture to feed a new ClutterTexture
+ * and thus create a new actor that displays sub_texture */
+ sub_image = clutter_texture_new ();
+ clutter_texture_set_cogl_texture (CLUTTER_TEXTURE (sub_image), sub_texture);
+
+/*
+ * You could have used the more straightforward g_object_new() function that
+ * can create an object and set some properties on it at the same time:
+ * sub_image = g_object_new (CLUTTER_TYPE_TEXTURE,
+ *                           "cogl-texture", sub_texture,
+ *                           NULL);
+ */</pre></div><div class="screenshot"><div class="mediaobject"><img src="images/textures-sub-texture.png" alt="A texture and its sub-texture next to it"></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790510573696"></a>5.3. Discussion</h3></div></div></div><p>The key of this recipe is the Cogl handle that represents the
+      underlying texture, the actual array of pixels the GPU will use
+      when it's told to texture geometry.</p><p>From this handle, it's possible to create a new texture handle
+      that represents a rectangular region of the former texture. To do this
+      one must call <code class="function">cogl_texture_new_from_sub_texture()</code>
+      with the position and size of the said region. The interesting bit
+      about this function is that, when drawing either with the original
+      texture or with the new one, it's still the same GPU resource (pixels)
+      being used, meaning that creating a sub-texture doesn't use extra GPU
+      memory.</p><p>Once the sub-texture handle is created, the next step is
+      to create a new actor that will be able to draw it, namely a new
+      <span class="type">ClutterTexture</span>. You then need to tell the texture to
+      draw from the sub-texture.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The handle you can get from
+      <code class="function">clutter_texture_get_cogl_texture()</code> is effectively
+      the same texture than the first layer of the material retrieved by
+      <code class="function">clutter_texture_get_cogl_material()</code></p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790510567600"></a>5.4. Full example</h3></div></div></div><div class="example"><a name="textures-sub-texture"></a><p class="title"><b>Example 4.1. Creating a sub-texture from an existing texture</b></p><div class="example-contents"><pre class="programlisting">#include &lt;clutter/clutter.h&gt;
+
+int
+main (int argc, char **argv)
+{
+  ClutterActor *stage, *image, *sub_image;
+  CoglHandle texture, sub_texture;
+  gfloat image_width, image_height;
+
+  /* Initialize Clutter */
+  if (clutter_init (NULL, NULL) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  /* Get the default stage */
+  stage = clutter_stage_new ();
+  clutter_stage_set_title (CLUTTER_STAGE (stage), "Sub-texture");
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  /* Create a new ClutterTexture that shows smiley.png */
+  image = clutter_texture_new_from_file ("smiley.png", NULL);
+  clutter_actor_get_size (image, &amp;image_width, &amp;image_height);
+  clutter_actor_set_size (stage,
+                          image_width * 3 / 2 + 30,
+                          image_height + 20);
+
+  /* Grab the CoglHandle of the underlying Cogl texture */
+  texture = clutter_texture_get_cogl_texture (CLUTTER_TEXTURE (image));
+
+  /* Create a new Cogl texture from the handle above. That new texture is a
+   * rectangular region from image, more precisely the northwest corner
+   * of the image */
+  sub_texture = cogl_texture_new_from_sub_texture (texture,
+                                                   0, 0,
+                                                   image_width / 2,
+                                                   image_height / 2);
+
+  /* Finally, use the newly created Cogl texture to feed a new ClutterTexture
+   * and thus create a new actor that displays sub_texture */
+   sub_image = clutter_texture_new ();
+   clutter_texture_set_cogl_texture (CLUTTER_TEXTURE (sub_image), sub_texture);
+
+  /*
+   * You could have used the more straightforward g_object_new() function that
+   * can create an object and set some properties on it at the same time:
+   * sub_image = g_object_new (CLUTTER_TYPE_TEXTURE,
+   *                           "cogl-texture", sub_texture,
+   *                           NULL);
+   */
+
+  /* Put the original image at (10,10) and the new sub image next to it */
+  clutter_actor_set_position (image, 10, 10);
+  clutter_actor_set_position (sub_image, 20 + image_width, 10);
+
+  /* Add both ClutterTexture to the stage */
+  clutter_container_add (CLUTTER_CONTAINER (stage), image, sub_image, NULL);
+
+  clutter_actor_show_all (stage);
+
+  clutter_main ();
+
+  return 0;
+}</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790510561648"></a>5.5. Going further</h3></div></div></div><p>Now that we know how to create sub-textures, it's time to make
+      something a bit more shiny with them. Let's animate them! In case you
+      have not heard about implicit animations in Clutter yet, it's a good
+      time to have a look at the animation section of this cookbook.
+      </p><p><video controls="controls" src="videos/textures-split-go.ogv"><a href="videos/textures-split-go.ogv"></a></video></p><div class="example"><a name="textures-split-go"></a><p class="title"><b>Example 4.2. Creating a sub-texture from an existing texture</b></p><div class="example-contents"><pre class="programlisting">#include &lt;clutter/clutter.h&gt;
+
+/* Context will be used to carry interesting variables between functions */
+typedef struct
+{
+  ClutterActor *sub_nw, *sub_ne, *sub_sw, *sub_se;
+  gfloat image_width, image_height;
+} Context;
+
+/* Here, we animate the texture to go way by giving the new coordinates
+ * outside of the stage. We rotate the sub-textures around their anchor
+ * point (set in setup_sub() as well, it looks cool. */
+static gboolean
+go_away (gpointer data)
+{
+  Context *context = data;
+
+  clutter_actor_animate (context-&gt;sub_nw, CLUTTER_EASE_OUT_CUBIC, 1500,
+                         "x", -context-&gt;image_width,
+                         "y", -context-&gt;image_height,
+                         "rotation-angle-z", 2000.,
+                         NULL);
+  clutter_actor_animate (context-&gt;sub_ne, CLUTTER_EASE_OUT_CUBIC, 1500,
+                         "x", +context-&gt;image_width,
+                         "y", -context-&gt;image_height,
+                         "rotation-angle-z", 2000.,
+                         NULL);
+  clutter_actor_animate (context-&gt;sub_sw, CLUTTER_EASE_OUT_CUBIC, 1500,
+                         "x", -context-&gt;image_width,
+                         "y", +context-&gt;image_height,
+                         "rotation-angle-z", 2000.,
+                         NULL);
+  clutter_actor_animate (context-&gt;sub_se, CLUTTER_EASE_OUT_CUBIC, 1500,
+                         "x", -context-&gt;image_width,
+                         "y", +context-&gt;image_height,
+                         "rotation-angle-z", 2000.,
+                         NULL);
+  return G_SOURCE_REMOVE; /* remove the timeout source */
+}
+
+/* We split the four sub-textures faking to be the big texture, moving them
+ * away by 10 pixels in each direction */
+static gboolean
+split (gpointer data)
+{
+  Context *context = data;
+  gfloat x, y;
+
+  clutter_actor_get_position (context-&gt;sub_nw, &amp;x, &amp;y);
+  clutter_actor_animate (context-&gt;sub_nw, CLUTTER_EASE_OUT_CUBIC, 300,
+                         "x", x - 10,
+                         "y", y - 10,
+                         NULL);
+  clutter_actor_get_position (context-&gt;sub_ne, &amp;x, &amp;y);
+  clutter_actor_animate (context-&gt;sub_ne, CLUTTER_EASE_OUT_CUBIC, 300,
+                         "x", x + 10,
+                         "y", y - 10,
+                         NULL);
+  clutter_actor_get_position (context-&gt;sub_sw, &amp;x, &amp;y);
+  clutter_actor_animate (context-&gt;sub_sw, CLUTTER_EASE_OUT_CUBIC, 300,
+                         "x", x - 10,
+                         "y", y + 10,
+                         NULL);
+  clutter_actor_get_position (context-&gt;sub_se, &amp;x, &amp;y);
+  clutter_actor_animate (context-&gt;sub_se, CLUTTER_EASE_OUT_CUBIC, 300,
+                         "x", x + 10,
+                         "y", y + 10,
+                         NULL);
+
+  /* In 500ms the textures will flee! */
+  clutter_threads_add_timeout (500, go_away, context);
+
+  return G_SOURCE_REMOVE; /* remove the timeout source */
+}
+
+static ClutterActor *
+setup_sub (CoglHandle texture,
+           gint       image_width,
+           gint       image_height,
+           gint       t_x,
+           gint       t_y,
+           gint       t_width,
+           gint       t_height)
+{
+  CoglHandle sub_texture;
+  ClutterActor *sub_image;
+
+  /* Create a new sub-texture from textures */
+  sub_texture = cogl_texture_new_from_sub_texture (texture,
+                                                   t_x, t_y,
+                                                   t_width, t_height);
+
+  /* Create the corresponding ClutterTexture */
+  sub_image = g_object_new (CLUTTER_TYPE_TEXTURE,
+                            "cogl-texture", sub_texture,
+                            NULL);
+
+  /* Set the anchor point in the middle of each sub_image so the position and
+   * rotation of the textures are relative to that point */
+  clutter_actor_set_anchor_point (sub_image, image_width / 4, image_height / 4);
+
+  return sub_image;
+}
+
+#define IMAGE "smiley.png"
+
+int
+main (int    argc,
+      char **argv)
+{
+  gfloat image_width, image_height, stage_width, stage_height;
+  ClutterActor *stage, *image;
+  GError *error = NULL;
+  CoglHandle texture;
+  Context context;
+
+  if (clutter_init (NULL, NULL) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_get_size (stage, &amp;stage_width, &amp;stage_height);
+  clutter_stage_set_title (CLUTTER_STAGE (stage), "Animate sub-textures");
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  /* Load smiley.png, creating a new ClutterTexture, get its size and the
+   * Cogl texture handle */
+  image = clutter_texture_new_from_file (IMAGE, &amp;error);
+  if (error != NULL)
+    {
+      g_warning ("Could not load " IMAGE ": %s", error-&gt;message);
+      g_clear_error (&amp;error);
+      return 1;
+    }
+  clutter_actor_get_size (image, &amp;image_width, &amp;image_height);
+  texture = clutter_texture_get_cogl_texture (CLUTTER_TEXTURE (image));
+
+  /* Create four sub-textures from image, actually splitting the image in
+   * four */
+  context.sub_nw = setup_sub (texture, image_width, image_height,
+                              0, 0, image_width / 2 , image_height / 2);
+  context.sub_ne = setup_sub (texture, image_width, image_height,
+                              image_width / 2 , 0,
+                              image_width / 2, image_height / 2);
+  context.sub_sw = setup_sub (texture, image_width, image_height,
+                              0.f, image_height / 2,
+                              image_width / 2, image_height / 2);
+  context.sub_se = setup_sub (texture, image_width, image_height,
+                              image_width / 2, image_height / 2,
+                              image_width / 2, image_height / 2);
+
+  /* We don't need the image anymore as we won't display it and as
+   * cogl_texture_new_from_sub_texture() keeps a reference to the underlying
+   * texture ressource */
+  g_object_unref (image);
+
+  /* Position the sub-texures in the middle of the screen, recreating the
+   * original texture */
+  clutter_actor_set_position (context.sub_nw,
+                              stage_width / 2 - image_width / 4,
+                              stage_height / 2 - image_height / 4);
+  clutter_actor_set_position (context.sub_ne,
+                              stage_width / 2 + image_width / 4,
+                              stage_height / 2 - image_height / 4);
+  clutter_actor_set_position (context.sub_sw,
+                              stage_width / 2 - image_width / 4,
+                              stage_height / 2 + image_height / 4);
+  clutter_actor_set_position (context.sub_se,
+                              stage_width / 2 + image_width / 4,
+                              stage_height / 2 + image_height / 4);
+
+  /* Add the four sub-textures to the stage */
+  clutter_container_add (CLUTTER_CONTAINER (stage), context.sub_nw,
+                         context.sub_ne, context.sub_sw, context.sub_se, NULL);
+
+  clutter_actor_show_all (stage);
+
+  context.image_width = image_width;
+  context.image_height = image_height;
+
+  /* In two seconds, we'll split the texture! */
+  clutter_threads_add_timeout (2000, split, &amp;context);
+
+  clutter_main ();
+
+  return 0;
+}</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="textures-image-loading.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="textures.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="textures-reflection.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4. Loading image data into a texture </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 6. Creating a reflection of a texture</td></tr></table></div></body></html>

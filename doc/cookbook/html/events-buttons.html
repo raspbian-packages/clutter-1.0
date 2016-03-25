@@ -1,0 +1,522 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>5. Making an actor respond to button events</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="events.html" title="Chapter 3. Events"><link rel="prev" href="events-pointer-motion.html" title="4. Detecting pointer movements on an actor"><link rel="next" href="textures.html" title="Chapter 4. Textures"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Making an actor respond to button events</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="events-pointer-motion.html">Prev</a> </td><th width="60%" align="center">Chapter 3. Events</th><td width="20%" align="right"> <a accesskey="n" href="textures.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="events-buttons"></a>5. Making an actor respond to button events</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790506091456"></a>5.1. Problem</h3></div></div></div><p>You want an actor to respond to button events. These might
+      be buttons on an input device like a mouse;
+      or input events caused by other means, like touches on a screen.</p><p>Some examples of where this is useful:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>For implementing button widgets which respond to
+          button clicks.</p></li><li class="listitem"><p>To make actor selections by mouse click (e.g.
+          as part of a drawing application).</p></li><li class="listitem"><p>To recognise a button press followed by pointer
+          motion and button release (e.g. to implement drag
+          and drop or kinetic animations).</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790506086080"></a>5.2. Solution</h3></div></div></div><p>Connect a handler to the <span class="emphasis"><em>button-press-event</em></span>
+      and/or <span class="emphasis"><em>button-release-event</em></span> signals of an
+      actor.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The <span class="emphasis"><em>button-press-event</em></span> is emitted
+        when a button is pressed (not necessarily released) on a reactive
+        actor; the <span class="emphasis"><em>button-release-event</em></span> when a
+        button is released on a reactive actor (even if the button was
+        pressed down somewhere else).</p></div><p>First, ensure the actor is reactive:</p><div class="informalexample"><pre class="programlisting">clutter_actor_set_reactive (actor, TRUE);</pre></div><p>Next, create a function to handle the signal(s) you are
+      interested in. The function signature is the same for both the
+      press and release signals:</p><div class="informalexample"><pre class="programlisting">gboolean
+callback_function (ClutterActor *actor,
+                   ClutterEvent *event,
+                   gpointer      user_data);</pre></div><p>You can use a single function as the
+      callback for both signals (or write a different one for each signal).
+      Here's an example function which can be used as a callback
+      for both press and release signals, as it simply pulls data
+      out of the event and displays it:</p><div class="informalexample"><pre class="programlisting">/* <code class="varname">event</code> is a <span class="type">ClutterButtonEvent</span>
+ * for both the press and the release signal; it contains
+ * data about where the event occurred
+ */
+static gboolean
+button_event_cb (ClutterActor *actor,
+                 ClutterEvent *event,
+                 gpointer      user_data)
+{
+  gfloat x, y;
+  gchar *event_type;
+  guint button_pressed;
+  ClutterModifierType state;
+  gchar *ctrl_pressed;
+  guint32 click_count;
+
+  /* where the pointer was (relative to the stage)
+   * when the button event occurred; use
+   * <code class="function">clutter_actor_transform_stage_point()</code>
+   * to transform to actor-relative coordinates
+   */
+  clutter_event_get_coords (event, &amp;x, &amp;y);
+
+  /* check whether it was a press or release event */
+  event_type = "released";
+  if (clutter_event_type (event) == CLUTTER_BUTTON_PRESS)
+    event_type = "pressed";
+
+  /* which button triggered the event */
+  button_pressed = clutter_event_get_button (event);
+
+  /* keys down when the event occurred;
+   * this is a bit mask composed of the bits for each key held down
+   * when the button was pressed or released; see the
+   * <span class="type">ClutterModifierType</span> enum in the Clutter API docs
+   * for a list of the available modifiers
+   */
+  state = clutter_event_get_state (event);
+
+  ctrl_pressed = "ctrl not pressed";
+  if (state &amp; CLUTTER_CONTROL_MASK)
+    ctrl_pressed = "ctrl pressed";
+
+  /* click count */
+  click_count = clutter_event_get_click_count (event);
+
+  g_debug ("button %d was %s at %.0f,%.0f; %s; click count %d",
+           button_pressed,
+           event_type,
+           x,
+           y,
+           ctrl_pressed,
+           click_count);
+
+  return CLUTTER_EVENT_STOP;
+}</pre></div><p>Finally, connect the signals to the function(s):</p><div class="informalexample"><pre class="programlisting">/* connect the press event */
+g_signal_connect (actor,
+                  "button-press-event",
+                  G_CALLBACK (button_event_cb),
+                  NULL);
+
+/* connect the release event */
+g_signal_connect (actor,
+                  "button-release-event",
+                  G_CALLBACK (button_event_cb),
+                  NULL);</pre></div><p>Pressing or releasing a button on the actor will now
+      trigger a call to the <code class="function">button_event_cb()</code>
+      function. See <a class="link" href="events-buttons.html#events-buttons-example-1" title="Example 3.6. Examining properties of a ClutterButtonEvent">the full
+      example</a> for more details.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790506068992"></a>5.3. Discussion</h3></div></div></div><p>Properties of the <span class="type">ClutterButtonEvent</span>
+      emitted by both signals should be examined using the
+      <code class="function">clutter_event_*</code> functions (rather than struct
+      members directly), as in the example above. While most of these
+      functions are self-explanatory, a couple require more explanation:
+      see the sections below.</p><p>Also covered below is an alternative approach to handling a
+      button press followed by a release on a single actor: by adding
+      a <span class="type">ClutterClickAction</span> to an actor. See
+      <a class="link" href="events-buttons.html#events-buttons-clutterclickaction" title="5.3.3. ClutterClickAction">this section</a>
+      for details.</p><p>Finally, a <a class="link" href="events-buttons.html#events-buttons-example-3" title="Example 3.8. Using button and pointer events for drawing">longer
+      example</a> is included, showing how to make use of button press,
+      button release and pointer events in a simple drawing application.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790506063328"></a>5.3.1. Click count</h4></div></div></div><p>The click count records the number of times a press/release
+        pair occurred in sequence. You can retrieve it via the
+        <code class="function">clutter_event_get_click_count()</code> function.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>A press/release pair is effectively a click, so this term
+          will be used from now on throughout this section,
+          to make the explanation simpler. However, the click count has
+          nothing to do with <span class="type">ClutterClickActions</span>, described
+          <a class="link" href="events-buttons.html#events-buttons-clutterclickaction" title="5.3.3. ClutterClickAction">later</a>.
+          </p></div><p>For clicks to be considered part of the same sequence (for
+        the purposes of counting), all the clicks after the first one
+        must occur within the global <code class="varname">double_click_distance</code>
+        (pixels) of the first click; and the time between click
+        <code class="code">n</code> and click <code class="code">n+1</code> must be <code class="code">&lt;=</code>
+        the global <code class="varname">double_click_time</code> (milliseconds).</p><p>The clicks <span class="emphasis"><em>do not</em></span> have to occur on
+        the same actor: providing they occur within the double click
+        distance and time, they are counted as part of the same click
+        sequence. Also note that the clicks don't even have to happen
+        on a reactive actor: providing they happen somewhere on the
+        stage, they will still increment the click count.</p><p>The default double click time and distance are
+        stored in the <span class="type">ClutterSettings</span> associated
+        with an application. You can get/set their values like this:</p><div class="informalexample"><pre class="programlisting">gint double_click_distance;
+gint double_click_time;
+
+ClutterSettings *settings = clutter_settings_get_default ();
+
+/* get double click settings */
+g_object_get (settings,
+              "double-click-distance", &amp;double_click_distance,
+              "double-click-time", &amp;double_click_time,
+              NULL);
+
+/* set */
+g_object_set (settings,
+              "double-click-distance", 50,
+              "double-click-time", 1000,
+              NULL);</pre></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790506052096"></a>5.3.2. Button numbering</h4></div></div></div><p><code class="function">clutter_event_get_button()</code> returns
+        an integer representing the pressed or released button.</p><p>In the case of a standard scroll mouse, the numbers
+        returned are reliable across different hardware models:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>1 = left mouse button in a right-handed configuration,
+            or the right mouse button in a left-handed configuration</p></li><li class="listitem"><p>2 = scroll wheel button</p></li><li class="listitem"><p>3 = right mouse button in a right-handed configuration,
+            or the left mouse button in a left-handed configuration</p></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Clutter provides symbolic names for the three buttons
+        above: CLUTTER_BUTTON_PRIMARY, CLUTTER_BUTTON_MIDDLE, and
+        CLUTTER_BUTTON_SECONDARY.</p></div><p>For mice with more buttons, or other types of
+        input devices, the mappings may not be so
+        straightforward: you may have to experiment to see
+        which button returns which value.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="events-buttons-clutterclickaction"></a>5.3.3. <span class="type">ClutterClickAction</span></h4></div></div></div><p><span class="type">ClutterActions</span> add flexible event handling
+        to <span class="type">ClutterActors</span>. They recognise and abstract
+        common sequences of low-level events into a single, more easily
+        managed high-level event. In the case of a
+        <span class="type">ClutterClickAction</span>, the abstraction is over
+        a press followed by a release on a single actor. This is
+        achieved by "synthesising" the press and release signals on
+        the actor: in other words, the action captures those
+        two signals when emitted by a single actor; and, once captured, the
+        action emits a single <span class="emphasis"><em>clicked</em></span> signal
+        <span class="emphasis"><em>instead</em></span> of the two signals being
+        emitted by the actor.</p><p>The pointer can move off the actor between the press and
+        release, but the press and release must both occur on the same
+        actor, with no intervening presses or releases on other
+        actors. In addition, there are no maximum distance or time
+        constraints on the press and release.</p><p>If a press occurs and you want to force it to be released
+        (e.g. to break a pointer grab after a certain length of
+        time has elapsed), use
+        <code class="function">clutter_click_action_release()</code>.</p><p>On the down side, the <span class="emphasis"><em>clicked</em></span> signal
+        doesn't present the same detailed <span class="type">ClutterButtonEvent</span>
+        to the handler. So, for example, you can't get a click count from a
+        <span class="type">ClutterClickAction</span> (though you could count
+        the clicks yourself, of course); and you don't have access
+        to the coordinates where the press or release occurred.</p><p>To add a click action to a <span class="type">ClutterActor</span>:</p><div class="informalexample"><pre class="programlisting">ClutterAction *action = clutter_click_action_new ();
+clutter_actor_add_action (actor, action);</pre></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>An actor must still be set to reactive so that its
+          signals can be routed to a click action.</p></div><p>Create a handler function (note the function
+        signature is different from the one for the press or
+        releas signal handler):</p><div class="informalexample"><pre class="programlisting">void
+clicked_cb (ClutterClickAction *action,
+            ClutterActor       *actor,
+            gpointer            user_data)
+{
+  /* display the number of the clicked button (equivalent
+   * to the number returned by clutter_event_get_button())
+   */
+  g_debug ("Button %d clicked", clutter_click_action_get_button (action));
+}</pre></div><p>Connect the signal to the handler:</p><div class="informalexample"><pre class="programlisting">g_signal_connect (action,
+                  "clicked",
+                  G_CALLBACK (clicked_cb),
+                  NULL);</pre></div><p>The <a class="link" href="events-buttons.html#events-buttons-example-2" title="Example 3.7. Using ClutterClickAction to capture button events on an actor">example
+        code</a> gives a bit more detail about how to use click
+        actions.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505929600"></a>5.4. Full examples</h3></div></div></div><div class="example"><a name="events-buttons-example-1"></a><p class="title"><b>Example 3.6. Examining properties of a <span class="type">ClutterButtonEvent</span></b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+static const ClutterColor green_color = { 0x00, 0xff, 0x00, 0xff };
+
+static gboolean
+button_event_cb (ClutterActor *actor,
+                 ClutterEvent *event,
+                 gpointer      user_data)
+{
+  gfloat x, y;
+  gchar *event_type;
+  guint button_pressed;
+  ClutterModifierType state;
+  gchar *ctrl_pressed;
+  guint32 click_count;
+
+  /* where the pointer was when the button event occurred */
+  clutter_event_get_coords (event, &amp;x, &amp;y);
+
+  /* check whether it was a press or release event */
+  event_type = "released";
+  if (clutter_event_type (event) == CLUTTER_BUTTON_PRESS)
+    event_type = "pressed";
+
+  /* which button triggered the event */
+  button_pressed = clutter_event_get_button (event);
+
+  /* keys down when the button was pressed */
+  state = clutter_event_get_state (event);
+
+  ctrl_pressed = "ctrl not pressed";
+  if (state &amp; CLUTTER_CONTROL_MASK)
+    ctrl_pressed = "ctrl pressed";
+
+  /* click count */
+  click_count = clutter_event_get_click_count (event);
+
+  g_debug ("button %d %s at %.0f,%.0f; %s; click count %d",
+           button_pressed,
+           event_type,
+           x,
+           y,
+           ctrl_pressed,
+           click_count);
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *red;
+  ClutterActor *green;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  red = clutter_rectangle_new_with_color (&amp;red_color);
+  clutter_actor_set_size (red, 100, 100);
+  clutter_actor_set_position (red, 50, 150);
+  clutter_actor_set_reactive (red, TRUE);
+
+  green = clutter_rectangle_new_with_color (&amp;green_color);
+  clutter_actor_set_size (green, 100, 100);
+  clutter_actor_set_position (green, 250, 150);
+  clutter_actor_set_reactive (green, TRUE);
+
+  g_signal_connect (red,
+                    "button-press-event",
+                    G_CALLBACK (button_event_cb),
+                    NULL);
+
+  g_signal_connect (red,
+                    "button-release-event",
+                    G_CALLBACK (button_event_cb),
+                    NULL);
+
+  g_signal_connect (green,
+                    "button-press-event",
+                    G_CALLBACK (button_event_cb),
+                    NULL);
+
+  g_signal_connect (green,
+                    "button-release-event",
+                    G_CALLBACK (button_event_cb),
+                    NULL);
+
+  clutter_container_add (CLUTTER_CONTAINER (stage),
+                         red,
+                         green,
+                         NULL);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="events-buttons-example-2"></a><p class="title"><b>Example 3.7. Using <span class="type">ClutterClickAction</span> to capture
+        button events on an actor</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+
+void
+clicked_cb (ClutterClickAction *action,
+            ClutterActor       *actor,
+            gpointer            user_data)
+{
+  g_print ("Pointer button %d clicked on actor %s\n",
+           clutter_click_action_get_button (action),
+           clutter_actor_get_name (actor));
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterAction *action1;
+  ClutterAction *action2;
+  ClutterActor *actor1;
+  ClutterActor *actor2;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  actor1 = clutter_actor_new ();
+  clutter_actor_set_name (actor1, "Red Button");
+  clutter_actor_set_background_color (actor1, CLUTTER_COLOR_Red);
+  clutter_actor_set_size (actor1, 100, 100);
+  clutter_actor_set_reactive (actor1, TRUE);
+  clutter_actor_set_position (actor1, 50, 150);
+  clutter_actor_add_child (stage, actor1);
+
+  actor2 = clutter_actor_new ();
+  clutter_actor_set_name (actor2, "Blue Button");
+  clutter_actor_set_background_color (actor2, CLUTTER_COLOR_Blue);
+  clutter_actor_set_size (actor2, 100, 100);
+  clutter_actor_set_position (actor2, 250, 150);
+  clutter_actor_set_reactive (actor2, TRUE);
+  clutter_actor_add_child (stage, actor2);
+
+  action1 = clutter_click_action_new ();
+  clutter_actor_add_action (actor1, action1);
+
+  action2 = clutter_click_action_new ();
+  clutter_actor_add_action (actor2, action2);
+
+  g_signal_connect (action1,
+                    "clicked",
+                    G_CALLBACK (clicked_cb),
+                    NULL);
+
+  g_signal_connect (action2,
+                    "clicked",
+                    G_CALLBACK (clicked_cb),
+                    NULL);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="events-buttons-example-3"></a><p class="title"><b>Example 3.8. Using button and pointer events for drawing</b></p><div class="example-contents"><p>This code was inspired by
+        <a class="ulink" href="http://git.clutter-project.org/cluttersmith/" target="_top">ClutterSmith</a>
+        </p><pre class="programlisting">/* Simple rectangle drawing using button and pointer events;
+ * click, drag and release a mouse button to draw a rectangle
+ */
+#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor lasso_color = { 0xaa, 0xaa, 0xaa, 0x33 };
+
+typedef struct
+{
+  ClutterActor *actor;
+  gfloat        x;
+  gfloat        y;
+} Lasso;
+
+static guint
+random_color_component ()
+{
+  return (guint) (155 + (100.0 * rand () / (RAND_MAX + 1.0)));
+}
+
+static gboolean
+button_pressed_cb (ClutterActor *actor,
+                   ClutterEvent *event,
+                   gpointer      user_data)
+{
+  Lasso *lasso = (Lasso *) user_data;
+
+  /* start drawing the lasso actor */
+  lasso-&gt;actor = clutter_rectangle_new_with_color (&amp;lasso_color);
+
+  /* store lasso's start coordinates */
+  clutter_event_get_coords (event, &amp;(lasso-&gt;x), &amp;(lasso-&gt;y));
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (actor), lasso-&gt;actor);
+
+  return TRUE;
+}
+
+static gboolean
+button_released_cb (ClutterActor *stage,
+                    ClutterEvent *event,
+                    gpointer      user_data)
+{
+  Lasso *lasso = (Lasso *) user_data;
+  ClutterActor *rectangle;
+  ClutterColor *random_color;
+  gfloat x;
+  gfloat y;
+  gfloat width;
+  gfloat height;
+
+  if (lasso-&gt;actor == NULL)
+    return TRUE;
+
+  /* create a new rectangle */
+  random_color = clutter_color_new (random_color_component (),
+                                    random_color_component (),
+                                    random_color_component (),
+                                    random_color_component ());
+  rectangle = clutter_rectangle_new_with_color (random_color);
+
+  /* set the rectangle to the same size and shape as the lasso */
+  clutter_actor_get_position (lasso-&gt;actor, &amp;x, &amp;y);
+  clutter_actor_get_size (lasso-&gt;actor, &amp;width, &amp;height);
+
+  clutter_actor_set_position (rectangle, x, y);
+  clutter_actor_set_size (rectangle, width, height);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), rectangle);
+
+  /* clear up the lasso actor */
+  clutter_actor_destroy (lasso-&gt;actor);
+  lasso-&gt;actor = NULL;
+
+  clutter_actor_queue_redraw (stage);
+
+  return TRUE;
+
+}
+
+static gboolean
+pointer_motion_cb (ClutterActor *stage,
+                   ClutterEvent *event,
+                   gpointer      user_data)
+{
+  gfloat pointer_x;
+  gfloat pointer_y;
+  gfloat new_x;
+  gfloat new_y;
+  gfloat width;
+  gfloat height;
+
+  Lasso *lasso = (Lasso *) user_data;
+
+  if (lasso-&gt;actor == NULL)
+    return TRUE;
+
+  /* redraw the lasso actor */
+  clutter_event_get_coords (event, &amp;pointer_x, &amp;pointer_y);
+
+  new_x = MIN (pointer_x, lasso-&gt;x);
+  new_y = MIN (pointer_y, lasso-&gt;y);
+  width = MAX (pointer_x, lasso-&gt;x) - new_x;
+  height = MAX (pointer_y, lasso-&gt;y) - new_y;
+
+  clutter_actor_set_position (lasso-&gt;actor, new_x, new_y);
+  clutter_actor_set_size (lasso-&gt;actor, width, height);
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  Lasso *lasso = g_new0 (Lasso, 1);
+
+  ClutterActor *stage;
+
+  /* seed random number generator */
+  srand ((unsigned int) time (NULL));
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 320, 240);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  g_signal_connect (stage,
+                    "button-press-event",
+                    G_CALLBACK (button_pressed_cb),
+                    lasso);
+
+  g_signal_connect (stage,
+                    "button-release-event",
+                    G_CALLBACK (button_released_cb),
+                    lasso);
+
+  g_signal_connect (stage,
+                    "motion-event",
+                    G_CALLBACK (pointer_motion_cb),
+                    lasso);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_free (lasso);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="events-pointer-motion.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="events.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="textures.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4. Detecting pointer movements on an actor </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 4. Textures</td></tr></table></div></body></html>

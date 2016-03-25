@@ -1,0 +1,773 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>7. Cross-fading between two images</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="textures.html" title="Chapter 4. Textures"><link rel="prev" href="textures-reflection.html" title="6. Creating a reflection of a texture"><link rel="next" href="animations.html" title="Chapter 5. Animations"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7. Cross-fading between two images</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="textures-reflection.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Textures</th><td width="20%" align="right"> <a accesskey="n" href="animations.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="textures-crossfade"></a>7. Cross-fading between two images</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790510512784"></a>7.1. Problem</h3></div></div></div><p>You want to do a cross-fade animation (a.k.a. a dissolve
+      transition) between two images.</p><p>An example use case would be creating a slideshow effect:
+      load an image from a file, display it in the UI, then load a second
+      image and cross-fade to it.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790510510768"></a>7.2. Solutions</h3></div></div></div><p>There are two main approaches you could take:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Use two <span class="type">ClutterTextures</span>, one on top
+          of the other.</p></li><li class="listitem"><p>Use a single <span class="type">ClutterTexture</span>
+          with the two images in separate layers inside it.</p></li></ol></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790510505872"></a>7.2.1. Solution 1: two textures</h4></div></div></div><p>This approach uses two <span class="type">ClutterTextures</span>,
+        <code class="varname">bottom</code> and <code class="varname">top</code>. To begin
+        with, the <code class="varname">bottom</code> texture shows the
+        <span class="emphasis"><em>source</em></span> image and is opaque; the
+        <code class="varname">top</code> texture is loaded with
+        the <span class="emphasis"><em>target</em></span> image, but is not visible as
+        it is fully transparent.</p><p>An animation is then used to fade in the
+        <code class="varname">top</code> texture and fade out the
+        <code class="varname">bottom</code> texture, leaving just <code class="varname">top</code>
+        visible.</p><p>To implement this, first create the two textures inside a
+        <span class="type">ClutterBinLayout</span>:</p><div class="informalexample"><pre class="programlisting">/* ... initialise Clutter, get default stage etc. ... */
+
+/* Actors added to this layout are centered on both x and y axes */
+ClutterLayoutManager *layout = clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_CENTER,
+                                                       CLUTTER_BIN_ALIGNMENT_CENTER);
+
+ClutterActor *box = clutter_box_new (layout);
+
+/* set the size of the box so it fills the stage (in this case 600x600) */
+clutter_actor_set_size (box, 400, 400);
+
+ClutterActor *bottom = clutter_texture_new ();
+ClutterActor *top = clutter_texture_new ();
+
+/*
+ * Add the textures to the layout;
+ * NB because top is added last, it will be "on top of" bottom
+ */
+clutter_container_add_actor (CLUTTER_CONTAINER (box), bottom);
+clutter_container_add_actor (CLUTTER_CONTAINER (box), top);
+
+/* stage is a ClutterStage instance */
+clutter_container_add_actor (CLUTTER_CONTAINER (stage), box);</pre></div><p>Load the <code class="varname">source</code> image into the bottom
+        texture and the <code class="varname">target</code> image into the top one.
+        As this is the same operation each time, it makes sense to write
+        a function for loading an image into a texture and checking
+        for errors, e.g.:</p><div class="informalexample"><pre class="programlisting">static gboolean
+load_image (ClutterTexture *texture,
+            gchar          *image_path)
+{
+  GError *error = NULL;
+
+  gboolean success = clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                                                    image_path,
+                                                    &amp;error);
+
+  if (error != NULL)
+    {
+      g_warning ("Error loading %s\n%s", image_path, error-&gt;message);
+      g_error_free (error);
+      exit (EXIT_FAILURE);
+    }
+
+  return success;
+}</pre></div><p>The <code class="function">load_image()</code> function can then
+        be called for each texture:</p><div class="informalexample"><pre class="programlisting">/* file path to the image visible when the UI is first displayed */
+gchar *source = NULL;
+
+/* file path to the image we're going to cross-fade to */
+gchar *target = NULL;
+
+/* ...set image file paths, e.g. from command line or directory read... */
+
+/* the bottom texture contains the source image */
+load_image (CLUTTER_TEXTURE (bottom), source);
+
+/* the top texture contains the target image */
+load_image (CLUTTER_TEXTURE (top), target);</pre></div><p>For the animations, we use <span class="type">ClutterState</span> as we
+        want to animate two actors at once (<code class="varname">top</code>
+        and <code class="varname">bottom</code>):</p><div class="informalexample"><pre class="programlisting">ClutterState *transitions = clutter_state_new ();
+
+/* start state, where bottom is opaque and top is transparent */
+clutter_state_set (transitions, NULL, "show-bottom",
+                   top, "opacity", CLUTTER_LINEAR, 0,
+                   bottom, "opacity", CLUTTER_LINEAR, 255,
+                   NULL);
+
+/* end state, where top is opaque and bottom is transparent */
+clutter_state_set (transitions, NULL, "show-top",
+                   top, "opacity", CLUTTER_EASE_IN_CUBIC, 255,
+                   bottom, "opacity", CLUTTER_EASE_IN_CUBIC, 0,
+                   NULL);
+
+/* set 1000ms duration for all transitions between states */
+clutter_state_set_duration (transitions, NULL, NULL, 1000);</pre></div><p>Note that rather than set the start opacities manually
+        on the actors (e.g. using
+        <code class="function">clutter_actor_set_opacity()</code>),
+        I've used a <span class="type">ClutterState</span> to define the start
+        state (as well as the end state). This makes it easier to
+        track transitions, as they are all kept in one data structure.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The easing modes used for the cross-fade animation
+          (<code class="constant">CLUTTER_EASE_IN_CUBIC</code>)
+          can be set to whatever you like. I personally think that
+          ease-in modes look best for cross-fading.</p></div><p>"Warp" the two textures into the start state
+        (<code class="varname">bottom</code> opaque, <code class="varname">top</code>
+        transparent):</p><div class="informalexample"><pre class="programlisting">clutter_state_warp_to_state (transitions, "show-bottom");</pre></div><p>Using <code class="function">clutter_state_warp_to_state()</code>
+        immediately transitions to a state without animating, which
+        in this case sets up the initial state of the UI.</p><p>Finally, use the <span class="type">ClutterState</span> to animate
+        the two textures, so <code class="varname">top</code> fades in and
+        <code class="varname">bottom</code> fades out:</p><div class="informalexample"><pre class="programlisting">clutter_state_set_state (transitions, "show-top");</pre></div><p>Here's what it looks like:</p><p><video controls="controls" src="videos/textures-crossfade-two-textures.ogv"><a href="videos/textures-crossfade-two-textures.ogv"></a></video></p><p>The full code for this example
+        <a class="link" href="textures-crossfade.html#textures-crossfade-example-1" title="Example 4.4. Cross-fading between two images using two ClutterTextures">is in the
+        appendix</a>.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790506460368"></a>7.2.2. Solution 2: one texture with two layers</h4></div></div></div><p>The alternative solution is to use a single texture
+        and the low-level COGL API to set up two different layers
+        inside it, one for each image.</p><p>Then, rather than fade between two textures,
+        progressively combine the two layers together using an
+        alpha value which changes over the course of an animation
+        (from 0.0 at the start of the animation to 1.0 at its end).</p><p>At any point in the cross-fade animation, you are
+        actually seeing a combination of the color
+        values in the two images (modified by an alpha component), rather
+        than seeing one image through the other. This can give a smoother
+        cross-fade effect than the two texture approach.</p><p>As this solution is more complex
+        and relies on the lower-level (and more difficult to follow)
+        COGL API, the next section is just a short summary of how it
+        works; see <a class="link" href="textures-crossfade.html#textures-crossfade-example-2" title="Example 4.5. Cross-fading between two images using one ClutterTexture and the COGL API">the
+        sample code, which has liberal comments</a> for more details.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>For more about texture combining, refer to the COGL
+          API documentation (particularly the section about material
+          blend strings). You may also find it useful to get hold of
+          a decent OpenGL reference. (So you can look it up, what we're
+          doing in this solution is using a texture combiner with
+          interpolation as the texture combiner function.)</p></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="idm47790506455024"></a>7.2.2.1. Cross-fading using a texture combiner with interpolation</h5></div></div></div><p>The cross-fade is implemented by combining the two layers,
+          computing a color value for each pixel in the resulting texture.
+          The value for each pixel at a given point in the animation
+          is based on three things:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>The color value of the <span class="emphasis"><em>source</em></span>
+              pixel</p></li><li class="listitem"><p>The color value of the <span class="emphasis"><em>target</em></span>
+              pixel</p></li><li class="listitem"><p>The alpha value of a third colour at the given point
+              in the animation's timeline</p></li></ol></div><p>The resulting value for each RGBA color component in each pixel
+          is computed using an interpolation function. In pseudo-code, it
+          looks like this:</p><div class="informalexample"><pre class="programlisting">  color component value = (target pixel value * alpha) + (source pixel value * (1 - alpha))</pre></div><p>The effect is that as the alpha increases towards 1.0,
+          progressively more of the <span class="emphasis"><em>target</em></span> pixel's
+          color is used, and progressively less of the <span class="emphasis"><em>source</em></span>
+          pixel's: so the <span class="emphasis"><em>target</em></span> fades in, while
+          the <span class="emphasis"><em>source</em></span> fades out.</p><p>The advantage of this approach is that color and
+          brightness transitions only occur where pixels differ between
+          the two images. This means that you transitions are smoother
+          where you are cross-fading between images with similar color ranges
+          and brightness levels.</p><p>A special case is where you're cross-fading
+          from an image to itself: the two texture approach can cause some
+          dimming during this kind of transition; but the single texture
+          approach results in no color or brightness changes (it's not even
+          a transition as such, as all the pixels are identical in
+          the two layers).</p></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="textures-crossfade-discussion"></a>7.3. Discussion</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790506441520"></a>7.3.1. Cross-fades between images of different sizes</h4></div></div></div><p>The code examples
+        (<a class="link" href="textures-crossfade.html#textures-crossfade-example-1" title="Example 4.4. Cross-fading between two images using two ClutterTextures">two textures</a>,
+        <a class="link" href="textures-crossfade.html#textures-crossfade-example-2" title="Example 4.5. Cross-fading between two images using one ClutterTexture and the COGL API">one texture with
+        COGL</a>) don't take account of the size of the images being
+        loaded.</p><p>In the two texture example, this isn't so much of a problem,
+        as you can resize the textures individually to the images:
+        providing you use
+        <code class="function">clutter_texture_set_keep_aspect_ratio()</code>,
+        different image sizes shouldn't be a problem. See
+        <a class="link" href="textures-crossfade.html#textures-crossfade-example-3" title="Example 4.6. A simple slideshow application using two ClutterTextures">the slideshow
+        example</a>, for a demonstration of how to cycle through
+        different sized images.</p><p>In the case of the single texture approach, you will get
+        problems when cross-fading between two images with
+        different sizes. There is no easy way to maintain the aspect
+        ratio (as you have two layers, potentially with different sizes,
+        in the same texture). The last layer added to the
+        <span class="type">CoglMaterial</span> determines the size of the texture;
+        so if the previous layer has different dimensions, it will
+        appear distorted in the UI. In the
+        <a class="link" href="textures-crossfade.html#textures-crossfade-example-2" title="Example 4.5. Cross-fading between two images using one ClutterTexture and the COGL API">single texture
+        code example</a>, the <span class="emphasis"><em>source</em></span> layer
+        is added first; so, if the <span class="emphasis"><em>target</em></span> layer has
+        different dimensions, the <span class="emphasis"><em>source</em></span> will
+        appear distorted.</p><p>There are a couple of ways you can remedy this:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>As you load each image into its own
+            <span class="type">CoglTexture</span>, get its size with
+            <code class="function">cogl_texture_get_width()</code> and
+            <code class="function">cogl_texture_get_height()</code>. Then set the
+            <span class="type">ClutterTexture's</span> size to the
+            size of the source layer. Next, as
+            you cross-fade, simultaneously animate a
+            size change in the <span class="type">ClutterTexture</span> to
+            the target image's size.</p><p>This could work with non-realistic images where
+            some distortion of the image is acceptable (the target image
+            may be the wrong size to start with, but transition to the
+            correct size by the time it's fully faded in). But it can
+            look a bit odd for transitions between photos.</p></li><li class="listitem"><p>Use GdkPixbuf (or similar) to load the images into a temporary
+            data structure. (GdkPixbuf works well for this as it can resize
+            the image while retaining its aspect ratio.) Then load the data from
+            the pixbuf into a <span class="emphasis"><em>region</em></span> of a
+            <span class="type">CoglTexture</span> which has the same dimensions as
+            the <span class="type">ClutterTexture</span>.</p><p>Here's an example of how you can rewrite the
+            <code class="function">load_cogl_texture()</code> function of
+            the <a class="link" href="textures-crossfade.html#textures-crossfade-example-2" title="Example 4.5. Cross-fading between two images using one ClutterTexture and the COGL API">single
+            texture example</a> to do this:</p><div class="informalexample"><pre class="programlisting">/* requires this extra include */
+#include &lt;gdk-pixbuf/gdk-pixbuf.h&gt;
+
+static CoglHandle
+load_cogl_texture (const char  *type,
+                   const char  *file,
+                   const guint texture_width,
+                   const guint texture_height)
+{
+  GError *error = NULL;
+
+  /*
+   * Load image data from a file into a GdkPixbuf,
+   * but constrained to the size of the target ClutterTexture;
+   * aspect ratio is maintained
+   *
+   * texture_width and texture_height are set elsewhere to
+   * the width and height of the ClutterTexture
+   */
+  GdkPixbuf *pixbuf = gdk_pixbuf_new_from_file_at_size (file,
+                                                        texture_width,
+                                                        texture_height,
+                                                        &amp;error);
+
+  if (error != NULL)
+    {
+      g_print ("Unable to load %s image: %s\n", type, error-&gt;message);
+      g_error_free (error);
+      exit (EXIT_FAILURE);
+    }
+
+  guint rowstride = gdk_pixbuf_get_rowstride (pixbuf);
+  guint width = gdk_pixbuf_get_width (pixbuf);
+  guint height = gdk_pixbuf_get_height (pixbuf);
+  guchar *data = gdk_pixbuf_get_pixels (pixbuf);
+
+  CoglPixelFormat format = COGL_PIXEL_FORMAT_RGB_888;
+  if (gdk_pixbuf_get_has_alpha (pixbuf) == TRUE)
+    format = COGL_PIXEL_FORMAT_RGBA_8888;
+
+  /* CoglTexture with the same dimensions as the ClutterTexture */
+  CoglHandle *tex = cogl_texture_new_with_size (texture_width,
+                                                texture_height,
+                                                COGL_TEXTURE_NO_SLICING,
+                                                format);
+
+  /*
+   * load the texture data into a region of the full-sized texture;
+   * the size of the region is set from the size of the image data
+   * (as resized by GdkPixbuf)
+   */
+  cogl_texture_set_region (tex,
+                           0, 0,                          /* from top-left corner of the pixbuf */
+                           (texture_width - width) / 2,   /* center on the CoglTexture */
+                           (texture_height - height) / 2, /* center on the CoglTexture */
+                           width, height,
+                           width, height,
+                           format,
+                           rowstride,
+                           data);
+
+  return tex;
+}</pre></div><p>Because you're copying the image data from the
+            file into a region of the <span class="type">CoglTexture</span>
+            that's the same size as the image data in the pixbuf, it isn't
+            distorted.</p></li></ol></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="textures-crossfade-discussion-slideshows"></a>7.3.2. Slideshows</h4></div></div></div><p>The two texture solution can be easily extended
+        to cycle through multiple images. To begin with, the first
+        image is loaded into the <code class="varname">top</code> texture. Then,
+        the basic pattern for transitioning to the next image is as follows:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Copy the data from the <code class="varname">top</code> texture
+            to the <code class="varname">bottom</code> texture.</p></li><li class="listitem"><p>Make the <code class="varname">top</code> texture transparent
+            and the <code class="varname">bottom</code> texture opaque (using
+            <code class="function">clutter_state_warp_to_state()</code>). At this
+            point, it appears as though the textures haven't changed.</p></li><li class="listitem"><p>Load the next image into <code class="varname">top</code>.</p></li><li class="listitem"><p>When <code class="varname">top</code> has finished loading,
+            fade it in while simultaneously fading out
+            <code class="varname">bottom</code> (using
+            <code class="function">clutter_state_set_state()</code>).</p></li></ul></div><p>The <a class="link" href="textures-crossfade.html#textures-crossfade-example-3" title="Example 4.6. A simple slideshow application using two ClutterTextures">sample
+        code in the appendix</a> implements this as part of
+        a simple slideshow application.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790506406000"></a>7.4. Full examples</h3></div></div></div><div class="example"><a name="textures-crossfade-example-1"></a><p class="title"><b>Example 4.4. Cross-fading between two images using two
+        <span class="type">ClutterTextures</span></b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static gchar *source   = NULL;
+static gchar *target   = NULL;
+static guint  duration = 1000;
+
+static GOptionEntry entries[] = {
+  {
+    "source", 's',
+    0,
+    G_OPTION_ARG_FILENAME, &amp;source,
+    "The source image of the cross-fade", "FILE"
+  },
+  {
+    "target", 't',
+    0,
+    G_OPTION_ARG_FILENAME, &amp;target,
+    "The target image of the cross-fade", "FILE"
+  },
+  {
+    "duration", 'd',
+    0,
+    G_OPTION_ARG_INT, &amp;duration,
+    "The duration of the cross-fade, in milliseconds", "MSECS"
+  },
+
+  { NULL }
+};
+
+static gboolean
+start_animation (ClutterActor *actor,
+                 ClutterEvent *event,
+                 gpointer      user_data)
+{
+  ClutterState *transitions = CLUTTER_STATE (user_data);
+  clutter_state_set_state (transitions, "show-top");
+  return TRUE;
+}
+
+static gboolean
+load_image (ClutterTexture *texture,
+            gchar          *image_path)
+{
+  GError *error = NULL;
+
+  gboolean success = clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                                                    image_path,
+                                                    &amp;error);
+
+  if (error != NULL)
+    {
+      g_warning ("Error loading %s\n%s", image_path, error-&gt;message);
+      g_error_free (error);
+      exit (EXIT_FAILURE);
+    }
+
+  return success;
+}
+
+int
+main (int argc, char *argv[])
+{
+  GError *error = NULL;
+
+  /* UI */
+  ClutterActor *stage;
+  ClutterLayoutManager *layout;
+  ClutterActor *box;
+  ClutterActor *top, *bottom;
+  ClutterState *transitions;
+
+  if (clutter_init_with_args (&amp;argc, &amp;argv,
+                              " - cross-fade", entries,
+                              NULL,
+                              NULL) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  if (source == NULL || target == NULL)
+    {
+      g_print ("Usage: %s -s &lt;source&gt; -t &lt;target&gt; [-d &lt;duration&gt;]\n", argv[0]);
+      exit (EXIT_FAILURE);
+    }
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_stage_set_title (CLUTTER_STAGE (stage), "cross-fade");
+  clutter_actor_set_size (stage, 400, 300);
+  clutter_actor_show (stage);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  layout = clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_CENTER,
+                                   CLUTTER_BIN_ALIGNMENT_CENTER);
+
+  box = clutter_box_new (layout);
+  clutter_actor_set_size (box, 400, 300);
+
+  bottom = clutter_texture_new ();
+  top = clutter_texture_new ();
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (box), bottom);
+  clutter_container_add_actor (CLUTTER_CONTAINER (box), top);
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), box);
+
+  /* load the first image into the bottom */
+  load_image (CLUTTER_TEXTURE (bottom), source);
+
+  /* load the second image into the top */
+  load_image (CLUTTER_TEXTURE (top), target);
+
+  /* animations */
+  transitions = clutter_state_new ();
+  clutter_state_set (transitions, NULL, "show-bottom",
+                     top, "opacity", CLUTTER_LINEAR, 0,
+                     bottom, "opacity", CLUTTER_LINEAR, 255,
+                     NULL);
+  clutter_state_set (transitions, NULL, "show-top",
+                     top, "opacity", CLUTTER_EASE_IN_CUBIC, 255,
+                     bottom, "opacity", CLUTTER_EASE_IN_CUBIC, 0,
+                     NULL);
+  clutter_state_set_duration (transitions, NULL, NULL, duration);
+
+  /* make the bottom opaque and top transparent */
+  clutter_state_warp_to_state (transitions, "show-bottom");
+
+  /* on key press, fade in the top texture and fade out the bottom texture */
+  g_signal_connect (stage,
+                    "key-press-event",
+                    G_CALLBACK (start_animation),
+                    transitions);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (transitions);
+
+  if (error != NULL)
+    g_error_free (error);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="textures-crossfade-example-2"></a><p class="title"><b>Example 4.5. Cross-fading between two images using one
+        <span class="type">ClutterTexture</span> and the COGL API</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static gchar *source   = NULL;
+static gchar *target   = NULL;
+static guint  duration = 1000;
+
+static GOptionEntry entries[] = {
+  {
+    "source", 's',
+    0,
+    G_OPTION_ARG_FILENAME, &amp;source,
+    "The source image of the cross-fade", "FILE"
+  },
+  {
+    "target", 't',
+    0,
+    G_OPTION_ARG_FILENAME, &amp;target,
+    "The target image of the cross-fade", "FILE"
+  },
+  {
+    "duration", 'd',
+    0,
+    G_OPTION_ARG_INT, &amp;duration,
+    "The duration of the cross-fade, in milliseconds", "MSECS"
+  },
+
+  { NULL }
+};
+
+static void
+_update_progress_cb (ClutterTimeline *timeline,
+                     guint            elapsed_msecs,
+                     ClutterTexture  *texture)
+{
+  CoglHandle copy;
+  gdouble progress;
+  CoglColor constant;
+
+  CoglHandle material = clutter_texture_get_cogl_material (texture);
+
+  if (material == COGL_INVALID_HANDLE)
+    return;
+
+  /* You should assume that a material can only be modified once, after
+   * its creation; if you need to modify it later you should use a copy
+   * instead. Cogl makes copying materials reasonably cheap
+   */
+  copy = cogl_material_copy (material);
+
+  progress = clutter_timeline_get_progress (timeline);
+
+  /* Create the constant color to be used when combining the two
+   * material layers; we use a black color with an alpha component
+   * depending on the current progress of the timeline
+   */
+  cogl_color_init_from_4ub (&amp;constant, 0x00, 0x00, 0x00, 0xff * progress);
+
+  /* This sets the value of the constant color we use when combining
+   * the two layers
+   */
+  cogl_material_set_layer_combine_constant (copy, 1, &amp;constant);
+
+  /* The Texture now owns the material */
+  clutter_texture_set_cogl_material (texture, copy);
+  cogl_handle_unref (copy);
+
+  clutter_actor_queue_redraw (CLUTTER_ACTOR (texture));
+}
+
+static CoglHandle
+load_cogl_texture (const char *type,
+                   const char *file)
+{
+  GError *error = NULL;
+
+  CoglHandle retval = cogl_texture_new_from_file (file,
+                                                  COGL_TEXTURE_NO_SLICING,
+                                                  COGL_PIXEL_FORMAT_ANY,
+                                                  &amp;error);
+  if (error != NULL)
+    {
+      g_print ("Unable to load %s image: %s\n", type, error-&gt;message);
+      g_error_free (error);
+      exit (EXIT_FAILURE);
+    }
+
+  return retval;
+}
+
+static int
+print_usage_and_exit (const char *exec_name,
+                      int         exit_code)
+{
+  g_print ("Usage: %s -s &lt;source&gt; -t &lt;target&gt; [-d &lt;duration&gt;]\n", exec_name);
+  return exit_code;
+}
+
+int
+main (int argc, char *argv[])
+{
+  CoglHandle texture_1;
+  CoglHandle texture_2;
+  CoglHandle material;
+  ClutterActor *stage;
+  ClutterActor *texture;
+  ClutterTimeline *timeline;
+
+  if (clutter_init_with_args (&amp;argc, &amp;argv,
+                              " - Crossfade", entries,
+                              NULL,
+                              NULL) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  if (source == NULL || target == NULL)
+    return print_usage_and_exit (argv[0], EXIT_FAILURE);
+
+  /* Load the source and target images using Cogl, because we need
+   * to combine them into the same ClutterTexture.
+   */
+  texture_1 = load_cogl_texture ("source", source);
+  texture_2 = load_cogl_texture ("target", target);
+
+  /* Create a new Cogl material holding the two textures inside two
+   * separate layers.
+   */
+  material = cogl_material_new ();
+  cogl_material_set_layer (material, 1, texture_1);
+  cogl_material_set_layer (material, 0, texture_2);
+
+  /* Set the layer combination description for the second layer; the
+   * default for Cogl is to simply multiply the layer with the
+   * precendent one. In this case we interpolate the color for each
+   * pixel between the pixel value of the previous layer and the
+   * current one, using the alpha component of a constant color as
+   * the interpolation factor.
+   */
+  cogl_material_set_layer_combine (material, 1,
+                                   "RGBA = INTERPOLATE (PREVIOUS, "
+                                                       "TEXTURE, "
+                                                       "CONSTANT[A])",
+                                   NULL);
+
+  /* The material now owns the two textures */
+  cogl_handle_unref (texture_1);
+  cogl_handle_unref (texture_2);
+
+  /* Create a Texture and place it in the middle of the stage; then
+   * assign the material we created earlier to the Texture for painting
+   * it
+   */
+  stage = clutter_stage_new ();
+  clutter_stage_set_title (CLUTTER_STAGE (stage), "cross-fade");
+  clutter_actor_set_size (stage, 400, 300);
+  clutter_actor_show (stage);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  texture = clutter_texture_new ();
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), texture);
+  clutter_texture_set_cogl_material (CLUTTER_TEXTURE (texture), material);
+  clutter_actor_add_constraint (texture, clutter_align_constraint_new (stage, CLUTTER_ALIGN_X_AXIS, 0.5));
+  clutter_actor_add_constraint (texture, clutter_align_constraint_new (stage, CLUTTER_ALIGN_Y_AXIS, 0.5));
+  cogl_handle_unref (material);
+
+  /* The timeline will drive the cross-fading */
+  timeline = clutter_timeline_new (duration);
+  g_signal_connect (timeline, "new-frame", G_CALLBACK (_update_progress_cb), texture);
+  clutter_timeline_start (timeline);
+
+  clutter_main ();
+
+  g_object_unref (timeline);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="textures-crossfade-example-3"></a><p class="title"><b>Example 4.6. A simple slideshow application using two
+        <span class="type">ClutterTextures</span></b></p><div class="example-contents"><pre class="programlisting">/*
+ * Simple slideshow application, cycling images between
+ * two ClutterTextures
+ *
+ * Run by passing one or more image paths or directory globs
+ * which will pick up image files
+ *
+ * When running, press any key to go to the next image
+ */
+#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static guint stage_side = 600;
+static guint animation_duration_ms = 1500;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+
+typedef struct {
+  ClutterActor *top;
+  ClutterActor *bottom;
+  ClutterState *transitions;
+  GSList       *image_paths;
+  guint         next_image_index;
+} State;
+
+static gboolean
+load_next_image (State *app)
+{
+  gpointer next;
+  gchar *image_path;
+  CoglHandle *cogl_texture;
+  GError *error = NULL;
+
+  /* don't do anything if already animating */
+  ClutterTimeline *timeline = clutter_state_get_timeline (app-&gt;transitions);
+
+  if (clutter_timeline_is_playing (timeline) == 1)
+    {
+      g_debug ("Animation is running already");
+      return FALSE;
+    }
+
+  if (!app-&gt;next_image_index)
+      app-&gt;next_image_index = 0;
+
+  next = g_slist_nth_data (app-&gt;image_paths, app-&gt;next_image_index);
+
+  if (next == NULL)
+    return FALSE;
+
+  image_path = (gchar *)next;
+
+  g_debug ("Loading %s", image_path);
+
+  cogl_texture = clutter_texture_get_cogl_texture (CLUTTER_TEXTURE (app-&gt;top));
+
+  if (cogl_texture != NULL)
+    {
+      /* copy the current texture into the background */
+      clutter_texture_set_cogl_texture (CLUTTER_TEXTURE (app-&gt;bottom), cogl_texture);
+
+      /* make the bottom opaque and top transparent */
+      clutter_state_warp_to_state (app-&gt;transitions, "show-bottom");
+    }
+
+  /* load the next image into the top */
+  clutter_texture_set_from_file (CLUTTER_TEXTURE (app-&gt;top),
+                                 image_path,
+                                 &amp;error);
+
+  if (error != NULL)
+    {
+      g_warning ("Error loading %s\n%s", image_path, error-&gt;message);
+      g_error_free (error);
+      return FALSE;
+    }
+
+  /* fade in the top texture and fade out the bottom texture */
+  clutter_state_set_state (app-&gt;transitions, "show-top");
+
+  app-&gt;next_image_index++;
+
+  return TRUE;
+}
+
+static gboolean
+_key_pressed_cb (ClutterActor *actor,
+                 ClutterEvent *event,
+                 gpointer      user_data)
+{
+  State *app = (State *)user_data;
+
+  load_next_image (app);
+
+  return TRUE;
+}
+
+int
+main (int argc, char *argv[])
+{
+  State *app = g_new0 (State, 1);
+  guint i;
+  GError *error = NULL;
+
+  /* UI */
+  ClutterActor *stage;
+  ClutterLayoutManager *layout;
+  ClutterActor *box;
+
+  if (argc &lt; 2)
+    {
+      g_print ("Usage: %s &lt;image paths to load&gt;\n", argv[0]);
+      exit (EXIT_FAILURE);
+    }
+
+  app-&gt;image_paths = NULL;
+
+  /*
+   * NB if your shell globs arguments to this program so argv
+   * includes non-image files, they will fail to load and throw errors
+   */
+  for (i = 1; i &lt; argc; i++)
+    app-&gt;image_paths = g_slist_append (app-&gt;image_paths, argv[i]);
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+  clutter_stage_set_title (CLUTTER_STAGE (stage), "cross-fade");
+  clutter_actor_set_size (stage, stage_side, stage_side);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+
+  layout = clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_CENTER,
+                                   CLUTTER_BIN_ALIGNMENT_CENTER);
+
+  box = clutter_box_new (layout);
+  clutter_actor_set_size (box, stage_side, stage_side);
+
+  app-&gt;bottom = clutter_texture_new ();
+  clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (app-&gt;bottom), TRUE);
+
+  app-&gt;top = clutter_texture_new ();
+  clutter_texture_set_keep_aspect_ratio (CLUTTER_TEXTURE (app-&gt;top), TRUE);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (box), app-&gt;bottom);
+  clutter_container_add_actor (CLUTTER_CONTAINER (box), app-&gt;top);
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), box);
+
+  /* animations */
+  app-&gt;transitions = clutter_state_new ();
+  clutter_state_set (app-&gt;transitions, NULL, "show-top",
+                     app-&gt;top, "opacity", CLUTTER_EASE_IN_CUBIC, 255,
+                     app-&gt;bottom, "opacity", CLUTTER_EASE_IN_CUBIC, 0,
+                     NULL);
+  clutter_state_set (app-&gt;transitions, NULL, "show-bottom",
+                     app-&gt;top, "opacity", CLUTTER_LINEAR, 0,
+                     app-&gt;bottom, "opacity", CLUTTER_LINEAR, 255,
+                     NULL);
+  clutter_state_set_duration (app-&gt;transitions,
+                              NULL,
+                              NULL,
+                              animation_duration_ms);
+
+  /* display the next (first) image */
+  load_next_image (app);
+
+  /* key press displays the next image */
+  g_signal_connect (stage,
+                    "key-press-event",
+                    G_CALLBACK (_key_pressed_cb),
+                    app);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_slist_free (app-&gt;image_paths);
+  g_object_unref (app-&gt;transitions);
+  g_free (app);
+
+  if (error != NULL)
+    g_error_free (error);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="textures-reflection.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="textures.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="animations.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">6. Creating a reflection of a texture </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 5. Animations</td></tr></table></div></body></html>

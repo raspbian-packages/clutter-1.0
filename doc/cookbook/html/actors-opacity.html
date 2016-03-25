@@ -1,0 +1,80 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>5. Making an actor transparent by changing its opacity</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="actors.html" title="Chapter 2. Actors"><link rel="prev" href="actors-paint-wrappers.html" title="4. Overriding the paint sequence"><link rel="next" href="actors-non-rectangular.html" title="6. Creating an actor with a non-rectangular shape"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Making an actor transparent by changing its opacity</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="actors-paint-wrappers.html">Prev</a> </td><th width="60%" align="center">Chapter 2. Actors</th><td width="20%" align="right"> <a accesskey="n" href="actors-non-rectangular.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="actors-opacity"></a>5. Making an actor transparent by changing its opacity</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790511252976"></a>5.1. Problem</h3></div></div></div><p>You want an actor to be transparent so that other
+      actors are visible through it.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790511251568"></a>5.2. Solution</h3></div></div></div><p>Change the actor's <span class="emphasis"><em>opacity</em></span> so that
+      it is partially (or even fully) transparent:</p><div class="informalexample"><pre class="programlisting">/* 25% transparency */
+clutter_actor_set_opacity (actor, 191);
+
+/* 50% transparency */
+clutter_actor_set_opacity (actor, 122);
+
+/* completely transparent */
+clutter_actor_set_opacity (actor, 0);</pre></div><p>Any actor covered or overlapped by the transparent actor
+      should be visible through it; the Discussion section gives
+      some examples of how visible you can expect the covered or
+      overlapped actor to be.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790511247712"></a>5.3. Discussion</h3></div></div></div><p>Opacity is a property of every <span class="type">ClutterActor</span>.
+      It is a float on a scale from 0 (invisible) to 255 (completely
+      opaque). Actors with <code class="code">0 &lt; opacity &lt; 255</code> will
+      have a varying amount of solidity on the stage, so other actors
+      may be visible through them.</p><p>For example, below are 4 yellow rectangles overlapping
+      a white rectangle on a blue stage:</p><div class="screenshot"><div class="mediaobject"><img src="images/actors-opacity.png" alt="The effect of different opacities levels on an actor's appearance"></div></div><p>The rectangles have the following opacities:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>top-left: <code class="code">255</code> (0% transparency)</p></li><li class="listitem"><p>top-right: <code class="code">191</code> (25% transparency)</p></li><li class="listitem"><p>bottom-right: <code class="code">122</code> (50% transparency)</p></li><li class="listitem"><p>bottom-left: <code class="code">61</code> (75% transparency)</p></li></ul></div><p>Notice how both the stage and the white rectangle are
+      visible through the yellow rectangles.</p><p>As opacity is a property of every actor, it can
+      be animated like any other GObject property, using any of
+      the approaches in the animation API.</p><p>The following sections cover some other considerations
+      when working with actor opacity.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790511233872"></a>5.3.1. Container and color opacity</h4></div></div></div><p>If a container has its opacity set, any children of the
+        container have their opacity combined with their parent's opacity.
+        For example, if a parent has an opacity of <code class="code">122</code>
+        (50% transparent) and the child also has an opacity of
+        <code class="code">122</code>, the child's <span class="emphasis"><em>effective</em></span>
+        opacity is 25% (<code class="code">opacity = 61</code>, and it is
+        75% transparent).</p><p>To demonstrate the visual effect of this, here are
+        three rectangles with the same color but different opacity settings,
+        inside parents which also have different opacity settings:</p><div class="screenshot"><div class="mediaobject"><img src="images/actors-opacity-container-affects-opacity.png" alt="How a container's opacity affects the opacity of its children"></div></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>The left-hand rectangle has <code class="code">opacity = 255</code>
+            and is in a <span class="type">ClutterGroup</span> with
+            <code class="code">opacity = 255</code>. This means it is fully opaque.</p></li><li class="listitem"><p>The middle rectangle has <code class="code">opacity = 255</code>
+            and is in a <span class="type">ClutterGroup</span> with
+            <code class="code">opacity = 122</code>. Notice that the parent opacity
+            makes the rectangle appear darker, as the stage colour is showing
+            through from behind.</p></li><li class="listitem"><p>The right-hand rectangle has <code class="code">opacity = 122</code>
+            and is in a <span class="type">ClutterGroup</span> with
+            <code class="code">opacity = 122</code>. Notice that the rectangle appears
+            to be even darker, as the stage colour is showing
+            through both the rectangle and its parent.</p></li></ul></div><p>Similarly, <span class="type">ClutterColor</span> also contains an
+        <code class="varname">alpha</code> property which governs the transparency
+        of the color. Where an actor can have a color set (e.g.
+        <span class="type">ClutterRectangle</span>) the alpha value of the color also
+        affects the transparency of the actor, for example:</p><div class="informalexample"><pre class="programlisting">/* color with 50% transparency */
+ClutterColor half_transparent_color = { 255, 0, 0, 122 };
+
+ClutterRectangle *actor = clutter_rectangle_new ();
+
+/* set actor's transparency to 50% */
+clutter_actor_set_opacity (actor, 122);
+
+/* rectangle will be 25% opaque/75% transparent */
+clutter_rectangle_set_color (CLUTTER_RECTANGLE (actor),
+                           &amp;half_transparent_color);</pre></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790511215648"></a>5.3.2. Depth and depth order</h4></div></div></div><p>Each actor has two more aspects which affect its
+        apparent opacity:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>An actor's <span class="emphasis"><em>depth</em></span> can have an
+            effect if the stage has fog (a depth cueing effect) turned on.
+            As an actor's depth increases, the actor apparently "recedes" from
+            view and gradually blends into the colour of the stage. This
+            produces an effect similar to making the actor transparent.
+            See the <span class="type">ClutterStage</span> documentation for
+            more details about fog.</p><p>Depth also needs to be considered if you want
+            one actor to be visible through another: the actor you want
+            to see through a transparent actor must be "deeper" than (or at
+            the same depth as) the transparent actor.</p></li><li class="listitem"><p>The <span class="emphasis"><em>depth order</em></span> governs how
+            actors within a <span class="type">ClutterContainer</span> implementation
+            are placed with respect to each other.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Depth ordering is not the same thing as depth: depth
+              ordering records relationships between actors at the same
+              depth.</p></div><p>If you have two overlapping actors <code class="code">actorA</code> and
+            <code class="code">actorB</code> in a container, and you want <code class="code">actorA</code>
+            (opaque) to be visible through <code class="code">actorB</code> (transparent),
+            you should ensure that <code class="code">actorB</code> is "above" <code class="code">actorA</code>
+            in the depth ordering. You could do this as follows:</p><div class="informalexample"><pre class="programlisting">/*
+* raise actorB so it is above actorA in the depth order;
+* NB actorA and actorB both need to be in the same container
+* for this to work
+*/
+clutter_actor_raise (actorB, actorA);</pre></div><p><code class="function">clutter_actor_set_child_above_sibling()</code>,
+            <code class="function">clutter_actor_set_child_below_sibling()</code> and related
+            <span class="type">ClutterActor</span> functions set
+            depth ordering on actors.</p></li></ul></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="actors-paint-wrappers.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="actors.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="actors-non-rectangular.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">4. Overriding the paint sequence </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 6. Creating an actor with a non-rectangular shape</td></tr></table></div></body></html>

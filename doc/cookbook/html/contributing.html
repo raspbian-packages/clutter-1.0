@@ -1,0 +1,82 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Appendix 1. Contributing to this document</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="index.html" title="The Clutter Cookbook"><link rel="prev" href="effects-custom-deform.html" title="3. Creating and animating a custom ClutterDeformEffect"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Appendix 1. Contributing to this document</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="effects-custom-deform.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> </td></tr></table><hr></div><div class="appendix"><div class="titlepage"><div><div><h1 class="title"><a name="contributing"></a>Appendix 1. Contributing to this document</h1></div></div></div><p>This document is written in
+    <a class="ulink" href="http://docbook.org/" target="_top">Docbook XML</a>. The source files
+    for this document are located in the subdirectory
+    <code class="filename">doc/cookbook</code> inside the Clutter source directory.</p><p>To maintain some degree of consistency, try to stick to the
+    following broad guidelines about how to write Docbook for this
+    cookbook:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>If adding a new recipe, use the
+        <code class="filename">recipe-template.xml</code> XML file as a basis.
+        You can find it in the <code class="filename">&lt;clutter source&gt;/doc/cookbook/</code>
+        directory.</p></li><li class="listitem"><p>Try to indent your XML sensibly using 2 spaces per level
+        (we're not too strict, but some indentation helps reading
+        the source).</p></li><li class="listitem"><p>Stick to a column width of around 80 characters.</p></li><li class="listitem"><p>Use the &lt;filename&gt; element for file
+        and directory names.</p></li><li class="listitem"><p>Use the &lt;property&gt; element for property names
+        (e.g. GObject properties).</p></li><li class="listitem"><p>Use the &lt;type&gt; element for GObject class
+        names.</p></li><li class="listitem"><p>Use the &lt;constant&gt; element for C defines.</p></li><li class="listitem"><p>Use the &lt;keycap&gt; element for keys, where
+        you are referring to what's actually printed on the key, e.g.
+        <span class="keycap"><strong>Shift</strong></span>. If you're referring to the key some
+        other way (e.g. "the Control key"), don't use
+        &lt;keycap&gt;.</p></li><li class="listitem"><p>Use the &lt;function&gt; element for functions;
+        the style adopted is to give the function name followed by
+        empty brackets, e.g. <code class="function">clutter_actor_set_size()</code>.
+        </p></li><li class="listitem"><p>Use the &lt;note&gt; element for asides which might
+        otherwise interrupt the flow of the recipe.</p></li><li class="listitem"><p>To include a video in a recipe, do the following:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>Make the video as short as is practical, and only include
+            the relevant Clutter window(s).</p></li><li class="listitem"><p>Use Ogg Theora for the encoding.</p></li><li class="listitem"><p>Put the file into the
+            <code class="filename">&lt;clutter source&gt;/doc/cookbook/videos</code>
+            directory. The name should be in the format
+            <code class="filename">&lt;section&gt;-&lt;recipe&gt;-&lt;identifier&gt;.ogv</code>.
+            For example: <code class="filename">animations-fading-fade-out.ogv</code>.</p></li><li class="listitem"><p>Add the name of the file to the <code class="varname"></code>
+            in the cookbook's <code class="filename">Makefile.am</code>, e.g.</p><div class="informalexample"><pre class="programlisting">VIDEO_FILES = \
+	videos/animations-fading-fade-out.ogv \
+	$(NULL)</pre></div><p>This ensures it gets included in the distribution and
+            installation.</p></li><li class="listitem"><p>Use an &lt;inlinemediaobject&gt; to include it in the
+            Docbook recipe file. It should look something like this:</p><div class="informalexample"><pre class="programlisting">&lt;inlinemediaobject&gt;
+  &lt;videoobject&gt;
+    &lt;videodata fileref="videos/animations-fading-in-then-out.ogv"/&gt;
+  &lt;/videoobject&gt;
+  &lt;alt&gt;
+    &lt;para&gt;Video showing an actor fading in then out using
+    &lt;type&gt;ClutterState&lt;/type&gt;&lt;/para&gt;
+  &lt;/alt&gt;
+&lt;/inlinemediaobject&gt;</pre></div><p>The &lt;alt&gt; tag provides the text which
+            is presented as a link to the file for users whose browser
+            doesn't support HTML 5 embedded video.</p></li></ul></div></li><li class="listitem"><p>To include a full code sample in a recipe (which can
+        be compiled into a runnable binary), do the following:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: circle; "><li class="listitem"><p>Create a C code file in the
+            <code class="filename">&lt;clutter source&gt;/doc/cookbook/examples</code>
+            directory. It should be a standalone C application (with
+            a <code class="function">main()</code> etc.). The filename should be
+            in the format
+            <code class="filename">&lt;section&gt;-&lt;recipe&gt;.c</code>; you
+            can add an optional identifier to the end if you have more
+            than one example for a recipe.</p><p>If you want to load image files into the application
+            (e.g. to demonstrate something with a texture), you can use
+            the <code class="constant">TESTS_DATA_DIR</code> variable in your C
+            code to reuse images in the Clutter <code class="filename">tests</code>
+            directory; this will be replaced with
+            <code class="filename">&lt;clutter source&gt;/tests/data</code>
+            during the build. For example:</p><div class="informalexample"><pre class="programlisting">clutter_texture_set_from_file (CLUTTER_TEXTURE (texture),
+                               TESTS_DATA_DIR "/redhand.png",
+                               &amp;error);</pre></div></li><li class="listitem"><p>Edit <code class="filename">Makefile.am</code>
+            in the <code class="filename">cookbook/examples</code> directory
+            so that the build recognises the new code; e.g. if
+            your C source file were called
+            <code class="filename">fooing-barring.c</code> you would do:</p><div class="informalexample"><pre class="programlisting">noinst_PROGRAMS = \
+	textures-reflection	\
+	text-shadow		\
+	animations-rotating \
+	fooing-barring \
+	$(NULL)
+
+fooing_barring_SOURCE = fooing-barring.c</pre></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Note the second line is a new one to tell the
+              build where the source file is for your example.</p></div></li><li class="listitem"><p>Add a section at the end of your recipe which
+            XIncludes the sample code, e.g.:</p><div class="informalexample"><pre class="programlisting">&lt;section&gt;
+  &lt;title&gt;Full example&lt;/title&gt;
+
+  &lt;example id="fooing-barring-example"&gt;
+    &lt;title&gt;Fooing with a bar&lt;/title&gt;
+    &lt;programlisting&gt;
+      &lt;xi:include href="examples/fooing-barring.c" parse="text"&gt;
+        &lt;xi:fallback&gt;a code sample should be here... but isn't&lt;/xi:fallback&gt;
+      &lt;/xi:include&gt;
+    &lt;/programlisting&gt;
+  &lt;/example&gt;
+&lt;/section&gt;</pre></div></li></ul></div></li></ul></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="effects-custom-deform.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> </td></tr><tr><td width="40%" align="left" valign="top">3. Creating and animating a custom <span class="type">ClutterDeformEffect</span> </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> </td></tr></table></div></body></html>

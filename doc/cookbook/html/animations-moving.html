@@ -1,0 +1,552 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>7. Moving actors</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="animations.html" title="Chapter 5. Animations"><link rel="prev" href="animations-reuse.html" title="6. Reusing a complex animation on different actors"><link rel="next" href="animations-looping.html" title="8. Looping an animation"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">7. Moving actors</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="animations-reuse.html">Prev</a> </td><th width="60%" align="center">Chapter 5. Animations</th><td width="20%" align="right"> <a accesskey="n" href="animations-looping.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="animations-moving"></a>7. Moving actors</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790504828976"></a>7.1. Problem</h3></div></div></div><p>You want to animate the movement of one or more actors.
+      For example:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>To move user interface elements in response to user input
+          (e.g. keyboard control of a character in a game).</p></li><li class="listitem"><p>To move a group of actors "off stage" to make way
+          for another group of actors (e.g. paging through
+          thumbnails in a photo viewer).</p></li><li class="listitem"><p>To move an actor to a different position in the
+          interface (e.g. moving an icon for a trashed file into
+          a wastebin).</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790504824608"></a>7.2. Solutions</h3></div></div></div><p>Animate the actors movement on one or more axes
+      (<code class="varname">x</code>, <code class="varname">y</code>,
+      <code class="varname">z/depth</code>) using one or more of the approaches
+      available in the Clutter API (implicit animations,
+      <span class="type">ClutterState</span>, <span class="type">ClutterAnimator</span>).</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504821552"></a>7.2.1. Solution 1: Implicit animations</h4></div></div></div><p>This works well for simple movement of a single actor to
+        a single set of coordinates. Here is an example of how to animate
+        movement of a <span class="type">ClutterActor</span> <code class="varname">actor</code>
+        to position <code class="code">100.0</code> on <code class="varname">x</code> axis:</p><div class="informalexample"><pre class="programlisting">clutter_actor_animate (actor, CLUTTER_LINEAR, 500,
+                       "x", 100.0,
+                       NULL);</pre></div><p>See <a class="link" href="animations-moving.html#animations-moving-example-1" title="Example 5.8. Simple movement using implicit animations">this
+        example</a> which demonstrates movement in each axis,
+        in response to (mouse) button presses.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504816416"></a>7.2.2. Solution 2: <span class="type">ClutterState</span></h4></div></div></div><p>This suits simple, repeated movement of one or more actors
+        between sets of coordinates. Here is an example of how to
+        create two states for a <span class="type">ClutterState</span> instance to
+        move two actors, <code class="varname">actor1</code> and
+        <code class="varname">actor2</code>:</p><div class="informalexample"><pre class="programlisting">ClutterState *transitions = clutter_state_new ();
+
+/* all state transitions take 250ms */
+clutter_state_set_duration (transitions, NULL, NULL, 250);
+
+/* create a state called move-down which moves both actors to y = 200.0 */
+clutter_state_set (transitions, NULL, "move-down",
+                   actor1, "y", CLUTTER_EASE_OUT_CUBIC, 200.0,
+                   actor2, "y", CLUTTER_EASE_OUT_CUBIC, 200.0,
+                   NULL);
+
+/* create a state called move-up which moves both actors to y = 0.0 */
+clutter_state_set (transitions, NULL, "move-up",
+                   actor1, "y", CLUTTER_EASE_OUT_CUBIC, 0.0,
+                   actor2, "y", CLUTTER_EASE_OUT_CUBIC, 0.0,
+                   NULL);
+
+/* move the actors by setting the state */
+clutter_state_set (transitions, "move-down");</pre></div><p>This <a class="link" href="animations-moving.html#animations-moving-example-2" title="Example 5.9. Using ClutterState to repeatedly move (and scale) two actors">full
+        example</a> shows how to move and simultaneously
+        scale two actors. When a button is pressed on one actor, it is
+        moved and scaled to occupy the right-hand side of the stage;
+        the other actor is simultaneously moved back to the left-hand
+        side of the stage and scaled down.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504810544"></a>7.2.3. Solution 3: <span class="type">ClutterAnimator</span></h4></div></div></div><p>This is a good way to implement complex movement of
+        one or more actors between sets of coordinates.</p><div class="informalexample"><pre class="programlisting">ClutterAnimator *animator = clutter_animator_new ();
+
+/* the animation takes 500ms */
+clutter_animator_set_duration (animator, 500);
+
+/* at the start of the animation, actor should be at 0.0,0.0;
+ * half-way through, at 100.0,100.0;
+ * by the end, actor should be at 150.0,200.0;
+ * note that you can set different easing modes for each
+ * part of the animation and for each property at each key
+ */
+clutter_animator_set (animator,
+
+                      /* keys for the start of the animation */
+                      actor, "x", CLUTTER_LINEAR, 0.0, 0.0,
+                      actor, "y", CLUTTER_LINEAR, 0.0, 0.0,
+
+                      /* keys for half-way through the animation */
+                      actor, "x", CLUTTER_EASE_OUT_CUBIC, 0.5, 100.0,
+                      actor, "y", CLUTTER_EASE_IN_CUBIC, 0.5, 100.0,
+
+                      /* keys for the end of the animation */
+                      actor, "x", CLUTTER_EASE_OUT_EXPO, 1.0, 150.0,
+                      actor, "y", CLUTTER_EASE_OUT_CUBIC, 1.0, 200.0,
+
+                      NULL);
+
+/* run the animation */
+clutter_animator_start (animator);</pre></div><p>The <a class="link" href="animations-moving.html#animations-moving-example-3" title="Example 5.10. Using ClutterAnimator to randomly move three actors along the x axis">full
+        example</a> demonstrates how <span class="type">ClutterAnimator</span>
+        can be used to programmatically animate multiple actors: in this
+        case, to simultaneously move three actors to random positions
+        along the <code class="varname">x</code> axis. Synchronising the
+        movement of three actors simultaneously using implicit
+        animations would be possible but awkward;
+        <span class="type">ClutterState</span> might be another option,
+        but it wasn't really designed for this case: there are no persistent
+        states to transition between, as the actor positions are
+        generated on each key press.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>If you want to apply the same movement to a group of
+          actors, rather than different movements for each actor,
+          it's often better to put the actors into a container
+          of some kind and move that instead of moving the actors
+          individually.</p></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790504802944"></a>7.3. Discussion</h3></div></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504802304"></a>7.3.1. Movement can take an actor "outside" its container</h4></div></div></div><p>Actor movement in the <code class="varname">x</code> and
+        <code class="varname">y</code> axes is relative to the actor's parent
+        container. There is nothing to stop you animating an actor
+        until it falls outside the bounds of its container. This
+        could result in the actor moving "off" the interface; though it's
+        worth remembering that the actor is not unparented or destroyed
+        if this happens.</p><p>To ensure that an actor remains visible, its position
+        should remain within the visible area of the container. In practice,
+        this means either anywhere in the container, if no clip area
+        has been set; or within the container's clip area, if set.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504799360"></a>7.3.2. Anchor points can affect movement</h4></div></div></div><p>An actor's anchor point is defined as an <code class="code">x,y</code>
+        coordinate relative to the top-left of the actor. The default
+        anchor point for an actor is in its top-left
+        corner. However, it is possible to set this to some other
+        coordinate, relative to the actor's top-left corner,
+        using the <code class="function">clutter_anchor_set_anchor_point()</code>
+        function.</p><p>For example:</p><div class="informalexample"><pre class="programlisting">/* set the actor's size to 100px x 100px */
+clutter_actor_set_size (actor, 100, 100);
+
+/* set an anchor point half-way along the top of the actor */
+clutter_actor_set_anchor_point (actor, 50.0, 0.0);</pre></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>In GL terms, the anchor point of an actor is the equivalent
+          of applying an additional transformation of <code class="code">-x, -y</code> to
+          the actor's modelview. If the anchor point is <code class="code">0, 0</code>,
+          i.e. the top-left corner, then the transformation will leave the
+          actor in the same place.</p><p>It is important to note that the anchor point will affect the
+          position in which an actor is painted, but will not change the
+          position or size that its parent allocated for it.</p><p>Finally, the anchor point will affect the other transformations
+          that can be applied to an actor: scaling and rotating.</p></div><p>A positive anchor point within the width/height bounds of the
+        actor is inside the actor. An anchor point outside these bounds
+        is outside the actor. You can also set a negative
+        <code class="varname">x</code> or <code class="varname">y</code> value for
+        the anchor point, which will again place the point outside
+        the actor's bounds.</p><p>This is important with respect to moving an actor, because
+        you are actually moving the anchor point and "dragging" the
+        actor along with it.</p><p>For example: you have an actor with width 50px, and you
+        set its <code class="varname">anchor-x</code> property to <code class="code">25.0</code>.
+        If you move that actor on the <code class="varname">x</code> axis, you are
+        effectively moving a point half-way across the top of the
+        actor along the <code class="varname">x</code> axis (which in turn moves the
+        actor).</p><p>Similarly, you could set the same actor's
+        <code class="varname">anchor-x</code> to <code class="code">-25.0</code>. If you then
+        moved the actor along the <code class="varname">x</code> axis, you would
+        effectively be moving the point 25px left of the top of the actor
+        along that axis.</p><p>The video below demonstrates the effect on movement of shifting
+        the anchor point on the <code class="varname">x</code> axis. The
+        <span class="emphasis"><em>red</em></span> rectangle has <code class="varname">anchor-x</code>
+        set to <code class="code">25.0</code>; the <span class="emphasis"><em>green</em></span> rectangle has
+        <code class="varname">anchor-x</code> set to <code class="code">0.0</code> (the default); the
+        <span class="emphasis"><em>blue</em></span> rectangle has <code class="varname">anchor-x</code>
+        set to <code class="code">-25.0</code>.</p><p><video controls="controls" src="videos/animations-moving-anchors.ogv"><a href="videos/animations-moving-anchors.ogv"></a></video></p><p> A <span class="type">ClutterAnimator</span> is
+        used to move each of the rectangles to <code class="code">x = 225.0</code>.
+        Although the three rectangles move to the same position on the
+        <code class="varname">x</code> axis, it's actually the anchor points
+        which are at the same position. These all align on the
+        <code class="varname">x</code> axis with the left-hand edge of the green
+        rectangle.</p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504777840"></a>7.3.3. Actors can move in the <code class="varname">z</code> axis</h4></div></div></div><p>The examples so far have shown how to move actors in
+        the <code class="varname">x</code> and <code class="varname">y</code> axes; but it
+        is also possible to move actors in the <code class="varname">z</code>
+        axis (i.e. move them closer or further away from the view point).
+        This lets you move actors under/over each other.</p><p>To move an actor in the <code class="varname">z</code> axis, animate
+        its <code class="varname">depth</code> property. Animating to a negative
+        depth moves the actor away from the view point; animating to a
+        positive depth moves the actor towards the view point.</p><p>Changing the depth of an actor also causes perspective
+        effects: the actor gets smaller and converges on the center
+        of the stage as it gets further from the view point, and
+        gets larger and diverges from the center of the stage as it gets
+        closer. This results in an apparent (but not actual) change in
+        the <code class="code">x,y</code> position and scale of the actor.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Animating the depth of an actor is slightly different
+          from animating its x and y coordinates, as depth is relative
+          to the whole stage, not just the parent container of the
+          actor. This means that perspective effects are with
+          respect to the whole stage: so as an actor's depth
+          moves below <code class="code">0.0</code>, it converges on the center
+          of the stage, and may even apparently move outside its
+          container (if the container stays at the same depth).</p></div><p>The video below demonstrates the effect of animating
+        the depth of four actors to a value of <code class="code">-15000.0</code>.
+        Note how the actors converge on the center of the stage,
+        as well as appearing to change position and scale; also note
+        that they appear to move outside the bounds of their parent containers
+        (the four yellow <span class="type">ClutterBoxes</span>).</p><p><video controls="controls" src="videos/animations-moving-depth.ogv"><a href="videos/animations-moving-depth.ogv"></a></video></p></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790504767040"></a>7.3.4. Movement is affected by constraints</h4></div></div></div><p>An actor can have its x,y position constrained by
+        the position of other actors through <span class="type">ClutterBindConstraints</span>.
+        This can affect movement in two ways:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>If an actor has its <code class="varname">x</code> and/or
+            <code class="varname">y</code> properties
+            bound or aligned to another actor's, you can't animate
+            those properties.</p><p>In effect this means that the bound actor can't be
+            moved on a bound axis directly, but can only be moved by
+            animating the constraint's properties.</p></li><li class="listitem"><p>If you move an actor which has other actors bound to
+            it, the bound actors will also move. For example, if
+            the actor has several other actors whose <code class="varname">x</code>
+            properties are bound to its <code class="varname">x</code> property,
+            moving the actor on the <code class="varname">x</code> axis will also
+            move the bound actors on that axis.</p><p>Similarly, if some actor is the source for
+            alignment constraints on other actors, moving the source
+            will cause those other actors to move, so that they remain in
+            alignment with it.</p></li></ol></div><p>For example, consider two actors bound by constraints
+        as follows:</p><div class="informalexample"><pre class="programlisting">/* the source actor for the constraint */
+ClutterActor *source;
+
+/* the actor bound by the constraint */
+ClutterActor *target;
+
+/* a constraint to be added to target */
+ClutterConstraint *constraint;
+
+/* ...initialize actors etc... */
+
+/* create a constraint for binding the x position of some actor to the
+ * x position of source
+ */
+constraint = clutter_bind_constraint_new (source, CLUTTER_BIND_X, 0.0);
+
+/* add the constraint to target with a name */
+clutter_actor_add_constraint_with_name (target, "bind-x", constraint);</pre></div><p>Animating <code class="varname">source</code> on the <code class="varname">x</code>
+        axis also animates <code class="varname">target</code> on the same axis:</p><div class="informalexample"><pre class="programlisting">clutter_actor_animate (source, CLUTTER_LINEAR, 500,
+                       "x", 250.0,
+                       NULL);</pre></div><p>...while this has no effect, as it would violate
+        <code class="varname">constraint</code> (it's best not to animate
+        <code class="varname">target's</code> <code class="varname">x</code> property
+        directly):</p><div class="informalexample"><pre class="programlisting">clutter_actor_animate (target, CLUTTER_LINEAR, 500,
+                       "x", 250.0,
+                       NULL);</pre></div><p>But the constraint's properties can be animated, to change
+        how <code class="varname">source</code> and <code class="varname">target</code>
+        are bound; which in turn moves <code class="varname">target</code>:</p><div class="informalexample"><pre class="programlisting">clutter_actor_animate (target, CLUTTER_LINEAR, 500,
+                       "@constraints.bind-x.offset", 250.0,
+                       NULL);</pre></div><p>Note the <code class="code">@constraints.&lt;constraint name&gt;.&lt;constraint property&gt;</code>
+        syntax (which is why we needed to use
+        <code class="function">clutter_actor_add_constraint_with_name()</code>,
+        so that the constraint can be accessed through the actor).
+        We are still animating <code class="varname">target</code>, but really
+        we're indirectly animating a property of one of its constraints.</p><p>Another alternative would be to directly animate
+        the constraint's properties through <span class="type">ClutterState</span>
+        or <span class="type">ClutterAnimator</span>, rather than using
+        pseudo-properties on the actor animation:</p><div class="informalexample"><pre class="programlisting">ClutterAnimator *animator = clutter_animator_new ();
+clutter_animator_set_duration (animator, 500);
+
+clutter_animator_set (animator,
+                      constraint, "offset", CLUTTER_LINEAR, 0.0, 0.0,
+                      constraint, "offset", CLUTTER_LINEAR, 1.0, 250.0,
+                      NULL);
+
+clutter_animator_start (animator);</pre></div><p>This could be useful if you need to animate
+        multiple constraints between multiple values simultaneously.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="animations-moving-examples"></a>7.4. Full examples</h3></div></div></div><div class="example"><a name="animations-moving-example-1"></a><p class="title"><b>Example 5.8. Simple movement using implicit animations</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+typedef struct
+{
+  gchar *axis;
+  gfloat target;
+} AnimationSpec;
+
+static gboolean
+button_pressed_cb (ClutterActor *actor,
+                   ClutterEvent *event,
+                   gpointer      user_data)
+{
+  AnimationSpec *animation_spec = user_data;
+  ClutterTransition *transition;
+
+  if (clutter_actor_get_transition (actor, animation_spec-&gt;axis) != NULL)
+    return TRUE;
+
+  clutter_actor_save_easing_state (actor);
+  clutter_actor_set_easing_duration (actor, 500);
+
+  g_object_set (actor, animation_spec-&gt;axis, animation_spec-&gt;target, NULL);
+  transition = clutter_actor_get_transition (actor, animation_spec-&gt;axis);
+  clutter_timeline_set_auto_reverse (CLUTTER_TIMELINE (transition), TRUE);
+  clutter_timeline_set_repeat_count (CLUTTER_TIMELINE (transition), 1);
+
+  clutter_actor_restore_easing_state (actor);
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *rectangle1;
+  ClutterActor *rectangle2;
+  ClutterActor *rectangle3;
+
+  AnimationSpec x_move = { "x", 50.0 };
+  AnimationSpec y_move = { "y", 400.0 };
+  AnimationSpec z_move = { "depth", -1000.0 };
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 500, 500);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), CLUTTER_COLOR_Aluminium2);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  rectangle1 = clutter_actor_new ();
+  clutter_actor_set_background_color (rectangle1, CLUTTER_COLOR_ScarletRed);
+  clutter_actor_set_reactive (rectangle1, TRUE);
+  clutter_actor_set_size (rectangle1, 50, 50);
+  clutter_actor_set_position (rectangle1, 400, 400);
+  clutter_actor_add_child (stage, rectangle1);
+
+  rectangle2 = clutter_actor_new ();
+  clutter_actor_set_background_color (rectangle2, CLUTTER_COLOR_Chameleon);
+  clutter_actor_set_reactive (rectangle2, TRUE);
+  clutter_actor_set_size (rectangle2, 50, 50);
+  clutter_actor_set_position (rectangle2, 50, 50);
+  clutter_actor_add_child (stage, rectangle2);
+
+  rectangle3 = clutter_actor_new ();
+  clutter_actor_set_background_color (rectangle3, CLUTTER_COLOR_SkyBlue);
+  clutter_actor_set_reactive (rectangle3, TRUE);
+  clutter_actor_set_size (rectangle3, 50, 50);
+  clutter_actor_set_position (rectangle3, 225, 225);
+  clutter_actor_add_child (stage, rectangle3);
+
+  g_signal_connect (rectangle1,
+                    "button-press-event",
+                    G_CALLBACK (button_pressed_cb),
+                    &amp;x_move);
+
+  g_signal_connect (rectangle2,
+                    "button-press-event",
+                    G_CALLBACK (button_pressed_cb),
+                    &amp;y_move);
+
+  g_signal_connect (rectangle3,
+                    "button-press-event",
+                    G_CALLBACK (button_pressed_cb),
+                    &amp;z_move);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="animations-moving-example-2"></a><p class="title"><b>Example 5.9. Using <span class="type">ClutterState</span> to repeatedly move
+        (and scale) two actors</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+static const ClutterColor green_color = { 0x00, 0xff, 0x00, 0xff };
+
+static gboolean
+button_pressed_cb (ClutterActor *actor,
+                   ClutterEvent *event,
+                   gpointer      user_data)
+{
+  ClutterState *transitions = CLUTTER_STATE (user_data);
+
+  /* set the state to the one with a name matching the actor's name */
+  clutter_state_set_state (transitions, clutter_actor_get_name (actor));
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *red;
+  ClutterActor *green;
+  ClutterState *transitions;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 650, 500);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  /* actor names choose the next ClutterState to transition to */
+  red = clutter_rectangle_new_with_color (&amp;red_color);
+  clutter_actor_set_reactive (red, TRUE);
+  clutter_actor_set_name (red, "red");
+  clutter_actor_set_size (red, 100, 100);
+  clutter_actor_set_position (red, 50, 50);
+
+  green = clutter_rectangle_new_with_color (&amp;green_color);
+  clutter_actor_set_reactive (green, TRUE);
+  clutter_actor_set_name (green, "green");
+  clutter_actor_set_size (green, 100, 100);
+  clutter_actor_set_position (green, 50, 350);
+
+  transitions = clutter_state_new ();
+  clutter_state_set_duration (transitions, NULL, NULL, 250);
+
+  /* state names match actor names */
+  clutter_state_set (transitions, NULL, "red",
+                     red, "x", CLUTTER_EASE_OUT_CUBIC, 200.0,
+                     red, "y", CLUTTER_EASE_OUT_CUBIC, 50.0,
+                     red, "scale-x", CLUTTER_EASE_OUT_CUBIC, 4.0,
+                     red, "scale-y", CLUTTER_EASE_OUT_CUBIC, 4.0,
+                     green, "x", CLUTTER_EASE_OUT_CUBIC, 50.0,
+                     green, "y", CLUTTER_EASE_OUT_CUBIC, 350.0,
+                     green, "scale-x", CLUTTER_EASE_OUT_CUBIC, 1.0,
+                     green, "scale-y", CLUTTER_EASE_OUT_CUBIC, 1.0,
+                     NULL);
+
+  clutter_state_set (transitions, NULL, "green",
+                     green, "x", CLUTTER_EASE_OUT_CUBIC, 200.0,
+                     green, "y", CLUTTER_EASE_OUT_CUBIC, 50.0,
+                     green, "scale-x", CLUTTER_EASE_OUT_CUBIC, 4.0,
+                     green, "scale-y", CLUTTER_EASE_OUT_CUBIC, 4.0,
+                     red, "x", CLUTTER_EASE_OUT_CUBIC, 50.0,
+                     red, "y", CLUTTER_EASE_OUT_CUBIC, 50.0,
+                     red, "scale-x", CLUTTER_EASE_OUT_CUBIC, 1.0,
+                     red, "scale-y", CLUTTER_EASE_OUT_CUBIC, 1.0,
+                     NULL);
+
+  g_signal_connect (red,
+                    "button-press-event",
+                    G_CALLBACK (button_pressed_cb),
+                    transitions);
+
+  g_signal_connect (green,
+                    "button-press-event",
+                    G_CALLBACK (button_pressed_cb),
+                    transitions);
+
+  clutter_container_add (CLUTTER_CONTAINER (stage),
+                         red,
+                         green,
+                         NULL);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  g_object_unref (transitions);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="animations-moving-example-3"></a><p class="title"><b>Example 5.10. Using <span class="type">ClutterAnimator</span> to randomly move
+        three actors along the <code class="varname">x</code> axis</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+typedef struct
+{
+  ClutterActor    *stage;
+  ClutterActor    *group;
+  ClutterAnimator *animator;
+} State;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+static const ClutterColor green_color = { 0x00, 0xff, 0x00, 0xff };
+static const ClutterColor blue_color = { 0x00, 0x00, 0xff, 0xff };
+
+/* add keys to the animator such that the actor is moved
+ * to a random x position
+ */
+static void
+add_keys_for_actor (ClutterActor    *actor,
+                    ClutterAnimator *animator)
+{
+  gfloat x, end_x;
+
+  x = clutter_actor_get_x (actor);
+
+  end_x = 50.0;
+  if (x == 50.0)
+    end_x = 225.0 + (100.0 * rand () / (RAND_MAX + 1.0));
+
+  clutter_animator_set (animator,
+                        actor, "x", CLUTTER_LINEAR, 0.0, x,
+                        actor, "x", CLUTTER_EASE_OUT_CUBIC, 1.0, end_x,
+                        NULL);
+}
+
+static gboolean
+move_actors (ClutterActor *actor,
+             ClutterEvent *event,
+             gpointer      user_data)
+{
+  State *state = user_data;
+  ClutterActor *child;
+
+  /* do nothing if the animator is already running */
+  if (clutter_timeline_is_playing (clutter_animator_get_timeline (state-&gt;animator)))
+    return TRUE;
+
+  /* remove all keys from the animator */
+  clutter_animator_remove_key (state-&gt;animator, NULL, NULL, -1);
+
+  /* add keys for all actors in the group */
+  for (child = clutter_actor_get_first_child (state-&gt;group);
+       child != NULL;
+       child = clutter_actor_get_next_sibling (child))
+    {
+      add_keys_for_actor (child, state-&gt;animator);
+    }
+
+  /* start the animation */
+  clutter_animator_start (state-&gt;animator);
+
+  return TRUE;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *red;
+  ClutterActor *green;
+  ClutterActor *blue;
+
+  State *state = g_new0 (State, 1);
+
+  /* seed random number generator */
+  srand ((unsigned int) time (NULL));
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  state-&gt;animator = clutter_animator_new ();
+  clutter_animator_set_duration (state-&gt;animator, 500);
+
+  state-&gt;stage = clutter_stage_new ();
+  clutter_actor_set_size (state-&gt;stage, 400, 350);
+  clutter_stage_set_color (CLUTTER_STAGE (state-&gt;stage), &amp;stage_color);
+  g_signal_connect (state-&gt;stage,
+                    "destroy",
+                    G_CALLBACK (clutter_main_quit),
+                    NULL);
+
+  state-&gt;group = clutter_actor_new ();
+  clutter_actor_add_child (state-&gt;stage, state-&gt;group);
+
+  red = clutter_actor_new ();
+  clutter_actor_set_background_color (red, &amp;red_color);
+  clutter_actor_set_size (red, 50, 50);
+  clutter_actor_set_position (red, 50, 50);
+  clutter_actor_add_child (state-&gt;group, red);
+
+  green = clutter_actor_new ();
+  clutter_actor_set_background_color (green, &amp;green_color);
+  clutter_actor_set_size (green, 50, 50);
+  clutter_actor_set_position (green, 50, 150);
+  clutter_actor_add_child (state-&gt;group, green);
+
+  blue = clutter_actor_new ();
+  clutter_actor_set_background_color (blue, &amp;blue_color);
+  clutter_actor_set_size (blue, 50, 50);
+  clutter_actor_set_position (blue, 50, 250);
+  clutter_actor_add_child (state-&gt;group, blue);
+
+  g_signal_connect (state-&gt;stage,
+                    "key-press-event",
+                    G_CALLBACK (move_actors),
+                    state);
+
+  clutter_actor_show (state-&gt;stage);
+
+  clutter_main ();
+
+  g_object_unref (state-&gt;animator);
+  g_free (state);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="animations-reuse.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="animations.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="animations-looping.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">6. Reusing a complex animation on different actors </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 8. Looping an animation</td></tr></table></div></body></html>

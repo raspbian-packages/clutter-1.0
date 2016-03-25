@@ -1,0 +1,898 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>4. Arranging actors in a single row or column</title><link rel="stylesheet" type="text/css" href="style.css"><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"><link rel="home" href="index.html" title="The Clutter Cookbook"><link rel="up" href="layouts.html" title="Chapter 7. Layout management"><link rel="prev" href="layouts-bind-constraint.html" title="3. Binding the size of one actor to the size of another"><link rel="next" href="script.html" title="Chapter 8. Script"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. Arranging actors in a single row or column</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="layouts-bind-constraint.html">Prev</a> </td><th width="60%" align="center">Chapter 7. Layout management</th><td width="20%" align="right"> <a accesskey="n" href="script.html">Next</a></td></tr></table><hr></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="layouts-box"></a>4. Arranging actors in a single row or column</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505441280"></a>4.1. Problem</h3></div></div></div><p>You want to layout several actors in a single row
+      or column.</p><p>Example use cases:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Creating an application menu.</p></li><li class="listitem"><p>Showing message subject lines as a list in an
+          email client.</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505437184"></a>4.2. Solution</h3></div></div></div><p>Create a <span class="type">ClutterActor</span> with a
+      <span class="type">ClutterBoxLayout</span> as its layout manager.</p><p>A <span class="type">ClutterBoxLayout</span> can hold a single row or
+      column of <span class="type">ClutterActors</span>, and has configurable spacing,
+      actor alignments, and expand and fill options.</p><p>The code fragment below is excerpted from the
+      <a class="link" href="layouts-box.html#layouts-box-example-1" title="Example 7.6. Different approaches to setting child layout properties in a ClutterBoxLayout">full example</a>. It
+      demonstrates how to lay out three rectangles in a vertical
+      column. A different approach is used to set the <code class="varname">x-fill</code>
+      property on each rectangle, so each fills the horizontal space in
+      the layout (each rectangle is 100 pixels wide, while the
+      box they are inside is 200 pixels wide).</p><div class="informalexample"><pre class="programlisting">/* create a ClutterBoxLayout */
+box_layout = clutter_box_layout_new ();
+
+/* configure it to lay out actors vertically */
+clutter_box_layout_set_vertical (CLUTTER_BOX_LAYOUT (box_layout), TRUE);
+
+/* put 5px of spacing between actors */
+clutter_box_layout_set_spacing (CLUTTER_BOX_LAYOUT (box_layout), 5);
+
+/* actors are packed into this box; we set its width, but
+ * allow its height to be determined by the children it contains
+ */
+box = clutter_actor_new ();
+clutter_actor_set_layout_manager (box, box_layout);
+clutter_actor_set_background_color (box, &amp;box_color);
+clutter_actor_set_position (box, 100, 50);
+clutter_actor_set_width (box, 200);
+
+/* pack an actor into the layout and set all layout properties on it
+ * at the same time
+ */
+yellow = clutter_rectangle_new_with_color (&amp;yellow_color);
+clutter_actor_set_size (yellow, 100, 100);
+
+clutter_box_layout_pack (CLUTTER_BOX_LAYOUT (box_layout),
+                         yellow,
+                         FALSE,                         /* expand */
+                         TRUE,                          /* x-fill */
+                         FALSE,                         /* y-fill */
+                         CLUTTER_BOX_ALIGNMENT_START,   /* x-align */
+                         CLUTTER_BOX_ALIGNMENT_START);  /* y-align */
+
+/* add an actor to the box as a container and set layout properties
+ * afterwards; the latter is useful if you want to change properties on
+ * actors already inside a layout, but note that you have to
+ * pass the function both the layout AND the container
+ */
+red = clutter_rectangle_new_with_color (&amp;red_color);
+clutter_actor_set_size (red, 100, 100);
+
+clutter_actor_add_child (box, blue);
+
+clutter_layout_manager_child_set (box_layout,
+                                  CLUTTER_CONTAINER (box),
+                                  blue,
+                                  "x-fill", TRUE,
+                                  NULL);
+
+blue = clutter_rectangle_new_with_color (&amp;blue_color);
+clutter_actor_set_size (blue, 100, 100);
+
+clutter_actor_add_child (box, blue);
+
+clutter_layout_manager_child_set (box_layout,
+                                  CLUTTER_CONTAINER (box),
+                                  blue,
+                                  "x-fill", TRUE,
+                                  NULL);
+
+/* put the box on the stage */
+clutter_actor_add_child (stage, box);</pre></div><p>The result looks like this:</p><div class="screenshot"><div class="mediaobject"><img src="images/layouts-box.png" alt="A simple vertical ClutterBoxLayout"></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505424368"></a>4.3. Discussion</h3></div></div></div><p><span class="type">ClutterBoxLayout</span> is not a reflowing layout:
+      that is, if the layout's container changes size, the actors inside
+      aren't automatically repositioned to occupy or find new positions
+      in its available area. If you want that behaviour, use
+      <span class="type">ClutterFlowLayout</span> instead.</p><p>If you want the container to be resizable, but find that
+      resizing the container obscures its child actors, you could put
+      the container inside a scrollable area. Then the container's actors
+      can be scrolled to if they go out of sight.
+      <a class="link" href="events-mouse-scroll.html" title="3. Detecting mouse scrolling on an actor">This recipe</a> explains
+      how to make a container scrollable.</p><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="idm47790505420848"></a>4.3.1. Layout properties</h4></div></div></div><p><span class="type">ClutterBoxLayout</span> is very flexible, with
+        several properties which influence the appearance of the
+        layout and its children. As with other layouts, these properties
+        are either applicable to the layout itself, or to individual
+        children of the layout.</p><p>As most of these properties are documented in the API reference,
+        they aren't covered in much detail here. However, below is a brief
+        overview of the properties available, as well as details of properties
+        particular to <span class="type">ClutterBoxLayout</span>.</p><p>The main issue you may face when applying these properties
+        is understanding how they interact. As this is harder to describe
+        than to show, you can run the
+        <a class="link" href="layouts-box.html#layouts-box-example-3" title="Example 7.8. A demonstrator for &quot;toggling and tweaking&quot; a ClutterBoxLayout's properties">example</a>
+        below to toggle and tweak various properties and see
+        how they affect the layout's appearance.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The "toggle and tweak"
+          <a class="link" href="layouts-box.html#layouts-box-example-3" title="Example 7.8. A demonstrator for &quot;toggling and tweaking&quot; a ClutterBoxLayout's properties">example</a> sets
+          child properties (fill, alignment, expand) on all children
+          of the layout when those properties are changed. If you want
+          to see the effect of setting these to different values for
+          <span class="emphasis"><em>each</em></span> child, you will have to experiment
+          yourself.</p></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="idm47790505414336"></a>4.3.1.1. <span class="type">ClutterBoxLayout</span> properties</h5></div></div></div><p><span class="type">ClutterBoxLayout</span> has the following properties
+          which affect the appearance of all children inside the container.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Animation properties are covered separately
+            <a class="link" href="layouts-box.html#layouts-box-animating-layout-changes" title="4.3.2. Animating layout changes">later</a>.
+            </p></div><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><b><code class="varname">vertical</code>; set with
+                  <code class="function">clutter_box_layout_set_vertical()</code>. </b>Set to <code class="constant">TRUE</code> to lay out
+                  child actors in a column; if <code class="constant">FALSE</code>
+                  (the default), actors are laid out horizontally.</p></li><li class="listitem"><p><b><code class="varname">homogeneous</code>; set with
+                  <code class="function">clutter_box_layout_set_homogeneous()</code>. </b>Set to <code class="constant">TRUE</code> to allocate all
+                  child actors the same amount of space in the row or column
+                  (depending on the setting for <code class="varname">vertical</code>).
+                  This overrides per-actor <code class="varname">expand</code> settings
+                  and preferred sizes for child actors. The default value for
+                  this property is <code class="constant">FALSE</code>.</p></li><li class="listitem"><p><b><code class="varname">spacing</code>; set with
+                  <code class="function">clutter_box_layout_set_spacing()</code>. </b>Sets the number of pixels to place between actors
+                  in the layout.</p><p>Note that if you increase spacing too much, actors
+                may go outside the edges of the layout's container (if
+                the container has a fixed size).</p></li><li class="listitem"><p><b><code class="varname">pack-start</code>; set with
+                  <code class="function">clutter_box_layout_set_pack_start()</code>. </b>Set <code class="varname">pack-start</code> to
+                  <code class="constant">TRUE</code> to configure the layout to
+                  prepend actors to the row or column; the default is
+                  <code class="constant">FALSE</code>, meaning that actors are
+                  appended to the row or column when added.</p><p>Changing this property on a layout which already has
+                actors in it will reverse the order of those actors, as
+                well as changing how new actors are added to the layout.</p></li></ul></div></div><div class="section"><div class="titlepage"><div><div><h5 class="title"><a name="idm47790505393712"></a>4.3.1.2. Child properties</h5></div></div></div><p>These properties apply to individual children within
+            the layout's container. Each child can have different values
+            for each of these properties.</p><p>To set properties, you can use
+            <code class="function">clutter_box_layout_pack()</code> or
+            <code class="function">clutter_box_pack()</code> (if using a
+            <span class="type">ClutterBox</span>) while packing actors into the layout.
+            You can also set properties later using
+            <code class="function">clutter_layout_manager_child_set()</code>
+            etc. See the <a class="link" href="layouts.html#layouts-introduction" title="1. Introduction">layouts
+            introduction</a> for more details.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><code class="varname">x-fill</code> and <code class="varname">y-fill</code>
+                set whether an actor will fill its allocated horizontal
+                or vertical space (respectively) within the layout. Setting
+                these properties only has an effect where an actor is smaller
+                (on the appropriate fill axes) than the layout's container.</p><p>Note that the actor's actual size is not changed
+                if it is set to fill: the reported width and height are
+                unaffected.</p></li><li class="listitem"><p><code class="varname">expand</code> sets whether an actor
+                will be expanded inside the layout. If
+                <code class="varname">expand</code> is <code class="constant">TRUE</code>
+                and <code class="varname">fill</code> is <code class="constant">TRUE</code>
+                for the orientation axis, the actor is resized to fill
+                its whole allocation on that axis; if <code class="varname">expand</code>
+                is <code class="constant">TRUE</code> but <code class="varname">fill</code>
+                is <code class="constant">FALSE</code>, extra padding is added
+                around the actor to fill the allocation.</p></li><li class="listitem"><p><code class="varname">x-align</code> and <code class="varname">y-align</code>
+                set how an actor is aligned within its allocation, in
+                cases where it doesn't fill that allocation. In practical
+                terms, these properties come into effect if a child is set
+                to expand but <code class="varname">fill</code> is set to
+                <code class="constant">FALSE</code> on the align axis.</p><p>For example, if <code class="varname">expand</code> is
+                <code class="constant">TRUE</code> but <code class="varname">x-fill</code>
+                is <code class="constant">FALSE</code>, some padding is added
+                around the actor to fill its allocation. In this case,
+                the <code class="varname">x-align</code> property can be set to
+                align the actor to the left, center or right of the
+                allocation; any whitespace would be redistributed around
+                the actor's new position after alignment.</p></li></ul></div><p>These properties are only useful where you have
+            actors of non-uniform sizes and/or a container which is
+            either wider or taller (or both) than one or more of the
+            child actors it contains.</p></div></div><div class="section"><div class="titlepage"><div><div><h4 class="title"><a name="layouts-box-animating-layout-changes"></a>4.3.2. Animating layout changes</h4></div></div></div><p>If actors are added to a layout, or if the layout's
+        properties or its children's properties are changed, the
+        appearance of the layout may also change. The
+        <code class="varname">use-animations</code> property (set with
+        <code class="function">clutter_box_layout_set_use_animations()</code>)
+        determines whether such changes to the layout are animated: if set
+        to <code class="constant">TRUE</code>, any changes to actor
+        allocations resulting from the changes (movements, resizings)
+        are animated.</p><p>If this property is <code class="constant">FALSE</code> (the default)
+        changes to other properties or addition of new actors will
+        cause actors to be laid out instantaneously. For example, if
+        a new actor is prepended with animations on, the new actor is
+        added to the layout and the other actors shifted to make room
+        for it; if animations are off, child actors jump to their new
+        positions at the same instant as the new actor is added.</p><p>To change the appearance of the animations, you can use
+        <code class="function">clutter_box_layout_set_easing_mode()</code> and
+        <code class="function">clutter_box_layout_set_duration()</code> (see the
+        <a class="link" href="animations.html#animations-introduction" title="1. Introduction">animations
+        introduction</a> for more about easing and duration
+        properties).</p><p>The <a class="link" href="layouts-box.html#layouts-box-example-3" title="Example 7.8. A demonstrator for &quot;toggling and tweaking&quot; a ClutterBoxLayout's properties">"toggle and tweak"
+        example</a> uses animation for layout changes, and can give
+        you some idea of what to expect in your own animated layouts.</p></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a name="idm47790505364560"></a>4.4. Full examples</h3></div></div></div><div class="example"><a name="layouts-box-example-1"></a><p class="title"><b>Example 7.6. Different approaches to setting child layout properties
+        in a <span class="type">ClutterBoxLayout</span></b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor box_color = { 0xff, 0xff, 0xff, 0xff };
+static const ClutterColor yellow_color = { 0xaa, 0xaa, 0x00, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+static const ClutterColor blue_color = { 0x00, 0x00, 0xff, 0xff };
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterLayoutManager *box_layout;
+  ClutterActor *box;
+  ClutterActor *yellow;
+  ClutterActor *red;
+  ClutterActor *blue;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  /* create a ClutterBoxLayout */
+  box_layout = clutter_box_layout_new ();
+
+  /* configure it to lay out actors vertically */
+  clutter_box_layout_set_vertical (CLUTTER_BOX_LAYOUT (box_layout), TRUE);
+
+  /* put 5px of spacing between actors */
+  clutter_box_layout_set_spacing (CLUTTER_BOX_LAYOUT (box_layout), 5);
+
+  /* actors are packed into this actor; we set its width, but
+   * allow its height to be determined by the children it contains
+   */
+  box = clutter_actor_new ();
+  clutter_actor_set_layout_manager (box, box_layout);
+  clutter_actor_set_background_color (box, CLUTTER_COLOR_White);
+  clutter_actor_set_position (box, 100, 50);
+  clutter_actor_set_width (box, 200);
+
+  /* pack an actor into the layout and set all layout properties on it
+   * at the same time
+   */
+  yellow = clutter_actor_new ();
+  clutter_actor_set_background_color (yellow, CLUTTER_COLOR_Yellow);
+  clutter_actor_set_size (yellow, 100, 100);
+
+  clutter_box_layout_pack (CLUTTER_BOX_LAYOUT (box_layout),
+                           yellow,
+                           FALSE,                         /* expand */
+                           TRUE,                          /* x-fill */
+                           FALSE,                         /* y-fill */
+                           CLUTTER_BOX_ALIGNMENT_START,   /* x-align */
+                           CLUTTER_BOX_ALIGNMENT_START);  /* y-align */
+
+  /* add an actor to the box as a container and set layout properties
+   * afterwards; the latter is useful if you want to change properties on
+   * actors already inside a layout, but note that you have to
+   * pass the function both the layout AND the container
+   */
+  red = clutter_actor_new ();
+  clutter_actor_set_background_color (red, CLUTTER_COLOR_Red);
+  clutter_actor_set_size (red, 100, 100);
+
+  clutter_actor_add_child (box, red);
+  clutter_layout_manager_child_set (box_layout,
+                                    CLUTTER_CONTAINER (box),
+                                    red,
+                                    "x-fill", TRUE,
+                                    NULL);
+
+  blue = clutter_actor_new ();
+  clutter_actor_set_background_color (blue, CLUTTER_COLOR_Blue);
+  clutter_actor_set_size (blue, 100, 100);
+
+  clutter_actor_add_child (box, blue);
+  clutter_layout_manager_child_set (box_layout,
+                                    CLUTTER_CONTAINER (box),
+                                    blue,
+                                    "x-fill", TRUE,
+                                    NULL);
+
+  /* put the box on the stage */
+  clutter_actor_add_child (stage, box);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="layouts-box-example-2"></a><p class="title"><b>Example 7.7. A simple <span class="type">ClutterBoxLayout</span> menu</b></p><div class="example-contents"><pre class="programlisting">#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#define FONT "Sans 20px"
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor yellow_color = { 0xaa, 0xaa, 0x00, 0xff };
+static const ClutterColor black_color = { 0x00, 0x00, 0x00, 0xff };
+
+static void
+menu_run_option (ClutterActor *actor,
+                 ClutterEvent *event,
+                 gpointer      user_data)
+{
+  g_debug ("%s pressed", (gchar *) user_data);
+}
+
+static void
+menu_add_option (ClutterBox *menu,
+                 gchar      *text,
+                 gchar      *shortcut)
+{
+  ClutterActor *entry;
+
+  entry = clutter_box_new (clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_CENTER,
+                                                   CLUTTER_BIN_ALIGNMENT_CENTER));
+  clutter_box_set_color (CLUTTER_BOX (entry), &amp;black_color);
+  clutter_actor_set_width (entry, 250);
+  clutter_actor_set_reactive (entry, TRUE);
+
+  clutter_box_pack (CLUTTER_BOX (entry),
+                    clutter_text_new_full (FONT, text, &amp;yellow_color),
+                    "x-align", CLUTTER_BIN_ALIGNMENT_START,
+                    NULL);
+
+  clutter_box_pack (CLUTTER_BOX (entry),
+                    clutter_text_new_full (FONT, shortcut, &amp;yellow_color),
+                    "x-align", CLUTTER_BIN_ALIGNMENT_END,
+                    NULL);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (menu), entry);
+
+  g_signal_connect (entry,
+                    "button-press-event",
+                    G_CALLBACK (menu_run_option),
+                    text);
+}
+
+static void
+menu_toggle (ClutterActor *actor,
+             ClutterEvent *event,
+             gpointer      user_data)
+{
+  ClutterAnimation *animation;
+  ClutterActor *menu = CLUTTER_ACTOR (user_data);
+
+  if (clutter_actor_get_animation (menu))
+    return;
+
+  if (clutter_actor_get_opacity (menu) &gt; 0)
+    {
+      animation = clutter_actor_animate (menu, CLUTTER_EASE_OUT_CUBIC, 200,
+                                         "opacity", 0,
+                                         NULL);
+
+      /* hide the menu once it is fully transparent */
+      g_signal_connect_swapped (animation,
+                                "completed",
+                                G_CALLBACK (clutter_actor_hide),
+                                menu);
+    }
+  else
+    {
+      clutter_actor_show (menu);
+
+      clutter_actor_animate (menu, CLUTTER_EASE_OUT_CUBIC, 200,
+                             "opacity", 255,
+                             NULL);
+    }
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  ClutterActor *button;
+  ClutterLayoutManager *menu_layout;
+  ClutterActor *menu;
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, 400, 400);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  /* button */
+  button = clutter_box_new (clutter_bin_layout_new (CLUTTER_BIN_ALIGNMENT_CENTER,
+                                                    CLUTTER_BIN_ALIGNMENT_CENTER));
+  clutter_actor_set_width (button, 100);
+  clutter_actor_set_position (button, 50, 50);
+  clutter_actor_set_reactive (button, TRUE);
+  clutter_box_set_color (CLUTTER_BOX (button), &amp;black_color);
+  clutter_box_pack (CLUTTER_BOX (button),
+                    clutter_text_new_full (FONT, "Edit", &amp;yellow_color),
+                    "x-align", CLUTTER_BIN_ALIGNMENT_FILL,
+                    "y-align", CLUTTER_BIN_ALIGNMENT_FILL,
+                    NULL);
+
+  /* menu */
+  menu_layout = clutter_box_layout_new ();
+  clutter_box_layout_set_homogeneous (CLUTTER_BOX_LAYOUT (menu_layout), TRUE);
+  clutter_box_layout_set_vertical (CLUTTER_BOX_LAYOUT (menu_layout), TRUE);
+  clutter_box_layout_set_spacing (CLUTTER_BOX_LAYOUT (menu_layout), 2);
+
+  menu = clutter_box_new (menu_layout);
+  clutter_box_set_color (CLUTTER_BOX (menu), &amp;yellow_color);
+  menu_add_option (CLUTTER_BOX (menu), "Undo", "Ctrl-z");
+  menu_add_option (CLUTTER_BOX (menu), "Redo", "Ctrl-Shift-z");
+  menu_add_option (CLUTTER_BOX (menu), "Cut", "Ctrl-x");
+  menu_add_option (CLUTTER_BOX (menu), "Copy", "Ctrl-c");
+  menu_add_option (CLUTTER_BOX (menu), "Paste", "Ctrl-v");
+
+  /* align left-hand side of menu with left-hand side of button */
+  clutter_actor_add_constraint (menu, clutter_align_constraint_new (button,
+                                                                    CLUTTER_ALIGN_X_AXIS,
+                                                                    0.0));
+
+  /* align top of menu with the bottom of the button */
+  clutter_actor_add_constraint (menu, clutter_bind_constraint_new (button,
+                                                                   CLUTTER_BIND_Y,
+                                                                   clutter_actor_get_height (button)));
+
+  /* hide the menu until we're ready to animate it in */
+  clutter_actor_set_opacity (menu, 0);
+  clutter_actor_hide (menu);
+
+  /* clicking on the button toggles the menu */
+  g_signal_connect (button, "button-press-event", G_CALLBACK (menu_toggle), menu);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), menu);
+
+  clutter_container_add_actor (CLUTTER_CONTAINER (stage), button);
+
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"><div class="example"><a name="layouts-box-example-3"></a><p class="title"><b>Example 7.8. A demonstrator for "toggling and tweaking" a
+        <span class="type">ClutterBoxLayout's</span> properties</b></p><div class="example-contents"><pre class="programlisting">/*
+ * Experiment with permutations of layout properties for a ClutterBoxLayout
+ *
+ * See the text (in brackets) at the bottom of the application
+ * window for available key presses
+ */
+#include &lt;stdlib.h&gt;
+#include &lt;clutter/clutter.h&gt;
+
+#define STAGE_SIDE 510
+#define BOX_SIDE STAGE_SIDE * 0.75
+#define RED_SIDE STAGE_SIDE / 4
+#define GREEN_SIDE STAGE_SIDE / 8
+#define BLUE_SIDE STAGE_SIDE / 16
+
+typedef struct
+{
+  ClutterLayoutManager *box_layout;
+  ClutterActor         *box;
+  ClutterActor         *status_display;
+  gboolean              x_fill;
+  gboolean              y_fill;
+  gboolean              expand;
+  ClutterBoxAlignment   x_align;
+  ClutterBoxAlignment   y_align;
+} State;
+
+static const ClutterColor stage_color = { 0x33, 0x33, 0x55, 0xff };
+static const ClutterColor box_color = { 0x66, 0x66, 0x00, 0xff };
+static const ClutterColor red_color = { 0xff, 0x00, 0x00, 0xff };
+static const ClutterColor green_color = { 0x00, 0xff, 0x00, 0xff };
+static const ClutterColor blue_color = { 0x00, 0x00, 0xff, 0xff };
+static const ClutterColor white_color = { 0xff, 0xff, 0xff, 0xff };
+
+static GValue
+gboolean_to_gvalue (gboolean value)
+{
+  GValue gval = {0};
+
+  g_value_init (&amp;gval, G_TYPE_BOOLEAN);
+  g_value_set_boolean (&amp;gval, value);
+
+  return gval;
+}
+
+static GValue
+alignment_to_gvalue (ClutterBoxAlignment value)
+{
+  GValue gval = {0};
+
+  g_value_init (&amp;gval, G_TYPE_INT);
+  g_value_set_int (&amp;gval, value);
+
+  return gval;
+}
+
+static gchar*
+alignment_as_string (ClutterBoxAlignment value)
+{
+  gchar *align_string = "start ";
+
+  switch (value)
+    {
+    case CLUTTER_BOX_ALIGNMENT_CENTER:
+      align_string = "center";
+      break;
+
+    case CLUTTER_BOX_ALIGNMENT_END:
+      align_string = "end   ";
+      break;
+
+    case CLUTTER_BOX_ALIGNMENT_START:
+      align_string = "start ";
+      break;
+    }
+
+  return align_string;
+}
+
+static ClutterBoxAlignment
+get_next_alignment (ClutterBoxAlignment alignment)
+{
+  alignment++;
+
+  if (alignment &gt; CLUTTER_BOX_ALIGNMENT_CENTER)
+    alignment = CLUTTER_BOX_ALIGNMENT_START;
+
+  return alignment;
+}
+
+static void
+show_status (State *state)
+{
+  ClutterText *text = CLUTTER_TEXT (state-&gt;status_display);
+  ClutterBoxLayout *box_layout = CLUTTER_BOX_LAYOUT (state-&gt;box_layout);
+
+  gboolean homogeneous = clutter_box_layout_get_homogeneous (box_layout);
+  gboolean vertical = clutter_box_layout_get_vertical (box_layout);
+
+  gchar *message = g_strdup_printf ("x_fill (x): %s\t\t\t"
+                                    "y_fill (y): %s\n"
+                                    "expand (e): %s\t\t"
+                                    "homogeneous (h): %s\n"
+                                    "spacing (+/-): %dpx\t\t"
+                                    "vertical (v): %s\n"
+                                    "x_align (right): %s\t"
+                                    "y_align (up): %s",
+                                    (state-&gt;x_fill ? "true" : "false"),
+                                    (state-&gt;y_fill ? "true" : "false"),
+                                    (state-&gt;expand ? "true" : "false"),
+                                    (homogeneous ? "true" : "false"),
+                                    clutter_box_layout_get_spacing (box_layout),
+                                    (vertical ? "true" : "false"),
+                                    alignment_as_string (state-&gt;x_align),
+                                    alignment_as_string (state-&gt;y_align));
+
+  clutter_text_set_text (text, message);
+
+  g_free (message);
+}
+
+static void
+set_property_on_layout_children (State       *state,
+                                 const gchar *property,
+                                 GValue       value)
+{
+  ClutterActor *actor;
+  ClutterContainer *container = CLUTTER_CONTAINER (state-&gt;box);
+  ClutterLayoutManager *manager = CLUTTER_LAYOUT_MANAGER (state-&gt;box_layout);
+  GList *actors = clutter_container_get_children (container);
+
+  for (; actors; actors = actors-&gt;next)
+    {
+      actor = CLUTTER_ACTOR (actors-&gt;data);
+
+      clutter_layout_manager_child_set_property (manager,
+                                                 container,
+                                                 actor,
+                                                 property,
+                                                 &amp;value);
+    }
+
+  g_list_free (actors);
+}
+
+static void
+toggle_x_fill (GObject            *instance,
+               const gchar        *action_name,
+               guint               key_val,
+               ClutterModifierType modifiers,
+               gpointer            user_data)
+{
+  State *state = (State *) user_data;
+
+  state-&gt;x_fill = !state-&gt;x_fill;
+
+  set_property_on_layout_children (state,
+                                   "x-fill",
+                                   gboolean_to_gvalue (state-&gt;x_fill));
+}
+
+static void
+toggle_y_fill (GObject            *instance,
+               const gchar        *action_name,
+               guint               key_val,
+               ClutterModifierType modifiers,
+               gpointer            user_data)
+{
+  State *state = (State *) user_data;
+
+  state-&gt;y_fill = !state-&gt;y_fill;
+
+  set_property_on_layout_children (state,
+                                   "y-fill",
+                                   gboolean_to_gvalue (state-&gt;y_fill));
+}
+
+static void
+toggle_expand (GObject            *instance,
+               const gchar        *action_name,
+               guint               key_val,
+               ClutterModifierType modifiers,
+               gpointer            user_data)
+{
+  State *state = (State *) user_data;
+
+  state-&gt;expand = !state-&gt;expand;
+
+  set_property_on_layout_children (state,
+                                   "expand",
+                                   gboolean_to_gvalue (state-&gt;expand));
+}
+
+static void
+rotate_x_alignment (GObject            *instance,
+                    const gchar        *action_name,
+                    guint               key_val,
+                    ClutterModifierType modifiers,
+                    gpointer            user_data)
+{
+  State *state = (State *) user_data;
+
+  state-&gt;x_align = get_next_alignment (state-&gt;x_align);
+
+  set_property_on_layout_children (state,
+                                   "x-align",
+                                   alignment_to_gvalue (state-&gt;x_align));
+}
+
+static void
+rotate_y_alignment (GObject            *instance,
+                    const gchar        *action_name,
+                    guint               key_val,
+                    ClutterModifierType modifiers,
+                    gpointer            user_data)
+{
+  State *state = (State *) user_data;
+
+  state-&gt;y_align = get_next_alignment (state-&gt;y_align);
+
+  set_property_on_layout_children (state,
+                                   "y-align",
+                                   alignment_to_gvalue (state-&gt;y_align));
+}
+
+static void
+toggle_vertical (GObject            *instance,
+                 const gchar        *action_name,
+                 guint               key_val,
+                 ClutterModifierType modifiers,
+                 gpointer            user_data)
+{
+  State *state = (State *) user_data;
+  ClutterBoxLayout *box_layout = CLUTTER_BOX_LAYOUT (state-&gt;box_layout);
+  gboolean vertical = clutter_box_layout_get_vertical (box_layout);
+
+  clutter_box_layout_set_vertical (box_layout, !vertical);
+}
+
+static void
+toggle_homogeneous (GObject            *instance,
+                    const gchar        *action_name,
+                    guint               key_val,
+                    ClutterModifierType modifiers,
+                    gpointer            user_data)
+{
+  State *state = (State *) user_data;
+  ClutterBoxLayout *box_layout = CLUTTER_BOX_LAYOUT (state-&gt;box_layout);
+  gboolean homogeneous = clutter_box_layout_get_homogeneous (box_layout);
+
+  clutter_box_layout_set_homogeneous (box_layout, !homogeneous);
+}
+
+static void
+increase_spacing (GObject            *instance,
+                  const gchar        *action_name,
+                  guint               key_val,
+                  ClutterModifierType modifiers,
+                  gpointer            user_data)
+{
+  State *state = (State *) user_data;
+  ClutterBoxLayout *box_layout = CLUTTER_BOX_LAYOUT (state-&gt;box_layout);
+  guint spacing = clutter_box_layout_get_spacing (box_layout) + 5;
+
+  clutter_box_layout_set_spacing (box_layout, spacing);
+}
+
+static void
+decrease_spacing (GObject            *instance,
+                  const gchar        *action_name,
+                  guint               key_val,
+                  ClutterModifierType modifiers,
+                  gpointer            user_data)
+{
+  State *state = (State *) user_data;
+  ClutterBoxLayout *box_layout = CLUTTER_BOX_LAYOUT (state-&gt;box_layout);
+  guint spacing = clutter_box_layout_get_spacing (box_layout);
+
+  if (spacing &gt;= 5)
+    clutter_box_layout_set_spacing (box_layout, spacing - 5);
+}
+
+static gboolean
+key_pressed_cb (ClutterActor *actor,
+                ClutterEvent *event,
+                gpointer      user_data)
+{
+  State *state = (State *) user_data;
+  ClutterBindingPool *pool;
+  gboolean return_value;
+
+  pool = clutter_binding_pool_find (G_OBJECT_TYPE_NAME (actor));
+
+  return_value = clutter_binding_pool_activate (pool,
+                                                clutter_event_get_key_symbol (event),
+                                                clutter_event_get_state (event),
+                                                G_OBJECT (actor));
+
+  show_status (state);
+
+  return return_value;
+}
+
+int
+main (int   argc,
+      char *argv[])
+{
+  ClutterActor *stage;
+  GObjectClass *stage_class;
+  ClutterBindingPool *binding_pool;
+  ClutterActor *red;
+  ClutterActor *green;
+  ClutterActor *blue;
+
+  State *state = g_new0 (State, 1);
+
+  if (clutter_init (&amp;argc, &amp;argv) != CLUTTER_INIT_SUCCESS)
+    return 1;
+
+  state-&gt;x_fill = FALSE;
+  state-&gt;y_fill = FALSE;
+  state-&gt;expand = FALSE;
+  state-&gt;x_align = CLUTTER_BOX_ALIGNMENT_START;
+
+  stage = clutter_stage_new ();
+  clutter_actor_set_size (stage, STAGE_SIDE, STAGE_SIDE);
+  clutter_stage_set_color (CLUTTER_STAGE (stage), &amp;stage_color);
+  g_signal_connect (stage, "destroy", G_CALLBACK (clutter_main_quit), NULL);
+
+  /* for key bindings */
+  stage_class = G_OBJECT_GET_CLASS (stage);
+  binding_pool = clutter_binding_pool_get_for_class (stage_class);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "toggle-expand",
+                                       CLUTTER_KEY_e,
+                                       0,
+                                       G_CALLBACK (toggle_expand),
+                                       state,
+                                       NULL);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "toggle-x-fill",
+                                       CLUTTER_KEY_x,
+                                       0,
+                                       G_CALLBACK (toggle_x_fill),
+                                       state,
+                                       NULL);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "toggle-y-fill",
+                                       CLUTTER_KEY_y,
+                                       0,
+                                       G_CALLBACK (toggle_y_fill),
+                                       state,
+                                       NULL);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "toggle-vertical",
+                                       CLUTTER_KEY_v,
+                                       0,
+                                       G_CALLBACK (toggle_vertical),
+                                       state,
+                                       NULL);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "toggle-homogeneous",
+                                       CLUTTER_KEY_h,
+                                       0,
+                                       G_CALLBACK (toggle_homogeneous),
+                                       state,
+                                       NULL);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "rotate-x-alignment",
+                                       CLUTTER_KEY_Right,
+                                       0,
+                                       G_CALLBACK (rotate_x_alignment),
+                                       state,
+                                       NULL);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "rotate-y-alignment",
+                                       CLUTTER_KEY_Up,
+                                       0,
+                                       G_CALLBACK (rotate_y_alignment),
+                                       state,
+                                       NULL);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "increase-spacing",
+                                       CLUTTER_KEY_plus,
+                                       CLUTTER_SHIFT_MASK,
+                                       G_CALLBACK (increase_spacing),
+                                       state,
+                                       NULL);
+
+  clutter_binding_pool_install_action (binding_pool,
+                                       "decrease-spacing",
+                                       CLUTTER_KEY_minus,
+                                       0,
+                                       G_CALLBACK (decrease_spacing),
+                                       state,
+                                       NULL);
+
+  /* rectangles inside the layout */
+  red = clutter_rectangle_new_with_color (&amp;red_color);
+  clutter_actor_set_size (red, RED_SIDE, RED_SIDE);
+
+  green = clutter_rectangle_new_with_color (&amp;green_color);
+  clutter_actor_set_size (green, GREEN_SIDE, GREEN_SIDE);
+
+  blue = clutter_rectangle_new_with_color (&amp;blue_color);
+  clutter_actor_set_size (blue, BLUE_SIDE, BLUE_SIDE);
+
+  /* the layout */
+  state-&gt;box_layout = clutter_box_layout_new ();
+  clutter_box_layout_set_use_animations (CLUTTER_BOX_LAYOUT (state-&gt;box_layout),
+                                         TRUE);
+
+  state-&gt;box = clutter_box_new (state-&gt;box_layout);
+  clutter_box_set_color (CLUTTER_BOX (state-&gt;box), &amp;box_color);
+  clutter_actor_set_size (state-&gt;box, BOX_SIDE, BOX_SIDE);
+  clutter_actor_add_constraint (state-&gt;box,
+                                clutter_align_constraint_new (stage, CLUTTER_ALIGN_X_AXIS, 0.5));
+  clutter_actor_add_constraint (state-&gt;box,
+                                clutter_align_constraint_new (stage, CLUTTER_ALIGN_Y_AXIS, 0.1));
+
+  /* text to show status */
+  state-&gt;status_display = clutter_text_new ();
+  clutter_text_set_color (CLUTTER_TEXT (state-&gt;status_display), &amp;white_color);
+  clutter_actor_set_size (state-&gt;status_display,
+                          STAGE_SIDE,
+                          STAGE_SIDE * 0.2);
+  clutter_actor_set_position (state-&gt;status_display,
+                              (STAGE_SIDE - BOX_SIDE) / 2,
+                              STAGE_SIDE * 0.8);
+
+  /* set text for initial state */
+  show_status (state);
+
+  /* connect key presses to a callback on the binding pool */
+  g_signal_connect (stage,
+                    "key-press-event",
+                    G_CALLBACK (key_pressed_cb),
+                    state);
+
+  /* pack UI */
+  clutter_container_add (CLUTTER_CONTAINER (state-&gt;box), red, green, blue, NULL);
+
+  clutter_container_add (CLUTTER_CONTAINER (stage),
+                         state-&gt;box,
+                         state-&gt;status_display,
+                         NULL);
+
+  /* show stage */
+  clutter_actor_show (stage);
+
+  clutter_main ();
+
+  /* clean up */
+  g_object_unref (binding_pool);
+  g_free (state);
+
+  return EXIT_SUCCESS;
+}
+</pre></div></div><br class="example-break"></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="layouts-bind-constraint.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="layouts.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="script.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">3. Binding the size of one actor to the size of another </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 8. Script</td></tr></table></div></body></html>
