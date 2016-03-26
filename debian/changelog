@@ -1,3 +1,10 @@
+clutter-1.0 (1.26.0-2) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * Mark all evdev symbols as arch=linux-any (Closes: #819294)
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sat, 26 Mar 2016 13:44:29 +0100
+
 clutter-1.0 (1.26.0-1) unstable; urgency=medium
 
   * New upstream release.
