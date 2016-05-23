@@ -1,2 +1,3 @@
-version=3
-http://download.gnome.org/sources/clutter/([\d\.]+[02468])/clutter-(.*)\.tar\.xz
+version=4
+https://download.gnome.org/sources/clutter/([\d\.]+[02468])/ \
+	clutter@ANY_VERSION@\.tar\.xz
