@@ -1,3 +1,13 @@
+clutter-1.0 (1.26.0+dfsg-1) UNRELEASED; urgency=medium
+
+  * Team upload.
+  * The cookbook is licensed under CC-BY-NC-SA 2.5 which is not DFSG-free
+  * Use copyright format 1.0 with Files-Excluded field
+  * Update debian/watch to repack with cookbook/ removed (Closes: #821095)
+  * Add 01_do-not-build-cookbook.patch to deal with cookbook/ removal
+
+ -- Jeremy Bicha <jbicha@linux.com>  Fri, 03 Jun 2016 01:00:24 -0400
+
 clutter-1.0 (1.26.0-2) unstable; urgency=medium
 
   [ Pino Toscano ]
