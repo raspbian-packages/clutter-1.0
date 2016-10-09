@@ -1,11 +1,17 @@
 clutter-1.0 (1.26.0+dfsg-1) UNRELEASED; urgency=medium
 
-  [ Jeremy Bicha ]
   * Team upload.
-  * The cookbook is licensed under CC-BY-NC-SA 2.5 which is not DFSG-free
-  * Use copyright format 1.0 with Files-Excluded field
-  * Update debian/watch to repack with cookbook/ removed (Closes: #821095)
-  * Add 01_do-not-build-cookbook.patch to deal with cookbook/ removal
+
+  [ Jeremy Bicha ]
+  * debian/copyright: Use https for copyright headers
+  * debian/watch: Use https and new "special strings"
+  * Remove cookbook as its licensed under CC-BY-NC-SA 2.5 and not DFSG-free
+    - Use copyright format 1.0 with Files-Excluded field
+    - Update debian/watch to repack with cookbook/ removed
+    - Add 01_do-not-build-cookbook.patch to deal with cookbook/ removal
+    - Switch from --enable-docs to --disable-docs configure flag
+    - override get-orig-source target to fetch repacked tarball
+    (Closes: #821095)
 
   [ Nicolas Dechesne ]
   * Drop obsolete [!armel !armhf] from libgl1-mesa-dev dependency
