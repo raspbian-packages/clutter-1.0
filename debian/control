@@ -6,7 +6,7 @@ Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Andreas Henriksson <andreas@fatal.se>, Emilio Pozuelo Monfort <pochu@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
+Uploaders: Andreas Henriksson <andreas@fatal.se>, Emilio Pozuelo Monfort <pochu@debian.org>, Michael Biebl <biebl@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
 Build-Depends: debhelper (>= 9),
                cdbs (>= 0.4.93~),
                dh-autoreconf,
@@ -36,7 +36,7 @@ Build-Depends: debhelper (>= 9),
                libudev-dev (>= 136) [linux-any],
                libgudev-1.0-dev [linux-any],
                libxkbcommon-dev,
-Standards-Version: 3.9.6
+Standards-Version: 3.9.8
 Homepage: http://www.clutter-project.org/
 Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/desktop/unstable/clutter-1.0
 Vcs-Browser: https://anonscm.debian.org/viewvc/pkg-gnome/desktop/unstable/clutter-1.0/

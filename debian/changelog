@@ -17,6 +17,9 @@ clutter-1.0 (1.26.0+dfsg-1) UNRELEASED; urgency=medium
   * Drop obsolete [!armel !armhf] from libgl1-mesa-dev dependency
     (Closes: #745054)
 
+  [ Andreas Henriksson ]
+  * Bump Standards-Version to 3.9.8
+
  -- Jeremy Bicha <jbicha@linux.com>  Fri, 03 Jun 2016 01:00:24 -0400
 
 clutter-1.0 (1.26.0-2) unstable; urgency=medium
