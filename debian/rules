@@ -33,4 +33,6 @@ endif
 common-binary-predeb-arch:: list-missing
 
 get-orig-source get-packaged-orig-source:
-	uscan --verbose --force-download --repack --compression xz
+	uscan --verbose --force-download \
+		--destdir $(DEB_TARBALL_DOWNLOAD_DIR) \
+		--repack --compression xz

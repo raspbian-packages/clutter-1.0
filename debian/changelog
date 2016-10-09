@@ -19,6 +19,9 @@ clutter-1.0 (1.26.0+dfsg-1) UNRELEASED; urgency=medium
 
   [ Andreas Henriksson ]
   * Bump Standards-Version to 3.9.8
+  * Fix get-orig-source override to be both policy compliant and
+    pkg-gnome workflow compliant by downloading to DEB_TARBALL_DOWNLOAD_DIR
+    (cf. #527626)
 
  -- Jeremy Bicha <jbicha@linux.com>  Fri, 03 Jun 2016 01:00:24 -0400
 
