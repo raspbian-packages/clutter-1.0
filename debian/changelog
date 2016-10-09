@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.0+dfsg-1) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.0+dfsg-1) unstable; urgency=medium
 
   * Team upload.
 
@@ -23,7 +23,7 @@ clutter-1.0 (1.26.0+dfsg-1) UNRELEASED; urgency=medium
     pkg-gnome workflow compliant by downloading to DEB_TARBALL_DOWNLOAD_DIR
     (cf. #527626)
 
- -- Jeremy Bicha <jbicha@linux.com>  Fri, 03 Jun 2016 01:00:24 -0400
+ -- Andreas Henriksson <andreas@fatal.se>  Sun, 09 Oct 2016 16:56:06 +0200
 
 clutter-1.0 (1.26.0-2) unstable; urgency=medium
 
