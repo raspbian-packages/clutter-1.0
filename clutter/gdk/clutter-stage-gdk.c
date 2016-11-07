@@ -227,7 +227,14 @@ clutter_stage_gdk_wayland_surface (ClutterStageGdk *stage_gdk)
 
   if (!stage_gdk->foreign_window ||
       gdk_window_get_window_type (stage_gdk->window) != GDK_WINDOW_CHILD)
-    return gdk_wayland_window_get_wl_surface (stage_gdk->window);
+    {
+      struct wl_surface *surface;
+
+      surface = gdk_wayland_window_get_wl_surface (stage_gdk->window);
+      wl_surface_set_buffer_scale (surface,
+                                   gdk_window_get_scale_factor (stage_gdk->window));
+      return surface;
+    }
 
   if (stage_gdk->clutter_surface)
     return stage_gdk->clutter_surface;
