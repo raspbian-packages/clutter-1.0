@@ -1,0 +1,43 @@
+From 9285a8522fbe1a4651c729a52de97dfff73dcf9b Mon Sep 17 00:00:00 2001
+From: "Owen W. Taylor" <otaylor@fishsoup.net>
+Date: Wed, 29 Jun 2016 17:03:46 -0400
+Subject: [PATCH] Don't create the Cogl GLib source multiple times
+
+Since the check for backend->cogl_context was accidentally moved
+to clutter_backend_do_real_create_context, the Glib source that
+is created at the end of clutter_backend_do_create_context() is
+created and added each time create_context() is called, though
+create_context() is supposed to be idempotent.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=768243
+---
+ clutter/clutter-backend.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/clutter/clutter-backend.c b/clutter/clutter-backend.c
+index bce4e91..d150e7c 100644
+--- a/clutter/clutter-backend.c
++++ b/clutter/clutter-backend.c
+@@ -252,9 +252,6 @@ clutter_backend_do_real_create_context (ClutterBackend  *backend,
+   CoglSwapChain *swap_chain;
+   GError *internal_error;
+ 
+-  if (backend->cogl_context != NULL)
+-    return TRUE;
+-
+   klass = CLUTTER_BACKEND_GET_CLASS (backend);
+ 
+   swap_chain = NULL;
+@@ -383,6 +380,9 @@ clutter_backend_real_create_context (ClutterBackend  *backend,
+   gboolean allow_any;
+   int i;
+ 
++  if (backend->cogl_context != NULL)
++    return TRUE;
++
+   if (allowed_drivers == NULL)
+     allowed_drivers = CLUTTER_DRIVERS;
+ 
+-- 
+2.10.2
+

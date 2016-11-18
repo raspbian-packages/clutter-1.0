@@ -1,3 +1,16 @@
+clutter-1.0 (1.26.0+dfsg-2) unstable; urgency=medium
+
+  * d/p/Don-t-create-the-Cogl-GLib-source-multiple-times.patch:
+    - Added. Avoid clreating multiple glib sources (gbo#768243, upstream git)
+  * d/p/Rely-on-gdk-to-dispatch-wayland-events.patch
+    - Added. Don't dispatch wayland events from cogl as gdk will already do
+      that. Fixes clutter-gst hanging on wayland (bgo#774079)
+  * d/p/gdk-Ensure-surface-buffer-scale-is-set.patch
+    - Added. Ensure buffer scale is always set on wayland surfaces. Fixes
+      clutter applications not being properly scaled on HiDPI (bgo#769190)
+
+ -- Sjoerd Simons <sjoerd@debian.org>  Fri, 18 Nov 2016 22:23:04 +0100
+
 clutter-1.0 (1.26.0+dfsg-1) unstable; urgency=medium
 
   * Team upload.
