@@ -1,9 +1,9 @@
-clutter-1.0 (1.26.0+dfsg-3) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.0+dfsg-3) unstable; urgency=medium
 
   * Remove broken /usr/share/doc/libclutter-1.0-doc/html-cally symlink.
     (Closes: #857519)
 
- -- Michael Biebl <biebl@debian.org>  Sun, 12 Mar 2017 09:22:53 +0100
+ -- Michael Biebl <biebl@debian.org>  Sun, 12 Mar 2017 09:23:59 +0100
 
 clutter-1.0 (1.26.0+dfsg-2) unstable; urgency=medium
 
