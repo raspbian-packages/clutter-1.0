@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.0+dfsg-2+rpi1) stretch-staging; urgency=medium
+clutter-1.0 (1.26.0+dfsg-3+rpi1) stretch-staging; urgency=medium
 
   [changes brought forward from 1.24.0-1+rpi1 by Peter Michael Green <plugwash@raspbian.org> at Fri, 25 Sep 2015 00:25:32 +0000]
   * Disable wayland and egl support.
@@ -6,7 +6,14 @@ clutter-1.0 (1.26.0+dfsg-2+rpi1) stretch-staging; urgency=medium
     seem to be in build-depends). attempting to disable wayland
     from debian/rules doesn't seem to work.
 
- -- Raspbian forward porter <root@raspbian.org>  Sun, 04 Dec 2016 06:26:42 +0000
+ -- Raspbian forward porter <root@raspbian.org>  Thu, 16 Mar 2017 22:08:58 +0000
+
+clutter-1.0 (1.26.0+dfsg-3) unstable; urgency=medium
+
+  * Remove broken /usr/share/doc/libclutter-1.0-doc/html-cally symlink.
+    (Closes: #857519)
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 12 Mar 2017 09:23:59 +0100
 
 clutter-1.0 (1.26.0+dfsg-2) unstable; urgency=medium
 
