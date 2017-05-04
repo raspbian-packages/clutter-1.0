@@ -1,3 +1,10 @@
+clutter-1.0 (1.26.0+dfsg-4) UNRELEASED; urgency=medium
+
+  * Convert from cdbs to dh
+  * Bump debhelper compat to 10
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 04 May 2017 17:27:12 -0400
+
 clutter-1.0 (1.26.0+dfsg-3) unstable; urgency=medium
 
   * Remove broken /usr/share/doc/libclutter-1.0-doc/html-cally symlink.
