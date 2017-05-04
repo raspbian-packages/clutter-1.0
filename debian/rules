@@ -18,7 +18,7 @@ DEB_CONFIGURE_EXTRA_FLAGS += \
 	--enable-gdk-backend=yes \
 	--enable-egl-backend=yes \
 	--enable-gtk-doc \
-	--enable-docs \
+	--disable-docs \
 	--enable-installed-tests \
 	--enable-introspection=yes
 DEB_DBG_PACKAGE_libclutter-1.0-0 := libclutter-1.0-dbg
@@ -31,3 +31,8 @@ ifeq ($(DEB_HOST_ARCH_OS),linux)
 endif
 
 common-binary-predeb-arch:: list-missing
+
+get-orig-source get-packaged-orig-source:
+	uscan --verbose --force-download \
+		--destdir $(DEB_TARBALL_DOWNLOAD_DIR) \
+		--repack --compression xz
