@@ -2,6 +2,7 @@ clutter-1.0 (1.26.0+dfsg-4) UNRELEASED; urgency=medium
 
   * Convert from cdbs to dh
   * Bump debhelper compat to 10
+  * Add debian/libclutter-1.0-0.docs to install NEWS and README
 
  -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 04 May 2017 17:27:12 -0400
 
