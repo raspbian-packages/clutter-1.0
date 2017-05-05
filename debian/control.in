@@ -5,7 +5,7 @@ Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.
 Uploaders: @GNOME_TEAM@, Rico Tzschichholz <ricotz@ubuntu.com>
 Build-Depends: debhelper (>= 10),
                autopoint,
-               dbus-x11 <!nocheck>,
+               dbus <!nocheck>,
                gnome-pkg-tools,
                libgl1-mesa-dev (>= 7.1~rc3-1~),
                libcairo2-dev (>= 1.14.0),
