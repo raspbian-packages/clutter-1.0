@@ -4,6 +4,7 @@ clutter-1.0 (1.26.0+dfsg-4) UNRELEASED; urgency=medium
   * Bump debhelper compat to 10
   * Add debian/libclutter-1.0-0.docs to install NEWS and README
   * Convert to automatic dbgsym package
+  * Add autopkgtest to run clutter-1.0-tests
   * debian/control.in:
     - Build-depend on dbus-x11 for build tests
   * Add debian/patches/skip-failing-tests.patch:
