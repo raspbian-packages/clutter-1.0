@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.0+dfsg-4) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.0+dfsg-4) experimental; urgency=medium
 
   * Convert from cdbs to dh
   * Bump debhelper compat to 10
@@ -14,7 +14,7 @@ clutter-1.0 (1.26.0+dfsg-4) UNRELEASED; urgency=medium
   * Add git-conform-actor-graph-Add-missing-null-termination.patch:
     - Fix actor-graph test on some architectures
 
- -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 04 May 2017 17:27:12 -0400
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 09 May 2017 12:59:53 +0100
 
 clutter-1.0 (1.26.0+dfsg-3) unstable; urgency=medium
 
