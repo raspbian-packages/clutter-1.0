@@ -1,0 +1,35 @@
+Description: Build without the cookbook directory
+Author: Jeremy Bicha <jbicha@linux.com>
+Forwarded: no
+
+Index: clutter-1.0-1.26.0+dfsg1/doc/Makefile.am
+===================================================================
+--- clutter-1.0-1.26.0+dfsg1.orig/doc/Makefile.am
++++ clutter-1.0-1.26.0+dfsg1/doc/Makefile.am
+@@ -5,10 +5,10 @@ SUBDIRS += reference
+ endif
+ 
+ if ENABLE_DOCS
+-SUBDIRS += common cookbook
++SUBDIRS += common
+ endif
+ 
+-DIST_SUBDIRS = reference common cookbook
++DIST_SUBDIRS = reference common
+ 
+ EXTRA_DIST = \
+ 	CODING_STYLE \
+Index: clutter-1.0-1.26.0+dfsg1/configure.ac
+===================================================================
+--- clutter-1.0-1.26.0+dfsg1.orig/configure.ac
++++ clutter-1.0-1.26.0+dfsg1/configure.ac
+@@ -1224,9 +1224,6 @@ AC_CONFIG_FILES([
+ 	doc/reference/Makefile
+ 	doc/reference/clutter-docs.xml
+ 	doc/common/Makefile
+-	doc/cookbook/Makefile
+-	doc/cookbook/clutter-cookbook.xml
+-	doc/cookbook/examples/Makefile
+ 
+ 	po/Makefile.in
+ ])
