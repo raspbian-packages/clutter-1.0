@@ -1,3 +1,13 @@
+clutter-1.0 (1.26.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches/Don-t-create-the-Cogl-GLib-source-multiple-times.patch:
+    dropped, merged upstream.
+  * debian/patches/gdk-Ensure-surface-buffer-scale-is-set.patch:
+    mangle to apply again.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sun, 02 Jul 2017 07:14:31 +0200
+
 clutter-1.0 (1.26.0+dfsg-3) unstable; urgency=medium
 
   * Remove broken /usr/share/doc/libclutter-1.0-doc/html-cally symlink.
