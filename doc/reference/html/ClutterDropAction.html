@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterDropAction: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch04.html" title="Actions">
 <link rel="prev" href="ClutterDragAction.html" title="ClutterDragAction">
 <link rel="next" href="ClutterGestureAction.html" title="ClutterGestureAction">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterDropAction.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -52,7 +52,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterDropAction.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -89,7 +89,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterDropAction.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -162,7 +162,7 @@ clutter_drop_action_new (<em class="parameter"><code><span class="type">void</sp
 <p>Creates a new <a class="link" href="ClutterDropAction.html" title="ClutterDropAction"><span class="type">ClutterDropAction</span></a>.</p>
 <p>Use <a class="link" href="ClutterActor.html#clutter-actor-add-action" title="clutter_actor_add_action ()"><code class="function">clutter_actor_add_action()</code></a> to add the action to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.4.8.2.6"></a><h4>Returns</h4>
+<a name="clutter-drop-action-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterDropAction.html" title="ClutterDropAction"><span class="type">ClutterDropAction</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix11.html#api-index-1.8">1.8</a></p>
@@ -200,8 +200,8 @@ private data and should be accessed using the provided API.</p>
 <p>The <a class="link" href="ClutterDropAction.html#ClutterDropActionClass" title="struct ClutterDropActionClass"><span class="type">ClutterDropActionClass</span></a> structure contains
 only private data.</p>
 <div class="refsect3">
-<a name="id-1.5.5.4.9.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDropActionClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -253,8 +253,8 @@ emitted on <em class="parameter"><code>action</code></em>
 <p>The default implementation of <a class="link" href="ClutterDropAction.html" title="ClutterDropAction"><span class="type">ClutterDropAction</span></a> returns <code class="literal">TRUE</code> for
 this signal.</p>
 <div class="refsect3">
-<a name="id-1.5.5.4.10.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDropAction-can-drop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -291,7 +291,7 @@ this signal.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.4.10.2.7"></a><h4>Returns</h4>
+<a name="ClutterDropAction-can-drop.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the drop is accepted, and <code class="literal">FALSE</code> otherwise</p>
 </div>
 <p>Flags: Run Last</p>
@@ -311,8 +311,8 @@ on <em class="parameter"><code>actor</code></em>
 . This signal is only emitted if at least an handler of
 <a class="link" href="ClutterDropAction.html#ClutterDropAction-can-drop" title="The “can-drop” signal"><span class="type">“can-drop”</span></a> returns <code class="literal">TRUE</code>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.4.10.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDropAction-drop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -365,8 +365,8 @@ by an emission of the <a class="link" href="ClutterDropAction.html#ClutterDropAc
 <p>After the ::drop-cancel signal is fired the active drag is
 terminated.</p>
 <div class="refsect3">
-<a name="id-1.5.5.4.10.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDropAction-drop-cancel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -416,8 +416,8 @@ user_function (<a class="link" href="ClutterDropAction.html" title="ClutterDropA
 into <em class="parameter"><code>actor</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.5.4.10.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDropAction-over-in.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -457,8 +457,8 @@ user_function (<a class="link" href="ClutterDropAction.html" title="ClutterDropA
 outside <em class="parameter"><code>actor</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.5.4.10.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDropAction-over-out.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -490,6 +490,6 @@ outside <em class="parameter"><code>actor</code></em>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

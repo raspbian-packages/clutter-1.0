@@ -33,8 +33,9 @@
  *
  * The UI definition format is JSON, the JavaScript Object Notation as
  * described by RFC 4627. #ClutterScript can load a JSON data stream,
- * parse it and build all the objects defined into it. Each object must
- * have an "id" and a "type" properties defining the name to be used
+ * parse it and build all the objects defined into it. The top-level node
+ * in the JSON file can be a single object or an array of objects. Each object
+ * must have an "id" and a "type" properties defining the name to be used
  * to retrieve it from #ClutterScript with clutter_script_get_object(),
  * and the class type to be instanciated. Every other attribute will
  * be mapped to the class properties.
@@ -69,6 +70,27 @@
  * and then manipulated with the Clutter API. For every object created
  * using ClutterScript it is possible to check the id by calling
  * clutter_get_script_id().
+ *
+ * Multiple objects can be defined using an array:
+ *
+ * |[<!-- language="plain" -->
+ * [
+ *   {
+ *     "id"     : "red-button",
+ *     "type"   : "ClutterRectangle",
+ *     "width"  : 100,
+ *     "height" : 100,
+ *     "color"  : "&num;ff0000ff"
+ *   },
+ *   {
+ *     "id"     : "white-button",
+ *     "type"   : "ClutterRectangle",
+ *     "width"  : 100,
+ *     "height" : 100,
+ *     "color"  : "&num;ffffffff"
+ *   }
+ * ]
+ * ]|
  *
  * Packing can be represented using the "children" member, and passing an
  * array of objects or ids of objects already defined (but not packed: the
@@ -199,6 +221,30 @@
  * "warp" key can be used to warp to a specific state instead of
  * animating to it. State changes on signal emission will not affect
  * the signal emission chain.
+ *
+ * ClutterScript supports translation using gettext: if a "translatable" key is
+ * added to a property value, it will be passed through g_dgettext() before
+ * being set on the created object. For example, to mark the #ClutterText:text
+ * property as being translatable:
+ *
+ * |[
+ * {
+ *   "id" : "label",
+ *   "type" : "ClutterText",
+ *   "text" : { "translatable" : true, "string" : "Clutter Script" }
+ * }
+ * ]|
+ *
+ * In order for translation to work, the C runtime locale must have been set
+ * using setlocale() before loading the #ClutterScript, and the translation
+ * domain must have been set using textdomain(). If the strings in the script
+ * are in a different translation domain from the rest of the program, use
+ * clutter_script_set_translation_domain() to set the domain for the
+ * #ClutterScript only.
+ *
+ * As well as the "translatable" key, ClutterScript supports optional "domain"
+ * and "context" keys for specifying the message domain (if it is not the
+ * default) and context for disambiguating it from other equal message strings.
  *
  * Clutter reserves the following names, so classes defining properties
  * through the usual GObject registration process should avoid using these

@@ -1147,7 +1147,7 @@ Date:   Tue Aug 30 10:47:12 2011 +0100
  1 file changed, 34 insertions(+), 10 deletions(-)
 
 commit f1a7cd7c0f6e3b270d3efd21c36742a8953222ab
-Merge: 2212937 663bfd0
+Merge: 221293778 663bfd0e8
 Author: Alejandro Piñeiro <apinheiro@igalia.com>
 Date:   Tue Aug 30 12:26:35 2011 +0200
 
@@ -2230,9 +2230,8 @@ Date:   Tue Jul 19 14:02:59 2011 +0100
 
     docs: Rename the invariants documentation
 
- doc/actor-invariants.txt         | 301 +++++++++++++++++++++++++++++++++++++++
- doc/clutter-actor-invariants.txt | 301 ---------------------------------------
- 2 files changed, 301 insertions(+), 301 deletions(-)
+ doc/{clutter-actor-invariants.txt => actor-invariants.txt} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
 
 commit c1951ab17ab88622c7850c2662392f60a7776b01
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -4033,33 +4032,25 @@ Date:   Mon May 9 00:27:10 2011 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=649826
 
- clutter/Makefile.am                       |  82 ++--
- clutter/cogl/clutter-backend-cogl.c       | 533 +++++++++++++++++++++++++
- clutter/cogl/clutter-backend-cogl.h       | 105 +++++
- clutter/cogl/clutter-cex100.h.in          |  91 +++++
- clutter/cogl/clutter-egl.h                |  92 +++++
- clutter/cogl/clutter-event-tslib.c        | 294 ++++++++++++++
- clutter/cogl/clutter-glx-texture-pixmap.c | 158 ++++++++
- clutter/cogl/clutter-glx-texture-pixmap.h |  92 +++++
- clutter/cogl/clutter-stage-cogl.c         | 629 ++++++++++++++++++++++++++++++
- clutter/cogl/clutter-stage-cogl.h         |  78 ++++
- clutter/egl/clutter-backend-egl.c         | 523 -------------------------
- clutter/egl/clutter-backend-egl.h         | 105 -----
- clutter/egl/clutter-cex100.h.in           |  91 -----
- clutter/egl/clutter-egl-headers.h         |  46 ---
- clutter/egl/clutter-egl.h                 |  92 -----
- clutter/egl/clutter-event-tslib.c         | 294 --------------
- clutter/egl/clutter-stage-egl.c           | 531 -------------------------
- clutter/egl/clutter-stage-egl.h           |  75 ----
- clutter/glx/clutter-backend-glx.c         | 380 ------------------
- clutter/glx/clutter-backend-glx.h         |  75 ----
- clutter/glx/clutter-glx-texture-pixmap.c  | 158 --------
- clutter/glx/clutter-glx-texture-pixmap.h  |  92 -----
- clutter/glx/clutter-glx.h                 |  46 ---
- clutter/glx/clutter-stage-glx.c           | 541 -------------------------
- clutter/glx/clutter-stage-glx.h           |  77 ----
- configure.ac                              |  12 +-
- 26 files changed, 2115 insertions(+), 3177 deletions(-)
+ clutter/Makefile.am                                |  82 ++--
+ .../clutter-backend-cogl.c}                        | 170 ++++---
+ .../clutter-backend-cogl.h}                        |  36 +-
+ clutter/{egl => cogl}/clutter-cex100.h.in          |   0
+ clutter/{egl => cogl}/clutter-egl.h                |   0
+ clutter/{egl => cogl}/clutter-event-tslib.c        |   2 +-
+ clutter/{glx => cogl}/clutter-glx-texture-pixmap.c |   0
+ clutter/{glx => cogl}/clutter-glx-texture-pixmap.h |   0
+ .../clutter-stage-cogl.c}                          | 328 ++++++++-----
+ clutter/cogl/clutter-stage-cogl.h                  |  78 +++
+ clutter/egl/clutter-egl-headers.h                  |  46 --
+ clutter/egl/clutter-stage-egl.h                    |  75 ---
+ clutter/glx/clutter-backend-glx.c                  | 380 ---------------
+ clutter/glx/clutter-backend-glx.h                  |  75 ---
+ clutter/glx/clutter-glx.h                          |  46 --
+ clutter/glx/clutter-stage-glx.c                    | 541 ---------------------
+ clutter/glx/clutter-stage-glx.h                    |  77 ---
+ configure.ac                                       |  12 +-
+ 18 files changed, 443 insertions(+), 1505 deletions(-)
 
 commit 951cb82ec5e76a6e67b0cb7c2050d6ea5703d4ba
 Author: Robert Bragg <robert@linux.intel.com>
@@ -4204,10 +4195,9 @@ Date:   Mon Jun 13 23:14:39 2011 +0100
 
     build: Put back ChangeLog.pre-git-import to unbreak distcheck
 
- ChangeLog.pre-git-import              | 15743 ++++++++++++++++++++++++++++++++
- build/autotools/Makefile.am.changelog |     3 +-
- doc/ChangeLog.pre-git-import          | 15743 --------------------------------
- 3 files changed, 15744 insertions(+), 15745 deletions(-)
+ doc/ChangeLog.pre-git-import => ChangeLog.pre-git-import | 0
+ build/autotools/Makefile.am.changelog                    | 3 +--
+ 2 files changed, 1 insertion(+), 2 deletions(-)
 
 commit e8bd46b82b1f62082440eb8e5ebe2bc1f1c0c540
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -4312,7 +4302,7 @@ Date:   Mon Jun 13 15:36:07 2011 +0100
  3 files changed, 10 insertions(+)
 
 commit cd2b36ed916b1b8230f28c53055d370547b47f89
-Merge: 4f0769d 80dd60e
+Merge: 4f0769d69 80dd60ecb
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Jun 13 14:39:03 2011 +0100
 
@@ -4713,11 +4703,9 @@ Date:   Thu Jun 9 15:53:29 2011 +0100
     AUTHORS is not really useful, as many more people have been committing
     to Clutter for a while now.
 
- AUTHORS                      |    17 -
- ChangeLog.pre-git-import     | 15743 -----------------------------------------
- doc/AUTHORS.old              |    17 +
- doc/ChangeLog.pre-git-import | 15743 +++++++++++++++++++++++++++++++++++++++++
- 4 files changed, 15760 insertions(+), 15760 deletions(-)
+ AUTHORS => doc/AUTHORS.old                               | 0
+ ChangeLog.pre-git-import => doc/ChangeLog.pre-git-import | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
 
 commit 9636a4f12588e91777bb425b272875192b8374a0
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -7512,13 +7500,13 @@ Date:   Fri Nov 5 12:28:33 2010 +0000
  clutter/cogl/cogl/cogl-private.h                   |    6 +
  clutter/cogl/cogl/cogl-renderer-glx-private.h      |   61 +
  clutter/cogl/cogl/cogl-renderer-x11-private.h      |   32 +
- clutter/cogl/cogl/cogl-renderer-xlib-private.h     |   78 ++
+ ...-winsys-xlib.h => cogl-renderer-xlib-private.h} |   50 +-
  clutter/cogl/cogl/cogl-renderer-xlib.c             |  288 +++++
  clutter/cogl/cogl/cogl-renderer.c                  |   23 +
  clutter/cogl/cogl/cogl-types.h                     |   87 +-
  clutter/cogl/cogl/cogl-util.c                      |    1 -
  clutter/cogl/cogl/cogl-xlib-private.h              |   82 ++
- clutter/cogl/cogl/cogl-xlib.c                      |  238 ++++
+ .../{winsys/cogl-winsys-xlib.c => cogl-xlib.c}     |  104 +-
  clutter/cogl/cogl/cogl-xlib.h                      |   84 ++
  clutter/cogl/cogl/cogl.c                           |   10 +-
  clutter/cogl/cogl/cogl.h                           |   52 +-
@@ -7534,8 +7522,6 @@ Date:   Fri Nov 5 12:28:33 2010 +0000
  clutter/cogl/cogl/winsys/cogl-winsys-glx.c         | 1262 +++++++++++++++++++-
  clutter/cogl/cogl/winsys/cogl-winsys-private.h     |   88 ++
  clutter/cogl/cogl/winsys/cogl-winsys-stub.c        |  114 ++
- clutter/cogl/cogl/winsys/cogl-winsys-xlib.c        |  170 ---
- clutter/cogl/cogl/winsys/cogl-winsys-xlib.h        |   66 -
  clutter/cogl/cogl/winsys/cogl-winsys.c             |   36 +
  clutter/glx/clutter-backend-glx.c                  |  654 ++--------
  clutter/glx/clutter-backend-glx.h                  |   49 +-
@@ -7544,7 +7530,7 @@ Date:   Fri Nov 5 12:28:33 2010 +0000
  clutter/x11/clutter-backend-x11.c                  |    4 +-
  clutter/x11/clutter-stage-x11.c                    |   14 +-
  configure.ac                                       |    2 +
- 56 files changed, 3635 insertions(+), 1830 deletions(-)
+ 54 files changed, 3436 insertions(+), 1631 deletions(-)
 
 commit aa1a2cb661d8e6b662c6a79ba0bae095dd059974
 Author: Robert Bragg <robert@linux.intel.com>
@@ -7647,27 +7633,18 @@ Date:   Tue Feb 22 20:08:16 2011 +0000
     consistent with other cogl source files. In particular private header
     files didn't have a '-private' infix.
 
- clutter/cogl/cogl/Makefile.am                      |  22 +--
- clutter/cogl/cogl/winsys/cogl-egl.c                |  45 ------
- clutter/cogl/cogl/winsys/cogl-fruity.c             |  35 -----
- clutter/cogl/cogl/winsys/cogl-glx.c                |  78 ----------
- clutter/cogl/cogl/winsys/cogl-osx.c                |  35 -----
- clutter/cogl/cogl/winsys/cogl-sdl.c                |  35 -----
- clutter/cogl/cogl/winsys/cogl-texture-pixmap-x11.c |   2 +-
- clutter/cogl/cogl/winsys/cogl-win32.c              |  35 -----
- clutter/cogl/cogl/winsys/cogl-winsys-egl.c         |  45 ++++++
- clutter/cogl/cogl/winsys/cogl-winsys-fruity.c      |  35 +++++
- clutter/cogl/cogl/winsys/cogl-winsys-glx.c         |  78 ++++++++++
- clutter/cogl/cogl/winsys/cogl-winsys-osx.c         |  35 +++++
- clutter/cogl/cogl/winsys/cogl-winsys-private.h     |  30 ++++
- clutter/cogl/cogl/winsys/cogl-winsys-sdl.c         |  35 +++++
- clutter/cogl/cogl/winsys/cogl-winsys-win32.c       |  35 +++++
- clutter/cogl/cogl/winsys/cogl-winsys-xlib.c        | 170 +++++++++++++++++++++
- clutter/cogl/cogl/winsys/cogl-winsys-xlib.h        |  66 ++++++++
- clutter/cogl/cogl/winsys/cogl-winsys.h             |  30 ----
- clutter/cogl/cogl/winsys/cogl-xlib.c               | 170 ---------------------
- clutter/cogl/cogl/winsys/cogl-xlib.h               |  66 --------
- 20 files changed, 541 insertions(+), 541 deletions(-)
+ clutter/cogl/cogl/Makefile.am                      | 22 +++++++++++-----------
+ clutter/cogl/cogl/winsys/cogl-texture-pixmap-x11.c |  2 +-
+ .../cogl/winsys/{cogl-egl.c => cogl-winsys-egl.c}  |  0
+ .../winsys/{cogl-fruity.c => cogl-winsys-fruity.c} |  0
+ .../cogl/winsys/{cogl-glx.c => cogl-winsys-glx.c}  |  0
+ .../cogl/winsys/{cogl-osx.c => cogl-winsys-osx.c}  |  0
+ .../{cogl-winsys.h => cogl-winsys-private.h}       |  6 +++---
+ .../cogl/winsys/{cogl-sdl.c => cogl-winsys-sdl.c}  |  0
+ .../winsys/{cogl-win32.c => cogl-winsys-win32.c}   |  0
+ .../winsys/{cogl-xlib.c => cogl-winsys-xlib.c}     |  0
+ .../winsys/{cogl-xlib.h => cogl-winsys-xlib.h}     |  0
+ 11 files changed, 15 insertions(+), 15 deletions(-)
 
 commit 532b5634397962b496009871a01c11a84bc70664
 Author: Robert Bragg <robert@linux.intel.com>
@@ -7883,56 +7860,55 @@ Date:   Thu Nov 4 22:25:52 2010 +0000
     Since we plan to add public cogl_context_* API we need to rename the
     current cogl-context.h which contains private member details.
 
- clutter/cogl/cogl/Makefile.am                      |   2 +-
- clutter/cogl/cogl/cogl-atlas-texture.c             |   2 +-
- clutter/cogl/cogl/cogl-atlas.c                     |   2 +-
- clutter/cogl/cogl/cogl-attribute.c                 |   2 +-
- clutter/cogl/cogl/cogl-blend-string.c              |   2 +-
- clutter/cogl/cogl/cogl-blit.c                      |   2 +-
- clutter/cogl/cogl/cogl-buffer.c                    |   2 +-
- clutter/cogl/cogl/cogl-clip-stack.c                |   2 +-
- clutter/cogl/cogl/cogl-clip-state.c                |   2 +-
- clutter/cogl/cogl/cogl-context-private.h           | 251 +++++++++++++++++++++
- clutter/cogl/cogl/cogl-context.c                   |   2 +-
- clutter/cogl/cogl/cogl-context.h                   | 251 ---------------------
- clutter/cogl/cogl/cogl-feature-private.c           |   2 +-
- clutter/cogl/cogl/cogl-framebuffer.c               |   2 +-
- clutter/cogl/cogl/cogl-indices.c                   |   2 +-
- clutter/cogl/cogl/cogl-journal.c                   |   2 +-
- clutter/cogl/cogl/cogl-material-compat.c           |   2 +-
- clutter/cogl/cogl/cogl-matrix-stack.c              |   2 +-
- clutter/cogl/cogl/cogl-path.c                      |   2 +-
- clutter/cogl/cogl/cogl-pipeline-fragend-arbfp.c    |   2 +-
- clutter/cogl/cogl/cogl-pipeline-fragend-fixed.c    |   2 +-
- clutter/cogl/cogl/cogl-pipeline-fragend-glsl.c     |   2 +-
- clutter/cogl/cogl/cogl-pipeline-opengl.c           |   2 +-
- clutter/cogl/cogl/cogl-pipeline-progend-glsl.c     |   2 +-
- clutter/cogl/cogl/cogl-pipeline-vertend-fixed.c    |   2 +-
- clutter/cogl/cogl/cogl-pipeline-vertend-glsl.c     |   2 +-
- clutter/cogl/cogl/cogl-pipeline.c                  |   2 +-
- clutter/cogl/cogl/cogl-pixel-array.c               |   2 +-
- clutter/cogl/cogl/cogl-primitives.c                |   2 +-
- clutter/cogl/cogl/cogl-program.c                   |   2 +-
- clutter/cogl/cogl/cogl-shader.c                    |   2 +-
- clutter/cogl/cogl/cogl-sub-texture.c               |   2 +-
- clutter/cogl/cogl/cogl-texture-2d-sliced.c         |   2 +-
- clutter/cogl/cogl/cogl-texture-2d.c                |   2 +-
- clutter/cogl/cogl/cogl-texture-3d.c                |   2 +-
- clutter/cogl/cogl/cogl-texture-rectangle.c         |   2 +-
- clutter/cogl/cogl/cogl-texture.c                   |   2 +-
- clutter/cogl/cogl/cogl-vertex-buffer.c             |   2 +-
- clutter/cogl/cogl/cogl.c                           |   2 +-
- clutter/cogl/cogl/cogl2-path.c                     |   2 +-
- .../cogl/cogl/driver/gl/cogl-context-driver-gl.c   |   2 +-
- clutter/cogl/cogl/driver/gl/cogl-gl.c              |   2 +-
- .../cogl/cogl/driver/gl/cogl-texture-driver-gl.c   |   2 +-
- .../cogl/driver/gles/cogl-context-driver-gles.c    |   2 +-
- clutter/cogl/cogl/driver/gles/cogl-gles.c          |   2 +-
- .../cogl/driver/gles/cogl-texture-driver-gles.c    |   2 +-
- clutter/cogl/cogl/winsys/cogl-context-winsys.c     |   2 +-
- clutter/cogl/cogl/winsys/cogl-texture-pixmap-x11.c |   2 +-
- clutter/cogl/cogl/winsys/cogl-xlib.c               |   2 +-
- 49 files changed, 298 insertions(+), 298 deletions(-)
+ clutter/cogl/cogl/Makefile.am                                | 2 +-
+ clutter/cogl/cogl/cogl-atlas-texture.c                       | 2 +-
+ clutter/cogl/cogl/cogl-atlas.c                               | 2 +-
+ clutter/cogl/cogl/cogl-attribute.c                           | 2 +-
+ clutter/cogl/cogl/cogl-blend-string.c                        | 2 +-
+ clutter/cogl/cogl/cogl-blit.c                                | 2 +-
+ clutter/cogl/cogl/cogl-buffer.c                              | 2 +-
+ clutter/cogl/cogl/cogl-clip-stack.c                          | 2 +-
+ clutter/cogl/cogl/cogl-clip-state.c                          | 2 +-
+ clutter/cogl/cogl/{cogl-context.h => cogl-context-private.h} | 6 +++---
+ clutter/cogl/cogl/cogl-context.c                             | 2 +-
+ clutter/cogl/cogl/cogl-feature-private.c                     | 2 +-
+ clutter/cogl/cogl/cogl-framebuffer.c                         | 2 +-
+ clutter/cogl/cogl/cogl-indices.c                             | 2 +-
+ clutter/cogl/cogl/cogl-journal.c                             | 2 +-
+ clutter/cogl/cogl/cogl-material-compat.c                     | 2 +-
+ clutter/cogl/cogl/cogl-matrix-stack.c                        | 2 +-
+ clutter/cogl/cogl/cogl-path.c                                | 2 +-
+ clutter/cogl/cogl/cogl-pipeline-fragend-arbfp.c              | 2 +-
+ clutter/cogl/cogl/cogl-pipeline-fragend-fixed.c              | 2 +-
+ clutter/cogl/cogl/cogl-pipeline-fragend-glsl.c               | 2 +-
+ clutter/cogl/cogl/cogl-pipeline-opengl.c                     | 2 +-
+ clutter/cogl/cogl/cogl-pipeline-progend-glsl.c               | 2 +-
+ clutter/cogl/cogl/cogl-pipeline-vertend-fixed.c              | 2 +-
+ clutter/cogl/cogl/cogl-pipeline-vertend-glsl.c               | 2 +-
+ clutter/cogl/cogl/cogl-pipeline.c                            | 2 +-
+ clutter/cogl/cogl/cogl-pixel-array.c                         | 2 +-
+ clutter/cogl/cogl/cogl-primitives.c                          | 2 +-
+ clutter/cogl/cogl/cogl-program.c                             | 2 +-
+ clutter/cogl/cogl/cogl-shader.c                              | 2 +-
+ clutter/cogl/cogl/cogl-sub-texture.c                         | 2 +-
+ clutter/cogl/cogl/cogl-texture-2d-sliced.c                   | 2 +-
+ clutter/cogl/cogl/cogl-texture-2d.c                          | 2 +-
+ clutter/cogl/cogl/cogl-texture-3d.c                          | 2 +-
+ clutter/cogl/cogl/cogl-texture-rectangle.c                   | 2 +-
+ clutter/cogl/cogl/cogl-texture.c                             | 2 +-
+ clutter/cogl/cogl/cogl-vertex-buffer.c                       | 2 +-
+ clutter/cogl/cogl/cogl.c                                     | 2 +-
+ clutter/cogl/cogl/cogl2-path.c                               | 2 +-
+ clutter/cogl/cogl/driver/gl/cogl-context-driver-gl.c         | 2 +-
+ clutter/cogl/cogl/driver/gl/cogl-gl.c                        | 2 +-
+ clutter/cogl/cogl/driver/gl/cogl-texture-driver-gl.c         | 2 +-
+ clutter/cogl/cogl/driver/gles/cogl-context-driver-gles.c     | 2 +-
+ clutter/cogl/cogl/driver/gles/cogl-gles.c                    | 2 +-
+ clutter/cogl/cogl/driver/gles/cogl-texture-driver-gles.c     | 2 +-
+ clutter/cogl/cogl/winsys/cogl-context-winsys.c               | 2 +-
+ clutter/cogl/cogl/winsys/cogl-texture-pixmap-x11.c           | 2 +-
+ clutter/cogl/cogl/winsys/cogl-xlib.c                         | 2 +-
+ 48 files changed, 50 insertions(+), 50 deletions(-)
 
 commit ec0b7814667fbbeee3dd25c79d565c645d8f01ba
 Author: Robert Bragg <robert@linux.intel.com>
@@ -8439,7 +8415,7 @@ Date:   Mon Mar 21 12:41:40 2011 +0000
  1 file changed, 9 insertions(+), 1 deletion(-)
 
 commit a51c4cff72b633b1f03737e182f656774fd35209
-Merge: fd89dee 57a5f22
+Merge: fd89dee1b 57a5f2296
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Mar 21 12:34:41 2011 +0000
 
@@ -8697,11 +8673,10 @@ Date:   Tue Mar 15 20:04:15 2011 +0000
     Also it doesn't seem ideal to clone a fresh clutter repo instead of
     being able to compile the source of the current repo.
 
- build/mingw/Makefile.am                 |   2 +-
- build/mingw/README                      |   6 +-
- build/mingw/mingw-cross-compile.sh      | 338 --------------------------------
- build/mingw/mingw-fetch-dependencies.sh | 314 +++++++++++++++++++++++++++++
- 4 files changed, 318 insertions(+), 342 deletions(-)
+ build/mingw/Makefile.am                            |  2 +-
+ build/mingw/README                                 |  6 +++---
+ ...ross-compile.sh => mingw-fetch-dependencies.sh} | 24 ----------------------
+ 3 files changed, 4 insertions(+), 28 deletions(-)
 
 commit e51749d33c4f28b6f4cb70856914008ae67305a9
 Author: Robert Bragg <robert@linux.intel.com>
@@ -9495,11 +9470,10 @@ Date:   Mon Feb 28 14:02:00 2011 +0000
     moved from clutter-event.c into this new source file. The declaration is
     still in clutter-event.h, so we don't need to do anything special.
 
- clutter/Makefile.am             |   2 +-
- clutter/clutter-event.c         |  48 ---
- clutter/clutter-keysyms-table.c | 873 ++++++++++++++++++++++++++++++++++++++++
- clutter/clutter-keysyms-table.h | 827 -------------------------------------
- 4 files changed, 874 insertions(+), 876 deletions(-)
+ clutter/Makefile.am                                |  2 +-
+ clutter/clutter-event.c                            | 48 -----------------
+ ...ter-keysyms-table.h => clutter-keysyms-table.c} | 60 +++++++++++++++++++---
+ 3 files changed, 54 insertions(+), 56 deletions(-)
 
 commit 23c0dac23193e9a10283c87b0163a426cc9c49e0
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -9780,7 +9754,7 @@ Date:   Tue Feb 22 18:32:01 2011 +0000
  1 file changed, 1 insertion(+), 10 deletions(-)
 
 commit b3e4db4c738756f05ef7a02306f0d25f158797ab
-Merge: 4442ddd 74de3cf
+Merge: 4442ddde8 74de3cfdf
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Feb 21 18:09:06 2011 +0000
 
@@ -10752,11 +10726,10 @@ Date:   Mon Feb 14 16:49:01 2011 +0000
     Use the configure script to generate the README from a template file, so
     that we can keep the versions of the dependencies in one place.
 
- .gitignore   |    1 +
- README       | 1058 ----------------------------------------------------------
- README.in    | 1058 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- configure.ac |   53 ++-
- 4 files changed, 1099 insertions(+), 1071 deletions(-)
+ .gitignore          |  1 +
+ README => README.in | 24 ++++++++++++------------
+ configure.ac        | 53 ++++++++++++++++++++++++++++++++++++++++-------------
+ 3 files changed, 53 insertions(+), 25 deletions(-)
 
 commit b91befaacada5a499b863c3731b0581cea420660
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -10878,7 +10851,7 @@ Date:   Fri Feb 11 16:53:28 2011 +0000
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 commit 2abf56fe929f1495b230ca33222c3f00a46ef3a8
-Merge: b152a97 734a236
+Merge: b152a97ea 734a236a9
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Feb 11 16:45:45 2011 +0000
 
@@ -10999,7 +10972,7 @@ Date:   Fri Feb 11 15:44:03 2011 +0000
  1 file changed, 4 insertions(+), 5 deletions(-)
 
 commit 5f9022b593a4a4b07a27a818744f79736b8c3ca5
-Merge: 2ee7052 cf18836
+Merge: 2ee7052d8 cf18836ca
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Feb 11 15:03:22 2011 +0000
 

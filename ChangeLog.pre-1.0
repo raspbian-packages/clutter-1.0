@@ -1354,7 +1354,7 @@ Date:   Fri Jun 19 12:15:12 2009 +0100
  6 files changed, 240 insertions(+), 10 deletions(-)
 
 commit fce406f1b88794d35d8fb0c04c6bf690b990bd0d
-Merge: 04bb789 33400c0
+Merge: 04bb78994 33400c0aa
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Tue Jun 30 17:17:30 2009 +0100
 
@@ -1980,9 +1980,9 @@ Date:   Wed Jun 17 18:46:42 2009 +0100
         already referenced in the journal we force a flush first)
     
         NOTE: For now this means you should avoid using cogl_set_source_color()
-    	      since that currently uses a single shared material. Later we
-    	  should change it to use a pool of materials that is recycled
-    	  when the journal is flushed.
+                  since that currently uses a single shared material. Later we
+              should change it to use a pool of materials that is recycled
+              when the journal is flushed.
     
     - modifying any state that isn't currently logged, such as depth, fog and
       backface culling enables.
@@ -3041,7 +3041,7 @@ Date:   Mon Jun 8 12:18:34 2009 +0100
  1 file changed, 2 insertions(+)
 
 commit 96827db74089054763c596e28aa180bc0fb1b7c5
-Merge: eb55397 ec77b91
+Merge: eb5539742 ec77b9139
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Thu Jun 11 15:16:27 2009 +0100
 
@@ -3345,7 +3345,7 @@ Date:   Thu Jun 11 13:24:34 2009 +0100
  1 file changed, 7 insertions(+), 5 deletions(-)
 
 commit 61c45da90a489a619b6e99b6a93f12c5192d306a
-Merge: cd08dc6 e60584e
+Merge: cd08dc632 e60584ea6
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Thu Jun 11 13:01:34 2009 +0100
 
@@ -4699,7 +4699,7 @@ Date:   Fri Jun 5 12:46:37 2009 +0100
  1 file changed, 4 insertions(+), 2 deletions(-)
 
 commit 7e33fe3175d17ff659705c24ac7865510b145528
-Merge: b5a7b3a cbb748f
+Merge: b5a7b3a00 cbb748f7c
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Jun 5 12:41:42 2009 +0100
 
@@ -4729,7 +4729,7 @@ Date:   Fri Jun 5 12:41:42 2009 +0100
       ...
     
     Conflicts:
-    	configure.ac
+            configure.ac
 
 commit cbb748f7c042e250b9383c59236645966c5ad47e
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -4749,7 +4749,7 @@ Date:   Fri Jun 5 12:26:29 2009 +0100
  3 files changed, 15 insertions(+), 13 deletions(-)
 
 commit 3ee093e356de19253f4a838553c8f31579a256ad
-Merge: 745ca8a 9c7afe0
+Merge: 745ca8a62 9c7afe0c5
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Fri Jun 5 12:20:41 2009 +0100
 
@@ -5346,17 +5346,15 @@ Date:   Mon Jun 1 17:35:41 2009 +0100
     this way we also get the ability to substitute more autoconf variables
     into the documentation -- if needs be.
 
- .gitignore                                |   4 +-
- configure.ac                              |   4 +-
- doc/reference/clutter/Makefile.am         |   2 -
- doc/reference/clutter/clutter-docs.xml    | 245 ------------------------------
- doc/reference/clutter/clutter-docs.xml.in | 245 ++++++++++++++++++++++++++++++
- doc/reference/clutter/version.xml.in      |   1 -
- doc/reference/cogl/Makefile.am            |   2 -
- doc/reference/cogl/cogl-docs.xml          | 107 -------------
- doc/reference/cogl/cogl-docs.xml.in       | 107 +++++++++++++
- doc/reference/cogl/version.xml.in         |   1 -
- 10 files changed, 356 insertions(+), 362 deletions(-)
+ .gitignore                                                      | 4 ++--
+ configure.ac                                                    | 4 ++--
+ doc/reference/clutter/Makefile.am                               | 2 --
+ doc/reference/clutter/{clutter-docs.xml => clutter-docs.xml.in} | 2 +-
+ doc/reference/clutter/version.xml.in                            | 1 -
+ doc/reference/cogl/Makefile.am                                  | 2 --
+ doc/reference/cogl/{cogl-docs.xml => cogl-docs.xml.in}          | 2 +-
+ doc/reference/cogl/version.xml.in                               | 1 -
+ 8 files changed, 6 insertions(+), 12 deletions(-)
 
 commit 61deeafa71a81384978bd199f0df6e88d0904a52
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -5821,7 +5819,7 @@ Date:   Thu May 28 17:18:10 2009 +0100
  1 file changed, 1 insertion(+)
 
 commit 9557328e4ec61ed0c78c165135c8f4b216f26b7f
-Merge: 7252c14 d960ce4
+Merge: 7252c1419 d960ce46e
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Thu May 28 15:53:56 2009 +0100
 
@@ -6471,7 +6469,7 @@ Date:   Fri May 22 14:49:37 2009 +0100
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 commit c262ab0b638eba97e8a152ca5c76360d0f4bf348
-Merge: 309f680 b3fe1b8
+Merge: 309f680d3 b3fe1b8a8
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri May 22 12:00:33 2009 +0100
 
@@ -6548,7 +6546,7 @@ Date:   Sat Nov 22 19:26:56 2008 -0500
  2 files changed, 126 insertions(+), 1 deletion(-)
 
 commit d513c1c5403e9f92178d3ed7202d78b0db6efe67
-Merge: 1985fa7 7e18109
+Merge: 1985fa75b 7e18109f9
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Thu May 21 16:51:16 2009 +0100
 
@@ -6703,15 +6701,15 @@ Date:   Wed May 20 17:26:39 2009 +0100
  1 file changed, 9 insertions(+), 7 deletions(-)
 
 commit f8f54989be460f8ae7abda7c2dc01eb578471742
-Merge: aa1246e 4f5a5f3
+Merge: aa1246e89 4f5a5f38f
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed May 20 16:49:22 2009 +0100
 
     Merge commit 'origin/master' into 1.0-integration
     
     Conflicts:
-    	clutter/clutter-texture.c
-    	clutter/cogl/gl/cogl-fbo.c
+            clutter/clutter-texture.c
+            clutter/cogl/gl/cogl-fbo.c
 
 commit 4f5a5f38f7068d4ec0dca9967f304a39901e8fec
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -8239,25 +8237,24 @@ Date:   Thu Apr 30 18:00:22 2009 +0100
     It was inconsistent that we exposed the CoglBitmap struct instead of an
     opaque CoglHandle.
 
- clutter/clutter-texture.c                  |   8 +--
- clutter/cogl/cogl-bitmap.h                 |  78 ++++++++++++++++++++++
- clutter/cogl/cogl-texture.h                |  45 +------------
- clutter/cogl/cogl-types.h                  |   7 --
- clutter/cogl/cogl.h.in                     |   1 +
- clutter/cogl/common/Makefile.am            |   2 +-
- clutter/cogl/common/cogl-bitmap-fallback.c |   2 +-
- clutter/cogl/common/cogl-bitmap-pixbuf.c   |   2 +-
- clutter/cogl/common/cogl-bitmap-private.h  | 101 +++++++++++++++++++++++++++++
- clutter/cogl/common/cogl-bitmap.c          |  25 ++++---
- clutter/cogl/common/cogl-bitmap.h          |  98 ----------------------------
- clutter/cogl/gl/Makefile.am                |   2 +
- clutter/cogl/gl/cogl-texture-private.h     |   2 +-
- clutter/cogl/gl/cogl-texture.c             |  13 ++--
- clutter/cogl/gles/Makefile.am              |   2 +
- clutter/cogl/gles/cogl-texture-private.h   |   2 +-
- clutter/cogl/gles/cogl-texture.c           |  12 ++--
- doc/reference/cogl/cogl-sections.txt       |  13 ++--
- 18 files changed, 235 insertions(+), 180 deletions(-)
+ clutter/clutter-texture.c                          |  8 +--
+ clutter/cogl/cogl-bitmap.h                         | 78 ++++++++++++++++++++++
+ clutter/cogl/cogl-texture.h                        | 45 +------------
+ clutter/cogl/cogl-types.h                          |  7 --
+ clutter/cogl/cogl.h.in                             |  1 +
+ clutter/cogl/common/Makefile.am                    |  2 +-
+ clutter/cogl/common/cogl-bitmap-fallback.c         |  2 +-
+ clutter/cogl/common/cogl-bitmap-pixbuf.c           |  2 +-
+ .../{cogl-bitmap.h => cogl-bitmap-private.h}       |  7 +-
+ clutter/cogl/common/cogl-bitmap.c                  | 25 ++++---
+ clutter/cogl/gl/Makefile.am                        |  2 +
+ clutter/cogl/gl/cogl-texture-private.h             |  2 +-
+ clutter/cogl/gl/cogl-texture.c                     | 13 ++--
+ clutter/cogl/gles/Makefile.am                      |  2 +
+ clutter/cogl/gles/cogl-texture-private.h           |  2 +-
+ clutter/cogl/gles/cogl-texture.c                   | 12 ++--
+ doc/reference/cogl/cogl-sections.txt               | 13 ++--
+ 17 files changed, 139 insertions(+), 84 deletions(-)
 
 commit ee57192f47e38a62828e0f2c1a1f966b7aa4fba3
 Author: Robert Bragg <robert@linux.intel.com>
@@ -9208,7 +9205,7 @@ Date:   Thu Apr 16 16:34:15 2009 +0100
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 425fa78a27b9182f60d64ed08f1b470e96539908
-Merge: d4b47af fbd9c59
+Merge: d4b47af15 fbd9c59c7
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Apr 15 18:08:14 2009 +0100
 
@@ -9219,7 +9216,7 @@ Date:   Wed Apr 15 18:08:14 2009 +0100
       Support pango_layout_set_height() in ClutterText
     
     Conflicts:
-    	clutter/clutter-text.c
+            clutter/clutter-text.c
 
 commit d4b47af153a31eeac12dc5d2ba7f62fdcde833b1
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -10396,7 +10393,7 @@ Date:   Mon Mar 16 11:28:29 2009 +0000
  1 file changed, 7 insertions(+), 1 deletion(-)
 
 commit 0674fded7f25fdbf019debe7d91d28b441d3acaf
-Merge: 7f2ef2f 56568db
+Merge: 7f2ef2f1e 56568db3b
 Author: Øyvind Kolås <pippin@linux.intel.com>
 Date:   Mon Mar 16 00:40:27 2009 +0000
 
@@ -10532,7 +10529,7 @@ Date:   Fri Mar 13 12:02:33 2009 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 2edccc760dae07a66badfe081f2e64865dfe5c3c
-Merge: c418b23 ca28440
+Merge: c418b23ba ca2844013
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Thu Mar 12 18:59:20 2009 +0000
 
@@ -10691,7 +10688,7 @@ Date:   Thu Mar 12 11:48:44 2009 +0000
  1 file changed, 26 insertions(+), 24 deletions(-)
 
 commit 25d54a650de130c463d562f07de8b5083e2e8495
-Merge: c418b23 93d8f62
+Merge: c418b23ba 93d8f62f6
 Author: Øyvind Kolås <pippin@linux.intel.com>
 Date:   Thu Mar 12 11:18:11 2009 +0000
 
@@ -12276,10 +12273,9 @@ Date:   Fri Feb 20 12:01:32 2009 +0000
     The cogl-docs.sgml file has always been XML, so it's only fitting that
     we actually call it cogl-docs.xml.
 
- doc/reference/cogl/Makefile.am    |   2 +-
- doc/reference/cogl/cogl-docs.sgml | 106 --------------------------------------
- doc/reference/cogl/cogl-docs.xml  | 106 ++++++++++++++++++++++++++++++++++++++
- 3 files changed, 107 insertions(+), 107 deletions(-)
+ doc/reference/cogl/Makefile.am                       | 2 +-
+ doc/reference/cogl/{cogl-docs.sgml => cogl-docs.xml} | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
 
 commit 255faf602f7aa2a0c9add3e4200dc21c2d77494b
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -12566,7 +12562,7 @@ Date:   Thu Feb 19 14:56:07 2009 +0000
  1 file changed, 2 insertions(+)
 
 commit 9bdbe8a06a66a44b06bf6b04ea24604cda0f342e
-Merge: c18e756 3794324
+Merge: c18e75626 3794324e8
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Thu Feb 19 14:42:40 2009 +0000
 
@@ -13907,7 +13903,7 @@ Date:   Wed Jan 28 16:24:02 2009 +0000
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 commit 3e68b23ea8f290a70ba67dff4ed304fe1eb72bb6
-Merge: 811dd7e 1cd3134
+Merge: 811dd7eed 1cd313477
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Wed Jan 28 09:08:19 2009 +0000
 
@@ -13932,7 +13928,7 @@ Date:   Wed Jan 28 09:08:19 2009 +0000
     
     Conflicts:
     
-    	clutter/clutter-actor.c
+            clutter/clutter-actor.c
 
 commit 1cd313477b2818b9117a1f0bbeeb113553ac447e
 Author: Neil Roberts <neil@linux.intel.com>
@@ -14177,7 +14173,7 @@ Date:   Tue Jan 27 16:40:51 2009 +0000
  1 file changed, 8 deletions(-)
 
 commit 3cfc7fb1ca428c73ff2434f178cb8cc4e01728d4
-Merge: a688b1d 86e95a7
+Merge: a688b1db0 86e95a779
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Tue Jan 27 16:12:30 2009 +0000
 
@@ -14237,7 +14233,7 @@ Date:   Mon Jan 26 22:52:38 2009 +0000
  5 files changed, 12 insertions(+), 8 deletions(-)
 
 commit e9a45c77449fab4ab911a136004155429f6d5bbf
-Merge: 418fb99 9266e11
+Merge: 418fb995c 9266e110d
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Tue Jan 27 15:19:34 2009 +0000
 
@@ -14245,8 +14241,8 @@ Date:   Tue Jan 27 15:19:34 2009 +0000
     
     Conflicts:
     
-    	clutter/cogl/gl/cogl-texture.c
-    	clutter/cogl/gles/cogl-primitives.c
+            clutter/cogl/gl/cogl-texture.c
+            clutter/cogl/gles/cogl-primitives.c
     
     * cogl-material:
      clutter-{clone-,}texture weren't updating their material opacity.
@@ -14489,38 +14485,37 @@ Date:   Fri Jan 23 16:15:40 2009 +0000
     Note: The GLES backend has not been updated yet; that will be done in a
     following commit.
 
- README                                      |   49 +
- clutter/clutter-clone-texture.c             |   23 +-
- clutter/clutter-main.c                      |   27 +-
- clutter/clutter-texture.c                   |   22 +-
- clutter/cogl/cogl-material.h                |  169 +++-
- clutter/cogl/cogl-path.h                    |    3 +-
- clutter/cogl/cogl-texture.h                 |  185 ++--
- clutter/cogl/cogl.h.in                      |    2 +-
- clutter/cogl/common/cogl-material-private.h |   31 +-
- clutter/cogl/common/cogl-material.c         |  619 +++++++++---
- clutter/cogl/common/cogl-primitives.c       |   13 +-
- clutter/cogl/common/cogl-vertex-buffer.c    |   80 +-
- clutter/cogl/gl/cogl-context.c              |   89 +-
- clutter/cogl/gl/cogl-context.h              |   44 +-
- clutter/cogl/gl/cogl-internal.h             |   11 +-
- clutter/cogl/gl/cogl-primitives.c           |   50 +-
- clutter/cogl/gl/cogl-texture-private.h      |   39 +-
- clutter/cogl/gl/cogl-texture.c              | 1374 +++++++++++++++++----------
- clutter/cogl/gl/cogl.c                      |  128 ++-
- clutter/pango/cogl-pango-render.c           |  114 ++-
- tests/conform/test-backface-culling.c       |   42 +-
- tests/interactive/Makefile.am               |    5 +-
- tests/interactive/test-clip.c               |   12 +-
- tests/interactive/test-cogl-material.c      |  162 ----
- tests/interactive/test-cogl-multitexture.c  |  160 ++++
- tests/interactive/test-cogl-offscreen.c     |   38 +-
- tests/interactive/test-cogl-tex-convert.c   |   50 +-
- tests/interactive/test-cogl-tex-foreign.c   |   14 +-
- tests/interactive/test-cogl-tex-getset.c    |   14 +-
- tests/interactive/test-cogl-tex-polygon.c   |   18 +-
- tests/interactive/test-cogl-tex-tile.c      |   13 +-
- 31 files changed, 2341 insertions(+), 1259 deletions(-)
+ README                                             |   49 +
+ clutter/clutter-clone-texture.c                    |   23 +-
+ clutter/clutter-main.c                             |   27 +-
+ clutter/clutter-texture.c                          |   22 +-
+ clutter/cogl/cogl-material.h                       |  169 ++-
+ clutter/cogl/cogl-path.h                           |    3 +-
+ clutter/cogl/cogl-texture.h                        |  185 ++-
+ clutter/cogl/cogl.h.in                             |    2 +-
+ clutter/cogl/common/cogl-material-private.h        |   31 +-
+ clutter/cogl/common/cogl-material.c                |  619 +++++++--
+ clutter/cogl/common/cogl-primitives.c              |   13 +-
+ clutter/cogl/common/cogl-vertex-buffer.c           |   80 +-
+ clutter/cogl/gl/cogl-context.c                     |   89 +-
+ clutter/cogl/gl/cogl-context.h                     |   44 +-
+ clutter/cogl/gl/cogl-internal.h                    |   11 +-
+ clutter/cogl/gl/cogl-primitives.c                  |   50 +-
+ clutter/cogl/gl/cogl-texture-private.h             |   39 +-
+ clutter/cogl/gl/cogl-texture.c                     | 1374 ++++++++++++--------
+ clutter/cogl/gl/cogl.c                             |  128 +-
+ clutter/pango/cogl-pango-render.c                  |  114 +-
+ tests/conform/test-backface-culling.c              |   42 +-
+ tests/interactive/Makefile.am                      |    5 +-
+ tests/interactive/test-clip.c                      |   12 +-
+ ...st-cogl-material.c => test-cogl-multitexture.c} |   30 +-
+ tests/interactive/test-cogl-offscreen.c            |   38 +-
+ tests/interactive/test-cogl-tex-convert.c          |   50 +-
+ tests/interactive/test-cogl-tex-foreign.c          |   14 +-
+ tests/interactive/test-cogl-tex-getset.c           |   14 +-
+ tests/interactive/test-cogl-tex-polygon.c          |   18 +-
+ tests/interactive/test-cogl-tex-tile.c             |   13 +-
+ 30 files changed, 2195 insertions(+), 1113 deletions(-)
 
 commit 86e4e89bf1125f3090c63daaf423bc67c64d727f
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -14751,13 +14746,11 @@ Date:   Mon Jan 26 10:32:53 2009 +0000
     
     Step one of the ActorClone -> Clone renaming: rename the files.
 
- clutter/Makefile.am           |   4 +-
- clutter/clutter-actor-clone.c | 274 ------------------------------------------
- clutter/clutter-actor-clone.h |  76 ------------
- clutter/clutter-clone.c       | 274 ++++++++++++++++++++++++++++++++++++++++++
- clutter/clutter-clone.h       |  76 ++++++++++++
- clutter/clutter.h             |   2 +-
- 6 files changed, 353 insertions(+), 353 deletions(-)
+ clutter/Makefile.am                                | 4 ++--
+ clutter/{clutter-actor-clone.c => clutter-clone.c} | 2 +-
+ clutter/{clutter-actor-clone.h => clutter-clone.h} | 0
+ clutter/clutter.h                                  | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
 
 commit cdb360107b08302597d538f0c35c4a55114f2f54
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -15021,7 +15014,7 @@ Date:   Fri Jan 23 18:20:46 2009 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 3d07e34cc54568a2e41cbd8565b6b21aa6dc5f53
-Merge: 616c082 634cdea
+Merge: 616c082a7 634cdeab1
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Fri Jan 23 15:23:49 2009 +0000
 
@@ -15029,14 +15022,14 @@ Date:   Fri Jan 23 15:23:49 2009 +0000
     
     Conflicts:
     
-    	clutter/clutter-texture.c
-    	clutter/cogl/cogl-texture.h
-    	clutter/cogl/cogl.h.in
-    	clutter/cogl/common/Makefile.am
-    	clutter/cogl/gl/Makefile.am
-    	clutter/cogl/gles/Makefile.am
-    	clutter/cogl/gles/cogl-gles2-wrapper.c
-    	clutter/cogl/gles/cogl-gles2-wrapper.h
+            clutter/clutter-texture.c
+            clutter/cogl/cogl-texture.h
+            clutter/cogl/cogl.h.in
+            clutter/cogl/common/Makefile.am
+            clutter/cogl/gl/Makefile.am
+            clutter/cogl/gles/Makefile.am
+            clutter/cogl/gles/cogl-gles2-wrapper.c
+            clutter/cogl/gles/cogl-gles2-wrapper.h
 
 commit 134edac82c5adc564b88884983cc1caedcc1191a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -15123,7 +15116,7 @@ Date:   Fri Jan 23 13:08:46 2009 +0000
  5 files changed, 182 insertions(+), 169 deletions(-)
 
 commit 792ffa1538837624fdbf06819210d923734ac217
-Merge: f19dd4b ac1a0d5
+Merge: f19dd4b2b ac1a0d568
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Jan 23 12:10:50 2009 +0000
 
@@ -15550,31 +15543,26 @@ Date:   Tue Jan 20 21:12:44 2009 +0000
     particle engines, and these can be defined in terms of emitter faces; so some
     other kind of mesh abstraction might be usefull here.
 
- clutter/cogl/cogl-mesh.h                         |  299 ----
- clutter/cogl/cogl-vertex-buffer.h                |  308 ++++
- clutter/cogl/cogl.h.in                           |    2 +-
- clutter/cogl/common/Makefile.am                  |    3 +-
- clutter/cogl/common/cogl-mesh-private.h          |  143 --
- clutter/cogl/common/cogl-mesh.c                  | 1618 ---------------------
- clutter/cogl/common/cogl-vertex-buffer-private.h |  142 ++
- clutter/cogl/common/cogl-vertex-buffer.c         | 1633 ++++++++++++++++++++++
- clutter/cogl/gl/Makefile.am                      |    2 +-
- clutter/cogl/gl/cogl-context.c                   |    2 +-
- clutter/cogl/gl/cogl-context.h                   |    4 +-
- clutter/cogl/gles/Makefile.am                    |    2 +-
- clutter/cogl/gles/cogl-context.c                 |    2 +-
- clutter/cogl/gles/cogl-context.h                 |    4 +-
- doc/reference/cogl/cogl-docs.sgml                |    2 +-
- doc/reference/cogl/cogl-sections.txt             |   25 +-
- tests/conform/Makefile.am                        |    6 +-
- tests/conform/test-conform-main.c                |   16 +-
- tests/conform/test-mesh-contiguous.c             |  195 ---
- tests/conform/test-mesh-interleved.c             |  173 ---
- tests/conform/test-mesh-mutability.c             |  206 ---
- tests/conform/test-vertex-buffer-contiguous.c    |  195 +++
- tests/conform/test-vertex-buffer-interleved.c    |  173 +++
- tests/conform/test-vertex-buffer-mutability.c    |  206 +++
- 24 files changed, 2692 insertions(+), 2669 deletions(-)
+ clutter/cogl/{cogl-mesh.h => cogl-vertex-buffer.h} | 241 +++---
+ clutter/cogl/cogl.h.in                             |   2 +-
+ clutter/cogl/common/Makefile.am                    |   3 +-
+ clutter/cogl/common/cogl-mesh-private.h            | 143 ----
+ clutter/cogl/common/cogl-vertex-buffer-private.h   | 142 ++++
+ .../common/{cogl-mesh.c => cogl-vertex-buffer.c}   | 813 +++++++++++----------
+ clutter/cogl/gl/Makefile.am                        |   2 +-
+ clutter/cogl/gl/cogl-context.c                     |   2 +-
+ clutter/cogl/gl/cogl-context.h                     |   4 +-
+ clutter/cogl/gles/Makefile.am                      |   2 +-
+ clutter/cogl/gles/cogl-context.c                   |   2 +-
+ clutter/cogl/gles/cogl-context.h                   |   4 +-
+ doc/reference/cogl/cogl-docs.sgml                  |   2 +-
+ doc/reference/cogl/cogl-sections.txt               |  25 +-
+ tests/conform/Makefile.am                          |   6 +-
+ tests/conform/test-conform-main.c                  |  16 +-
+ ...ontiguous.c => test-vertex-buffer-contiguous.c} |  90 +--
+ ...nterleved.c => test-vertex-buffer-interleved.c} |  62 +-
+ ...utability.c => test-vertex-buffer-mutability.c} | 104 +--
+ 19 files changed, 844 insertions(+), 821 deletions(-)
 
 commit 4bc1e567fcb9afe146e0530eaa14e13d6af44655
 Author: Robert Bragg <robert@linux.intel.com>
@@ -15613,7 +15601,7 @@ Date:   Tue Jan 20 18:52:15 2009 +0000
  26 files changed, 2833 deletions(-)
 
 commit 3014d4ff8af55fd4067eac21536512cc0cf8b89d
-Merge: 6d4cd41 c29a3b4
+Merge: 6d4cd416e c29a3b4de
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Tue Jan 20 17:22:21 2009 +0000
 
@@ -15936,11 +15924,10 @@ Date:   Mon Jan 19 19:11:00 2009 +0000
     
     The unit test was renamed to test-actor-clone.
 
- clutter/clutter-actor-clone.c        |  41 +-----
- tests/interactive/Makefile.am        |   2 +-
- tests/interactive/test-actor-clone.c | 272 +++++++++++++++++++++++++++++++++++
- tests/interactive/test-actors2.c     | 269 ----------------------------------
- 4 files changed, 277 insertions(+), 307 deletions(-)
+ clutter/clutter-actor-clone.c                      | 41 +++-------------------
+ tests/interactive/Makefile.am                      |  2 +-
+ .../{test-actors2.c => test-actor-clone.c}         |  5 ++-
+ 3 files changed, 9 insertions(+), 39 deletions(-)
 
 commit df7480090da28e91df240dbba365e7b4f9e675a6
 Author: Robert Bragg <robert@linux.intel.com>
@@ -16207,7 +16194,7 @@ Date:   Thu Jan 15 18:53:52 2009 +0000
  3 files changed, 91 insertions(+), 8 deletions(-)
 
 commit 4e94500a2abffd867c7118bf4a11ae877d852499
-Merge: d89ed3e 9339334
+Merge: d89ed3ed2 9339334a4
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Thu Jan 15 16:38:49 2009 +0000
 
@@ -16368,7 +16355,7 @@ Date:   Thu Jan 8 18:54:48 2009 +0000
  2 files changed, 214 insertions(+), 1 deletion(-)
 
 commit 110489ee5838eccb216dcd9d81f23e3f3d6e0d83
-Merge: d454bfc e730cd7
+Merge: d454bfcc8 e730cd70b
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Jan 14 15:16:41 2009 +0000
 
@@ -16433,7 +16420,7 @@ Date:   Wed Jan 14 15:03:30 2009 +0000
  1 file changed, 2 insertions(+)
 
 commit a074106ded87717b7983976fbd91365105411f5b
-Merge: c83d955 db3d2e9
+Merge: c83d955af db3d2e956
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Jan 14 15:00:44 2009 +0000
 
@@ -16564,7 +16551,7 @@ Date:   Tue Jan 13 14:05:35 2009 +0000
  1 file changed, 15 insertions(+)
 
 commit 616c082a7cc6cf9a46de09f2f04ed87a57162e9c
-Merge: 12ea293 be462b2
+Merge: 12ea2933b be462b2ea
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Tue Jan 13 13:37:38 2009 +0000
 
@@ -16572,10 +16559,10 @@ Date:   Tue Jan 13 13:37:38 2009 +0000
     
     Conflicts:
     
-    	clutter/clutter-texture.c
-    	clutter/cogl/cogl-texture.h
-    	clutter/cogl/gles/cogl-context.c
-    	clutter/cogl/gles/cogl-context.h
+            clutter/clutter-texture.c
+            clutter/cogl/cogl-texture.h
+            clutter/cogl/gles/cogl-context.c
+            clutter/cogl/gles/cogl-context.h
 
 commit a9ae1c65c3fbe78d197dc202cedf3f77affb72ff
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -16643,9 +16630,8 @@ Date:   Mon Jan 12 18:15:40 2009 +0000
     I missed this in my last commit; it just updates the prototype in gl/cogl.c
     in line with the change made in cogl.h.in
 
- fixed-to-float-patches/gl-cogl.c         | 92 -------------------------------
- fixed-to-float-patches/gl-cogl.c.0.patch | 95 ++++++++++++++++++++++++++++++++
- 2 files changed, 95 insertions(+), 92 deletions(-)
+ fixed-to-float-patches/{gl-cogl.c => gl-cogl.c.0.patch} | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
 
 commit 010fd71059c073a95d41b023be67000d1dfc1a4c
 Author: Robert Bragg <robert@linux.intel.com>
@@ -16791,7 +16777,7 @@ Date:   Mon Jan 12 16:52:20 2009 +0000
  4 files changed, 86 insertions(+), 9 deletions(-)
 
 commit 946c075a2aca2fdc7e63ddb90c72e65f3a9fee30
-Merge: 2cea22e be462b2
+Merge: 2cea22e6a be462b2ea
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Jan 12 14:43:53 2009 +0000
 
@@ -16976,7 +16962,7 @@ Date:   Thu Jan 8 15:45:22 2009 +0000
  3 files changed, 59 insertions(+), 52 deletions(-)
 
 commit db3d2e9568f565de9c7656c765a5068b39f9241e
-Merge: 986c18d 628ccaf
+Merge: 986c18d26 628ccaf4a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Thu Jan 8 13:38:51 2009 +0000
 
@@ -17074,7 +17060,7 @@ Date:   Thu Jan 8 12:56:46 2009 +0000
  4 files changed, 152 insertions(+)
 
 commit 378ca42d5b22355d39faf09fb16721f7a6ffbf94
-Merge: c186685 e4b1859
+Merge: c1866858d e4b185907
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Thu Jan 8 11:48:00 2009 +0000
 
@@ -17207,7 +17193,7 @@ Date:   Wed Jan 7 16:26:03 2009 +0000
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 commit 805b88d4c02deda68f6adbd5f65dc6e81451b5f6
-Merge: 5913bcf e21fee3
+Merge: 5913bcf7e e21fee39b
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Wed Jan 7 16:10:25 2009 +0000
 
@@ -17226,9 +17212,9 @@ Date:   Wed Jan 7 16:10:25 2009 +0000
     
     Conflicts:
     
-    	clutter/cogl/gl/cogl-context.c
-    	clutter/cogl/gl/cogl-context.h
-    	clutter/cogl/gl/cogl-texture.c
+            clutter/cogl/gl/cogl-context.c
+            clutter/cogl/gl/cogl-context.h
+            clutter/cogl/gl/cogl-texture.c
 
 commit 5913bcf7e3b1ac4317c33a01362c1fc6e6679704
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -17312,7 +17298,7 @@ Date:   Wed Jan 7 12:16:08 2009 +0000
  2 files changed, 117 deletions(-)
 
 commit c54bd990975fddc4b395a8f05b0ae9080760f473
-Merge: e4272fb ad7d1b5
+Merge: e4272fba6 ad7d1b54b
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Jan 7 12:06:33 2009 +0000
 
@@ -17973,7 +17959,7 @@ Date:   Tue Dec 16 17:40:41 2008 +0000
  1 file changed, 86 deletions(-)
 
 commit fd2d78918b49dc2b67f18b444587f32a0030bfa9
-Merge: cb569a5 cf5d691
+Merge: cb569a544 cf5d69139
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Jan 5 11:11:10 2009 +0000
 
@@ -18079,7 +18065,7 @@ Date:   Tue Dec 23 16:39:11 2008 +0000
  3 files changed, 242 insertions(+), 23 deletions(-)
 
 commit bb938ac4ff651d402a6ecaaf86d11623e19a346d
-Merge: aee2589 cb569a5
+Merge: aee2589cc cb569a544
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Wed Dec 24 00:59:13 2008 +0000
 
@@ -18087,8 +18073,8 @@ Date:   Wed Dec 24 00:59:13 2008 +0000
     
     Conflicts:
     
-    	clutter/cogl/gl/cogl-context.c
-    	clutter/cogl/gl/cogl-context.h
+            clutter/cogl/gl/cogl-context.c
+            clutter/cogl/gl/cogl-context.h
 
 commit cb569a54431082fe1e5e59078e0c7e045ebbd707
 Author: Robert Bragg <robert@linux.intel.com>
@@ -18788,7 +18774,7 @@ Date:   Fri Dec 19 17:21:30 2008 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 8d98c28dfa7d5be746f1aa8b351e4e8fea9ee3a7
-Merge: 5560157 64de041
+Merge: 556015742 64de0411e
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Dec 19 16:44:40 2008 +0000
 
@@ -19867,12 +19853,11 @@ Date:   Thu Dec 11 12:13:26 2008 +0000
     ClutterText should supercede all unit tests for ClutterLabel and
     ClutterEntry.
 
- tests/conform/Makefile.am          |   5 +-
- tests/conform/test-clutter-entry.c | 370 -------------------------------------
- tests/conform/test-conform-main.c  |  16 +-
- tests/conform/test-label-cache.c   | 276 ---------------------------
- tests/conform/test-text-cache.c    | 276 +++++++++++++++++++++++++++
- 5 files changed, 279 insertions(+), 664 deletions(-)
+ tests/conform/Makefile.am                          |   5 +-
+ tests/conform/test-clutter-entry.c                 | 370 ---------------------
+ tests/conform/test-conform-main.c                  |  16 +-
+ .../{test-label-cache.c => test-text-cache.c}      |  42 +--
+ 4 files changed, 24 insertions(+), 409 deletions(-)
 
 commit f13e00b41189fafb2eebd3df214e19db9fb107b7
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -20365,7 +20350,7 @@ Date:   Wed Dec 10 23:12:22 2008 +0000
  1 file changed, 3 insertions(+)
 
 commit e21fee39b450beee1a140a3b075321687e9c6f05
-Merge: 9537f8e dc6545c
+Merge: 9537f8e4a dc6545ccd
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Wed Dec 10 12:25:25 2008 +0000
 
@@ -20386,7 +20371,7 @@ Date:   Tue Dec 9 18:03:29 2008 +0000
  2 files changed, 66 insertions(+), 36 deletions(-)
 
 commit 2c9a79651a0d8b0400589b9e1232c941b09ebb2a
-Merge: 0bedd89 e3dd18d
+Merge: 0bedd891f e3dd18dc0
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Tue Dec 9 15:10:56 2008 +0000
 
@@ -20437,7 +20422,7 @@ Date:   Tue Dec 9 13:02:28 2008 +0000
  3 files changed, 88 insertions(+), 74 deletions(-)
 
 commit bafcfca797d29d3731b1af4675c341ed212fbd5d
-Merge: e3f077d 98035e4
+Merge: e3f077d55 98035e4d8
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Thu Dec 4 18:08:40 2008 +0000
 
@@ -20445,7 +20430,7 @@ Date:   Thu Dec 4 18:08:40 2008 +0000
     
     Conflicts:
     
-    	clutter/cogl/gl/cogl-texture.c
+            clutter/cogl/gl/cogl-texture.c
 
 commit e3f077d55f323d71efed19def7f6a740ff78c2ec
 Author: Neil Roberts <neil@linux.intel.com>

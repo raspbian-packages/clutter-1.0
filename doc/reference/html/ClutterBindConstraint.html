@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterBindConstraint: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch05.html" title="Constraints">
 <link rel="prev" href="ClutterAlignConstraint.html" title="ClutterAlignConstraint">
 <link rel="next" href="ClutterPathConstraint.html" title="ClutterPathConstraint">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterBindConstraint.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -102,7 +102,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterBindConstraint.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -130,7 +130,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterBindConstraint.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -266,8 +266,8 @@ the given <em class="parameter"><code>coordinate</code></em>
  of the position of <em class="parameter"><code>source</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-bind-constraint-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -294,7 +294,7 @@ the binding, or <code class="literal">NULL</code>. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.2.6"></a><h4>Returns</h4>
+<a name="clutter-bind-constraint-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterBindConstraint.html" title="ClutterBindConstraint"><span class="type">ClutterBindConstraint</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -307,8 +307,8 @@ clutter_bind_constraint_set_source (<em class="parameter"><code><a class="link" 
                                     <em class="parameter"><code><a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> *source</code></em>);</pre>
 <p>Sets the source <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> for the constraint</p>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-bind-constraint-set-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -337,8 +337,8 @@ clutter_bind_constraint_set_source (<em class="parameter"><code><a class="link" 
 clutter_bind_constraint_get_source (<em class="parameter"><code><a class="link" href="ClutterBindConstraint.html" title="ClutterBindConstraint"><span class="type">ClutterBindConstraint</span></a> *constraint</code></em>);</pre>
 <p>Retrieves the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> set using <a class="link" href="ClutterBindConstraint.html#clutter-bind-constraint-set-source" title="clutter_bind_constraint_set_source ()"><code class="function">clutter_bind_constraint_set_source()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-bind-constraint-get-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -352,7 +352,7 @@ clutter_bind_constraint_get_source (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.4.6"></a><h4>Returns</h4>
+<a name="clutter-bind-constraint-get-source.returns"></a><h4>Returns</h4>
 <p> a pointer to the source actor. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -367,8 +367,8 @@ clutter_bind_constraint_set_coordinate
                                 <em class="parameter"><code><a class="link" href="ClutterBindConstraint.html#ClutterBindCoordinate" title="enum ClutterBindCoordinate"><span class="type">ClutterBindCoordinate</span></a> coordinate</code></em>);</pre>
 <p>Sets the coordinate to bind in the constraint</p>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-bind-constraint-set-coordinate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -398,8 +398,8 @@ clutter_bind_constraint_get_coordinate
                                (<em class="parameter"><code><a class="link" href="ClutterBindConstraint.html" title="ClutterBindConstraint"><span class="type">ClutterBindConstraint</span></a> *constraint</code></em>);</pre>
 <p>Retrieves the bound coordinate of the constraint</p>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-bind-constraint-get-coordinate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -413,7 +413,7 @@ clutter_bind_constraint_get_coordinate
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.6.6"></a><h4>Returns</h4>
+<a name="clutter-bind-constraint-get-coordinate.returns"></a><h4>Returns</h4>
 <p> the bound coordinate</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -426,8 +426,8 @@ clutter_bind_constraint_set_offset (<em class="parameter"><code><a class="link" 
                                     <em class="parameter"><code><span class="type">gfloat</span> offset</code></em>);</pre>
 <p>Sets the offset to be applied to the constraint</p>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-bind-constraint-set-offset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -456,8 +456,8 @@ clutter_bind_constraint_set_offset (<em class="parameter"><code><a class="link" 
 clutter_bind_constraint_get_offset (<em class="parameter"><code><a class="link" href="ClutterBindConstraint.html" title="ClutterBindConstraint"><span class="type">ClutterBindConstraint</span></a> *constraint</code></em>);</pre>
 <p>Retrieves the offset set using <a class="link" href="ClutterBindConstraint.html#clutter-bind-constraint-set-offset" title="clutter_bind_constraint_set_offset ()"><code class="function">clutter_bind_constraint_set_offset()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-bind-constraint-get-offset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -471,7 +471,7 @@ clutter_bind_constraint_get_offset (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.3.8.8.6"></a><h4>Returns</h4>
+<a name="clutter-bind-constraint-get-offset.returns"></a><h4>Returns</h4>
 <p> the offset, in pixels</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -491,8 +491,8 @@ whose members cannot be directly accessed</p>
 <a name="ClutterBindCoordinate"></a><h3>enum ClutterBindCoordinate</h3>
 <p>Specifies which property should be used in a binding</p>
 <div class="refsect3">
-<a name="id-1.5.6.3.9.3.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterBindCoordinate.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -589,6 +589,6 @@ to the constraint.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

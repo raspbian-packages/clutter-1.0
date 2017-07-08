@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterModel: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch12.html" title="Generic list model">
 <link rel="prev" href="ch12.html" title="Generic list model">
 <link rel="next" href="ClutterModelIter.html" title="ClutterModelIter">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterModel.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -279,7 +279,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterModel.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -294,7 +294,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterModel.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -331,7 +331,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterModel.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -525,7 +525,7 @@ data.</p>
 <p>The definition below will create a <a class="link" href="ClutterListModel.html" title="ClutterListModel"><span class="type">ClutterListModel</span></a> with three
 columns: the first one with name "Name" and containing strings; the
 second one with name "Score" and containing integers; the third one with
-name "Icon" and containing <a href="ClutterTexture.html"><span class="type">ClutterTextures</span></a>. The model is filled
+name "Icon" and containing <a href="ClutterTexture.html#ClutterTexture-struct"><span class="type">ClutterTextures</span></a>. The model is filled
 with three rows. A row can be defined either with an array that holds
 all columns of a row, or an object that holds "column-name" :
 "column-value" pairs.</p>
@@ -585,8 +585,8 @@ clutter_model_set_names (<em class="parameter"><code><a class="link" href="Clutt
 <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>, and should only be used when contructing a <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>.
 It will not work after the initial creation of the <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.2.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-set-names.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -629,8 +629,8 @@ clutter_model_set_types (<em class="parameter"><code><a class="link" href="Clutt
 <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>, and should only be used when contructing a <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>.
 It will not work after the initial creation of the <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.3.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-set-types.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -670,8 +670,8 @@ clutter_model_get_column_name (<em class="parameter"><code><a class="link" href=
 <p>Retrieves the name of the <em class="parameter"><code>column</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-column-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -692,7 +692,7 @@ clutter_model_get_column_name (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.4.8"></a><h4>Returns</h4>
+<a name="clutter-model-get-column-name.returns"></a><h4>Returns</h4>
 <p> the name of the column. The model holds the returned
 string, and it should not be modified or freed</p>
 </div>
@@ -711,8 +711,8 @@ clutter_model_get_column_type (<em class="parameter"><code><a class="link" href=
 <p>Retrieves the type of the <em class="parameter"><code>column</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-column-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -733,7 +733,7 @@ clutter_model_get_column_type (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.5.8"></a><h4>Returns</h4>
+<a name="clutter-model-get-column-type.returns"></a><h4>Returns</h4>
 <p> the type of the column.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -750,8 +750,8 @@ clutter_model_get_n_columns (<em class="parameter"><code><a class="link" href="C
 <p>Retrieves the number of columns inside <em class="parameter"><code>model</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-n-columns.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -765,7 +765,7 @@ clutter_model_get_n_columns (<em class="parameter"><code><a class="link" href="C
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.6.8"></a><h4>Returns</h4>
+<a name="clutter-model-get-n-columns.returns"></a><h4>Returns</h4>
 <p> the number of columns</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -783,8 +783,8 @@ clutter_model_get_n_rows (<em class="parameter"><code><a class="link" href="Clut
 , eventually taking
 into account any filtering function set using <a class="link" href="ClutterModel.html#clutter-model-set-filter" title="clutter_model_set_filter ()"><code class="function">clutter_model_set_filter()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-n-rows.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -798,7 +798,7 @@ into account any filtering function set using <a class="link" href="ClutterModel
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.7.8"></a><h4>Returns</h4>
+<a name="clutter-model-get-n-rows.returns"></a><h4>Returns</h4>
 <p> The length of the <em class="parameter"><code>model</code></em>
 . If there is a filter set, then
 the length of the filtered <em class="parameter"><code>model</code></em>
@@ -839,8 +839,8 @@ column 0 is type <code class="literal">G_TYPE_INT</code> and column 1 is of type
 </div>
 
 <div class="refsect3">
-<a name="id-1.7.4.2.10.8.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-append.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -878,8 +878,8 @@ clutter_model_appendv (<em class="parameter"><code><a class="link" href="Clutter
 values for the given <em class="parameter"><code>columns</code></em>
  upon creation.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-appendv.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -944,8 +944,8 @@ is type <code class="literal">G_TYPE_INT</code> and column 1 is of type <code cl
 </div>
 
 <div class="refsect3">
-<a name="id-1.7.4.2.10.10.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-prepend.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -983,8 +983,8 @@ clutter_model_prependv (<em class="parameter"><code><a class="link" href="Clutte
 values for the given <em class="parameter"><code>columns</code></em>
  upon creation.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.11.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-prependv.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1052,8 +1052,8 @@ where column 0 is type <code class="literal">G_TYPE_INT</code> and column 1 is o
 </div>
 
 <div class="refsect3">
-<a name="id-1.7.4.2.10.12.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-insert.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1098,8 +1098,8 @@ clutter_model_insertv (<em class="parameter"><code><a class="link" href="Clutter
 values for the given <em class="parameter"><code>columns</code></em>
  upon creation.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-insertv.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1155,8 +1155,8 @@ clutter_model_insert_value (<em class="parameter"><code><a class="link" href="Cl
  must be convertable to the type of the column. If the row does
 not exist then it is created.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-insert-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1200,8 +1200,8 @@ clutter_model_remove (<em class="parameter"><code><a class="link" href="ClutterM
 </div>
 <p>Removes the row at the given position from the model.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.15.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1236,8 +1236,8 @@ clutter_model_remove (<em class="parameter"><code><a class="link" href="ClutterM
 </div>
 <p>Iterates on the content of a row in the model</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.16.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModelForeachFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1263,7 +1263,7 @@ clutter_model_remove (<em class="parameter"><code><a class="link" href="ClutterM
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.16.8"></a><h4>Returns</h4>
+<a name="ClutterModelForeachFunc.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the iteration should continue, <code class="literal">FALSE</code> otherwise</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -1282,8 +1282,8 @@ clutter_model_foreach (<em class="parameter"><code><a class="link" href="Clutter
 <p>Calls <em class="parameter"><code>func</code></em>
  for each row in the model.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.17.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-foreach.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1326,8 +1326,8 @@ clutter_model_set_sorting_column (<em class="parameter"><code><a class="link" hr
  is a negative value
 the sorting column will be unset.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-set-sorting-column.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1362,8 +1362,8 @@ clutter_model_get_sorting_column (<em class="parameter"><code><a class="link" hr
 <p>Retrieves the number of column used for sorting the <em class="parameter"><code>model</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.19.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-sorting-column.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1377,7 +1377,7 @@ clutter_model_get_sorting_column (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.19.8"></a><h4>Returns</h4>
+<a name="clutter-model-get-sorting-column.returns"></a><h4>Returns</h4>
 <p> a column number, or -1 if the model is not sorted</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -1396,8 +1396,8 @@ clutter_model_get_sorting_column (<em class="parameter"><code><a class="link" hr
 </div>
 <p>Compares the content of two rows in the model.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.20.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModelSortFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1428,7 +1428,7 @@ clutter_model_get_sorting_column (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.20.8"></a><h4>Returns</h4>
+<a name="ClutterModelSortFunc.returns"></a><h4>Returns</h4>
 <p> a positive integer if <em class="parameter"><code>a</code></em>
 is after <em class="parameter"><code>b</code></em>
 , a negative integer if
@@ -1454,8 +1454,8 @@ clutter_model_set_sort (<em class="parameter"><code><a class="link" href="Clutte
 <p>Sorts <em class="parameter"><code>model</code></em>
  using the given sorting function.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-set-sort.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1507,8 +1507,8 @@ clutter_model_resort (<em class="parameter"><code><a class="link" href="ClutterM
 . This function should only be
 used by subclasses of <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-resort.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1536,8 +1536,8 @@ used by subclasses of <a class="link" href="ClutterModel.html" title="ClutterMod
 </div>
 <p>Filters the content of a row in the model.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.23.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModelFilterFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1563,7 +1563,7 @@ used by subclasses of <a class="link" href="ClutterModel.html" title="ClutterMod
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.23.8"></a><h4>Returns</h4>
+<a name="ClutterModelFilterFunc.returns"></a><h4>Returns</h4>
 <p> If the row should be displayed, return <code class="literal">TRUE</code></p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -1583,8 +1583,8 @@ clutter_model_set_filter (<em class="parameter"><code><a class="link" href="Clut
 <p>Filters the <em class="parameter"><code>model</code></em>
  using the given filtering function.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.24.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-set-filter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1631,8 +1631,8 @@ clutter_model_get_filter_set (<em class="parameter"><code><a class="link" href="
  has a filter in place, set
 using <a class="link" href="ClutterModel.html#clutter-model-set-filter" title="clutter_model_set_filter ()"><code class="function">clutter_model_set_filter()</code></a></p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.25.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-filter-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1646,7 +1646,7 @@ using <a class="link" href="ClutterModel.html#clutter-model-set-filter" title="c
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.25.8"></a><h4>Returns</h4>
+<a name="clutter-model-get-filter-set.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if a filter is set</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1667,8 +1667,8 @@ the filtering function set on <em class="parameter"><code>model</code></em>
 .</p>
 <p>This function should be used only by subclasses of <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.26.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-filter-iter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1689,7 +1689,7 @@ the filtering function set on <em class="parameter"><code>model</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.26.9"></a><h4>Returns</h4>
+<a name="clutter-model-filter-iter.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the row should be displayed,
 <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -1711,8 +1711,8 @@ filtering function set on <em class="parameter"><code>model</code></em>
 .</p>
 <p>This function should be used only by subclasses of <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.27.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-filter-row.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1733,7 +1733,7 @@ filtering function set on <em class="parameter"><code>model</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.27.9"></a><h4>Returns</h4>
+<a name="clutter-model-filter-row.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the row should be displayed,
 <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -1752,8 +1752,8 @@ clutter_model_get_first_iter (<em class="parameter"><code><a class="link" href="
 row in <em class="parameter"><code>model</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.28.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-first-iter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1767,7 +1767,7 @@ row in <em class="parameter"><code>model</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.28.8"></a><h4>Returns</h4>
+<a name="clutter-model-get-first-iter.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>.
 Call <code class="function">g_object_unref()</code> when done using it. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1787,8 +1787,8 @@ clutter_model_get_last_iter (<em class="parameter"><code><a class="link" href="C
 row in <em class="parameter"><code>model</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.29.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-last-iter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1802,7 +1802,7 @@ row in <em class="parameter"><code>model</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.29.8"></a><h4>Returns</h4>
+<a name="clutter-model-get-last-iter.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>.
 Call <code class="function">g_object_unref()</code> when done using it. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1825,8 +1825,8 @@ then the <em class="parameter"><code>model</code></em>
  implementation will return the first non filtered
 row.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.30.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-model-get-iter-at-row.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1847,7 +1847,7 @@ row.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.10.30.9"></a><h4>Returns</h4>
+<a name="clutter-model-get-iter-at-row.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>, or <code class="literal">NULL</code> if <em class="parameter"><code>row</code></em>
 was
 out of bounds. When done using the iterator object, call <code class="function">g_object_unref()</code>
@@ -1909,8 +1909,8 @@ API.</p>
 </div>
 <p>Class for <a class="link" href="ClutterModel.html" title="ClutterModel"><span class="type">ClutterModel</span></a> instances.</p>
 <div class="refsect3">
-<a name="id-1.7.4.2.11.3.7"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModelClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2024,8 +2024,8 @@ user_function (<a class="link" href="ClutterModel.html" title="ClutterModel"><sp
 <p>Use <span class="type">GListModel</span> instead</p>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.13.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModel-filter-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2063,8 +2063,8 @@ has been emitted.</p>
 <p>Use <span class="type">GListModel</span> instead</p>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.13.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModel-row-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2107,8 +2107,8 @@ signal has been emitted.</p>
 <p>Use <span class="type">GListModel</span> instead</p>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.13.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModel-row-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2151,8 +2151,8 @@ when the ::row-removed signal has been emitted.</p>
 <p>Use <span class="type">GListModel</span> instead</p>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.13.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModel-row-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2192,8 +2192,8 @@ user_function (<a class="link" href="ClutterModel.html" title="ClutterModel"><sp
 <p>Use <span class="type">GListModel</span> instead</p>
 </div>
 <div class="refsect3">
-<a name="id-1.7.4.2.13.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterModel-sort-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2219,6 +2219,6 @@ user_function (<a class="link" href="ClutterModel.html" title="ClutterModel"><sp
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

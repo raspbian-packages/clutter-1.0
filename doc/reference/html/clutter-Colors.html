@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Colors: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="ch10.html" title="General purpose API">
 <link rel="next" href="clutter-Key-Bindings.html" title="Key Bindings">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-Colors.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -239,7 +239,7 @@
 </div>
 <a name="ClutterColor"></a><a name="ClutterParamSpecColor"></a><div class="refsect1">
 <a name="clutter-Colors.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -262,7 +262,7 @@
 </div>
 <div class="refsect1">
 <a name="clutter-Colors.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GBoxed
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">╰──</span> ClutterColor
     GParam
     <span class="lineart">╰──</span> ClutterParamSpecColor
@@ -283,8 +283,8 @@ zero to 255, one for each color channel plus one for the alpha.</p>
 </pre>
 <p>A macro that initializes a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>, to be used when declaring it.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CLUTTER-COLOR-INIT.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -339,8 +339,8 @@ clutter_color_new (<em class="parameter"><code><span class="type">guint8</span> 
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.3.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -371,7 +371,7 @@ clutter_color_new (<em class="parameter"><code><span class="type">guint8</span> 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.3.9"></a><h4>Returns</h4>
+<a name="clutter-color-new.returns"></a><h4>Returns</h4>
 <p> the newly allocated color.
 Use <a class="link" href="clutter-Colors.html#clutter-color-free" title="clutter_color_free ()"><code class="function">clutter_color_free()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -386,7 +386,7 @@ clutter_color_alloc (<em class="parameter"><code><span class="type">void</span><
 <p>Allocates a new, transparent black <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>.</p>
 <p><span class="annotation">[<acronym title="This symbol is a constructor, not a static method."><span class="acronym">constructor</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.4.6"></a><h4>Returns</h4>
+<a name="clutter-color-alloc.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>; use
 <a class="link" href="clutter-Colors.html#clutter-color-free" title="clutter_color_free ()"><code class="function">clutter_color_free()</code></a> to free its resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -405,8 +405,8 @@ clutter_color_init (<em class="parameter"><code><a class="link" href="clutter-Co
 <p>Initializes <em class="parameter"><code>color</code></em>
  with the given values.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-init.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -442,7 +442,7 @@ clutter_color_init (<em class="parameter"><code><a class="link" href="clutter-Co
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.5.6"></a><h4>Returns</h4>
+<a name="clutter-color-init.returns"></a><h4>Returns</h4>
 <p> the initialized <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -456,8 +456,8 @@ clutter_color_copy (<em class="parameter"><code>const <a class="link" href="clut
 <p>Makes a copy of the color structure.  The result must be
 freed using <a class="link" href="clutter-Colors.html#clutter-color-free" title="clutter_color_free ()"><code class="function">clutter_color_free()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -471,7 +471,7 @@ freed using <a class="link" href="clutter-Colors.html#clutter-color-free" title=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.6.6"></a><h4>Returns</h4>
+<a name="clutter-color-copy.returns"></a><h4>Returns</h4>
 <p> an allocated copy of <em class="parameter"><code>color</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -485,8 +485,8 @@ freed using <a class="link" href="clutter-Colors.html#clutter-color-free" title=
 clutter_color_free (<em class="parameter"><code><a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a> *color</code></em>);</pre>
 <p>Frees a color structure created with <a class="link" href="clutter-Colors.html#clutter-color-copy" title="clutter_color_copy ()"><code class="function">clutter_color_copy()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -512,8 +512,8 @@ clutter_color_equal (<em class="parameter"><code><span class="type">gconstpointe
 
 parameter, when using <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>s as keys in a <span class="type">GHashTable</span>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-equal.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -534,7 +534,7 @@ parameter, when using <a class="link" href="clutter-Colors.html#ClutterColor"><s
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.8.7"></a><h4>Returns</h4>
+<a name="clutter-color-equal.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the two colors are the same.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix03.html#api-index-0.2">0.2</a></p>
@@ -549,8 +549,8 @@ clutter_color_hash (<em class="parameter"><code><span class="type">gconstpointer
 
 parameter, when using <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>s as keys in a <span class="type">GHashTable</span>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-hash.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -564,7 +564,7 @@ parameter, when using <a class="link" href="clutter-Colors.html#ClutterColor"><s
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.9.7"></a><h4>Returns</h4>
+<a name="clutter-color-hash.returns"></a><h4>Returns</h4>
 <p> a hash value corresponding to the color</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -579,8 +579,8 @@ clutter_color_get_static (<em class="parameter"><code><a class="link" href="clut
 <p>Static colors are created by Clutter and are guaranteed to always be
 available and valid</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-get-static.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -594,7 +594,7 @@ available and valid</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.10.7"></a><h4>Returns</h4>
+<a name="clutter-color-get-static.returns"></a><h4>Returns</h4>
 <p> a pointer to a static color; the returned pointer
 is owned by Clutter and it should never be modified or freed</p>
 </div>
@@ -638,8 +638,8 @@ is allowed.</p>
 <p>If the alpha component is not specified then it is assumed to be set to
 be fully opaque.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.11.13"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-from-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -660,7 +660,7 @@ be fully opaque.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.11.14"></a><h4>Returns</h4>
+<a name="clutter-color-from-string.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if parsing succeeded, and <code class="literal">FALSE</code> otherwise</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -677,8 +677,8 @@ clutter_color_to_string (<em class="parameter"><code>const <a class="link" href=
 hexadecimal digits representing the red, green, blue and alpha components
 respectively.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-to-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -692,7 +692,7 @@ respectively.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.12.6"></a><h4>Returns</h4>
+<a name="clutter-color-to-string.returns"></a><h4>Returns</h4>
 <p> a newly-allocated text string. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -709,8 +709,8 @@ clutter_color_from_hls (<em class="parameter"><code><a class="link" href="clutte
 <p>Converts a color expressed in HLS (hue, luminance and saturation)
 values into a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-from-hls.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -757,8 +757,8 @@ clutter_color_to_hls (<em class="parameter"><code>const <a class="link" href="cl
 <em class="parameter"><code>saturation</code></em>
  values are in the 0 .. 1 range.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.14.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-to-hls.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -799,8 +799,8 @@ clutter_color_from_pixel (<em class="parameter"><code><a class="link" href="clut
  from the packed representation of a four 8 bit channel
 color to a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-from-pixel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -830,8 +830,8 @@ clutter_color_to_pixel (<em class="parameter"><code>const <a class="link" href="
  into a packed 32 bit integer, containing
 all the four 8 bit channels used by <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-to-pixel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -845,7 +845,7 @@ all the four 8 bit channels used by <a class="link" href="clutter-Colors.html#Cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.16.6"></a><h4>Returns</h4>
+<a name="clutter-color-to-pixel.returns"></a><h4>Returns</h4>
 <p> a packed color</p>
 </div>
 </div>
@@ -866,8 +866,8 @@ between the alpha channels of <em class="parameter"><code>a</code></em>
  and <em class="parameter"><code>b</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.17.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-add.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -914,8 +914,8 @@ between the alpha channels of <em class="parameter"><code>a</code></em>
  and <em class="parameter"><code>b</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-subtract.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -952,8 +952,8 @@ clutter_color_lighten (<em class="parameter"><code>const <a class="link" href="c
 in <em class="parameter"><code>result</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-lighten.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -985,8 +985,8 @@ clutter_color_darken (<em class="parameter"><code>const <a class="link" href="cl
 in <em class="parameter"><code>result</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-darken.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1019,8 +1019,8 @@ clutter_color_shade (<em class="parameter"><code>const <a class="link" href="clu
  and saves the modified color into <em class="parameter"><code>result</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-shade.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1060,8 +1060,8 @@ clutter_color_interpolate (<em class="parameter"><code>const <a class="link" hre
 using <em class="parameter"><code>progress</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.22.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-interpolate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1105,8 +1105,8 @@ clutter_param_spec_color (<em class="parameter"><code>const <span class="type">g
 <p>Creates a <span class="type">GParamSpec</span> for properties using <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.23.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-param-spec-color.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1142,7 +1142,7 @@ clutter_param_spec_color (<em class="parameter"><code>const <span class="type">g
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.23.7"></a><h4>Returns</h4>
+<a name="clutter-param-spec-color.returns"></a><h4>Returns</h4>
 <p> the newly created <span class="type">GParamSpec</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -1155,8 +1155,8 @@ clutter_param_spec_color (<em class="parameter"><code>const <span class="type">g
 <p>Evaluates to <code class="literal">TRUE</code> if <em class="parameter"><code>x</code></em>
  holds a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CLUTTER-VALUE-HOLDS-COLOR.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1181,8 +1181,8 @@ clutter_value_set_color (<em class="parameter"><code><span class="type">GValue</
  to <em class="parameter"><code>color</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.25.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-value-set-color.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1212,8 +1212,8 @@ clutter_value_get_color (<em class="parameter"><code>const <span class="type">GV
 <p>Gets the <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a> contained in <em class="parameter"><code>value</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-value-get-color.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1227,7 +1227,7 @@ clutter_value_get_color (<em class="parameter"><code>const <span class="type">GV
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.2.9.26.6"></a><h4>Returns</h4>
+<a name="clutter-value-get-color.returns"></a><h4>Returns</h4>
 <p> the color inside the passed <span class="type">GValue</span>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1248,8 +1248,8 @@ clutter_value_get_color (<em class="parameter"><code>const <span class="type">GV
 </pre>
 <p>Color representation.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.10.2.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterColor.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -1285,8 +1285,8 @@ clutter_value_get_color (<em class="parameter"><code>const <span class="type">GV
 <a name="ClutterStaticColor"></a><h3>enum ClutterStaticColor</h3>
 <p>Named colors, for accessing global colors defined by Clutter</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.10.3.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStaticColor.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1623,8 +1623,8 @@ clutter_value_get_color (<em class="parameter"><code>const <span class="type">GV
 <p>A <span class="type">GParamSpec</span> subclass for defining properties holding
 a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.2.10.4.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterParamSpecColor.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -1642,6 +1642,6 @@ a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">Clu
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

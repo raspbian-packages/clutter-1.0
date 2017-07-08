@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterPathConstraint: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch05.html" title="Constraints">
 <link rel="prev" href="ClutterBindConstraint.html" title="ClutterBindConstraint">
 <link rel="next" href="ClutterSnapConstraint.html" title="ClutterSnapConstraint">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterPathConstraint.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -87,7 +87,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterPathConstraint.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -110,7 +110,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterPathConstraint.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -125,7 +125,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterPathConstraint.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -164,8 +164,8 @@ clutter_path_constraint_new (<em class="parameter"><code><a class="link" href="C
  and <em class="parameter"><code>offset</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.6.4.9.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-constraint-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -186,7 +186,7 @@ clutter_path_constraint_new (<em class="parameter"><code><a class="link" href="C
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.4.9.2.6"></a><h4>Returns</h4>
+<a name="clutter-path-constraint-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPathConstraint.html" title="ClutterPathConstraint"><span class="type">ClutterPathConstraint</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -203,8 +203,8 @@ clutter_path_constraint_set_path (<em class="parameter"><code><a class="link" hr
  will take ownership of the <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> passed to this
 function.</p>
 <div class="refsect3">
-<a name="id-1.5.6.4.9.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-constraint-set-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -234,8 +234,8 @@ clutter_path_constraint_get_path (<em class="parameter"><code><a class="link" hr
 <p>Retrieves a pointer to the <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> used by <em class="parameter"><code>constraint</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.6.4.9.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-constraint-get-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -249,7 +249,7 @@ clutter_path_constraint_get_path (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.4.9.4.6"></a><h4>Returns</h4>
+<a name="clutter-path-constraint-get-path.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> used by the
 <a class="link" href="ClutterPathConstraint.html" title="ClutterPathConstraint"><span class="type">ClutterPathConstraint</span></a>, or <code class="literal">NULL</code>. The returned <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> is owned
 by the constraint and it should not be unreferenced. </p>
@@ -266,8 +266,8 @@ clutter_path_constraint_set_offset (<em class="parameter"><code><a class="link" 
 <p>Sets the offset along the <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> used by <em class="parameter"><code>constraint</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.6.4.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-constraint-set-offset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -297,8 +297,8 @@ clutter_path_constraint_get_offset (<em class="parameter"><code><a class="link" 
 <p>Retrieves the offset along the <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> used by <em class="parameter"><code>constraint</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.6.4.9.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-constraint-get-offset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -312,7 +312,7 @@ clutter_path_constraint_get_offset (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.4.9.6.6"></a><h4>Returns</h4>
+<a name="clutter-path-constraint-get-offset.returns"></a><h4>Returns</h4>
 <p> the offset</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -361,8 +361,8 @@ user_function (<a class="link" href="ClutterPathConstraint.html" title="ClutterP
 <a class="link" href="ClutterPathConstraint.html#ClutterPathConstraint--offset" title="The “offset” property"><span class="type">“offset”</span></a> value results in the actor
 passing a <a class="link" href="ClutterPath.html#ClutterPathNode"><span class="type">ClutterPathNode</span></a></p>
 <div class="refsect3">
-<a name="id-1.5.6.4.12.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPathConstraint-node-reached.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -399,6 +399,6 @@ passing a <a class="link" href="ClutterPath.html#ClutterPathNode"><span class="t
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

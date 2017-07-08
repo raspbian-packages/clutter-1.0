@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Paint Nodes: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch08.html" title="Paint Objects">
 <link rel="prev" href="ClutterPaintNode.html" title="ClutterPaintNode">
 <link rel="next" href="clutteranimation.html" title="Part V. Clutter Animation Framework">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-Paint-Nodes.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -85,7 +85,7 @@
 </div>
 <a name="ClutterColorNode"></a><a name="ClutterTextureNode"></a><a name="ClutterPipelineNode"></a><a name="ClutterTextNode"></a><a name="ClutterClipNode"></a><div class="refsect1">
 <a name="clutter-Paint-Nodes.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -161,8 +161,8 @@ clutter_color_node_new (<em class="parameter"><code>const <a class="link" href="
 fill using <em class="parameter"><code>color</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-color-node-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -176,7 +176,7 @@ fill using <em class="parameter"><code>color</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.2.6"></a><h4>Returns</h4>
+<a name="clutter-color-node-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>. Use
 <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -203,8 +203,8 @@ channel value; if <em class="parameter"><code>color</code></em>
  is <code class="literal">NULL</code>, a fully opaque white color will
 be used for blending.</p>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-node-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -235,7 +235,7 @@ be used for blending.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.3.8"></a><h4>Returns</h4>
+<a name="clutter-texture-node-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
 Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -254,8 +254,8 @@ paint its contents.</p>
 ,
 so it is safe to call <code class="function">cogl_object_unref()</code> when it returns.</p>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pipeline-node-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -269,7 +269,7 @@ so it is safe to call <code class="function">cogl_object_unref()</code> when it 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.4.7"></a><h4>Returns</h4>
+<a name="clutter-pipeline-node-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
 Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -288,8 +288,8 @@ with the given color.</p>
 , so it
 is safe to call <code class="function">g_object_unref()</code> after it returns.</p>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-node-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -311,7 +311,7 @@ or <code class="literal">NULL</code>. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.5.7"></a><h4>Returns</h4>
+<a name="clutter-text-node-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
 Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -326,7 +326,7 @@ clutter_clip_node_new (<em class="parameter"><code><span class="type">void</span
 <p>Creates a new <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a> that will clip its child
 nodes to the 2D regions added to it.</p>
 <div class="refsect3">
-<a name="id-1.5.9.3.12.6.5"></a><h4>Returns</h4>
+<a name="clutter-clip-node-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
 Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -418,6 +418,6 @@ type whose members cannot be directly accessed.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

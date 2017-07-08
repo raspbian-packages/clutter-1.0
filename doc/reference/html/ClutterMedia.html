@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterMedia: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch01.html" title="Abstract classes and interfaces">
 <link rel="prev" href="ClutterChildMeta.html" title="ClutterChildMeta">
 <link rel="next" href="ClutterLayoutManager.html" title="ClutterLayoutManager">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterMedia.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -176,7 +176,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterMedia.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -236,7 +236,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterMedia.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -258,7 +258,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterMedia.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -277,7 +277,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterMedia.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> ClutterMedia
 </pre>
 </div>
@@ -309,8 +309,8 @@ clutter_media_set_uri (<em class="parameter"><code><a class="link" href="Clutter
  to <em class="parameter"><code>uri</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-set-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -341,8 +341,8 @@ clutter_media_get_uri (<em class="parameter"><code><a class="link" href="Clutter
 <p>Retrieves the URI from <em class="parameter"><code>media</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -356,7 +356,7 @@ clutter_media_get_uri (<em class="parameter"><code><a class="link" href="Clutter
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.3.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-uri.returns"></a><h4>Returns</h4>
 <p> the URI of the media stream. Use <code class="function">g_free()</code>
 to free the returned string</p>
 </div>
@@ -378,8 +378,8 @@ signal on the <a class="link" href="ClutterMedia.html#ClutterMedia--playing" tit
 current state with <a class="link" href="ClutterMedia.html#clutter-media-get-playing" title="clutter_media_get_playing ()"><code class="function">clutter_media_get_playing()</code></a>. ClutterGstVideoTexture
 in clutter-gst is an example of such an asynchronous implementation.</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.4.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-set-playing.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -410,8 +410,8 @@ clutter_media_get_playing (<em class="parameter"><code><a class="link" href="Clu
 <p>Retrieves the playing status of <em class="parameter"><code>media</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-playing.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -425,7 +425,7 @@ clutter_media_get_playing (<em class="parameter"><code><a class="link" href="Clu
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.5.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-playing.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if playing, <code class="literal">FALSE</code> if stopped.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix03.html#api-index-0.2">0.2</a></p>
@@ -442,8 +442,8 @@ clutter_media_set_progress (<em class="parameter"><code><a class="link" href="Cl
  is
 a normalized value between 0.0 (begin) and 1.0 (end).</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-set-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -474,8 +474,8 @@ clutter_media_get_progress (<em class="parameter"><code><a class="link" href="Cl
 <p>Retrieves the playback progress of <em class="parameter"><code>media</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -489,7 +489,7 @@ clutter_media_get_progress (<em class="parameter"><code><a class="link" href="Cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.7.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-progress.returns"></a><h4>Returns</h4>
 <p> the playback progress, between 0.0 and 1.0</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -504,8 +504,8 @@ clutter_media_set_subtitle_uri (<em class="parameter"><code><a class="link" href
 <p>Sets the location of a subtitle file to display while playing <em class="parameter"><code>media</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.8.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-set-subtitle-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -535,8 +535,8 @@ clutter_media_get_subtitle_uri (<em class="parameter"><code><a class="link" href
 <div class="warning"><p><code class="literal">clutter_media_get_subtitle_uri</code> has been deprecated since version 1.12 and should not be used in newly-written code.</p></div>
 <p>Retrieves the URI of the subtitle file in use.</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-subtitle-uri.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -550,7 +550,7 @@ clutter_media_get_subtitle_uri (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.9.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-subtitle-uri.returns"></a><h4>Returns</h4>
 <p> the URI of the subtitle file. Use <code class="function">g_free()</code>
 to free the returned string</p>
 </div>
@@ -581,8 +581,8 @@ implementation will be used; or must follow the grammar recognized by
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.10.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-set-subtitle-font-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -612,8 +612,8 @@ clutter_media_get_subtitle_font_name (<em class="parameter"><code><a class="link
 <div class="warning"><p><code class="literal">clutter_media_get_subtitle_font_name</code> has been deprecated since version 1.12 and should not be used in newly-written code.</p></div>
 <p>Retrieves the font name currently used.</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.11.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-subtitle-font-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -627,7 +627,7 @@ clutter_media_get_subtitle_font_name (<em class="parameter"><code><a class="link
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.11.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-subtitle-font-name.returns"></a><h4>Returns</h4>
 <p> a string containing the font name. Use <code class="function">g_free()</code>
 to free the returned string</p>
 </div>
@@ -644,8 +644,8 @@ clutter_media_set_audio_volume (<em class="parameter"><code><a class="link" href
  to <em class="parameter"><code>volume</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-set-audio-volume.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -676,8 +676,8 @@ clutter_media_get_audio_volume (<em class="parameter"><code><a class="link" href
 <p>Retrieves the playback volume of <em class="parameter"><code>media</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-audio-volume.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -691,7 +691,7 @@ clutter_media_get_audio_volume (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.13.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-audio-volume.returns"></a><h4>Returns</h4>
 <p> The playback volume between 0.0 and 1.0</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -705,8 +705,8 @@ clutter_media_get_can_seek (<em class="parameter"><code><a class="link" href="Cl
 <p>Retrieves whether <em class="parameter"><code>media</code></em>
  is seekable or not.</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-can-seek.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -720,7 +720,7 @@ clutter_media_get_can_seek (<em class="parameter"><code><a class="link" href="Cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.14.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-can-seek.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if <em class="parameter"><code>media</code></em>
 can seek, <code class="literal">FALSE</code> otherwise.</p>
 </div>
@@ -734,8 +734,8 @@ clutter_media_get_buffer_fill (<em class="parameter"><code><a class="link" href=
 <div class="warning"><p><code class="literal">clutter_media_get_buffer_fill</code> has been deprecated since version 1.12 and should not be used in newly-written code.</p></div>
 <p>Retrieves the amount of the stream that is buffered.</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.15.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-buffer-fill.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -749,7 +749,7 @@ clutter_media_get_buffer_fill (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.15.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-buffer-fill.returns"></a><h4>Returns</h4>
 <p> the fill level, between 0.0 and 1.0</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -763,8 +763,8 @@ clutter_media_get_duration (<em class="parameter"><code><a class="link" href="Cl
 <p>Retrieves the duration of the media stream that <em class="parameter"><code>media</code></em>
  represents.</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.16.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-get-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -778,7 +778,7 @@ clutter_media_get_duration (<em class="parameter"><code><a class="link" href="Cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.16.8"></a><h4>Returns</h4>
+<a name="clutter-media-get-duration.returns"></a><h4>Returns</h4>
 <p> the duration of the media stream, in seconds</p>
 </div>
 <p class="since">Since: <a class="link" href="ix03.html#api-index-0.2">0.2</a></p>
@@ -793,8 +793,8 @@ clutter_media_set_filename (<em class="parameter"><code><a class="link" href="Cl
 <p>Sets the source of <em class="parameter"><code>media</code></em>
  using a file path.</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.10.17.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-media-set-filename.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -838,8 +838,8 @@ accessed</p>
 </pre>
 <p>Interface vtable for <a class="link" href="ClutterMedia.html" title="ClutterMedia"><span class="type">ClutterMedia</span></a> implementations</p>
 <div class="refsect3">
-<a name="id-1.5.2.5.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterMediaIface.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -973,8 +973,8 @@ user_function (<a class="link" href="ClutterMedia.html" title="ClutterMedia"><sp
 <p>The ::eos signal is emitted each time the media stream ends.</p>
 <div class="warning"><p><code class="literal">ClutterMedia::eos</code> has been deprecated since version 1.12 and should not be used in newly-written code.</p></div>
 <div class="refsect3">
-<a name="id-1.5.2.5.13.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterMedia-eos.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1007,8 +1007,8 @@ user_function (<a class="link" href="ClutterMedia.html" title="ClutterMedia"><sp
 <p>The ::error signal is emitted each time an error occurred.</p>
 <div class="warning"><p><code class="literal">ClutterMedia::error</code> has been deprecated since version 1.12 and should not be used in newly-written code.</p></div>
 <div class="refsect3">
-<a name="id-1.5.2.5.13.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterMedia-error.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1039,6 +1039,6 @@ user_function (<a class="link" href="ClutterMedia.html" title="ClutterMedia"><sp
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterTexture: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="deprecated.html" title="Part X. Deprecated Classes">
 <link rel="prev" href="ClutterTableLayout.html" title="ClutterTableLayout">
 <link rel="next" href="clutterobjects.html" title="Part XI. Clutter Actors and Objects">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterTexture.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -66,10 +66,6 @@
 <td class="function_name">
 <a class="link" href="ClutterTexture.html#clutter-texture-new-from-actor" title="clutter_texture_new_from_actor ()">clutter_texture_new_from_actor</a> <span class="c_punctuation">()</span>
 </td>
-</tr>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="ClutterTexture.html#CLUTTER-TEXTURE-ERROR:CAPS" title="CLUTTER_TEXTURE_ERROR">CLUTTER_TEXTURE_ERROR</a></td>
 </tr>
 <tr>
 <td class="function_type">
@@ -276,7 +272,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTexture.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -361,7 +357,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTexture.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -388,7 +384,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTexture.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -409,6 +405,10 @@
 <tr>
 <td class="datatype_keyword">enum</td>
 <td class="function_name"><a class="link" href="ClutterTexture.html#ClutterTextureQuality" title="enum ClutterTextureQuality">ClutterTextureQuality</a></td>
+</tr>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="ClutterTexture.html#CLUTTER-TEXTURE-ERROR:CAPS" title="CLUTTER_TEXTURE_ERROR">CLUTTER_TEXTURE_ERROR</a></td>
 </tr>
 <tr>
 <td class="datatype_keyword">enum</td>
@@ -459,7 +459,7 @@ clutter_texture_new (<em class="parameter"><code><span class="type">void</span><
 </div>
 <p>Creates a new empty <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> object.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.2.6"></a><h4>Returns</h4>
+<a name="clutter-texture-new.returns"></a><h4>Returns</h4>
 <p> A newly created <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> object.</p>
 </div>
 </div>
@@ -479,8 +479,8 @@ file. If the image failed to load then NULL is returned and <em class="parameter
 
 is set.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-new-from-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -501,7 +501,7 @@ is set.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.3.8"></a><h4>Returns</h4>
+<a name="clutter-texture-new-from-file.returns"></a><h4>Returns</h4>
 <p> A newly created <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> object or NULL on
 error.</p>
 </div>
@@ -567,8 +567,8 @@ data and end redirection.</p></li>
 offscreen texture pixels into a pixbuf.</p></li>
 </ul></div>
 <div class="refsect3">
-<a name="id-1.11.20.10.4.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-new-from-actor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -582,18 +582,10 @@ offscreen texture pixels into a pixbuf.</p></li>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.4.11"></a><h4>Returns</h4>
+<a name="clutter-texture-new-from-actor.returns"></a><h4>Returns</h4>
 <p> A newly created <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> object, or <code class="literal">NULL</code> on failure.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
-</div>
-<hr>
-<div class="refsect2">
-<a name="CLUTTER-TEXTURE-ERROR:CAPS"></a><h3>CLUTTER_TEXTURE_ERROR</h3>
-<pre class="programlisting">#define CLUTTER_TEXTURE_ERROR   (clutter_texture_error_quark ())
-</pre>
-<p>Error domain for <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> errors</p>
-<p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -617,8 +609,8 @@ will be emitten when the size of the texture is available and
 <a class="link" href="ClutterTexture.html#ClutterTexture-load-finished" title="The “load-finished” signal"><span class="type">“load-finished”</span></a> will be emitted when the image has been
 loaded or if an error occurred.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.6.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-from-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -644,7 +636,7 @@ loaded or if an error occurred.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.6.9"></a><h4>Returns</h4>
+<a name="clutter-texture-set-from-file.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the image was successfully loaded and set</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -668,8 +660,8 @@ clutter_texture_set_from_rgb_data (<em class="parameter"><code><a class="link" h
 </div>
 <p>Sets <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> image data.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-from-rgb-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -727,7 +719,7 @@ on the value of <em class="parameter"><code>has_alpha</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.7.8"></a><h4>Returns</h4>
+<a name="clutter-texture-set-from-rgb-data.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> on success, <code class="literal">FALSE</code> on failure.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -757,8 +749,8 @@ few drivers exposing this capability are not really useful.</p>
 RGB colorspace is to use a fragment shader associated with the
 <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> material.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.8.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-from-yuv-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -799,7 +791,7 @@ RGB colorspace is to use a fragment shader associated with the
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.8.10"></a><h4>Returns</h4>
+<a name="clutter-texture-set-from-yuv-data.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the texture was successfully updated</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -826,8 +818,8 @@ clutter_texture_set_area_from_rgb_data
 </div>
 <p>Updates a sub-region of the pixel data in a <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-area-from-rgb-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -895,7 +887,7 @@ depending on <em class="parameter"><code>has_alpha</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.9.8"></a><h4>Returns</h4>
+<a name="clutter-texture-set-area-from-rgb-data.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> on success, <code class="literal">FALSE</code> on failure.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -914,8 +906,8 @@ clutter_texture_get_base_size (<em class="parameter"><code><a class="link" href=
 </div>
 <p>Gets the size in pixels of the untransformed underlying image</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-base-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -972,8 +964,8 @@ equivalent to:</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.11.20.10.11.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-pixel-format.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -987,7 +979,7 @@ equivalent to:</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.11.10"></a><h4>Returns</h4>
+<a name="clutter-texture-get-pixel-format.returns"></a><h4>Returns</h4>
 <p> a <span class="type">CoglPixelFormat</span> value</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1004,8 +996,8 @@ clutter_texture_get_max_tile_waste (<em class="parameter"><code><a class="link" 
 <p>Gets the maximum waste that will be used when creating a texture or
 -1 if slicing is disabled.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-max-tile-waste.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1019,7 +1011,7 @@ clutter_texture_get_max_tile_waste (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.12.8"></a><h4>Returns</h4>
+<a name="clutter-texture-get-max-tile-waste.returns"></a><h4>Returns</h4>
 <p> The maximum waste or -1 if the texture waste is
 unlimited.</p>
 </div>
@@ -1037,8 +1029,8 @@ clutter_texture_get_filter_quality (<em class="parameter"><code><a class="link" 
 </div>
 <p>Gets the filter quality used when scaling a texture.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-filter-quality.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1052,7 +1044,7 @@ clutter_texture_get_filter_quality (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.13.8"></a><h4>Returns</h4>
+<a name="clutter-texture-get-filter-quality.returns"></a><h4>Returns</h4>
 <p> The filter quality value.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -1077,8 +1069,8 @@ bit more expensive (bilinear interpolation), and
 improve scaled down rendering as well (by using mipmaps). The default value
 is <a class="link" href="ClutterTexture.html#CLUTTER-TEXTURE-QUALITY-MEDIUM:CAPS"><code class="literal">CLUTTER_TEXTURE_QUALITY_MEDIUM</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-filter-quality.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1120,8 +1112,8 @@ handle used by the <a class="link" href="ClutterTexture.html" title="ClutterText
 layers you should use <a class="link" href="ClutterTexture.html#clutter-texture-get-cogl-material" title="clutter_texture_get_cogl_material ()"><code class="function">clutter_texture_get_cogl_material()</code></a> instead
 and use the <span class="type">CoglMaterial</span> API.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.15.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-cogl-texture.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1135,7 +1127,7 @@ and use the <span class="type">CoglMaterial</span> API.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.15.9"></a><h4>Returns</h4>
+<a name="clutter-texture-get-cogl-texture.returns"></a><h4>Returns</h4>
 <p> a <span class="type">CoglHandle</span> for the texture. The returned
 handle is owned by the <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> and it should not be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1160,8 +1152,8 @@ clutter_texture_set_cogl_texture (<em class="parameter"><code><a class="link" hr
 . A reference to the texture is taken so if the handle is
 no longer needed it should be deref'd with cogl_handle_unref.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.16.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-cogl-texture.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1197,8 +1189,8 @@ clutter_texture_get_cogl_material (<em class="parameter"><code><a class="link" h
 <p>Returns a handle to the underlying COGL material used for drawing
 the actor.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.17.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-cogl-material.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1212,7 +1204,7 @@ the actor.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.17.8"></a><h4>Returns</h4>
+<a name="clutter-texture-get-cogl-material.returns"></a><h4>Returns</h4>
 <p> a handle for a <span class="type">CoglMaterial</span>. The
 material is owned by the <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> and it should not be
 unreferenced. </p>
@@ -1242,8 +1234,8 @@ texture. <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span
 layer so you should set one on the material before calling this
 function.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-cogl-material.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1276,8 +1268,8 @@ clutter_texture_get_sync_size (<em class="parameter"><code><a class="link" href=
 </div>
 <p>Retrieves the value set with <a class="link" href="ClutterTexture.html#clutter-texture-set-sync-size" title="clutter_texture_set_sync_size ()"><code class="function">clutter_texture_set_sync_size()</code></a></p>
 <div class="refsect3">
-<a name="id-1.11.20.10.19.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-sync-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1291,7 +1283,7 @@ clutter_texture_get_sync_size (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.19.8"></a><h4>Returns</h4>
+<a name="clutter-texture-get-sync-size.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> should have the same
 preferred size of the underlying image data</p>
 </div>
@@ -1314,8 +1306,8 @@ clutter_texture_set_sync_size (<em class="parameter"><code><a class="link" href=
  should have the same preferred size as the
 underlying image data.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.20.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-sync-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1353,8 +1345,8 @@ clutter_texture_get_repeat (<em class="parameter"><code><a class="link" href="Cl
 <p>Retrieves the horizontal and vertical repeat values set
 using <a class="link" href="ClutterTexture.html#clutter-texture-set-repeat" title="clutter_texture_set_repeat ()"><code class="function">clutter_texture_set_repeat()</code></a></p>
 <div class="refsect3">
-<a name="id-1.11.20.10.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-repeat.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1397,8 +1389,8 @@ clutter_texture_set_repeat (<em class="parameter"><code><a class="link" href="Cl
  should repeat horizontally or
 vertically when the actor size is bigger than the image size</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-repeat.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1437,8 +1429,8 @@ clutter_texture_get_keep_aspect_ratio (<em class="parameter"><code><a class="lin
 </div>
 <p>Retrieves the value set using <a class="link" href="ClutterTexture.html#clutter-texture-set-keep-aspect-ratio" title="clutter_texture_set_keep_aspect_ratio ()"><code class="function">clutter_texture_set_keep_aspect_ratio()</code></a></p>
 <div class="refsect3">
-<a name="id-1.11.20.10.23.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-keep-aspect-ratio.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1452,7 +1444,7 @@ clutter_texture_get_keep_aspect_ratio (<em class="parameter"><code><a class="lin
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.23.8"></a><h4>Returns</h4>
+<a name="clutter-texture-get-keep-aspect-ratio.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> should maintain the
 aspect ratio of the underlying image</p>
 </div>
@@ -1473,8 +1465,8 @@ clutter_texture_set_keep_aspect_ratio (<em class="parameter"><code><a class="lin
  should have a preferred size maintaining
 the aspect ratio of the underlying image</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.24.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-keep-aspect-ratio.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1507,8 +1499,8 @@ clutter_texture_get_load_async (<em class="parameter"><code><a class="link" href
 </div>
 <p>Retrieves the value set using <a class="link" href="ClutterTexture.html#clutter-texture-set-load-async" title="clutter_texture_set_load_async ()"><code class="function">clutter_texture_set_load_async()</code></a></p>
 <div class="refsect3">
-<a name="id-1.11.20.10.25.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-load-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1522,7 +1514,7 @@ clutter_texture_get_load_async (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.25.8"></a><h4>Returns</h4>
+<a name="clutter-texture-get-load-async.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> should load the data from
 disk asynchronously</p>
 </div>
@@ -1548,8 +1540,8 @@ from disk asynchronously. Setting <em class="parameter"><code>load_async</code><
 <p>See the <a class="link" href="ClutterTexture.html#ClutterTexture--load-async" title="The “load-async” property"><span class="type">“load-async”</span></a> property documentation, and
 <a class="link" href="ClutterTexture.html#clutter-texture-set-load-data-async" title="clutter_texture_set_load_data_async ()"><code class="function">clutter_texture_set_load_data_async()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.26.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-load-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1583,8 +1575,8 @@ clutter_texture_get_load_data_async (<em class="parameter"><code><a class="link"
 </div>
 <p>Retrieves the value set by <a class="link" href="ClutterTexture.html#clutter-texture-set-load-data-async" title="clutter_texture_set_load_data_async ()"><code class="function">clutter_texture_set_load_data_async()</code></a></p>
 <div class="refsect3">
-<a name="id-1.11.20.10.27.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-load-data-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1598,7 +1590,7 @@ clutter_texture_get_load_data_async (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.27.8"></a><h4>Returns</h4>
+<a name="clutter-texture-get-load-data-async.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> should load the image
 data from a file asynchronously</p>
 </div>
@@ -1625,8 +1617,8 @@ determined the width and height of the image data.</p>
 <p>See the <a class="link" href="ClutterTexture.html#ClutterTexture--load-async" title="The “load-async” property"><span class="type">“load-async”</span></a> property documentation, and
 <a class="link" href="ClutterTexture.html#clutter-texture-set-load-async" title="clutter_texture_set_load_async ()"><code class="function">clutter_texture_set_load_async()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.28.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-load-data-async.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1660,8 +1652,8 @@ clutter_texture_get_pick_with_alpha (<em class="parameter"><code><a class="link"
 </div>
 <p>Retrieves the value set by <a class="link" href="ClutterTexture.html#clutter-texture-set-load-data-async" title="clutter_texture_set_load_data_async ()"><code class="function">clutter_texture_set_load_data_async()</code></a></p>
 <div class="refsect3">
-<a name="id-1.11.20.10.29.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-get-pick-with-alpha.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1675,7 +1667,7 @@ clutter_texture_get_pick_with_alpha (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.10.29.8"></a><h4>Returns</h4>
+<a name="clutter-texture-get-pick-with-alpha.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> should define its shape
 using the alpha channel when picking.</p>
 </div>
@@ -1702,8 +1694,8 @@ internally.</p>
 determine what value of alpha is considered pickable, and so only
 fully opaque parts of the texture will react to picking.</p>
 <div class="refsect3">
-<a name="id-1.11.20.10.30.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-texture-set-pick-with-alpha.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1750,8 +1742,8 @@ and should be accessed using the provided API</p>
 </pre>
 <p>The <a class="link" href="ClutterTexture.html#ClutterTextureClass" title="struct ClutterTextureClass"><span class="type">ClutterTextureClass</span></a> structure contains only private data</p>
 <div class="refsect3">
-<a name="id-1.11.20.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTextureClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -1789,8 +1781,8 @@ and should be accessed using the provided API</p>
 <p>Flags for <a class="link" href="ClutterTexture.html#clutter-texture-set-from-rgb-data" title="clutter_texture_set_from_rgb_data ()"><code class="function">clutter_texture_set_from_rgb_data()</code></a> and
 <a class="link" href="ClutterTexture.html#clutter-texture-set-from-yuv-data" title="clutter_texture_set_from_yuv_data ()"><code class="function">clutter_texture_set_from_yuv_data()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.20.11.4.6"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTextureFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1841,8 +1833,8 @@ and should be accessed using the provided API</p>
 </div>
 <p>Enumaration controlling the texture quality.</p>
 <div class="refsect3">
-<a name="id-1.11.20.11.5.6"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTextureQuality.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1880,11 +1872,19 @@ and should be accessed using the provided API</p>
 </div>
 <hr>
 <div class="refsect2">
+<a name="CLUTTER-TEXTURE-ERROR:CAPS"></a><h3>CLUTTER_TEXTURE_ERROR</h3>
+<pre class="programlisting">#define CLUTTER_TEXTURE_ERROR   (clutter_texture_error_quark ())
+</pre>
+<p>Error domain for <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a> errors</p>
+<p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="ClutterTextureError"></a><h3>enum ClutterTextureError</h3>
 <p>Error enumeration for <a class="link" href="ClutterTexture.html" title="ClutterTexture"><span class="type">ClutterTexture</span></a></p>
 <div class="refsect3">
-<a name="id-1.11.20.11.6.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTextureError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2080,8 +2080,8 @@ be set, otherwise it will be <code class="literal">NULL</code></p>
 <p>No replacement is available</p>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.13.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTexture-load-finished.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2123,8 +2123,8 @@ used by <em class="parameter"><code>texture</code></em>
 <p>No replacement is available</p>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.13.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTexture-pixbuf-change.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2163,8 +2163,8 @@ argument to the callback.</p>
 <p>No replacement is available</p>
 </div>
 <div class="refsect3">
-<a name="id-1.11.20.13.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTexture-size-change.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2199,6 +2199,6 @@ argument to the callback.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

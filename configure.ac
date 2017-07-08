@@ -10,28 +10,14 @@
 # - increase clutter_interface_version to the next odd number
 m4_define([clutter_major_version], [1])
 m4_define([clutter_minor_version], [26])
-m4_define([clutter_micro_version], [0])
+m4_define([clutter_micro_version], [2])
 
-# • for stable releases: increase the interface age by 1 for each release;
-#   if the API changes, set to 0. interface_age and binary_age are used to
-#   create the soname of the shared object:
-#
-#  (<minor> * 100 + <micro>) - <interface_age>
-#
-# this allows using the same soname for different micro-releases in case
-# no API was added or deprecated. for instance:
-#
-#   clutter 1.2.0  -> 100 * 2 + 0  = 200, interface age = 0 -> 200
-#   clutter 1.2.2  -> 100 * 2 + 2  = 202, interface age = 2 -> 200
-#   clutter 1.2.4  -> 100 * 2 + 4  = 204, interface age = 4 -> 200
-#   [ API addition, deprecation ]
-#   clutter 1.2.6  -> 100 * 2 + 6  = 206, interface age = 0 -> 206
-#   clutter 1.2.8  -> 100 * 2 + 8  = 208, interface age = 2 -> 206
-#   clutter 1.2.10 -> 100 * 2 + 10 = 210, interface age = 4 -> 206
-#   ...
-#
+# • for stable releases: increase the interface age by 1 for each release
 # • for development releases: keep clutter_interface_age to 0
-m4_define([clutter_interface_age], [0])
+m4_define([clutter_interface_age],
+          [m4_if(m4_eval(clutter_minor_version % 2), [1],
+                 [0],
+                 [clutter_micro_version])])
 
 m4_define([clutter_binary_age], [m4_eval(100 * clutter_minor_version + clutter_micro_version)])
 
@@ -142,7 +128,7 @@ m4_define([pango_req_version],          [1.30])
 m4_define([gi_req_version],             [1.39.0])
 m4_define([gtk_doc_req_version],        [1.20])
 m4_define([xcomposite_req_version],     [0.4])
-m4_define([gdk_req_version],            [3.3.18])
+m4_define([gdk_req_version],            [3.22.6])
 m4_define([libinput_req_version],       [0.19.0])
 m4_define([libudev_req_version],        [136])
 

@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterShaderEffect: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch06.html" title="Effects">
 <link rel="prev" href="ClutterOffscreenEffect.html" title="ClutterOffscreenEffect">
 <link rel="next" href="ClutterDeformEffect.html" title="ClutterDeformEffect">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterShaderEffect.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -94,7 +94,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterShaderEffect.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -109,7 +109,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterShaderEffect.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -280,8 +280,8 @@ clutter_shader_effect_new (<em class="parameter"><code><a class="link" href="Clu
 <p>The effect will be empty until <a class="link" href="ClutterShaderEffect.html#clutter-shader-effect-set-shader-source" title="clutter_shader_effect_set_shader_source ()"><code class="function">clutter_shader_effect_set_shader_source()</code></a>
 is called.</p>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-shader-effect-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -296,7 +296,7 @@ or <a class="link" href="ClutterShaderEffect.html#CLUTTER-VERTEX-SHADER:CAPS"><c
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.2.7"></a><h4>Returns</h4>
+<a name="clutter-shader-effect-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterShaderEffect.html" title="ClutterShaderEffect"><span class="type">ClutterShaderEffect</span></a>.
 Use <code class="function">g_object_unref()</code> when done.</p>
 </div>
@@ -407,8 +407,8 @@ of floating point values (a "vec3") can be set using:</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.3.18"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-shader-effect-set-uniform.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -466,8 +466,8 @@ and <code class="literal">CLUTTER_TYPE_SHADER_MATRIX</code>, for a matrix of flo
 values. It also accepts <code class="literal">G_TYPE_DOUBLE</code> for compatibility with other
 languages than C.</p>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-shader-effect-set-uniform-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -508,8 +508,8 @@ the <a class="link" href="ClutterShaderEffect.html" title="ClutterShaderEffect">
 <p>This function can only be called once; subsequent calls will
 yield no result.</p>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-shader-effect-set-shader-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -530,7 +530,7 @@ yield no result.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.5.8"></a><h4>Returns</h4>
+<a name="clutter-shader-effect-set-shader-source.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the source was set</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -542,8 +542,8 @@ yield no result.</p>
 clutter_shader_effect_get_program (<em class="parameter"><code><a class="link" href="ClutterShaderEffect.html" title="ClutterShaderEffect"><span class="type">ClutterShaderEffect</span></a> *effect</code></em>);</pre>
 <p>Retrieves a pointer to the program's handle</p>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-shader-effect-get-program.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -557,7 +557,7 @@ clutter_shader_effect_get_program (<em class="parameter"><code><a class="link" h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.6.6"></a><h4>Returns</h4>
+<a name="clutter-shader-effect-get-program.returns"></a><h4>Returns</h4>
 <p> a pointer to the program's handle,
 or <code class="literal">COGL_INVALID_HANDLE</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -571,8 +571,8 @@ or <code class="literal">COGL_INVALID_HANDLE</code>. </p>
 clutter_shader_effect_get_shader (<em class="parameter"><code><a class="link" href="ClutterShaderEffect.html" title="ClutterShaderEffect"><span class="type">ClutterShaderEffect</span></a> *effect</code></em>);</pre>
 <p>Retrieves a pointer to the shader's handle</p>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-shader-effect-get-shader.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -586,7 +586,7 @@ clutter_shader_effect_get_shader (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.3.8.7.6"></a><h4>Returns</h4>
+<a name="clutter-shader-effect-get-shader.returns"></a><h4>Returns</h4>
 <p> a pointer to the shader's handle,
 or <code class="literal">COGL_INVALID_HANDLE</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -600,8 +600,8 @@ or <code class="literal">COGL_INVALID_HANDLE</code>. </p>
 <a name="ClutterShaderType"></a><h3>enum ClutterShaderType</h3>
 <p>The type of GLSL shader program</p>
 <div class="refsect3">
-<a name="id-1.5.7.3.9.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterShaderType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -645,8 +645,8 @@ only private data and should be accessed using the provided API</p>
 <p>The <a class="link" href="ClutterShaderEffect.html#ClutterShaderEffectClass" title="struct ClutterShaderEffectClass"><span class="type">ClutterShaderEffectClass</span></a> structure contains
 only private data</p>
 <div class="refsect3">
-<a name="id-1.5.7.3.9.4.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterShaderEffectClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -685,6 +685,6 @@ sub-classes.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

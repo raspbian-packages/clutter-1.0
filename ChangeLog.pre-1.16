@@ -2092,7 +2092,7 @@ Date:   Mon Jun 24 14:11:30 2013 -0400
     interactively, not automatable tests).
     
     Conflicts:
-    	tests/accessibility/Makefile.am
+            tests/accessibility/Makefile.am
 
  tests/accessibility/Makefile.am | 21 ---------------------
  1 file changed, 21 deletions(-)

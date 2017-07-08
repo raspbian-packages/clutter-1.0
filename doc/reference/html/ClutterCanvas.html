@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterCanvas: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch07.html" title="Content">
 <link rel="prev" href="ch07.html" title="Content">
 <link rel="next" href="ClutterImage.html" title="ClutterImage">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterCanvas.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -80,7 +80,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterCanvas.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -112,7 +112,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterCanvas.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -127,7 +127,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterCanvas.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -179,7 +179,7 @@ clutter_canvas_new (<em class="parameter"><code><span class="type">void</span></
 <p>You should call <a class="link" href="ClutterContent.html#clutter-content-invalidate" title="clutter_content_invalidate ()"><code class="function">clutter_content_invalidate()</code></a> every time you wish to
 draw the contents of the canvas.</p>
 <div class="refsect3">
-<a name="id-1.5.8.2.10.2.7"></a><h4>Returns</h4>
+<a name="clutter-canvas-new.returns"></a><h4>Returns</h4>
 <p> The newly allocated instance of
 <a class="link" href="ClutterCanvas.html" title="ClutterCanvas"><span class="type">ClutterCanvas</span></a>. Use <code class="function">g_object_unref()</code> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -217,8 +217,8 @@ call <a class="link" href="ClutterContent.html#clutter-content-invalidate" title
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.5.8.2.10.3.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-canvas-set-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -244,7 +244,7 @@ call <a class="link" href="ClutterContent.html#clutter-content-invalidate" title
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.8.2.10.3.10"></a><h4>Returns</h4>
+<a name="clutter-canvas-set-size.returns"></a><h4>Returns</h4>
 <p> this function returns <code class="literal">TRUE</code> if the size change
 caused a content invalidation, and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -266,8 +266,8 @@ override that setting.</p>
 <p>Changing the scale factor will invalidate the <em class="parameter"><code>canvas</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.8.2.10.4.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-canvas-set-scale-factor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -298,8 +298,8 @@ clutter_canvas_get_scale_factor (<em class="parameter"><code><a class="link" hre
 , as set using
 <a class="link" href="ClutterCanvas.html#clutter-canvas-set-scale-factor" title="clutter_canvas_set_scale_factor ()"><code class="function">clutter_canvas_set_scale_factor()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.8.2.10.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-canvas-get-scale-factor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -313,7 +313,7 @@ clutter_canvas_get_scale_factor (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.8.2.10.5.6"></a><h4>Returns</h4>
+<a name="clutter-canvas-get-scale-factor.returns"></a><h4>Returns</h4>
 <p> the scaling factor, or -1 if the <em class="parameter"><code>canvas</code></em>
 uses the default from <a class="link" href="ClutterSettings.html" title="ClutterSettings"><span class="type">ClutterSettings</span></a></p>
 </div>
@@ -343,8 +343,8 @@ API.</p>
 <p>The <a class="link" href="ClutterCanvas.html#ClutterCanvasClass" title="struct ClutterCanvasClass"><span class="type">ClutterCanvasClass</span></a> structure contains
 private data.</p>
 <div class="refsect3">
-<a name="id-1.5.8.2.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterCanvasClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -426,8 +426,8 @@ invalidated.</p>
 handler invocation will be automatically protected by <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-save"><code class="function">cairo_save()</code></a>
 and <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-restore"><code class="function">cairo_restore()</code></a> pairs.</p>
 <div class="refsect3">
-<a name="id-1.5.8.2.13.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterCanvas-draw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -465,7 +465,7 @@ and <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-restore"><co
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.8.2.13.2.7"></a><h4>Returns</h4>
+<a name="ClutterCanvas-draw.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the signal emission should stop, and
 <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -479,6 +479,6 @@ and <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-restore"><co
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

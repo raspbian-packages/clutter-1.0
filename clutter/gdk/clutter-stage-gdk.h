@@ -52,9 +52,7 @@ struct _ClutterStageGdk
   gboolean foreign_window;
 
 #if defined(GDK_WINDOWING_WAYLAND)
-  struct wl_subcompositor *subcompositor;
-  struct wl_surface *clutter_surface;
-  struct wl_subsurface *subsurface;
+  GdkWindow *subsurface;
 #endif
 };
 

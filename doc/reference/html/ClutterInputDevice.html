@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterInputDevice: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-Base-geometric-types.html" title="Base geometric types">
 <link rel="next" href="clutter-General.html" title="General">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterInputDevice.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -283,7 +283,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterInputDevice.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -355,7 +355,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterInputDevice.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -401,8 +401,8 @@ clutter_input_device_get_device_id (<em class="parameter"><code><a class="link" 
 <p>Retrieves the unique identifier of <em class="parameter"><code>device</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-device-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -416,7 +416,7 @@ clutter_input_device_get_device_id (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.2.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-device-id.returns"></a><h4>Returns</h4>
 <p> the identifier of the device</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -429,8 +429,8 @@ clutter_input_device_get_device_type (<em class="parameter"><code><a class="link
 <p>Retrieves the type of <em class="parameter"><code>device</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-device-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -444,7 +444,7 @@ clutter_input_device_get_device_type (<em class="parameter"><code><a class="link
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.3.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-device-type.returns"></a><h4>Returns</h4>
 <p> the type of the device</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -457,8 +457,8 @@ clutter_input_device_get_device_name (<em class="parameter"><code><a class="link
 <p>Retrieves the name of the <em class="parameter"><code>device</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-device-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -472,7 +472,7 @@ clutter_input_device_get_device_name (<em class="parameter"><code><a class="link
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.4.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-device-name.returns"></a><h4>Returns</h4>
 <p> the name of the device, or <code class="literal">NULL</code>. The returned string
 is owned by the <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> and should never be modified
 or freed</p>
@@ -487,8 +487,8 @@ clutter_input_device_get_device_mode (<em class="parameter"><code><a class="link
 <p>Retrieves the <a class="link" href="ClutterInputDevice.html#ClutterInputMode" title="enum ClutterInputMode"><span class="type">ClutterInputMode</span></a> of <em class="parameter"><code>device</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-device-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -502,7 +502,7 @@ clutter_input_device_get_device_mode (<em class="parameter"><code><a class="link
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.5.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-device-mode.returns"></a><h4>Returns</h4>
 <p> the device mode</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -516,8 +516,8 @@ clutter_input_device_get_has_cursor (<em class="parameter"><code><a class="link"
  has a pointer that follows the
 device motion.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-has-cursor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -531,7 +531,7 @@ device motion.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.6.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-has-cursor.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the device has a cursor</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -547,8 +547,8 @@ clutter_input_device_set_enabled (<em class="parameter"><code><a class="link" hr
 to <a class="link" href="ClutterInputDevice.html#CLUTTER-INPUT-MODE-SLAVE:CAPS"><code class="literal">CLUTTER_INPUT_MODE_SLAVE</code></a> or <a class="link" href="ClutterInputDevice.html#CLUTTER-INPUT-MODE-FLOATING:CAPS"><code class="literal">CLUTTER_INPUT_MODE_FLOATING</code></a> can
 be disabled.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.7.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-set-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -579,8 +579,8 @@ clutter_input_device_get_enabled (<em class="parameter"><code><a class="link" hr
 <p>Retrieves whether <em class="parameter"><code>device</code></em>
  is enabled.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -594,7 +594,7 @@ clutter_input_device_get_enabled (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.8.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-enabled.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the device is enabled</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -613,8 +613,8 @@ associated to <em class="parameter"><code>device</code></em>
 set to <a class="link" href="ClutterInputDevice.html#CLUTTER-INPUT-MODE-MASTER:CAPS"><code class="literal">CLUTTER_INPUT_MODE_MASTER</code></a>, this function will return
 <code class="literal">NULL</code>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-associated-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -628,7 +628,7 @@ set to <a class="link" href="ClutterInputDevice.html#CLUTTER-INPUT-MODE-MASTER:C
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.9.7"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-associated-device.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -643,8 +643,8 @@ clutter_input_device_get_slave_devices
 <p>Retrieves the slave devices attached to <em class="parameter"><code>device</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-slave-devices.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -658,7 +658,7 @@ clutter_input_device_get_slave_devices
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.10.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-slave-devices.returns"></a><h4>Returns</h4>
 <p> a
 list of <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. The contents of the list are
 owned by the device. Use <code class="function">g_list_free()</code> when done. </p>
@@ -675,8 +675,8 @@ clutter_input_device_get_modifier_state
 <p>Retrieves the current modifiers state of the device, as seen
 by the last event Clutter processed.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-modifier-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -690,7 +690,7 @@ by the last event Clutter processed.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.11.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-modifier-state.returns"></a><h4>Returns</h4>
 <p> the last known modifier state</p>
 </div>
 <p class="since">Since: <a class="link" href="ix15.html#api-index-1.16">1.16</a></p>
@@ -708,8 +708,8 @@ used by Clutter this function can fail if there is no obvious
 mapping between the key codes. The hardware keycode can be taken
 from the <a class="link" href="clutter-Events.html#ClutterKeyEvent.hardware-keycode"><span class="type">ClutterKeyEvent.hardware_keycode</span></a> member of <a class="link" href="clutter-Events.html#ClutterKeyEvent" title="struct ClutterKeyEvent"><span class="type">ClutterKeyEvent</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-keycode-to-evdev.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -735,7 +735,7 @@ from the <a class="link" href="clutter-Events.html#ClutterKeyEvent.hardware-keyc
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.12.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-keycode-to-evdev.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the conversion succeeded, <code class="literal">FALSE</code> otherwise.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -747,8 +747,8 @@ from the <a class="link" href="clutter-Events.html#ClutterKeyEvent.hardware-keyc
 clutter_input_device_get_vendor_id (<em class="parameter"><code><a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> *device</code></em>);</pre>
 <p>Gets the vendor ID of this device.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-vendor-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -762,7 +762,7 @@ clutter_input_device_get_vendor_id (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.13.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-vendor-id.returns"></a><h4>Returns</h4>
 <p> the vendor ID</p>
 </div>
 <p class="since">Since: <a class="link" href="ix18.html#api-index-1.22">1.22</a></p>
@@ -774,8 +774,8 @@ clutter_input_device_get_vendor_id (<em class="parameter"><code><a class="link" 
 clutter_input_device_get_product_id (<em class="parameter"><code><a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> *device</code></em>);</pre>
 <p>Gets the product ID of this device.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-product-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -789,7 +789,7 @@ clutter_input_device_get_product_id (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.14.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-product-id.returns"></a><h4>Returns</h4>
 <p> the product ID</p>
 </div>
 <p class="since">Since: <a class="link" href="ix18.html#api-index-1.22">1.22</a></p>
@@ -802,8 +802,8 @@ clutter_input_device_get_n_keys (<em class="parameter"><code><a class="link" hre
 <p>Retrieves the number of keys registered for <em class="parameter"><code>device</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-n-keys.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -817,7 +817,7 @@ clutter_input_device_get_n_keys (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.15.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-n-keys.returns"></a><h4>Returns</h4>
 <p> the number of registered keys</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -836,8 +836,8 @@ clutter_input_device_set_key (<em class="parameter"><code><a class="link" href="
 <p>Clutter will use the keyval and modifiers set when filling out
 an event coming from the same input device.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-set-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -879,8 +879,8 @@ clutter_input_device_get_key (<em class="parameter"><code><a class="link" href="
                               <em class="parameter"><code><a class="link" href="clutter-Events.html#ClutterModifierType" title="enum ClutterModifierType"><span class="type">ClutterModifierType</span></a> *modifiers</code></em>);</pre>
 <p>Retrieves the key set using <a class="link" href="ClutterInputDevice.html#clutter-input-device-set-key" title="clutter_input_device_set_key ()"><code class="function">clutter_input_device_set_key()</code></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -913,7 +913,7 @@ clutter_input_device_get_key (<em class="parameter"><code><a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.17.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-key.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if a key was set at the given index</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -926,8 +926,8 @@ clutter_input_device_get_n_axes (<em class="parameter"><code><a class="link" hre
 <p>Retrieves the number of axes available on <em class="parameter"><code>device</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-n-axes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -941,7 +941,7 @@ clutter_input_device_get_n_axes (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.18.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-n-axes.returns"></a><h4>Returns</h4>
 <p> the number of axes on the device</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -955,8 +955,8 @@ clutter_input_device_get_axis (<em class="parameter"><code><a class="link" href=
 <p>Retrieves the type of axis on <em class="parameter"><code>device</code></em>
  at the given index.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-axis.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -977,7 +977,7 @@ clutter_input_device_get_axis (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.19.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-axis.returns"></a><h4>Returns</h4>
 <p> the axis type</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -1019,8 +1019,8 @@ an array of axis values.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.20.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-axis-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1052,7 +1052,7 @@ coming from <a class="link" href="clutter-Events.html#clutter-event-get-axes" ti
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.20.9"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-axis-value.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the value was set, and <code class="literal">FALSE</code> otherwise</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -1068,8 +1068,8 @@ clutter_input_device_get_coords (<em class="parameter"><code><a class="link" hre
 <em class="parameter"><code>device</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1097,7 +1097,7 @@ or touch point. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.21.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-coords.returns"></a><h4>Returns</h4>
 <p> <code class="literal">FALSE</code> if the device's sequence hasn't been found,
 and <code class="literal">TRUE</code> otherwise.</p>
 </div>
@@ -1118,8 +1118,8 @@ clutter_input_device_get_device_coords
 <p>Retrieves the latest coordinates of the pointer of <em class="parameter"><code>device</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-device-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1155,8 +1155,8 @@ clutter_input_device_get_pointer_actor
 <p>Retrieves the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> underneath the pointer of <em class="parameter"><code>device</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-pointer-actor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1170,7 +1170,7 @@ clutter_input_device_get_pointer_actor
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.23.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-pointer-actor.returns"></a><h4>Returns</h4>
 <p> a pointer to the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1185,8 +1185,8 @@ clutter_input_device_get_pointer_stage
 <p>Retrieves the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> underneath the pointer of <em class="parameter"><code>device</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-pointer-stage.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1200,7 +1200,7 @@ clutter_input_device_get_pointer_stage
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.24.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-pointer-stage.returns"></a><h4>Returns</h4>
 <p> a pointer to the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1225,8 +1225,8 @@ backend has the concept of "device grabs", Clutter will not use them.</p>
 <p>Only <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> of types <a class="link" href="ClutterInputDevice.html#CLUTTER-POINTER-DEVICE:CAPS"><code class="literal">CLUTTER_POINTER_DEVICE</code></a> and
 <a class="link" href="ClutterInputDevice.html#CLUTTER-KEYBOARD-DEVICE:CAPS"><code class="literal">CLUTTER_KEYBOARD_DEVICE</code></a> can hold a grab.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.25.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-grab.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1256,8 +1256,8 @@ clutter_input_device_ungrab (<em class="parameter"><code><a class="link" href="C
 <p>Releases the grab on the <em class="parameter"><code>device</code></em>
 , if one is in place.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-ungrab.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1282,8 +1282,8 @@ clutter_input_device_get_grabbed_actor
 the events coming from <em class="parameter"><code>device</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.27.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-get-grabbed-actor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1297,7 +1297,7 @@ the events coming from <em class="parameter"><code>device</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.27.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-get-grabbed-actor.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1325,8 +1325,8 @@ until the grab is released by calling
 <p>The grab is client-side: even if the windowing system used by the Clutter
 backend has the concept of "device grabs", Clutter will not use them.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.28.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-sequence-grab.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1364,8 +1364,8 @@ clutter_input_device_sequence_ungrab (<em class="parameter"><code><a class="link
 , if one is
 in place.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-sequence-ungrab.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1399,8 +1399,8 @@ touch events coming from <em class="parameter"><code>device</code></em>
  given the <em class="parameter"><code>sequence</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.30.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-sequence-get-grabbed-actor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1421,7 +1421,7 @@ touch events coming from <em class="parameter"><code>device</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.30.6"></a><h4>Returns</h4>
+<a name="clutter-input-device-sequence-get-grabbed-actor.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1520,8 +1520,8 @@ enters and leaves a <a class="link" href="ClutterStage.html" title="ClutterStage
 of the passed <em class="parameter"><code>event</code></em>
  to update the stage associated to the input device.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.8.31.14"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-input-device-update-from-event.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1558,8 +1558,8 @@ using the stage of the event</p></td>
 <p>The <a class="link" href="ClutterInputDevice.html#ClutterInputDeviceType" title="enum ClutterInputDeviceType"><span class="type">ClutterInputDeviceType</span></a> enumeration can be extended at later
 date; not every platform supports every input device type.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.9.2.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterInputDeviceType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1653,8 +1653,8 @@ date; not every platform supports every input device type.</p>
 <a name="ClutterInputAxis"></a><h3>enum ClutterInputAxis</h3>
 <p>The type of axes Clutter recognizes on a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.8.9.3.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterInputAxis.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1735,8 +1735,8 @@ date; not every platform supports every input device type.</p>
 <a name="ClutterInputMode"></a><h3>enum ClutterInputMode</h3>
 <p>The mode for input devices available.</p>
 <div class="refsect3">
-<a name="id-1.7.2.8.9.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterInputMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1883,6 +1883,6 @@ to <a class="link" href="ClutterInputDevice.html#CLUTTER-INPUT-MODE-MASTER:CAPS"
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

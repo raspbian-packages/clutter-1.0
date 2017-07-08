@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterBackend: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="prev" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="next" href="clutter-X11-Specific-Support.html" title="X11 Specific Support">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterBackend.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -156,7 +156,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterBackend.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -183,7 +183,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterBackend.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -218,7 +218,7 @@ clutter_get_default_backend (<em class="parameter"><code><span class="type">void
 <p>Retrieves the default <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a> used by Clutter. The
 <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a> holds backend-specific configuration options.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.2.5"></a><h4>Returns</h4>
+<a name="clutter-get-default-backend.returns"></a><h4>Returns</h4>
 <p> the default backend. You should
 not ref or unref the returned object. Applications should rarely
 need to use this. </p>
@@ -242,8 +242,8 @@ and cairo units. The default value is 96, meaning that a 10 point
 font will be 13 units high. (10 * 96. / 72. = 13.3).</p>
 <p>Applications should never need to call this function.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.3.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-set-resolution.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -280,8 +280,8 @@ high (10 * 96. / 72. = 13.3).</p>
 initializing; the resolution is also stored in the
 <a class="link" href="ClutterSettings.html#ClutterSettings--font-dpi" title="The “font-dpi” property"><span class="type">“font-dpi”</span></a> property.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-get-resolution.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -295,7 +295,7 @@ initializing; the resolution is also stored in the
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.3.8.4.8"></a><h4>Returns</h4>
+<a name="clutter-backend-get-resolution.returns"></a><h4>Returns</h4>
 <p> the current resolution, or -1 if no resolution
 has been set.</p>
 </div>
@@ -314,8 +314,8 @@ clutter_backend_set_double_click_time (<em class="parameter"><code><a class="lin
 <p>Sets the maximum time between two button press events, used to
 verify whether it's a double click event or not.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-set-double-click-time.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -349,8 +349,8 @@ clutter_backend_get_double_click_time (<em class="parameter"><code><a class="lin
 <p>Gets the maximum time between two button press events, as set
 by <a class="link" href="ClutterBackend.html#clutter-backend-set-double-click-time" title="clutter_backend_set_double_click_time ()"><code class="function">clutter_backend_set_double_click_time()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-get-double-click-time.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -364,7 +364,7 @@ by <a class="link" href="ClutterBackend.html#clutter-backend-set-double-click-ti
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.3.8.6.8"></a><h4>Returns</h4>
+<a name="clutter-backend-get-double-click-time.returns"></a><h4>Returns</h4>
 <p> a time in milliseconds</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -382,8 +382,8 @@ clutter_backend_set_double_click_distance
 </div>
 <p>Sets the maximum distance used to verify a double click event.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-set-double-click-distance.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -417,8 +417,8 @@ clutter_backend_get_double_click_distance
 </div>
 <p>Retrieves the distance used to verify a double click event</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.8.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-get-double-click-distance.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -432,7 +432,7 @@ clutter_backend_get_double_click_distance
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.3.8.8.8"></a><h4>Returns</h4>
+<a name="clutter-backend-get-double-click-distance.returns"></a><h4>Returns</h4>
 <p> a distance, in pixels.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -454,8 +454,8 @@ options for <em class="parameter"><code>backend</code></em>
 <p>This function is intended for actors creating a Pango layout
 using the PangoCairo API.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-set-font-options.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -485,8 +485,8 @@ clutter_backend_get_font_options (<em class="parameter"><code><a class="link" hr
 <p>Retrieves the font options for <em class="parameter"><code>backend</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-get-font-options.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -500,7 +500,7 @@ clutter_backend_get_font_options (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.3.8.10.6"></a><h4>Returns</h4>
+<a name="clutter-backend-get-font-options.returns"></a><h4>Returns</h4>
 <p> the font options of the <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a>.
 The returned <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-font-options-t.html#cairo-font-options-t"><span class="type">cairo_font_options_t</span></a> is owned by the backend and should
 not be modified or freed. </p>
@@ -524,8 +524,8 @@ must either be <code class="literal">NULL</code>, which means that the font name
 default <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a> will be used; or be something that can
 be parsed by the <code class="function">pango_font_description_from_string()</code> function.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.11.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-set-font-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -559,8 +559,8 @@ clutter_backend_get_font_name (<em class="parameter"><code><a class="link" href=
 <p>Retrieves the default font name as set by
 <a class="link" href="ClutterBackend.html#clutter-backend-set-font-name" title="clutter_backend_set_font_name ()"><code class="function">clutter_backend_set_font_name()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-get-font-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -574,7 +574,7 @@ clutter_backend_get_font_name (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.3.8.12.8"></a><h4>Returns</h4>
+<a name="clutter-backend-get-font-name.returns"></a><h4>Returns</h4>
 <p> the font name for the backend. The returned string is
 owned by the <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a> and should never be modified or freed</p>
 </div>
@@ -595,8 +595,8 @@ be considered experimental too.</p>
 uses the stub Cogl winsys and the Clutter backend doesn't
 explicitly create a CoglContext.</p>
 <div class="refsect3">
-<a name="id-1.8.3.8.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-backend-get-cogl-context.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -610,7 +610,7 @@ explicitly create a CoglContext.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.3.8.13.8"></a><h4>Returns</h4>
+<a name="clutter-backend-get-cogl-context.returns"></a><h4>Returns</h4>
 <p> The <span class="type">CoglContext</span> associated with <em class="parameter"><code>backend</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -684,8 +684,8 @@ windowing system; for instance:</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.8.3.8.14.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-check-windowing-backend.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -699,7 +699,7 @@ windowing system; for instance:</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.3.8.14.9"></a><h4>Returns</h4>
+<a name="clutter-check-windowing-backend.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the current Clutter windowing system backend is
 the one checked, and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -761,8 +761,8 @@ to the internal list of available backends.</p>
 <p>This function must be called before the first API call to Clutter, including
 <code class="function">clutter_get_option_context()</code></p>
 <div class="refsect3">
-<a name="id-1.8.3.8.15.18"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-set-windowing-backend.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -798,8 +798,8 @@ user_function (<a class="link" href="ClutterBackend.html" title="ClutterBackend"
 <p>The ::font-changed signal is emitted each time the font options
 have been changed through <a class="link" href="ClutterSettings.html" title="ClutterSettings"><span class="type">ClutterSettings</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.8.3.10.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterBackend-font-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -831,8 +831,8 @@ user_function (<a class="link" href="ClutterBackend.html" title="ClutterBackend"
 <p>The ::resolution-changed signal is emitted each time the font
 resolutions has been changed through <a class="link" href="ClutterSettings.html" title="ClutterSettings"><span class="type">ClutterSettings</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.8.3.10.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterBackend-resolution-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -864,8 +864,8 @@ user_function (<a class="link" href="ClutterBackend.html" title="ClutterBackend"
 <p>The ::settings-changed signal is emitted each time the <a class="link" href="ClutterSettings.html" title="ClutterSettings"><span class="type">ClutterSettings</span></a>
 properties have been changed.</p>
 <div class="refsect3">
-<a name="id-1.8.3.10.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterBackend-settings-changed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -891,6 +891,6 @@ properties have been changed.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

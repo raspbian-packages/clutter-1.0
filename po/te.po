@@ -11,9 +11,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: clutter\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=clutter\n"
-"POT-Creation-Date: 2016-03-21 14:25+0000\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?"
+"product=clutter&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-05-12 11:29+0100\n"
 "PO-Revision-Date: 2012-09-18 16:12+0530\n"
 "Last-Translator: Krishnababu Krothapalli <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
@@ -24,664 +24,664 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 1.4\n"
 
-#: clutter/clutter-actor.c:6306
+#: clutter/clutter-actor.c:6313
 msgid "X coordinate"
 msgstr "X అక్షము"
 
-#: clutter/clutter-actor.c:6307
+#: clutter/clutter-actor.c:6314
 msgid "X coordinate of the actor"
 msgstr "పాత్రదారి యొక్క X అక్షము"
 
-#: clutter/clutter-actor.c:6325
+#: clutter/clutter-actor.c:6332
 msgid "Y coordinate"
 msgstr "Y అక్షము"
 
-#: clutter/clutter-actor.c:6326
+#: clutter/clutter-actor.c:6333
 msgid "Y coordinate of the actor"
 msgstr "పాత్రదారి యొక్క Y అక్షము"
 
-#: clutter/clutter-actor.c:6348
+#: clutter/clutter-actor.c:6355
 msgid "Position"
 msgstr "స్థానం"
 
-#: clutter/clutter-actor.c:6349
+#: clutter/clutter-actor.c:6356
 msgid "The position of the origin of the actor"
 msgstr "నటుడు యొక్క మూలం యొక్క స్థానం"
 
-#: clutter/clutter-actor.c:6366 clutter/clutter-canvas.c:248
+#: clutter/clutter-actor.c:6373 clutter/clutter-canvas.c:248
 #: clutter/clutter-grid-layout.c:1239
 #: clutter/deprecated/clutter-behaviour-ellipse.c:474
 msgid "Width"
 msgstr "వెడల్పు"
 
-#: clutter/clutter-actor.c:6367
+#: clutter/clutter-actor.c:6374
 msgid "Width of the actor"
 msgstr "పాత్రదారి యొక్క వెడల్పు"
 
-#: clutter/clutter-actor.c:6385 clutter/clutter-canvas.c:264
+#: clutter/clutter-actor.c:6392 clutter/clutter-canvas.c:264
 #: clutter/clutter-grid-layout.c:1246
 #: clutter/deprecated/clutter-behaviour-ellipse.c:490
 msgid "Height"
 msgstr "ఎత్తు"
 
-#: clutter/clutter-actor.c:6386
+#: clutter/clutter-actor.c:6393
 msgid "Height of the actor"
 msgstr "పాత్రదారి యొక్క యెత్తుర్"
 
-#: clutter/clutter-actor.c:6407
+#: clutter/clutter-actor.c:6414
 msgid "Size"
 msgstr "పరిమాణము"
 
-#: clutter/clutter-actor.c:6408
+#: clutter/clutter-actor.c:6415
 msgid "The size of the actor"
 msgstr "నటుడు యొక్క పరిమాణం"
 
-#: clutter/clutter-actor.c:6426
+#: clutter/clutter-actor.c:6433
 msgid "Fixed X"
 msgstr "నిర్దిష్ట X"
 
-#: clutter/clutter-actor.c:6427
+#: clutter/clutter-actor.c:6434
 msgid "Forced X position of the actor"
 msgstr "పాత్రదారి యొక్క నిర్దిష్ట X స్థానం"
 
-#: clutter/clutter-actor.c:6444
+#: clutter/clutter-actor.c:6451
 msgid "Fixed Y"
 msgstr "నిర్దిష్ట Y"
 
-#: clutter/clutter-actor.c:6445
+#: clutter/clutter-actor.c:6452
 msgid "Forced Y position of the actor"
 msgstr "పాత్రదారి యొక్క బలవంతపు Y స్థానం"
 
-#: clutter/clutter-actor.c:6460
+#: clutter/clutter-actor.c:6467
 msgid "Fixed position set"
 msgstr "నిర్దిష్ట స్థాన అమర్పు"
 
-#: clutter/clutter-actor.c:6461
+#: clutter/clutter-actor.c:6468
 msgid "Whether to use fixed positioning for the actor"
 msgstr "పాత్రదారి కొరకు నిర్దిష్టంగా స్థానపరచుటను వుపయోగించాలా"
 
-#: clutter/clutter-actor.c:6479
+#: clutter/clutter-actor.c:6486
 msgid "Min Width"
 msgstr "కనిష్ఠ వెడల్పు"
 
-#: clutter/clutter-actor.c:6480
+#: clutter/clutter-actor.c:6487
 msgid "Forced minimum width request for the actor"
 msgstr "పాత్రదారి కొరకు అభ్యర్దించిన బలవంతపు కనిష్ట వెడల్పు"
 
-#: clutter/clutter-actor.c:6498
+#: clutter/clutter-actor.c:6505
 msgid "Min Height"
 msgstr "కనిష్ఠ ఎత్తు"
 
-#: clutter/clutter-actor.c:6499
+#: clutter/clutter-actor.c:6506
 msgid "Forced minimum height request for the actor"
 msgstr "పాత్రదారి కొరకు అభ్యర్దించిన బలవంతపు కనిష్ట యెత్తు"
 
-#: clutter/clutter-actor.c:6517
+#: clutter/clutter-actor.c:6524
 msgid "Natural Width"
 msgstr "సహజ వెడల్పు"
 
-#: clutter/clutter-actor.c:6518
+#: clutter/clutter-actor.c:6525
 msgid "Forced natural width request for the actor"
 msgstr "పాత్రదారి కొరకు అభ్యర్దించిన బలవంతపు సహజ వెడల్పు"
 
-#: clutter/clutter-actor.c:6536
+#: clutter/clutter-actor.c:6543
 msgid "Natural Height"
 msgstr "సహజ యెత్తు"
 
-#: clutter/clutter-actor.c:6537
+#: clutter/clutter-actor.c:6544
 msgid "Forced natural height request for the actor"
 msgstr "పాత్రదారి కొరకు అభ్యర్దించిన బలవంతపు సహజ యెత్తు"
 
-#: clutter/clutter-actor.c:6552
+#: clutter/clutter-actor.c:6559
 msgid "Minimum width set"
 msgstr "కనిష్ట వెడల్పు అమర్పు"
 
-#: clutter/clutter-actor.c:6553
+#: clutter/clutter-actor.c:6560
 msgid "Whether to use the min-width property"
 msgstr "కనిష్ట-వెడల్పు లక్షణం వుపయోగించాలా"
 
-#: clutter/clutter-actor.c:6567
+#: clutter/clutter-actor.c:6574
 msgid "Minimum height set"
 msgstr "కనిష్ట యెత్తు అమర్పు"
 
-#: clutter/clutter-actor.c:6568
+#: clutter/clutter-actor.c:6575
 msgid "Whether to use the min-height property"
 msgstr "కనిష్ట-యెత్తు లక్షణం వుపయోగించాలా"
 
-#: clutter/clutter-actor.c:6582
+#: clutter/clutter-actor.c:6589
 msgid "Natural width set"
 msgstr "సహజ వెడల్పు అమర్పు"
 
-#: clutter/clutter-actor.c:6583
+#: clutter/clutter-actor.c:6590
 msgid "Whether to use the natural-width property"
 msgstr "సహజ-వెడల్పు లక్షణం వుపయోగించాలా"
 
-#: clutter/clutter-actor.c:6597
+#: clutter/clutter-actor.c:6604
 msgid "Natural height set"
 msgstr "సహజ యెత్తు అమర్పు"
 
-#: clutter/clutter-actor.c:6598
+#: clutter/clutter-actor.c:6605
 msgid "Whether to use the natural-height property"
 msgstr "సహజ-యెత్తు లక్షణం వుపయోగించాలా"
 
-#: clutter/clutter-actor.c:6614
+#: clutter/clutter-actor.c:6621
 msgid "Allocation"
 msgstr "కేటాయింపు"
 
-#: clutter/clutter-actor.c:6615
+#: clutter/clutter-actor.c:6622
 msgid "The actor's allocation"
 msgstr "పాత్రదారి యొక్క కేటాయింపు"
 
-#: clutter/clutter-actor.c:6682
+#: clutter/clutter-actor.c:6689
 msgid "Request Mode"
 msgstr "అభ్యర్దన విధం"
 
-#: clutter/clutter-actor.c:6683
+#: clutter/clutter-actor.c:6690
 msgid "The actor's request mode"
 msgstr "పాత్రదారి యొక్క అభ్యర్దన విధం"
 
-#: clutter/clutter-actor.c:6707
+#: clutter/clutter-actor.c:6714
 msgid "Depth"
 msgstr "లోతు"
 
-#: clutter/clutter-actor.c:6708
+#: clutter/clutter-actor.c:6715
 msgid "Position on the Z axis"
 msgstr "Z అక్షంపై స్థానం"
 
-#: clutter/clutter-actor.c:6735
+#: clutter/clutter-actor.c:6742
 msgid "Z Position"
 msgstr "Z స్థానం"
 
-#: clutter/clutter-actor.c:6736
+#: clutter/clutter-actor.c:6743
 msgid "The actor's position on the Z axis"
 msgstr "నటుడు యొక్క స్థానం Z అక్షం పైన"
 
-#: clutter/clutter-actor.c:6753
+#: clutter/clutter-actor.c:6760
 msgid "Opacity"
 msgstr "మసక"
 
-#: clutter/clutter-actor.c:6754
+#: clutter/clutter-actor.c:6761
 msgid "Opacity of an actor"
 msgstr "పాత్రదారి యొక్క మసక"
 
-#: clutter/clutter-actor.c:6774
+#: clutter/clutter-actor.c:6781
 msgid "Offscreen redirect"
 msgstr "ఆఫ్‌స్క్రీన్ రీడైరెక్ట్"
 
-#: clutter/clutter-actor.c:6775
+#: clutter/clutter-actor.c:6782
 msgid "Flags controlling when to flatten the actor into a single image"
 msgstr "పాత్రదారి‌ను వొంటరి ప్రతిరూపమునకు యెప్పుడు ఫ్లాటెన్ చేయాలో నియంత్రించే ఫ్లాగులు"
 
-#: clutter/clutter-actor.c:6789
+#: clutter/clutter-actor.c:6796
 msgid "Visible"
 msgstr "దృశ్యనీయం"
 
-#: clutter/clutter-actor.c:6790
+#: clutter/clutter-actor.c:6797
 msgid "Whether the actor is visible or not"
 msgstr "పాత్రదారి దృశ్యనీయం కావలెనా లేదా"
 
-#: clutter/clutter-actor.c:6804
+#: clutter/clutter-actor.c:6811
 msgid "Mapped"
 msgstr "మాప్‌డ్"
 
-#: clutter/clutter-actor.c:6805
+#: clutter/clutter-actor.c:6812
 msgid "Whether the actor will be painted"
 msgstr "పాత్రదారి రంగు వేయబడుదురా"
 
-#: clutter/clutter-actor.c:6818
+#: clutter/clutter-actor.c:6825
 msgid "Realized"
 msgstr "తెలుసుకొనెను"
 
-#: clutter/clutter-actor.c:6819
+#: clutter/clutter-actor.c:6826
 msgid "Whether the actor has been realized"
 msgstr "పాత్రదారి‌కు తెలియవలెనా"
 
-#: clutter/clutter-actor.c:6834
+#: clutter/clutter-actor.c:6841
 msgid "Reactive"
 msgstr "తిరిగిక్రియాశీలీకరించు"
 
-#: clutter/clutter-actor.c:6835
+#: clutter/clutter-actor.c:6842
 msgid "Whether the actor is reactive to events"
 msgstr "పాత్రధారి చర్యకు స్పందించుచున్నారా లేదా"
 
-#: clutter/clutter-actor.c:6846
+#: clutter/clutter-actor.c:6853
 msgid "Has Clip"
 msgstr "క్లిప్ ఉన్న"
 
-#: clutter/clutter-actor.c:6847
+#: clutter/clutter-actor.c:6854
 msgid "Whether the actor has a clip set"
 msgstr "పాత్రధారికి క్లిప్ సెట్ ఉన్నదా లేదా"
 
-#: clutter/clutter-actor.c:6860
+#: clutter/clutter-actor.c:6867
 msgid "Clip"
 msgstr "క్లిప్"
 
-#: clutter/clutter-actor.c:6861
+#: clutter/clutter-actor.c:6868
 msgid "The clip region for the actor"
 msgstr "పాత్రధారికి క్లిప్ ప్రాంత"
 
-#: clutter/clutter-actor.c:6880
+#: clutter/clutter-actor.c:6887
 msgid "Clip Rectangle"
 msgstr "క్లిప్ రెక్టాంగిల్"
 
-#: clutter/clutter-actor.c:6881
+#: clutter/clutter-actor.c:6888
 msgid "The visible region of the actor"
 msgstr "యాక్టర్‌ కనిపించు ప్రాంతం"
 
-#: clutter/clutter-actor.c:6895 clutter/clutter-actor-meta.c:205
+#: clutter/clutter-actor.c:6902 clutter/clutter-actor-meta.c:205
 #: clutter/clutter-binding-pool.c:318 clutter/clutter-input-device.c:268
 msgid "Name"
 msgstr "పేరు"
 
-#: clutter/clutter-actor.c:6896
+#: clutter/clutter-actor.c:6903
 msgid "Name of the actor"
 msgstr "పాత్రధారి యొక్క పేరు"
 
-#: clutter/clutter-actor.c:6917
+#: clutter/clutter-actor.c:6924
 msgid "Pivot Point"
 msgstr "ఉతక స్థానం "
 
-#: clutter/clutter-actor.c:6918
+#: clutter/clutter-actor.c:6925
 msgid "The point around which the scaling and rotation occur"
 msgstr "కొలమానం మరియు భ్రమణం జరిగే చుట్టూ స్థానం"
 
-#: clutter/clutter-actor.c:6936
+#: clutter/clutter-actor.c:6943
 msgid "Pivot Point Z"
 msgstr "Z ఉతక స్థానం"
 
-#: clutter/clutter-actor.c:6937
+#: clutter/clutter-actor.c:6944
 msgid "Z component of the pivot point"
 msgstr "ఇరుసు స్థానం యొక్క Z మూలకం "
 
-#: clutter/clutter-actor.c:6955
+#: clutter/clutter-actor.c:6962
 msgid "Scale X"
 msgstr "X ప్రమాణము"
 
-#: clutter/clutter-actor.c:6956
+#: clutter/clutter-actor.c:6963
 msgid "Scale factor on the X axis"
 msgstr "X అక్షముపై కొలత ప్రమాణము"
 
-#: clutter/clutter-actor.c:6974
+#: clutter/clutter-actor.c:6981
 msgid "Scale Y"
 msgstr "Y ప్రమాణము"
 
-#: clutter/clutter-actor.c:6975
+#: clutter/clutter-actor.c:6982
 msgid "Scale factor on the Y axis"
 msgstr "Y అక్షముపై కొలత ప్రమాణము"
 
-#: clutter/clutter-actor.c:6993
+#: clutter/clutter-actor.c:7000
 msgid "Scale Z"
 msgstr "Z కొలబద్ద"
 
-#: clutter/clutter-actor.c:6994
+#: clutter/clutter-actor.c:7001
 msgid "Scale factor on the Z axis"
 msgstr "Z అక్షం పైన కొలబద్ద కారకం"
 
-#: clutter/clutter-actor.c:7012
+#: clutter/clutter-actor.c:7019
 msgid "Scale Center X"
 msgstr "X ప్రమాణము యొక్క మధ్యభాగము"
 
-#: clutter/clutter-actor.c:7013
+#: clutter/clutter-actor.c:7020
 msgid "Horizontal scale center"
 msgstr "సమతలముగానున్న ప్రమాణము యొక్క మధ్యభాగము"
 
-#: clutter/clutter-actor.c:7031
+#: clutter/clutter-actor.c:7038
 msgid "Scale Center Y"
 msgstr "Y ప్రమాణము యొక్క మధ్యభాగము"
 
-#: clutter/clutter-actor.c:7032
+#: clutter/clutter-actor.c:7039
 msgid "Vertical scale center"
 msgstr "నిలువుదిశగానున్న ప్రమాణము యొక్క మధ్యభాగము "
 
-#: clutter/clutter-actor.c:7050
+#: clutter/clutter-actor.c:7057
 msgid "Scale Gravity"
 msgstr "ప్రమాణపు గురుత్వము"
 
-#: clutter/clutter-actor.c:7051
+#: clutter/clutter-actor.c:7058
 msgid "The center of scaling"
 msgstr "ప్రమాణము యొక్క మధ్యభాగము"
 
-#: clutter/clutter-actor.c:7069
+#: clutter/clutter-actor.c:7076
 msgid "Rotation Angle X"
 msgstr "X యొక్క భ్రమణకోణము"
 
-#: clutter/clutter-actor.c:7070
+#: clutter/clutter-actor.c:7077
 msgid "The rotation angle on the X axis"
 msgstr "X అక్షముపై భ్రమణకోణము"
 
-#: clutter/clutter-actor.c:7088
+#: clutter/clutter-actor.c:7095
 msgid "Rotation Angle Y"
 msgstr "Y యొక్క భ్రమణకోణము"
 
-#: clutter/clutter-actor.c:7089
+#: clutter/clutter-actor.c:7096
 msgid "The rotation angle on the Y axis"
 msgstr "Y అక్షముపై భ్రమణకోణము"
 
-#: clutter/clutter-actor.c:7107
+#: clutter/clutter-actor.c:7114
 msgid "Rotation Angle Z"
 msgstr "Z యొక్క భ్రమణకోణము"
 
-#: clutter/clutter-actor.c:7108
+#: clutter/clutter-actor.c:7115
 msgid "The rotation angle on the Z axis"
 msgstr "Z అక్షముపై భ్రమణకోణము"
 
-#: clutter/clutter-actor.c:7126
+#: clutter/clutter-actor.c:7133
 msgid "Rotation Center X"
 msgstr "X యొక్క భ్రమణకోణపు మధ్యభాగము"
 
-#: clutter/clutter-actor.c:7127
+#: clutter/clutter-actor.c:7134
 msgid "The rotation center on the X axis"
 msgstr "X అక్షముపై భ్రమణకోణపు మధ్యభాగము "
 
-#: clutter/clutter-actor.c:7144
+#: clutter/clutter-actor.c:7151
 msgid "Rotation Center Y"
 msgstr "భ్రమణం కేంద్రం Y"
 
-#: clutter/clutter-actor.c:7145
+#: clutter/clutter-actor.c:7152
 msgid "The rotation center on the Y axis"
 msgstr "Y అక్షముపై భ్రమణకోణపు మధ్యభాగము "
 
-#: clutter/clutter-actor.c:7162
+#: clutter/clutter-actor.c:7169
 msgid "Rotation Center Z"
 msgstr "భ్రమణం కేంద్రం Y"
 
-#: clutter/clutter-actor.c:7163
+#: clutter/clutter-actor.c:7170
 msgid "The rotation center on the Z axis"
 msgstr "Y అక్షముపై భ్రమణకోణపు మధ్యభాగము "
 
-#: clutter/clutter-actor.c:7180
+#: clutter/clutter-actor.c:7187
 msgid "Rotation Center Z Gravity"
 msgstr "Z కి గల గురుత్వాకర్షణ శక్తి భ్రమణం కేంద్రం "
 
-#: clutter/clutter-actor.c:7181
+#: clutter/clutter-actor.c:7188
 msgid "Center point for rotation around the Z axis"
 msgstr "Z అక్షం చుట్టూ భ్రమణ కేంద్ర బిందువు"
 
-#: clutter/clutter-actor.c:7209
+#: clutter/clutter-actor.c:7216
 msgid "Anchor X"
 msgstr "లంగరు X"
 
-#: clutter/clutter-actor.c:7210
+#: clutter/clutter-actor.c:7217
 msgid "X coordinate of the anchor point"
 msgstr "లంగరు బిందువు యొక్క X నిరూపకం"
 
-#: clutter/clutter-actor.c:7238
+#: clutter/clutter-actor.c:7245
 msgid "Anchor Y"
 msgstr "లంగరు Y"
 
-#: clutter/clutter-actor.c:7239
+#: clutter/clutter-actor.c:7246
 msgid "Y coordinate of the anchor point"
 msgstr "లంగరు బిందువు యొక్క Y నిరూపకం"
 
-#: clutter/clutter-actor.c:7266
+#: clutter/clutter-actor.c:7273
 msgid "Anchor Gravity"
 msgstr "లంగరు గురుత్వాకర్షణ "
 
-#: clutter/clutter-actor.c:7267
+#: clutter/clutter-actor.c:7274
 msgid "The anchor point as a ClutterGravity"
 msgstr "ఒక క్లట్ట గ్రావిటీ గా లంగరు బిందువు"
 
-#: clutter/clutter-actor.c:7286
+#: clutter/clutter-actor.c:7293
 msgid "Translation X"
 msgstr "అనువాదం X"
 
-#: clutter/clutter-actor.c:7287
+#: clutter/clutter-actor.c:7294
 msgid "Translation along the X axis"
 msgstr "X అక్షం వెంట అనువాదం"
 
-#: clutter/clutter-actor.c:7306
+#: clutter/clutter-actor.c:7313
 msgid "Translation Y"
 msgstr "అనువాదం Y"
 
-#: clutter/clutter-actor.c:7307
+#: clutter/clutter-actor.c:7314
 msgid "Translation along the Y axis"
 msgstr "Y అక్షం వెంట అనువాదం"
 
-#: clutter/clutter-actor.c:7326
+#: clutter/clutter-actor.c:7333
 msgid "Translation Z"
 msgstr "అనువాదం Z"
 
-#: clutter/clutter-actor.c:7327
+#: clutter/clutter-actor.c:7334
 msgid "Translation along the Z axis"
 msgstr "Z అక్షం వెంట అనువాదం"
 
-#: clutter/clutter-actor.c:7357
+#: clutter/clutter-actor.c:7364
 msgid "Transform"
 msgstr "బదలాయింపు"
 
-#: clutter/clutter-actor.c:7358
+#: clutter/clutter-actor.c:7365
 msgid "Transformation matrix"
 msgstr "బదలాయింపు మాట్రిక్స్"
 
-#: clutter/clutter-actor.c:7373
+#: clutter/clutter-actor.c:7380
 msgid "Transform Set"
 msgstr "బదలాయింపు సమితి"
 
-#: clutter/clutter-actor.c:7374
+#: clutter/clutter-actor.c:7381
 msgid "Whether the transform property is set"
 msgstr "బదలీకరణ లక్షణం అమర్చాలా"
 
-#: clutter/clutter-actor.c:7395
+#: clutter/clutter-actor.c:7402
 msgid "Child Transform"
 msgstr "చైల్డ్ బదలాయింపు"
 
-#: clutter/clutter-actor.c:7396
+#: clutter/clutter-actor.c:7403
 msgid "Children transformation matrix"
 msgstr "చిల్డ్రన్ బదలీకరణ మాట్రిక్స్"
 
-#: clutter/clutter-actor.c:7411
+#: clutter/clutter-actor.c:7418
 msgid "Child Transform Set"
 msgstr "చైల్డ్ బదలాయింపు సమితి"
 
-#: clutter/clutter-actor.c:7412
+#: clutter/clutter-actor.c:7419
 msgid "Whether the child-transform property is set"
 msgstr "చెల్డ్-బదలాయింపు లక్షణం అమర్చాలా"
 
-#: clutter/clutter-actor.c:7429
+#: clutter/clutter-actor.c:7436
 msgid "Show on set parent"
 msgstr "సమితి పేరెంట్ చూపించు"
 
-#: clutter/clutter-actor.c:7430
+#: clutter/clutter-actor.c:7437
 msgid "Whether the actor is shown when parented"
 msgstr "పేరెంటెడ్ ఐనప్పుడు పాత్రధారి చూపబడిందా"
 
-#: clutter/clutter-actor.c:7447
+#: clutter/clutter-actor.c:7454
 msgid "Clip to Allocation"
 msgstr "కేటాయింపు వరకు క్లిప్"
 
-#: clutter/clutter-actor.c:7448
+#: clutter/clutter-actor.c:7455
 msgid "Sets the clip region to track the actor's allocation"
 msgstr "పాత్రధారి యొక్క కేటాయింపు జాడ తెలుసుకొనుటకు క్లిప్ ప్రాంతాలను ఏర్పరచుట"
 
-#: clutter/clutter-actor.c:7461
+#: clutter/clutter-actor.c:7468
 msgid "Text Direction"
 msgstr "పాఠం దిశ"
 
-#: clutter/clutter-actor.c:7462
+#: clutter/clutter-actor.c:7469
 msgid "Direction of the text"
 msgstr "పాఠం యొక్క దిశ"
 
-#: clutter/clutter-actor.c:7477
+#: clutter/clutter-actor.c:7484
 msgid "Has Pointer"
 msgstr "పాయింటర్ ఉంది"
 
-#: clutter/clutter-actor.c:7478
+#: clutter/clutter-actor.c:7485
 msgid "Whether the actor contains the pointer of an input device"
 msgstr "పాత్రధారి ఒక ఎగుబడి పరికరం యొక్క సూచిక కలిగి ఉన్నాడా లేదా "
 
-#: clutter/clutter-actor.c:7491
+#: clutter/clutter-actor.c:7498
 msgid "Actions"
 msgstr "చర్యలు"
 
-#: clutter/clutter-actor.c:7492
+#: clutter/clutter-actor.c:7499
 msgid "Adds an action to the actor"
 msgstr "పాత్రధారికి ఒక చర్య జతచేస్తుంది"
 
-#: clutter/clutter-actor.c:7505
+#: clutter/clutter-actor.c:7512
 msgid "Constraints"
 msgstr "పరిమితులు"
 
-#: clutter/clutter-actor.c:7506
+#: clutter/clutter-actor.c:7513
 msgid "Adds a constraint to the actor"
 msgstr "పాత్రధారికి ఒక పరిమితిని జతచేస్తుంది"
 
-#: clutter/clutter-actor.c:7519
+#: clutter/clutter-actor.c:7526
 msgid "Effect"
 msgstr "ప్రభావం"
 
-#: clutter/clutter-actor.c:7520
+#: clutter/clutter-actor.c:7527
 msgid "Add an effect to be applied on the actor"
 msgstr "పాత్రదారి పై ఆపాదించుటకు వొక ప్రభావం జతచేయి"
 
-#: clutter/clutter-actor.c:7534
+#: clutter/clutter-actor.c:7541
 msgid "Layout Manager"
 msgstr "నమూనా నిర్వాహకుడు"
 
-#: clutter/clutter-actor.c:7535
+#: clutter/clutter-actor.c:7542
 msgid "The object controlling the layout of an actor's children"
 msgstr "పాత్రదారి యొక్క చిల్డ్రన్‌ నమూనాను వస్తువుు నియంత్రించును"
 
-#: clutter/clutter-actor.c:7549
+#: clutter/clutter-actor.c:7556
 msgid "X Expand"
 msgstr "X‌ విస్తరించు"
 
-#: clutter/clutter-actor.c:7550
+#: clutter/clutter-actor.c:7557
 msgid "Whether extra horizontal space should be assigned to the actor"
 msgstr "అదనపు సమాంతర ఖాళీ నటుడు కేటాయించబడే చెయ్యబడాలా "
 
-#: clutter/clutter-actor.c:7565
+#: clutter/clutter-actor.c:7572
 msgid "Y Expand"
 msgstr "Y విస్తరించు"
 
-#: clutter/clutter-actor.c:7566
+#: clutter/clutter-actor.c:7573
 msgid "Whether extra vertical space should be assigned to the actor"
 msgstr "అదనపు నిలువు ఖాళీ నటుడు కేటాయించబడే చెయ్యబడాలా "
 
-#: clutter/clutter-actor.c:7582
+#: clutter/clutter-actor.c:7589
 msgid "X Alignment"
 msgstr "X అనుగుణంగా"
 
-#: clutter/clutter-actor.c:7583
+#: clutter/clutter-actor.c:7590
 msgid "The alignment of the actor on the X axis within its allocation"
 msgstr "X అక్షముపైన దాని కేటాయింపు లోపల అనుగుణంగా పాత్రదారి"
 
-#: clutter/clutter-actor.c:7598
+#: clutter/clutter-actor.c:7605
 msgid "Y Alignment"
 msgstr "Y అనుగుణంగా"
 
-#: clutter/clutter-actor.c:7599
+#: clutter/clutter-actor.c:7606
 msgid "The alignment of the actor on the Y axis within its allocation"
 msgstr "Y అక్షముపైన దాని కేటాయింపు లోపల అనుగుణంగా పాత్రదారి"
 
-#: clutter/clutter-actor.c:7618
+#: clutter/clutter-actor.c:7625
 msgid "Margin Top"
 msgstr "మార్జన్ పైన"
 
-#: clutter/clutter-actor.c:7619
+#: clutter/clutter-actor.c:7626
 msgid "Extra space at the top"
 msgstr "పైన అదనపు జాగా"
 
-#: clutter/clutter-actor.c:7640
+#: clutter/clutter-actor.c:7647
 msgid "Margin Bottom"
 msgstr "మార్జిన్ కింద"
 
-#: clutter/clutter-actor.c:7641
+#: clutter/clutter-actor.c:7648
 msgid "Extra space at the bottom"
 msgstr "కిందన అదనపు జాగా"
 
-#: clutter/clutter-actor.c:7662
+#: clutter/clutter-actor.c:7669
 msgid "Margin Left"
 msgstr "మార్జన్ యెడమ"
 
-#: clutter/clutter-actor.c:7663
+#: clutter/clutter-actor.c:7670
 msgid "Extra space at the left"
 msgstr "ఎడమవైపు అదనపు జాగా"
 
-#: clutter/clutter-actor.c:7684
+#: clutter/clutter-actor.c:7691
 msgid "Margin Right"
 msgstr "మార్జిన్ కుడి"
 
-#: clutter/clutter-actor.c:7685
+#: clutter/clutter-actor.c:7692
 msgid "Extra space at the right"
 msgstr "కుడి వైపు అదనపు జాగా"
 
-#: clutter/clutter-actor.c:7701
+#: clutter/clutter-actor.c:7708
 msgid "Background Color Set"
 msgstr "నేపథ్యం రంగు అమర్చు"
 
-#: clutter/clutter-actor.c:7702 clutter/deprecated/clutter-box.c:280
+#: clutter/clutter-actor.c:7709 clutter/deprecated/clutter-box.c:280
 msgid "Whether the background color is set"
 msgstr "నేపథ్య రంగు ఏర్పాటు చెయ్యబడిందా"
 
-#: clutter/clutter-actor.c:7718
+#: clutter/clutter-actor.c:7725
 msgid "Background color"
 msgstr "నేపథ్యం రంగు"
 
-#: clutter/clutter-actor.c:7719
+#: clutter/clutter-actor.c:7726
 msgid "The actor's background color"
 msgstr "పాత్రదారి నేపథ్యం రంగు"
 
-#: clutter/clutter-actor.c:7734
+#: clutter/clutter-actor.c:7741
 msgid "First Child"
 msgstr "మొదటి చైల్డ్"
 
-#: clutter/clutter-actor.c:7735
+#: clutter/clutter-actor.c:7742
 msgid "The actor's first child"
 msgstr "పాత్రదారి మొదటి చైల్డ్"
 
-#: clutter/clutter-actor.c:7748
+#: clutter/clutter-actor.c:7755
 msgid "Last Child"
 msgstr "ఆఖరి చైల్డ్"
 
-#: clutter/clutter-actor.c:7749
+#: clutter/clutter-actor.c:7756
 msgid "The actor's last child"
 msgstr "పాత్రదారి ఆఖరి చైల్డ్"
 
-#: clutter/clutter-actor.c:7763
+#: clutter/clutter-actor.c:7770
 msgid "Content"
 msgstr "విషయం"
 
-#: clutter/clutter-actor.c:7764
+#: clutter/clutter-actor.c:7771
 msgid "Delegate object for painting the actor's content"
 msgstr "పాత్రదారి విషయం పెయింటింగ్ కొరకు డెలిగేట్ వస్తువు"
 
-#: clutter/clutter-actor.c:7789
+#: clutter/clutter-actor.c:7796
 msgid "Content Gravity"
 msgstr "విషయం గ్రావిటి"
 
-#: clutter/clutter-actor.c:7790
+#: clutter/clutter-actor.c:7797
 msgid "Alignment of the actor's content"
 msgstr "పాత్రదారి విషయం అనుగుణంగా"
 
-#: clutter/clutter-actor.c:7810
+#: clutter/clutter-actor.c:7817
 msgid "Content Box"
 msgstr "విషయం పెట్టె"
 
-#: clutter/clutter-actor.c:7811
+#: clutter/clutter-actor.c:7818
 msgid "The bounding box of the actor's content"
 msgstr "పాత్రదారి విషయపు బౌండింగ్ పెట్టె"
 
-#: clutter/clutter-actor.c:7819
+#: clutter/clutter-actor.c:7826
 msgid "Minification Filter"
 msgstr "మినిఫికేషన్ ఫిల్టర్"
 
-#: clutter/clutter-actor.c:7820
+#: clutter/clutter-actor.c:7827
 msgid "The filter used when reducing the size of the content"
 msgstr "విషయం యొక్క పరిమాణం తగ్గిస్తున్నప్పుడు వుపయోగించిన ఫిల్టర్"
 
-#: clutter/clutter-actor.c:7827
+#: clutter/clutter-actor.c:7834
 msgid "Magnification Filter"
 msgstr "మాగ్నిఫికేషన్ ఫిల్టర్"
 
-#: clutter/clutter-actor.c:7828
+#: clutter/clutter-actor.c:7835
 msgid "The filter used when increasing the size of the content"
 msgstr "విషయం యొక్క పరిమాణం పెంచుచున్నప్పుడు వుపయోగించిన ఫిల్టర్"
 
-#: clutter/clutter-actor.c:7842
+#: clutter/clutter-actor.c:7849
 msgid "Content Repeat"
 msgstr "విషయాన్ని మళ్ళీ చెప్పు"
 
-#: clutter/clutter-actor.c:7843
+#: clutter/clutter-actor.c:7850
 msgid "The repeat policy for the actor's content"
 msgstr "నటులు  విషయం కోసం తిరిగి చేయటం విధానం"
 
@@ -1352,6 +1352,13 @@ msgstr "అభికర్త"
 msgid "The manager that created this data"
 msgstr "ఈ దత్తాంశం సృష్టించిన అభికర్త"
 
+#. Translators: Leave this UNTRANSLATED if your language is
+#. * left-to-right.  If your language is right-to-left
+#. * (e.g. Hebrew, Arabic), translate it to "default:RTL".
+#. *
+#. * Do NOT translate it to non-English e.g. "predefinito:LTR"! If
+#. * it isn't default:LTR or default:RTL it will not work.
+#.
 #: clutter/clutter-main.c:751
 msgid "default:LTR"
 msgstr "default:LTR"
@@ -1453,27 +1460,27 @@ msgstr "లక్షణం పేరు"
 msgid "The name of the property to animate"
 msgstr "ఏనిమేట్ చేయుటకు లక్షణం పేరు"
 
-#: clutter/clutter-script.c:463
+#: clutter/clutter-script.c:509
 msgid "Filename Set"
 msgstr "ఫైల్ పేరు అమర్చు"
 
-#: clutter/clutter-script.c:464
+#: clutter/clutter-script.c:510
 msgid "Whether the :filename property is set"
 msgstr "ఫైల్ పేరు అభీష్టము నిర్ధారించబడినదా"
 
-#: clutter/clutter-script.c:478 clutter/deprecated/clutter-texture.c:1081
+#: clutter/clutter-script.c:524 clutter/deprecated/clutter-texture.c:1081
 msgid "Filename"
 msgstr "ఫైల్ పేరు"
 
-#: clutter/clutter-script.c:479
+#: clutter/clutter-script.c:525
 msgid "The path of the currently parsed file"
 msgstr "ప్రస్తుతంగా పార్స్ అయిన ఫైల్ యొక్క పాత్"
 
-#: clutter/clutter-script.c:496
+#: clutter/clutter-script.c:542
 msgid "Translation Domain"
 msgstr "అనువాదపు డొమైన్"
 
-#: clutter/clutter-script.c:497
+#: clutter/clutter-script.c:543
 msgid "The translation domain used to localize string"
 msgstr "స్ట్రింగ్‌ను స్థానికీకరించుటకు వుపయోగించిన అనువాదపు డొమైన్"
 
@@ -2448,6 +2455,10 @@ msgstr "షేడర్  అయ్యి లింక్ అయినదా"
 msgid "Whether the shader is enabled"
 msgstr "షేడర్ క్రియాశీలీకరించబడినదా"
 
+#. translators: the first %s is the type of the shader, either
+#. * Vertex shader or Fragment shader; the second %s is the actual
+#. * error as reported by COGL
+#.
 #: clutter/deprecated/clutter-shader.c:521
 #, c-format
 msgid "%s compilation failed: %s"

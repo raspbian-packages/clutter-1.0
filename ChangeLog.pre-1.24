@@ -175,18 +175,18 @@ Date:   Thu Sep 10 16:12:51 2015 +0800
     actors which scale was less than 1.
     
     Previously the validation was ('det' being a float):
-    	det = (RQ[0][0] * ST[0][0])
-    	    + (RQ[0][1] * ST[0][1])
-    	    + (RQ[0][2] * ST[0][2]);
-    	if (!det)
-    		return FALSE;
+            det = (RQ[0][0] * ST[0][0])
+                + (RQ[0][1] * ST[0][1])
+                + (RQ[0][2] * ST[0][2]);
+            if (!det)
+                    return FALSE;
     
     Semantically, the if statement expression '!det' is equivalent to
     'det == 0', i.e. 'det == 0.0f'. Post cleanup patches, 'det' was turned
     into a double, and the if statement was changed to:
     
-    	if (CLUTTER_NEARBYINT (det) == 0)
-    		return FALSE;
+            if (CLUTTER_NEARBYINT (det) == 0)
+                    return FALSE;
     
     which, different from before, rounds the determinant to the nearest
     integer value, meaning determinant in the range (-0.5, 0.5) would be
@@ -1360,17 +1360,14 @@ Date:   Sun Jun 28 10:37:01 2015 +0100
     
     And deal with the fallout in the source tree.
 
- clutter/Makefile.am                        |    6 +-
- clutter/clutter-deprecated.h               |    1 +
- clutter/clutter-model-private.h            |   52 -
- clutter/clutter-model.c                    | 2477 ----------------------------
- clutter/clutter-model.h                    |  436 -----
- clutter/clutter.h                          |    1 -
- clutter/deprecated/clutter-list-model.h    |    2 +-
- clutter/deprecated/clutter-model-private.h |   52 +
- clutter/deprecated/clutter-model.c         | 2477 ++++++++++++++++++++++++++++
- clutter/deprecated/clutter-model.h         |  436 +++++
- 10 files changed, 2970 insertions(+), 2970 deletions(-)
+ clutter/Makefile.am                              | 6 +++---
+ clutter/clutter-deprecated.h                     | 1 +
+ clutter/clutter.h                                | 1 -
+ clutter/deprecated/clutter-list-model.h          | 2 +-
+ clutter/{ => deprecated}/clutter-model-private.h | 4 ++--
+ clutter/{ => deprecated}/clutter-model.c         | 0
+ clutter/{ => deprecated}/clutter-model.h         | 0
+ 7 files changed, 7 insertions(+), 7 deletions(-)
 
 commit 31c2c57f8ba78f5245188f93ef6faa214a7bad2d
 Author: Emmanuele Bassi <ebassi@gnome.org>
@@ -1378,14 +1375,12 @@ Date:   Sun Jun 28 10:29:37 2015 +0100
 
     Move clutter-list-model.[ch] to the deprecated area
 
- clutter/Makefile.am                     |   4 +-
- clutter/clutter-deprecated.h            |   1 +
- clutter/clutter-list-model.c            | 836 --------------------------------
- clutter/clutter-list-model.h            |  95 ----
- clutter/clutter.h                       |   1 -
- clutter/deprecated/clutter-list-model.c | 836 ++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-list-model.h |  95 ++++
- 7 files changed, 934 insertions(+), 934 deletions(-)
+ clutter/Makefile.am                           | 4 ++--
+ clutter/clutter-deprecated.h                  | 1 +
+ clutter/clutter.h                             | 1 -
+ clutter/{ => deprecated}/clutter-list-model.c | 0
+ clutter/{ => deprecated}/clutter-list-model.h | 0
+ 5 files changed, 3 insertions(+), 3 deletions(-)
 
 commit 52e8864aa30cc394b7c79cb17c43f2c877396a19
 Author: Emmanuele Bassi <ebassi@gnome.org>
@@ -1747,63 +1742,37 @@ Date:   Tue May 19 13:19:48 2015 +0100
     Since we only have one API reference, we can drop the clutter/
     sub-level, and have all the files under doc/reference.
 
- .gitignore                                         |   30 +-
- configure.ac                                       |    3 +-
- doc/reference/Makefile.am                          |  170 +-
- doc/reference/actor-box.png                        |  Bin 0 -> 17917 bytes
- doc/reference/actor-example.png                    |  Bin 0 -> 4966 bytes
- doc/reference/animator-key-frames.png              |  Bin 0 -> 11936 bytes
- doc/reference/animator-key-frames.svg              |  271 ++
- doc/reference/bin-layout.png                       |  Bin 0 -> 13424 bytes
- doc/reference/box-layout.png                       |  Bin 0 -> 10557 bytes
- doc/reference/building-clutter.xml                 |  284 ++
- doc/reference/clutter-docs.xml.in                  |  456 +++
- doc/reference/clutter-overview.xml                 |   62 +
- doc/reference/clutter-sections.txt                 | 3780 ++++++++++++++++++++
- doc/reference/clutter.types                        |  122 +
- doc/reference/clutter/Makefile.am                  |  169 -
- doc/reference/clutter/actor-box.png                |  Bin 17917 -> 0 bytes
- doc/reference/clutter/actor-example.png            |  Bin 4966 -> 0 bytes
- doc/reference/clutter/animator-key-frames.png      |  Bin 11936 -> 0 bytes
- doc/reference/clutter/animator-key-frames.svg      |  271 --
- doc/reference/clutter/bin-layout.png               |  Bin 13424 -> 0 bytes
- doc/reference/clutter/box-layout.png               |  Bin 10557 -> 0 bytes
- doc/reference/clutter/building-clutter.xml         |  284 --
- doc/reference/clutter/clutter-docs.xml.in          |  456 ---
- doc/reference/clutter/clutter-overview.xml         |   62 -
- doc/reference/clutter/clutter-sections.txt         | 3780 --------------------
- doc/reference/clutter/clutter.types                |  122 -
- doc/reference/clutter/constraints-example.png      |  Bin 6199 -> 0 bytes
- doc/reference/clutter/easing-modes.png             |  Bin 51834 -> 0 bytes
- doc/reference/clutter/easing-modes.svg             |  920 -----
- doc/reference/clutter/event-flow.dia               |  Bin 4543 -> 0 bytes
- doc/reference/clutter/event-flow.png               |  Bin 53730 -> 0 bytes
- doc/reference/clutter/flow-layout.png              |  Bin 1850 -> 0 bytes
- doc/reference/clutter/glossary.xml                 |  142 -
- .../clutter/migrating-ClutterAnimation.xml         |  139 -
- .../clutter/migrating-ClutterBehaviour.xml         |  120 -
- doc/reference/clutter/migrating-ClutterEffect.xml  |  137 -
- doc/reference/clutter/migrating-ClutterPath.xml    |  167 -
- doc/reference/clutter/offscreen-redirect.png       |  Bin 4821 -> 0 bytes
- doc/reference/clutter/path-alpha-func.png          |  Bin 41123 -> 0 bytes
- doc/reference/clutter/running-clutter.xml          |  385 --
- doc/reference/clutter/table-layout.png             |  Bin 20058 -> 0 bytes
- doc/reference/constraints-example.png              |  Bin 0 -> 6199 bytes
- doc/reference/easing-modes.png                     |  Bin 0 -> 51834 bytes
- doc/reference/easing-modes.svg                     |  920 +++++
- doc/reference/event-flow.dia                       |  Bin 0 -> 4543 bytes
- doc/reference/event-flow.png                       |  Bin 0 -> 53730 bytes
- doc/reference/flow-layout.png                      |  Bin 0 -> 1850 bytes
- doc/reference/glossary.xml                         |  142 +
- doc/reference/migrating-ClutterAnimation.xml       |  139 +
- doc/reference/migrating-ClutterBehaviour.xml       |  120 +
- doc/reference/migrating-ClutterEffect.xml          |  137 +
- doc/reference/migrating-ClutterPath.xml            |  167 +
- doc/reference/offscreen-redirect.png               |  Bin 0 -> 4821 bytes
- doc/reference/path-alpha-func.png                  |  Bin 0 -> 41123 bytes
- doc/reference/running-clutter.xml                  |  385 ++
- doc/reference/table-layout.png                     |  Bin 0 -> 20058 bytes
- 56 files changed, 7170 insertions(+), 7172 deletions(-)
+ .gitignore                                         |  30 ++--
+ configure.ac                                       |   3 +-
+ doc/reference/Makefile.am                          | 170 ++++++++++++++++++++-
+ doc/reference/{clutter => }/actor-box.png          | Bin
+ doc/reference/{clutter => }/actor-example.png      | Bin
+ .../{clutter => }/animator-key-frames.png          | Bin
+ .../{clutter => }/animator-key-frames.svg          |   0
+ doc/reference/{clutter => }/bin-layout.png         | Bin
+ doc/reference/{clutter => }/box-layout.png         | Bin
+ doc/reference/{clutter => }/building-clutter.xml   |   0
+ doc/reference/{clutter => }/clutter-docs.xml.in    |   0
+ doc/reference/{clutter => }/clutter-overview.xml   |   0
+ doc/reference/{clutter => }/clutter-sections.txt   |   0
+ doc/reference/{clutter => }/clutter.types          |   0
+ doc/reference/clutter/Makefile.am                  | 169 --------------------
+ .../{clutter => }/constraints-example.png          | Bin
+ doc/reference/{clutter => }/easing-modes.png       | Bin
+ doc/reference/{clutter => }/easing-modes.svg       |   0
+ doc/reference/{clutter => }/event-flow.dia         | Bin
+ doc/reference/{clutter => }/event-flow.png         | Bin
+ doc/reference/{clutter => }/flow-layout.png        | Bin
+ doc/reference/{clutter => }/glossary.xml           |   0
+ .../{clutter => }/migrating-ClutterAnimation.xml   |   0
+ .../{clutter => }/migrating-ClutterBehaviour.xml   |   0
+ .../{clutter => }/migrating-ClutterEffect.xml      |   0
+ .../{clutter => }/migrating-ClutterPath.xml        |   0
+ doc/reference/{clutter => }/offscreen-redirect.png | Bin
+ doc/reference/{clutter => }/path-alpha-func.png    | Bin
+ doc/reference/{clutter => }/running-clutter.xml    |   0
+ doc/reference/{clutter => }/table-layout.png       | Bin
+ 30 files changed, 185 insertions(+), 187 deletions(-)
 
 commit c7bbe2a9f6ca0b86eb53f2824a7e1c9bc519d590
 Author: Emmanuele Bassi <ebassi@gnome.org>

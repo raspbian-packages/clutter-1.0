@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterDeviceManager: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-Key-Bindings.html" title="Key Bindings">
 <link rel="next" href="clutter-Events.html" title="Events">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterDeviceManager.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -94,7 +94,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterDeviceManager.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -110,7 +110,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterDeviceManager.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -132,7 +132,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterDeviceManager.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -173,7 +173,7 @@ of devices.</p>
 clutter_device_manager_get_default (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Retrieves the device manager singleton</p>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.2.5"></a><h4>Returns</h4>
+<a name="clutter-device-manager-get-default.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> singleton.
 The returned instance is owned by Clutter and it should not be
 modified or freed. </p>
@@ -188,8 +188,8 @@ modified or freed. </p>
 clutter_device_manager_list_devices (<em class="parameter"><code><a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> *device_manager</code></em>);</pre>
 <p>Lists all currently registered input devices</p>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-device-manager-list-devices.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -203,7 +203,7 @@ clutter_device_manager_list_devices (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.3.6"></a><h4>Returns</h4>
+<a name="clutter-device-manager-list-devices.returns"></a><h4>Returns</h4>
 <p>  a newly allocated list of <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> objects. Use
 <code class="function">g_slist_free()</code> to deallocate it when done. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Clutter.InputDevice]</span></p>
@@ -217,8 +217,8 @@ clutter_device_manager_list_devices (<em class="parameter"><code><a class="link"
 clutter_device_manager_peek_devices (<em class="parameter"><code><a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> *device_manager</code></em>);</pre>
 <p>Lists all currently registered input devices</p>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-device-manager-peek-devices.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -232,7 +232,7 @@ clutter_device_manager_peek_devices (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.4.6"></a><h4>Returns</h4>
+<a name="clutter-device-manager-peek-devices.returns"></a><h4>Returns</h4>
 <p>  a pointer to the internal list of <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> objects. The
 returned list is owned by the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> and should never
 be modified or freed. </p>
@@ -249,8 +249,8 @@ clutter_device_manager_get_device (<em class="parameter"><code><a class="link" h
 <p>Retrieves the <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> with the given <em class="parameter"><code>device_id</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-device-manager-get-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -271,7 +271,7 @@ clutter_device_manager_get_device (<em class="parameter"><code><a class="link" h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.5.6"></a><h4>Returns</h4>
+<a name="clutter-device-manager-get-device.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> or <code class="literal">NULL</code>. The
 returned device is owned by the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> and should
 never be modified or freed. </p>
@@ -291,8 +291,8 @@ clutter_device_manager_get_core_device
 <p>Core devices are devices created automatically by the default
 Clutter backend</p>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-device-manager-get-core-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -313,7 +313,7 @@ Clutter backend</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.6.7"></a><h4>Returns</h4>
+<a name="clutter-device-manager-get-core-device.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> or <code class="literal">NULL</code>. The
 returned device is owned by the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> and should
 not be modified or freed. </p>
@@ -355,8 +355,8 @@ equivalent to:</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.7.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-get-input-device-for-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -370,7 +370,7 @@ equivalent to:</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.4.9.7.10"></a><h4>Returns</h4>
+<a name="clutter-get-input-device-for-id.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -415,8 +415,8 @@ user_function (<a class="link" href="ClutterDeviceManager.html" title="ClutterDe
 <p>The ::device-added signal is emitted each time a device has been
 added to the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.4.12.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDeviceManager-device-added.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -454,8 +454,8 @@ user_function (<a class="link" href="ClutterDeviceManager.html" title="ClutterDe
 <p>The ::device-removed signal is emitted each time a device has been
 removed from the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.4.12.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDeviceManager-device-removed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -486,6 +486,6 @@ removed from the <a class="link" href="ClutterDeviceManager.html" title="Clutter
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

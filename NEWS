@@ -1,3 +1,50 @@
+Clutter 1.26.2                                                       2017-05-12
+===============================================================================
+
+  • List of changes since Clutter 1.26.0
+
+    - Accept upper case 'A' when selecting all content in a Text actor
+    This is similar to what GTK+ allows, and makes it easier to select text
+    with Caps Lock enabled.
+
+    - Use GDK API when using Wayland sub-surfaces
+    The GDK backend on Wayland uses sub-surfaces to allow Cogl to manage the
+    rendering surface; now that GDK exposes the necessary API, we can avoid
+    using the Wayland API directly, and instead let GDK manage the surface
+    for us.
+
+    - Documentation fixes
+
+    - Translation updates
+    Danish, Basque, Chinese (Traditional), Occitan, Indonesian, Polish,
+    Spanish, Slovak, Kazakh, British English, Croatian, Hungarian, Norwegian
+    bokmål, Belarusian.
+
+  • List of bugs fixed since Clutter 1.26.0
+
+    #766326 - text: Bind <ctrl>A in addition to <ctrl>a
+    #768243 - Don't create the Cogl GLib source multiple times
+    #768734 - actor: Clarify that add_effect() sinks floating references
+              on the effect
+    #781975 - Under Wayland, Totem spawns a new window without controls for
+              some files and then gnome-shell crashes
+    #759085 - seg fault in actor-graph test
+    #774546 - [Wayland][gdk][stage] Use GDK API instead of Wayland directly
+    #762888 - [PATCH] backend: check for wayland before x11
+    #772412 - clutter-script: Document support for top-level arrays
+    #770288 - clutter-script: Add an example of translation in ClutterScript
+    #768898 - clutter: Fix typo in docs for ClutterActor::queue-relayout
+
+Many thanks to:
+
+  Piotr Drąg, Philip Withnall, Olivier Fourdan, Cédric Valmary, Fabio Tomat,
+  Andika Triwidada, Ask Hjorth Larsen, Baurzhan Muftakhidinov, David King,
+  Dušan Kazik, Florian Müllner, Gustavo Noronha Silva, Gábor Kelemen,
+  Inaki Larranaga Murgoitio, Jeff Bai, Jeremy Bicha, Kjartan Maraas,
+  Marc-Antoine Perennou, Nigel Taylor, Owen W. Taylor, Peter Mráz,
+  Yuras Shumovich, gogo
+
+
 Clutter 1.26.0                                                       2016-03-21
 ===============================================================================
 

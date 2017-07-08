@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterOffscreenEffect: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch06.html" title="Effects">
 <link rel="prev" href="ch06.html" title="Effects">
 <link rel="next" href="ClutterShaderEffect.html" title="ClutterShaderEffect">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterOffscreenEffect.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -93,7 +93,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterOffscreenEffect.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -167,8 +167,8 @@ buffer created by <em class="parameter"><code>effect</code></em>
 <p>You should only use the returned <span class="type">CoglMaterial</span> when painting. The
 returned material might change between different frames.</p>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-offscreen-effect-get-target.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -182,7 +182,7 @@ returned material might change between different frames.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.2.7"></a><h4>Returns</h4>
+<a name="clutter-offscreen-effect-get-target.returns"></a><h4>Returns</h4>
 <p> a <span class="type">CoglMaterial</span> or <code class="literal">NULL</code>. The
 returned material is owned by Clutter and it should not be
 modified or freed. </p>
@@ -205,8 +205,8 @@ chaining-up to the parent's pre_paint implementation. This can be
 used instead of <a class="link" href="ClutterOffscreenEffect.html#clutter-offscreen-effect-get-target" title="clutter_offscreen_effect_get_target ()"><code class="function">clutter_offscreen_effect_get_target()</code></a> when the
 effect subclass wants to paint using its own material.</p>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-offscreen-effect-get-texture.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -220,7 +220,7 @@ effect subclass wants to paint using its own material.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.3.7"></a><h4>Returns</h4>
+<a name="clutter-offscreen-effect-get-texture.returns"></a><h4>Returns</h4>
 <p> a <span class="type">CoglHandle</span> or <code class="literal">COGL_INVALID_HANDLE</code>. The
 returned texture is owned by Clutter and it should not be
 modified or freed. </p>
@@ -239,8 +239,8 @@ clutter_offscreen_effect_create_texture
 <p>Calls the <code class="function">create_texture()</code> virtual function of the <em class="parameter"><code>effect</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-offscreen-effect-create-texture.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -266,7 +266,7 @@ clutter_offscreen_effect_create_texture
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.4.6"></a><h4>Returns</h4>
+<a name="clutter-offscreen-effect-create-texture.returns"></a><h4>Returns</h4>
 <p> a handle to a Cogl texture, or
 <code class="literal">COGL_INVALID_HANDLE</code>. The returned handle has its reference
 count increased. </p>
@@ -282,8 +282,8 @@ clutter_offscreen_effect_paint_target (<em class="parameter"><code><a class="lin
 <p>Calls the <code class="function">paint_target()</code> virtual function of the <em class="parameter"><code>effect</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-offscreen-effect-paint-target.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -317,8 +317,8 @@ paint the actor to which it has been applied.</p>
 implementations, from within the <a class="link" href="ClutterOffscreenEffect.html#ClutterOffscreenEffectClass.paint-target"><code class="function">ClutterOffscreenEffectClass.paint_target()</code></a>
 virtual function.</p>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.6.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-offscreen-effect-get-target-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -344,7 +344,7 @@ virtual function.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.6.9"></a><h4>Returns</h4>
+<a name="clutter-offscreen-effect-get-target-size.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the offscreen buffer has a valid size,
 and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -364,8 +364,8 @@ paint the actor to which it has been applied.</p>
 implementations, from within the <a class="link" href="ClutterOffscreenEffect.html#ClutterOffscreenEffectClass.paint-target"><code class="function">ClutterOffscreenEffectClass.paint_target()</code></a>
 virtual function.</p>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.7.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-offscreen-effect-get-target-rect.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -386,7 +386,7 @@ virtual function.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.7.2.7.7.7"></a><h4>Returns</h4>
+<a name="clutter-offscreen-effect-get-target-rect.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the offscreen buffer has a valid rectangle,
 and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -414,8 +414,8 @@ and should be accessed using the provided API</p>
 </pre>
 <p>The <a class="link" href="ClutterOffscreenEffect.html#ClutterOffscreenEffectClass" title="struct ClutterOffscreenEffectClass"><span class="type">ClutterOffscreenEffectClass</span></a> structure contains only private data</p>
 <div class="refsect3">
-<a name="id-1.5.7.2.8.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterOffscreenEffectClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -444,6 +444,6 @@ and should be accessed using the provided API</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

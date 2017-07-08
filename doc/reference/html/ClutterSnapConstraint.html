@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterSnapConstraint: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch05.html" title="Constraints">
 <link rel="prev" href="ClutterPathConstraint.html" title="ClutterPathConstraint">
 <link rel="next" href="ch06.html" title="Effects">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterSnapConstraint.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -102,7 +102,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterSnapConstraint.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -135,7 +135,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterSnapConstraint.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -183,8 +183,8 @@ to the <em class="parameter"><code>edge</code></em>
 , with the given <em class="parameter"><code>offset</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-snap-constraint-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -217,7 +217,7 @@ to use in the constraint</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.2.6"></a><h4>Returns</h4>
+<a name="clutter-snap-constraint-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterSnapConstraint.html" title="ClutterSnapConstraint"><span class="type">ClutterSnapConstraint</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -230,8 +230,8 @@ clutter_snap_constraint_set_source (<em class="parameter"><code><a class="link" 
                                     <em class="parameter"><code><a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> *source</code></em>);</pre>
 <p>Sets the source <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> for the constraint</p>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-snap-constraint-set-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -260,8 +260,8 @@ clutter_snap_constraint_set_source (<em class="parameter"><code><a class="link" 
 clutter_snap_constraint_get_source (<em class="parameter"><code><a class="link" href="ClutterSnapConstraint.html" title="ClutterSnapConstraint"><span class="type">ClutterSnapConstraint</span></a> *constraint</code></em>);</pre>
 <p>Retrieves the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> set using <a class="link" href="ClutterSnapConstraint.html#clutter-snap-constraint-set-source" title="clutter_snap_constraint_set_source ()"><code class="function">clutter_snap_constraint_set_source()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-snap-constraint-get-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -275,7 +275,7 @@ clutter_snap_constraint_get_source (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.4.6"></a><h4>Returns</h4>
+<a name="clutter-snap-constraint-get-source.returns"></a><h4>Returns</h4>
 <p> a pointer to the source actor. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -297,8 +297,8 @@ has been added. The <em class="parameter"><code>to_edge</code></em>
  is the edge of the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> inside
 the <a class="link" href="ClutterSnapConstraint.html#ClutterSnapConstraint--source" title="The “source” property"><span class="type">“source”</span></a> property.</p>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-snap-constraint-set-edges.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -335,8 +335,8 @@ clutter_snap_constraint_get_edges (<em class="parameter"><code><a class="link" h
 <p>Retrieves the edges used by the <em class="parameter"><code>constraint</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-snap-constraint-get-edges.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -371,8 +371,8 @@ clutter_snap_constraint_set_offset (<em class="parameter"><code><a class="link" 
                                     <em class="parameter"><code><span class="type">gfloat</span> offset</code></em>);</pre>
 <p>Sets the offset to be applied to the constraint</p>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-snap-constraint-set-offset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -401,8 +401,8 @@ clutter_snap_constraint_set_offset (<em class="parameter"><code><a class="link" 
 clutter_snap_constraint_get_offset (<em class="parameter"><code><a class="link" href="ClutterSnapConstraint.html" title="ClutterSnapConstraint"><span class="type">ClutterSnapConstraint</span></a> *constraint</code></em>);</pre>
 <p>Retrieves the offset set using <a class="link" href="ClutterSnapConstraint.html#clutter-snap-constraint-set-offset" title="clutter_snap_constraint_set_offset ()"><code class="function">clutter_snap_constraint_set_offset()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-snap-constraint-get-offset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -416,7 +416,7 @@ clutter_snap_constraint_get_offset (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.6.5.8.8.6"></a><h4>Returns</h4>
+<a name="clutter-snap-constraint-get-offset.returns"></a><h4>Returns</h4>
 <p> the offset, in pixels</p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -428,8 +428,8 @@ clutter_snap_constraint_get_offset (<em class="parameter"><code><a class="link" 
 <a name="ClutterSnapEdge"></a><h3>enum ClutterSnapEdge</h3>
 <p>The edge to snap</p>
 <div class="refsect3">
-<a name="id-1.5.6.5.9.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterSnapEdge.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -518,6 +518,6 @@ and <a class="link" href="ClutterSnapConstraint.html#ClutterSnapConstraint--to-e
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

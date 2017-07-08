@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterPanAction: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch04.html" title="Actions">
 <link rel="prev" href="ClutterGestureAction.html" title="ClutterGestureAction">
 <link rel="next" href="ClutterSwipeAction.html" title="ClutterSwipeAction">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterPanAction.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -159,7 +159,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterPanAction.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -191,7 +191,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterPanAction.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -213,7 +213,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterPanAction.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -276,7 +276,7 @@ when dragging.</p>
 clutter_pan_action_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Creates a new <a class="link" href="ClutterPanAction.html" title="ClutterPanAction"><span class="type">ClutterPanAction</span></a> instance</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.2.5"></a><h4>Returns</h4>
+<a name="clutter-pan-action-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPanAction.html" title="ClutterPanAction"><span class="type">ClutterPanAction</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -289,8 +289,8 @@ clutter_pan_action_set_pan_axis (<em class="parameter"><code><a class="link" hre
                                  <em class="parameter"><code><a class="link" href="ClutterPanAction.html#ClutterPanAxis" title="enum ClutterPanAxis"><span class="type">ClutterPanAxis</span></a> axis</code></em>);</pre>
 <p>Restricts the panning action to a specific axis</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-set-pan-axis.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -319,8 +319,8 @@ clutter_pan_action_set_pan_axis (<em class="parameter"><code><a class="link" hre
 clutter_pan_action_get_pan_axis (<em class="parameter"><code><a class="link" href="ClutterPanAction.html" title="ClutterPanAction"><span class="type">ClutterPanAction</span></a> *self</code></em>);</pre>
 <p>Retrieves the axis constraint set by <a class="link" href="ClutterPanAction.html#clutter-pan-action-set-pan-axis" title="clutter_pan_action_set_pan_axis ()"><code class="function">clutter_pan_action_set_pan_axis()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-pan-axis.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -334,7 +334,7 @@ clutter_pan_action_get_pan_axis (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.4.6"></a><h4>Returns</h4>
+<a name="clutter-pan-action-get-pan-axis.returns"></a><h4>Returns</h4>
 <p> the axis constraint</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -348,8 +348,8 @@ clutter_pan_action_set_interpolate (<em class="parameter"><code><a class="link" 
 <p>Sets whether the action should emit interpolated ::pan events
 after the drag has ended, to emulate the gesture kinetic inertia.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-set-interpolate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -380,8 +380,8 @@ clutter_pan_action_get_interpolate (<em class="parameter"><code><a class="link" 
 the pointer during a panning gesture, to emulate some kind of
 kinetic inertia.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-interpolate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -395,7 +395,7 @@ kinetic inertia.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.6.6"></a><h4>Returns</h4>
+<a name="clutter-pan-action-get-interpolate.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if interpolated events emission is active.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -410,8 +410,8 @@ clutter_pan_action_set_deceleration (<em class="parameter"><code><a class="link"
 after a pan gesture. This is approximately the value that the momentum
 at the time of releasing the pointer is divided by every 60th of a second.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-set-deceleration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -440,8 +440,8 @@ at the time of releasing the pointer is divided by every 60th of a second.</p>
 clutter_pan_action_get_deceleration (<em class="parameter"><code><a class="link" href="ClutterPanAction.html" title="ClutterPanAction"><span class="type">ClutterPanAction</span></a> *self</code></em>);</pre>
 <p>Retrieves the deceleration rate of interpolated ::pan events.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-deceleration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -455,7 +455,7 @@ clutter_pan_action_get_deceleration (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.8.6"></a><h4>Returns</h4>
+<a name="clutter-pan-action-get-deceleration.returns"></a><h4>Returns</h4>
 <p> The deceleration rate of the interpolated events.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -470,8 +470,8 @@ clutter_pan_action_set_acceleration_factor
 <p>Factor applied to the momentum velocity at the time of releasing the
 pointer when generating interpolated ::pan events.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-set-acceleration-factor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -501,8 +501,8 @@ clutter_pan_action_get_acceleration_factor
                                (<em class="parameter"><code><a class="link" href="ClutterPanAction.html" title="ClutterPanAction"><span class="type">ClutterPanAction</span></a> *self</code></em>);</pre>
 <p>Retrieves the initial acceleration factor for interpolated ::pan events.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-acceleration-factor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -516,7 +516,7 @@ clutter_pan_action_get_acceleration_factor
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.10.6"></a><h4>Returns</h4>
+<a name="clutter-pan-action-get-acceleration-factor.returns"></a><h4>Returns</h4>
 <p> The initial acceleration factor for interpolated events.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -532,8 +532,8 @@ clutter_pan_action_get_interpolated_coords
 <p>Retrieves the coordinates, in stage space, of the latest interpolated
 event, analogous to <a class="link" href="ClutterGestureAction.html#clutter-gesture-action-get-motion-coords" title="clutter_gesture_action_get_motion_coords ()"><code class="function">clutter_gesture_action_get_motion_coords()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-interpolated-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -573,8 +573,8 @@ clutter_pan_action_get_interpolated_delta
 <p>Retrieves the delta, in stage space, since the latest interpolated
 event, analogous to <a class="link" href="ClutterGestureAction.html#clutter-gesture-action-get-motion-delta" title="clutter_gesture_action_get_motion_delta ()"><code class="function">clutter_gesture_action_get_motion_delta()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-interpolated-delta.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -602,7 +602,7 @@ the latest interpolated event. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.12.6"></a><h4>Returns</h4>
+<a name="clutter-pan-action-get-interpolated-delta.returns"></a><h4>Returns</h4>
 <p> the distance since the latest interpolated event</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -624,8 +624,8 @@ will be equivalent to those returned by
 <a class="link" href="ClutterPanAction.html#clutter-pan-action-get-interpolated-coords" title="clutter_pan_action_get_interpolated_coords ()"><code class="function">clutter_pan_action_get_interpolated_coords()</code></a>. This is a convenience
 method designed to be used in replacement "pan" signal handlers.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-motion-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -675,8 +675,8 @@ will be equivalent to those returned by
 <a class="link" href="ClutterPanAction.html#clutter-pan-action-get-interpolated-delta" title="clutter_pan_action_get_interpolated_delta ()"><code class="function">clutter_pan_action_get_interpolated_delta()</code></a>. This is a convenience
 method designed to be used in replacement "pan" signal handlers.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-motion-delta.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -722,8 +722,8 @@ clutter_pan_action_get_constrained_motion_delta
 of the <a class="link" href="ClutterPanAction.html" title="ClutterPanAction"><span class="type">ClutterPanAction</span></a>, and respecting the constraint specified by the
 <a class="link" href="ClutterPanAction.html#ClutterPanAction--pan-axis" title="The “pan-axis” property"><span class="type">“pan-axis”</span></a> property.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-pan-action-get-constrained-motion-delta.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -755,7 +755,7 @@ point received by the action</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.9.15.6"></a><h4>Returns</h4>
+<a name="clutter-pan-action-get-constrained-motion-delta.returns"></a><h4>Returns</h4>
 <p> the distance since last motion event</p>
 </div>
 <p class="since">Since: <a class="link" href="ix19.html#api-index-1.24">1.24</a></p>
@@ -784,8 +784,8 @@ only private data and should be accessed using the provided API</p>
 <p>The <a class="link" href="ClutterPanAction.html#ClutterPanActionClass" title="struct ClutterPanActionClass"><span class="type">ClutterPanActionClass</span></a> structure contains
 only private data.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.10.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPanActionClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -813,8 +813,8 @@ only private data.</p>
 <p>The axis of the constraint that should be applied on the
 panning action</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.10.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPanAxis.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -916,8 +916,8 @@ a pan gesture. <em class="parameter"><code>is_interpolated</code></em>
 interpolation phase of the pan, after the drag has ended and
 the :interpolate property was set to <code class="literal">TRUE</code>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.12.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPanAction-pan.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -950,7 +950,7 @@ the motion velocity at the end of the drag</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.6.12.2.6"></a><h4>Returns</h4>
+<a name="ClutterPanAction-pan.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the pan should continue, and <code class="literal">FALSE</code> if
 the pan should be cancelled.</p>
 </div>
@@ -967,8 +967,8 @@ user_function (<a class="link" href="ClutterPanAction.html" title="ClutterPanAct
 <p>The ::pan-stopped signal is emitted at the end of the interpolation
 phase of the pan action, only when :interpolate is set to <code class="literal">TRUE</code>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.6.12.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPanAction-pan-stopped.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1000,6 +1000,6 @@ phase of the pan action, only when :interpolate is set to <code class="literal">
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

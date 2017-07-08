@@ -3507,13 +3507,12 @@ Date:   Mon Feb 27 15:56:12 2012 +0000
 
     Move clutter-util.h into the deprecated section
 
- clutter/Makefile.am               |  4 ++--
- clutter/clutter-deprecated.h      |  1 +
- clutter/clutter-util.c            |  2 +-
- clutter/clutter-util.h            | 40 ---------------------------------------
- clutter/clutter.h                 |  1 -
- clutter/deprecated/clutter-util.h | 40 +++++++++++++++++++++++++++++++++++++++
- 6 files changed, 44 insertions(+), 44 deletions(-)
+ clutter/Makefile.am                     | 4 ++--
+ clutter/clutter-deprecated.h            | 1 +
+ clutter/clutter-util.c                  | 2 +-
+ clutter/clutter.h                       | 1 -
+ clutter/{ => deprecated}/clutter-util.h | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
 
 commit 2daf2e8e6bca403b24d8a79a02bc7d3a5006f7b4
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -3665,15 +3664,14 @@ Date:   Mon Feb 27 13:08:31 2012 +0000
     
     Remove the last inconsistent bits.
 
- tests/conform/Makefile.am                |   2 +-
- tests/conform/actor-layout.c             |   8 +-
- tests/conform/actor-offscreen-redirect.c |   4 +-
- tests/conform/actor-pick.c               |   2 +-
- tests/conform/actor-shader-effect.c      | 272 +++++++++++++++++++++++++++++++
- tests/conform/path.c                     |   2 +-
- tests/conform/shader-effect.c            | 272 -------------------------------
- tests/conform/test-conform-main.c        |  12 +-
- 8 files changed, 287 insertions(+), 287 deletions(-)
+ tests/conform/Makefile.am                                |  2 +-
+ tests/conform/actor-layout.c                             |  8 ++++----
+ tests/conform/actor-offscreen-redirect.c                 |  4 ++--
+ tests/conform/actor-pick.c                               |  2 +-
+ tests/conform/{shader-effect.c => actor-shader-effect.c} |  4 ++--
+ tests/conform/path.c                                     |  2 +-
+ tests/conform/test-conform-main.c                        | 12 ++++++------
+ 7 files changed, 17 insertions(+), 17 deletions(-)
 
 commit 60e2f8ed5bd90c99218f90393c7c1db1119f5fa7
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -3687,72 +3685,40 @@ Date:   Mon Feb 27 13:02:01 2012 +0000
     This commit does not change the Cogl tests: they will be moved to Cogl
     over time, and it's easier to do if we leave them as they are.
 
- tests/conform/Makefile.am                 |  64 +--
- tests/conform/actor-anchors.c             | 704 +++++++++++++++++++++++++++++
- tests/conform/actor-destroy.c             | 182 ++++++++
- tests/conform/actor-graph.c               | 450 +++++++++++++++++++
- tests/conform/actor-invariants.c          | 377 ++++++++++++++++
- tests/conform/actor-iter.c                | 129 ++++++
- tests/conform/actor-layout.c              | 296 +++++++++++++
- tests/conform/actor-offscreen-redirect.c  | 348 +++++++++++++++
- tests/conform/actor-paint-opacity.c       | 142 ++++++
- tests/conform/actor-pick.c                | 287 ++++++++++++
- tests/conform/actor-size.c                | 211 +++++++++
- tests/conform/animator.c                  | 200 +++++++++
- tests/conform/behaviours.c                |  90 ++++
- tests/conform/binding-pool.c              | 309 +++++++++++++
- tests/conform/cairo-texture.c             | 198 +++++++++
- tests/conform/cally-text.c                | 338 ++++++++++++++
- tests/conform/color.c                     | 313 +++++++++++++
- tests/conform/group.c                     |  57 +++
- tests/conform/model.c                     | 526 ++++++++++++++++++++++
- tests/conform/path.c                      | 710 ++++++++++++++++++++++++++++++
- tests/conform/rectangle.c                 |  56 +++
- tests/conform/score.c                     | 121 +++++
- tests/conform/script-parser.c             | 400 +++++++++++++++++
- tests/conform/shader-effect.c             | 272 ++++++++++++
- tests/conform/state.c                     |  87 ++++
- tests/conform/test-actor-destroy.c        | 182 --------
- tests/conform/test-actor-graph.c          | 450 -------------------
- tests/conform/test-actor-invariants.c     | 377 ----------------
- tests/conform/test-actor-iter.c           | 129 ------
- tests/conform/test-actor-layout.c         | 296 -------------
- tests/conform/test-actor-size.c           | 211 ---------
- tests/conform/test-anchors.c              | 704 -----------------------------
- tests/conform/test-animator.c             | 200 ---------
- tests/conform/test-behaviours.c           |  90 ----
- tests/conform/test-binding-pool.c         | 309 -------------
- tests/conform/test-cairo-texture.c        | 198 ---------
- tests/conform/test-cally-text.c           | 338 --------------
- tests/conform/test-color.c                | 313 -------------
- tests/conform/test-group.c                |  57 ---
- tests/conform/test-model.c                | 526 ----------------------
- tests/conform/test-offscreen-redirect.c   | 348 ---------------
- tests/conform/test-paint-opacity.c        | 142 ------
- tests/conform/test-path.c                 | 710 ------------------------------
- tests/conform/test-pick.c                 | 287 ------------
- tests/conform/test-rectangle.c            |  56 ---
- tests/conform/test-score.c                | 121 -----
- tests/conform/test-script-parser.c        | 400 -----------------
- tests/conform/test-shader-effect.c        | 272 ------------
- tests/conform/test-state.c                |  87 ----
- tests/conform/test-text-cache.c           | 297 -------------
- tests/conform/test-text.c                 | 504 ---------------------
- tests/conform/test-texture-fbo.c          | 241 ----------
- tests/conform/test-texture.c              |  89 ----
- tests/conform/test-timeline-interpolate.c | 162 -------
- tests/conform/test-timeline-rewind.c      |  92 ----
- tests/conform/test-timeline.c             | 360 ---------------
- tests/conform/test-units.c                | 131 ------
- tests/conform/text-cache.c                | 297 +++++++++++++
- tests/conform/text.c                      | 504 +++++++++++++++++++++
- tests/conform/texture-fbo.c               | 241 ++++++++++
- tests/conform/texture.c                   |  89 ++++
- tests/conform/timeline-interpolate.c      | 162 +++++++
- tests/conform/timeline-rewind.c           |  92 ++++
- tests/conform/timeline.c                  | 360 +++++++++++++++
- tests/conform/units.c                     | 131 ++++++
- 65 files changed, 8711 insertions(+), 8711 deletions(-)
+ tests/conform/Makefile.am                          | 64 +++++++++++-----------
+ tests/conform/{test-anchors.c => actor-anchors.c}  |  0
+ .../{test-actor-destroy.c => actor-destroy.c}      |  0
+ .../conform/{test-actor-graph.c => actor-graph.c}  |  0
+ ...{test-actor-invariants.c => actor-invariants.c} |  0
+ tests/conform/{test-actor-iter.c => actor-iter.c}  |  0
+ .../{test-actor-layout.c => actor-layout.c}        |  0
+ ...creen-redirect.c => actor-offscreen-redirect.c} |  0
+ ...{test-paint-opacity.c => actor-paint-opacity.c} |  0
+ tests/conform/{test-pick.c => actor-pick.c}        |  0
+ tests/conform/{test-actor-size.c => actor-size.c}  |  0
+ tests/conform/{test-animator.c => animator.c}      |  0
+ tests/conform/{test-behaviours.c => behaviours.c}  |  0
+ .../{test-binding-pool.c => binding-pool.c}        |  0
+ .../{test-cairo-texture.c => cairo-texture.c}      |  0
+ tests/conform/{test-cally-text.c => cally-text.c}  |  0
+ tests/conform/{test-color.c => color.c}            |  0
+ tests/conform/{test-group.c => group.c}            |  0
+ tests/conform/{test-model.c => model.c}            |  0
+ tests/conform/{test-path.c => path.c}              |  0
+ tests/conform/{test-rectangle.c => rectangle.c}    |  0
+ tests/conform/{test-score.c => score.c}            |  0
+ .../{test-script-parser.c => script-parser.c}      |  0
+ .../{test-shader-effect.c => shader-effect.c}      |  0
+ tests/conform/{test-state.c => state.c}            |  0
+ tests/conform/{test-text-cache.c => text-cache.c}  |  0
+ tests/conform/{test-text.c => text.c}              |  0
+ .../conform/{test-texture-fbo.c => texture-fbo.c}  |  0
+ tests/conform/{test-texture.c => texture.c}        |  0
+ ...meline-interpolate.c => timeline-interpolate.c} |  0
+ .../{test-timeline-rewind.c => timeline-rewind.c}  |  0
+ tests/conform/{test-timeline.c => timeline.c}      |  0
+ tests/conform/{test-units.c => units.c}            |  0
+ 33 files changed, 32 insertions(+), 32 deletions(-)
 
 commit d16f2ac3b545a6b853f5ab3190c6aad07b7b6b1a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -3763,31 +3729,26 @@ Date:   Mon Feb 27 12:54:23 2012 +0000
     Drop the 'test-' prefix: it's the conformance test suite, we know it's
     full of tests.
 
- tests/conform/Makefile.am                  |  64 ++--
- tests/conform/test-animator.c              |  10 +-
- tests/conform/test-behaviours.c            |   2 +-
- tests/conform/test-binding-pool.c          |   4 +-
- tests/conform/test-cairo-texture.c         | 198 ++++++++++++
- tests/conform/test-clutter-cairo-texture.c | 198 ------------
- tests/conform/test-clutter-rectangle.c     |  56 ----
- tests/conform/test-clutter-text.c          | 504 -----------------------------
- tests/conform/test-clutter-texture.c       |  89 -----
- tests/conform/test-clutter-units.c         | 131 --------
- tests/conform/test-color.c                 |  20 +-
- tests/conform/test-conform-main.c          | 107 +++---
- tests/conform/test-group.c                 |   4 +-
- tests/conform/test-model.c                 |  24 +-
- tests/conform/test-paint-opacity.c         |  12 +-
- tests/conform/test-rectangle.c             |  56 ++++
- tests/conform/test-score.c                 |   2 +-
- tests/conform/test-script-parser.c         |  28 +-
- tests/conform/test-state.c                 |   4 +-
- tests/conform/test-text.c                  | 504 +++++++++++++++++++++++++++++
- tests/conform/test-texture-fbo.c           |   4 +-
- tests/conform/test-texture.c               |  89 +++++
- tests/conform/test-timeline.c              |   6 +-
- tests/conform/test-units.c                 | 131 ++++++++
- 24 files changed, 1122 insertions(+), 1125 deletions(-)
+ tests/conform/Makefile.am                          |  64 ++++++------
+ tests/conform/test-animator.c                      |  10 +-
+ tests/conform/test-behaviours.c                    |   2 +-
+ tests/conform/test-binding-pool.c                  |   4 +-
+ ...lutter-cairo-texture.c => test-cairo-texture.c} |   4 +-
+ tests/conform/test-color.c                         |  20 ++--
+ tests/conform/test-conform-main.c                  | 107 +++++++++++----------
+ tests/conform/test-group.c                         |   4 +-
+ tests/conform/test-model.c                         |  24 ++---
+ tests/conform/test-paint-opacity.c                 |  12 +--
+ .../{test-clutter-rectangle.c => test-rectangle.c} |   4 +-
+ tests/conform/test-score.c                         |   2 +-
+ tests/conform/test-script-parser.c                 |  28 +++---
+ tests/conform/test-state.c                         |   4 +-
+ tests/conform/{test-clutter-text.c => test-text.c} |   2 +-
+ tests/conform/test-texture-fbo.c                   |   4 +-
+ .../{test-clutter-texture.c => test-texture.c}     |   4 +-
+ tests/conform/test-timeline.c                      |   6 +-
+ .../conform/{test-clutter-units.c => test-units.c} |  12 +--
+ 19 files changed, 157 insertions(+), 160 deletions(-)
 
 commit e4c948b1502707630f15cb4ef12c6b73f3298a34
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -6024,7 +5985,7 @@ Date:   Thu Jan 26 10:29:50 2012 +0000
  1 file changed, 8 insertions(+), 8 deletions(-)
 
 commit fdf89a9e06859f38453196f97e7b5ea692113729
-Merge: 9206bd7 9dab334
+Merge: 9206bd762 9dab33401
 Author: Emmanuele Bassi <ebassi@gnome.org>
 Date:   Thu Jan 26 08:42:00 2012 +0000
 
@@ -7653,14 +7614,12 @@ Date:   Tue Dec 6 17:49:27 2011 +0000
     A ClutterActor with a background color set covers 99% of the use cases
     for a Rectangle.
 
- clutter/Makefile.am                    |   8 +-
- clutter/clutter-deprecated.h           |   1 +
- clutter/clutter-rectangle.c            | 553 --------------------------------
- clutter/clutter-rectangle.h            | 102 ------
- clutter/clutter.h                      |   1 -
- clutter/deprecated/clutter-rectangle.c | 558 +++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-rectangle.h | 116 +++++++
- 7 files changed, 679 insertions(+), 660 deletions(-)
+ clutter/Makefile.am                          |  8 ++++----
+ clutter/clutter-deprecated.h                 |  1 +
+ clutter/clutter.h                            |  1 -
+ clutter/{ => deprecated}/clutter-rectangle.c |  7 ++++++-
+ clutter/{ => deprecated}/clutter-rectangle.h | 14 ++++++++++++++
+ 5 files changed, 25 insertions(+), 6 deletions(-)
 
 commit 6237eb7892f9b14d4e42d7ac2262c0a42e5f8433
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -7675,12 +7634,11 @@ Date:   Tue Dec 6 17:33:44 2011 +0000
     wart that was never fixed during the 0.x cycles, and that we'll have to
     keep around until we can break API.
 
- clutter/Makefile.am                |   2 +-
- clutter/clutter-group.c            | 278 -----------------------------------
- clutter/clutter-group.h            |  12 +-
- clutter/deprecated/clutter-group.c | 289 +++++++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-group.h |  14 ++
- 5 files changed, 310 insertions(+), 285 deletions(-)
+ clutter/Makefile.am                      |  2 +-
+ clutter/clutter-group.h                  | 12 ++++++------
+ clutter/{ => deprecated}/clutter-group.c | 11 +++++++++++
+ clutter/deprecated/clutter-group.h       | 14 ++++++++++++++
+ 4 files changed, 32 insertions(+), 7 deletions(-)
 
 commit b4d269705ea18a0374c120c5b2172e0f4060d269
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -7692,14 +7650,12 @@ Date:   Tue Dec 6 17:18:23 2011 +0000
     proxied by the Box subclass; with the removal of the abstract bit on
     ClutterActor, we can safely deprecated ClutterBox.
 
- clutter/Makefile.am              |   4 +-
- clutter/clutter-box.c            | 703 -------------------------------------
- clutter/clutter-box.h            | 127 -------
- clutter/clutter-deprecated.h     |   1 +
- clutter/clutter.h                |   1 -
- clutter/deprecated/clutter-box.c | 732 +++++++++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-box.h | 142 ++++++++
- 7 files changed, 877 insertions(+), 833 deletions(-)
+ clutter/Makefile.am                    |  4 ++--
+ clutter/clutter-deprecated.h           |  1 +
+ clutter/clutter.h                      |  1 -
+ clutter/{ => deprecated}/clutter-box.c | 41 +++++++++++++++++++++++++++++-----
+ clutter/{ => deprecated}/clutter-box.h | 15 +++++++++++++
+ 5 files changed, 53 insertions(+), 9 deletions(-)
 
 commit a6df0b6a53ac7946acd758529403cebe64716d43
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -9632,7 +9588,7 @@ Date:   Fri Nov 18 13:39:06 2011 +0100
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit a69c4fdc59682579a05b157afa822f6fc9e7a336
-Merge: d3a9bf2 ebf12a8
+Merge: d3a9bf201 ebf12a8cd
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Thu Nov 17 22:17:01 2011 +0800
 
@@ -9682,7 +9638,7 @@ Date:   Wed Nov 16 13:59:11 2011 +0000
  2 files changed, 158 deletions(-)
 
 commit d3a9bf201b42f156d4743b8a194d0e03f41ff7ef
-Merge: 39c3ccf bf9339b
+Merge: 39c3ccfca bf9339b8f
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Wed Nov 16 09:15:16 2011 +0800
 
@@ -9931,7 +9887,7 @@ Date:   Tue Nov 15 15:19:09 2011 +0800
  2 files changed, 16 insertions(+), 16 deletions(-)
 
 commit 8d0c68347a4ee33bb77c7c21760b63f15db9cf26
-Merge: 96d4e52 b281f20
+Merge: 96d4e527e b281f2090
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Tue Nov 15 14:20:22 2011 +0800
 
@@ -9963,7 +9919,7 @@ Date:   Mon Nov 14 15:43:20 2011 +0000
  2 files changed, 8 insertions(+), 4 deletions(-)
 
 commit 96d4e527ea8bf0e7fd238ba6cafd578f86fea27f
-Merge: 2628ba7 e7720c4
+Merge: 2628ba70c e7720c415
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Mon Nov 14 22:57:50 2011 +0800
 
@@ -10013,7 +9969,7 @@ Date:   Mon Nov 14 11:45:14 2011 +0000
  3 files changed, 5 insertions(+), 4 deletions(-)
 
 commit f5d011cb67f06d35721c78f3e93389da7e550ebd
-Merge: bbe54aa 213e6e4
+Merge: bbe54aa2e 213e6e4a1
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Nov 14 11:07:54 2011 +0000
 
@@ -10102,7 +10058,7 @@ Date:   Mon Nov 14 12:49:52 2011 +0800
  2 files changed, 4 insertions(+), 6 deletions(-)
 
 commit 1b7249a2478b78a4242c766d85347e71c3a70ba4
-Merge: c52d06a 65a07db
+Merge: c52d06a5b 65a07db5c
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Mon Nov 14 11:40:49 2011 +0800
 
@@ -10691,14 +10647,13 @@ Date:   Fri Nov 4 17:44:55 2011 +0000
     ClutterBackend for the CEx100 platforms. This allows us to handle the
     CEx100-specific details in a much cleaner way.
 
- .gitignore                              |   2 +-
- clutter/Makefile.am                     |  11 +-
- clutter/cex100/clutter-backend-cex100.c | 264 ++++++++++++++++++++++++++++++++
- clutter/cex100/clutter-backend-cex100.h |  74 +++++++++
- clutter/cex100/clutter-cex100.h.in      |  68 ++++++++
- clutter/egl/clutter-cex100.h.in         |  91 -----------
- configure.ac                            | 134 ++++++++--------
- 7 files changed, 484 insertions(+), 160 deletions(-)
+ .gitignore                                  |   2 +-
+ clutter/Makefile.am                         |  11 +-
+ clutter/cex100/clutter-backend-cex100.c     | 264 ++++++++++++++++++++++++++++
+ clutter/cex100/clutter-backend-cex100.h     |  74 ++++++++
+ clutter/{egl => cex100}/clutter-cex100.h.in |  35 +---
+ configure.ac                                | 134 +++++++-------
+ 6 files changed, 422 insertions(+), 98 deletions(-)
 
 commit 5c9cafb411961fbd9117e86c6e8ca636f91fb158
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -11038,7 +10993,7 @@ Date:   Wed Nov 9 09:09:37 2011 +0000
  1 file changed, 2 insertions(+)
 
 commit 63dbcc245c0edc92c235374d7918b4a26c4d1158
-Merge: bf8f1af ba8d682
+Merge: bf8f1afb4 ba8d682c0
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Wed Nov 9 00:30:32 2011 +0800
 
@@ -11181,7 +11136,7 @@ Date:   Mon Nov 7 12:12:53 2011 +0800
  2 files changed, 3 insertions(+)
 
 commit bb9e452a36d7a4fe3ed2090c050d096c26aae988
-Merge: 61c3b93 e0bfdbf
+Merge: 61c3b9395 e0bfdbfeb
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Mon Nov 7 11:42:16 2011 +0800
 
@@ -11344,15 +11299,12 @@ Date:   Thu Nov 3 14:49:56 2011 +0000
     They are already in the deprecated/ directory, the suffix is redundant,
     and there is no chance of collision.
 
- clutter/Makefile.am                             |  6 +--
- clutter/clutter-deprecated.h                    |  6 +--
- clutter/deprecated/clutter-actor-deprecated.h   | 17 --------
- clutter/deprecated/clutter-actor.h              | 17 ++++++++
- clutter/deprecated/clutter-backend-deprecated.h | 36 -----------------
- clutter/deprecated/clutter-backend.h            | 36 +++++++++++++++++
- clutter/deprecated/clutter-main-deprecated.h    | 52 -------------------------
- clutter/deprecated/clutter-main.h               | 52 +++++++++++++++++++++++++
- 8 files changed, 111 insertions(+), 111 deletions(-)
+ clutter/Makefile.am                                                 | 6 +++---
+ clutter/clutter-deprecated.h                                        | 6 +++---
+ clutter/deprecated/{clutter-actor-deprecated.h => clutter-actor.h}  | 0
+ .../deprecated/{clutter-backend-deprecated.h => clutter-backend.h}  | 0
+ clutter/deprecated/{clutter-main-deprecated.h => clutter-main.h}    | 0
+ 5 files changed, 6 insertions(+), 6 deletions(-)
 
 commit 142cd0bf82b3e10acc19d237db8da440509e7715
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -11362,13 +11314,12 @@ Date:   Thu Nov 3 14:42:39 2011 +0000
     
     No reason to have it lingering in the main section.
 
- clutter/Makefile.am                  |    2 +-
- clutter/clutter-deprecated.h         |    3 +-
- clutter/clutter-keysyms-compat.h     | 2290 ---------------------------------
- clutter/clutter-keysyms-update.pl    |   17 +-
- clutter/clutter-keysyms.h            |   13 +-
- clutter/deprecated/clutter-keysyms.h | 2298 ++++++++++++++++++++++++++++++++++
- 6 files changed, 2315 insertions(+), 2308 deletions(-)
+ clutter/Makefile.am                                     |  2 +-
+ clutter/clutter-deprecated.h                            |  3 ++-
+ clutter/clutter-keysyms-update.pl                       | 17 ++++++-----------
+ clutter/clutter-keysyms.h                               | 13 ++++++++-----
+ .../clutter-keysyms.h}                                  | 14 +++++++++++---
+ 5 files changed, 28 insertions(+), 21 deletions(-)
 
 commit 983510fad4b7ca71cf57efb19c39116d6bfb79e3
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -11583,17 +11534,14 @@ Date:   Mon Oct 3 10:23:46 2011 +0100
     
     Including the clutter-cex100.h.in header.
 
- .gitignore                         |  2 +-
- clutter/Makefile.am                |  6 +--
- clutter/cogl/clutter-cex100.h.in   | 91 ------------------------------------
- clutter/cogl/clutter-egl-headers.h | 30 ------------
- clutter/cogl/clutter-egl.h         | 94 --------------------------------------
- clutter/egl/clutter-cex100.h       | 91 ------------------------------------
- clutter/egl/clutter-cex100.h.in    | 91 ++++++++++++++++++++++++++++++++++++
- clutter/egl/clutter-egl-headers.h  | 30 ++++++++++++
- clutter/egl/clutter-egl.h          | 94 ++++++++++++++++++++++++++++++++++++++
- configure.ac                       |  2 +-
- 10 files changed, 220 insertions(+), 311 deletions(-)
+ .gitignore                                  |  2 +-
+ clutter/Makefile.am                         |  6 +-
+ clutter/egl/clutter-cex100.h                | 91 -----------------------------
+ clutter/{cogl => egl}/clutter-cex100.h.in   |  0
+ clutter/{cogl => egl}/clutter-egl-headers.h |  0
+ clutter/{cogl => egl}/clutter-egl.h         |  0
+ configure.ac                                |  2 +-
+ 7 files changed, 5 insertions(+), 96 deletions(-)
 
 commit 4ee00b67b55d56c5c36bdf2978593532d540190a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -11603,10 +11551,9 @@ Date:   Mon Oct 3 10:17:56 2011 +0100
     
     Prepare for a full tslib device manager.
 
- clutter/Makefile.am                 |   2 +-
- clutter/egl/clutter-event-tslib.c   | 293 ------------------------------------
- clutter/tslib/clutter-event-tslib.c | 293 ++++++++++++++++++++++++++++++++++++
- 3 files changed, 294 insertions(+), 294 deletions(-)
+ clutter/Makefile.am                          | 2 +-
+ clutter/{egl => tslib}/clutter-event-tslib.c | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
 
 commit 6e9f474d90687df0e21cc374b6a7fafa5694a846
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -11778,32 +11725,28 @@ Date:   Sat Aug 27 00:16:12 2011 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=657434
 
- clutter/Makefile.am                       |  21 +-
- clutter/cogl/clutter-backend-cogl.c       | 349 +-----------------------------
- clutter/cogl/clutter-backend-cogl.h       |  41 ----
- clutter/cogl/clutter-event-tslib.c        | 293 -------------------------
- clutter/cogl/clutter-glx-texture-pixmap.c | 158 --------------
- clutter/cogl/clutter-glx-texture-pixmap.h |  92 --------
- clutter/cogl/clutter-glx.h                |  36 ---
- clutter/cogl/clutter-stage-cogl.c         | 167 +++++---------
- clutter/cogl/clutter-stage-cogl.h         |  20 --
- clutter/egl/clutter-backend-eglnative.c   | 262 ++++++++++++++++++++++
- clutter/egl/clutter-backend-eglnative.h   |  80 +++++++
- clutter/egl/clutter-cex100.h              |  91 ++++++++
- clutter/egl/clutter-event-tslib.c         | 293 +++++++++++++++++++++++++
- clutter/gdk/clutter-backend-gdk.c         | 180 +++++++++++----
- clutter/gdk/clutter-backend-gdk.h         |   5 +-
- clutter/gdk/clutter-stage-gdk.c           | 161 +++++++-------
- clutter/gdk/clutter-stage-gdk.h           |   9 +-
- clutter/x11/clutter-backend-x11.c         | 230 +++++++++++++++-----
- clutter/x11/clutter-backend-x11.h         |  12 +-
- clutter/x11/clutter-glx-texture-pixmap.c  | 158 ++++++++++++++
- clutter/x11/clutter-glx-texture-pixmap.h  |  92 ++++++++
- clutter/x11/clutter-glx.h                 |  36 +++
- clutter/x11/clutter-stage-x11.c           | 139 ++++++++----
- clutter/x11/clutter-stage-x11.h           |   9 +-
- configure.ac                              |  29 +--
- 25 files changed, 1573 insertions(+), 1390 deletions(-)
+ clutter/Makefile.am                                |  21 +-
+ clutter/cogl/clutter-backend-cogl.c                | 349 +--------------------
+ clutter/cogl/clutter-backend-cogl.h                |  41 ---
+ clutter/cogl/clutter-stage-cogl.c                  | 167 +++-------
+ clutter/cogl/clutter-stage-cogl.h                  |  20 --
+ clutter/egl/clutter-backend-eglnative.c            | 262 ++++++++++++++++
+ clutter/egl/clutter-backend-eglnative.h            |  80 +++++
+ clutter/egl/clutter-cex100.h                       |  91 ++++++
+ clutter/{cogl => egl}/clutter-event-tslib.c        |   4 +-
+ clutter/gdk/clutter-backend-gdk.c                  | 180 ++++++++---
+ clutter/gdk/clutter-backend-gdk.h                  |   5 +-
+ clutter/gdk/clutter-stage-gdk.c                    | 161 +++++-----
+ clutter/gdk/clutter-stage-gdk.h                    |   9 +-
+ clutter/x11/clutter-backend-x11.c                  | 230 ++++++++++----
+ clutter/x11/clutter-backend-x11.h                  |  12 +-
+ clutter/{cogl => x11}/clutter-glx-texture-pixmap.c |   0
+ clutter/{cogl => x11}/clutter-glx-texture-pixmap.h |   0
+ clutter/{cogl => x11}/clutter-glx.h                |   0
+ clutter/x11/clutter-stage-x11.c                    | 139 +++++---
+ clutter/x11/clutter-stage-x11.h                    |   9 +-
+ configure.ac                                       |  29 +-
+ 21 files changed, 996 insertions(+), 813 deletions(-)
 
 commit 610a9c17bacfe3106d59d3c450be6a07cd26490a
 Author: Giovanni Campagna <gcampagna@src.gnome.org>
@@ -12070,7 +12013,7 @@ Date:   Sun Oct 30 17:04:55 2011 +0200
  1 file changed, 2227 insertions(+)
 
 commit 0406e235bf2f1d26b0f0cca19905a1ecc7e3828b
-Merge: 7c6038d 81a8286
+Merge: 7c6038d77 81a82867e
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Wed Oct 26 12:55:05 2011 +0800
 
@@ -12265,26 +12208,20 @@ Date:   Thu Oct 20 16:35:38 2011 +0800
     Add a -clutter suffix for their project names to avoid clashes with the
     COGL test executables
 
- build/win32/vs10/Makefile.am                       |  16 +-
- build/win32/vs10/clutter.sln                       |   4 +-
- build/win32/vs10/install.vcxproj                   |   4 +-
- .../test-conformance-clutter.vcxproj.filtersin     |  12 ++
- .../win32/vs10/test-conformance-clutter.vcxprojin  | 168 ++++++++++++++++++++
- .../win32/vs10/test-conformance.vcxproj.filtersin  |  12 --
- build/win32/vs10/test-conformance.vcxprojin        | 168 --------------------
- .../test-interactive-clutter.vcxproj.filtersin     |  12 ++
- .../win32/vs10/test-interactive-clutter.vcxprojin  | 172 +++++++++++++++++++++
- .../win32/vs10/test-interactive.vcxproj.filtersin  |  12 --
- build/win32/vs10/test-interactive.vcxprojin        | 172 ---------------------
- build/win32/vs9/Makefile.am                        |   8 +-
- build/win32/vs9/clutter.sln                        |   4 +-
- build/win32/vs9/test-conformance-clutter.vcprojin  | 165 ++++++++++++++++++++
- build/win32/vs9/test-conformance.vcprojin          | 165 --------------------
- build/win32/vs9/test-interactive-clutter.vcprojin  | 169 ++++++++++++++++++++
- build/win32/vs9/test-interactive.vcprojin          | 169 --------------------
- tests/conform/Makefile.am                          |  20 +--
- tests/interactive/Makefile.am                      |  20 +--
- 19 files changed, 736 insertions(+), 736 deletions(-)
+ build/win32/vs10/Makefile.am                         | 16 ++++++++--------
+ build/win32/vs10/clutter.sln                         |  4 ++--
+ build/win32/vs10/install.vcxproj                     |  4 ++--
+ ...in => test-conformance-clutter.vcxproj.filtersin} |  0
+ ....vcxprojin => test-conformance-clutter.vcxprojin} |  2 +-
+ ...in => test-interactive-clutter.vcxproj.filtersin} |  0
+ ....vcxprojin => test-interactive-clutter.vcxprojin} |  2 +-
+ build/win32/vs9/Makefile.am                          |  8 ++++----
+ build/win32/vs9/clutter.sln                          |  4 ++--
+ ...ce.vcprojin => test-conformance-clutter.vcprojin} |  4 ++--
+ ...ve.vcprojin => test-interactive-clutter.vcprojin} |  4 ++--
+ tests/conform/Makefile.am                            | 20 ++++++++++----------
+ tests/interactive/Makefile.am                        | 20 ++++++++++----------
+ 13 files changed, 44 insertions(+), 44 deletions(-)
 
 commit 3d74552684a6eb49bc67845bfb3839896395e66a
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
@@ -12299,7 +12236,7 @@ Date:   Thu Oct 20 15:42:55 2011 +0800
  1 file changed, 12 deletions(-)
 
 commit d6af2e54c805e88d2d6c65fca63d179ff208891b
-Merge: 5419c11 53a1d03
+Merge: 5419c11c9 53a1d0317
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Thu Oct 20 15:41:46 2011 +0800
 
@@ -12315,8 +12252,8 @@ Date:   Thu Oct 20 15:17:25 2011 +0800
     
     Conflicts:
     
-    	clutter/clutter-main.c
-    	clutter/clutter-main.h
+            clutter/clutter-main.c
+            clutter/clutter-main.h
 
  clutter/clutter-main.c                    | 31 ++++++++++++++++++++++++-------
  clutter/clutter-main.h                    |  4 ----
@@ -12422,7 +12359,7 @@ Date:   Wed Oct 19 13:42:18 2011 +0100
  2 files changed, 3 insertions(+), 4 deletions(-)
 
 commit e33a6219d8e4bf22725c9cf7ca5abee1936bd7fa
-Merge: 8b5d255 8083dd5
+Merge: 8b5d255a2 8083dd517
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Tue Oct 18 15:48:17 2011 +0800
 
@@ -12504,7 +12441,7 @@ Date:   Mon Oct 17 15:57:19 2011 +0800
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 commit b1780711f75fe9a36e95cc1d8599508d2d7d3352
-Merge: 0ee89f1 f75dfcf
+Merge: 0ee89f178 f75dfcfd8
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Mon Oct 17 15:52:57 2011 +0800
 
@@ -12886,7 +12823,7 @@ Date:   Wed Oct 12 16:17:27 2011 +0800
  1 file changed, 10 deletions(-)
 
 commit bd991e625b09bc8c238432511fa4d957be7ded1e
-Merge: 9aabf1b 29a1698
+Merge: 9aabf1bca 29a16980f
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Wed Oct 12 14:37:19 2011 +0800
 
@@ -13068,14 +13005,12 @@ Date:   Tue Oct 4 12:18:26 2011 +0100
 
     Move clutter-fixed.[ch] to the deprecated section
 
- clutter/Makefile.am                |   4 +-
- clutter/clutter-deprecated.h       |   1 +
- clutter/clutter-fixed.c            | 199 -------------------------------------
- clutter/clutter-fixed.h            |  99 ------------------
- clutter/clutter-timeline.h         |   1 -
- clutter/deprecated/clutter-fixed.c | 199 +++++++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-fixed.h |  99 ++++++++++++++++++
- 7 files changed, 301 insertions(+), 301 deletions(-)
+ clutter/Makefile.am                      | 4 ++--
+ clutter/clutter-deprecated.h             | 1 +
+ clutter/clutter-timeline.h               | 1 -
+ clutter/{ => deprecated}/clutter-fixed.c | 0
+ clutter/{ => deprecated}/clutter-fixed.h | 0
+ 5 files changed, 3 insertions(+), 3 deletions(-)
 
 commit 62d72b8690f76cba6fba9f816f163f9f12f5aa08
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -13083,14 +13018,12 @@ Date:   Tue Oct 4 11:58:44 2011 +0100
 
     Move ClutterBehaviour to the deprecated section
 
- clutter/Makefile.am                    |   4 +-
- clutter/clutter-behaviour.c            | 708 ---------------------------------
- clutter/clutter-behaviour.h            | 163 --------
- clutter/clutter-deprecated.h           |   1 +
- clutter/clutter.h                      |   1 -
- clutter/deprecated/clutter-behaviour.c | 708 +++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-behaviour.h | 163 ++++++++
- 7 files changed, 874 insertions(+), 874 deletions(-)
+ clutter/Makefile.am                          | 4 ++--
+ clutter/clutter-deprecated.h                 | 1 +
+ clutter/clutter.h                            | 1 -
+ clutter/{ => deprecated}/clutter-behaviour.c | 0
+ clutter/{ => deprecated}/clutter-behaviour.h | 0
+ 5 files changed, 3 insertions(+), 3 deletions(-)
 
 commit e2682012219c5af174489baa4759ac2b6e021dee
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -13131,34 +13064,22 @@ Date:   Tue Oct 4 11:32:36 2011 +0100
     Moving ClutterBehaviour itself will require some minor header surgery,
     so we'll do that next.
 
- clutter/Makefile.am                            |   40 +-
- clutter/clutter-behaviour-depth.c              |  305 -------
- clutter/clutter-behaviour-depth.h              |  101 ---
- clutter/clutter-behaviour-ellipse.c            | 1064 ------------------------
- clutter/clutter-behaviour-ellipse.h            |  147 ----
- clutter/clutter-behaviour-opacity.c            |  319 -------
- clutter/clutter-behaviour-opacity.h            |  116 ---
- clutter/clutter-behaviour-path.c               |  474 -----------
- clutter/clutter-behaviour-path.h               |  135 ---
- clutter/clutter-behaviour-rotate.c             |  693 ---------------
- clutter/clutter-behaviour-rotate.h             |  115 ---
- clutter/clutter-behaviour-scale.c              |  439 ----------
- clutter/clutter-behaviour-scale.h              |  106 ---
- clutter/clutter-deprecated.h                   |    6 +
- clutter/clutter.h                              |    6 -
- clutter/deprecated/clutter-behaviour-depth.c   |  305 +++++++
- clutter/deprecated/clutter-behaviour-depth.h   |  101 +++
- clutter/deprecated/clutter-behaviour-ellipse.c | 1064 ++++++++++++++++++++++++
- clutter/deprecated/clutter-behaviour-ellipse.h |  147 ++++
- clutter/deprecated/clutter-behaviour-opacity.c |  319 +++++++
- clutter/deprecated/clutter-behaviour-opacity.h |  116 +++
- clutter/deprecated/clutter-behaviour-path.c    |  474 +++++++++++
- clutter/deprecated/clutter-behaviour-path.h    |  135 +++
- clutter/deprecated/clutter-behaviour-rotate.c  |  693 +++++++++++++++
- clutter/deprecated/clutter-behaviour-rotate.h  |  115 +++
- clutter/deprecated/clutter-behaviour-scale.c   |  439 ++++++++++
- clutter/deprecated/clutter-behaviour-scale.h   |  106 +++
- 27 files changed, 4040 insertions(+), 4040 deletions(-)
+ clutter/Makefile.am                                | 40 +++++++++++-----------
+ clutter/clutter-deprecated.h                       |  6 ++++
+ clutter/clutter.h                                  |  6 ----
+ clutter/{ => deprecated}/clutter-behaviour-depth.c |  0
+ clutter/{ => deprecated}/clutter-behaviour-depth.h |  0
+ .../{ => deprecated}/clutter-behaviour-ellipse.c   |  0
+ .../{ => deprecated}/clutter-behaviour-ellipse.h   |  0
+ .../{ => deprecated}/clutter-behaviour-opacity.c   |  0
+ .../{ => deprecated}/clutter-behaviour-opacity.h   |  0
+ clutter/{ => deprecated}/clutter-behaviour-path.c  |  0
+ clutter/{ => deprecated}/clutter-behaviour-path.h  |  0
+ .../{ => deprecated}/clutter-behaviour-rotate.c    |  0
+ .../{ => deprecated}/clutter-behaviour-rotate.h    |  0
+ clutter/{ => deprecated}/clutter-behaviour-scale.c |  0
+ clutter/{ => deprecated}/clutter-behaviour-scale.h |  0
+ 15 files changed, 26 insertions(+), 26 deletions(-)
 
 commit 6c100e151376fdbbffbb332edd98bf9768c3a168
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -13179,14 +13100,12 @@ Date:   Tue Oct 4 11:12:55 2011 +0100
 
     Move ClutterShader to the deprecated section
 
- clutter/Makefile.am                 |   4 +-
- clutter/clutter-deprecated.h        |   1 +
- clutter/clutter-shader.c            | 950 ------------------------------------
- clutter/clutter-shader.h            | 149 ------
- clutter/clutter.h                   |   1 -
- clutter/deprecated/clutter-shader.c | 950 ++++++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-shader.h | 149 ++++++
- 7 files changed, 1102 insertions(+), 1102 deletions(-)
+ clutter/Makefile.am                       | 4 ++--
+ clutter/clutter-deprecated.h              | 1 +
+ clutter/clutter.h                         | 1 -
+ clutter/{ => deprecated}/clutter-shader.c | 0
+ clutter/{ => deprecated}/clutter-shader.h | 0
+ 5 files changed, 3 insertions(+), 3 deletions(-)
 
 commit 4b33a9c5f4cdf26492d24b7e989ba8bba022edef
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -13194,14 +13113,12 @@ Date:   Tue Oct 4 11:07:03 2011 +0100
 
     Move ClutterScore to the deprecated section
 
- clutter/Makefile.am                |    4 +-
- clutter/clutter-deprecated.h       |    1 +
- clutter/clutter-score.c            | 1146 ------------------------------------
- clutter/clutter-score.h            |  133 -----
- clutter/clutter.h                  |    7 +-
- clutter/deprecated/clutter-score.c | 1146 ++++++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-score.h |  133 +++++
- 7 files changed, 1286 insertions(+), 1284 deletions(-)
+ clutter/Makefile.am                      | 4 ++--
+ clutter/clutter-deprecated.h             | 1 +
+ clutter/clutter.h                        | 7 ++++---
+ clutter/{ => deprecated}/clutter-score.c | 0
+ clutter/{ => deprecated}/clutter-score.h | 0
+ 5 files changed, 7 insertions(+), 5 deletions(-)
 
 commit 4b748f433419462bd3daba18191f2fc173224a76
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -13209,18 +13126,14 @@ Date:   Tue Oct 4 10:57:28 2011 +0100
 
     Move timeout pool to the deprecated section
 
- clutter/Makefile.am                           |   8 +-
- clutter/clutter-deprecated.h                  |   1 +
- clutter/clutter-timeout-interval.c            | 140 --------
- clutter/clutter-timeout-interval.h            |  58 ---
- clutter/clutter-timeout-pool.c                | 497 --------------------------
- clutter/clutter-timeout-pool.h                |  69 ----
- clutter/clutter.h                             |   1 -
- clutter/deprecated/clutter-timeout-interval.c | 140 ++++++++
- clutter/deprecated/clutter-timeout-interval.h |  58 +++
- clutter/deprecated/clutter-timeout-pool.c     | 497 ++++++++++++++++++++++++++
- clutter/deprecated/clutter-timeout-pool.h     |  69 ++++
- 11 files changed, 769 insertions(+), 769 deletions(-)
+ clutter/Makefile.am                                 | 8 ++++----
+ clutter/clutter-deprecated.h                        | 1 +
+ clutter/clutter.h                                   | 1 -
+ clutter/{ => deprecated}/clutter-timeout-interval.c | 0
+ clutter/{ => deprecated}/clutter-timeout-interval.h | 0
+ clutter/{ => deprecated}/clutter-timeout-pool.c     | 0
+ clutter/{ => deprecated}/clutter-timeout-pool.h     | 0
+ 7 files changed, 5 insertions(+), 5 deletions(-)
 
 commit 50cda9fed1acddef53d29222b22d276b9fa80a48
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -13234,14 +13147,12 @@ Date:   Tue Oct 4 10:51:09 2011 +0100
     
     We start with an oldie: the frame source API.
 
- clutter/Makefile.am                       |  41 ++++-
- clutter/clutter-deprecated.h              | 207 +----------------------
- clutter/clutter-frame-source.c            | 263 ------------------------------
- clutter/clutter-frame-source.h            |  51 ------
- clutter/clutter.h                         |   1 -
- clutter/deprecated/clutter-frame-source.c | 263 ++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-frame-source.h |  51 ++++++
- 7 files changed, 355 insertions(+), 522 deletions(-)
+ clutter/Makefile.am                             |  41 ++++-
+ clutter/clutter-deprecated.h                    | 207 +-----------------------
+ clutter/clutter.h                               |   1 -
+ clutter/{ => deprecated}/clutter-frame-source.c |   0
+ clutter/{ => deprecated}/clutter-frame-source.h |   0
+ 5 files changed, 41 insertions(+), 208 deletions(-)
 
 commit 57f54173ecb4b618fb1b48a9c70aa482ce3efe49
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -13400,7 +13311,7 @@ Date:   Tue Oct 11 17:24:58 2011 +0800
  1 file changed, 1 insertion(+)
 
 commit 1cf712854007d5b376877de31c8a474b10a3bc8a
-Merge: a9771b5 58fec63
+Merge: a9771b596 58fec63b9
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Tue Oct 11 17:19:45 2011 +0800
 
@@ -13586,7 +13497,7 @@ Date:   Thu Oct 6 12:53:41 2011 +0800
  1 file changed, 3 insertions(+)
 
 commit b55656b6984a6a5f2dd9d12d6adac09efc9b8595
-Merge: f0dfd8a 938fcc6
+Merge: f0dfd8ab0 938fcc60f
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Thu Oct 6 12:04:30 2011 +0800
 
@@ -13762,14 +13673,14 @@ Date:   Thu Sep 29 14:01:03 2011 +0100
  1 file changed, 5 insertions(+), 1 deletion(-)
 
 commit f0dfd8ab07809ae54667e5dcea581f429d476d2f
-Merge: 9e822d9 7d51555
+Merge: 9e822d9ae 7d515553e
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Thu Sep 29 16:33:02 2011 +0800
 
     Merge branch 'master' into msvc-support-master
     
     Conflicts:
-    	tests/interactive/Makefile.am
+            tests/interactive/Makefile.am
 
 commit 7d515553e662210e8a17c3f6067f681bdbed1bbe
 Author: krishnababu k <kkrothap@redhat.ocm>
@@ -13853,10 +13764,9 @@ Date:   Tue Sep 27 17:50:51 2011 +0100
     
     The unit is supposed to be testing the slicing support in CoglTexture.
 
- tests/interactive/Makefile.am            |   2 +-
- tests/interactive/test-texture-slicing.c | 112 +++++++++++++++++++++++++++++++
- tests/interactive/test-textures.c        | 112 -------------------------------
- 3 files changed, 113 insertions(+), 113 deletions(-)
+ tests/interactive/Makefile.am                                 | 2 +-
+ tests/interactive/{test-textures.c => test-texture-slicing.c} | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
 
 commit d640c56cef4738b2c9b75b034b81438390538561
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -13940,7 +13850,7 @@ Date:   Wed Sep 28 14:24:57 2011 +0200
  3 files changed, 24 insertions(+), 2 deletions(-)
 
 commit 9e822d9ae4d65b0fae2843bc57119b3d879502d7
-Merge: ad7bb39 4f5ce6c
+Merge: ad7bb392c 4f5ce6c16
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Tue Sep 27 14:35:26 2011 +0800
 
@@ -14238,7 +14148,7 @@ Date:   Mon Sep 19 20:04:11 2011 +0100
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 commit ad7bb392c599c801106bf2d15ccdd4a07fe6efda
-Merge: 65e498e f315e76
+Merge: 65e498e3f f315e760d
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
 Date:   Mon Sep 19 14:24:04 2011 +0800
 

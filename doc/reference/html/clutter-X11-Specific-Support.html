@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>X11 Specific Support: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="prev" href="ClutterBackend.html" title="ClutterBackend">
 <link rel="next" href="ClutterX11TexturePixmap.html" title="ClutterX11TexturePixmap">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-X11-Specific-Support.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -267,7 +267,7 @@
 </div>
 <div class="refsect1">
 <a name="clutter-X11-Specific-Support.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -299,8 +299,8 @@ pertaining Clutter's initialization process.</p>
 <code class="function">g_option_context_parse()</code> yourself, you should also call
 <a class="link" href="clutter-X11-Specific-Support.html#clutter-x11-set-display" title="clutter_x11_set_display ()"><code class="function">clutter_x11_set_display()</code></a> before <code class="function">g_option_context_parse()</code>.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-set-display.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -342,7 +342,7 @@ XFixes extension.</p>
 clutter_x11_has_event_retrieval (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Queries the X11 backend to check if event collection has been disabled.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.4.5"></a><h4>Returns</h4>
+<a name="clutter-x11-has-event-retrieval.returns"></a><h4>Returns</h4>
 <p> TRUE if event retrival has been disabled. FALSE otherwise.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -354,8 +354,8 @@ clutter_x11_has_event_retrieval (<em class="parameter"><code><span class="type">
 clutter_x11_get_stage_from_window (<em class="parameter"><code><span class="type">Window</span> win</code></em>);</pre>
 <p>Gets the stage for a particular X window.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-get-stage-from-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -369,7 +369,7 @@ clutter_x11_get_stage_from_window (<em class="parameter"><code><span class="type
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.4.6.5.6"></a><h4>Returns</h4>
+<a name="clutter-x11-get-stage-from-window.returns"></a><h4>Returns</h4>
 <p> A <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>, or% NULL if a stage
 does not exist for the window. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -387,8 +387,8 @@ function).</p>
 <p>If <a class="link" href="clutter-X11-Specific-Support.html#clutter-x11-disable-event-retrieval" title="clutter_x11_disable_event_retrieval ()"><code class="function">clutter_x11_disable_event_retrieval()</code></a> has been called, you must
 let this function process events to update Clutter's internal state.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-handle-event.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -402,7 +402,7 @@ let this function process events to update Clutter's internal state.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.4.6.6.7"></a><h4>Returns</h4>
+<a name="clutter-x11-handle-event.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="clutter-X11-Specific-Support.html#ClutterX11FilterReturn" title="enum ClutterX11FilterReturn"><span class="type">ClutterX11FilterReturn</span></a>. <a class="link" href="clutter-X11-Specific-Support.html#CLUTTER-X11-FILTER-REMOVE:CAPS"><code class="literal">CLUTTER_X11_FILTER_REMOVE</code></a>
 indicates that Clutter has internally handled the event and the
 caller should do no further processing. <a class="link" href="clutter-X11-Specific-Support.html#CLUTTER-X11-FILTER-CONTINUE:CAPS"><code class="literal">CLUTTER_X11_FILTER_CONTINUE</code></a>
@@ -420,7 +420,7 @@ occur.</p>
 clutter_x11_get_default_display (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Retrieves the pointer to the default display.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.7.5"></a><h4>Returns</h4>
+<a name="clutter-x11-get-default-display.returns"></a><h4>Returns</h4>
 <p> the default display. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -433,7 +433,7 @@ clutter_x11_get_default_display (<em class="parameter"><code><span class="type">
 clutter_x11_get_default_screen (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Gets the number of the default X Screen object.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.8.5"></a><h4>Returns</h4>
+<a name="clutter-x11-get-default-screen.returns"></a><h4>Returns</h4>
 <p> the number of the default screen</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -446,7 +446,7 @@ clutter_x11_get_root_window (<em class="parameter"><code><span class="type">void
 <p>Retrieves the root window.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.4.6.9.6"></a><h4>Returns</h4>
+<a name="clutter-x11-get-root-window.returns"></a><h4>Returns</h4>
 <p> the id of the root window</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -468,8 +468,8 @@ along the lines of <code class="function">clutter_backend_x11_get_foreign_visual
 <code class="function">clutter_stage_x11_get_foreign_visual()</code></p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.4.6.10.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-get-stage-visual.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -483,7 +483,7 @@ along the lines of <code class="function">clutter_backend_x11_get_foreign_visual
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.4.6.10.10"></a><h4>Returns</h4>
+<a name="clutter-x11-get-stage-visual.returns"></a><h4>Returns</h4>
 <p> An XVisualInfo suitable for creating a
 foreign stage. Use <code class="function">XFree()</code> to free the returned value instead. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -498,8 +498,8 @@ clutter_x11_get_stage_window (<em class="parameter"><code><a class="link" href="
 <p>Gets the stages X Window.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.4.6.11.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-get-stage-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -513,7 +513,7 @@ clutter_x11_get_stage_window (<em class="parameter"><code><a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.4.6.11.7"></a><h4>Returns</h4>
+<a name="clutter-x11-get-stage-window.returns"></a><h4>Returns</h4>
 <p> An XID for the stage window.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -526,8 +526,8 @@ clutter_x11_set_stage_foreign (<em class="parameter"><code><a class="link" href=
                                <em class="parameter"><code><span class="type">Window</span> xwindow</code></em>);</pre>
 <p>Target the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> to use an existing external X Window</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-set-stage-foreign.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -548,7 +548,7 @@ clutter_x11_set_stage_foreign (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.4.6.12.6"></a><h4>Returns</h4>
+<a name="clutter-x11-set-stage-foreign.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if foreign window is valid</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -568,7 +568,7 @@ clutter_x11_trap_x_errors (<em class="parameter"><code><span class="type">void</
 clutter_x11_untrap_x_errors (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Removes the X error trap and returns the current status.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.14.5"></a><h4>Returns</h4>
+<a name="clutter-x11-untrap-x-errors.returns"></a><h4>Returns</h4>
 <p> the trapped error code, or 0 for success</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -581,7 +581,7 @@ clutter_x11_has_composite_extension (<em class="parameter"><code><span class="ty
 <p>Retrieves whether Clutter is running on an X11 server with the
 XComposite extension</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.15.5"></a><h4>Returns</h4>
+<a name="clutter-x11-has-composite-extension.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the XComposite extension is available</p>
 </div>
 </div>
@@ -596,7 +596,7 @@ by <a class="link" href="clutter-Events.html#clutter-get-current-event-time" tit
 or throttle events.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.4.6.16.6"></a><h4>Returns</h4>
+<a name="clutter-x11-get-current-event-time.returns"></a><h4>Returns</h4>
 <p> a timestamp, in milliseconds</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -615,8 +615,8 @@ requesting a RGB visual instead.</p>
 <p>This function can only be called once, and before <a class="link" href="clutter-General.html#clutter-init" title="clutter_init ()"><code class="function">clutter_init()</code></a> is
 called.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.17.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-set-use-argb-visual.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -638,7 +638,7 @@ called.</p>
 clutter_x11_get_use_argb_visual (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Retrieves whether the Clutter X11 backend is using ARGB visuals by default</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.18.5"></a><h4>Returns</h4>
+<a name="clutter-x11-get-use-argb-visual.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if ARGB visuals are queried by default</p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -651,7 +651,7 @@ clutter_x11_get_visual_info (<em class="parameter"><code><span class="type">void
 <p>Retrieves the <code class="literal">XVisualInfo</code> used by the Clutter X11 backend.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.4.6.19.6"></a><h4>Returns</h4>
+<a name="clutter-x11-get-visual-info.returns"></a><h4>Returns</h4>
 <p> a <code class="literal">XVisualInfo</code>, or <code class="literal">None</code>.
 The returned value should be freed using <code class="literal"><code class="function">XFree()</code></code> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -666,7 +666,7 @@ clutter_x11_get_use_stereo_stage (<em class="parameter"><code><span class="type"
 <p>Retrieves whether the Clutter X11 backend will create stereo
 stages if possible.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.20.5"></a><h4>Returns</h4>
+<a name="clutter-x11-get-use-stereo-stage.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if stereo stages are used if possible</p>
 </div>
 <p class="since">Since: <a class="link" href="ix18.html#api-index-1.22">1.22</a></p>
@@ -690,8 +690,8 @@ multiple times with different perspective transformations and thus
 appear in 3D, it simply enables individual ClutterActors to paint
 different images for the left and and right eye.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-set-use-stereo-stage.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -715,8 +715,8 @@ different images for the left and and right eye.</p>
                          <em class="parameter"><code><span class="type">gpointer</span> data</code></em>);</pre>
 <p>Filter function for X11 native events.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.22.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterX11FilterFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -742,7 +742,7 @@ different images for the left and and right eye.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.4.6.22.6"></a><h4>Returns</h4>
+<a name="ClutterX11FilterFunc.returns"></a><h4>Returns</h4>
 <p> the result of the filtering</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -756,8 +756,8 @@ clutter_x11_add_filter (<em class="parameter"><code><a class="link" href="clutte
 <p>Adds an event filter function.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.4.6.23.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-add-filter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -788,8 +788,8 @@ clutter_x11_remove_filter (<em class="parameter"><code><a class="link" href="clu
 <p>Removes the given filter function.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.4.6.24.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-remove-filter.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -822,7 +822,7 @@ clutter_x11_get_input_devices (<em class="parameter"><code><span class="type">vo
 </div>
 <p>Retrieves a pointer to the list of input devices</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.25.7"></a><h4>Returns</h4>
+<a name="clutter-x11-get-input-devices.returns"></a><h4>Returns</h4>
 <p> a
 pointer to the internal list of input devices; the returned list is
 owned by Clutter and should not be modified or freed. </p>
@@ -837,7 +837,7 @@ owned by Clutter and should not be modified or freed. </p>
 clutter_x11_has_xinput (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Gets whether Clutter has XInput support.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.26.5"></a><h4>Returns</h4>
+<a name="clutter-x11-has-xinput.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if Clutter was compiled with XInput support
 and XInput support is available at run time.</p>
 </div>
@@ -871,8 +871,8 @@ clutter_x11_event_get_key_group (<em class="parameter"><code>const <a class="lin
 <p>Retrieves the group for the modifiers set in <em class="parameter"><code>event</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.8.4.6.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-event-get-key-group.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -886,7 +886,7 @@ clutter_x11_event_get_key_group (<em class="parameter"><code>const <a class="lin
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.4.6.28.6"></a><h4>Returns</h4>
+<a name="clutter-x11-event-get-key-group.returns"></a><h4>Returns</h4>
 <p> the group id</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -899,8 +899,8 @@ clutter_x11_event_sequence_get_touch_detail
                                (<em class="parameter"><code>const <a class="link" href="clutter-Events.html#ClutterEventSequence"><span class="type">ClutterEventSequence</span></a> *sequence</code></em>);</pre>
 <p>Retrieves the touch detail froma <a class="link" href="clutter-Events.html#ClutterEventSequence"><span class="type">ClutterEventSequence</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.8.4.6.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-event-sequence-get-touch-detail.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -914,7 +914,7 @@ clutter_x11_event_sequence_get_touch_detail
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.4.6.29.6"></a><h4>Returns</h4>
+<a name="clutter-x11-event-sequence-get-touch-detail.returns"></a><h4>Returns</h4>
 <p> the touch detail</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -926,8 +926,8 @@ clutter_x11_event_sequence_get_touch_detail
 <a name="ClutterX11FilterReturn"></a><h3>enum ClutterX11FilterReturn</h3>
 <p>Return values for the <a class="link" href="clutter-X11-Specific-Support.html#ClutterX11FilterFunc" title="ClutterX11FilterFunc ()"><span class="type">ClutterX11FilterFunc</span></a> function.</p>
 <div class="refsect3">
-<a name="id-1.8.4.7.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterX11FilterReturn.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -965,6 +965,6 @@ clutter_x11_event_sequence_get_touch_detail
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

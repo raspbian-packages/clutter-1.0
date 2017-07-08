@@ -1,4 +1,4 @@
-README for Clutter 1.26.0
+README for Clutter 1.26.2
 ===============================================================================
 
 Clutter is an open source software library for creating fast, compelling,
@@ -31,7 +31,7 @@ When building the Wayland backend, Clutter also depends on:
 
 When building the GDK backend, Clutter also depends on:
 
-  • gdk-3.0 > 3.3.18
+  • gdk-3.0 > 3.22.6
 
 When building the CEx100 backend, Clutter also depends on:
 

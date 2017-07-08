@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterDragAction: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch04.html" title="Actions">
 <link rel="prev" href="ClutterClickAction.html" title="ClutterClickAction">
 <link rel="next" href="ClutterDropAction.html" title="ClutterDropAction">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterDragAction.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -135,7 +135,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterDragAction.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -179,7 +179,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterDragAction.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -211,7 +211,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterDragAction.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -289,7 +289,7 @@ animated to the final drop coordinates.</p>
 clutter_drag_action_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Creates a new <a class="link" href="ClutterDragAction.html" title="ClutterDragAction"><span class="type">ClutterDragAction</span></a> instance</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.2.5"></a><h4>Returns</h4>
+<a name="clutter-drag-action-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterDragAction.html" title="ClutterDragAction"><span class="type">ClutterDragAction</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -311,8 +311,8 @@ cleared by the pointer before <em class="parameter"><code>action</code></em>
 drag threshold stored in the <a class="link" href="ClutterSettings.html#ClutterSettings--dnd-drag-threshold" title="The “dnd-drag-threshold” property"><span class="type">“dnd-drag-threshold”</span></a>
 property of <a class="link" href="ClutterSettings.html" title="ClutterSettings"><span class="type">ClutterSettings</span></a> will be used.</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-set-drag-threshold.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -355,8 +355,8 @@ clutter_drag_action_get_drag_threshold
 this function will return the default drag threshold value as stored
 by the <a class="link" href="ClutterSettings.html#ClutterSettings--dnd-drag-threshold" title="The “dnd-drag-threshold” property"><span class="type">“dnd-drag-threshold”</span></a> property of <a class="link" href="ClutterSettings.html" title="ClutterSettings"><span class="type">ClutterSettings</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-get-drag-threshold.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -393,8 +393,8 @@ clutter_drag_action_set_drag_handle (<em class="parameter"><code><a class="link"
                                      <em class="parameter"><code><a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> *handle</code></em>);</pre>
 <p>Sets the actor to be used as the drag handle.</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-set-drag-handle.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -423,8 +423,8 @@ clutter_drag_action_set_drag_handle (<em class="parameter"><code><a class="link"
 clutter_drag_action_get_drag_handle (<em class="parameter"><code><a class="link" href="ClutterDragAction.html" title="ClutterDragAction"><span class="type">ClutterDragAction</span></a> *action</code></em>);</pre>
 <p>Retrieves the drag handle set by <a class="link" href="ClutterDragAction.html#clutter-drag-action-set-drag-handle" title="clutter_drag_action_set_drag_handle ()"><code class="function">clutter_drag_action_set_drag_handle()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-get-drag-handle.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -438,7 +438,7 @@ clutter_drag_action_get_drag_handle (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.6.6"></a><h4>Returns</h4>
+<a name="clutter-drag-action-get-drag-handle.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, used as the drag
 handle, or <code class="literal">NULL</code> if none was set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -453,8 +453,8 @@ clutter_drag_action_set_drag_axis (<em class="parameter"><code><a class="link" h
                                    <em class="parameter"><code><a class="link" href="ClutterDragAction.html#ClutterDragAxis" title="enum ClutterDragAxis"><span class="type">ClutterDragAxis</span></a> axis</code></em>);</pre>
 <p>Restricts the dragging action to a specific axis</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-set-drag-axis.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -483,8 +483,8 @@ clutter_drag_action_set_drag_axis (<em class="parameter"><code><a class="link" h
 clutter_drag_action_get_drag_axis (<em class="parameter"><code><a class="link" href="ClutterDragAction.html" title="ClutterDragAction"><span class="type">ClutterDragAction</span></a> *action</code></em>);</pre>
 <p>Retrieves the axis constraint set by <a class="link" href="ClutterDragAction.html#clutter-drag-action-set-drag-axis" title="clutter_drag_action_set_drag_axis ()"><code class="function">clutter_drag_action_set_drag_axis()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-get-drag-axis.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -498,7 +498,7 @@ clutter_drag_action_get_drag_axis (<em class="parameter"><code><a class="link" h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.8.6"></a><h4>Returns</h4>
+<a name="clutter-drag-action-get-drag-axis.returns"></a><h4>Returns</h4>
 <p> the axis constraint</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -518,8 +518,8 @@ in parent's coordinates.
 If <em class="parameter"><code>drag_area</code></em>
  is <code class="literal">NULL</code>, the actor is not constrained.</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-set-drag-area.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -551,8 +551,8 @@ clutter_drag_action_get_drag_area (<em class="parameter"><code><a class="link" h
 is a <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> that constrains the actor movements,
 in parents coordinates.</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-get-drag-area.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -573,7 +573,7 @@ in parents coordinates.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.10.6"></a><h4>Returns</h4>
+<a name="clutter-drag-action-get-drag-area.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the actor is actually constrained (and thus
 <em class="parameter"><code>drag_area</code></em>
 is valid), <code class="literal">FALSE</code> otherwise</p>
@@ -589,8 +589,8 @@ clutter_drag_action_get_press_coords (<em class="parameter"><code><a class="link
 <p>Retrieves the coordinates, in stage space, of the press event
 that started the dragging</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-get-press-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -627,8 +627,8 @@ clutter_drag_action_get_motion_coords (<em class="parameter"><code><a class="lin
 <p>Retrieves the coordinates, in stage space, of the latest motion
 event during the dragging</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.9.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-drag-action-get-motion-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -694,8 +694,8 @@ private data and should be accessed using the provided API</p>
 <p>The <a class="link" href="ClutterDragAction.html#ClutterDragActionClass" title="struct ClutterDragActionClass"><span class="type">ClutterDragActionClass</span></a> structure contains
 only private data</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.10.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDragActionClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -733,8 +733,8 @@ only private data</p>
 <p>The axis of the constraint that should be applied on the
 dragging action</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.10.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDragAxis.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -868,8 +868,8 @@ starts the dragging</p>
 <a class="link" href="ClutterDragAction.html#ClutterDragAction--x-drag-threshold" title="The “x-drag-threshold” property"><span class="type">“x-drag-threshold”</span></a> and
 <a class="link" href="ClutterDragAction.html#ClutterDragAction--y-drag-threshold" title="The “y-drag-threshold” property"><span class="type">“y-drag-threshold”</span></a> properties</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.12.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDragAction-drag-begin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -927,8 +927,8 @@ when the pointer button's is released</p>
 <p>This signal is emitted if and only if the <a class="link" href="ClutterDragAction.html#ClutterDragAction-drag-begin" title="The “drag-begin” signal"><span class="type">“drag-begin”</span></a>
 signal has been emitted first</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.12.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDragAction-drag-end.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -997,8 +997,8 @@ want to override the default behaviour, you can connect to the
 <a class="link" href="ClutterDragAction.html#ClutterDragAction-drag-progress" title="The “drag-progress” signal"><span class="type">“drag-progress”</span></a> signal and return <code class="literal">FALSE</code> from the
 handler.</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.12.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDragAction-drag-motion.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1059,8 +1059,8 @@ stage coordinates of the latest motion event you can use
 <p>The default handler will emit <a class="link" href="ClutterDragAction.html#ClutterDragAction-drag-motion" title="The “drag-motion” signal"><span class="type">“drag-motion”</span></a>,
 if <a class="link" href="ClutterDragAction.html#ClutterDragAction-drag-progress" title="The “drag-progress” signal"><span class="type">“drag-progress”</span></a> emission returns <code class="literal">TRUE</code>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.3.12.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterDragAction-drag-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1100,7 +1100,7 @@ as of the latest motion event</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.3.12.5.8"></a><h4>Returns</h4>
+<a name="ClutterDragAction-drag-progress.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the drag should continue, and <code class="literal">FALSE</code>
 if it should be stopped.</p>
 </div>
@@ -1110,6 +1110,6 @@ if it should be stopped.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

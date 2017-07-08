@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterGestureAction: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch04.html" title="Actions">
 <link rel="prev" href="ClutterDropAction.html" title="ClutterDropAction">
 <link rel="next" href="ClutterPanAction.html" title="ClutterPanAction">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterGestureAction.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -182,7 +182,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterGestureAction.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -214,7 +214,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterGestureAction.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -246,7 +246,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterGestureAction.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -353,7 +353,7 @@ instead.</p>
 clutter_gesture_action_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Creates a new <a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a> instance.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.2.5"></a><h4>Returns</h4>
+<a name="clutter-gesture-action-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix11.html#api-index-1.8">1.8</a></p>
@@ -367,8 +367,8 @@ clutter_gesture_action_get_last_event (<em class="parameter"><code><a class="lin
 <p>Retrieves a reference to the last <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a> for a touch point. Call
 <a class="link" href="clutter-Events.html#clutter-event-copy" title="clutter_event_copy ()"><code class="function">clutter_event_copy()</code></a> if you need to store the reference somewhere.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-last-event.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -389,7 +389,7 @@ clutter_gesture_action_get_last_event (<em class="parameter"><code><a class="lin
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.3.6"></a><h4>Returns</h4>
+<a name="clutter-gesture-action-get-last-event.returns"></a><h4>Returns</h4>
 <p> the last <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a> for a touch point. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -407,8 +407,8 @@ clutter_gesture_action_get_press_coords
 <p>Retrieves the coordinates, in stage space, of the press event
 that started the dragging for a specific touch point.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-press-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -455,8 +455,8 @@ clutter_gesture_action_get_motion_coords
 <p>Retrieves the coordinates, in stage space, of the latest motion
 event during the dragging.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-motion-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -503,8 +503,8 @@ clutter_gesture_action_get_motion_delta
 <p>Retrieves the incremental delta since the last motion event
 during the dragging.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-motion-delta.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -538,7 +538,7 @@ component of the incremental motion delta. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.6.6"></a><h4>Returns</h4>
+<a name="clutter-gesture-action-get-motion-delta.returns"></a><h4>Returns</h4>
 <p> the distance since last motion event</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -555,8 +555,8 @@ clutter_gesture_action_get_release_coords
 <p>Retrieves the coordinates, in stage space, where the touch point was
 last released.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-release-coords.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -602,8 +602,8 @@ clutter_gesture_action_get_velocity (<em class="parameter"><code><a class="link"
 <p>Retrieves the velocity, in stage pixels per millisecond, of the
 latest motion event during the dragging.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-velocity.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -646,8 +646,8 @@ clutter_gesture_action_get_n_touch_points
                                (<em class="parameter"><code><a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a> *action</code></em>);</pre>
 <p>Retrieves the number of requested points to trigger the gesture.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-n-touch-points.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -661,7 +661,7 @@ clutter_gesture_action_get_n_touch_points
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.9.6"></a><h4>Returns</h4>
+<a name="clutter-gesture-action-get-n-touch-points.returns"></a><h4>Returns</h4>
 <p> the number of points to trigger the gesture.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -675,8 +675,8 @@ clutter_gesture_action_set_n_touch_points
                                 <em class="parameter"><code><span class="type">gint</span> nb_points</code></em>);</pre>
 <p>Sets the number of points needed to trigger the gesture.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-set-n-touch-points.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -706,8 +706,8 @@ clutter_gesture_action_get_n_current_points
                                (<em class="parameter"><code><a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a> *action</code></em>);</pre>
 <p>Retrieves the number of points currently active.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-n-current-points.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -721,7 +721,7 @@ clutter_gesture_action_get_n_current_points
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.11.6"></a><h4>Returns</h4>
+<a name="clutter-gesture-action-get-n-current-points.returns"></a><h4>Returns</h4>
 <p> the number of points currently active.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -734,8 +734,8 @@ clutter_gesture_action_get_sequence (<em class="parameter"><code><a class="link"
                                      <em class="parameter"><code><span class="type">guint</span> point</code></em>);</pre>
 <p>Retrieves the <a class="link" href="clutter-Events.html#ClutterEventSequence"><span class="type">ClutterEventSequence</span></a> of a touch point.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-sequence.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -756,7 +756,7 @@ clutter_gesture_action_get_sequence (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.12.6"></a><h4>Returns</h4>
+<a name="clutter-gesture-action-get-sequence.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="clutter-Events.html#ClutterEventSequence"><span class="type">ClutterEventSequence</span></a> of a touch point. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -770,8 +770,8 @@ clutter_gesture_action_get_device (<em class="parameter"><code><a class="link" h
                                    <em class="parameter"><code><span class="type">guint</span> point</code></em>);</pre>
 <p>Retrieves the <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> of a touch point.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -793,7 +793,7 @@ point received by the action</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.13.6"></a><h4>Returns</h4>
+<a name="clutter-gesture-action-get-device.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> of a touch point. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -811,8 +811,8 @@ clutter_gesture_action_get_threshold_trigger_distance
 ,
 as set using <a class="link" href="ClutterGestureAction.html#clutter-gesture-action-set-threshold-trigger-distance" title="clutter_gesture_action_set_threshold_trigger_distance ()"><code class="function">clutter_gesture_action_set_threshold_trigger_distance()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-threshold-trigger-distance.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -851,8 +851,8 @@ clutter_gesture_action_set_threshold_trigger_distance
 <p>This function should only be called by sub-classes of
 <a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a> during their construction phase.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.15.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-set-threshold-trigger-distance.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -890,8 +890,8 @@ clutter_gesture_action_set_threshold_trigger_edge
 <p>This function should only be called by sub-classes of
 <a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a> during their construction phase.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-set-threshold-trigger-edge.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -923,8 +923,8 @@ clutter_gesture_action_get_threshold_trigger_edge
 , as set using
 <a class="link" href="ClutterGestureAction.html#clutter-gesture-action-set-threshold-trigger-edge" title="clutter_gesture_action_set_threshold_trigger_edge ()"><code class="function">clutter_gesture_action_set_threshold_trigger_edge()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-get-threshold-trigger-edge.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -938,7 +938,7 @@ clutter_gesture_action_get_threshold_trigger_edge
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.17.6"></a><h4>Returns</h4>
+<a name="clutter-gesture-action-get-threshold-trigger-edge.returns"></a><h4>Returns</h4>
 <p> the edge trigger</p>
 </div>
 <p class="since">Since: <a class="link" href="ix17.html#api-index-1.20">1.20</a></p>
@@ -950,8 +950,8 @@ clutter_gesture_action_get_threshold_trigger_edge
 clutter_gesture_action_cancel (<em class="parameter"><code><a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a> *action</code></em>);</pre>
 <p>Cancel a <a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a> before it begins</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.9.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gesture-action-cancel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -995,8 +995,8 @@ only private data and should be accessed using the provided API</p>
 <p>The <span class="type">ClutterGestureClass</span> structure contains only
 private data.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.10.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterGestureActionClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -1040,8 +1040,8 @@ private data.</p>
 <p>Enum passed to the <a class="link" href="ClutterGestureAction.html#clutter-gesture-action-set-threshold-trigger-edge" title="clutter_gesture_action_set_threshold_trigger_edge ()"><code class="function">clutter_gesture_action_set_threshold_trigger_edge()</code></a>
 function.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.10.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterGestureTriggerEdge.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1141,8 +1141,8 @@ user_function (<a class="link" href="ClutterGestureAction.html" title="ClutterGe
 <p>The ::gesture_begin signal is emitted when the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> to which
 a <a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction"><span class="type">ClutterGestureAction</span></a> has been applied starts receiving a gesture.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.12.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterGestureAction-gesture-begin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1169,7 +1169,7 @@ a <a class="link" href="ClutterGestureAction.html" title="ClutterGestureAction">
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.12.2.6"></a><h4>Returns</h4>
+<a name="ClutterGestureAction-gesture-begin.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the gesture should start, and <code class="literal">FALSE</code> if
 the gesture should be ignored.</p>
 </div>
@@ -1188,8 +1188,8 @@ cancelled from the <a class="link" href="ClutterGestureAction.html#ClutterGestur
 <p>This signal is emitted if and only if the <a class="link" href="ClutterGestureAction.html#ClutterGestureAction-gesture-begin" title="The “gesture-begin” signal"><span class="type">“gesture-begin”</span></a>
 signal has been emitted first.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.12.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterGestureAction-gesture-cancel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1230,8 +1230,8 @@ when the pointer's button is released</p>
 <p>This signal is emitted if and only if the <a class="link" href="ClutterGestureAction.html#ClutterGestureAction-gesture-begin" title="The “gesture-begin” signal"><span class="type">“gesture-begin”</span></a>
 signal has been emitted first.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.12.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterGestureAction-gesture-end.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1270,8 +1270,8 @@ user_function (<a class="link" href="ClutterGestureAction.html" title="ClutterGe
 <p>The ::gesture-progress signal is emitted for each motion event after
 the <a class="link" href="ClutterGestureAction.html#ClutterGestureAction-gesture-begin" title="The “gesture-begin” signal"><span class="type">“gesture-begin”</span></a> signal has been emitted.</p>
 <div class="refsect3">
-<a name="id-1.5.5.5.12.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterGestureAction-gesture-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1298,7 +1298,7 @@ the <a class="link" href="ClutterGestureAction.html#ClutterGestureAction-gesture
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.5.5.12.5.6"></a><h4>Returns</h4>
+<a name="ClutterGestureAction-gesture-progress.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the gesture should continue, and <code class="literal">FALSE</code> if
 the gesture should be cancelled.</p>
 </div>
@@ -1308,6 +1308,6 @@ the gesture should be cancelled.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

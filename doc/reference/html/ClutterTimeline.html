@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterTimeline: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch09.html" title="Base classes">
 <link rel="prev" href="ch09.html" title="Base classes">
 <link rel="next" href="clutter-Value-intervals.html" title="Value intervals">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterTimeline.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -368,7 +368,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTimeline.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -415,7 +415,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTimeline.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -457,7 +457,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTimeline.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -584,8 +584,8 @@ clutter_timeline_new (<em class="parameter"><code><span class="type">guint</span
 <p>Creates a new <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> with a duration of <em class="parameter"><code>msecs</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -599,7 +599,7 @@ clutter_timeline_new (<em class="parameter"><code><span class="type">guint</span
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.2.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> instance. Use
 <code class="function">g_object_unref()</code> when done using it</p>
 </div>
@@ -629,8 +629,8 @@ the original <em class="parameter"><code>timeline</code></em>
 <li class="listitem"><p><a class="link" href="ClutterTimeline.html#ClutterTimeline--direction" title="The “direction” property"><span class="type">“direction”</span></a></p></li>
 </ul></div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.3.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-clone.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -644,7 +644,7 @@ the original <em class="parameter"><code>timeline</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.3.10"></a><h4>Returns</h4>
+<a name="clutter-timeline-clone.returns"></a><h4>Returns</h4>
 <p> a new <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a>, cloned
 from <em class="parameter"><code>timeline</code></em>
 . </p>
@@ -661,8 +661,8 @@ clutter_timeline_set_duration (<em class="parameter"><code><a class="link" href=
 <p>Sets the duration of the timeline, in milliseconds. The speed
 of the timeline depends on the ClutterTimeline:fps setting.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -692,8 +692,8 @@ clutter_timeline_get_duration (<em class="parameter"><code><a class="link" href=
 <p>Retrieves the duration of a <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> in milliseconds.
 See <a class="link" href="ClutterTimeline.html#clutter-timeline-set-duration" title="clutter_timeline_set_duration ()"><code class="function">clutter_timeline_set_duration()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -707,7 +707,7 @@ See <a class="link" href="ClutterTimeline.html#clutter-timeline-set-duration" ti
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.5.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-duration.returns"></a><h4>Returns</h4>
 <p> the duration of the timeline, in milliseconds.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -726,8 +726,8 @@ clutter_timeline_set_repeat_count (<em class="parameter"><code><a class="link" h
  is -1, the timeline will always repeat until
 it's stopped.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-repeat-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -756,8 +756,8 @@ it's stopped.</p>
 clutter_timeline_get_repeat_count (<em class="parameter"><code><a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> *timeline</code></em>);</pre>
 <p>Retrieves the number set using <a class="link" href="ClutterTimeline.html#clutter-timeline-set-repeat-count" title="clutter_timeline_set_repeat_count ()"><code class="function">clutter_timeline_set_repeat_count()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-repeat-count.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -771,7 +771,7 @@ clutter_timeline_get_repeat_count (<em class="parameter"><code><a class="link" h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.7.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-repeat-count.returns"></a><h4>Returns</h4>
 <p> the number of repeats</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -785,8 +785,8 @@ clutter_timeline_set_delay (<em class="parameter"><code><a class="link" href="Cl
 <p>Sets the delay, in milliseconds, before <em class="parameter"><code>timeline</code></em>
  should start.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-delay.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -815,8 +815,8 @@ clutter_timeline_set_delay (<em class="parameter"><code><a class="link" href="Cl
 clutter_timeline_get_delay (<em class="parameter"><code><a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> *timeline</code></em>);</pre>
 <p>Retrieves the delay set using <a class="link" href="ClutterTimeline.html#clutter-timeline-set-delay" title="clutter_timeline_set_delay ()"><code class="function">clutter_timeline_set_delay()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-delay.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -830,7 +830,7 @@ clutter_timeline_get_delay (<em class="parameter"><code><a class="link" href="Cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.9.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-delay.returns"></a><h4>Returns</h4>
 <p> the delay in milliseconds.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -845,8 +845,8 @@ clutter_timeline_set_direction (<em class="parameter"><code><a class="link" href
 , either <a class="link" href="ClutterTimeline.html#CLUTTER-TIMELINE-FORWARD:CAPS"><code class="literal">CLUTTER_TIMELINE_FORWARD</code></a> or
 <a class="link" href="ClutterTimeline.html#CLUTTER-TIMELINE-BACKWARD:CAPS"><code class="literal">CLUTTER_TIMELINE_BACKWARD</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-direction.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -876,8 +876,8 @@ clutter_timeline_get_direction (<em class="parameter"><code><a class="link" href
 <p>Retrieves the direction of the timeline set with
 <a class="link" href="ClutterTimeline.html#clutter-timeline-set-direction" title="clutter_timeline_set_direction ()"><code class="function">clutter_timeline_set_direction()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-direction.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -891,7 +891,7 @@ clutter_timeline_get_direction (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.11.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-direction.returns"></a><h4>Returns</h4>
 <p> the direction of the timeline</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -973,8 +973,8 @@ for instance, this code:</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.12.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-auto-reverse.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1004,8 +1004,8 @@ should reverse the direction</p></td>
 clutter_timeline_get_auto_reverse (<em class="parameter"><code><a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> *timeline</code></em>);</pre>
 <p>Retrieves the value set by <a class="link" href="ClutterTimeline.html#clutter-timeline-set-auto-reverse" title="clutter_timeline_set_auto_reverse ()"><code class="function">clutter_timeline_set_auto_reverse()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-auto-reverse.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1019,7 +1019,7 @@ clutter_timeline_get_auto_reverse (<em class="parameter"><code><a class="link" h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.13.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-auto-reverse.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the timeline should automatically reverse, and
 <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -1036,8 +1036,8 @@ enumeration. The <em class="parameter"><code>mode</code></em>
  cannot be <a class="link" href="ClutterTimeline.html#CLUTTER-CUSTOM-MODE:CAPS"><code class="literal">CLUTTER_CUSTOM_MODE</code></a> or bigger than
 <a class="link" href="ClutterTimeline.html#CLUTTER-ANIMATION-LAST:CAPS"><code class="literal">CLUTTER_ANIMATION_LAST</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-progress-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1067,8 +1067,8 @@ clutter_timeline_get_progress_mode (<em class="parameter"><code><a class="link" 
 <p>Retrieves the progress mode set using <a class="link" href="ClutterTimeline.html#clutter-timeline-set-progress-mode" title="clutter_timeline_set_progress_mode ()"><code class="function">clutter_timeline_set_progress_mode()</code></a>
 or <a class="link" href="ClutterTimeline.html#clutter-timeline-set-progress-func" title="clutter_timeline_set_progress_func ()"><code class="function">clutter_timeline_set_progress_func()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-progress-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1082,7 +1082,7 @@ or <a class="link" href="ClutterTimeline.html#clutter-timeline-set-progress-func
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.15.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-progress-mode.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterTimeline.html#ClutterAnimationMode" title="enum ClutterAnimationMode"><span class="type">ClutterAnimationMode</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -1103,8 +1103,8 @@ points for the cubic bezier.</p>
 of the two control points must be in the [ 0, 1 ] range, while the
 Y coordinate of the two control points can exceed this range.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-cubic-bezier-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1141,8 +1141,8 @@ clutter_timeline_get_cubic_bezier_progress
                                 <em class="parameter"><code><a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a> *c_2</code></em>);</pre>
 <p>Retrieves the control points for the cubic bezier progress mode.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-cubic-bezier-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1170,7 +1170,7 @@ point of the cubic bezier, or <code class="literal">NULL</code>. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.17.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-cubic-bezier-progress.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <em class="parameter"><code>timeline</code></em>
 is using a cubic bezier progress
 more, and <code class="literal">FALSE</code> otherwise</p>
@@ -1188,8 +1188,8 @@ clutter_timeline_set_step_progress (<em class="parameter"><code><a class="link" 
  to <a class="link" href="ClutterTimeline.html#CLUTTER-STEPS:CAPS"><code class="literal">CLUTTER_STEPS</code></a>
 and provides the parameters of the step function.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-step-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1227,8 +1227,8 @@ clutter_timeline_get_step_progress (<em class="parameter"><code><a class="link" 
 <p>Retrieves the parameters of the step progress mode used by <em class="parameter"><code>timeline</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-step-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1255,7 +1255,7 @@ or <code class="literal">NULL</code>. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.19.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-step-progress.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <em class="parameter"><code>timeline</code></em>
 is using a step progress
 mode, and <code class="literal">FALSE</code> otherwise</p>
@@ -1272,8 +1272,8 @@ mode, and <code class="literal">FALSE</code> otherwise</p>
                                 <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
 <p>A function for defining a custom progress.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimelineProgressFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1304,7 +1304,7 @@ mode, and <code class="literal">FALSE</code> otherwise</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.20.6"></a><h4>Returns</h4>
+<a name="ClutterTimelineProgressFunc.returns"></a><h4>Returns</h4>
 <p> the progress, as a floating point value between -1.0 and 2.0.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -1329,8 +1329,8 @@ be set to <a class="link" href="ClutterTimeline.html#CLUTTER-CUSTOM-MODE:CAPS"><
  is <code class="literal">NULL</code>, any previously set progress function will be unset, and
 the <a class="link" href="ClutterTimeline.html#ClutterTimeline--progress-mode" title="The “progress-mode” property"><span class="type">“progress-mode”</span></a> property will be set to <a class="link" href="ClutterTimeline.html#CLUTTER-LINEAR:CAPS"><code class="literal">CLUTTER_LINEAR</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-progress-func.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1378,8 +1378,8 @@ will return <code class="literal">G_MAXINT64</code>.</p>
 as long as the <em class="parameter"><code>timeline</code></em>
  hasn't been changed.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-duration-hint.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1393,7 +1393,7 @@ as long as the <em class="parameter"><code>timeline</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.22.8"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-duration-hint.returns"></a><h4>Returns</h4>
 <p> the full duration of the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -1406,8 +1406,8 @@ clutter_timeline_get_current_repeat (<em class="parameter"><code><a class="link"
 <p>Retrieves the current repeat for a timeline.</p>
 <p>Repeats start at 0.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.23.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-current-repeat.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1421,7 +1421,7 @@ clutter_timeline_get_current_repeat (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.23.7"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-current-repeat.returns"></a><h4>Returns</h4>
 <p> the current repeat</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -1443,8 +1443,8 @@ with -1 if <em class="parameter"><code>loop</code></em>
  is <code class="literal">TRUE</code>, and with 0 if <em class="parameter"><code>loop</code></em>
  is <code class="literal">FALSE</code>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.24.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-set-loop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1477,8 +1477,8 @@ clutter_timeline_get_loop (<em class="parameter"><code><a class="link" href="Clu
 <p>Gets whether <em class="parameter"><code>timeline</code></em>
  is looping</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.25.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-loop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1492,7 +1492,7 @@ clutter_timeline_get_loop (<em class="parameter"><code><a class="link" href="Clu
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.25.7"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-loop.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the timeline is looping</p>
 </div>
 </div>
@@ -1503,8 +1503,8 @@ clutter_timeline_get_loop (<em class="parameter"><code><a class="link" href="Clu
 clutter_timeline_start (<em class="parameter"><code><a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> *timeline</code></em>);</pre>
 <p>Starts the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> playing.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-start.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1525,8 +1525,8 @@ clutter_timeline_start (<em class="parameter"><code><a class="link" href="Clutte
 clutter_timeline_pause (<em class="parameter"><code><a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> *timeline</code></em>);</pre>
 <p>Pauses the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> on current frame</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.27.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-pause.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1547,8 +1547,8 @@ clutter_timeline_pause (<em class="parameter"><code><a class="link" href="Clutte
 clutter_timeline_stop (<em class="parameter"><code><a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> *timeline</code></em>);</pre>
 <p>Stops the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> and moves to frame 0</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-stop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1571,8 +1571,8 @@ clutter_timeline_rewind (<em class="parameter"><code><a class="link" href="Clutt
 <a class="link" href="ClutterTimeline.html#CLUTTER-TIMELINE-FORWARD:CAPS"><code class="literal">CLUTTER_TIMELINE_FORWARD</code></a> and the last frame if it is
 <a class="link" href="ClutterTimeline.html#CLUTTER-TIMELINE-BACKWARD:CAPS"><code class="literal">CLUTTER_TIMELINE_BACKWARD</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-rewind.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1594,8 +1594,8 @@ clutter_timeline_skip (<em class="parameter"><code><a class="link" href="Clutter
                        <em class="parameter"><code><span class="type">guint</span> msecs</code></em>);</pre>
 <p>Advance timeline by the requested time in milliseconds</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.30.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-skip.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1629,8 +1629,8 @@ time in milliseconds since the timeline started.</p>
 signal for the given time. The first ::new-frame signal after the call to
 <a class="link" href="ClutterTimeline.html#clutter-timeline-advance" title="clutter_timeline_advance ()"><code class="function">clutter_timeline_advance()</code></a> will be emit the skipped markers.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.31.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-advance.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1658,8 +1658,8 @@ signal for the given time. The first ::new-frame signal after the call to
 clutter_timeline_get_elapsed_time (<em class="parameter"><code><a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> *timeline</code></em>);</pre>
 <p>Request the current time position of the timeline.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.32.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-elapsed-time.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1673,7 +1673,7 @@ clutter_timeline_get_elapsed_time (<em class="parameter"><code><a class="link" h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.32.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-elapsed-time.returns"></a><h4>Returns</h4>
 <p> current elapsed time in milliseconds.</p>
 </div>
 </div>
@@ -1688,8 +1688,8 @@ ClutterTimeline::new-frame signal.</p>
 signal, and its behaviour is undefined if the timeline is not
 playing.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.33.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-delta.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1703,7 +1703,7 @@ playing.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.33.7"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-delta.returns"></a><h4>Returns</h4>
 <p> the amount of time in milliseconds elapsed since the
 last frame</p>
 </div>
@@ -1719,8 +1719,8 @@ clutter_timeline_get_progress (<em class="parameter"><code><a class="link" href=
 mode set using <a class="link" href="ClutterTimeline.html#clutter-timeline-set-progress-mode" title="clutter_timeline_set_progress_mode ()"><code class="function">clutter_timeline_set_progress_mode()</code></a>, or by the
 progress function set using <a class="link" href="ClutterTimeline.html#clutter-timeline-set-progress-func" title="clutter_timeline_set_progress_func ()"><code class="function">clutter_timeline_set_progress_func()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.34.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-get-progress.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1734,7 +1734,7 @@ progress function set using <a class="link" href="ClutterTimeline.html#clutter-t
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.34.7"></a><h4>Returns</h4>
+<a name="clutter-timeline-get-progress.returns"></a><h4>Returns</h4>
 <p> the normalized current position in the timeline.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -1746,8 +1746,8 @@ progress function set using <a class="link" href="ClutterTimeline.html#clutter-t
 clutter_timeline_is_playing (<em class="parameter"><code><a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> *timeline</code></em>);</pre>
 <p>Queries state of a <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.35.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-is-playing.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1761,7 +1761,7 @@ clutter_timeline_is_playing (<em class="parameter"><code><a class="link" href="C
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.35.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-is-playing.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if timeline is currently playing</p>
 </div>
 </div>
@@ -1786,8 +1786,8 @@ timeline can be advanced to a marker using
 <a class="link" href="ClutterTimeline.html#clutter-timeline-advance-to-marker" title="clutter_timeline_advance_to_marker ()"><code class="function">clutter_timeline_advance_to_marker()</code></a>.</p>
 <p>See also: <a class="link" href="ClutterTimeline.html#clutter-timeline-add-marker-at-time" title="clutter_timeline_add_marker_at_time ()"><code class="function">clutter_timeline_add_marker_at_time()</code></a></p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.36.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-add-marker.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1834,8 +1834,8 @@ timeline can be advanced to a marker using
 <a class="link" href="ClutterTimeline.html#clutter-timeline-advance-to-marker" title="clutter_timeline_advance_to_marker ()"><code class="function">clutter_timeline_advance_to_marker()</code></a>.</p>
 <p>See also: <a class="link" href="ClutterTimeline.html#clutter-timeline-add-marker" title="clutter_timeline_add_marker ()"><code class="function">clutter_timeline_add_marker()</code></a></p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.37.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-add-marker-at-time.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1871,8 +1871,8 @@ clutter_timeline_has_marker (<em class="parameter"><code><a class="link" href="C
 <p>Checks whether <em class="parameter"><code>timeline</code></em>
  has a marker set with the given name.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.38.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-has-marker.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1893,7 +1893,7 @@ clutter_timeline_has_marker (<em class="parameter"><code><a class="link" href="C
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.38.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-has-marker.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the marker was found</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -1912,8 +1912,8 @@ negative integer, all the markers attached to <em class="parameter"><code>timeli
  will be
 returned.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.39.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-list-markers.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1939,7 +1939,7 @@ returned.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.39.6"></a><h4>Returns</h4>
+<a name="clutter-timeline-list-markers.returns"></a><h4>Returns</h4>
 <p>  a newly allocated, <code class="literal">NULL</code> terminated string array containing the names
 of the markers. Use <code class="function">g_strfreev()</code> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> zero-terminated=1 length=n_markers]</span></p>
@@ -1956,8 +1956,8 @@ clutter_timeline_remove_marker (<em class="parameter"><code><a class="link" href
 , if found, from <em class="parameter"><code>timeline</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.40.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-remove-marker.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1995,8 +1995,8 @@ is set, nor it will emit <a class="link" href="ClutterTimeline.html#ClutterTimel
 <em class="parameter"><code>marker_name</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.10.41.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeline-advance-to-marker.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2048,8 +2048,8 @@ and should be accessed using the provided API</p>
 </pre>
 <p>The <a class="link" href="ClutterTimeline.html#ClutterTimelineClass" title="struct ClutterTimelineClass"><span class="type">ClutterTimelineClass</span></a> structure contains only private data</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimelineClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2096,8 +2096,8 @@ and should be accessed using the provided API</p>
 <a name="ClutterTimelineDirection"></a><h3>enum ClutterTimelineDirection</h3>
 <p>The direction of a <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a></p>
 <div class="refsect3">
-<a name="id-1.6.3.2.11.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimelineDirection.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2136,8 +2136,8 @@ enumeration can be expanded in later versions of Clutter.</p>
 or <a class="link" href="ClutterAlpha.html#clutter-alpha-register-closure" title="clutter_alpha_register_closure ()"><code class="function">clutter_alpha_register_closure()</code></a> will have a logical id greater than
 <a class="link" href="ClutterTimeline.html#CLUTTER-ANIMATION-LAST:CAPS"><code class="literal">CLUTTER_ANIMATION_LAST</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.11.5.6"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterAnimationMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2471,8 +2471,8 @@ or <a class="link" href="ClutterAlpha.html#clutter-alpha-register-closure" title
 <p>Change the value transition of a step function.</p>
 <p>See <a class="link" href="ClutterTimeline.html#clutter-timeline-set-step-progress" title="clutter_timeline_set_step_progress ()"><code class="function">clutter_timeline_set_step_progress()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.11.6.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStepMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2599,8 +2599,8 @@ repeating.</p>
 been stopped or has finished its run, including its eventual repeats,
 you should use the <a class="link" href="ClutterTimeline.html#ClutterTimeline-stopped" title="The “stopped” signal"><span class="type">“stopped”</span></a> signal instead.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.13.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimeline-completed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2667,8 +2667,8 @@ with:</p>
 the "foo" and "bar" marker, while the second and third callbacks
 will be invoked for the "foo" or "bar" markers, respectively.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.13.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimeline-marker-reached.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2712,8 +2712,8 @@ user_function (<a class="link" href="ClutterTimeline.html" title="ClutterTimelin
 timeline before a new frame is drawn to give animations a chance
 to update the scene.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.13.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimeline-new-frame.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2748,8 +2748,8 @@ user_function (<a class="link" href="ClutterTimeline.html" title="ClutterTimelin
                <span class="type">gpointer</span>         user_data)</pre>
 <p>The ::paused signal is emitted when <a class="link" href="ClutterTimeline.html#clutter-timeline-pause" title="clutter_timeline_pause ()"><code class="function">clutter_timeline_pause()</code></a> is invoked.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.13.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimeline-paused.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2782,8 +2782,8 @@ This might be as soon as <a class="link" href="ClutterTimeline.html#clutter-time
 after the delay set in the ClutterTimeline:delay property has
 expired.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.13.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimeline-started.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2820,8 +2820,8 @@ which gets emitted after every repeat finishes.</p>
 <p>If the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> has is marked as infinitely repeating,
 this signal will never be emitted.</p>
 <div class="refsect3">
-<a name="id-1.6.3.2.13.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTimeline-stopped.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2857,6 +2857,6 @@ timeline.</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

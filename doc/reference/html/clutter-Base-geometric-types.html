@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Base geometric types: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-Features.html" title="Features">
 <link rel="next" href="ClutterInputDevice.html" title="ClutterInputDevice">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-Base-geometric-types.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -721,7 +721,7 @@
 </div>
 <a name="ClutterPoint"></a><a name="ClutterSize"></a><a name="ClutterRect"></a><a name="ClutterVertex"></a><a name="ClutterActorBox"></a><a name="ClutterGeometry"></a><a name="ClutterKnot"></a><a name="ClutterPaintVolume"></a><a name="ClutterMatrix"></a><div class="refsect1">
 <a name="clutter-Base-geometric-types.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -788,7 +788,7 @@
 </div>
 <div class="refsect1">
 <a name="clutter-Base-geometric-types.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GBoxed
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">├──</span> ClutterActorBox
     <span class="lineart">├──</span> ClutterGeometry
     <span class="lineart">├──</span> ClutterKnot
@@ -825,8 +825,8 @@ across the whole API.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CLUTTER-POINT-INIT.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -856,7 +856,7 @@ clutter_point_zero (<em class="parameter"><code><span class="type">void</span></
 <p>A point centered at (0, 0).</p>
 <p>The returned value can be used as a guard.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.3.6"></a><h4>Returns</h4>
+<a name="clutter-point-zero.returns"></a><h4>Returns</h4>
 <p> a point centered in (0, 0); the returned <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a>
 is owned by Clutter and it should not be modified or freed.</p>
 </div>
@@ -870,7 +870,7 @@ clutter_point_alloc (<em class="parameter"><code><span class="type">void</span><
 <p>Allocates a new <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a>.</p>
 <p><span class="annotation">[<acronym title="This symbol is a constructor, not a static method."><span class="acronym">constructor</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.4.6"></a><h4>Returns</h4>
+<a name="clutter-point-alloc.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-point-free" title="clutter_point_free ()"><code class="function">clutter_point_free()</code></a> to free its resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -887,8 +887,8 @@ clutter_point_init (<em class="parameter"><code><a class="link" href="clutter-Ba
 <p>Initializes <em class="parameter"><code>point</code></em>
  with the given coordinates.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-point-init.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -914,7 +914,7 @@ clutter_point_init (<em class="parameter"><code><a class="link" href="clutter-Ba
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.5.6"></a><h4>Returns</h4>
+<a name="clutter-point-init.returns"></a><h4>Returns</h4>
 <p> the initialized <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -928,8 +928,8 @@ clutter_point_copy (<em class="parameter"><code>const <a class="link" href="clut
 <p>Creates a new <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a> with the same coordinates of <em class="parameter"><code>point</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-point-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -943,7 +943,7 @@ clutter_point_copy (<em class="parameter"><code>const <a class="link" href="clut
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.6.6"></a><h4>Returns</h4>
+<a name="clutter-point-copy.returns"></a><h4>Returns</h4>
 <p> a newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-point-free" title="clutter_point_free ()"><code class="function">clutter_point_free()</code></a> to free its resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -958,8 +958,8 @@ clutter_point_free (<em class="parameter"><code><a class="link" href="clutter-Ba
 <p>Frees the resources allocated for <em class="parameter"><code>point</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-point-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -982,8 +982,8 @@ clutter_point_equals (<em class="parameter"><code>const <a class="link" href="cl
                       <em class="parameter"><code>const <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a> *b</code></em>);</pre>
 <p>Compares two <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a> for equality.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-point-equals.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1004,8 +1004,8 @@ clutter_point_equals (<em class="parameter"><code>const <a class="link" href="cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.8.6"></a><h4>Returns</h4>
-<p> <code class="literal">TRUE</code> if the <a href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoints</span></a> are equal</p>
+<a name="clutter-point-equals.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the <a href="clutter-Base-geometric-types.html#ClutterPoint-struct"><span class="type">ClutterPoints</span></a> are equal</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
 </div>
@@ -1019,8 +1019,8 @@ clutter_point_distance (<em class="parameter"><code>const <a class="link" href="
                         <em class="parameter"><code><span class="type">float</span> *y_distance</code></em>);</pre>
 <p>Computes the distance between two <a class="link" href="clutter-Base-geometric-types.html#ClutterPoint"><span class="type">ClutterPoint</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-point-distance.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1053,7 +1053,7 @@ distance between the points. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.9.6"></a><h4>Returns</h4>
+<a name="clutter-point-distance.returns"></a><h4>Returns</h4>
 <p> the distance between the points.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1077,8 +1077,8 @@ distance between the points. </p></td>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.10.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CLUTTER-SIZE-INIT.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1108,7 +1108,7 @@ clutter_size_alloc (<em class="parameter"><code><span class="type">void</span></
 <p>Allocates a new <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a>.</p>
 <p><span class="annotation">[<acronym title="This symbol is a constructor, not a static method."><span class="acronym">constructor</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.11.6"></a><h4>Returns</h4>
+<a name="clutter-size-alloc.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-size-free" title="clutter_size_free ()"><code class="function">clutter_size_free()</code></a> to free its resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1124,8 +1124,8 @@ clutter_size_init (<em class="parameter"><code><a class="link" href="clutter-Bas
                    <em class="parameter"><code><span class="type">float</span> height</code></em>);</pre>
 <p>Initializes a <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a> with the given dimensions.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-size-init.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1151,7 +1151,7 @@ clutter_size_init (<em class="parameter"><code><a class="link" href="clutter-Bas
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.12.6"></a><h4>Returns</h4>
+<a name="clutter-size-init.returns"></a><h4>Returns</h4>
 <p> the initialized <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1165,8 +1165,8 @@ clutter_size_copy (<em class="parameter"><code>const <a class="link" href="clutt
 <p>Creates a new <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a> and duplicates <em class="parameter"><code>size</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-size-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1180,7 +1180,7 @@ clutter_size_copy (<em class="parameter"><code>const <a class="link" href="clutt
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.13.6"></a><h4>Returns</h4>
+<a name="clutter-size-copy.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-size-free" title="clutter_size_free ()"><code class="function">clutter_size_free()</code></a> to free its resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1195,8 +1195,8 @@ clutter_size_free (<em class="parameter"><code><a class="link" href="clutter-Bas
 <p>Frees the resources allocated for <em class="parameter"><code>size</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-size-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1219,8 +1219,8 @@ clutter_size_equals (<em class="parameter"><code>const <a class="link" href="clu
                      <em class="parameter"><code>const <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a> *b</code></em>);</pre>
 <p>Compares two <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a> for equality.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-size-equals.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1241,7 +1241,7 @@ clutter_size_equals (<em class="parameter"><code>const <a class="link" href="clu
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.15.6"></a><h4>Returns</h4>
+<a name="clutter-size-equals.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the two <a class="link" href="clutter-Base-geometric-types.html#ClutterSize"><span class="type">ClutterSize</span></a> are equal</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1265,8 +1265,8 @@ clutter_size_equals (<em class="parameter"><code>const <a class="link" href="clu
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.16.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CLUTTER-RECT-INIT.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1307,7 +1307,7 @@ clutter_rect_zero (<em class="parameter"><code><span class="type">void</span></c
 of 0.</p>
 <p>The returned value can be used as a guard.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.17.6"></a><h4>Returns</h4>
+<a name="clutter-rect-zero.returns"></a><h4>Returns</h4>
 <p> a rectangle with origin in (0, 0) and a size of 0.
 The returned <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> is owned by Clutter and it should not
 be modified or freed.</p>
@@ -1336,7 +1336,7 @@ for instance:</p>
 <p></p>
 <p><span class="annotation">[<acronym title="This symbol is a constructor, not a static method."><span class="acronym">constructor</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.18.9"></a><h4>Returns</h4>
+<a name="clutter-rect-alloc.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-rect-free" title="clutter_rect_free ()"><code class="function">clutter_rect_free()</code></a> to free its resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -1354,8 +1354,8 @@ clutter_rect_init (<em class="parameter"><code><a class="link" href="clutter-Bas
                    <em class="parameter"><code><span class="type">float</span> height</code></em>);</pre>
 <p>Initializes a <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> with the given origin and size.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-init.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1391,7 +1391,7 @@ clutter_rect_init (<em class="parameter"><code><a class="link" href="clutter-Bas
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.19.6"></a><h4>Returns</h4>
+<a name="clutter-rect-init.returns"></a><h4>Returns</h4>
 <p> the updated rectangle. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1405,8 +1405,8 @@ clutter_rect_copy (<em class="parameter"><code>const <a class="link" href="clutt
 <p>Copies <em class="parameter"><code>rect</code></em>
  into a new <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> instance.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1420,7 +1420,7 @@ clutter_rect_copy (<em class="parameter"><code>const <a class="link" href="clutt
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.20.6"></a><h4>Returns</h4>
+<a name="clutter-rect-copy.returns"></a><h4>Returns</h4>
 <p> the newly allocate copy of <em class="parameter"><code>rect</code></em>
 .
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-rect-free" title="clutter_rect_free ()"><code class="function">clutter_rect_free()</code></a> to free the associated resources. </p>
@@ -1436,8 +1436,8 @@ clutter_rect_free (<em class="parameter"><code><a class="link" href="clutter-Bas
 <p>Frees the resources allocated by <em class="parameter"><code>rect</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1466,8 +1466,8 @@ clutter_rect_equals (<em class="parameter"><code><a class="link" href="clutter-B
  before comparing
 their origin and size.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.22.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-equals.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1488,7 +1488,7 @@ their origin and size.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.22.7"></a><h4>Returns</h4>
+<a name="clutter-rect-equals.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the rectangles match in origin and size.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1507,8 +1507,8 @@ that a <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><spa
 and height; it will modify the passed <em class="parameter"><code>rect</code></em>
  and normalize its size.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.23.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-normalize.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1534,8 +1534,8 @@ clutter_rect_get_center (<em class="parameter"><code><a class="link" href="clutt
 and updates <em class="parameter"><code>center</code></em>
  with the correct coordinates.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-get-center.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1568,8 +1568,8 @@ clutter_rect_contains_point (<em class="parameter"><code><a class="link" href="c
 , after normalizing the
 rectangle.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.25.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-contains-point.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1590,7 +1590,7 @@ rectangle.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.25.6"></a><h4>Returns</h4>
+<a name="clutter-rect-contains-point.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <em class="parameter"><code>point</code></em>
 is contained by <em class="parameter"><code>rect</code></em>
 .</p>
@@ -1609,8 +1609,8 @@ clutter_rect_contains_rect (<em class="parameter"><code><a class="link" href="cl
 <p>The first rectangle contains the second if the union of the
 two <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> is equal to the first rectangle.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.26.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-contains-rect.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1631,7 +1631,7 @@ two <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span c
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.26.7"></a><h4>Returns</h4>
+<a name="clutter-rect-contains-rect.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the first rectangle contains the second.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1653,8 +1653,8 @@ both <em class="parameter"><code>a</code></em>
  prior to computing their
 union.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.27.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-union.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1704,8 +1704,8 @@ intersection.</p>
 is not empty, by using <code class="literal">NULL</code> for <em class="parameter"><code>res</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.28.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-intersection.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1731,7 +1731,7 @@ is not empty, by using <code class="literal">NULL</code> for <em class="paramete
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.28.8"></a><h4>Returns</h4>
+<a name="clutter-rect-intersection.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the intersection of <em class="parameter"><code>a</code></em>
 and <em class="parameter"><code>b</code></em>
 is not empty</p>
@@ -1749,8 +1749,8 @@ clutter_rect_offset (<em class="parameter"><code><a class="link" href="clutter-B
  by the given values, after normalizing
 the rectangle.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-offset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1798,8 +1798,8 @@ the values are negative, the size of the rectangle is increased.</p>
 <p>If the resulting rectangle has a negative width or height, the size is
 set to 0.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.30.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-inset.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1843,8 +1843,8 @@ the size of <em class="parameter"><code>rect</code></em>
 updated to the smallest rectangle capable of fully containing the
 original, fractional rectangle.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.31.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-clamp-to-pixel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1867,8 +1867,8 @@ clutter_rect_get_x (<em class="parameter"><code><a class="link" href="clutter-Ba
 <p>Retrieves the X coordinate of the origin of <em class="parameter"><code>rect</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.32.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-get-x.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1882,7 +1882,7 @@ clutter_rect_get_x (<em class="parameter"><code><a class="link" href="clutter-Ba
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.32.6"></a><h4>Returns</h4>
+<a name="clutter-rect-get-x.returns"></a><h4>Returns</h4>
 <p> the X coordinate of the origin of the rectangle</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1895,8 +1895,8 @@ clutter_rect_get_y (<em class="parameter"><code><a class="link" href="clutter-Ba
 <p>Retrieves the Y coordinate of the origin of <em class="parameter"><code>rect</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.33.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-get-y.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1910,7 +1910,7 @@ clutter_rect_get_y (<em class="parameter"><code><a class="link" href="clutter-Ba
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.33.6"></a><h4>Returns</h4>
+<a name="clutter-rect-get-y.returns"></a><h4>Returns</h4>
 <p> the Y coordinate of the origin of the rectangle</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1923,8 +1923,8 @@ clutter_rect_get_width (<em class="parameter"><code><a class="link" href="clutte
 <p>Retrieves the width of <em class="parameter"><code>rect</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.34.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-get-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1938,7 +1938,7 @@ clutter_rect_get_width (<em class="parameter"><code><a class="link" href="clutte
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.34.6"></a><h4>Returns</h4>
+<a name="clutter-rect-get-width.returns"></a><h4>Returns</h4>
 <p> the width of the rectangle</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1951,8 +1951,8 @@ clutter_rect_get_height (<em class="parameter"><code><a class="link" href="clutt
 <p>Retrieves the height of <em class="parameter"><code>rect</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.35.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-rect-get-height.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1966,7 +1966,7 @@ clutter_rect_get_height (<em class="parameter"><code><a class="link" href="clutt
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.35.6"></a><h4>Returns</h4>
+<a name="clutter-rect-get-height.returns"></a><h4>Returns</h4>
 <p> the height of the rectangle</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1990,8 +1990,8 @@ clutter_rect_get_height (<em class="parameter"><code><a class="link" href="clutt
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.36.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CLUTTER-VERTEX-INIT.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2044,8 +2044,8 @@ identified by the 3 coordinates <em class="parameter"><code>x</code></em>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.37.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-vertex-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2071,7 +2071,7 @@ identified by the 3 coordinates <em class="parameter"><code>x</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.37.9"></a><h4>Returns</h4>
+<a name="clutter-vertex-new.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-vertex-free" title="clutter_vertex_free ()"><code class="function">clutter_vertex_free()</code></a> to free the resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -2086,7 +2086,7 @@ clutter_vertex_alloc (<em class="parameter"><code><span class="type">void</span>
 <p>Allocates a new, empty <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>.</p>
 <p><span class="annotation">[<acronym title="This symbol is a constructor, not a static method."><span class="acronym">constructor</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.38.6"></a><h4>Returns</h4>
+<a name="clutter-vertex-alloc.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-vertex-free" title="clutter_vertex_free ()"><code class="function">clutter_vertex_free()</code></a> to free its resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -2104,8 +2104,8 @@ clutter_vertex_init (<em class="parameter"><code><a class="link" href="clutter-B
 <p>Initializes <em class="parameter"><code>vertex</code></em>
  with the given coordinates.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.39.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-vertex-init.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2136,7 +2136,7 @@ clutter_vertex_init (<em class="parameter"><code><a class="link" href="clutter-B
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.39.6"></a><h4>Returns</h4>
+<a name="clutter-vertex-init.returns"></a><h4>Returns</h4>
 <p> the initialized <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2150,8 +2150,8 @@ clutter_vertex_copy (<em class="parameter"><code>const <a class="link" href="clu
 <p>Copies <em class="parameter"><code>vertex</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.40.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-vertex-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2165,7 +2165,7 @@ clutter_vertex_copy (<em class="parameter"><code>const <a class="link" href="clu
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.40.6"></a><h4>Returns</h4>
+<a name="clutter-vertex-copy.returns"></a><h4>Returns</h4>
 <p> a newly allocated copy of <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-vertex-free" title="clutter_vertex_free ()"><code class="function">clutter_vertex_free()</code></a> to free the allocated resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -2180,8 +2180,8 @@ clutter_vertex_free (<em class="parameter"><code><a class="link" href="clutter-B
 <p>Frees a <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a> allocated using <a class="link" href="clutter-Base-geometric-types.html#clutter-vertex-alloc" title="clutter_vertex_alloc ()"><code class="function">clutter_vertex_alloc()</code></a> or
 <a class="link" href="clutter-Base-geometric-types.html#clutter-vertex-copy" title="clutter_vertex_copy ()"><code class="function">clutter_vertex_copy()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.41.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-vertex-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2206,8 +2206,8 @@ clutter_vertex_equal (<em class="parameter"><code>const <a class="link" href="cl
  and <em class="parameter"><code>vertex_b</code></em>
  for equality</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.42.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-vertex-equal.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2228,7 +2228,7 @@ clutter_vertex_equal (<em class="parameter"><code>const <a class="link" href="cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.42.6"></a><h4>Returns</h4>
+<a name="clutter-vertex-equal.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the passed <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a> are equal</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2253,8 +2253,8 @@ it, e.g.:</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.43.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CLUTTER-ACTOR-BOX-INIT.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2314,8 +2314,8 @@ for the top left and bottom right points.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.44.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2346,7 +2346,7 @@ for the top left and bottom right points.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.44.9"></a><h4>Returns</h4>
+<a name="clutter-actor-box-new.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-actor-box-free" title="clutter_actor_box_free ()"><code class="function">clutter_actor_box_free()</code></a> to free the resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -2360,7 +2360,7 @@ Use <a class="link" href="clutter-Base-geometric-types.html#clutter-actor-box-fr
 clutter_actor_box_alloc (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Allocates a new <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.45.5"></a><h4>Returns</h4>
+<a name="clutter-actor-box-alloc.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>.
 Use <a class="link" href="clutter-Base-geometric-types.html#clutter-actor-box-free" title="clutter_actor_box_free ()"><code class="function">clutter_actor_box_free()</code></a> to free its resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -2379,8 +2379,8 @@ clutter_actor_box_init (<em class="parameter"><code><a class="link" href="clutte
 <p>Initializes <em class="parameter"><code>box</code></em>
  with the given coordinates.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.46.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-init.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2416,7 +2416,7 @@ clutter_actor_box_init (<em class="parameter"><code><a class="link" href="clutte
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.46.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-init.returns"></a><h4>Returns</h4>
 <p> the initialized <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2434,8 +2434,8 @@ clutter_actor_box_init_rect (<em class="parameter"><code><a class="link" href="c
 <p>Initializes <em class="parameter"><code>box</code></em>
  with the given origin and size.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.47.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-init-rect.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2480,8 +2480,8 @@ clutter_actor_box_copy (<em class="parameter"><code>const <a class="link" href="
 <p>Copies <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.48.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2495,7 +2495,7 @@ clutter_actor_box_copy (<em class="parameter"><code>const <a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.48.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-copy.returns"></a><h4>Returns</h4>
 <p> a newly allocated copy of <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>. Use
 <a class="link" href="clutter-Base-geometric-types.html#clutter-actor-box-free" title="clutter_actor_box_free ()"><code class="function">clutter_actor_box_free()</code></a> to free the allocated resources</p>
 </div>
@@ -2509,8 +2509,8 @@ clutter_actor_box_free (<em class="parameter"><code><a class="link" href="clutte
 <p>Frees a <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a> allocated using <a class="link" href="clutter-Base-geometric-types.html#clutter-actor-box-new" title="clutter_actor_box_new ()"><code class="function">clutter_actor_box_new()</code></a>
 or <a class="link" href="clutter-Base-geometric-types.html#clutter-actor-box-copy" title="clutter_actor_box_copy ()"><code class="function">clutter_actor_box_copy()</code></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.49.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2535,8 +2535,8 @@ clutter_actor_box_equal (<em class="parameter"><code>const <a class="link" href=
  and <em class="parameter"><code>box_b</code></em>
  for equality</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.50.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-equal.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2557,7 +2557,7 @@ clutter_actor_box_equal (<em class="parameter"><code>const <a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.50.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-equal.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the passed <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a> are equal</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2570,8 +2570,8 @@ clutter_actor_box_get_x (<em class="parameter"><code>const <a class="link" href=
 <p>Retrieves the X coordinate of the origin of <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.51.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-get-x.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2585,7 +2585,7 @@ clutter_actor_box_get_x (<em class="parameter"><code>const <a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.51.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-get-x.returns"></a><h4>Returns</h4>
 <p> the X coordinate of the origin</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2598,8 +2598,8 @@ clutter_actor_box_get_y (<em class="parameter"><code>const <a class="link" href=
 <p>Retrieves the Y coordinate of the origin of <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.52.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-get-y.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2613,7 +2613,7 @@ clutter_actor_box_get_y (<em class="parameter"><code>const <a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.52.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-get-y.returns"></a><h4>Returns</h4>
 <p> the Y coordinate of the origin</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2626,8 +2626,8 @@ clutter_actor_box_get_width (<em class="parameter"><code>const <a class="link" h
 <p>Retrieves the width of the <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.53.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-get-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2641,7 +2641,7 @@ clutter_actor_box_get_width (<em class="parameter"><code>const <a class="link" h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.53.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-get-width.returns"></a><h4>Returns</h4>
 <p> the width of the box</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2654,8 +2654,8 @@ clutter_actor_box_get_height (<em class="parameter"><code>const <a class="link" 
 <p>Retrieves the height of the <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.54.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-get-height.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2669,7 +2669,7 @@ clutter_actor_box_get_height (<em class="parameter"><code>const <a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.54.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-get-height.returns"></a><h4>Returns</h4>
 <p> the height of the box</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2684,8 +2684,8 @@ clutter_actor_box_set_origin (<em class="parameter"><code><a class="link" href="
 <p>Changes the origin of <em class="parameter"><code>box</code></em>
 , maintaining the size of the <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.55.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-set-origin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2722,8 +2722,8 @@ clutter_actor_box_get_origin (<em class="parameter"><code>const <a class="link" 
 <p>Retrieves the origin of <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.56.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-get-origin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2760,8 +2760,8 @@ clutter_actor_box_set_size (<em class="parameter"><code><a class="link" href="cl
 <p>Sets the size of <em class="parameter"><code>box</code></em>
 , maintaining the origin of the <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.57.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-set-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2798,8 +2798,8 @@ clutter_actor_box_get_size (<em class="parameter"><code>const <a class="link" hr
 <p>Retrieves the size of <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.58.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-get-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2834,8 +2834,8 @@ clutter_actor_box_get_area (<em class="parameter"><code>const <a class="link" hr
 <p>Retrieves the area of <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.59.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-get-area.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2849,7 +2849,7 @@ clutter_actor_box_get_area (<em class="parameter"><code>const <a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.59.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-get-area.returns"></a><h4>Returns</h4>
 <p> the area of a <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>, in pixels</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2867,8 +2867,8 @@ clutter_actor_box_contains (<em class="parameter"><code>const <a class="link" hr
 withing <em class="parameter"><code>box</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.60.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-contains.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2894,7 +2894,7 @@ withing <em class="parameter"><code>box</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.60.6"></a><h4>Returns</h4>
+<a name="clutter-actor-box-contains.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the point is contained by the <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2908,8 +2908,8 @@ clutter_actor_box_from_vertices (<em class="parameter"><code><a class="link" hre
 <p>Calculates the bounding box represented by the four vertices; for details
 of the vertex array see <a class="link" href="ClutterActor.html#clutter-actor-get-abs-allocation-vertices" title="clutter_actor_get_abs_allocation_vertices ()"><code class="function">clutter_actor_get_abs_allocation_vertices()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.61.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-from-vertices.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2939,8 +2939,8 @@ clutter_actor_box_clamp_to_pixel (<em class="parameter"><code><a class="link" hr
 <p>Clamps the components of <em class="parameter"><code>box</code></em>
  to the nearest integer</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.62.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-clamp-to-pixel.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2969,8 +2969,8 @@ clutter_actor_box_interpolate (<em class="parameter"><code>const <a class="link"
 using <em class="parameter"><code>progress</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.63.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-interpolate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3014,8 +3014,8 @@ clutter_actor_box_union (<em class="parameter"><code>const <a class="link" href=
  and stores the result in <em class="parameter"><code>result</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.64.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-box-union.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3053,8 +3053,8 @@ clutter_paint_volume_copy (<em class="parameter"><code>const <a class="link" hre
 <p>Copies <em class="parameter"><code>pv</code></em>
  into a new <a class="link" href="clutter-Base-geometric-types.html#ClutterPaintVolume"><span class="type">ClutterPaintVolume</span></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.65.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3068,7 +3068,7 @@ clutter_paint_volume_copy (<em class="parameter"><code>const <a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.65.6"></a><h4>Returns</h4>
+<a name="clutter-paint-volume-copy.returns"></a><h4>Returns</h4>
 <p> a newly allocated copy of a <a class="link" href="clutter-Base-geometric-types.html#ClutterPaintVolume"><span class="type">ClutterPaintVolume</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -3081,8 +3081,8 @@ clutter_paint_volume_free (<em class="parameter"><code><a class="link" href="clu
 <p>Frees the resources allocated by <em class="parameter"><code>pv</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.66.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3108,8 +3108,8 @@ clutter_paint_volume_set_origin (<em class="parameter"><code><a class="link" hre
 corner of an actor's paint volume, in actor coordinates.</p>
 <p>The default is origin is assumed at: (0, 0, 0)</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.67.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-set-origin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3139,8 +3139,8 @@ clutter_paint_volume_get_origin (<em class="parameter"><code>const <a class="lin
                                  <em class="parameter"><code><a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a> *vertex</code></em>);</pre>
 <p>Retrieves the origin of the <a class="link" href="clutter-Base-geometric-types.html#ClutterPaintVolume"><span class="type">ClutterPaintVolume</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.68.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-get-origin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3172,8 +3172,8 @@ clutter_paint_volume_set_width (<em class="parameter"><code><a class="link" href
 the x axis in the actor coordinates that <em class="parameter"><code>pv</code></em>
  is associated with.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.69.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-set-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3220,8 +3220,8 @@ except that it must always be greater than, or equal to, the
 actor's width. This is because actors may report simple, loose
 fitting paint volumes for efficiency.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.70.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-get-width.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3235,7 +3235,7 @@ fitting paint volumes for efficiency.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.70.10"></a><h4>Returns</h4>
+<a name="clutter-paint-volume-get-width.returns"></a><h4>Returns</h4>
 <p> the width, in units of <em class="parameter"><code>pv</code></em>
 's local coordinate system.</p>
 </div>
@@ -3251,8 +3251,8 @@ clutter_paint_volume_set_height (<em class="parameter"><code><a class="link" hre
 the y axis in the actor coordinates that <em class="parameter"><code>pv</code></em>
  is associated with.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.71.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-set-height.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3299,8 +3299,8 @@ except that it must always be greater than, or equal to, the actor's
 height. This is because actors may report simple, loose fitting paint
 volumes for efficiency.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.72.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-get-height.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3314,7 +3314,7 @@ volumes for efficiency.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.72.10"></a><h4>Returns</h4>
+<a name="clutter-paint-volume-get-height.returns"></a><h4>Returns</h4>
 <p> the height, in units of <em class="parameter"><code>pv</code></em>
 's local coordinate system.</p>
 </div>
@@ -3330,8 +3330,8 @@ clutter_paint_volume_set_depth (<em class="parameter"><code><a class="link" href
 the z axis in the actor coordinates that <em class="parameter"><code>pv</code></em>
  is associated with.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.73.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-set-depth.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3378,8 +3378,8 @@ except that it must always be greater than, or equal to, the actor's
 depth. This is because actors may report simple, loose fitting paint
 volumes for efficiency.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.74.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-get-depth.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3393,7 +3393,7 @@ volumes for efficiency.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.74.10"></a><h4>Returns</h4>
+<a name="clutter-paint-volume-get-depth.returns"></a><h4>Returns</h4>
 <p> the depth, in units of <em class="parameter"><code>pv</code></em>
 's local coordinate system.</p>
 </div>
@@ -3435,8 +3435,8 @@ that do not paint outside their allocation.</p>
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.75.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-set-from-allocation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3457,7 +3457,7 @@ that do not paint outside their allocation.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.75.10"></a><h4>Returns</h4>
+<a name="clutter-paint-volume-set-from-allocation.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the paint volume was successfully set, and <code class="literal">FALSE</code>
 otherwise</p>
 </div>
@@ -3476,8 +3476,8 @@ clutter_paint_volume_union (<em class="parameter"><code><a class="link" href="cl
 <p>There are no guarantees about how precisely the two volumes
 will be unioned.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.76.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-union.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3512,8 +3512,8 @@ clutter_paint_volume_union_box (<em class="parameter"><code><a class="link" href
 <p>This function is similar to <a class="link" href="clutter-Base-geometric-types.html#clutter-paint-volume-union" title="clutter_paint_volume_union ()"><code class="function">clutter_paint_volume_union()</code></a>, but it is
 specific for 2D regions.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.77.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-paint-volume-union-box.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3543,7 +3543,7 @@ specific for 2D regions.</p>
 clutter_matrix_alloc (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Allocates enough memory to hold a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.78.5"></a><h4>Returns</h4>
+<a name="clutter-matrix-alloc.returns"></a><h4>Returns</h4>
 <p> the newly allocated <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -3556,8 +3556,8 @@ clutter_matrix_alloc (<em class="parameter"><code><span class="type">void</span>
 clutter_matrix_free (<em class="parameter"><code><a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a> *matrix</code></em>);</pre>
 <p>Frees the memory allocated by <a class="link" href="clutter-Base-geometric-types.html#clutter-matrix-alloc" title="clutter_matrix_alloc ()"><code class="function">clutter_matrix_alloc()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.79.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-matrix-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3582,8 +3582,8 @@ clutter_matrix_init_from_array (<em class="parameter"><code><a class="link" href
  with the contents of a C array of floating point
 values.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.80.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-matrix-init-from-array.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3605,7 +3605,7 @@ representing a 4x4 matrix, with column-major order. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.80.6"></a><h4>Returns</h4>
+<a name="clutter-matrix-init-from-array.returns"></a><h4>Returns</h4>
 <p> the initialzed <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -3622,8 +3622,8 @@ clutter_matrix_init_from_matrix (<em class="parameter"><code><a class="link" hre
 <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a> <em class="parameter"><code>b</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.81.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-matrix-init-from-matrix.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3644,7 +3644,7 @@ clutter_matrix_init_from_matrix (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.81.6"></a><h4>Returns</h4>
+<a name="clutter-matrix-init-from-matrix.returns"></a><h4>Returns</h4>
 <p> the initialized <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -3676,8 +3676,8 @@ clutter_matrix_init_identity (<em class="parameter"><code><a class="link" href="
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.82.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-matrix-init-identity.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3691,7 +3691,7 @@ clutter_matrix_init_identity (<em class="parameter"><code><a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.82.8"></a><h4>Returns</h4>
+<a name="clutter-matrix-init-identity.returns"></a><h4>Returns</h4>
 <p> the initialized <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -3704,8 +3704,8 @@ clutter_matrix_init_identity (<em class="parameter"><code><a class="link" href="
 clutter_knot_copy (<em class="parameter"><code>const <a class="link" href="clutter-Base-geometric-types.html#ClutterKnot"><span class="type">ClutterKnot</span></a> *knot</code></em>);</pre>
 <p>Makes an allocated copy of a knot.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.83.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-knot-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3719,7 +3719,7 @@ clutter_knot_copy (<em class="parameter"><code>const <a class="link" href="clutt
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.83.6"></a><h4>Returns</h4>
+<a name="clutter-knot-copy.returns"></a><h4>Returns</h4>
 <p> the copied knot.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix03.html#api-index-0.2">0.2</a></p>
@@ -3731,8 +3731,8 @@ clutter_knot_copy (<em class="parameter"><code>const <a class="link" href="clutt
 clutter_knot_free (<em class="parameter"><code><a class="link" href="clutter-Base-geometric-types.html#ClutterKnot"><span class="type">ClutterKnot</span></a> *knot</code></em>);</pre>
 <p>Frees the memory of an allocated knot.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.84.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-knot-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3755,8 +3755,8 @@ clutter_knot_equal (<em class="parameter"><code>const <a class="link" href="clut
                     <em class="parameter"><code>const <a class="link" href="clutter-Base-geometric-types.html#ClutterKnot"><span class="type">ClutterKnot</span></a> *knot_b</code></em>);</pre>
 <p>Compares to knot and checks if the point to the same location.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.85.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-knot-equal.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3777,7 +3777,7 @@ clutter_knot_equal (<em class="parameter"><code>const <a class="link" href="clut
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.85.6"></a><h4>Returns</h4>
+<a name="clutter-knot-equal.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the knots point to the same location.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix03.html#api-index-0.2">0.2</a></p>
@@ -3795,8 +3795,8 @@ clutter_geometry_union (<em class="parameter"><code>const <a class="link" href="
 </div>
 <p>Find the union of two rectangles represented as <a class="link" href="clutter-Base-geometric-types.html#ClutterGeometry"><span class="type">ClutterGeometry</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.86.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-geometry-union.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3837,8 +3837,8 @@ clutter_geometry_intersects (<em class="parameter"><code>const <a class="link" h
  and geometry1 intersect returning <code class="literal">TRUE</code> if
 they do else <code class="literal">FALSE</code>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.87.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-geometry-intersects.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -3859,7 +3859,7 @@ they do else <code class="literal">FALSE</code>.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.7.16.87.8"></a><h4>Returns</h4>
+<a name="clutter-geometry-intersects.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> of <em class="parameter"><code>geometry0</code></em>
 and geometry1 intersect else
 <code class="literal">FALSE</code>.</p>
@@ -3878,8 +3878,8 @@ and geometry1 intersect else
 </pre>
 <p>A point in 2D space.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.17.2.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPoint.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -3911,8 +3911,8 @@ and geometry1 intersect else
 </pre>
 <p>A size, in 2D space.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.17.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterSize.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -3954,8 +3954,8 @@ implicitly normalize it before computing eventual results. For this reason
 it is safer to access the contents of a <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> by using the provided
 API at all times, instead of directly accessing the structure members.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.17.4.7"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterRect.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -3988,8 +3988,8 @@ API at all times, instead of directly accessing the structure members.</p>
 </pre>
 <p>A point in 3D space, expressed in pixels</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.17.5.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterVertex.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -4031,8 +4031,8 @@ API at all times, instead of directly accessing the structure members.</p>
 corners of an actor. The coordinates of the two points are expressed in
 pixels with sub-pixel precision</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.17.6.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterActorBox.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -4079,8 +4079,8 @@ pixels with sub-pixel precision</p>
 directly; you should use <a href="/usr/share/gtk-doc/html/cairo/cairo-Types.html#cairo-rectangle-int-t"><span class="type">cairo_rectangle_int_t</span></a> or <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> if you
 need a rectangle type, depending on the precision required.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.17.7.7"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterGeometry.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -4121,8 +4121,8 @@ need a rectangle type, depending on the precision required.</p>
 </pre>
 <p>Point in a path behaviour.</p>
 <div class="refsect3">
-<a name="id-1.7.2.7.17.8.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterKnot.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -4227,6 +4227,6 @@ declaring it, e.g.:</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

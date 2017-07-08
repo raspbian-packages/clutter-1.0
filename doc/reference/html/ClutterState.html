@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterState: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="deprecated.html" title="Part X. Deprecated Classes">
 <link rel="prev" href="clutter-Shaders.html" title="Shaders">
 <link rel="next" href="ClutterTableLayout.html" title="ClutterTableLayout">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterState.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -228,7 +228,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterState.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -251,7 +251,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterState.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -266,7 +266,7 @@
 </div>
 <a name="ClutterStateKey"></a><div class="refsect1">
 <a name="ClutterState.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -289,7 +289,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterState.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GBoxed
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">╰──</span> ClutterStateKey
     GObject
     <span class="lineart">╰──</span> ClutterState
@@ -589,7 +589,7 @@ clutter_state_new (<em class="parameter"><code><span class="type">void</span></c
 </div>
 <p>Creates a new <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a></p>
 <div class="refsect3">
-<a name="id-1.11.18.11.2.7"></a><h4>Returns</h4>
+<a name="clutter-state-new.returns"></a><h4>Returns</h4>
 <p> the newly create <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> instance</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -612,8 +612,8 @@ clutter_state_set_state (<em class="parameter"><code><a class="link" href="Clutt
 <p>Setting a <code class="literal">NULL</code> state will stop the current animation and unset
 the current state, but keys will be left intact.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.3.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-set-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -634,7 +634,7 @@ the current state, but keys will be left intact.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.3.10"></a><h4>Returns</h4>
+<a name="clutter-state-set-state.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives the
 state transition. The returned timeline is owned by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>
 and it should not be unreferenced. </p>
@@ -657,8 +657,8 @@ clutter_state_get_state (<em class="parameter"><code><a class="link" href="Clutt
 <p>This function is useful when called from handlers of the
 <a class="link" href="ClutterState.html#ClutterState-completed" title="The “completed” signal"><span class="type">“completed”</span></a> signal.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.4.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-get-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -672,7 +672,7 @@ clutter_state_get_state (<em class="parameter"><code><a class="link" href="Clutt
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.4.10"></a><h4>Returns</h4>
+<a name="clutter-state-get-state.returns"></a><h4>Returns</h4>
 <p> a string containing the target state. The returned string
 is owned by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> and should not be modified or freed</p>
 </div>
@@ -692,8 +692,8 @@ clutter_state_warp_to_state (<em class="parameter"><code><a class="link" href="C
 <p>Change to the specified target state immediately with no animation.</p>
 <p>See <a class="link" href="ClutterState.html#clutter-state-set-state" title="clutter_state_set_state ()"><code class="function">clutter_state_set_state()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.5.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-warp-to-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -714,7 +714,7 @@ clutter_state_warp_to_state (<em class="parameter"><code><a class="link" href="C
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.5.9"></a><h4>Returns</h4>
+<a name="clutter-state-warp-to-state.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives the
 state transition. The returned timeline is owned by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>
 and it should not be unreferenced. </p>
@@ -813,8 +813,8 @@ transitioning, e.g.:</p>
 <p>will pause for 20% of the duration of the transition before animating,
 and 20% of the duration after animating.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.6.19"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -889,8 +889,8 @@ clutter_state_set_key (<em class="parameter"><code><a class="link" href="Clutter
 
 combination.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-set-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -950,7 +950,7 @@ the transition</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.7.8"></a><h4>Returns</h4>
+<a name="clutter-state-set-key.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> instance, allowing
 chaining of multiple calls. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -981,8 +981,8 @@ the default duration for transitions to the target state.</p>
  only applies
 to the specified transition.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.8.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-set-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1031,8 +1031,8 @@ target state pair</p>
 <p>The semantics for the query are the same as the semantics used for
 setting the duration with <a class="link" href="ClutterState.html#clutter-state-set-duration" title="clutter_state_set_duration ()"><code class="function">clutter_state_set_duration()</code></a></p>
 <div class="refsect3">
-<a name="id-1.11.18.11.9.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-get-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1060,7 +1060,7 @@ get the duration of, or <code class="literal">NULL</code>. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.9.9"></a><h4>Returns</h4>
+<a name="clutter-state-get-duration.returns"></a><h4>Returns</h4>
 <p> the duration, in milliseconds</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -1077,8 +1077,8 @@ clutter_state_get_states (<em class="parameter"><code><a class="link" href="Clut
 </div>
 <p>Gets a list of all the state names managed by this <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.10.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-get-states.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1092,7 +1092,7 @@ clutter_state_get_states (<em class="parameter"><code><a class="link" href="Clut
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.10.8"></a><h4>Returns</h4>
+<a name="clutter-state-get-states.returns"></a><h4>Returns</h4>
 <p> a newly allocated
 <span class="type">GList</span> of state names. The contents of the returned <span class="type">GList</span> are owned
 by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> and should not be modified or freed. Use
@@ -1119,8 +1119,8 @@ clutter_state_get_keys (<em class="parameter"><code><a class="link" href="Clutte
 <p>Returns a list of pointers to opaque structures with accessor functions
 that describe the keys added to an animator.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.11.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-get-keys.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1160,7 +1160,7 @@ for all properties. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.11.8"></a><h4>Returns</h4>
+<a name="clutter-state-get-keys.returns"></a><h4>Returns</h4>
 <p> a
 newly allocated <span class="type">GList</span> of <a class="link" href="ClutterState.html#ClutterStateKey"><span class="type">ClutterStateKey</span></a>s. The contents of
 the returned list are owned by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> and should not be
@@ -1186,8 +1186,8 @@ clutter_state_remove_key (<em class="parameter"><code><a class="link" href="Clut
 </div>
 <p>Removes all keys matching the search criteria passed in arguments.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-remove-key.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1240,8 +1240,8 @@ clutter_state_get_timeline (<em class="parameter"><code><a class="link" href="Cl
 </div>
 <p>Gets the timeline driving the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a></p>
 <div class="refsect3">
-<a name="id-1.11.18.11.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-get-timeline.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1255,7 +1255,7 @@ clutter_state_get_timeline (<em class="parameter"><code><a class="link" href="Cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.13.8"></a><h4>Returns</h4>
+<a name="clutter-state-get-timeline.returns"></a><h4>Returns</h4>
 <p> the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives
 the state change animations. The returned timeline is owned
 by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> and it should not be unreferenced directly. </p>
@@ -1287,8 +1287,8 @@ properties defined in the <a class="link" href="ClutterState.html" title="Clutte
 <p><a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> will take a reference on the passed <em class="parameter"><code>animator</code></em>
 , if any</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.14.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-set-animator.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1336,8 +1336,8 @@ clutter_state_get_animator (<em class="parameter"><code><a class="link" href="Cl
 <p>Retrieves the <a class="link" href="ClutterAnimator.html" title="ClutterAnimator"><span class="type">ClutterAnimator</span></a> that is being used for transitioning
 between the two states, if any has been set</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.15.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-get-animator.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1363,7 +1363,7 @@ between the two states, if any has been set</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.15.8"></a><h4>Returns</h4>
+<a name="clutter-state-get-animator.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="ClutterAnimator.html" title="ClutterAnimator"><span class="type">ClutterAnimator</span></a> instance, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1383,8 +1383,8 @@ clutter_state_key_get_source_state_name
 <p>Retrieves the name of the source state of the <em class="parameter"><code>state_key</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.11.18.11.16.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-source-state-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1398,7 +1398,7 @@ clutter_state_key_get_source_state_name
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.16.8"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-source-state-name.returns"></a><h4>Returns</h4>
 <p> the name of the source state for this key, or <code class="literal">NULL</code>
 if this is the generic state key for the given property when
 transitioning to the target state. The returned string is owned
@@ -1421,8 +1421,8 @@ clutter_state_key_get_target_state_name
 or NULL if this is the generic state key for the given property
 when transitioning to the target state.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.17.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-target-state-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1436,7 +1436,7 @@ when transitioning to the target state.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.17.8"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-target-state-name.returns"></a><h4>Returns</h4>
 <p> the name of the source state for this key, or NULL if
 the key is generic</p>
 </div>
@@ -1454,8 +1454,8 @@ clutter_state_key_get_object (<em class="parameter"><code>const <a class="link" 
 </div>
 <p>Retrieves the object instance this <a class="link" href="ClutterState.html#ClutterStateKey"><span class="type">ClutterStateKey</span></a> applies to.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-object.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1469,7 +1469,7 @@ clutter_state_key_get_object (<em class="parameter"><code>const <a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.18.8"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-object.returns"></a><h4>Returns</h4>
 <p> the object this state key applies to. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1487,8 +1487,8 @@ clutter_state_key_get_property_name (<em class="parameter"><code>const <a class=
 </div>
 <p>Retrieves the name of the property this <a class="link" href="ClutterState.html#ClutterStateKey"><span class="type">ClutterStateKey</span></a> applies to</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.19.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-property-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1502,7 +1502,7 @@ clutter_state_key_get_property_name (<em class="parameter"><code>const <a class=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.19.8"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-property-name.returns"></a><h4>Returns</h4>
 <p> the name of the property. The returned string is owned
 by the <a class="link" href="ClutterState.html#ClutterStateKey"><span class="type">ClutterStateKey</span></a> and should never be modified or freed</p>
 </div>
@@ -1521,8 +1521,8 @@ clutter_state_key_get_mode (<em class="parameter"><code>const <a class="link" hr
 <p>Retrieves the easing mode used for <em class="parameter"><code>state_key</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.20.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1536,7 +1536,7 @@ clutter_state_key_get_mode (<em class="parameter"><code>const <a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.20.8"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-mode.returns"></a><h4>Returns</h4>
 <p> the mode of a <a class="link" href="ClutterState.html#ClutterStateKey"><span class="type">ClutterStateKey</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -1558,8 +1558,8 @@ of the property or to a type that allow transformation from the value
 type of the key.</p>
 <p>Use <code class="function">g_value_unset()</code> when done.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.21.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1581,7 +1581,7 @@ type of the key.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.21.10"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-value.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the value was successfully retrieved,
 and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -1601,8 +1601,8 @@ clutter_state_key_get_property_type (<em class="parameter"><code>const <a class=
 <p>You can use this type to initialize the <span class="type">GValue</span> to pass to
 <a class="link" href="ClutterState.html#clutter-state-key-get-value" title="clutter_state_key_get_value ()"><code class="function">clutter_state_key_get_value()</code></a></p>
 <div class="refsect3">
-<a name="id-1.11.18.11.22.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-property-type.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1616,7 +1616,7 @@ clutter_state_key_get_property_type (<em class="parameter"><code>const <a class=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.22.9"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-property-type.returns"></a><h4>Returns</h4>
 <p> the <span class="type">GType</span> of the property</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -1634,8 +1634,8 @@ clutter_state_key_get_pre_delay (<em class="parameter"><code>const <a class="lin
 <p>Retrieves the pause before transitioning starts as a fraction of
 the total transition time.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.23.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-pre-delay.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1649,7 +1649,7 @@ the total transition time.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.23.8"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-pre-delay.returns"></a><h4>Returns</h4>
 <p> the pre delay used before starting the transition.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -1667,8 +1667,8 @@ clutter_state_key_get_post_delay (<em class="parameter"><code>const <a class="li
 <p>Retrieves the duration of the pause after transitioning is complete
 as a fraction of the total transition time.</p>
 <div class="refsect3">
-<a name="id-1.11.18.11.24.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-state-key-get-post-delay.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1682,7 +1682,7 @@ as a fraction of the total transition time.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.11.24.8"></a><h4>Returns</h4>
+<a name="clutter-state-key-get-post-delay.returns"></a><h4>Returns</h4>
 <p> the post delay, used after doing the transition.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -1708,8 +1708,8 @@ private data and should be accessed using the provided API</p>
 <p>The <a class="link" href="ClutterState.html#ClutterStateClass" title="struct ClutterStateClass"><span class="type">ClutterStateClass</span></a> structure contains
 only private data</p>
 <div class="refsect3">
-<a name="id-1.11.18.12.3.7"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStateClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -1784,8 +1784,8 @@ the target state specified by <a class="link" href="ClutterState.html#clutter-st
   <a class="link" href="ClutterTransitionGroup.html" title="ClutterTransitionGroup"><span class="type">ClutterTransitionGroup</span></a> instead</p>
 </div>
 <div class="refsect3">
-<a name="id-1.11.18.14.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterState-completed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1811,6 +1811,6 @@ the target state specified by <a class="link" href="ClutterState.html#clutter-st
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterScore: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="deprecated.html" title="Part X. Deprecated Classes">
 <link rel="prev" href="ClutterRectangle.html" title="ClutterRectangle">
 <link rel="next" href="clutter-Shaders.html" title="Shaders">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterScore.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -159,7 +159,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterScore.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -174,7 +174,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterScore.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -211,7 +211,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterScore.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -306,7 +306,7 @@ clutter_score_new (<em class="parameter"><code><span class="type">void</span></c
 <p>Creates a new <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a>. A <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> is an object that can
 hold multiple <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a>s in a sequential order.</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.2.7"></a><h4>Returns</h4>
+<a name="clutter-score-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a>. Use <code class="function">g_object_unref()</code>
 when done.</p>
 </div>
@@ -323,8 +323,8 @@ clutter_score_set_loop (<em class="parameter"><code><a class="link" href="Clutte
  should loop. A looping <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> will start
 from its initial state after the ::complete signal has been fired.</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-set-loop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -355,8 +355,8 @@ clutter_score_get_loop (<em class="parameter"><code><a class="link" href="Clutte
 <p>Gets whether <em class="parameter"><code>score</code></em>
  is looping</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-get-loop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -370,7 +370,7 @@ clutter_score_get_loop (<em class="parameter"><code><a class="link" href="Clutte
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.16.9.4.8"></a><h4>Returns</h4>
+<a name="clutter-score-get-loop.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the score is looping</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -392,8 +392,8 @@ appended timeline will be started when <em class="parameter"><code>parent</code>
 <p><a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> will take a reference on <em class="parameter"><code>timeline</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.5.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-append.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -419,7 +419,7 @@ appended timeline will be started when <em class="parameter"><code>parent</code>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.16.9.5.10"></a><h4>Returns</h4>
+<a name="clutter-score-append.returns"></a><h4>Returns</h4>
 <p> the id of the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> inside the score, or
 0 on failure. The returned id can be used with <a class="link" href="ClutterScore.html#clutter-score-remove" title="clutter_score_remove ()"><code class="function">clutter_score_remove()</code></a>
 or <a class="link" href="ClutterScore.html#clutter-score-get-timeline" title="clutter_score_get_timeline ()"><code class="function">clutter_score_get_timeline()</code></a>.</p>
@@ -447,8 +447,8 @@ clutter_score_append_at_marker (<em class="parameter"><code><a class="link" href
 <p>The <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> will take a reference on <em class="parameter"><code>timeline</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.6.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-append-at-marker.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -479,7 +479,7 @@ clutter_score_append_at_marker (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.16.9.6.10"></a><h4>Returns</h4>
+<a name="clutter-score-append-at-marker.returns"></a><h4>Returns</h4>
 <p> the id of the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> inside the score, or
 0 on failure. The returned id can be used with <a class="link" href="ClutterScore.html#clutter-score-remove" title="clutter_score_remove ()"><code class="function">clutter_score_remove()</code></a>
 or <a class="link" href="ClutterScore.html#clutter-score-get-timeline" title="clutter_score_get_timeline ()"><code class="function">clutter_score_get_timeline()</code></a>.</p>
@@ -498,8 +498,8 @@ clutter_score_remove (<em class="parameter"><code><a class="link" href="ClutterS
 the timeline has other timelines attached to it, those are removed
 as well.</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.7.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -530,8 +530,8 @@ clutter_score_remove_all (<em class="parameter"><code><a class="link" href="Clut
 <p>Removes all the timelines inside <em class="parameter"><code>score</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.8.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-remove-all.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -557,8 +557,8 @@ clutter_score_get_timeline (<em class="parameter"><code><a class="link" href="Cl
  inside <em class="parameter"><code>score</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-get-timeline.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -579,7 +579,7 @@ clutter_score_get_timeline (<em class="parameter"><code><a class="link" href="Cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.16.9.9.8"></a><h4>Returns</h4>
+<a name="clutter-score-get-timeline.returns"></a><h4>Returns</h4>
 <p> the requested timeline, or <code class="literal">NULL</code>. This
 function does not increase the reference count on the returned
 <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a>. </p>
@@ -593,11 +593,11 @@ function does not increase the reference count on the returned
 <pre class="programlisting"><span class="returnvalue">GSList</span> *
 clutter_score_list_timelines (<em class="parameter"><code><a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> *score</code></em>);</pre>
 <div class="warning"><p><code class="literal">clutter_score_list_timelines</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
-<p>Retrieves a list of all the <a href="ClutterTimeline.html"><span class="type">ClutterTimelines</span></a> managed by <em class="parameter"><code>score</code></em>
+<p>Retrieves a list of all the <a href="ClutterTimeline.html#ClutterTimeline-struct"><span class="type">ClutterTimelines</span></a> managed by <em class="parameter"><code>score</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.10.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-list-timelines.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -611,7 +611,7 @@ clutter_score_list_timelines (<em class="parameter"><code><a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.16.9.10.8"></a><h4>Returns</h4>
+<a name="clutter-score-list-timelines.returns"></a><h4>Returns</h4>
 <p> a
 <span class="type">GSList</span> containing all the timelines in the score. This function does
 not increase the reference count of the returned timelines. Use
@@ -628,8 +628,8 @@ clutter_score_start (<em class="parameter"><code><a class="link" href="ClutterSc
 <div class="warning"><p><code class="literal">clutter_score_start</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <p>Starts the score.</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.11.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-start.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -653,8 +653,8 @@ clutter_score_pause (<em class="parameter"><code><a class="link" href="ClutterSc
 <p>Pauses a playing score <em class="parameter"><code>score</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-pause.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -677,8 +677,8 @@ clutter_score_stop (<em class="parameter"><code><a class="link" href="ClutterSco
 <div class="warning"><p><code class="literal">clutter_score_stop</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <p>Stops and rewinds a playing <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> instance.</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-stop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -701,8 +701,8 @@ clutter_score_is_playing (<em class="parameter"><code><a class="link" href="Clut
 <div class="warning"><p><code class="literal">clutter_score_is_playing</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <p>Query state of a <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> instance.</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-is-playing.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -716,7 +716,7 @@ clutter_score_is_playing (<em class="parameter"><code><a class="link" href="Clut
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.16.9.14.8"></a><h4>Returns</h4>
+<a name="clutter-score-is-playing.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if score is currently playing</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -729,8 +729,8 @@ clutter_score_rewind (<em class="parameter"><code><a class="link" href="ClutterS
 <div class="warning"><p><code class="literal">clutter_score_rewind</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <p>Rewinds a <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> to its initial state.</p>
 <div class="refsect3">
-<a name="id-1.11.16.9.15.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-score-rewind.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -771,8 +771,8 @@ and should be accessed using the provided API</p>
 </pre>
 <p>The <a class="link" href="ClutterScore.html#ClutterScoreClass" title="struct ClutterScoreClass"><span class="type">ClutterScoreClass</span></a> structure contains only private data</p>
 <div class="refsect3">
-<a name="id-1.11.16.10.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScoreClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -833,8 +833,8 @@ user_function (<a class="link" href="ClutterScore.html" title="ClutterScore"><sp
 <p>The ::completed signal is emitted each time a <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> terminates.</p>
 <div class="warning"><p><code class="literal">ClutterScore::completed</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <div class="refsect3">
-<a name="id-1.11.16.12.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScore-completed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -867,8 +867,8 @@ user_function (<a class="link" href="ClutterScore.html" title="ClutterScore"><sp
 is paused.</p>
 <div class="warning"><p><code class="literal">ClutterScore::paused</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <div class="refsect3">
-<a name="id-1.11.16.12.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScore-paused.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -900,8 +900,8 @@ user_function (<a class="link" href="ClutterScore.html" title="ClutterScore"><sp
 <p>The ::started signal is emitted each time a <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> starts playing.</p>
 <div class="warning"><p><code class="literal">ClutterScore::started</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <div class="refsect3">
-<a name="id-1.11.16.12.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScore-started.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -935,8 +935,8 @@ user_function (<a class="link" href="ClutterScore.html" title="ClutterScore"><sp
 inside a <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> terminates.</p>
 <div class="warning"><p><code class="literal">ClutterScore::timeline-completed</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <div class="refsect3">
-<a name="id-1.11.16.12.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScore-timeline-completed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -975,8 +975,8 @@ user_function (<a class="link" href="ClutterScore.html" title="ClutterScore"><sp
 inside a <a class="link" href="ClutterScore.html" title="ClutterScore"><span class="type">ClutterScore</span></a> starts playing.</p>
 <div class="warning"><p><code class="literal">ClutterScore::timeline-started</code> has been deprecated since version 1.8 and should not be used in newly-written code.</p></div>
 <div class="refsect3">
-<a name="id-1.11.16.12.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScore-timeline-started.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1007,6 +1007,6 @@ inside a <a class="link" href="ClutterScore.html" title="ClutterScore"><span cla
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

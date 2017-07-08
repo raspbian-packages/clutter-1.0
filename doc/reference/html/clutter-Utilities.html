@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Utilities: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-Cairo-integration.html" title="Cairo integration">
 <link rel="next" href="clutter-Versioning-Macros.html" title="Versioning Macros">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-Utilities.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -123,7 +123,7 @@
 </div>
 <a name="ClutterParamSpecFixed"></a><div class="refsect1">
 <a name="clutter-Utilities.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -154,8 +154,8 @@ clutter_util_next_p2 (<em class="parameter"><code><span class="type">gint</span>
 <p>Calculates the nearest power of two, greater than or equal to <em class="parameter"><code>a</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-util-next-p2.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -169,7 +169,7 @@ clutter_util_next_p2 (<em class="parameter"><code><span class="type">gint</span>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.2.7"></a><h4>Returns</h4>
+<a name="clutter-util-next-p2.returns"></a><h4>Returns</h4>
 <p> The nearest power of two, greater or equal to <em class="parameter"><code>a</code></em>
 .</p>
 </div>
@@ -191,8 +191,8 @@ loop and runs every timeout function inside it. The timeout pool is
 always sorted, so that the extraction of the next timeout function is
 a constant time operation.</p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeout-pool-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -207,7 +207,7 @@ be <span class="type">G_PRIORITY_DEFAULT</span></p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.3.8"></a><h4>Returns</h4>
+<a name="clutter-timeout-pool-new.returns"></a><h4>Returns</h4>
 <p> the newly created <span class="type">ClutterTimeoutPool</span>. The created pool
 is owned by the GLib default context and will be automatically
 destroyed when the context is destroyed. It is possible to force
@@ -251,8 +251,8 @@ invoke the function multiple times to catch up missing frames if
  takes more than <em class="parameter"><code>interval</code></em>
  ms to execute.</p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.4.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeout-pool-add.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -288,7 +288,7 @@ invoke the function multiple times to catch up missing frames if
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.4.9"></a><h4>Returns</h4>
+<a name="clutter-timeout-pool-add.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the timeout inside the pool.
 Use <a class="link" href="clutter-Utilities.html#clutter-timeout-pool-remove" title="clutter_timeout_pool_remove ()"><code class="function">clutter_timeout_pool_remove()</code></a> to stop the timeout.</p>
 </div>
@@ -309,8 +309,8 @@ clutter_timeout_pool_remove (<em class="parameter"><code><span class="type">Clut
 is the same returned when adding a function to the timeout pool with
 <a class="link" href="clutter-Utilities.html#clutter-timeout-pool-add" title="clutter_timeout_pool_add ()"><code class="function">clutter_timeout_pool_add()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-timeout-pool-remove.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -346,8 +346,8 @@ clutter_frame_source_add (<em class="parameter"><code><span class="type">guint</
 <p>Simple wrapper around <a class="link" href="clutter-Utilities.html#clutter-frame-source-add-full" title="clutter_frame_source_add_full ()"><code class="function">clutter_frame_source_add_full()</code></a>.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.6.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-frame-source-add.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -373,7 +373,7 @@ clutter_frame_source_add (<em class="parameter"><code><span class="type">guint</
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.6.9"></a><h4>Returns</h4>
+<a name="clutter-frame-source-add.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the event source.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -414,8 +414,8 @@ multiple times to catch up missing frames if <em class="parameter"><code>func</c
  ms to execute.</p>
 <p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> clutter_frame_source_add]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.7.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-frame-source-add-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -452,7 +452,7 @@ range between <code class="literal">G_PRIORITY_DEFAULT</code> and <code class="l
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.7.10"></a><h4>Returns</h4>
+<a name="clutter-frame-source-add-full.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the event source.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -475,8 +475,8 @@ clutter_param_spec_fixed (<em class="parameter"><code>const <span class="type">g
 <p>Creates a <span class="type">GParamSpec</span> for properties using <span class="type">CoglFixed</span> values</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.8.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-param-spec-fixed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -522,7 +522,7 @@ clutter_param_spec_fixed (<em class="parameter"><code>const <span class="type">g
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.8.9"></a><h4>Returns</h4>
+<a name="clutter-param-spec-fixed.returns"></a><h4>Returns</h4>
 <p> the newly created <span class="type">GParamSpec</span>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -540,8 +540,8 @@ clutter_param_spec_fixed (<em class="parameter"><code>const <span class="type">g
 <p>Evaluates to <code class="literal">TRUE</code> if <em class="parameter"><code>x</code></em>
  holds a <span class="type">CoglFixed</span>   .</p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.9.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="CLUTTER-VALUE-HOLDS-FIXED.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -571,8 +571,8 @@ clutter_value_set_fixed (<em class="parameter"><code><span class="type">GValue</
 .</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.10.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-value-set-fixed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -607,8 +607,8 @@ clutter_value_get_fixed (<em class="parameter"><code>const <span class="type">GV
 .</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.11.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-value-get-fixed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -622,7 +622,7 @@ clutter_value_get_fixed (<em class="parameter"><code>const <span class="type">GV
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.16.8.11.9"></a><h4>Returns</h4>
+<a name="clutter-value-get-fixed.returns"></a><h4>Returns</h4>
 <p> the value inside the passed <span class="type">GValue</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -645,8 +645,8 @@ clutter_value_get_fixed (<em class="parameter"><code>const <span class="type">GV
 </div>
 <p><span class="type">GParamSpec</span> subclass for fixed point based properties</p>
 <div class="refsect3">
-<a name="id-1.7.2.16.9.2.7"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterParamSpecFixed.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -676,6 +676,6 @@ clutter_value_get_fixed (<em class="parameter"><code>const <span class="type">GV
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterConstraint: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch01.html" title="Abstract classes and interfaces">
 <link rel="prev" href="ClutterAction.html" title="ClutterAction">
 <link rel="next" href="ClutterEffect.html" title="ClutterEffect">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -34,7 +34,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterConstraint.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -79,7 +79,7 @@ allocation of the actor to which they are applied by overriding the
 <a class="link" href="ClutterFixedLayout.html" title="ClutterFixedLayout"><span class="type">ClutterFixedLayout</span></a>, or with actors implicitly using a fixed layout
 manager, like <a class="link" href="ClutterGroup.html" title="ClutterGroup"><span class="type">ClutterGroup</span></a> and <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>.</p>
 <p>Constraints provide a way to build user interfaces by using
-relations between <a href="ClutterActor.html"><span class="type">ClutterActors</span></a>, without explicit fixed
+relations between <a href="ClutterActor.html#ClutterActor-struct"><span class="type">ClutterActors</span></a>, without explicit fixed
 positioning and sizing, similarly to how fluid layout managers like
 <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> and <a class="link" href="ClutterTableLayout.html" title="ClutterTableLayout"><span class="type">ClutterTableLayout</span></a> lay out their children.</p>
 <p>Constraints are attached to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, and are available
@@ -94,18 +94,18 @@ axis, using a normalized value between 0 and 1.</p></li>
 of an actor to the corresponding position or size of a source actor,
 with or without an offset.</p></li>
 <li class="listitem"><p><a class="link" href="ClutterSnapConstraint.html" title="ClutterSnapConstraint"><span class="type">ClutterSnapConstraint</span></a>, a constraint that "snaps" together the edges
-of two <a href="ClutterActor.html"><span class="type">ClutterActors</span></a>; if an actor uses two constraints on both its
+of two <a href="ClutterActor.html#ClutterActor-struct"><span class="type">ClutterActors</span></a>; if an actor uses two constraints on both its
 horizontal or vertical edges then it can also expand to fit the empty
 space.</p></li>
 </ul></div>
 <p>The <a class="ulink" href="https://git.gnome.org/browse/clutter/tree/examples/constraints.c?h=clutter-1.18" target="_top">constraints example</a>
-uses various types of <a href="ClutterConstraint.html"><span class="type">ClutterConstraints</span></a> to lay out three actors on a
+uses various types of <a href="ClutterConstraint.html#ClutterConstraint-struct"><span class="type">ClutterConstraints</span></a> to lay out three actors on a
 resizable stage. Only the central actor has an explicit size, and no
 actor has an explicit position.</p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem"><p>The <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> with <a class="link" href="ClutterActor.html#ClutterActor--name" title="The “name” property"><span class="type">“name”</span></a> <code class="literal">layerA</code> is explicitly
 sized to 100 pixels by 25 pixels, and it's added to the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a></p></li>
-<li class="listitem"><p>two <a href="ClutterAlignConstraint.html"><span class="type">ClutterAlignConstraints</span></a> are used to anchor <code class="literal">layerA</code> to the
+<li class="listitem"><p>two <a href="ClutterAlignConstraint.html#ClutterAlignConstraint-struct"><span class="type">ClutterAlignConstraints</span></a> are used to anchor <code class="literal">layerA</code> to the
 center of the stage, by using 0.5 as the alignment <a class="link" href="ClutterAlignConstraint.html#ClutterAlignConstraint--factor" title="The “factor” property"><span class="type">“factor”</span></a> on
 both the X and Y axis</p></li>
 <li class="listitem"><p>the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> with <a class="link" href="ClutterActor.html#ClutterActor--name" title="The “name” property"><span class="type">“name”</span></a> <code class="literal">layerB</code> is added to the
@@ -117,17 +117,17 @@ objects, thus keeping <code class="literal">layerB</code> aligned to <code class
 of <code class="literal">layerA</code>; the bottom edge of <code class="literal">layerB</code> is also snapped together with
 the bottom edge of the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>; an offset is  given to the two
 <span class="type">ClutterSnapConstraintss</span> to allow for some padding; since <code class="literal">layerB</code> is
-snapped between two different <a href="ClutterActor.html"><span class="type">ClutterActors</span></a>, its height is stretched
+snapped between two different <a href="ClutterActor.html#ClutterActor-struct"><span class="type">ClutterActors</span></a>, its height is stretched
 to match the gap</p></li>
 <li class="listitem"><p>the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> with <a class="link" href="ClutterActor.html#ClutterActor--name" title="The “name” property"><span class="type">“name”</span></a> <code class="literal">layerC</code> mirrors <code class="literal">layerB</code>,
 snapping the top edge of the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> to the top edge of <code class="literal">layerC</code>
 and the top edge of <code class="literal">layerA</code> to the bottom edge of <code class="literal">layerC</code></p></li>
 </ul></div>
 <p>You can try resizing interactively the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> and verify
-that the three <a href="ClutterActor.html"><span class="type">ClutterActors</span></a> maintain the same position and
+that the three <a href="ClutterActor.html#ClutterActor-struct"><span class="type">ClutterActors</span></a> maintain the same position and
 size relative to each other, and to the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>.</p>
 <p>It is important to note that Clutter does not avoid loops or
-competing constraints; if two or more <a href="ClutterConstraint.html"><span class="type">ClutterConstraints</span></a>
+competing constraints; if two or more <a href="ClutterConstraint.html#ClutterConstraint-struct"><span class="type">ClutterConstraints</span></a>
 are operating on the same positional or dimensional attributes of an
 actor, or if the constraints on two different actors depend on each
 other, then the behavior is undefined.</p>
@@ -143,7 +143,7 @@ attached to that actor to modify the allocation before it is passed to
 the actor's <a class="link" href="ClutterActor.html#ClutterActorClass.allocate"><code class="function">ClutterActorClass.allocate()</code></a> implementation.</p>
 <p>The <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a> passed to the <code class="literal"><code class="function">update_allocation()</code></code> implementation
 contains the original allocation of the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, plus the eventual
-modifications applied by the other <a href="ClutterConstraint.html"><span class="type">ClutterConstraints</span></a>, in the same order
+modifications applied by the other <a href="ClutterConstraint.html#ClutterConstraint-struct"><span class="type">ClutterConstraints</span></a>, in the same order
 the constraints have been applied to the actor.</p>
 <p>It is not necessary for a <a class="link" href="ClutterConstraint.html" title="ClutterConstraint"><span class="type">ClutterConstraint</span></a> sub-class to chain
 up to the parent's implementation.</p>
@@ -186,8 +186,8 @@ private data and should be accessed using the provided API</p>
 <p>The <a class="link" href="ClutterConstraint.html#ClutterConstraintClass" title="struct ClutterConstraintClass"><span class="type">ClutterConstraintClass</span></a> structure contains
 only private data</p>
 <div class="refsect3">
-<a name="id-1.5.2.10.7.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterConstraintClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -219,6 +219,6 @@ since 1.22</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

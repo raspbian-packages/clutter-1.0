@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterPath: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-General.html" title="General">
 <link rel="next" href="ClutterSettings.html" title="ClutterSettings">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@ and bezier curves.</p>
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterPath.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -279,7 +279,7 @@ and bezier curves.</p>
 </div>
 <div class="refsect1">
 <a name="ClutterPath.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -302,7 +302,7 @@ and bezier curves.</p>
 </div>
 <a name="ClutterPathNode"></a><div class="refsect1">
 <a name="ClutterPath.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -329,7 +329,7 @@ and bezier curves.</p>
 </div>
 <div class="refsect1">
 <a name="ClutterPath.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GBoxed
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">╰──</span> ClutterPathNode
     GObject
     <span class="lineart">╰──</span> GInitiallyUnowned
@@ -379,8 +379,8 @@ in a string using a subset of the SVG path syntax. See
 <p>This function is passed to <a class="link" href="ClutterPath.html#clutter-path-foreach" title="clutter_path_foreach ()"><code class="function">clutter_path_foreach()</code></a> and will be
 called for each node contained in the path.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPathCallback.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -411,7 +411,7 @@ clutter_path_new (<em class="parameter"><code><span class="type">void</span></co
 <p>The object has a floating reference so if you add it to a
 <a class="link" href="ClutterBehaviourPath.html" title="ClutterBehaviourPath"><span class="type">ClutterBehaviourPath</span></a> then you do not need to unref it.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.3.6"></a><h4>Returns</h4>
+<a name="clutter-path-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -428,8 +428,8 @@ the string.</p>
 <p>The object has a floating reference so if you add it to a
 <a class="link" href="ClutterBehaviourPath.html" title="ClutterBehaviourPath"><span class="type">ClutterBehaviourPath</span></a> then you do not need to unref it.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-new-with-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -443,7 +443,7 @@ the string.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.4.7"></a><h4>Returns</h4>
+<a name="clutter-path-new-with-description.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -459,8 +459,8 @@ clutter_path_add_move_to (<em class="parameter"><code><a class="link" href="Clut
 used as the first node in a path. It can also be used in the middle
 of the path to cause the actor to jump to the new coordinate.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-move-to.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -497,8 +497,8 @@ clutter_path_add_rel_move_to (<em class="parameter"><code><a class="link" href="
 <p>Same as <a class="link" href="ClutterPath.html#clutter-path-add-move-to" title="clutter_path_add_move_to ()"><code class="function">clutter_path_add_move_to()</code></a> except the coordinates are
 relative to the previous node.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-rel-move-to.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -535,8 +535,8 @@ clutter_path_add_line_to (<em class="parameter"><code><a class="link" href="Clut
 <p>Adds a <a class="link" href="ClutterPath.html#CLUTTER-PATH-LINE-TO:CAPS"><code class="literal">CLUTTER_PATH_LINE_TO</code></a> type node to the path. This causes the
 actor to move to the new coordinates in a straight line.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-line-to.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -573,8 +573,8 @@ clutter_path_add_rel_line_to (<em class="parameter"><code><a class="link" href="
 <p>Same as <a class="link" href="ClutterPath.html#clutter-path-add-line-to" title="clutter_path_add_line_to ()"><code class="function">clutter_path_add_line_to()</code></a> except the coordinates are
 relative to the previous node.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-rel-line-to.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -622,8 +622,8 @@ the actor to follow a bezier from the last node to (<em class="parameter"><code>
 ,<em class="parameter"><code>y_2</code></em>
 ) as control points.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-curve-to.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -684,8 +684,8 @@ clutter_path_add_rel_curve_to (<em class="parameter"><code><a class="link" href=
 <p>Same as <a class="link" href="ClutterPath.html#clutter-path-add-curve-to" title="clutter_path_add_curve_to ()"><code class="function">clutter_path_add_curve_to()</code></a> except the coordinates are
 relative to the previous node.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-rel-curve-to.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -741,8 +741,8 @@ clutter_path_add_close (<em class="parameter"><code><a class="link" href="Clutte
 straight line from the last node to the last <a class="link" href="ClutterPath.html#CLUTTER-PATH-MOVE-TO:CAPS"><code class="literal">CLUTTER_PATH_MOVE_TO</code></a>
 type node.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-close.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -794,8 +794,8 @@ on the point 300,300 you could use the following path:</p>
 <p>If the path description isn't valid <code class="literal">FALSE</code> will be returned and no
 nodes will be added.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.12.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-string.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -816,7 +816,7 @@ nodes will be added.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.12.12"></a><h4>Returns</h4>
+<a name="clutter-path-add-string.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> is the path description was valid or <code class="literal">FALSE</code>
 otherwise.</p>
 </div>
@@ -831,8 +831,8 @@ clutter_path_add_node (<em class="parameter"><code><a class="link" href="Clutter
 <p>Adds <em class="parameter"><code>node</code></em>
  to the end of the path.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -863,8 +863,8 @@ clutter_path_add_cairo_path (<em class="parameter"><code><a class="link" href="C
 <p>Add the nodes of the Cairo path to the end of <em class="parameter"><code>path</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-add-cairo-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -893,8 +893,8 @@ clutter_path_add_cairo_path (<em class="parameter"><code><a class="link" href="C
 clutter_path_get_n_nodes (<em class="parameter"><code><a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> *path</code></em>);</pre>
 <p>Retrieves the number of nodes in the path.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.15.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-get-n-nodes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -908,7 +908,7 @@ clutter_path_get_n_nodes (<em class="parameter"><code><a class="link" href="Clut
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.15.6"></a><h4>Returns</h4>
+<a name="clutter-path-get-n-nodes.returns"></a><h4>Returns</h4>
 <p> the number of nodes.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -923,8 +923,8 @@ clutter_path_get_node (<em class="parameter"><code><a class="link" href="Clutter
 <p>Retrieves the node of the path indexed by <em class="parameter"><code>index</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.16.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-get-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -962,8 +962,8 @@ should not be freed. Altering the path may cause the nodes in the
 list to become invalid so you should copy them if you want to keep
 the list.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.17.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-get-nodes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -977,7 +977,7 @@ the list.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.17.6"></a><h4>Returns</h4>
+<a name="clutter-path-get-nodes.returns"></a><h4>Returns</h4>
 <p> a
 list of nodes in the path. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Clutter.PathNode]</span></p>
@@ -993,8 +993,8 @@ clutter_path_foreach (<em class="parameter"><code><a class="link" href="ClutterP
                       <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
 <p>Calls a function for each node of the path.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-foreach.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1033,8 +1033,8 @@ clutter_path_insert_node (<em class="parameter"><code><a class="link" href="Clut
 <em class="parameter"><code>index_</code></em>
  is negative it will append the node to the end of the path.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-insert-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1069,8 +1069,8 @@ clutter_path_remove_node (<em class="parameter"><code><a class="link" href="Clut
                           <em class="parameter"><code><span class="type">guint</span> index_</code></em>);</pre>
 <p>Removes the node at the given offset from the path.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-remove-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1103,8 +1103,8 @@ clutter_path_replace_node (<em class="parameter"><code><a class="link" href="Clu
  with <em class="parameter"><code>node</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-replace-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1139,8 +1139,8 @@ clutter_path_get_description (<em class="parameter"><code><a class="link" href="
 <p>Returns a newly allocated string describing the path in the same
 format as used by <a class="link" href="ClutterPath.html#clutter-path-add-string" title="clutter_path_add_string ()"><code class="function">clutter_path_add_string()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.22.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-get-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1154,7 +1154,7 @@ format as used by <a class="link" href="ClutterPath.html#clutter-path-add-string
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.22.6"></a><h4>Returns</h4>
+<a name="clutter-path-get-description.returns"></a><h4>Returns</h4>
 <p> a string description of the path. Free with <code class="function">g_free()</code>.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1171,8 +1171,8 @@ clutter_path_set_description (<em class="parameter"><code><a class="link" href="
 <p>If the string is invalid then <code class="literal">FALSE</code> is returned and the path is
 unaltered.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.23.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-set-description.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1193,7 +1193,7 @@ unaltered.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.23.7"></a><h4>Returns</h4>
+<a name="clutter-path-set-description.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> is the path was valid, <code class="literal">FALSE</code> otherwise.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1206,8 +1206,8 @@ clutter_path_to_cairo_path (<em class="parameter"><code><a class="link" href="Cl
                             <em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);</pre>
 <p>Add the nodes of the ClutterPath to the path in the Cairo context.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-to-cairo-path.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1236,8 +1236,8 @@ clutter_path_to_cairo_path (<em class="parameter"><code><a class="link" href="Cl
 clutter_path_clear (<em class="parameter"><code><a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> *path</code></em>);</pre>
 <p>Removes all nodes from the path.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.25.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-clear.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1265,8 +1265,8 @@ clutter_path_get_position (<em class="parameter"><code><a class="link" href="Clu
 interpolated position is then stored in <em class="parameter"><code>position</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-get-position.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1292,7 +1292,7 @@ interpolated position is then stored in <em class="parameter"><code>position</co
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.26.6"></a><h4>Returns</h4>
+<a name="clutter-path-get-position.returns"></a><h4>Returns</h4>
 <p> index of the node used to calculate the position.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1304,8 +1304,8 @@ interpolated position is then stored in <em class="parameter"><code>position</co
 clutter_path_get_length (<em class="parameter"><code><a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a> *path</code></em>);</pre>
 <p>Retrieves an approximation of the total length of the path.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.27.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-get-length.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1319,7 +1319,7 @@ clutter_path_get_length (<em class="parameter"><code><a class="link" href="Clutt
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.27.6"></a><h4>Returns</h4>
+<a name="clutter-path-get-length.returns"></a><h4>Returns</h4>
 <p> the length of the path.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1331,8 +1331,8 @@ clutter_path_get_length (<em class="parameter"><code><a class="link" href="Clutt
 clutter_path_node_copy (<em class="parameter"><code>const <a class="link" href="ClutterPath.html#ClutterPathNode"><span class="type">ClutterPathNode</span></a> *node</code></em>);</pre>
 <p>Makes an allocated copy of a node.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.28.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-node-copy.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1346,7 +1346,7 @@ clutter_path_node_copy (<em class="parameter"><code>const <a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.28.6"></a><h4>Returns</h4>
+<a name="clutter-path-node-copy.returns"></a><h4>Returns</h4>
 <p> the copied node.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1358,8 +1358,8 @@ clutter_path_node_copy (<em class="parameter"><code>const <a class="link" href="
 clutter_path_node_free (<em class="parameter"><code><a class="link" href="ClutterPath.html#ClutterPathNode"><span class="type">ClutterPathNode</span></a> *node</code></em>);</pre>
 <p>Frees the memory of an allocated node.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-node-free.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1383,8 +1383,8 @@ clutter_path_node_equal (<em class="parameter"><code>const <a class="link" href=
 <p>Compares two nodes and checks if they are the same type with the
 same coordinates.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.30.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-path-node-equal.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1405,7 +1405,7 @@ same coordinates.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.10.9.30.6"></a><h4>Returns</h4>
+<a name="clutter-path-node-equal.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the nodes are the same.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1434,8 +1434,8 @@ be accessed with the functions below.</p>
 <a name="ClutterPathNodeType"></a><h3>enum ClutterPathNodeType</h3>
 <p>Types of nodes in a <a class="link" href="ClutterPath.html" title="ClutterPath"><span class="type">ClutterPath</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.10.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPathNodeType.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1518,8 +1518,8 @@ types. <a class="link" href="ClutterPath.html#CLUTTER-PATH-MOVE-TO:CAPS"><code c
 pair of coordinates, <a class="link" href="ClutterPath.html#CLUTTER-PATH-CURVE-TO:CAPS"><code class="literal">CLUTTER_PATH_CURVE_TO</code></a> uses all three and
 <a class="link" href="ClutterPath.html#CLUTTER-PATH-CLOSE:CAPS"><code class="literal">CLUTTER_PATH_CLOSE</code></a> uses none.</p>
 <div class="refsect3">
-<a name="id-1.7.2.10.10.5.6"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPathNode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -1562,6 +1562,6 @@ pair of coordinates, <a class="link" href="ClutterPath.html#CLUTTER-PATH-CURVE-T
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

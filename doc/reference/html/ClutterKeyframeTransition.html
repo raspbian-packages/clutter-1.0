@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterKeyframeTransition: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch09.html" title="Base classes">
 <link rel="prev" href="ClutterPropertyTransition.html" title="ClutterPropertyTransition">
 <link rel="next" href="ClutterTransitionGroup.html" title="ClutterTransitionGroup">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterKeyframeTransition.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -118,7 +118,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterKeyframeTransition.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -207,8 +207,8 @@ clutter_keyframe_transition_new (<em class="parameter"><code>const <span class="
 <p>Creates a new <a class="link" href="ClutterKeyframeTransition.html" title="ClutterKeyframeTransition"><span class="type">ClutterKeyframeTransition</span></a> for <em class="parameter"><code>property_name</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -222,7 +222,7 @@ clutter_keyframe_transition_new (<em class="parameter"><code>const <span class="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.2.6"></a><h4>Returns</h4>
+<a name="clutter-keyframe-transition-new.returns"></a><h4>Returns</h4>
 <p> the newly allocated
 <a class="link" href="ClutterKeyframeTransition.html" title="ClutterKeyframeTransition"><span class="type">ClutterKeyframeTransition</span></a> instance. Use <code class="function">g_object_unref()</code> when
 done to free its resources. </p>
@@ -246,8 +246,8 @@ language bindings should use <a class="link" href="ClutterKeyframeTransition.htm
 <a class="link" href="ClutterKeyframeTransition.html#clutter-keyframe-transition-set-values" title="clutter_keyframe_transition_set_values ()"><code class="function">clutter_keyframe_transition_set_values()</code></a> instead.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-set.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -299,8 +299,8 @@ will be created; if <em class="parameter"><code>transition</code></em>
  must
 have at least as many elements as the number of key frames.</p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-set-key-frames.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -345,8 +345,8 @@ be created; if <em class="parameter"><code>transition</code></em>
  must have
 at least as many elements as the number of key frames.</p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-set-modes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -392,8 +392,8 @@ be created; if <em class="parameter"><code>transition</code></em>
  must have
 at least as many elements as the number of key frames.</p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-set-values.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -430,8 +430,8 @@ clutter_keyframe_transition_get_n_key_frames
 <p>Retrieves the number of key frames inside <em class="parameter"><code>transition</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-get-n-key-frames.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -445,7 +445,7 @@ clutter_keyframe_transition_get_n_key_frames
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.7.6"></a><h4>Returns</h4>
+<a name="clutter-keyframe-transition-get-n-key-frames.returns"></a><h4>Returns</h4>
 <p> the number of key frames</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -470,8 +470,8 @@ clutter_keyframe_transition_set_key_frame
 must be smaller than the number of key frames inside <em class="parameter"><code>transition</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.8.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-set-key-frame.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -526,8 +526,8 @@ clutter_keyframe_transition_get_key_frame
  must be
 smaller than the number of key frames.</p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.9.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-get-key-frame.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -573,8 +573,8 @@ clutter_keyframe_transition_clear (<em class="parameter"><code><a class="link" h
 <p>Removes all key frames from <em class="parameter"><code>transition</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.6.3.7.8.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-keyframe-transition-clear.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -612,6 +612,6 @@ private data.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

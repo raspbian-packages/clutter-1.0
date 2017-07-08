@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cairo integration: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-Unit-conversion.html" title="Unit conversion">
 <link rel="next" href="clutter-Utilities.html" title="Utilities">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,16 +33,12 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-Cairo-integration.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
 </colgroup>
 <tbody>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="clutter-Cairo-integration.html#CLUTTER-CAIRO-FORMAT-ARGB32:CAPS" title="CLUTTER_CAIRO_FORMAT_ARGB32">CLUTTER_CAIRO_FORMAT_ARGB32</a></td>
-</tr>
 <tr>
 <td class="function_type">
 <span class="returnvalue">void</span>
@@ -63,29 +59,32 @@
 </table></div>
 </div>
 <div class="refsect1">
+<a name="clutter-Cairo-integration.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody><tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="clutter-Cairo-integration.html#CLUTTER-CAIRO-FORMAT-ARGB32:CAPS" title="CLUTTER_CAIRO_FORMAT_ARGB32">CLUTTER_CAIRO_FORMAT_ARGB32</a></td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
 <a name="clutter-Cairo-integration.description"></a><h2>Description</h2>
 <p>Clutter provides some utility functions for using Cairo.</p>
 </div>
 <div class="refsect1">
 <a name="clutter-Cairo-integration.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
-<a name="CLUTTER-CAIRO-FORMAT-ARGB32:CAPS"></a><h3>CLUTTER_CAIRO_FORMAT_ARGB32</h3>
-<pre class="programlisting">#define CLUTTER_CAIRO_FORMAT_ARGB32     (COGL_PIXEL_FORMAT_BGRA_8888_PRE)
-</pre>
-<p>The <span class="type">CoglPixelFormat</span> to be used when uploading image data from
-and to a Cairo image surface using <code class="literal">CAIRO_FORMAT_ARGB32</code> and
-<code class="literal">CAIRO_FORMAT_RGB24</code> as <a href="/usr/share/gtk-doc/html/cairo/cairo-Image-Surfaces.html#cairo-format-t"><span class="type">cairo_format_t</span></a>.</p>
-<p class="since">Since: <a class="link" href="ix11.html#api-index-1.8">1.8</a></p>
-</div>
-<hr>
-<div class="refsect2">
 <a name="clutter-cairo-clear"></a><h3>clutter_cairo_clear ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 clutter_cairo_clear (<em class="parameter"><code><a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-t.html#cairo-t"><span class="type">cairo_t</span></a> *cr</code></em>);</pre>
 <p>Utility function to clear a Cairo context.</p>
 <div class="refsect3">
-<a name="id-1.7.2.15.5.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-cairo-clear.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -130,8 +129,8 @@ a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">Clu
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.7.2.15.5.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-cairo-set-source-color.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -156,9 +155,18 @@ a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">Clu
 </div>
 <div class="refsect1">
 <a name="clutter-Cairo-integration.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="CLUTTER-CAIRO-FORMAT-ARGB32:CAPS"></a><h3>CLUTTER_CAIRO_FORMAT_ARGB32</h3>
+<pre class="programlisting">#define CLUTTER_CAIRO_FORMAT_ARGB32     (COGL_PIXEL_FORMAT_BGRA_8888_PRE)
+</pre>
+<p>The <span class="type">CoglPixelFormat</span> to be used when uploading image data from
+and to a Cairo image surface using <code class="literal">CAIRO_FORMAT_ARGB32</code> and
+<code class="literal">CAIRO_FORMAT_RGB24</code> as <a href="/usr/share/gtk-doc/html/cairo/cairo-Image-Surfaces.html#cairo-format-t"><span class="type">cairo_format_t</span></a>.</p>
+<p class="since">Since: <a class="link" href="ix11.html#api-index-1.8">1.8</a></p>
+</div>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

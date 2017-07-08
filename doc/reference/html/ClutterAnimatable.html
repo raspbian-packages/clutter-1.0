@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterAnimatable: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch09.html" title="Base classes">
 <link rel="prev" href="clutter-Value-intervals.html" title="Value intervals">
 <link rel="next" href="ClutterTransition.html" title="ClutterTransition">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterAnimatable.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -87,7 +87,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterAnimatable.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -106,7 +106,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterAnimatable.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> ClutterAnimatable
 </pre>
 </div>
@@ -169,8 +169,8 @@ type of <em class="parameter"><code>initial_value</code></em>
 <p>All implementation of the <a class="link" href="ClutterAnimatable.html" title="ClutterAnimatable"><span class="type">ClutterAnimatable</span></a> interface must
 implement this function.</p>
 <div class="refsect3">
-<a name="id-1.6.3.4.9.2.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animatable-animate-property.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -216,7 +216,7 @@ implement this function.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.4.9.2.10"></a><h4>Returns</h4>
+<a name="clutter-animatable-animate-property.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the value has been validated and can
 be applied to the <a class="link" href="ClutterAnimatable.html" title="ClutterAnimatable"><span class="type">ClutterAnimatable</span></a>, and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -231,8 +231,8 @@ clutter_animatable_find_property (<em class="parameter"><code><a class="link" hr
 <p>Finds the <span class="type">GParamSpec</span> for <em class="parameter"><code>property_name</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.6.3.4.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animatable-find-property.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -253,7 +253,7 @@ clutter_animatable_find_property (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.4.9.3.6"></a><h4>Returns</h4>
+<a name="clutter-animatable-find-property.returns"></a><h4>Returns</h4>
 <p> The <span class="type">GParamSpec</span> for the given property
 or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -271,8 +271,8 @@ clutter_animatable_get_initial_state (<em class="parameter"><code><a class="link
  and sets <em class="parameter"><code>value</code></em>
  with it</p>
 <div class="refsect3">
-<a name="id-1.6.3.4.9.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animatable-get-initial-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -310,8 +310,8 @@ clutter_animatable_set_final_state (<em class="parameter"><code><a class="link" 
  to <em class="parameter"><code>value</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.6.3.4.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animatable-set-final-state.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -357,8 +357,8 @@ value, and store the result inside <em class="parameter"><code>value</code></em>
 involving <a class="link" href="ClutterAnimatable.html" title="ClutterAnimatable"><span class="type">ClutterAnimatable</span></a>s.</p>
 <p>This function replaces <a class="link" href="ClutterAnimatable.html#clutter-animatable-animate-property" title="clutter_animatable_animate_property ()"><code class="function">clutter_animatable_animate_property()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.4.9.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animatable-interpolate-value.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -398,7 +398,7 @@ using the same type of the <em class="parameter"><code>interval</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.6.3.4.9.6.8"></a><h4>Returns</h4>
+<a name="clutter-animatable-interpolate-value.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the interpolation was successful,
 and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -443,8 +443,8 @@ accessed</p>
 <p>Base interface for <span class="type">GObject</span>s that can be animated by a
 a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.6.3.4.10.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterAnimatableIface.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -489,6 +489,6 @@ of a property</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

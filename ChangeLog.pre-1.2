@@ -261,7 +261,7 @@ Date:   Tue Mar 2 12:38:51 2010 +0000
  1 file changed, 2 insertions(+)
 
 commit 3a84af0106522e46d930fc81013c86465357dc89
-Merge: 0baeabc a2573ad
+Merge: 0baeabc2a a2573ad2a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Tue Mar 2 12:25:45 2010 +0000
 
@@ -456,7 +456,7 @@ Date:   Mon Mar 1 17:45:00 2010 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 1777a69f2f036e2ead5986a5c91f18480a14e4fd
-Merge: 8146d8d 7ffb62e
+Merge: 8146d8d08 7ffb62eab
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Mar 1 15:37:12 2010 +0000
 
@@ -2823,7 +2823,7 @@ Date:   Tue Feb 9 18:54:28 2010 +0000
     
     2) In ClutterGroup we guard _queue_redraw() calls like this:
         if (CLUTTER_ACTOR_IS_VISIBLE (container))
-    	clutter_actor_queue_redraw (CLUTTER_ACTOR (container));
+            clutter_actor_queue_redraw (CLUTTER_ACTOR (container));
        In ClutterBox we don't:
          I think ClutterBox is correct here because
          clutter_actor_queue_redraw already optimizes the case where the
@@ -3551,7 +3551,7 @@ Date:   Mon Jan 11 00:15:25 2010 +0000
  1 file changed, 13 insertions(+), 1 deletion(-)
 
 commit 069ba6daf9d39b471eb5c1de6e621f1343d5f00c
-Merge: cc6aefa 6ab9089
+Merge: cc6aefad3 6ab90899b
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Feb 8 16:53:11 2010 +0000
 
@@ -3690,7 +3690,7 @@ Date:   Mon Feb 8 10:40:39 2010 +0000
  1 file changed, 1 deletion(-)
 
 commit 6106010b6f20980fc51d1431b623567eed10853d
-Merge: 4cc269a c82c94e
+Merge: 4cc269a46 c82c94e62
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Feb 8 10:34:22 2010 +0000
 
@@ -3914,7 +3914,7 @@ Date:   Fri Feb 5 14:47:39 2010 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 830f2402d4f49b7173eb7fa0bda5762a4c430c9a
-Merge: 1bdc3db 6b1b27d
+Merge: 1bdc3db9a 6b1b27d4f
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Sat Feb 6 00:20:07 2010 +0000
 
@@ -4467,14 +4467,14 @@ Date:   Mon Feb 1 14:48:50 2010 +0000
  1 file changed, 5 insertions(+)
 
 commit 145cc9d3dfd1dc51f254eefde35042fc20a6375e
-Merge: aa6731e 5f1c8a1
+Merge: aa6731e33 5f1c8a17e
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Mon Feb 1 13:37:19 2010 +0000
 
     Merge remote branch 'master' into texture-debugging
     
     Conflicts:
-    	clutter/cogl/cogl/cogl-context.h
+            clutter/cogl/cogl/cogl-context.h
 
 commit aa6731e338a88d03e718980604ac8f2393391a9f
 Author: Neil Roberts <neil@linux.intel.com>
@@ -4571,7 +4571,7 @@ Date:   Mon Feb 1 12:18:10 2010 +0000
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 5f1c8a17e4f81ead1747b47939d593c80246bf06
-Merge: ecbb7ce 8a4b647
+Merge: ecbb7ce41 8a4b64715
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Feb 1 11:26:56 2010 +0000
 
@@ -5905,7 +5905,7 @@ Date:   Mon Jan 11 16:21:56 2010 +0000
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 commit ead43995364bb8865ca5bab15d1bfd295578fff4
-Merge: 34b5093 a70ebe4
+Merge: 34b50934b a70ebe4f5
 Author: Neil Roberts <neil@linux.intel.com>
 Date:   Fri Jan 15 12:15:46 2010 +0000
 
@@ -6555,7 +6555,7 @@ Date:   Tue Jan 5 14:10:19 2010 +0000
  1 file changed, 13 insertions(+), 9 deletions(-)
 
 commit fa298b45b530c6b6821e73b011c3c7d226950ce0
-Merge: 4207524 4adc2c2
+Merge: 4207524e9 4adc2c2d8
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Tue Jan 5 11:04:50 2010 +0000
 
@@ -6759,7 +6759,7 @@ Date:   Sun Jan 3 20:12:49 2010 +0000
  1 file changed, 4 insertions(+)
 
 commit 3d350078a8aa6f1bdf38c12de62e2708c5369247
-Merge: a09ac0b 934eee1
+Merge: a09ac0b27 934eee17a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Dec 23 10:38:02 2009 +0000
 
@@ -6832,7 +6832,7 @@ Date:   Tue Dec 22 18:10:39 2009 +0000
  1 file changed, 83 insertions(+), 54 deletions(-)
 
 commit a09ac0b27ccb4a9c08a4e42e00776bf627f0e163
-Merge: b6bd8be 3491337
+Merge: b6bd8be6c 34913378f
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Sun Dec 20 17:39:12 2009 +0000
 
@@ -6849,7 +6849,7 @@ Date:   Sun Dec 20 17:39:12 2009 +0000
       materials: Get the right blend function for alpha
 
 commit b6bd8be6cb0fabf2ddf3eedadce68c8d3a60c3d9
-Merge: 7b53aa7 c7e8ddb
+Merge: 7b53aa751 c7e8ddb7a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Sun Dec 20 17:33:51 2009 +0000
 
@@ -7058,7 +7058,7 @@ Date:   Fri Dec 11 20:17:58 2009 +0000
  1 file changed, 36 insertions(+), 34 deletions(-)
 
 commit 7b53aa7510adc60d3287740772ec97117ce78ab9
-Merge: 60a6bff 1374b5a
+Merge: 60a6bff31 1374b5aac
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Thu Dec 10 23:36:04 2009 +0000
 
@@ -7093,7 +7093,7 @@ Date:   Thu Nov 12 17:33:15 2009 -0500
  5 files changed, 61 insertions(+), 27 deletions(-)
 
 commit 60a6bff3136c21c5ff6d4c5bb6614716853620f0
-Merge: dc47550 c4f27b1
+Merge: dc47550bc c4f27b155
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Dec 9 23:32:41 2009 +0000
 
@@ -7103,7 +7103,7 @@ Date:   Wed Dec 9 23:32:41 2009 +0000
       actor: Add a NO_LAYOUT flag for actors
 
 commit dc47550bc8eabc2c6e6e99364c1cb536a9adc973
-Merge: 86ce92e b33b628
+Merge: 86ce92eec b33b6287a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Dec 9 23:32:18 2009 +0000
 
@@ -7139,9 +7139,8 @@ Date:   Wed Dec 9 18:10:52 2009 +0000
 
     docs: Move RELEASING under docs/
 
- RELEASING     | 56 --------------------------------------------------------
- doc/RELEASING | 56 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 56 insertions(+), 56 deletions(-)
+ RELEASING => doc/RELEASING | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
 
 commit 1ffd2ccb87a570733647e655e5e608ee05661c74
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -7948,7 +7947,7 @@ Date:   Tue Dec 1 14:59:44 2009 +0000
  1 file changed, 8 insertions(+)
 
 commit 586750751a60b76e2f398be28d596009b6587c52
-Merge: c2332a5 6e99c1a
+Merge: c2332a5d2 6e99c1aef
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Tue Dec 1 14:55:19 2009 +0000
 
@@ -7994,15 +7993,12 @@ Date:   Tue Dec 1 10:16:25 2009 +0000
     Clean up the root directory of the project and try to keep the
     documentation all together.
 
- CODING_STYLE         | 379 ---------------------------------------------------
- HACKING              |  89 ------------
- HACKING.backends     | 160 ----------------------
- Makefile.am          |   3 -
- doc/CODING_STYLE     | 379 +++++++++++++++++++++++++++++++++++++++++++++++++++
- doc/HACKING          |  89 ++++++++++++
- doc/HACKING.backends | 160 ++++++++++++++++++++++
- doc/Makefile.am      |   5 +
- 8 files changed, 633 insertions(+), 631 deletions(-)
+ Makefile.am                              | 3 ---
+ CODING_STYLE => doc/CODING_STYLE         | 0
+ HACKING => doc/HACKING                   | 0
+ HACKING.backends => doc/HACKING.backends | 0
+ doc/Makefile.am                          | 5 +++++
+ 5 files changed, 5 insertions(+), 3 deletions(-)
 
 commit 348f5bfec8b8c0c682384001ac39b4e656b9c526
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -8045,27 +8041,21 @@ Date:   Thu Sep 3 13:04:59 2009 +0100
     
     • Clean up the checks and build for the additional documentation
 
- .gitignore                           |   9 +-
- configure.ac                         |  41 ++--
- doc/Makefile.am                      |   8 +-
- doc/common/Makefile.am               |   9 +
- doc/common/common.xsl                |  19 ++
- doc/common/devhelp.xsl               | 154 ++++++++++++
- doc/common/html.xsl                  | 285 ++++++++++++++++++++++
- doc/common/ref-html-style.xsl        |  54 +++++
- doc/common/style.css                 |  97 ++++++++
- doc/cookbook/Makefile.am             |  30 ++-
- doc/cookbook/clutter-cookbook.xml    | 456 ----------------------------------
- doc/cookbook/clutter-cookbook.xml.in | 457 +++++++++++++++++++++++++++++++++++
- doc/cookbook/common.xsl              |  19 --
- doc/cookbook/cookbook.xsl            |  14 --
- doc/cookbook/devhelp.xsl             | 154 ------------
- doc/cookbook/html.xsl                | 285 ----------------------
- doc/cookbook/ref-html-style.xsl      |  54 -----
- doc/cookbook/style.css               |  97 --------
- doc/manual/Makefile.am               |  84 ++++---
- doc/manual/clutter-manual.xml.in     |   9 +-
- 20 files changed, 1174 insertions(+), 1161 deletions(-)
+ .gitignore                                         |  9 +--
+ configure.ac                                       | 41 +++++------
+ doc/Makefile.am                                    |  8 ++-
+ doc/common/Makefile.am                             |  9 +++
+ doc/{cookbook => common}/common.xsl                |  0
+ doc/{cookbook => common}/devhelp.xsl               |  0
+ doc/{cookbook => common}/html.xsl                  |  0
+ doc/{cookbook => common}/ref-html-style.xsl        |  0
+ doc/{cookbook => common}/style.css                 |  0
+ doc/cookbook/Makefile.am                           | 30 ++++----
+ ...lutter-cookbook.xml => clutter-cookbook.xml.in} |  7 +-
+ doc/cookbook/cookbook.xsl                          | 14 ----
+ doc/manual/Makefile.am                             | 84 ++++++++++++----------
+ doc/manual/clutter-manual.xml.in                   |  9 ++-
+ 14 files changed, 112 insertions(+), 99 deletions(-)
 
 commit ee9d358c452c8da879e7f40e4a2e701472067c04
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -8352,27 +8342,18 @@ Date:   Fri Nov 27 00:28:39 2009 +0000
     
     All Cogl conformance tests are now prefixed 'test-cogl-'
 
- tests/conform/Makefile.am                          |  24 +-
- tests/conform/test-backface-culling.c              | 339 -----------------
- tests/conform/test-blend-strings.c                 | 416 ---------------------
- tests/conform/test-clutter-fixed.c                 |  18 -
- tests/conform/test-cogl-backface-culling.c         | 339 +++++++++++++++++
- tests/conform/test-cogl-blend-strings.c            | 416 +++++++++++++++++++++
- tests/conform/test-cogl-fixed.c                    |  18 +
- tests/conform/test-cogl-materials.c                | 195 ++++++++++
- tests/conform/test-cogl-npot-texture.c             | 230 ++++++++++++
- tests/conform/test-cogl-premult.c                  | 390 +++++++++++++++++++
- tests/conform/test-cogl-vertex-buffer-contiguous.c | 269 +++++++++++++
- tests/conform/test-cogl-vertex-buffer-interleved.c | 174 +++++++++
- tests/conform/test-cogl-vertex-buffer-mutability.c | 211 +++++++++++
- tests/conform/test-conform-main.c                  |  34 +-
- tests/conform/test-materials.c                     | 195 ----------
- tests/conform/test-npot-texture.c                  | 230 ------------
- tests/conform/test-premult.c                       | 390 -------------------
- tests/conform/test-vertex-buffer-contiguous.c      | 269 -------------
- tests/conform/test-vertex-buffer-interleved.c      | 174 ---------
- tests/conform/test-vertex-buffer-mutability.c      | 211 -----------
- 20 files changed, 2272 insertions(+), 2270 deletions(-)
+ tests/conform/Makefile.am                          | 24 +++++++--------
+ ...face-culling.c => test-cogl-backface-culling.c} |  4 +--
+ ...t-blend-strings.c => test-cogl-blend-strings.c} |  4 +--
+ .../{test-clutter-fixed.c => test-cogl-fixed.c}    |  4 +--
+ .../{test-materials.c => test-cogl-materials.c}    |  4 +--
+ ...est-npot-texture.c => test-cogl-npot-texture.c} |  4 +--
+ .../{test-premult.c => test-cogl-premult.c}        |  4 +--
+ ...uous.c => test-cogl-vertex-buffer-contiguous.c} |  4 +--
+ ...eved.c => test-cogl-vertex-buffer-interleved.c} |  4 +--
+ ...lity.c => test-cogl-vertex-buffer-mutability.c} |  4 +--
+ tests/conform/test-conform-main.c                  | 34 ++++++++++++----------
+ 11 files changed, 48 insertions(+), 46 deletions(-)
 
 commit 439f8c62b0e2651b9afeb08cb5166ed9e7f49521
 Author: Robert Bragg <robert@linux.intel.com>
@@ -8399,30 +8380,28 @@ Date:   Thu Nov 26 19:06:35 2009 +0000
     buffer, and finally the term framebuffer may be a bit more familiar to
     anyone coming from an OpenGL background.
 
- README                                       |  13 +
- clutter/clutter-texture.c                    |  15 +-
- clutter/cogl/cogl/Makefile.am                |   4 +-
- clutter/cogl/cogl/cogl-clip-stack.c          |  74 ++--
- clutter/cogl/cogl/cogl-context.c             |  13 +-
- clutter/cogl/cogl/cogl-context.h             |   4 +-
- clutter/cogl/cogl/cogl-draw-buffer-private.h | 133 ------
- clutter/cogl/cogl/cogl-draw-buffer.c         | 603 --------------------------
- clutter/cogl/cogl/cogl-framebuffer-private.h | 124 ++++++
- clutter/cogl/cogl/cogl-framebuffer.c         | 618 +++++++++++++++++++++++++++
- clutter/cogl/cogl/cogl-journal.c             |  12 +-
- clutter/cogl/cogl/cogl-matrix-stack.c        |   6 +-
- clutter/cogl/cogl/cogl-primitives.c          |  30 +-
- clutter/cogl/cogl/cogl-texture.c             |  12 +-
- clutter/cogl/cogl/cogl-vertex-buffer.c       |   6 +-
- clutter/cogl/cogl/cogl.c                     |  80 ++--
- clutter/cogl/cogl/cogl.h                     |  73 +++-
- doc/reference/cogl/cogl-sections.txt         |   3 +
- tests/conform/test-backface-culling.c        |   7 +-
- tests/conform/test-cogl-offscreen.c          |  33 +-
- tests/conform/test-cogl-readpixels.c         |  45 +-
- tests/conform/test-cogl-viewport.c           |  90 ++--
- tests/interactive/test-cogl-offscreen.c      |   4 +-
- 23 files changed, 1035 insertions(+), 967 deletions(-)
+ README                                             |  13 +
+ clutter/clutter-texture.c                          |  15 +-
+ clutter/cogl/cogl/Makefile.am                      |   4 +-
+ clutter/cogl/cogl/cogl-clip-stack.c                |  74 ++---
+ clutter/cogl/cogl/cogl-context.c                   |  13 +-
+ clutter/cogl/cogl/cogl-context.h                   |   4 +-
+ ...buffer-private.h => cogl-framebuffer-private.h} |  75 ++---
+ .../{cogl-draw-buffer.c => cogl-framebuffer.c}     | 367 +++++++++++----------
+ clutter/cogl/cogl/cogl-journal.c                   |  12 +-
+ clutter/cogl/cogl/cogl-matrix-stack.c              |   6 +-
+ clutter/cogl/cogl/cogl-primitives.c                |  30 +-
+ clutter/cogl/cogl/cogl-texture.c                   |  12 +-
+ clutter/cogl/cogl/cogl-vertex-buffer.c             |   6 +-
+ clutter/cogl/cogl/cogl.c                           |  80 ++---
+ clutter/cogl/cogl/cogl.h                           |  73 +++-
+ doc/reference/cogl/cogl-sections.txt               |   3 +
+ tests/conform/test-backface-culling.c              |   7 +-
+ tests/conform/test-cogl-offscreen.c                |  33 +-
+ tests/conform/test-cogl-readpixels.c               |  45 ++-
+ tests/conform/test-cogl-viewport.c                 |  90 +++--
+ tests/interactive/test-cogl-offscreen.c            |   4 +-
+ 21 files changed, 517 insertions(+), 449 deletions(-)
 
 commit b598210e011f6711848e649217ac7a35770bfe8e
 Author: Robert Bragg <robert@linux.intel.com>
@@ -8747,12 +8726,11 @@ Date:   Wed Nov 18 17:35:07 2009 +0000
     equivalent driver-dependent header and let cogl.h include that
     file instead.
 
- .gitignore                    |   7 +-
- clutter/cogl/cogl/Makefile.am |  18 +-
- clutter/cogl/cogl/cogl.h      | 991 ++++++++++++++++++++++++++++++++++++++++++
- clutter/cogl/cogl/cogl.h.in   | 991 ------------------------------------------
- configure.ac                  |   5 +-
- 5 files changed, 1008 insertions(+), 1004 deletions(-)
+ .gitignore                              |  7 +++----
+ clutter/cogl/cogl/Makefile.am           | 18 ++++++++++++------
+ clutter/cogl/cogl/{cogl.h.in => cogl.h} |  2 +-
+ configure.ac                            |  5 ++---
+ 4 files changed, 18 insertions(+), 14 deletions(-)
 
 commit b869e87c86b73a8c09c5f509955a120978da7604
 Author: Neil Roberts <neil@linux.intel.com>
@@ -8827,9 +8805,8 @@ Date:   Wed Nov 18 14:56:25 2009 +0000
 
     Rename ChangeLog.SVN
 
- ChangeLog.SVN            | 15737 ---------------------------------------------
- ChangeLog.pre-git-import | 15737 +++++++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 15737 insertions(+), 15737 deletions(-)
+ ChangeLog.SVN => ChangeLog.pre-git-import | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
 
 commit 60fae6a92eff5b61e4074f40161aa7b0b40bf2b9
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -9507,7 +9484,7 @@ Date:   Fri Nov 6 14:04:36 2009 +0000
  4 files changed, 7 insertions(+), 7 deletions(-)
 
 commit 4262f79f34c35a8eb620fb82eb0e36d5ac191600
-Merge: b9e519c 031d4d6
+Merge: b9e519c3b 031d4d620
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Nov 6 11:50:22 2009 +0000
 
@@ -10056,7 +10033,7 @@ Date:   Tue Nov 3 18:29:52 2009 +0000
  1 file changed, 10 insertions(+), 6 deletions(-)
 
 commit 0ff420fab59221fccf711893c363145607b40898
-Merge: f6e0e48 4258214
+Merge: f6e0e48ac 4258214e5
 Author: Robert Bragg <robert@linux.intel.com>
 Date:   Wed Nov 4 03:46:45 2009 +0000
 
@@ -11548,7 +11525,7 @@ Date:   Mon Oct 19 12:01:38 2009 +0100
  3 files changed, 10 insertions(+), 7 deletions(-)
 
 commit ba25571c8e34593f99ba302edf381a0151c98bbb
-Merge: 936779f 8ce8b91
+Merge: 936779fd9 8ce8b9138
 Author: Emmanuele Bassi <ebassi@gnome.org>
 Date:   Mon Oct 19 11:45:15 2009 +0100
 
@@ -11797,28 +11774,19 @@ Date:   Wed Jul 29 17:21:07 2009 +0100
     As part of the re-organisation of Cogl; move clutter/pango to be part of the
     cogl sub-project.
 
- clutter/Makefile.am                          |  22 +-
- clutter/cogl/Makefile.am                     |   2 +-
- clutter/cogl/pango/Makefile.am               |  33 ++
- clutter/cogl/pango/cogl-pango-display-list.c | 417 ++++++++++++++++
- clutter/cogl/pango/cogl-pango-display-list.h |  70 +++
- clutter/cogl/pango/cogl-pango-fontmap.c      | 209 ++++++++
- clutter/cogl/pango/cogl-pango-glyph-cache.c  | 352 ++++++++++++++
- clutter/cogl/pango/cogl-pango-glyph-cache.h  |  78 +++
- clutter/cogl/pango/cogl-pango-private.h      |  38 ++
- clutter/cogl/pango/cogl-pango-render.c       | 697 +++++++++++++++++++++++++++
- clutter/cogl/pango/cogl-pango.h              |  85 ++++
- clutter/pango/Makefile.am                    |  33 --
- clutter/pango/cogl-pango-display-list.c      | 417 ----------------
- clutter/pango/cogl-pango-display-list.h      |  70 ---
- clutter/pango/cogl-pango-fontmap.c           | 209 --------
- clutter/pango/cogl-pango-glyph-cache.c       | 352 --------------
- clutter/pango/cogl-pango-glyph-cache.h       |  78 ---
- clutter/pango/cogl-pango-private.h           |  38 --
- clutter/pango/cogl-pango-render.c            | 697 ---------------------------
- clutter/pango/cogl-pango.h                   |  85 ----
- configure.ac                                 |   2 +-
- 21 files changed, 1992 insertions(+), 1992 deletions(-)
+ clutter/Makefile.am                                | 22 +++++++++++-----------
+ clutter/cogl/Makefile.am                           |  2 +-
+ clutter/{ => cogl}/pango/Makefile.am               |  0
+ clutter/{ => cogl}/pango/cogl-pango-display-list.c |  0
+ clutter/{ => cogl}/pango/cogl-pango-display-list.h |  0
+ clutter/{ => cogl}/pango/cogl-pango-fontmap.c      |  0
+ clutter/{ => cogl}/pango/cogl-pango-glyph-cache.c  |  0
+ clutter/{ => cogl}/pango/cogl-pango-glyph-cache.h  |  0
+ clutter/{ => cogl}/pango/cogl-pango-private.h      |  0
+ clutter/{ => cogl}/pango/cogl-pango-render.c       |  0
+ clutter/{ => cogl}/pango/cogl-pango.h              |  0
+ configure.ac                                       |  2 +-
+ 12 files changed, 13 insertions(+), 13 deletions(-)
 
 commit 43efab46bcf88c14cc429c6c7b659bdbc84f1f71
 Author: Robert Bragg <robert@linux.intel.com>
@@ -11832,17 +11800,17 @@ Date:   Tue Jul 28 02:02:02 2009 +0100
     Currently this is the structure I'm aiming for:
     cogl/
         cogl/
-    	<put common source here>
-    	winsys/
-    	   cogl-glx.c
-    	   cogl-wgl.c
-    	driver/
-    	    gl/
-    	    gles/
-    	os/ ?
+            <put common source here>
+            winsys/
+               cogl-glx.c
+               cogl-wgl.c
+            driver/
+                gl/
+                gles/
+            os/ ?
         utils/
-    	cogl-fixed
-    	cogl-matrix-stack?
+            cogl-fixed
+            cogl-matrix-stack?
             cogl-journal?
             cogl-primitives?
         pango/
@@ -11895,205 +11863,125 @@ Date:   Tue Jul 28 02:02:02 2009 +0100
     _cogl_winsys_get_proc_address() but if that fails then it falls back to
     gmodule.
 
- Makefile.am                                        |    8 +-
- clutter.pc.in                                      |   10 +-
- clutter/Makefile.am                                |   38 +-
- clutter/cogl/Makefile.am                           |   89 +-
- clutter/cogl/TODO                                  |   25 -
- clutter/cogl/cogl-bitmap.h                         |   80 -
- clutter/cogl/cogl-color.h                          |  261 --
- clutter/cogl/cogl-debug.h                          |   79 -
- clutter/cogl/cogl-deprecated.h                     |   36 -
- clutter/cogl/cogl-fixed.h                          |  782 ----
- clutter/cogl/cogl-material.h                       |  781 ----
- clutter/cogl/cogl-matrix.h                         |  290 --
- clutter/cogl/cogl-offscreen.h                      |   96 -
- clutter/cogl/cogl-path.h                           |  347 --
- clutter/cogl/cogl-shader.h                         |  313 --
- clutter/cogl/cogl-texture.h                        |  465 ---
- clutter/cogl/cogl-types.h                          |  328 --
- clutter/cogl/cogl-vertex-buffer.h                  |  452 ---
- clutter/cogl/cogl.h.in                             |  875 -----
- clutter/cogl/cogl.pc.in                            |   15 -
- clutter/cogl/cogl/Makefile.am                      |  161 +
- clutter/cogl/cogl/cogl-bitmap-fallback.c           |  460 +++
- clutter/cogl/cogl/cogl-bitmap-pixbuf.c             |  368 ++
- clutter/cogl/cogl/cogl-bitmap-private.h            |  115 +
- clutter/cogl/cogl/cogl-bitmap.c                    |  208 ++
- clutter/cogl/cogl/cogl-bitmap.h                    |   80 +
- clutter/cogl/cogl/cogl-blend-string.c              | 1005 ++++++
- clutter/cogl/cogl/cogl-blend-string.h              |  138 +
- clutter/cogl/cogl/cogl-clip-stack.c                |  503 +++
- clutter/cogl/cogl/cogl-clip-stack.h                |   43 +
- clutter/cogl/cogl/cogl-color.c                     |  201 ++
- clutter/cogl/cogl/cogl-color.h                     |  261 ++
- clutter/cogl/cogl/cogl-context.c                   |  215 ++
- clutter/cogl/cogl/cogl-context.h                   |  131 +
- clutter/cogl/cogl/cogl-current-matrix.c            |  549 +++
- clutter/cogl/cogl/cogl-current-matrix.h            |   95 +
- clutter/cogl/cogl/cogl-debug.c                     |  131 +
- clutter/cogl/cogl/cogl-debug.h                     |   79 +
- clutter/cogl/cogl/cogl-deprecated.h                |   36 +
- clutter/cogl/cogl/cogl-enum-types.c.in             |   41 +
- clutter/cogl/cogl/cogl-enum-types.h.in             |   25 +
- clutter/cogl/cogl/cogl-fixed.c                     |  950 +++++
- clutter/cogl/cogl/cogl-fixed.h                     |  782 ++++
- clutter/cogl/cogl/cogl-handle.h                    |  157 +
- clutter/cogl/cogl/cogl-internal.h                  |   88 +
- clutter/cogl/cogl/cogl-material-private.h          |  255 ++
- clutter/cogl/cogl/cogl-material.c                  | 1972 ++++++++++
- clutter/cogl/cogl/cogl-material.h                  |  781 ++++
- clutter/cogl/cogl/cogl-matrix-stack.c              |  363 ++
- clutter/cogl/cogl/cogl-matrix-stack.h              |   82 +
- clutter/cogl/cogl/cogl-matrix.c                    |  282 ++
- clutter/cogl/cogl/cogl-matrix.h                    |  290 ++
- clutter/cogl/cogl/cogl-offscreen.h                 |   96 +
- clutter/cogl/cogl/cogl-path.h                      |  347 ++
- clutter/cogl/cogl/cogl-primitives.c                | 2329 ++++++++++++
- clutter/cogl/cogl/cogl-primitives.h                |   62 +
- clutter/cogl/cogl/cogl-shader.h                    |  313 ++
- clutter/cogl/cogl/cogl-texture-driver.h            |  157 +
- clutter/cogl/cogl/cogl-texture-private.h           |  151 +
- clutter/cogl/cogl/cogl-texture.c                   | 1682 +++++++++
- clutter/cogl/cogl/cogl-texture.h                   |  465 +++
- clutter/cogl/cogl/cogl-types.h                     |  328 ++
- clutter/cogl/cogl/cogl-util.c                      |  252 ++
- clutter/cogl/cogl/cogl-util.h                      |   30 +
- clutter/cogl/cogl/cogl-vertex-buffer-private.h     |  169 +
- clutter/cogl/cogl/cogl-vertex-buffer.c             | 2016 +++++++++++
- clutter/cogl/cogl/cogl-vertex-buffer.h             |  452 +++
- clutter/cogl/cogl/cogl.c                           |  879 +++++
- clutter/cogl/cogl/cogl.h.in                        |  875 +++++
- clutter/cogl/cogl/cogl.pc.in                       |   17 +
- clutter/cogl/cogl/driver/Makefile.am               |    7 +
- clutter/cogl/cogl/driver/gl/Makefile.am            |   39 +
- clutter/cogl/cogl/driver/gl/cogl-context-driver.c  |   84 +
- clutter/cogl/cogl/driver/gl/cogl-context-driver.h  |  103 +
- clutter/cogl/cogl/driver/gl/cogl-defines.h.in      | 1053 ++++++
- clutter/cogl/cogl/driver/gl/cogl-fbo.c             |  330 ++
- clutter/cogl/cogl/driver/gl/cogl-fbo.h             |   39 +
- clutter/cogl/cogl/driver/gl/cogl-primitives.c      |  282 ++
- clutter/cogl/cogl/driver/gl/cogl-program.c         |  255 ++
- clutter/cogl/cogl/driver/gl/cogl-program.h         |   39 +
- clutter/cogl/cogl/driver/gl/cogl-shader-private.h  |   39 +
- clutter/cogl/cogl/driver/gl/cogl-shader.c          |  177 +
- clutter/cogl/cogl/driver/gl/cogl-texture-driver.c  |  454 +++
- clutter/cogl/cogl/driver/gl/cogl.c                 |  443 +++
- clutter/cogl/cogl/driver/gles/Makefile.am          |   62 +
- .../cogl/cogl/driver/gles/cogl-context-driver.c    |   41 +
- .../cogl/cogl/driver/gles/cogl-context-driver.h    |   44 +
- clutter/cogl/cogl/driver/gles/cogl-defines.h.in    |  638 ++++
- clutter/cogl/cogl/driver/gles/cogl-fbo.c           |  343 ++
- clutter/cogl/cogl/driver/gles/cogl-fbo.h           |   39 +
- .../driver/gles/cogl-fixed-fragment-shader.glsl    |   62 +
- .../cogl/driver/gles/cogl-fixed-vertex-shader.glsl |   65 +
- clutter/cogl/cogl/driver/gles/cogl-gles2-wrapper.c | 1635 +++++++++
- clutter/cogl/cogl/driver/gles/cogl-gles2-wrapper.h |  433 +++
- clutter/cogl/cogl/driver/gles/cogl-primitives.c    |  453 +++
- clutter/cogl/cogl/driver/gles/cogl-program.c       |  338 ++
- clutter/cogl/cogl/driver/gles/cogl-program.h       |   43 +
- .../cogl/cogl/driver/gles/cogl-shader-private.h    |   40 +
- clutter/cogl/cogl/driver/gles/cogl-shader.c        |  221 ++
- .../cogl/cogl/driver/gles/cogl-texture-driver.c    |  481 +++
- clutter/cogl/cogl/driver/gles/cogl-util.c          |   49 +
- clutter/cogl/cogl/driver/gles/cogl-util.h          |   30 +
- clutter/cogl/cogl/driver/gles/cogl.c               |   64 +
- clutter/cogl/cogl/driver/gles/stringify.sh         |   94 +
- clutter/cogl/cogl/stb_image.c                      | 3772 ++++++++++++++++++++
- clutter/cogl/cogl/winsys/Makefile.am               |   43 +
- clutter/cogl/cogl/winsys/cogl-eglnative.c          |   35 +
- clutter/cogl/cogl/winsys/cogl-eglx.c               |   35 +
- clutter/cogl/cogl/winsys/cogl-fruity.c             |   35 +
- clutter/cogl/cogl/winsys/cogl-glx.c                |   78 +
- clutter/cogl/cogl/winsys/cogl-osx.c                |   35 +
- clutter/cogl/cogl/winsys/cogl-sdl.c                |   35 +
- clutter/cogl/cogl/winsys/cogl-win32.c              |   35 +
- clutter/cogl/cogl/winsys/cogl-winsys.h             |   30 +
- clutter/cogl/common/Makefile.am                    |   96 -
- clutter/cogl/common/cogl-bitmap-fallback.c         |  460 ---
- clutter/cogl/common/cogl-bitmap-pixbuf.c           |  368 --
- clutter/cogl/common/cogl-bitmap-private.h          |  115 -
- clutter/cogl/common/cogl-bitmap.c                  |  208 --
- clutter/cogl/common/cogl-blend-string.c            | 1005 ------
- clutter/cogl/common/cogl-blend-string.h            |  138 -
- clutter/cogl/common/cogl-clip-stack.c              |  503 ---
- clutter/cogl/common/cogl-clip-stack.h              |   43 -
- clutter/cogl/common/cogl-color.c                   |  201 --
- clutter/cogl/common/cogl-context.c                 |  215 --
- clutter/cogl/common/cogl-context.h                 |  131 -
- clutter/cogl/common/cogl-current-matrix.c          |  549 ---
- clutter/cogl/common/cogl-current-matrix.h          |   95 -
- clutter/cogl/common/cogl-debug.c                   |  131 -
- clutter/cogl/common/cogl-enum-types.c.in           |   41 -
- clutter/cogl/common/cogl-enum-types.h.in           |   25 -
- clutter/cogl/common/cogl-fixed.c                   |  950 -----
- clutter/cogl/common/cogl-handle.h                  |  157 -
- clutter/cogl/common/cogl-internal.h                |   88 -
- clutter/cogl/common/cogl-material-private.h        |  255 --
- clutter/cogl/common/cogl-material.c                | 1972 ----------
- clutter/cogl/common/cogl-matrix-stack.c            |  363 --
- clutter/cogl/common/cogl-matrix-stack.h            |   81 -
- clutter/cogl/common/cogl-matrix.c                  |  282 --
- clutter/cogl/common/cogl-primitives.c              | 2329 ------------
- clutter/cogl/common/cogl-primitives.h              |   62 -
- clutter/cogl/common/cogl-texture-driver.h          |  157 -
- clutter/cogl/common/cogl-texture-private.h         |  151 -
- clutter/cogl/common/cogl-texture.c                 | 1682 ---------
- clutter/cogl/common/cogl-util.c                    |  252 --
- clutter/cogl/common/cogl-util.h                    |   30 -
- clutter/cogl/common/cogl-vertex-buffer-private.h   |  169 -
- clutter/cogl/common/cogl-vertex-buffer.c           | 2016 -----------
- clutter/cogl/common/cogl.c                         |  858 -----
- clutter/cogl/common/stb_image.c                    | 3772 --------------------
- clutter/cogl/gl/cogl-context-driver.c              |   84 -
- clutter/cogl/gl/cogl-context-driver.h              |  103 -
- clutter/cogl/gl/cogl-defines.h.in                  | 1053 ------
- clutter/cogl/gl/cogl-fbo.c                         |  330 --
- clutter/cogl/gl/cogl-fbo.h                         |   39 -
- clutter/cogl/gl/cogl-primitives.c                  |  282 --
- clutter/cogl/gl/cogl-program.c                     |  255 --
- clutter/cogl/gl/cogl-program.h                     |   39 -
- clutter/cogl/gl/cogl-shader-private.h              |   39 -
- clutter/cogl/gl/cogl-shader.c                      |  177 -
- clutter/cogl/gl/cogl-texture-driver.c              |  454 ---
- clutter/cogl/gl/cogl.c                             |  515 ---
- clutter/cogl/gles/cogl-context-driver.c            |   41 -
- clutter/cogl/gles/cogl-context-driver.h            |   44 -
- clutter/cogl/gles/cogl-defines.h.in                |  638 ----
- clutter/cogl/gles/cogl-fbo.c                       |  343 --
- clutter/cogl/gles/cogl-fbo.h                       |   39 -
- clutter/cogl/gles/cogl-fixed-fragment-shader.glsl  |   62 -
- clutter/cogl/gles/cogl-fixed-vertex-shader.glsl    |   65 -
- clutter/cogl/gles/cogl-gles2-wrapper.c             | 1635 ---------
- clutter/cogl/gles/cogl-gles2-wrapper.h             |  433 ---
- clutter/cogl/gles/cogl-primitives.c                |  453 ---
- clutter/cogl/gles/cogl-program.c                   |  338 --
- clutter/cogl/gles/cogl-program.h                   |   43 -
- clutter/cogl/gles/cogl-shader-private.h            |   40 -
- clutter/cogl/gles/cogl-shader.c                    |  221 --
- clutter/cogl/gles/cogl-texture-driver.c            |  481 ---
- clutter/cogl/gles/cogl-util.c                      |   49 -
- clutter/cogl/gles/cogl-util.h                      |   30 -
- clutter/cogl/gles/cogl.c                           |   74 -
- clutter/cogl/gles/stringify.sh                     |   94 -
- clutter/eglnative/Makefile.am                      |   12 +-
- clutter/eglx/Makefile.am                           |    2 +
- clutter/fruity/Makefile.am                         |    8 +-
- clutter/glx/Makefile.am                            |    2 +
- clutter/osx/Makefile.am                            |    6 +-
- clutter/sdl/Makefile.am                            |    2 +
- clutter/win32/Makefile.am                          |    2 +
- clutter/win32/clutter-win32.pc.in                  |    8 +-
- clutter/x11/Makefile.am                            |    2 +
- clutter/x11/clutter-x11.pc.in                      |   10 +-
- configure.ac                                       |  119 +-
- doc/reference/clutter/Makefile.am                  |    6 +-
- doc/reference/cogl/Makefile.am                     |   11 +-
- tests/conform/Makefile.am                          |    4 +-
- tests/interactive/Makefile.am                      |    4 +-
- tests/micro-bench/Makefile.am                      |    9 +-
- tests/tools/Makefile.am                            |    2 +
- 198 files changed, 34272 insertions(+), 33869 deletions(-)
+ Makefile.am                                        |   8 +-
+ clutter.pc.in                                      |  10 +-
+ clutter/Makefile.am                                |  38 ++---
+ clutter/cogl/Makefile.am                           |  89 +-----------
+ clutter/cogl/TODO                                  |  25 ----
+ clutter/cogl/cogl.pc.in                            |  15 --
+ clutter/cogl/cogl/Makefile.am                      | 161 +++++++++++++++++++++
+ .../cogl/{common => cogl}/cogl-bitmap-fallback.c   |   0
+ clutter/cogl/{common => cogl}/cogl-bitmap-pixbuf.c |   0
+ .../cogl/{common => cogl}/cogl-bitmap-private.h    |   0
+ clutter/cogl/{common => cogl}/cogl-bitmap.c        |   0
+ clutter/cogl/{ => cogl}/cogl-bitmap.h              |   0
+ clutter/cogl/{common => cogl}/cogl-blend-string.c  |   0
+ clutter/cogl/{common => cogl}/cogl-blend-string.h  |   0
+ clutter/cogl/{common => cogl}/cogl-clip-stack.c    |   0
+ clutter/cogl/{common => cogl}/cogl-clip-stack.h    |   0
+ clutter/cogl/{common => cogl}/cogl-color.c         |   0
+ clutter/cogl/{ => cogl}/cogl-color.h               |   0
+ clutter/cogl/{common => cogl}/cogl-context.c       |   0
+ clutter/cogl/{common => cogl}/cogl-context.h       |   0
+ .../cogl/{common => cogl}/cogl-current-matrix.c    |   0
+ .../cogl/{common => cogl}/cogl-current-matrix.h    |   0
+ clutter/cogl/{common => cogl}/cogl-debug.c         |   0
+ clutter/cogl/{ => cogl}/cogl-debug.h               |   0
+ clutter/cogl/{ => cogl}/cogl-deprecated.h          |   0
+ clutter/cogl/{common => cogl}/cogl-enum-types.c.in |   0
+ clutter/cogl/{common => cogl}/cogl-enum-types.h.in |   0
+ clutter/cogl/{common => cogl}/cogl-fixed.c         |   0
+ clutter/cogl/{ => cogl}/cogl-fixed.h               |   0
+ clutter/cogl/{common => cogl}/cogl-handle.h        |   0
+ clutter/cogl/{common => cogl}/cogl-internal.h      |   0
+ .../cogl/{common => cogl}/cogl-material-private.h  |   0
+ clutter/cogl/{common => cogl}/cogl-material.c      |   0
+ clutter/cogl/{ => cogl}/cogl-material.h            |   0
+ clutter/cogl/{common => cogl}/cogl-matrix-stack.c  |   0
+ clutter/cogl/{common => cogl}/cogl-matrix-stack.h  |   3 +-
+ clutter/cogl/{common => cogl}/cogl-matrix.c        |   0
+ clutter/cogl/{ => cogl}/cogl-matrix.h              |   0
+ clutter/cogl/{ => cogl}/cogl-offscreen.h           |   0
+ clutter/cogl/{ => cogl}/cogl-path.h                |   0
+ clutter/cogl/{common => cogl}/cogl-primitives.c    |   0
+ clutter/cogl/{common => cogl}/cogl-primitives.h    |   6 +-
+ clutter/cogl/{ => cogl}/cogl-shader.h              |   0
+ .../cogl/{common => cogl}/cogl-texture-driver.h    |   0
+ .../cogl/{common => cogl}/cogl-texture-private.h   |   0
+ clutter/cogl/{common => cogl}/cogl-texture.c       |   0
+ clutter/cogl/{ => cogl}/cogl-texture.h             |   0
+ clutter/cogl/{ => cogl}/cogl-types.h               |   0
+ clutter/cogl/{common => cogl}/cogl-util.c          |   0
+ clutter/cogl/{common => cogl}/cogl-util.h          |   0
+ .../{common => cogl}/cogl-vertex-buffer-private.h  |   0
+ clutter/cogl/{common => cogl}/cogl-vertex-buffer.c |   0
+ clutter/cogl/{ => cogl}/cogl-vertex-buffer.h       |   0
+ clutter/cogl/{common => cogl}/cogl.c               |  35 ++++-
+ clutter/cogl/{ => cogl}/cogl.h.in                  |   2 +-
+ clutter/cogl/cogl/cogl.pc.in                       |  17 +++
+ clutter/cogl/cogl/driver/Makefile.am               |   7 +
+ clutter/cogl/cogl/driver/gl/Makefile.am            |  39 +++++
+ .../{ => cogl/driver}/gl/cogl-context-driver.c     |   0
+ .../{ => cogl/driver}/gl/cogl-context-driver.h     |   0
+ .../cogl/{ => cogl/driver}/gl/cogl-defines.h.in    |   0
+ clutter/cogl/{ => cogl/driver}/gl/cogl-fbo.c       |   0
+ clutter/cogl/{ => cogl/driver}/gl/cogl-fbo.h       |   0
+ .../cogl/{ => cogl/driver}/gl/cogl-primitives.c    |   0
+ clutter/cogl/{ => cogl/driver}/gl/cogl-program.c   |   0
+ clutter/cogl/{ => cogl/driver}/gl/cogl-program.h   |   0
+ .../{ => cogl/driver}/gl/cogl-shader-private.h     |   0
+ clutter/cogl/{ => cogl/driver}/gl/cogl-shader.c    |   0
+ .../{ => cogl/driver}/gl/cogl-texture-driver.c     |   0
+ clutter/cogl/{ => cogl/driver}/gl/cogl.c           |  72 ---------
+ clutter/cogl/cogl/driver/gles/Makefile.am          |  62 ++++++++
+ .../{ => cogl/driver}/gles/cogl-context-driver.c   |   0
+ .../{ => cogl/driver}/gles/cogl-context-driver.h   |   0
+ .../cogl/{ => cogl/driver}/gles/cogl-defines.h.in  |   0
+ clutter/cogl/{ => cogl/driver}/gles/cogl-fbo.c     |   0
+ clutter/cogl/{ => cogl/driver}/gles/cogl-fbo.h     |   0
+ .../driver}/gles/cogl-fixed-fragment-shader.glsl   |   0
+ .../driver}/gles/cogl-fixed-vertex-shader.glsl     |   0
+ .../{ => cogl/driver}/gles/cogl-gles2-wrapper.c    |   0
+ .../{ => cogl/driver}/gles/cogl-gles2-wrapper.h    |   0
+ .../cogl/{ => cogl/driver}/gles/cogl-primitives.c  |   0
+ clutter/cogl/{ => cogl/driver}/gles/cogl-program.c |   0
+ clutter/cogl/{ => cogl/driver}/gles/cogl-program.h |   0
+ .../{ => cogl/driver}/gles/cogl-shader-private.h   |   0
+ clutter/cogl/{ => cogl/driver}/gles/cogl-shader.c  |   0
+ .../{ => cogl/driver}/gles/cogl-texture-driver.c   |   0
+ clutter/cogl/{ => cogl/driver}/gles/cogl-util.c    |   0
+ clutter/cogl/{ => cogl/driver}/gles/cogl-util.h    |   0
+ clutter/cogl/{ => cogl/driver}/gles/cogl.c         |  10 --
+ clutter/cogl/{ => cogl/driver}/gles/stringify.sh   |   0
+ clutter/cogl/{common => cogl}/stb_image.c          |   0
+ clutter/cogl/cogl/winsys/Makefile.am               |  43 ++++++
+ clutter/cogl/cogl/winsys/cogl-eglnative.c          |  35 +++++
+ clutter/cogl/cogl/winsys/cogl-eglx.c               |  35 +++++
+ clutter/cogl/cogl/winsys/cogl-fruity.c             |  35 +++++
+ clutter/cogl/cogl/winsys/cogl-glx.c                |  78 ++++++++++
+ clutter/cogl/cogl/winsys/cogl-osx.c                |  35 +++++
+ clutter/cogl/cogl/winsys/cogl-sdl.c                |  35 +++++
+ clutter/cogl/cogl/winsys/cogl-win32.c              |  35 +++++
+ clutter/cogl/cogl/winsys/cogl-winsys.h             |  30 ++++
+ clutter/cogl/common/Makefile.am                    |  96 ------------
+ clutter/eglnative/Makefile.am                      |  12 +-
+ clutter/eglx/Makefile.am                           |   2 +
+ clutter/fruity/Makefile.am                         |   8 +-
+ clutter/glx/Makefile.am                            |   2 +
+ clutter/osx/Makefile.am                            |   6 +-
+ clutter/sdl/Makefile.am                            |   2 +
+ clutter/win32/Makefile.am                          |   2 +
+ clutter/win32/clutter-win32.pc.in                  |   8 +-
+ clutter/x11/Makefile.am                            |   2 +
+ clutter/x11/clutter-x11.pc.in                      |  10 +-
+ configure.ac                                       | 119 ++++++++-------
+ doc/reference/clutter/Makefile.am                  |   6 +-
+ doc/reference/cogl/Makefile.am                     |  11 +-
+ tests/conform/Makefile.am                          |   4 +-
+ tests/interactive/Makefile.am                      |   4 +-
+ tests/micro-bench/Makefile.am                      |   9 +-
+ tests/tools/Makefile.am                            |   2 +
+ 118 files changed, 834 insertions(+), 431 deletions(-)
 
 commit 2eea83de75cec3dbc334feecd004a180a7f5b1e5
 Author: Robert Bragg <robert@linux.intel.com>
@@ -12108,35 +11996,32 @@ Date:   Tue Jul 28 01:34:33 2009 +0100
     
     Driver specific members can be found under ctx->drv.stuff
 
- clutter/cogl/common/Makefile.am          |   2 +
- clutter/cogl/common/cogl-blend-string.c  |   2 +-
- clutter/cogl/common/cogl-context.c       | 215 +++++++++++++++++++++++++
- clutter/cogl/common/cogl-context.h       | 131 ++++++++++++++++
- clutter/cogl/common/cogl-material.c      |  14 +-
- clutter/cogl/common/cogl-primitives.c    |  12 +-
- clutter/cogl/common/cogl-vertex-buffer.c |  26 ++--
- clutter/cogl/common/cogl.c               |   2 +-
- clutter/cogl/gl/Makefile.am              |   2 +-
- clutter/cogl/gl/cogl-context-driver.c    |  84 ++++++++++
- clutter/cogl/gl/cogl-context-driver.h    | 103 ++++++++++++
- clutter/cogl/gl/cogl-context.c           | 259 -------------------------------
- clutter/cogl/gl/cogl-context.h           | 197 -----------------------
- clutter/cogl/gl/cogl-fbo.c               |  24 +--
- clutter/cogl/gl/cogl-primitives.c        |   2 +-
- clutter/cogl/gl/cogl-program.c           |  50 +++---
- clutter/cogl/gl/cogl-shader.c            |  12 +-
- clutter/cogl/gl/cogl-texture-driver.c    |   2 +-
- clutter/cogl/gl/cogl.c                   | 224 +++++++++++++-------------
- clutter/cogl/gles/Makefile.am            |   2 +-
- clutter/cogl/gles/cogl-context-driver.c  |  41 +++++
- clutter/cogl/gles/cogl-context-driver.h  |  44 ++++++
- clutter/cogl/gles/cogl-context.c         | 214 -------------------------
- clutter/cogl/gles/cogl-context.h         | 136 ----------------
- clutter/cogl/gles/cogl-fbo.c             |   8 +-
- clutter/cogl/gles/cogl-gles2-wrapper.c   |   2 +-
- clutter/cogl/gles/cogl-program.c         |  16 +-
- clutter/cogl/gles/cogl-texture-driver.c  |  14 +-
- 28 files changed, 828 insertions(+), 1012 deletions(-)
+ clutter/cogl/common/Makefile.am                    |   2 +
+ clutter/cogl/common/cogl-blend-string.c            |   2 +-
+ clutter/cogl/{gles => common}/cogl-context.c       |  45 ++--
+ clutter/cogl/{gles => common}/cogl-context.h       |  23 +-
+ clutter/cogl/common/cogl-material.c                |  14 +-
+ clutter/cogl/common/cogl-primitives.c              |  12 +-
+ clutter/cogl/common/cogl-vertex-buffer.c           |  26 +--
+ clutter/cogl/common/cogl.c                         |   2 +-
+ clutter/cogl/gl/Makefile.am                        |   2 +-
+ clutter/cogl/gl/cogl-context-driver.c              |  84 +++++++
+ .../gl/{cogl-context.h => cogl-context-driver.h}   | 106 +--------
+ clutter/cogl/gl/cogl-context.c                     | 259 ---------------------
+ clutter/cogl/gl/cogl-fbo.c                         |  24 +-
+ clutter/cogl/gl/cogl-primitives.c                  |   2 +-
+ clutter/cogl/gl/cogl-program.c                     |  50 ++--
+ clutter/cogl/gl/cogl-shader.c                      |  12 +-
+ clutter/cogl/gl/cogl-texture-driver.c              |   2 +-
+ clutter/cogl/gl/cogl.c                             | 224 +++++++++---------
+ clutter/cogl/gles/Makefile.am                      |   2 +-
+ clutter/cogl/gles/cogl-context-driver.c            |  41 ++++
+ clutter/cogl/gles/cogl-context-driver.h            |  44 ++++
+ clutter/cogl/gles/cogl-fbo.c                       |   8 +-
+ clutter/cogl/gles/cogl-gles2-wrapper.c             |   2 +-
+ clutter/cogl/gles/cogl-program.c                   |  16 +-
+ clutter/cogl/gles/cogl-texture-driver.c            |  14 +-
+ 25 files changed, 417 insertions(+), 601 deletions(-)
 
 commit 157eb437bac38d7a61991f47bd943cb9f6d84ad7
 Author: Robert Bragg <robert@linux.intel.com>
@@ -12148,21 +12033,19 @@ Date:   Tue Jul 28 00:37:11 2009 +0100
     cogl/{gl,gles}/cogl-texture.c into new {gl,gles}/cogl-texture-driver.c files
     and the rest that can now be shared into cogl/common/cogl-texture.c
 
- clutter/cogl/common/Makefile.am            |    3 +
- clutter/cogl/common/cogl-internal.h        |    1 +
- clutter/cogl/common/cogl-texture-driver.h  |  157 +++
- clutter/cogl/common/cogl-texture-private.h |  151 ++
- clutter/cogl/common/cogl-texture.c         | 1682 ++++++++++++++++++++++
- clutter/cogl/gl/Makefile.am                |    3 +-
- clutter/cogl/gl/cogl-texture-driver.c      |  454 ++++++
- clutter/cogl/gl/cogl-texture-private.h     |  145 --
- clutter/cogl/gl/cogl-texture.c             | 1996 ---------------------------
- clutter/cogl/gles/Makefile.am              |    3 +-
- clutter/cogl/gles/cogl-gles2-wrapper.h     |    1 +
- clutter/cogl/gles/cogl-texture-driver.c    |  481 +++++++
- clutter/cogl/gles/cogl-texture-private.h   |  144 --
- clutter/cogl/gles/cogl-texture.c           | 2066 ----------------------------
- 14 files changed, 2932 insertions(+), 4355 deletions(-)
+ clutter/cogl/common/Makefile.am                    |    3 +
+ clutter/cogl/common/cogl-internal.h                |    1 +
+ clutter/cogl/common/cogl-texture-driver.h          |  157 ++
+ clutter/cogl/{gl => common}/cogl-texture-private.h |   12 +-
+ clutter/cogl/{gl => common}/cogl-texture.c         |  474 +----
+ clutter/cogl/gl/Makefile.am                        |    3 +-
+ clutter/cogl/gl/cogl-texture-driver.c              |  454 +++++
+ clutter/cogl/gles/Makefile.am                      |    3 +-
+ clutter/cogl/gles/cogl-gles2-wrapper.h             |    1 +
+ clutter/cogl/gles/cogl-texture-driver.c            |  481 +++++
+ clutter/cogl/gles/cogl-texture-private.h           |  144 --
+ clutter/cogl/gles/cogl-texture.c                   | 2066 --------------------
+ 12 files changed, 1188 insertions(+), 2611 deletions(-)
 
 commit fe01ec6323967614c6404bc193503adb5bda1624
 Author: Robert Bragg <robert@linux.intel.com>
@@ -12293,7 +12176,7 @@ Date:   Fri Oct 16 15:57:21 2009 +0100
  1 file changed, 2 insertions(+)
 
 commit a9d2c0f6903fff5a5b445265040f8bb689c10750
-Merge: b5adbf8 70c8128
+Merge: b5adbf89b 70c812845
 Author: Emmanuele Bassi <ebassi@gnome.org>
 Date:   Fri Oct 16 15:55:05 2009 +0100
 
@@ -12303,7 +12186,7 @@ Date:   Fri Oct 16 15:55:05 2009 +0100
       Fix warning message in the ParamSpec validation
 
 commit b5adbf89b851baa9fb833b00ad6137cc5e6547cb
-Merge: ee9f8c3 c555118
+Merge: ee9f8c3bd c5551184b
 Author: Emmanuele Bassi <ebassi@gnome.org>
 Date:   Fri Oct 16 15:55:04 2009 +0100
 
@@ -12665,13 +12548,11 @@ Date:   Wed Oct 7 11:42:09 2009 +0100
     The BinLayout and FlowLayout interactive tests should be named more
     explicitly.
 
- .gitignore                           |   4 +-
- tests/interactive/Makefile.am        |   4 +-
- tests/interactive/test-bin-layout.c  | 185 +++++++++++++++++++++++++++++++++++
- tests/interactive/test-box.c         | 185 -----------------------------------
- tests/interactive/test-flow-layout.c | 148 ++++++++++++++++++++++++++++
- tests/interactive/test-flow.c        | 148 ----------------------------
- 6 files changed, 337 insertions(+), 337 deletions(-)
+ .gitignore                                            | 4 ++--
+ tests/interactive/Makefile.am                         | 4 ++--
+ tests/interactive/{test-box.c => test-bin-layout.c}   | 2 +-
+ tests/interactive/{test-flow.c => test-flow-layout.c} | 2 +-
+ 4 files changed, 6 insertions(+), 6 deletions(-)
 
 commit 4ea57bc685abeea9273b2b8427a9199980cc2f40
 Author: Emmanuele Bassi <ebassi@gnome.org>
@@ -13646,7 +13527,7 @@ Date:   Sat Oct 3 12:15:13 2009 +0100
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 commit 72243081b5b0bf0518951f9f5f3ae91a7d4c640f
-Merge: ad83caa 111512a
+Merge: ad83caaed 111512a2a
 Author: Emmanuele Bassi <ebassi@gnome.org>
 Date:   Mon Oct 5 12:37:08 2009 +0100
 
@@ -13727,9 +13608,9 @@ Date:   Tue Jul 28 00:40:29 2009 +0100
     When not building a debug build the compiler was warning about empty
     else clauses with no braces due to code like:
       if (blah)
-    	do_foo();
+            do_foo();
       else
-    	COGL_NOTE (DRAW, "a-wibble");
+            COGL_NOTE (DRAW, "a-wibble");
     
     This simply ensures that even for non debug builds COGL_NOTE will expand to
     a single statement.
@@ -15059,7 +14940,7 @@ Date:   Tue Aug 11 13:11:34 2009 +0100
  1 file changed, 14 insertions(+), 16 deletions(-)
 
 commit d0748b3b9b34bf77ed3b813e3872cac64d6a6c35
-Merge: d263e7a df572d0
+Merge: d263e7a78 df572d089
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Aug 10 17:21:20 2009 +0100
 
@@ -15234,8 +15115,8 @@ Date:   Mon Aug 3 14:11:33 2009 +0100
     [debug] CLUTTER_{NOTE,MARK,DBG,GLERR,TIMESTAMP} should always be statements
     
     In case someone tries to do:
-    	if (foo)
-    		CLUTTER_NOTE(DOMAIN, "%s", blah);
+            if (foo)
+                    CLUTTER_NOTE(DOMAIN, "%s", blah);
     
     CLUTTER_NOTE () should always be a statement
 

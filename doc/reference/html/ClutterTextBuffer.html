@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterTextBuffer: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-Stage-Manager.html" title="Stage Manager">
 <link rel="next" href="clutter-Unit-conversion.html" title="Unit conversion">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterTextBuffer.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -142,7 +142,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTextBuffer.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -170,7 +170,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTextBuffer.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -192,7 +192,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterTextBuffer.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -239,7 +239,7 @@ integrate with an application's concept of undo/redo.</p>
 clutter_text_buffer_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Create a new ClutterTextBuffer object.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.2.5"></a><h4>Returns</h4>
+<a name="clutter-text-buffer-new.returns"></a><h4>Returns</h4>
 <p> A new ClutterTextBuffer object.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -252,8 +252,8 @@ clutter_text_buffer_new_with_text (<em class="parameter"><code>const <span class
                                    <em class="parameter"><code><span class="type">gssize</span> text_len</code></em>);</pre>
 <p>Create a new ClutterTextBuffer object with some text.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-new-with-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -274,7 +274,7 @@ clutter_text_buffer_new_with_text (<em class="parameter"><code>const <span class
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.3.6"></a><h4>Returns</h4>
+<a name="clutter-text-buffer-new-with-text.returns"></a><h4>Returns</h4>
 <p> A new ClutterTextBuffer object.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -292,8 +292,8 @@ and <a class="link" href="ClutterTextBuffer.html#clutter-text-buffer-insert-text
 <p>Note that <em class="parameter"><code>n_chars</code></em>
  is in characters, not in bytes.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-set-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -330,8 +330,8 @@ clutter_text_buffer_get_text (<em class="parameter"><code><a class="link" href="
 <p>The memory pointer returned by this call will not change
 unless this object emits a signal, or is finalized.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.5.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-get-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -345,7 +345,7 @@ unless this object emits a signal, or is finalized.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.5.7"></a><h4>Returns</h4>
+<a name="clutter-text-buffer-get-text.returns"></a><h4>Returns</h4>
 <p> a pointer to the contents of the widget as a
 string. This string points to internally allocated
 storage in the buffer and must not be freed, modified or
@@ -361,8 +361,8 @@ clutter_text_buffer_get_bytes (<em class="parameter"><code><a class="link" href=
 <p>Retrieves the length in bytes of the buffer.
 See <a class="link" href="ClutterTextBuffer.html#clutter-text-buffer-get-length" title="clutter_text_buffer_get_length ()"><code class="function">clutter_text_buffer_get_length()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-get-bytes.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -376,7 +376,7 @@ See <a class="link" href="ClutterTextBuffer.html#clutter-text-buffer-get-length"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.6.6"></a><h4>Returns</h4>
+<a name="clutter-text-buffer-get-bytes.returns"></a><h4>Returns</h4>
 <p> The byte length of the buffer.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -388,8 +388,8 @@ See <a class="link" href="ClutterTextBuffer.html#clutter-text-buffer-get-length"
 clutter_text_buffer_get_length (<em class="parameter"><code><a class="link" href="ClutterTextBuffer.html" title="ClutterTextBuffer"><span class="type">ClutterTextBuffer</span></a> *buffer</code></em>);</pre>
 <p>Retrieves the length in characters of the buffer.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-get-length.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -403,7 +403,7 @@ clutter_text_buffer_get_length (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.7.6"></a><h4>Returns</h4>
+<a name="clutter-text-buffer-get-length.returns"></a><h4>Returns</h4>
 <p> The number of characters in the buffer.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -418,8 +418,8 @@ clutter_text_buffer_set_max_length (<em class="parameter"><code><a class="link" 
 the current contents are longer than the given length, then they
 will be truncated to fit.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-set-max-length.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -452,8 +452,8 @@ clutter_text_buffer_get_max_length (<em class="parameter"><code><a class="link" 
 <em class="parameter"><code>buffer</code></em>
 . See <a class="link" href="ClutterTextBuffer.html#clutter-text-buffer-set-max-length" title="clutter_text_buffer_set_max_length ()"><code class="function">clutter_text_buffer_set_max_length()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-get-max-length.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -467,7 +467,7 @@ clutter_text_buffer_get_max_length (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.9.6"></a><h4>Returns</h4>
+<a name="clutter-text-buffer-get-max-length.returns"></a><h4>Returns</h4>
 <p> the maximum allowed number of characters
 in <a class="link" href="ClutterTextBuffer.html" title="ClutterTextBuffer"><span class="type">ClutterTextBuffer</span></a>, or 0 if there is no maximum.</p>
 </div>
@@ -495,8 +495,8 @@ bounds, or the maximum buffer text length is exceeded, then they are
 coerced to sane values.</p>
 <p>Note that the position and length are in characters, not in bytes.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.10.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-insert-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -527,7 +527,7 @@ coerced to sane values.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.10.8"></a><h4>Returns</h4>
+<a name="clutter-text-buffer-insert-text.returns"></a><h4>Returns</h4>
 <p> The number of characters actually inserted.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -551,8 +551,8 @@ until the end of the text are deleted.</p>
 values.</p>
 <p>Note that the positions are specified in characters, not bytes.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.11.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-delete-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -578,7 +578,7 @@ values.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.11.8"></a><h4>Returns</h4>
+<a name="clutter-text-buffer-delete-text.returns"></a><h4>Returns</h4>
 <p> The number of characters deleted.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -596,8 +596,8 @@ clutter_text_buffer_emit_inserted_text
 .</p>
 <p>Used when subclassing <a class="link" href="ClutterTextBuffer.html" title="ClutterTextBuffer"><span class="type">ClutterTextBuffer</span></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.12.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-emit-inserted-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -640,8 +640,8 @@ clutter_text_buffer_emit_deleted_text (<em class="parameter"><code><a class="lin
 .</p>
 <p>Used when subclassing <a class="link" href="ClutterTextBuffer.html" title="ClutterTextBuffer"><span class="type">ClutterTextBuffer</span></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.13.9.13.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-text-buffer-emit-deleted-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -719,8 +719,8 @@ data and it should only be accessed using the provided API.</p>
 <p>The <a class="link" href="ClutterTextBuffer.html#ClutterTextBufferClass" title="struct ClutterTextBufferClass"><span class="type">ClutterTextBufferClass</span></a> structure contains
 only private data.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.10.4.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTextBufferClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -805,8 +805,8 @@ user_function (<a class="link" href="ClutterTextBuffer.html" title="ClutterTextB
                <span class="type">gpointer</span>           user_data)</pre>
 <p>This signal is emitted after text is deleted from the buffer.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.12.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTextBuffer-deleted-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -850,8 +850,8 @@ user_function (<a class="link" href="ClutterTextBuffer.html" title="ClutterTextB
                <span class="type">gpointer</span>           user_data)</pre>
 <p>This signal is emitted after text is inserted into the buffer.</p>
 <div class="refsect3">
-<a name="id-1.7.2.13.12.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTextBuffer-inserted-text.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -892,6 +892,6 @@ user_function (<a class="link" href="ClutterTextBuffer.html" title="ClutterTextB
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

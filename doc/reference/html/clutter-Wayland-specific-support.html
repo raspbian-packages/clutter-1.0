@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Wayland specific support: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="prev" href="clutter-GDK-Specific-Support.html" title="GDK Specific Support">
 <link rel="next" href="clutter-Wayland-compositor-specific-support.html" title="Wayland compositor specific support">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-Wayland-specific-support.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -107,8 +107,8 @@ backing this <a class="link" href="ClutterInputDevice.html" title="ClutterInputD
 Calling this function at any other time will return <code class="literal">NULL</code>.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.11.5.2.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-input-device-get-wl-seat.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -122,7 +122,7 @@ Calling this function at any other time will return <code class="literal">NULL</
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.11.5.2.8"></a><h4>Returns</h4>
+<a name="clutter-wayland-input-device-get-wl-seat.returns"></a><h4>Returns</h4>
 <p> the Wayland input device associated with the
 <em class="parameter"><code>device</code></em>
 . </p>
@@ -142,8 +142,8 @@ backing the <a class="link" href="ClutterStage.html" title="ClutterStage"><span 
 platform. Calling this function at any other time will return <code class="literal">NULL</code>.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.11.5.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-stage-get-wl-shell-surface.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -157,7 +157,7 @@ platform. Calling this function at any other time will return <code class="liter
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.11.5.3.8"></a><h4>Returns</h4>
+<a name="clutter-wayland-stage-get-wl-shell-surface.returns"></a><h4>Returns</h4>
 <p> the Wayland shell surface associated with
 <em class="parameter"><code>stage</code></em>
 . </p>
@@ -176,8 +176,8 @@ backing the <a class="link" href="ClutterStage.html" title="ClutterStage"><span 
 platform. Calling this function at any other time will return <code class="literal">NULL</code>.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.8.11.5.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-stage-get-wl-surface.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -191,7 +191,7 @@ platform. Calling this function at any other time will return <code class="liter
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.11.5.4.8"></a><h4>Returns</h4>
+<a name="clutter-wayland-stage-get-wl-surface.returns"></a><h4>Returns</h4>
 <p> the Wayland surface associated with <em class="parameter"><code>stage</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -213,8 +213,8 @@ the stage automatically.</p>
 <p>Note: this function can only be called when running on the Wayland
 platform. Calling this function at any other time has no effect.</p>
 <div class="refsect3">
-<a name="id-1.8.11.5.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-stage-set-wl-surface.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -250,8 +250,8 @@ pertaining Clutter's initialization process.</p>
 <code class="function">g_option_context_parse()</code> yourself, you should also call
 <a class="link" href="clutter-Wayland-specific-support.html#clutter-wayland-set-display" title="clutter_wayland_set_display ()"><code class="function">clutter_wayland_set_display()</code></a> before <code class="function">g_option_context_parse()</code>.</p>
 <div class="refsect3">
-<a name="id-1.8.11.5.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-set-display.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -286,6 +286,6 @@ on the Wayland file descriptor.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

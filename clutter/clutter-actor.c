@@ -4198,6 +4198,13 @@ clutter_actor_remove_child_internal (ClutterActor                 *self,
   gboolean stop_transitions;
   GObject *obj;
 
+  if (self == child)
+    {
+      g_warning ("Cannot remove actor '%s' from itself.",
+                 _clutter_actor_get_debug_name (self));
+      return;
+    }
+
   destroy_meta = (flags & REMOVE_CHILD_DESTROY_META) != 0;
   emit_parent_set = (flags & REMOVE_CHILD_EMIT_PARENT_SET) != 0;
   emit_actor_removed = (flags & REMOVE_CHILD_EMIT_ACTOR_REMOVED) != 0;
@@ -8004,7 +8011,7 @@ clutter_actor_class_init (ClutterActorClass *klass)
    * the relayout queue up through the actor graph.
    *
    * The main purpose of this signal is to allow relayout to be propagated
-   * properly in the procense of #ClutterClone actors. Applications will
+   * properly in the presence of #ClutterClone actors. Applications will
    * not normally need to connect to this signal.
    *
    * Since: 1.2
@@ -12777,6 +12784,13 @@ clutter_actor_add_child_internal (ClutterActor              *self,
   ClutterActor *old_first_child, *old_last_child;
   GObject *obj;
 
+  if (self == child)
+    {
+      g_warning ("Cannot add the actor '%s' to itself.",
+                  _clutter_actor_get_debug_name (self));
+      return;
+    }
+
   if (child->priv->parent != NULL)
     {
       g_warning ("The actor '%s' already has a parent, '%s'. You must "
@@ -17148,6 +17162,9 @@ clutter_actor_get_clip_to_allocation (ClutterActor *self)
  * clutter_actor_remove_effect() or clutter_actor_clear_effects() is
  * called.
  *
+ * Note that as #ClutterEffect is initially unowned,
+ * clutter_actor_add_effect() will sink any floating reference on @effect.
+ *
  * Since: 1.4
  */
 void
@@ -17171,7 +17188,11 @@ clutter_actor_add_effect (ClutterActor  *self,
  * @effect: a #ClutterEffect
  *
  * A convenience function for setting the name of a #ClutterEffect
- * while adding it to the list of effectss applied to @self
+ * while adding it to the list of effects applied to @self.
+ *
+ * Note that as #ClutterEffect is initially unowned,
+ * clutter_actor_add_effect_with_name() will sink any floating
+ * reference on @effect.
  *
  * This function is the logical equivalent of:
  *

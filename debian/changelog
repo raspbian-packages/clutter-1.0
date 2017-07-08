@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.0+dfsg-3+rpi1) stretch-staging; urgency=medium
+clutter-1.0 (1.26.2+dfsg-1+rpi1) buster-staging; urgency=medium
 
   [changes brought forward from 1.24.0-1+rpi1 by Peter Michael Green <plugwash@raspbian.org> at Fri, 25 Sep 2015 00:25:32 +0000]
   * Disable wayland and egl support.
@@ -6,7 +6,17 @@ clutter-1.0 (1.26.0+dfsg-3+rpi1) stretch-staging; urgency=medium
     seem to be in build-depends). attempting to disable wayland
     from debian/rules doesn't seem to work.
 
- -- Raspbian forward porter <root@raspbian.org>  Thu, 16 Mar 2017 22:08:58 +0000
+ -- Raspbian forward porter <root@raspbian.org>  Sat, 08 Jul 2017 14:18:52 +0000
+
+clutter-1.0 (1.26.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/patches/Don-t-create-the-Cogl-GLib-source-multiple-times.patch:
+    dropped, merged upstream.
+  * debian/patches/gdk-Ensure-surface-buffer-scale-is-set.patch:
+    mangle to apply again.
+
+ -- Andreas Henriksson <andreas@fatal.se>  Sun, 02 Jul 2017 07:14:31 +0200
 
 clutter-1.0 (1.26.0+dfsg-3) unstable; urgency=medium
 

@@ -96,14 +96,14 @@ G_BEGIN_DECLS
  *
  * The micro version of the Clutter library (3, if %CLUTTER_VERSION is 1.2.3)
  */
-#define CLUTTER_MICRO_VERSION   (0)
+#define CLUTTER_MICRO_VERSION   (2)
 
 /**
  * CLUTTER_VERSION:
  *
  * The full version of the Clutter library, like 1.2.3
  */
-#define CLUTTER_VERSION         1.26.0
+#define CLUTTER_VERSION         1.26.2
 
 /**
  * CLUTTER_VERSION_S:
@@ -111,7 +111,7 @@ G_BEGIN_DECLS
  * The full version of the Clutter library, in string form (suited for
  * string concatenation)
  */
-#define CLUTTER_VERSION_S       "1.26.0"
+#define CLUTTER_VERSION_S       "1.26.2"
 
 /**
  * CLUTTER_VERSION_HEX:

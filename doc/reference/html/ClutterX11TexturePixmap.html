@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterX11TexturePixmap: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="prev" href="clutter-X11-Specific-Support.html" title="X11 Specific Support">
 <link rel="next" href="ClutterGLXTexturePixmap.html" title="ClutterGLXTexturePixmap">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterX11TexturePixmap.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -110,7 +110,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterX11TexturePixmap.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -161,7 +161,7 @@ clutter_x11_texture_pixmap_new (<em class="parameter"><code><span class="type">v
 <p>Creates a new <a class="link" href="ClutterX11TexturePixmap.html" title="ClutterX11TexturePixmap"><span class="type">ClutterX11TexturePixmap</span></a> which can be used to display the
 contents of an X11 Pixmap inside a Clutter scene graph</p>
 <div class="refsect3">
-<a name="id-1.8.5.8.2.5"></a><h4>Returns</h4>
+<a name="clutter-x11-texture-pixmap-new.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="ClutterX11TexturePixmap.html" title="ClutterX11TexturePixmap"><span class="type">ClutterX11TexturePixmap</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -175,8 +175,8 @@ clutter_x11_texture_pixmap_new_with_pixmap
 <p>Creates a new <a class="link" href="ClutterX11TexturePixmap.html" title="ClutterX11TexturePixmap"><span class="type">ClutterX11TexturePixmap</span></a> for <em class="parameter"><code>pixmap</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.8.5.8.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-texture-pixmap-new-with-pixmap.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -190,7 +190,7 @@ clutter_x11_texture_pixmap_new_with_pixmap
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.5.8.3.6"></a><h4>Returns</h4>
+<a name="clutter-x11-texture-pixmap-new-with-pixmap.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="ClutterX11TexturePixmap.html" title="ClutterX11TexturePixmap"><span class="type">ClutterX11TexturePixmap</span></a> bound to the given X Pixmap</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -204,8 +204,8 @@ clutter_x11_texture_pixmap_new_with_window
 <p>Creates a new <a class="link" href="ClutterX11TexturePixmap.html" title="ClutterX11TexturePixmap"><span class="type">ClutterX11TexturePixmap</span></a> for <em class="parameter"><code>window</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.8.5.8.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-texture-pixmap-new-with-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -219,7 +219,7 @@ clutter_x11_texture_pixmap_new_with_window
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.5.8.4.6"></a><h4>Returns</h4>
+<a name="clutter-x11-texture-pixmap-new-with-window.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="ClutterX11TexturePixmap.html" title="ClutterX11TexturePixmap"><span class="type">ClutterX11TexturePixmap</span></a> bound to the given X window.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -232,8 +232,8 @@ clutter_x11_texture_pixmap_set_pixmap (<em class="parameter"><code><a class="lin
                                        <em class="parameter"><code><span class="type">Pixmap</span> pixmap</code></em>);</pre>
 <p>Sets the X Pixmap to which the texture should be bound.</p>
 <div class="refsect3">
-<a name="id-1.8.5.8.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-texture-pixmap-set-pixmap.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -269,8 +269,8 @@ extensions if possible, and then calls
 this function, or its older sister, <code class="function">clutter_glx_texture_pixmap_set_window()</code>.</p>
 <p>This function has no effect unless the XComposite extension is available.</p>
 <div class="refsect3">
-<a name="id-1.8.5.8.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-texture-pixmap-set-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -306,8 +306,8 @@ clutter_x11_texture_pixmap_sync_window
 <p>Resets the texture's pixmap from its window, perhaps in response to the
 pixmap's invalidation as the window changed size.</p>
 <div class="refsect3">
-<a name="id-1.8.5.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-texture-pixmap-sync-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -336,8 +336,8 @@ clutter_x11_texture_pixmap_update_area
 the pixmap. Can be called to update the texture if the pixmap
 content has changed.</p>
 <div class="refsect3">
-<a name="id-1.8.5.8.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-texture-pixmap-update-area.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -385,8 +385,8 @@ clutter_x11_texture_pixmap_set_automatic
  in case the backing
 pixmap or window is damaged</p>
 <div class="refsect3">
-<a name="id-1.8.5.8.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-x11-texture-pixmap-set-automatic.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -430,8 +430,8 @@ pixmap or window is damaged</p>
 </pre>
 <p>The <a class="link" href="ClutterX11TexturePixmap.html#ClutterX11TexturePixmapClass" title="struct ClutterX11TexturePixmapClass"><span class="type">ClutterX11TexturePixmapClass</span></a> structure contains only private data</p>
 <div class="refsect3">
-<a name="id-1.8.5.9.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterX11TexturePixmapClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -449,6 +449,6 @@ pixmap or window is damaged</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

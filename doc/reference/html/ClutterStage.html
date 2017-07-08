@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterStage: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch02.html" title="Base actors">
 <link rel="prev" href="ch02.html" title="Base actors">
 <link rel="next" href="ClutterClone.html" title="ClutterClone">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterStage.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -399,7 +399,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterStage.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -481,7 +481,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterStage.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -523,7 +523,7 @@
 </div>
 <a name="ClutterPerspective"></a><a name="ClutterFog"></a><div class="refsect1">
 <a name="ClutterStage.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -554,7 +554,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterStage.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GBoxed
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">├──</span> ClutterFog
     <span class="lineart">╰──</span> ClutterPerspective
     GObject
@@ -602,7 +602,7 @@ backend. Use <a class="link" href="clutter-Features.html#clutter-feature-availab
 <a class="link" href="clutter-Features.html#CLUTTER-FEATURE-STAGE-MULTIPLE:CAPS"><code class="literal">CLUTTER_FEATURE_STAGE_MULTIPLE</code></a> to check at runtime whether a
 backend supports multiple stages.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.2.6"></a><h4>Returns</h4>
+<a name="clutter-stage-new.returns"></a><h4>Returns</h4>
 <p> a new stage, or <code class="literal">NULL</code> if the default backend does
 not support multiple stages. Use <a class="link" href="ClutterActor.html#clutter-actor-destroy" title="clutter_actor_destroy ()"><code class="function">clutter_actor_destroy()</code></a> to
 programmatically close the returned stage.</p>
@@ -625,8 +625,8 @@ to the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class
  it is possible to control which actors will be
 painted and thus available.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-actor-at-pos.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -657,7 +657,7 @@ painted and thus available.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.3.7"></a><h4>Returns</h4>
+<a name="clutter-stage-get-actor-at-pos.returns"></a><h4>Returns</h4>
 <p> the actor at the specified coordinates,
 if any. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -672,8 +672,8 @@ clutter_stage_ensure_current (<em class="parameter"><code><a class="link" href="
 current for the passed stage. It is not intended to
 be used by applications.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-ensure-current.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -701,8 +701,8 @@ stage window size.</p>
 when embedding a <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> into a toolkit with another
 windowing system, like GTK+.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.5.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-ensure-viewport.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -728,8 +728,8 @@ clutter_stage_ensure_redraw (<em class="parameter"><code><a class="link" href="C
 used when embedding a <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> into a toolkit with
 another windowing system, like GTK+.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-ensure-redraw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -754,8 +754,8 @@ clutter_stage_event (<em class="parameter"><code><a class="link" href="ClutterSt
 <p>You should rarely need to use this function, except for
 synthetised events.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.7.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-event.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -776,7 +776,7 @@ synthetised events.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.7.7"></a><h4>Returns</h4>
+<a name="clutter-stage-event.returns"></a><h4>Returns</h4>
 <p> the return value from the signal emission</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -793,8 +793,8 @@ all the key events. If <em class="parameter"><code>actor</code></em>
  is <code class="literal">NULL</code>, the stage will receive
 focus.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-key-focus.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -823,8 +823,8 @@ focus.</p>
 clutter_stage_get_key_focus (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Retrieves the actor that is currently under key focus.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-key-focus.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -838,7 +838,7 @@ clutter_stage_get_key_focus (<em class="parameter"><code><a class="link" href="C
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.9.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-key-focus.returns"></a><h4>Returns</h4>
 <p> the actor with key focus, or the stage. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -859,8 +859,8 @@ linear buffer with <em class="parameter"><code>width</code></em>
 <p>The alpha data contained in the returned buffer is driver-dependent,
 and not guaranteed to hold any sensible value.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.10.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-read-pixels.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -898,7 +898,7 @@ entire stage height</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.10.7"></a><h4>Returns</h4>
+<a name="clutter-stage-read-pixels.returns"></a><h4>Returns</h4>
 <p> a pointer to newly allocated memory with the buffer
 or <code class="literal">NULL</code> if the read failed. Use <code class="function">g_free()</code> on the returned data
 to release the resources it has allocated. </p>
@@ -921,8 +921,8 @@ to the <em class="parameter"><code>stage</code></em>
 <p>This function should only be used if you want to have all
 the motion events delivered to your application code.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.11.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-throttle-motion-events.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -952,8 +952,8 @@ clutter_stage_get_throttle_motion_events
                                (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Retrieves the value set with <a class="link" href="ClutterStage.html#clutter-stage-set-throttle-motion-events" title="clutter_stage_set_throttle_motion_events ()"><code class="function">clutter_stage_set_throttle_motion_events()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.12.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-throttle-motion-events.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -967,7 +967,7 @@ clutter_stage_get_throttle_motion_events
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.12.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-throttle-motion-events.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the motion events are being throttled,
 and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -983,8 +983,8 @@ clutter_stage_set_use_alpha (<em class="parameter"><code><a class="link" href="C
  should honour the <a class="link" href="ClutterActor.html#ClutterActor--opacity" title="The “opacity” property"><span class="type">“opacity”</span></a> and
 the alpha channel of the <a class="link" href="ClutterStage.html#ClutterStage--color" title="The “color” property"><span class="type">“color”</span></a></p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-use-alpha.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1014,8 +1014,8 @@ alpha channel of the stage color</p></td>
 clutter_stage_get_use_alpha (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Retrieves the value set using <a class="link" href="ClutterStage.html#clutter-stage-set-use-alpha" title="clutter_stage_set_use_alpha ()"><code class="function">clutter_stage_set_use_alpha()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.14.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-use-alpha.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1029,7 +1029,7 @@ clutter_stage_get_use_alpha (<em class="parameter"><code><a class="link" href="C
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.14.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-use-alpha.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the stage should honour the opacity and the
 alpha channel of the stage color</p>
 </div>
@@ -1056,8 +1056,8 @@ uses <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="
 <p>This function has no effect if <em class="parameter"><code>stage</code></em>
  is fullscreen</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.15.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-minimum-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1097,8 +1097,8 @@ clutter_stage_get_minimum_size (<em class="parameter"><code><a class="link" href
 it is specific to the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> implementation inside the
 Clutter backend</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.16.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-minimum-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1145,8 +1145,8 @@ depending on its internal state.</p>
 might end up with visual artifacts while painting the contents of
 the stage.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.17.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-no-clear-hint.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1177,8 +1177,8 @@ repaint cycle</p></td>
 clutter_stage_get_no_clear_hint (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Retrieves the hint set with <a class="link" href="ClutterStage.html#clutter-stage-set-no-clear-hint" title="clutter_stage_set_no_clear_hint ()"><code class="function">clutter_stage_set_no_clear_hint()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-no-clear-hint.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1192,7 +1192,7 @@ clutter_stage_get_no_clear_hint (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.18.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-no-clear-hint.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the stage should not clear itself on every paint
 cycle, and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -1216,8 +1216,8 @@ stage is being painted. If there is no current redraw clip then
 this function will set <em class="parameter"><code>clip</code></em>
  to the full extents of the stage.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-redraw-clip-bounds.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1247,8 +1247,8 @@ clutter_stage_get_motion_events_enabled
                                (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Retrieves the value set using <a class="link" href="ClutterStage.html#clutter-stage-set-motion-events-enabled" title="clutter_stage_set_motion_events_enabled ()"><code class="function">clutter_stage_set_motion_events_enabled()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-motion-events-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1262,7 +1262,7 @@ clutter_stage_get_motion_events_enabled
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.20.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-motion-events-enabled.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the per-actor motion event delivery is enabled
 and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -1296,8 +1296,8 @@ when dragging a <a class="link" href="ClutterActor.html" title="ClutterActor"><s
 the pointer is not going to change, so it's meaningless to perform
 a pick.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.21.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-motion-events-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1330,8 +1330,8 @@ clutter_stage_set_perspective (<em class="parameter"><code><a class="link" href=
 because it will disable Clutter's attempts to generate an
 appropriate perspective based on the size of the stage.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.22.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-perspective.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1360,8 +1360,8 @@ clutter_stage_get_perspective (<em class="parameter"><code><a class="link" href=
                                <em class="parameter"><code><a class="link" href="ClutterStage.html#ClutterPerspective"><span class="type">ClutterPerspective</span></a> *perspective</code></em>);</pre>
 <p>Retrieves the stage perspective.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.23.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-perspective.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1391,8 +1391,8 @@ clutter_stage_set_title (<em class="parameter"><code><a class="link" href="Clutt
                          <em class="parameter"><code>const <span class="type">gchar</span> *title</code></em>);</pre>
 <p>Sets the stage title.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.24.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-title.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1421,8 +1421,8 @@ clutter_stage_set_title (<em class="parameter"><code><a class="link" href="Clutt
 clutter_stage_get_title (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Gets the stage title.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.25.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-title.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1436,7 +1436,7 @@ clutter_stage_get_title (<em class="parameter"><code><a class="link" href="Clutt
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.25.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-title.returns"></a><h4>Returns</h4>
 <p> pointer to the title string for the stage. The
 returned string is owned by the actor and should not
 be modified or freed.</p>
@@ -1452,8 +1452,8 @@ clutter_stage_set_user_resizable (<em class="parameter"><code><a class="link" hr
 <p>Sets if the stage is resizable by user interaction (e.g. via
 window manager controls)</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.26.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-user-resizable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1482,8 +1482,8 @@ window manager controls)</p>
 clutter_stage_get_user_resizable (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Retrieves the value set with <a class="link" href="ClutterStage.html#clutter-stage-set-user-resizable" title="clutter_stage_set_user_resizable ()"><code class="function">clutter_stage_set_user_resizable()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.27.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-user-resizable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1497,7 +1497,7 @@ clutter_stage_get_user_resizable (<em class="parameter"><code><a class="link" hr
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.27.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-user-resizable.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the stage is resizable by the user.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -1519,8 +1519,8 @@ should either use the <a class="link" href="ClutterStage.html#ClutterStage-fulls
 <a class="link" href="ClutterStage.html#ClutterStage-unfullscreen" title="The “unfullscreen” signal"><span class="type">“unfullscreen”</span></a> signals, or use the notify signal
 for the <a class="link" href="ClutterStage.html#ClutterStage--fullscreen-set" title="The “fullscreen-set” property"><span class="type">“fullscreen-set”</span></a> property</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.28.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-fullscreen.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1549,8 +1549,8 @@ for the <a class="link" href="ClutterStage.html#ClutterStage--fullscreen-set" ti
 clutter_stage_get_fullscreen (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Retrieves whether the stage is full screen or not</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.29.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-fullscreen.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1564,7 +1564,7 @@ clutter_stage_get_fullscreen (<em class="parameter"><code><a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.29.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-fullscreen.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the stage is full screen</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -1576,8 +1576,8 @@ clutter_stage_get_fullscreen (<em class="parameter"><code><a class="link" href="
 clutter_stage_show_cursor (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Shows the cursor on the stage window</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.30.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-show-cursor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1598,8 +1598,8 @@ clutter_stage_show_cursor (<em class="parameter"><code><a class="link" href="Clu
 clutter_stage_hide_cursor (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Makes the cursor invisible on the stage window</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.31.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-hide-cursor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1626,8 +1626,8 @@ clutter_stage_set_accept_focus (<em class="parameter"><code><a class="link" href
  using
 <a class="link" href="ClutterActor.html#clutter-actor-show" title="clutter_actor_show ()"><code class="function">clutter_actor_show()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.32.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-accept-focus.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1656,8 +1656,8 @@ clutter_stage_set_accept_focus (<em class="parameter"><code><a class="link" href
 clutter_stage_get_accept_focus (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Retrieves the value set with <a class="link" href="ClutterStage.html#clutter-stage-set-accept-focus" title="clutter_stage_set_accept_focus ()"><code class="function">clutter_stage_set_accept_focus()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.33.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-accept-focus.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1671,7 +1671,7 @@ clutter_stage_get_accept_focus (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.33.6"></a><h4>Returns</h4>
+<a name="clutter-stage-get-accept-focus.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> should accept focus, and <code class="literal">FALSE</code>
 otherwise</p>
 </div>
@@ -1697,8 +1697,8 @@ and 8 ms (up to one-half of a typical 60hz frame rate) is appropriate.
 using a larger value will reduce latency but risks skipping a frame if
 drawing the stage takes too long.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.34.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-sync-delay.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1746,8 +1746,8 @@ clutter_stage_skip_sync_delay (<em class="parameter"><code><a class="link" href=
 possible, ignoring any delay that <a class="link" href="ClutterStage.html#clutter-stage-set-sync-delay" title="clutter_stage_set_sync_delay ()"><code class="function">clutter_stage_set_sync_delay()</code></a>
 would normally cause.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.35.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-skip-sync-delay.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1824,7 +1824,7 @@ set, the default stage will be created by the first call to this
 function, and every following call will return the same pointer to
 it.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.38.9"></a><h4>Returns</h4>
+<a name="clutter-stage-get-default.returns"></a><h4>Returns</h4>
 <p> the main
 <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>. You should never destroy or unref the returned
 actor. </p>
@@ -1846,8 +1846,8 @@ clutter_stage_is_default (<em class="parameter"><code><a class="link" href="Clut
  is the default stage, or an instance created using
 <a class="link" href="ClutterStage.html#clutter-stage-new" title="clutter_stage_new ()"><code class="function">clutter_stage_new()</code></a> but internally using the same implementation.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.39.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-is-default.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1861,7 +1861,7 @@ clutter_stage_is_default (<em class="parameter"><code><a class="link" href="Clut
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.39.8"></a><h4>Returns</h4>
+<a name="clutter-stage-is-default.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the passed stage is the default one</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -1878,8 +1878,8 @@ clutter_stage_set_color (<em class="parameter"><code><a class="link" href="Clutt
 </div>
 <p>Sets the stage color.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.40.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-color.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1912,8 +1912,8 @@ clutter_stage_get_color (<em class="parameter"><code><a class="link" href="Clutt
 </div>
 <p>Retrieves the stage color.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.41.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-color.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1947,8 +1947,8 @@ clutter_stage_queue_redraw (<em class="parameter"><code><a class="link" href="Cl
 <p>Applications should call <a class="link" href="ClutterActor.html#clutter-actor-queue-redraw" title="clutter_actor_queue_redraw ()"><code class="function">clutter_actor_queue_redraw()</code></a> and not
 this function.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.42.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-queue-redraw.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1980,8 +1980,8 @@ viewing point less opaque, by fading them with the stage color.</p>
 <p>The parameters of the GL fog used can be changed using the
 <a class="link" href="ClutterStage.html#clutter-stage-set-fog" title="clutter_stage_set_fog ()"><code class="function">clutter_stage_set_fog()</code></a> function.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.43.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-use-fog.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2015,8 +2015,8 @@ clutter_stage_get_use_fog (<em class="parameter"><code><a class="link" href="Clu
 <p>Gets whether the depth cueing effect is enabled on <em class="parameter"><code>stage</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.44.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-use-fog.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2030,7 +2030,7 @@ clutter_stage_get_use_fog (<em class="parameter"><code><a class="link" href="Clu
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.44.8"></a><h4>Returns</h4>
+<a name="clutter-stage-get-use-fog.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the depth cueing effect is enabled</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -2129,8 +2129,8 @@ load your textures requesting an unmultiplied internal format and use
 Support for premultiplied colors will improve in the future when we can
 depend on fragment shaders.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.45.14"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-set-fog.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2165,8 +2165,8 @@ clutter_stage_get_fog (<em class="parameter"><code><a class="link" href="Clutter
 </div>
 <p>Retrieves the current depth cueing settings from the stage.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.12.46.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-stage-get-fog.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2214,8 +2214,8 @@ and should be accessed using the provided API</p>
 </pre>
 <p>The <a class="link" href="ClutterStage.html#ClutterStageClass" title="struct ClutterStageClass"><span class="type">ClutterStageClass</span></a> structure contains only private data</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.13.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStageClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2257,8 +2257,8 @@ and should be accessed using the provided API</p>
 <a name="ClutterPickMode"></a><h3>enum ClutterPickMode</h3>
 <p>Controls the paint cycle of the scene graph when in pick mode</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.13.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPickMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2304,8 +2304,8 @@ and should be accessed using the provided API</p>
 <p>Stage perspective definition. <a class="link" href="ClutterStage.html#ClutterPerspective"><span class="type">ClutterPerspective</span></a> is only used by
 the fixed point version of <a class="link" href="ClutterStage.html#clutter-stage-set-perspective" title="clutter_stage_set_perspective ()"><code class="function">clutter_stage_set_perspective()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.13.5.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterPerspective.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2355,8 +2355,8 @@ plane (always positive)</p></td>
 </div>
 <p>Fog settings used to create the depth cueing effect.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.13.6.7"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterFog.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2530,8 +2530,8 @@ user_function (<a class="link" href="ClutterStage.html" title="ClutterStage"><sp
 <p>The ::activate signal is emitted when the stage receives key focus
 from the underlying window system.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.15.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStage-activate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2563,8 +2563,8 @@ user_function (<a class="link" href="ClutterStage.html" title="ClutterStage"><sp
 <p>The ::after-paint signal is emitted after the stage is painted,
 but before the results are displayed on the screen.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.15.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStage-after-paint.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2596,8 +2596,8 @@ user_function (<a class="link" href="ClutterStage.html" title="ClutterStage"><sp
 <p>The ::deactivate signal is emitted when the stage loses key focus
 from the underlying window system.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.15.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStage-deactivate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2639,8 +2639,8 @@ a new handler and returning <code class="literal">TRUE</code> there.</p>
 embed <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> in native windows. It is not emitted for
 backends that use a static frame buffer.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.15.5.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStage-delete-event.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2676,8 +2676,8 @@ user_function (<a class="link" href="ClutterStage.html" title="ClutterStage"><sp
                <span class="type">gpointer</span>      user_data)</pre>
 <p>The ::fullscreen signal is emitted when the stage is made fullscreen.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.15.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStage-fullscreen.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2709,8 +2709,8 @@ user_function (<a class="link" href="ClutterStage.html" title="ClutterStage"><sp
 <p>The ::unfullscreen signal is emitted when the stage leaves a fullscreen
 state.</p>
 <div class="refsect3">
-<a name="id-1.5.3.2.15.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterStage-unfullscreen.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2736,6 +2736,6 @@ state.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

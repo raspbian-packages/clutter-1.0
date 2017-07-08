@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Implicit Animations: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="deprecated.html" title="Part X. Deprecated Classes">
 <link rel="prev" href="ClutterAlpha.html" title="ClutterAlpha">
 <link rel="next" href="ClutterAnimator.html" title="ClutterAnimator">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-Implicit-Animations.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -280,7 +280,7 @@
 </div>
 <div class="refsect1">
 <a name="clutter-Implicit-Animations.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -325,7 +325,7 @@
 </div>
 <div class="refsect1">
 <a name="clutter-Implicit-Animations.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -347,7 +347,7 @@
 </div>
 <a name="ClutterAnimation"></a><div class="refsect1">
 <a name="clutter-Implicit-Animations.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -400,11 +400,11 @@ using <a class="link" href="clutter-Implicit-Animations.html#clutter-animation-c
 <p>If the <span class="type">GObject</span> instance bound to a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> implements the
 <a class="link" href="ClutterAnimatable.html" title="ClutterAnimatable"><span class="type">ClutterAnimatable</span></a> interface it is possible for that instance to
 control the way the initial and final states are interpolated.</p>
-<p><a href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimations</span></a> are distinguished from <a href="ClutterBehaviour.html"><span class="type">ClutterBehaviours</span></a>
+<p><a href="clutter-Implicit-Animations.html#ClutterAnimation-struct"><span class="type">ClutterAnimations</span></a> are distinguished from <a href="ClutterBehaviour.html#ClutterBehaviour-struct"><span class="type">ClutterBehaviours</span></a>
 because the former can only control <span class="type">GObject</span> properties of a single
 <span class="type">GObject</span> instance, while the latter can control multiple properties
 using accessor functions inside the <a class="link" href="ClutterBehaviour.html" title="ClutterBehaviour"><span class="type">ClutterBehaviour</span></a>
-<code class="literal">alpha_notify</code> virtual function, and can control multiple <a href="ClutterActor.html"><span class="type">ClutterActors</span></a>
+<code class="literal">alpha_notify</code> virtual function, and can control multiple <a href="ClutterActor.html#ClutterActor-struct"><span class="type">ClutterActors</span></a>
 as well.</p>
 <p>For convenience, it is possible to use the <a class="link" href="clutter-Implicit-Animations.html#clutter-actor-animate" title="clutter_actor_animate ()"><code class="function">clutter_actor_animate()</code></a>
 function call which will take care of setting up and tearing down
@@ -459,7 +459,7 @@ an easy way to animate a <a class="link" href="ClutterActor.html" title="Clutter
 lifetime of a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> instance, so you should consider using
 those functions instead of manually creating an animation.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.2.9"></a><h4>Returns</h4>
+<a name="clutter-animation-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a>. Use <code class="function">g_object_unref()</code>
 to release the associated resources</p>
 </div>
@@ -481,8 +481,8 @@ clutter_animation_set_object (<em class="parameter"><code><a class="link" href="
 reference on <em class="parameter"><code>object</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-set-object.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -516,8 +516,8 @@ clutter_animation_get_object (<em class="parameter"><code><a class="link" href="
 <p>Retrieves the <span class="type">GObject</span> attached to <em class="parameter"><code>animation</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.4.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-get-object.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -531,7 +531,7 @@ clutter_animation_get_object (<em class="parameter"><code><a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.4.8"></a><h4>Returns</h4>
+<a name="clutter-animation-get-object.returns"></a><h4>Returns</h4>
 <p> a <span class="type">GObject</span>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -555,8 +555,8 @@ a logical id, either coming from the <a class="link" href="ClutterTimeline.html#
 or the return value of <a class="link" href="ClutterAlpha.html#clutter-alpha-register-func" title="clutter_alpha_register_func ()"><code class="function">clutter_alpha_register_func()</code></a>.</p>
 <p>This function will also set <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation--alpha" title="The “alpha” property"><span class="type">“alpha”</span></a> if needed.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.5.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-set-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -591,8 +591,8 @@ clutter_animation_get_mode (<em class="parameter"><code><a class="link" href="cl
 , as set by
 <a class="link" href="clutter-Implicit-Animations.html#clutter-animation-set-mode" title="clutter_animation_set_mode ()"><code class="function">clutter_animation_set_mode()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.6.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-get-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -606,7 +606,7 @@ clutter_animation_get_mode (<em class="parameter"><code><a class="link" href="cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.6.8"></a><h4>Returns</h4>
+<a name="clutter-animation-get-mode.returns"></a><h4>Returns</h4>
 <p> the mode for the animation</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -626,8 +626,8 @@ clutter_animation_set_duration (<em class="parameter"><code><a class="link" href
 <p>This function will set <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation--alpha" title="The “alpha” property"><span class="type">“alpha”</span></a> and
 <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation--timeline" title="The “timeline” property"><span class="type">“timeline”</span></a> if needed.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.7.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-set-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -661,8 +661,8 @@ clutter_animation_get_duration (<em class="parameter"><code><a class="link" href
 <p>Retrieves the duration of <em class="parameter"><code>animation</code></em>
 , in milliseconds.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.8.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-get-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -676,7 +676,7 @@ clutter_animation_get_duration (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.8.8"></a><h4>Returns</h4>
+<a name="clutter-animation-get-duration.returns"></a><h4>Returns</h4>
 <p> the duration of the animation</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -698,8 +698,8 @@ signal when finished.</p>
 <p>This function will set <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation--alpha" title="The “alpha” property"><span class="type">“alpha”</span></a> and
 <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation--timeline" title="The “timeline” property"><span class="type">“timeline”</span></a> if needed.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.9.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-set-loop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -733,8 +733,8 @@ clutter_animation_get_loop (<em class="parameter"><code><a class="link" href="cl
 <p>Retrieves whether <em class="parameter"><code>animation</code></em>
  is looping.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.10.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-get-loop.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -748,7 +748,7 @@ clutter_animation_get_loop (<em class="parameter"><code><a class="link" href="cl
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.10.8"></a><h4>Returns</h4>
+<a name="clutter-animation-get-loop.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the animation is looping</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -768,8 +768,8 @@ clutter_animation_set_timeline (<em class="parameter"><code><a class="link" href
 <p>This function will take a reference on the passed <em class="parameter"><code>timeline</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.11.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-set-timeline.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -804,8 +804,8 @@ clutter_animation_get_timeline (<em class="parameter"><code><a class="link" href
 <p>Retrieves the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> used by <em class="parameter"><code>animation</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.11.3.11.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-get-timeline.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -819,7 +819,7 @@ clutter_animation_get_timeline (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.12.8"></a><h4>Returns</h4>
+<a name="clutter-animation-get-timeline.returns"></a><h4>Returns</h4>
 <p> the timeline used by the animation. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -843,8 +843,8 @@ clutter_animation_set_alpha (<em class="parameter"><code><a class="link" href="c
  is not <code class="literal">NULL</code>, the <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> will take ownership
 of the <a class="link" href="ClutterAlpha.html" title="ClutterAlpha"><span class="type">ClutterAlpha</span></a> instance.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.13.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-set-alpha.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -879,8 +879,8 @@ clutter_animation_get_alpha (<em class="parameter"><code><a class="link" href="c
 <p>Retrieves the <a class="link" href="ClutterAlpha.html" title="ClutterAlpha"><span class="type">ClutterAlpha</span></a> used by <em class="parameter"><code>animation</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-get-alpha.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -894,7 +894,7 @@ clutter_animation_get_alpha (<em class="parameter"><code><a class="link" href="c
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.14.8"></a><h4>Returns</h4>
+<a name="clutter-animation-get-alpha.returns"></a><h4>Returns</h4>
 <p> the alpha object used by the animation. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -919,8 +919,8 @@ unless <code class="function">g_object_ref()</code> was called before calling th
 or unless a reference was taken inside a handler for the
 <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation-completed" title="The “completed” signal"><span class="type">“completed”</span></a> signal</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.15.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-completed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -954,8 +954,8 @@ see <a class="link" href="clutter-Implicit-Animations.html#clutter-actor-animate
 <p>This method returns the animation primarily to make chained
 calls convenient in language bindings.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.16.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-bind.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -981,7 +981,7 @@ calls convenient in language bindings.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.16.9"></a><h4>Returns</h4>
+<a name="clutter-animation-bind.returns"></a><h4>Returns</h4>
 <p> The animation itself. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1008,8 +1008,8 @@ about animations, see <a class="link" href="clutter-Implicit-Animations.html#clu
 <p>If you need to update the interval instance use
 <a class="link" href="clutter-Implicit-Animations.html#clutter-animation-update-interval" title="clutter_animation_update_interval ()"><code class="function">clutter_animation_update_interval()</code></a> instead.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.17.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-bind-interval.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1035,7 +1035,7 @@ about animations, see <a class="link" href="clutter-Implicit-Animations.html#clu
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.17.9"></a><h4>Returns</h4>
+<a name="clutter-animation-bind-interval.returns"></a><h4>Returns</h4>
 <p> The animation itself. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1056,8 +1056,8 @@ clutter_animation_update (<em class="parameter"><code><a class="link" href="clut
  value of the interval for <em class="parameter"><code>property_name</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.11.3.11.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-update.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1083,7 +1083,7 @@ clutter_animation_update (<em class="parameter"><code><a class="link" href="clut
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.18.8"></a><h4>Returns</h4>
+<a name="clutter-animation-update.returns"></a><h4>Returns</h4>
 <p> The animation itself. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1105,8 +1105,8 @@ clutter_animation_update_interval (<em class="parameter"><code><a class="link" h
 . The <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a>
 will take ownership of the passed <a class="link" href="clutter-Value-intervals.html#ClutterInterval"><span class="type">ClutterInterval</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.19.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-update-interval.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1147,8 +1147,8 @@ clutter_animation_has_property (<em class="parameter"><code><a class="link" href
  is controlling <em class="parameter"><code>property_name</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.20.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-has-property.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1169,7 +1169,7 @@ clutter_animation_has_property (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.20.8"></a><h4>Returns</h4>
+<a name="clutter-animation-has-property.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the property is animated by the
 <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a>, <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -1188,8 +1188,8 @@ clutter_animation_unbind_property (<em class="parameter"><code><a class="link" h
 <p>Removes <em class="parameter"><code>property_name</code></em>
  from the list of animated properties.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-unbind-property.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1226,8 +1226,8 @@ clutter_animation_get_interval (<em class="parameter"><code><a class="link" href
 inside <em class="parameter"><code>animation</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-animation-get-interval.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1248,7 +1248,7 @@ inside <em class="parameter"><code>animation</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.22.8"></a><h4>Returns</h4>
+<a name="clutter-animation-get-interval.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-Value-intervals.html#ClutterInterval"><span class="type">ClutterInterval</span></a> or <code class="literal">NULL</code> if no
 property with the same name was found. The returned interval is
 owned by the <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> and should not be unreferenced. </p>
@@ -1515,8 +1515,8 @@ using <a class="link" href="clutter-Implicit-Animations.html#clutter-actor-anima
 
 <p></p>
 <div class="refsect3">
-<a name="id-1.11.3.11.23.34"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-animate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1553,7 +1553,7 @@ property values</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.23.35"></a><h4>Returns</h4>
+<a name="clutter-actor-animate.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> object. The object is
 owned by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> and should not be unreferenced with
 <code class="function">g_object_unref()</code>. </p>
@@ -1588,8 +1588,8 @@ definite duration given by <em class="parameter"><code>timeline</code></em>
 to animate <em class="parameter"><code>actor</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.24.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-animate-with-timeline.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1626,7 +1626,7 @@ property values</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.24.10"></a><h4>Returns</h4>
+<a name="clutter-actor-animate-with-timeline.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> object. The object is
 owned by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> and should not be unreferenced with
 <code class="function">g_object_unref()</code>. </p>
@@ -1659,8 +1659,8 @@ definite behaviour given by the passed <em class="parameter"><code>alpha</code><
 to animate <em class="parameter"><code>actor</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.25.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-animate-with-alpha.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1692,7 +1692,7 @@ property values</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.25.10"></a><h4>Returns</h4>
+<a name="clutter-actor-animate-with-alpha.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> object. The object is owned by the
 <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> and should not be unreferenced with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1726,8 +1726,8 @@ for language bindings.</p>
 <p>Unlike <a class="link" href="clutter-Implicit-Animations.html#clutter-actor-animate" title="clutter_actor_animate ()"><code class="function">clutter_actor_animate()</code></a>, this function will not
 allow you to specify "signal::" names and callbacks.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.26.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-animatev.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1770,7 +1770,7 @@ property values to set. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.26.10"></a><h4>Returns</h4>
+<a name="clutter-actor-animatev.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> object. The object is
 owned by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> and should not be unreferenced with
 <code class="function">g_object_unref()</code>. </p>
@@ -1810,8 +1810,8 @@ useful for language bindings.</p>
 <p>Unlike <a class="link" href="clutter-Implicit-Animations.html#clutter-actor-animate-with-timeline" title="clutter_actor_animate_with_timeline ()"><code class="function">clutter_actor_animate_with_timeline()</code></a>, this function
 will not allow you to specify "signal::" names and callbacks.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.27.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-animate-with-timelinev.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1854,7 +1854,7 @@ property values to set. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.27.12"></a><h4>Returns</h4>
+<a name="clutter-actor-animate-with-timelinev.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> object. The object is
 owned by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> and should not be unreferenced with
 <code class="function">g_object_unref()</code>. </p>
@@ -1892,8 +1892,8 @@ useful for language bindings.</p>
 <p>Unlike <a class="link" href="clutter-Implicit-Animations.html#clutter-actor-animate-with-alpha" title="clutter_actor_animate_with_alpha ()"><code class="function">clutter_actor_animate_with_alpha()</code></a>, this function will
 not allow you to specify "signal::" names and callbacks.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.28.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-animate-with-alphav.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1931,7 +1931,7 @@ property values to set. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.28.12"></a><h4>Returns</h4>
+<a name="clutter-actor-animate-with-alphav.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> object. The object is owned by the
 <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> and should not be unreferenced with <code class="function">g_object_unref()</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1954,8 +1954,8 @@ clutter_actor_get_animation (<em class="parameter"><code><a class="link" href="C
 has been called on <em class="parameter"><code>actor</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.29.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-get-animation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1969,7 +1969,7 @@ has been called on <em class="parameter"><code>actor</code></em>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.11.29.8"></a><h4>Returns</h4>
+<a name="clutter-actor-get-animation.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1994,8 +1994,8 @@ has been called on <em class="parameter"><code>actor</code></em>
 the only reference then the <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation"><span class="type">ClutterAnimation</span></a> becomes invalid.</p>
 <p>The <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimation-completed" title="The “completed” signal"><span class="type">“completed”</span></a> signal will not be emitted.</p>
 <div class="refsect3">
-<a name="id-1.11.3.11.30.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-actor-detach-animation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2039,8 +2039,8 @@ be accessed using the provided functions.</p>
 <p>The <a class="link" href="clutter-Implicit-Animations.html#ClutterAnimationClass" title="struct ClutterAnimationClass"><span class="type">ClutterAnimationClass</span></a> structure contains only private data and
 should be accessed using the provided functions.</p>
 <div class="refsect3">
-<a name="id-1.11.3.12.3.7"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterAnimationClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -2159,8 +2159,8 @@ duration of the signal emission chain.</p>
 <p>Use <a class="link" href="ClutterPropertyTransition.html" title="ClutterPropertyTransition"><span class="type">ClutterPropertyTransition</span></a> instead</p>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.14.2.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterAnimation-completed.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2196,8 +2196,8 @@ started</p>
 <p>Use <a class="link" href="ClutterPropertyTransition.html" title="ClutterPropertyTransition"><span class="type">ClutterPropertyTransition</span></a> instead</p>
 </div>
 <div class="refsect3">
-<a name="id-1.11.3.14.3.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterAnimation-started.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -2228,6 +2228,6 @@ started</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

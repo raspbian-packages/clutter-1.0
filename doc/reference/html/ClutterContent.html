@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterContent: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch01.html" title="Abstract classes and interfaces">
 <link rel="prev" href="ClutterEffect.html" title="ClutterEffect">
 <link rel="next" href="ch02.html" title="Base actors">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -37,7 +37,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterContent.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -64,7 +64,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterContent.signals"></a><h2>Signals</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="signals_return">
 <col width="300px" class="signals_name">
@@ -86,7 +86,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterContent.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -105,7 +105,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterContent.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> ClutterContent
 </pre>
 </div>
@@ -143,8 +143,8 @@ clutter_content_get_preferred_size (<em class="parameter"><code><a class="link" 
 would have regardless of the allocation of the actor that is painting it,
 for instance the size of an image data.</p>
 <div class="refsect3">
-<a name="id-1.5.2.12.10.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-content-get-preferred-size.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -170,7 +170,7 @@ for instance the size of an image data.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.2.12.10.2.7"></a><h4>Returns</h4>
+<a name="clutter-content-get-preferred-size.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the content has a preferred size, and <code class="literal">FALSE</code>
 otherwise</p>
 </div>
@@ -186,8 +186,8 @@ clutter_content_invalidate (<em class="parameter"><code><a class="link" href="Cl
 they change the way a the content should be painted regardless of the
 actor state.</p>
 <div class="refsect3">
-<a name="id-1.5.2.12.10.3.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-content-invalidate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -234,8 +234,8 @@ whose members cannot be acccessed directly.</p>
 <p>The <a class="link" href="ClutterContent.html#ClutterContentIface" title="struct ClutterContentIface"><span class="type">ClutterContentIface</span></a> structure contains only
 private data.</p>
 <div class="refsect3">
-<a name="id-1.5.2.12.11.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterContentIface.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -289,8 +289,8 @@ user_function (<a class="link" href="ClutterContent.html" title="ClutterContent"
 <p>This signal is emitted each time a <a class="link" href="ClutterContent.html" title="ClutterContent"><span class="type">ClutterContent</span></a> implementation is
 assigned to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.12.12.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterContent-attached.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -328,8 +328,8 @@ user_function (<a class="link" href="ClutterContent.html" title="ClutterContent"
 <p>This signal is emitted each time a <a class="link" href="ClutterContent.html" title="ClutterContent"><span class="type">ClutterContent</span></a> implementation is
 removed from a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.5.2.12.12.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterContent-detached.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -360,6 +360,6 @@ removed from a <a class="link" href="ClutterActor.html" title="ClutterActor"><sp
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

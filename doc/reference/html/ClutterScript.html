@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterScript: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch11.html" title="User interface definition">
 <link rel="prev" href="ch11.html" title="User interface definition">
 <link rel="next" href="ClutterScriptable.html" title="ClutterScriptable">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterScript.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -204,7 +204,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterScript.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -233,7 +233,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterScript.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -267,8 +267,9 @@ complete scenegraph from external definition data in forms of string
 buffers or files.</p>
 <p>The UI definition format is JSON, the JavaScript Object Notation as
 described by RFC 4627. <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> can load a JSON data stream,
-parse it and build all the objects defined into it. Each object must
-have an "id" and a "type" properties defining the name to be used
+parse it and build all the objects defined into it. The top-level node
+in the JSON file can be a single object or an array of objects. Each object
+must have an "id" and a "type" properties defining the name to be used
 to retrieve it from <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> with <a class="link" href="ClutterScript.html#clutter-script-get-object" title="clutter_script_get_object ()"><code class="function">clutter_script_get_object()</code></a>,
 and the class type to be instanciated. Every other attribute will
 be mapped to the class properties.</p>
@@ -322,6 +323,26 @@ with a ClutterScript id of "red-button"; it can be retrieved by calling:</p>
 <p>and then manipulated with the Clutter API. For every object created
 using ClutterScript it is possible to check the id by calling
 <a class="link" href="ClutterScript.html#clutter-get-script-id" title="clutter_get_script_id ()"><code class="function">clutter_get_script_id()</code></a>.</p>
+<p>Multiple objects can be defined using an array:</p>
+<div class="informalexample"><pre class="screen">
+[
+  {
+    "id"     : "red-button",
+    "type"   : "ClutterRectangle",
+    "width"  : 100,
+    "height" : 100,
+    "color"  : "#ff0000ff"
+  },
+  {
+    "id"     : "white-button",
+    "type"   : "ClutterRectangle",
+    "width"  : 100,
+    "height" : 100,
+    "color"  : "#ffffffff"
+  }
+]
+</pre></div>
+<p></p>
 <p>Packing can be represented using the "children" member, and passing an
 array of objects or ids of objects already defined (but not packed: the
 packing rules of Clutter still apply, and an actor cannot be packed
@@ -418,7 +439,7 @@ implicitly like in the example above, or explicitly by setting the
 <span class="normal">    </span><span class="string">"type"</span><span class="normal">     </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"ClutterAlpha"</span><span class="symbol">,</span>
 <span class="normal">    </span><span class="string">"timeline"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="cbracket">{</span>
 <span class="normal">      </span><span class="string">"id"</span><span class="normal">       </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"rotate-timeline"</span><span class="symbol">,</span>
-<span class="normal">      </span><span class="string">"type      : "</span><span class="normal"><a href="ClutterTimeline.html">ClutterTimeline</a></span><span class="string">",</span>
+<span class="normal">      </span><span class="string">"type      : "</span><span class="normal"><a href="ClutterTimeline.html#ClutterTimeline-struct">ClutterTimeline</a></span><span class="string">",</span>
 <span class="string">      "</span><span class="normal">duration</span><span class="string">" : 4000,</span>
 <span class="string">      "</span><span class="normal">loop</span><span class="string">"     : true</span>
 <span class="string">    },</span>
@@ -544,6 +565,39 @@ can be set using <a class="link" href="ClutterScript.html#clutter-script-add-sta
 "warp" key can be used to warp to a specific state instead of
 animating to it. State changes on signal emission will not affect
 the signal emission chain.</p>
+<p>ClutterScript supports translation using gettext: if a "translatable" key is
+added to a property value, it will be passed through <code class="function">g_dgettext()</code> before
+being set on the created object. For example, to mark the <a class="link" href="ClutterText.html#ClutterText--text" title="The “text” property"><span class="type">“text”</span></a>
+property as being translatable:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="cbracket">{</span>
+<span class="normal">  </span><span class="string">"id"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"label"</span><span class="symbol">,</span>
+<span class="normal">  </span><span class="string">"type"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"ClutterText"</span><span class="symbol">,</span>
+<span class="normal">  </span><span class="string">"text"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="cbracket">{</span><span class="normal"> </span><span class="string">"translatable"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> true</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"string"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"Clutter Script"</span><span class="normal"> </span><span class="cbracket">}</span>
+<span class="cbracket">}</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p></p>
+<p>In order for translation to work, the C runtime locale must have been set
+using <code class="function">setlocale()</code> before loading the <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a>, and the translation
+domain must have been set using <code class="function">textdomain()</code>. If the strings in the script
+are in a different translation domain from the rest of the program, use
+<a class="link" href="ClutterScript.html#clutter-script-set-translation-domain" title="clutter_script_set_translation_domain ()"><code class="function">clutter_script_set_translation_domain()</code></a> to set the domain for the
+<a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> only.</p>
+<p>As well as the "translatable" key, ClutterScript supports optional "domain"
+and "context" keys for specifying the message domain (if it is not the
+default) and context for disambiguating it from other equal message strings.</p>
 <p>Clutter reserves the following names, so classes defining properties
 through the usual GObject registration process should avoid using these
 names to avoid collisions:</p>
@@ -573,7 +627,7 @@ or behavioural elements, like behaviours and timelines. The
 definitions must be encoded using the JavaScript Object Notation (JSON)
 language.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.2.5"></a><h4>Returns</h4>
+<a name="clutter-script-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> instance. Use
 <code class="function">g_object_unref()</code> when done.</p>
 </div>
@@ -592,8 +646,8 @@ clutter_script_load_from_data (<em class="parameter"><code><a class="link" href=
  and merges with
 the currently loaded ones, if any.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-load-from-data.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -626,7 +680,7 @@ buffer</p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.3.6"></a><h4>Returns</h4>
+<a name="clutter-script-load-from-data.returns"></a><h4>Returns</h4>
 <p> on error, zero is returned and <em class="parameter"><code>error</code></em>
 is set
 accordingly. On success, the merge id for the UI definitions is
@@ -646,8 +700,8 @@ clutter_script_load_from_file (<em class="parameter"><code><a class="link" href=
  and merges with
 the currently loaded ones, if any.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-load-from-file.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -673,7 +727,7 @@ the currently loaded ones, if any.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.4.6"></a><h4>Returns</h4>
+<a name="clutter-script-load-from-file.returns"></a><h4>Returns</h4>
 <p> on error, zero is returned and <em class="parameter"><code>error</code></em>
 is set
 accordingly. On success, the merge id for the UI definitions is
@@ -692,8 +746,8 @@ clutter_script_load_from_resource (<em class="parameter"><code><a class="link" h
  and merges with
 the currently loaded ones, if any.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-load-from-resource.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -719,7 +773,7 @@ the currently loaded ones, if any.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.5.6"></a><h4>Returns</h4>
+<a name="clutter-script-load-from-resource.returns"></a><h4>Returns</h4>
 <p> on error, zero is returned and <em class="parameter"><code>error</code></em>
 is set
 accordingly. On success, the merge id for the UI definitions is
@@ -741,8 +795,8 @@ clutter_script_add_search_paths (<em class="parameter"><code><a class="link" hre
 can be used to define search paths for the textures source file name
 or other custom, file-based properties.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-add-search-paths.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -782,8 +836,8 @@ clutter_script_lookup_filename (<em class="parameter"><code><a class="link" href
 
 is found, its full path will be returned .</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-lookup-filename.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -804,7 +858,7 @@ is found, its full path will be returned .</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.7.6"></a><h4>Returns</h4>
+<a name="clutter-script-lookup-filename.returns"></a><h4>Returns</h4>
 <p> the full path of <em class="parameter"><code>filename</code></em>
 or <code class="literal">NULL</code> if no path was
 found.</p>
@@ -821,8 +875,8 @@ clutter_script_get_object (<em class="parameter"><code><a class="link" href="Clu
 . This function does not increment
 the reference count of the returned object.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-get-object.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -843,7 +897,7 @@ the reference count of the returned object.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.8.6"></a><h4>Returns</h4>
+<a name="clutter-script-get-object.returns"></a><h4>Returns</h4>
 <p> the named object, or <code class="literal">NULL</code> if no object
 with the given name was available. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -888,8 +942,8 @@ ending the list, like:</p>
 <p>Note: This function does not increment the reference count of the
 returned objects.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.9.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-get-objects.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -916,7 +970,7 @@ with <code class="literal">NULL</code></p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.9.9"></a><h4>Returns</h4>
+<a name="clutter-script-get-objects.returns"></a><h4>Returns</h4>
 <p> the number of objects returned.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -930,8 +984,8 @@ clutter_script_unmerge_objects (<em class="parameter"><code><a class="link" href
 <p>Unmerges the objects identified by <em class="parameter"><code>merge_id</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-unmerge-objects.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -962,8 +1016,8 @@ clutter_script_ensure_objects (<em class="parameter"><code><a class="link" href=
  is correctly
 constructed. You should rarely need to use this function.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.11.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-ensure-objects.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -988,8 +1042,8 @@ clutter_script_list_objects (<em class="parameter"><code><a class="link" href="C
 <p>Note: this function does not increment the reference count of the
 objects it returns.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.12.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-list-objects.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1003,7 +1057,7 @@ objects it returns.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.12.7"></a><h4>Returns</h4>
+<a name="clutter-script-list-objects.returns"></a><h4>Returns</h4>
 <p> a list
 of <span class="type">GObject</span>s, or <code class="literal">NULL</code>. The objects are owned by the
 <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> instance. Use <code class="function">g_list_free()</code> on the returned list when
@@ -1028,8 +1082,8 @@ by the <a class="link" href="ClutterScript.html#clutter-script-connect-signals-f
 intended for interpreted language bindings, but could be useful where the
 programmer wants more control over the signal connection process.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.13.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScriptConnectFunc.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1090,8 +1144,8 @@ module's scope) to look at the application's symbol table.</p>
 <p>Note that this function will not work if <span class="type">GModule</span> is not supported by
 the platform Clutter is running on.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-connect-signals.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1129,8 +1183,8 @@ names using the native API, but it can also be used on platforms
 that do not support GModule.</p>
 <p>Applications should use <a class="link" href="ClutterScript.html#clutter-script-connect-signals" title="clutter_script_connect_signals ()"><code class="function">clutter_script_connect_signals()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.15.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-connect-signals-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1173,8 +1227,8 @@ connecting signal handlers.</p>
 <p>The <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> instance will take a reference on the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>
 passed to this function.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.16.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-add-states.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1216,8 +1270,8 @@ clutter_script_get_states (<em class="parameter"><code><a class="link" href="Clu
  is <code class="literal">NULL</code>, this function will return the default
 <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> instance.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.17.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-get-states.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1238,7 +1292,7 @@ clutter_script_get_states (<em class="parameter"><code><a class="link" href="Clu
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.17.9"></a><h4>Returns</h4>
+<a name="clutter-script-get-states.returns"></a><h4>Returns</h4>
 <p> a pointer to the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> for the
 given name. The <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> is owned by the <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> instance
 and it should not be unreferenced. </p>
@@ -1256,8 +1310,8 @@ clutter_script_get_type_from_name (<em class="parameter"><code><a class="link" h
 <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> has for that purpose. This function should
 rarely be used.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.18.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-get-type-from-name.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1278,7 +1332,7 @@ rarely be used.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.18.6"></a><h4>Returns</h4>
+<a name="clutter-script-get-type-from-name.returns"></a><h4>Returns</h4>
 <p> the type for the requested type name, or
 <code class="literal">G_TYPE_INVALID</code> if not corresponding type was found.</p>
 </div>
@@ -1291,8 +1345,8 @@ rarely be used.</p>
 clutter_get_script_id (<em class="parameter"><code><span class="type">GObject</span> *gobject</code></em>);</pre>
 <p>Retrieves the Clutter script id, if any.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.19.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-get-script-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1306,7 +1360,7 @@ clutter_get_script_id (<em class="parameter"><code><span class="type">GObject</s
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.19.6"></a><h4>Returns</h4>
+<a name="clutter-get-script-id.returns"></a><h4>Returns</h4>
 <p> the script id, or <code class="literal">NULL</code> if <em class="parameter"><code>object</code></em>
 was not defined inside
 a UI definition file. The returned string is owned by the object and
@@ -1322,8 +1376,8 @@ clutter_script_get_translation_domain (<em class="parameter"><code><a class="lin
 <p>Retrieves the translation domain set using
 <a class="link" href="ClutterScript.html#clutter-script-set-translation-domain" title="clutter_script_set_translation_domain ()"><code class="function">clutter_script_set_translation_domain()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.20.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-get-translation-domain.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1337,7 +1391,7 @@ clutter_script_get_translation_domain (<em class="parameter"><code><a class="lin
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.20.6"></a><h4>Returns</h4>
+<a name="clutter-script-get-translation-domain.returns"></a><h4>Returns</h4>
 <p> the translation domain, if any is set,
 or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1353,8 +1407,8 @@ clutter_script_set_translation_domain (<em class="parameter"><code><a class="lin
 <p>Sets the translation domain for <em class="parameter"><code>script</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.8.21.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-script-set-translation-domain.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1396,8 +1450,8 @@ and should be accessed using the provided API</p>
 </pre>
 <p>The <a class="link" href="ClutterScript.html#ClutterScriptClass" title="struct ClutterScriptClass"><span class="type">ClutterScriptClass</span></a> structure contains only private data</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.9.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScriptClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -1420,8 +1474,8 @@ The default implementation is equivalent to <code class="function">g_type_from_n
 <a name="ClutterScriptError"></a><h3>enum ClutterScriptError</h3>
 <p><a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> error enumeration.</p>
 <div class="refsect3">
-<a name="id-1.7.3.2.9.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScriptError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1493,6 +1547,6 @@ will use <code class="function">gettext()</code>, otherwise <code class="functio
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

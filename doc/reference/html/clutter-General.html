@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>General: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="ClutterInputDevice.html" title="ClutterInputDevice">
 <link rel="next" href="ClutterPath.html" title="ClutterPath">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,16 +33,12 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-General.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
 </colgroup>
 <tbody>
-<tr>
-<td class="define_keyword">#define</td>
-<td class="function_name"><a class="link" href="clutter-General.html#CLUTTER-PRIORITY-REDRAW:CAPS" title="CLUTTER_PRIORITY_REDRAW">CLUTTER_PRIORITY_REDRAW</a></td>
-</tr>
 <tr>
 <td class="function_type">
 <a class="link" href="clutter-General.html#ClutterInitError" title="enum ClutterInitError"><span class="returnvalue">ClutterInitError</span></a>
@@ -400,12 +396,16 @@
 </div>
 <div class="refsect1">
 <a name="clutter-General.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
 </colgroup>
 <tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="clutter-General.html#CLUTTER-PRIORITY-REDRAW:CAPS" title="CLUTTER_PRIORITY_REDRAW">CLUTTER_PRIORITY_REDRAW</a></td>
+</tr>
 <tr>
 <td class="datatype_keyword">enum</td>
 <td class="function_name"><a class="link" href="clutter-General.html#ClutterInitError" title="enum ClutterInitError">ClutterInitError</a></td>
@@ -448,18 +448,6 @@ the result when the thread finishes, and update the UI from those callbacks.</p>
 <div class="refsect1">
 <a name="clutter-General.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
-<a name="CLUTTER-PRIORITY-REDRAW:CAPS"></a><h3>CLUTTER_PRIORITY_REDRAW</h3>
-<pre class="programlisting">#define CLUTTER_PRIORITY_REDRAW         (G_PRIORITY_HIGH_IDLE + 50)
-</pre>
-<p>Priority of the redraws. This is chosen to be lower than the GTK+
-redraw and resize priorities, because in application with both
-GTK+ and Clutter it's more likely that the Clutter part will be
-continually animating (and thus able to starve GTK+) than
-vice-versa.</p>
-<p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
-</div>
-<hr>
-<div class="refsect2">
 <a name="clutter-init"></a><h3>clutter_init ()</h3>
 <pre class="programlisting"><a class="link" href="clutter-General.html#ClutterInitError" title="enum ClutterInitError"><span class="returnvalue">ClutterInitError</span></a>
 clutter_init (<em class="parameter"><code><span class="type">int</span> *argc</code></em>,
@@ -481,8 +469,8 @@ Clutter API will have undefined behaviour - including segmentation
 faults and assertion failures. Make sure to handle the returned
 <a class="link" href="clutter-General.html#ClutterInitError" title="enum ClutterInitError"><span class="type">ClutterInitError</span></a> enumeration value.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.3.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-init.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -505,7 +493,7 @@ of arguments. </p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.3.9"></a><h4>Returns</h4>
+<a name="clutter-init.returns"></a><h4>Returns</h4>
 <p> a <a class="link" href="clutter-General.html#ClutterInitError" title="enum ClutterInitError"><span class="type">ClutterInitError</span></a> value</p>
 </div>
 </div>
@@ -531,8 +519,8 @@ printed on the display.</p>
 any subsequent call to any other Clutter API will result in undefined
 behaviour - including segmentation faults.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-init-with-args.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -580,7 +568,7 @@ with <code class="function">gettext()</code>, or <code class="literal">NULL</cod
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.4.7"></a><h4>Returns</h4>
+<a name="clutter-init-with-args.returns"></a><h4>Returns</h4>
 <p> <a class="link" href="clutter-General.html#CLUTTER-INIT-SUCCESS:CAPS"><code class="literal">CLUTTER_INIT_SUCCESS</code></a> if Clutter has been successfully
 initialised, or other values or <a class="link" href="clutter-General.html#ClutterInitError" title="enum ClutterInitError"><span class="type">ClutterInitError</span></a> in case of
 error.</p>
@@ -630,7 +618,7 @@ Clutter <span class="type">GOptionGroup</span> has returned <code class="literal
 initialized.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.5.13"></a><h4>Returns</h4>
+<a name="clutter-get-option-group.returns"></a><h4>Returns</h4>
 <p> a <span class="type">GOptionGroup</span> for the commandline arguments
 recognized by Clutter. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -653,7 +641,7 @@ display connection with <a class="link" href="clutter-X11-Specific-Support.html#
 <code class="literal"><code class="function">gtk_clutter_init()</code></code>.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.6.7"></a><h4>Returns</h4>
+<a name="clutter-get-option-group-without-init.returns"></a><h4>Returns</h4>
 <p> a <span class="type">GOptionGroup</span> for the commandline arguments
 recognized by Clutter. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -681,7 +669,7 @@ clutter_main_quit (<em class="parameter"><code><span class="type">void</span></c
 clutter_main_level (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Retrieves the depth of the Clutter mainloop.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.9.5"></a><h4>Returns</h4>
+<a name="clutter-main-level.returns"></a><h4>Returns</h4>
 <p> The level of the mainloop.</p>
 </div>
 </div>
@@ -696,7 +684,7 @@ clutter_get_debug_enabled (<em class="parameter"><code><span class="type">void</
 </div>
 <p>Check if Clutter has debugging enabled.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.10.6"></a><h4>Returns</h4>
+<a name="clutter-get-debug-enabled.returns"></a><h4>Returns</h4>
 <p> <code class="literal">FALSE</code></p>
 </div>
 </div>
@@ -716,7 +704,7 @@ console. You can enable this setting either using the
 <code class="literal">CLUTTER_SHOW_FPS</code> environment variable or passing
 the <code class="literal">--clutter-show-fps</code> command line argument. *</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.11.7"></a><h4>Returns</h4>
+<a name="clutter-get-show-fps.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if Clutter should show the FPS.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -739,7 +727,7 @@ enable its debugging code paths, so it's less useful than intended.</p>
 <p>Since Clutter 1.10, this function is an alias to <code class="function">g_get_monotonic_time()</code>
 if Clutter was configured to enable the debugging code paths.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.12.9"></a><h4>Returns</h4>
+<a name="clutter-get-timestamp.returns"></a><h4>Returns</h4>
 <p> Number of microseconds since <a class="link" href="clutter-General.html#clutter-init" title="clutter_init ()"><code class="function">clutter_init()</code></a> was called, or
 zero if Clutter was not configured with debugging code paths.</p>
 </div>
@@ -758,8 +746,8 @@ clutter_get_actor_by_gid (<em class="parameter"><code><span class="type">guint32
 <p>Retrieves the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> with <em class="parameter"><code>id_</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-get-actor-by-gid.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -773,7 +761,7 @@ clutter_get_actor_by_gid (<em class="parameter"><code><span class="type">guint32
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.13.8"></a><h4>Returns</h4>
+<a name="clutter-get-actor-by-gid.returns"></a><h4>Returns</h4>
 <p> the actor with the passed id or <code class="literal">NULL</code>.
 The returned actor does not have its reference count increased. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -794,8 +782,8 @@ the number of frames drawn if Clutter is not able to synchronize
 with the vertical refresh rate of the display. When synchronization
 is possible, this value is ignored.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-set-default-frame-rate.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -817,7 +805,7 @@ is possible, this value is ignored.</p>
 clutter_get_default_frame_rate (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Retrieves the default frame rate. See <a class="link" href="clutter-General.html#clutter-set-default-frame-rate" title="clutter_set_default_frame_rate ()"><code class="function">clutter_set_default_frame_rate()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.15.5"></a><h4>Returns</h4>
+<a name="clutter-get-default-frame-rate.returns"></a><h4>Returns</h4>
 <p> the default frame rate</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -841,8 +829,8 @@ all <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="t
 <li class="listitem"><p>ClutterActor::leave-event</p></li>
 </ul></div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.16.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-set-motion-events-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -868,7 +856,7 @@ clutter_get_motion_events_enabled (<em class="parameter"><code><span class="type
 </div>
 <p>Gets whether the per-actor motion events are enabled.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.17.7"></a><h4>Returns</h4>
+<a name="clutter-get-motion-events-enabled.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the motion events are enabled</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -906,8 +894,8 @@ text but will use more texture memory.</p>
 <p>Enabling hinting improves text quality for static text but may
 introduce some artifacts if the text is animated.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.19.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-set-font-flags.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -935,7 +923,7 @@ clutter_get_font_flags (<em class="parameter"><code><span class="type">void</spa
 <p>Gets the current font flags for rendering text. See
 <a class="link" href="clutter-General.html#clutter-set-font-flags" title="clutter_set_font_flags ()"><code class="function">clutter_set_font_flags()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.20.7"></a><h4>Returns</h4>
+<a name="clutter-get-font-flags.returns"></a><h4>Returns</h4>
 <p> The font flags</p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -949,7 +937,7 @@ clutter_get_font_map (<em class="parameter"><code><span class="type">void</span>
 You can use the global font map object with the COGL
 Pango API.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.21.5"></a><h4>Returns</h4>
+<a name="clutter-get-font-map.returns"></a><h4>Returns</h4>
 <p> the <span class="type">PangoFontMap</span> instance. The returned
 value is owned by Clutter and it should never be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -967,7 +955,7 @@ environment variable.</p>
 <p>The default text direction can be overridden on a per-actor basis by using
 <a class="link" href="ClutterActor.html#clutter-actor-set-text-direction" title="clutter_actor_set_text_direction ()"><code class="function">clutter_actor_set_text_direction()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.22.6"></a><h4>Returns</h4>
+<a name="clutter-get-default-text-direction.returns"></a><h4>Returns</h4>
 <p> the default text direction</p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -981,7 +969,7 @@ clutter_get_accessibility_enabled (<em class="parameter"><code><span class="type
 least, a value of TRUE means that there are a proper AtkUtil
 implementation available</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.23.5"></a><h4>Returns</h4>
+<a name="clutter-get-accessibility-enabled.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if Clutter has accessibility support enabled</p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -1024,8 +1012,8 @@ application must temporarily release its lock as well.</p>
 be called multiple times.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.25.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-set-lock-functions.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1107,8 +1095,8 @@ clutter_threads_add_idle (<em class="parameter"><code><span class="type">GSource
 default priority.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.29.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-add-idle.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1129,7 +1117,7 @@ default priority.</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.29.7"></a><h4>Returns</h4>
+<a name="clutter-threads-add-idle.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the event source.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -1299,8 +1287,8 @@ thread:</p>
 <p></p>
 <p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> clutter_threads_add_idle]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.30.12"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-add-idle-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1332,7 +1320,7 @@ range between <span class="type">G_PRIORITY_DEFAULT_IDLE</span> and <span class=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.30.13"></a><h4>Returns</h4>
+<a name="clutter-threads-add-idle-full.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the event source.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -1347,8 +1335,8 @@ clutter_threads_add_timeout (<em class="parameter"><code><span class="type">guin
 <p>Simple wrapper around <a class="link" href="clutter-General.html#clutter-threads-add-timeout-full" title="clutter_threads_add_timeout_full ()"><code class="function">clutter_threads_add_timeout_full()</code></a>.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.31.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-add-timeout.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1374,7 +1362,7 @@ clutter_threads_add_timeout (<em class="parameter"><code><span class="type">guin
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.31.7"></a><h4>Returns</h4>
+<a name="clutter-threads-add-timeout.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the event source.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -1402,8 +1390,8 @@ implemented, the timing will not be accurate and it will not try to
 <p>See also <a class="link" href="clutter-General.html#clutter-threads-add-idle-full" title="clutter_threads_add_idle_full ()"><code class="function">clutter_threads_add_idle_full()</code></a>.</p>
 <p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> clutter_threads_add_timeout]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.32.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-add-timeout-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1440,7 +1428,7 @@ range between <span class="type">G_PRIORITY_DEFAULT</span> and <span class="type
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.32.10"></a><h4>Returns</h4>
+<a name="clutter-threads-add-timeout-full.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the event source.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -1459,8 +1447,8 @@ clutter_threads_add_frame_source (<em class="parameter"><code><span class="type"
 <p>Simple wrapper around <a class="link" href="clutter-General.html#clutter-threads-add-frame-source-full" title="clutter_threads_add_frame_source_full ()"><code class="function">clutter_threads_add_frame_source_full()</code></a>.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.33.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-add-frame-source.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1486,7 +1474,7 @@ clutter_threads_add_frame_source (<em class="parameter"><code><span class="type"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.33.9"></a><h4>Returns</h4>
+<a name="clutter-threads-add-frame-source.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the event source.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -1526,8 +1514,8 @@ to invoke the function multiple times to catch up missing frames if
 <p>See also <a class="link" href="clutter-General.html#clutter-threads-add-idle-full" title="clutter_threads_add_idle_full ()"><code class="function">clutter_threads_add_idle_full()</code></a>.</p>
 <p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> clutter_threads_add_frame_source]</span></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.34.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-add-frame-source-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1564,7 +1552,7 @@ range between <code class="literal">G_PRIORITY_DEFAULT</code> and <code class="l
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.34.11"></a><h4>Returns</h4>
+<a name="clutter-threads-add-frame-source-full.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the event source.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -1597,8 +1585,8 @@ or because <a class="link" href="clutter-General.html#clutter-threads-remove-rep
  function will be called, if any is set.</p>
 <p>See also: <a class="link" href="clutter-General.html#clutter-threads-add-repaint-func-full" title="clutter_threads_add_repaint_func_full ()"><code class="function">clutter_threads_add_repaint_func_full()</code></a></p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.35.11"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-add-repaint-func.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1625,7 +1613,7 @@ function, or <code class="literal">NULL</code></p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.35.12"></a><h4>Returns</h4>
+<a name="clutter-threads-add-repaint-func.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the repaint function. You
 can use the returned integer to remove the repaint function by
 calling <a class="link" href="clutter-General.html#clutter-threads-remove-repaint-func" title="clutter_threads_remove_repaint_func ()"><code class="function">clutter_threads_remove_repaint_func()</code></a>.</p>
@@ -1662,8 +1650,8 @@ or because <a class="link" href="clutter-General.html#clutter-threads-remove-rep
 <em class="parameter"><code>notify</code></em>
  function will be called, if any is set.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.36.10"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-add-repaint-func-full.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1695,7 +1683,7 @@ function, or <code class="literal">NULL</code></p></td>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.36.11"></a><h4>Returns</h4>
+<a name="clutter-threads-add-repaint-func-full.returns"></a><h4>Returns</h4>
 <p> the ID (greater than 0) of the repaint function. You
 can use the returned integer to remove the repaint function by
 calling <a class="link" href="clutter-General.html#clutter-threads-remove-repaint-func" title="clutter_threads_remove_repaint_func ()"><code class="function">clutter_threads_remove_repaint_func()</code></a>.</p>
@@ -1710,8 +1698,8 @@ clutter_threads_remove_repaint_func (<em class="parameter"><code><span class="ty
 <p>Removes the repaint function with <em class="parameter"><code>handle_id</code></em>
  as its id</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.37.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-threads-remove-repaint-func.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1733,7 +1721,7 @@ clutter_threads_remove_repaint_func (<em class="parameter"><code><span class="ty
 clutter_get_keyboard_grab (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Queries the current keyboard grab of clutter.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.38.5"></a><h4>Returns</h4>
+<a name="clutter-get-keyboard-grab.returns"></a><h4>Returns</h4>
 <p> the actor currently holding the keyboard grab, or NULL if there is no grab. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1746,7 +1734,7 @@ clutter_get_keyboard_grab (<em class="parameter"><code><span class="type">void</
 clutter_get_pointer_grab (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Queries the current pointer grab of clutter.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.39.5"></a><h4>Returns</h4>
+<a name="clutter-get-pointer-grab.returns"></a><h4>Returns</h4>
 <p> the actor currently holding the pointer grab, or NULL if there is no grab. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1767,8 +1755,8 @@ resource.</p>
 <p>See also <a class="link" href="ClutterStage.html#clutter-stage-set-key-focus" title="clutter_stage_set_key_focus ()"><code class="function">clutter_stage_set_key_focus()</code></a> and <a class="link" href="ClutterActor.html#clutter-actor-grab-key-focus" title="clutter_actor_grab_key_focus ()"><code class="function">clutter_actor_grab_key_focus()</code></a>
 to perform a "soft" key grab and assign key focus to a specific actor.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.40.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-grab-keyboard.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1801,8 +1789,8 @@ preferred way to intercept event delivery to reactive actors.</p>
 <p>If a grab is required, you are strongly encouraged to use a specific
 input device by calling <a class="link" href="ClutterInputDevice.html#clutter-input-device-grab" title="clutter_input_device_grab ()"><code class="function">clutter_input_device_grab()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.41.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-grab-pointer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1849,8 +1837,8 @@ clutter_grab_pointer_for_device (<em class="parameter"><code><a class="link" hre
 <p>If <em class="parameter"><code>id</code></em>
  is -1 then this function is equivalent to <a class="link" href="clutter-General.html#clutter-grab-pointer" title="clutter_grab_pointer ()"><code class="function">clutter_grab_pointer()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.44.8"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-grab-pointer-for-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1884,8 +1872,8 @@ clutter_ungrab_pointer_for_device (<em class="parameter"><code><span class="type
 <p>Removes an existing grab of the pointer events for device <em class="parameter"><code>id_</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.45.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-ungrab-pointer-for-device.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1912,8 +1900,8 @@ associated to it.</p>
 <p>This function is only useful when embedding Clutter inside another
 toolkit, and it should never be called by applications.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.6.46.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-do-event.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1932,11 +1920,23 @@ toolkit, and it should never be called by applications.</p>
 <div class="refsect1">
 <a name="clutter-General.other_details"></a><h2>Types and Values</h2>
 <div class="refsect2">
+<a name="CLUTTER-PRIORITY-REDRAW:CAPS"></a><h3>CLUTTER_PRIORITY_REDRAW</h3>
+<pre class="programlisting">#define CLUTTER_PRIORITY_REDRAW         (G_PRIORITY_HIGH_IDLE + 50)
+</pre>
+<p>Priority of the redraws. This is chosen to be lower than the GTK+
+redraw and resize priorities, because in application with both
+GTK+ and Clutter it's more likely that the Clutter part will be
+continually animating (and thus able to starve GTK+) than
+vice-versa.</p>
+<p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
+</div>
+<hr>
+<div class="refsect2">
 <a name="ClutterInitError"></a><h3>enum ClutterInitError</h3>
 <p>Error conditions returned by <a class="link" href="clutter-General.html#clutter-init" title="clutter_init ()"><code class="function">clutter_init()</code></a> and <a class="link" href="clutter-General.html#clutter-init-with-args" title="clutter_init_with_args ()"><code class="function">clutter_init_with_args()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.7.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterInitError.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1993,8 +1993,8 @@ toolkit, and it should never be called by applications.</p>
 <p>Runtime flags to change the font quality. To be used with
 <a class="link" href="clutter-General.html#clutter-set-font-flags" title="clutter_set_font_flags ()"><code class="function">clutter_set_font_flags()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.7.3.6"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterFontFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2025,8 +2025,8 @@ toolkit, and it should never be called by applications.</p>
 <a name="ClutterTextDirection"></a><h3>enum ClutterTextDirection</h3>
 <p>The text direction to be used by <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>s</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.7.4.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterTextDirection.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2065,8 +2065,8 @@ toolkit, and it should never be called by applications.</p>
 <a name="ClutterRepaintFlags"></a><h3>enum ClutterRepaintFlags</h3>
 <p>Flags to pass to <a class="link" href="clutter-General.html#clutter-threads-add-repaint-func-full" title="clutter_threads_add_repaint_func_full ()"><code class="function">clutter_threads_add_repaint_func_full()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.2.9.7.5.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterRepaintFlags.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -2105,6 +2105,6 @@ toolkit, and it should never be called by applications.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

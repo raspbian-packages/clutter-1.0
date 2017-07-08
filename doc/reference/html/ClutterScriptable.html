@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterScriptable: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch11.html" title="User interface definition">
 <link rel="prev" href="ClutterScript.html" title="ClutterScript">
 <link rel="next" href="ch12.html" title="Generic list model">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -36,7 +36,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterScriptable.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -78,7 +78,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterScriptable.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -97,7 +97,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterScriptable.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GInterface
+<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> ClutterScriptable
 </pre>
 </div>
@@ -135,8 +135,8 @@ clutter_scriptable_set_id (<em class="parameter"><code><a class="link" href="Clu
 define a unique name for an object constructable using the UI
 definition language parsed by <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.3.3.9.2.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-scriptable-set-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -166,8 +166,8 @@ clutter_scriptable_get_id (<em class="parameter"><code><a class="link" href="Clu
 <p>Retrieves the id of <em class="parameter"><code>scriptable</code></em>
  set using <a class="link" href="ClutterScriptable.html#clutter-scriptable-set-id" title="clutter_scriptable_set_id ()"><code class="function">clutter_scriptable_set_id()</code></a>.</p>
 <div class="refsect3">
-<a name="id-1.7.3.3.9.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-scriptable-get-id.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -181,7 +181,7 @@ clutter_scriptable_get_id (<em class="parameter"><code><a class="link" href="Clu
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.3.9.3.6"></a><h4>Returns</h4>
+<a name="clutter-scriptable-get-id.returns"></a><h4>Returns</h4>
 <p> the id of the object. The returned string is owned by
 the scriptable object and should never be modified of freed</p>
 </div>
@@ -199,8 +199,8 @@ clutter_scriptable_parse_custom_node (<em class="parameter"><code><a class="link
 <p>Parses the passed JSON node. The implementation must set the type
 of the passed <span class="type">GValue</span> pointer using <code class="function">g_value_init()</code>.</p>
 <div class="refsect3">
-<a name="id-1.7.3.3.9.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-scriptable-parse-custom-node.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -236,7 +236,7 @@ of the passed <span class="type">GValue</span> pointer using <code class="functi
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.7.3.3.9.4.6"></a><h4>Returns</h4>
+<a name="clutter-scriptable-parse-custom-node.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the node was successfully parsed, <code class="literal">FALSE</code> otherwise.</p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -253,8 +253,8 @@ clutter_scriptable_set_custom_property
 <p>Overrides the common properties setting. The underlying virtual
 function should be used when implementing custom properties.</p>
 <div class="refsect3">
-<a name="id-1.7.3.3.9.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-scriptable-set-custom-property.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -319,8 +319,8 @@ accessed</p>
 this interface can override the parsing and properties setting sequence
 when loading a UI definition data with <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a></p>
 <div class="refsect3">
-<a name="id-1.7.3.3.10.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterScriptableIface.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -356,6 +356,6 @@ into GObject properties</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

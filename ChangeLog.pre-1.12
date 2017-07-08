@@ -1908,14 +1908,13 @@ Date:   Sat Jul 28 17:40:57 2012 +0100
     
     We should not have header files in the project root.
 
- Makefile.am                     |   2 -
- build/win32/vs10/clutter.props  |   8 +--
- build/win32/vs9/clutter.vsprops |   8 +--
- clutter/Makefile.am             |   6 ++
- clutter/config.h.win32.in       | 155 ++++++++++++++++++++++++++++++++++++++++
- config.h.win32.in               | 155 ----------------------------------------
- configure.ac                    |   4 +-
- 7 files changed, 171 insertions(+), 167 deletions(-)
+ Makefile.am                                    | 2 --
+ build/win32/vs10/clutter.props                 | 8 ++++----
+ build/win32/vs9/clutter.vsprops                | 8 ++++----
+ clutter/Makefile.am                            | 6 ++++++
+ config.h.win32.in => clutter/config.h.win32.in | 0
+ configure.ac                                   | 4 ++--
+ 6 files changed, 16 insertions(+), 12 deletions(-)
 
 commit 0df23b7fd6d3a2a612ff76c08f98e3603e0b9737
 Author: Fran Diéguez <fran.dieguez@mabishu.com>
@@ -2659,15 +2658,14 @@ Date:   Mon Jul 9 17:43:09 2012 +0100
     whole API should be moved to the deprecated section, waiting for the
     time in which we can get rid of it all.
 
- clutter/Makefile.am                        |    2 +-
- clutter/clutter-texture.c                  | 3088 ---------------------------
- clutter/clutter-texture.h                  |   65 -
- clutter/deprecated/clutter-cairo-texture.c |    4 +-
- clutter/deprecated/clutter-texture.c       | 3156 ++++++++++++++++++++++++++++
- clutter/deprecated/clutter-texture.h       |  104 +-
- clutter/x11/clutter-glx-texture-pixmap.c   |    1 +
- clutter/x11/clutter-x11-texture-pixmap.c   |    1 +
- 8 files changed, 3258 insertions(+), 3163 deletions(-)
+ clutter/Makefile.am                        |   2 +-
+ clutter/clutter-texture.h                  |  65 ------------------
+ clutter/deprecated/clutter-cairo-texture.c |   4 +-
+ clutter/{ => deprecated}/clutter-texture.c |  78 ++++++++++++++++++++--
+ clutter/deprecated/clutter-texture.h       | 104 +++++++++++++++++++++++++++--
+ clutter/x11/clutter-glx-texture-pixmap.c   |   1 +
+ clutter/x11/clutter-x11-texture-pixmap.c   |   1 +
+ 7 files changed, 175 insertions(+), 80 deletions(-)
 
 commit 42ca7bf1f411bc7572f63126aae445aa64f2ee2d
 Author: Emmanuele Bassi <ebassi@gnome.org>
@@ -5094,12 +5092,11 @@ Date:   Wed May 16 16:12:20 2012 +0100
     Nothing specific to test, and the code is idiomatic enough to be used as
     an example.
 
- clutter/clutter-scroll-actor.c        |   8 ++
- examples/Makefile.am                  |   1 +
- examples/scroll-actor.c               | 193 ++++++++++++++++++++++++++++++++++
- tests/interactive/Makefile.am         |   1 -
- tests/interactive/test-scroll-actor.c | 179 -------------------------------
- 5 files changed, 202 insertions(+), 180 deletions(-)
+ clutter/clutter-scroll-actor.c                     |  8 ++++++
+ examples/Makefile.am                               |  1 +
+ .../test-scroll-actor.c => examples/scroll-actor.c | 32 ++++++++++++++++------
+ tests/interactive/Makefile.am                      |  1 -
+ 4 files changed, 32 insertions(+), 10 deletions(-)
 
 commit 06d13985921f1a369a0d58cb8bee99e9621bdc3a
 Author: Bastian Winkler <buz@netbuz.org>
@@ -5322,11 +5319,10 @@ Date:   Tue May 8 10:51:14 2012 +0100
     it'd require some serious reworking to move it to
     ClutterPropertyTransition or to implicit animations.
 
- examples/Makefile.am                     |   1 -
- examples/bind-constraint.c               | 246 ------------------------------
- tests/interactive/Makefile.am            |   3 +-
- tests/interactive/test-bind-constraint.c | 252 +++++++++++++++++++++++++++++++
- 4 files changed, 254 insertions(+), 248 deletions(-)
+ examples/Makefile.am                                           |  1 -
+ tests/interactive/Makefile.am                                  |  3 ++-
+ .../interactive/test-bind-constraint.c                         | 10 ++++++++--
+ 3 files changed, 10 insertions(+), 4 deletions(-)
 
 commit 4fef7eb68998c0b1414058a12e11b7421ab238d2
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -5524,11 +5520,10 @@ Date:   Wed May 2 18:37:36 2012 +0100
     It's a pretty simple, self-contained example of how to use different
     easing modes, as well as the implicit animations API.
 
- examples/Makefile.am                 |   1 +
- examples/easing-modes.c              | 234 ++++++++++++++++++++++++++++++++++
- tests/interactive/Makefile.am        |   1 -
- tests/interactive/test-transitions.c | 241 -----------------------------------
- 4 files changed, 235 insertions(+), 242 deletions(-)
+ examples/Makefile.am                                          |  1 +
+ .../interactive/test-transitions.c => examples/easing-modes.c | 11 ++---------
+ tests/interactive/Makefile.am                                 |  1 -
+ 3 files changed, 3 insertions(+), 10 deletions(-)
 
 commit 3fab1e40263125d1677b38a215b949d71876e18a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -5561,12 +5556,11 @@ Date:   Wed May 2 12:14:45 2012 +0100
     There's nothing really test-worthy in the ClutterFlowLayout interactive
     test; it can be lifted pretty much as is, and placed into the examples.
 
- clutter/clutter-flow-layout.c        |   8 ++
- examples/Makefile.am                 |   1 +
- examples/flow-layout.c               | 154 +++++++++++++++++++++++++++++++++
- tests/interactive/Makefile.am        |   1 -
- tests/interactive/test-flow-layout.c | 160 -----------------------------------
- 5 files changed, 163 insertions(+), 161 deletions(-)
+ clutter/clutter-flow-layout.c                                  |  8 ++++++++
+ examples/Makefile.am                                           |  1 +
+ tests/interactive/test-flow-layout.c => examples/flow-layout.c | 10 ++--------
+ tests/interactive/Makefile.am                                  |  1 -
+ 4 files changed, 11 insertions(+), 9 deletions(-)
 
 commit b8f6ed184d3d332f83e1f695e47acb40998ecb4a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -5618,39 +5612,30 @@ Date:   Tue May 1 18:30:10 2012 +0100
     ways. In short: the test suite should not be the place where we show off
     idiomatic code for educational purposes.
 
- Makefile.am                              |   2 +-
- clutter/clutter-actor.c                  |   2 +-
- clutter/clutter-bin-layout.c             |   2 +-
- clutter/clutter-bind-constraint.c        |   2 +-
- clutter/clutter-canvas.c                 |   2 +-
- clutter/clutter-constraint.c             |   4 +-
- clutter/clutter-drag-action.c            |   2 +-
- clutter/clutter-drop-action.c            |   2 +-
- clutter/clutter-image.c                  |   2 +-
- clutter/clutter-main.c                   |   2 +-
- configure.ac                             |   2 +
- examples/Makefile.am                     |  39 ++++
- examples/README                          |  10 +
- examples/basic-actor.c                   | 153 +++++++++++++++
- examples/bin-layout.c                    | 307 ++++++++++++++++++++++++++++++
- examples/bind-constraint.c               | 246 ++++++++++++++++++++++++
- examples/canvas.c                        | 133 +++++++++++++
- examples/constraints.c                   |  90 +++++++++
- examples/drag-action.c                   | 205 ++++++++++++++++++++
- examples/drop-action.c                   | 245 ++++++++++++++++++++++++
- examples/image-content.c                 | 116 ++++++++++++
- examples/threads.c                       | 274 +++++++++++++++++++++++++++
- tests/interactive/Makefile.am            |  12 +-
- tests/interactive/test-actor.c           | 160 ----------------
- tests/interactive/test-bin-layout.c      | 314 -------------------------------
- tests/interactive/test-canvas.c          | 139 --------------
- tests/interactive/test-constraints.c     | 253 -------------------------
- tests/interactive/test-drag.c            | 206 --------------------
- tests/interactive/test-drop.c            | 251 ------------------------
- tests/interactive/test-image-box.c       | 123 ------------
- tests/interactive/test-snap-constraint.c |  93 ---------
- tests/interactive/test-threads.c         | 281 ---------------------------
- 32 files changed, 1833 insertions(+), 1841 deletions(-)
+ Makefile.am                                        |  2 +-
+ clutter/clutter-actor.c                            |  2 +-
+ clutter/clutter-bin-layout.c                       |  2 +-
+ clutter/clutter-bind-constraint.c                  |  2 +-
+ clutter/clutter-canvas.c                           |  2 +-
+ clutter/clutter-constraint.c                       |  4 ++-
+ clutter/clutter-drag-action.c                      |  2 +-
+ clutter/clutter-drop-action.c                      |  2 +-
+ clutter/clutter-image.c                            |  2 +-
+ clutter/clutter-main.c                             |  2 +-
+ configure.ac                                       |  2 ++
+ examples/Makefile.am                               | 39 ++++++++++++++++++++++
+ examples/README                                    | 10 ++++++
+ .../test-actor.c => examples/basic-actor.c         | 11 ++----
+ .../test-bin-layout.c => examples/bin-layout.c     | 11 ++----
+ .../bind-constraint.c                              | 11 ++----
+ .../interactive/test-canvas.c => examples/canvas.c | 10 ++----
+ .../constraints.c                                  |  7 ++--
+ .../test-drag.c => examples/drag-action.c          |  5 ++-
+ .../test-drop.c => examples/drop-action.c          | 10 ++----
+ .../test-image-box.c => examples/image-content.c   | 11 ++----
+ .../test-threads.c => examples/threads.c           | 11 ++----
+ tests/interactive/Makefile.am                      | 12 +------
+ 23 files changed, 82 insertions(+), 90 deletions(-)
 
 commit 64841d6498df01807dfa732935c27b2b1350e5a3
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -5851,26 +5836,24 @@ Date:   Wed Apr 25 17:13:29 2012 +0100
     
     So long, ClutterAlpha; and thanks for all the fish.
 
- clutter/Makefile.am                            |   4 +-
- clutter/clutter-alpha.c                        | 930 ------------------------
- clutter/clutter-alpha.h                        | 131 ----
- clutter/clutter-box-layout.c                   |   1 +
- clutter/clutter-deprecated.h                   |   1 +
- clutter/clutter-layout-manager.c               |   5 +-
- clutter/clutter-layout-manager.h               |   3 -
- clutter/clutter-script-parser.c                |   1 +
- clutter/clutter-table-layout.c                 |   1 +
- clutter/clutter.h                              |   1 -
- clutter/deprecated/clutter-alpha.c             | 962 +++++++++++++++++++++++++
- clutter/deprecated/clutter-alpha.h             | 144 ++++
- clutter/deprecated/clutter-behaviour-depth.c   |   1 +
- clutter/deprecated/clutter-behaviour-ellipse.c |   1 +
- clutter/deprecated/clutter-behaviour-opacity.c |   1 +
- clutter/deprecated/clutter-behaviour-path.c    |   1 +
- clutter/deprecated/clutter-behaviour-rotate.c  |   1 +
- clutter/deprecated/clutter-behaviour-scale.c   |   1 +
- clutter/deprecated/clutter-behaviour.c         |   1 +
- 19 files changed, 1123 insertions(+), 1068 deletions(-)
+ clutter/Makefile.am                            |  4 +--
+ clutter/clutter-box-layout.c                   |  1 +
+ clutter/clutter-deprecated.h                   |  1 +
+ clutter/clutter-layout-manager.c               |  5 +++-
+ clutter/clutter-layout-manager.h               |  3 ---
+ clutter/clutter-script-parser.c                |  1 +
+ clutter/clutter-table-layout.c                 |  1 +
+ clutter/clutter.h                              |  1 -
+ clutter/{ => deprecated}/clutter-alpha.c       | 34 +++++++++++++++++++++++++-
+ clutter/{ => deprecated}/clutter-alpha.h       | 13 ++++++++++
+ clutter/deprecated/clutter-behaviour-depth.c   |  1 +
+ clutter/deprecated/clutter-behaviour-ellipse.c |  1 +
+ clutter/deprecated/clutter-behaviour-opacity.c |  1 +
+ clutter/deprecated/clutter-behaviour-path.c    |  1 +
+ clutter/deprecated/clutter-behaviour-rotate.c  |  1 +
+ clutter/deprecated/clutter-behaviour-scale.c   |  1 +
+ clutter/deprecated/clutter-behaviour.c         |  1 +
+ 17 files changed, 63 insertions(+), 8 deletions(-)
 
 commit a5630d962f6b51812783945f47ca7e6215e06754
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -6199,16 +6182,15 @@ Date:   Wed Apr 11 18:18:27 2012 +0100
     ClutterTransition and ClutterAnimatable, are enough to replace this
     whole API.
 
- clutter/Makefile.am                    |    3 +-
- clutter/clutter-animatable.c           |    1 +
- clutter/clutter-animatable.h           |    2 +-
- clutter/clutter-animation.c            | 2619 --------------------------------
- clutter/clutter-animation.h            |  165 --
- clutter/clutter-types.h                |   68 +-
- clutter/clutter.h                      |    1 -
- clutter/deprecated/clutter-animation.c | 2619 ++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-animation.h |  158 +-
- 9 files changed, 2812 insertions(+), 2824 deletions(-)
+ clutter/Makefile.am                          |   3 +-
+ clutter/clutter-animatable.c                 |   1 +
+ clutter/clutter-animatable.h                 |   2 +-
+ clutter/clutter-animation.h                  | 165 ---------------------------
+ clutter/clutter-types.h                      |  68 +++++------
+ clutter/clutter.h                            |   1 -
+ clutter/{ => deprecated}/clutter-animation.c |   0
+ clutter/deprecated/clutter-animation.h       | 158 ++++++++++++++++++++++++-
+ 8 files changed, 193 insertions(+), 205 deletions(-)
 
 commit 63e909576a84edb30951f888ba3787e09ce643c8
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -6219,20 +6201,16 @@ Date:   Wed Apr 11 18:00:23 2012 +0100
     The PropertyTransition, KeyframeTransition, and TransitionGroup classes
     can effectively replace Animator and State in their common usage.
 
- clutter/Makefile.am                   |    8 +-
- clutter/clutter-animator.c            | 2147 -------------------------------
- clutter/clutter-animator.h            |  159 ---
- clutter/clutter-deprecated.h          |    2 +
- clutter/clutter-script.c              |   16 +-
- clutter/clutter-script.h              |    3 +
- clutter/clutter-state.c               | 2252 ---------------------------------
- clutter/clutter-state.h               |  159 ---
- clutter/clutter.h                     |    2 -
- clutter/deprecated/clutter-animator.c | 2147 +++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-animator.h |  159 +++
- clutter/deprecated/clutter-state.c    | 2252 +++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-state.h    |  159 +++
- 13 files changed, 4737 insertions(+), 4728 deletions(-)
+ clutter/Makefile.am                         |  8 ++++----
+ clutter/clutter-deprecated.h                |  2 ++
+ clutter/clutter-script.c                    | 16 +++++++++++-----
+ clutter/clutter-script.h                    |  3 +++
+ clutter/clutter.h                           |  2 --
+ clutter/{ => deprecated}/clutter-animator.c |  0
+ clutter/{ => deprecated}/clutter-animator.h |  0
+ clutter/{ => deprecated}/clutter-state.c    |  0
+ clutter/{ => deprecated}/clutter-state.h    |  0
+ 9 files changed, 20 insertions(+), 11 deletions(-)
 
 commit 024f6d40d262c55ea7c6a845885b16685bd65ba8
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -6571,19 +6549,18 @@ Date:   Tue Apr 17 18:40:43 2012 +0100
     we don't want to deprecate clutter_cairo_set_source_color(). This means
     creating a new header to be used for Cairo-related API.
 
- clutter/Makefile.am                        |    5 +-
- clutter/clutter-cairo-texture.c            | 1191 ----------------------------
- clutter/clutter-cairo-texture.h            |  119 ---
- clutter/clutter-cairo.c                    |   63 ++
- clutter/clutter-cairo.h                    |   59 ++
- clutter/clutter-canvas.c                   |    1 +
- clutter/clutter-macros.h                   |   20 -
- clutter/clutter-stage.c                    |    2 +-
- clutter/clutter.h                          |    2 +-
- clutter/clutter.symbols                    |    1 +
- clutter/deprecated/clutter-cairo-texture.c | 1178 +++++++++++++++++++++++++++
- clutter/deprecated/clutter-cairo-texture.h |   94 ++-
- 12 files changed, 1398 insertions(+), 1337 deletions(-)
+ clutter/Makefile.am                              |   5 +-
+ clutter/clutter-cairo-texture.h                  | 119 -----------------------
+ clutter/clutter-cairo.c                          |  63 ++++++++++++
+ clutter/clutter-cairo.h                          |  59 +++++++++++
+ clutter/clutter-canvas.c                         |   1 +
+ clutter/clutter-macros.h                         |  20 ----
+ clutter/clutter-stage.c                          |   2 +-
+ clutter/clutter.h                                |   2 +-
+ clutter/clutter.symbols                          |   1 +
+ clutter/{ => deprecated}/clutter-cairo-texture.c |  69 ++++++-------
+ clutter/deprecated/clutter-cairo-texture.h       |  94 +++++++++++++++++-
+ 11 files changed, 248 insertions(+), 187 deletions(-)
 
 commit 0fca11ec2f38e15fda2a27f31f39110c91f2a4f0
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -6861,14 +6838,12 @@ Date:   Tue Apr 17 18:10:39 2012 +0100
     
     And shoot it in the face.
 
- clutter/Makefile.am                |   4 +-
- clutter/clutter-deprecated.h       |   1 +
- clutter/clutter-media.c            | 599 ---------------------------------
- clutter/clutter-media.h            | 104 ------
- clutter/clutter.h                  |   1 -
- clutter/deprecated/clutter-media.c | 663 +++++++++++++++++++++++++++++++++++++
- clutter/deprecated/clutter-media.h | 121 +++++++
- 7 files changed, 787 insertions(+), 706 deletions(-)
+ clutter/Makefile.am                      |  4 +-
+ clutter/clutter-deprecated.h             |  1 +
+ clutter/clutter.h                        |  1 -
+ clutter/{ => deprecated}/clutter-media.c | 80 ++++++++++++++++++++++++++++----
+ clutter/{ => deprecated}/clutter-media.h | 17 +++++++
+ 5 files changed, 92 insertions(+), 11 deletions(-)
 
 commit 164c6ee74187b10df6cdf22782d9071c28d787b2
 Author: Jasper St. Pierre <jstpierre@mecheye.net>

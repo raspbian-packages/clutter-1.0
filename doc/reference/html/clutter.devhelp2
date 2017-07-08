@@ -1217,7 +1217,6 @@
     <keyword type="property" name="The “scale-factor-set” property" link="ClutterCanvas.html#ClutterCanvas--scale-factor-set"/>
     <keyword type="property" name="The “width” property" link="ClutterCanvas.html#ClutterCanvas--width"/>
     <keyword type="signal" name="The “draw” signal" link="ClutterCanvas.html#ClutterCanvas-draw"/>
-    <keyword type="macro" name="CLUTTER_IMAGE_ERROR" link="ClutterImage.html#CLUTTER-IMAGE-ERROR:CAPS" since="1.10"/>
     <keyword type="function" name="clutter_image_new ()" link="ClutterImage.html#clutter-image-new" since="1.10"/>
     <keyword type="function" name="clutter_image_set_data ()" link="ClutterImage.html#clutter-image-set-data" since="1.10"/>
     <keyword type="function" name="clutter_image_set_bytes ()" link="ClutterImage.html#clutter-image-set-bytes" since="1.12"/>
@@ -1225,6 +1224,7 @@
     <keyword type="function" name="clutter_image_get_texture ()" link="ClutterImage.html#clutter-image-get-texture" since="1.10" stability="Unstable"/>
     <keyword type="struct" name="struct ClutterImage" link="ClutterImage.html#ClutterImage-struct"/>
     <keyword type="struct" name="struct ClutterImageClass" link="ClutterImage.html#ClutterImageClass" since="1.10"/>
+    <keyword type="macro" name="CLUTTER_IMAGE_ERROR" link="ClutterImage.html#CLUTTER-IMAGE-ERROR:CAPS" since="1.10"/>
     <keyword type="enum" name="enum ClutterImageError" link="ClutterImage.html#ClutterImageError" since="1.10"/>
     <keyword type="function" name="clutter_paint_node_ref ()" link="ClutterPaintNode.html#clutter-paint-node-ref" since="1.10"/>
     <keyword type="function" name="clutter_paint_node_unref ()" link="ClutterPaintNode.html#clutter-paint-node-unref" since="1.10"/>
@@ -1438,10 +1438,6 @@
     <keyword type="property" name="The “backend” property" link="ClutterDeviceManager.html#ClutterDeviceManager--backend"/>
     <keyword type="signal" name="The “device-added” signal" link="ClutterDeviceManager.html#ClutterDeviceManager-device-added"/>
     <keyword type="signal" name="The “device-removed” signal" link="ClutterDeviceManager.html#ClutterDeviceManager-device-removed"/>
-    <keyword type="macro" name="CLUTTER_CURRENT_TIME" link="clutter-Events.html#CLUTTER-CURRENT-TIME:CAPS" since="0.4"/>
-    <keyword type="macro" name="CLUTTER_PRIORITY_EVENTS" link="clutter-Events.html#CLUTTER-PRIORITY-EVENTS:CAPS" since="0.4"/>
-    <keyword type="macro" name="CLUTTER_EVENT_PROPAGATE" link="clutter-Events.html#CLUTTER-EVENT-PROPAGATE:CAPS" since="1.10"/>
-    <keyword type="macro" name="CLUTTER_EVENT_STOP" link="clutter-Events.html#CLUTTER-EVENT-STOP:CAPS" since="1.10"/>
     <keyword type="function" name="clutter_event_new ()" link="clutter-Events.html#clutter-event-new"/>
     <keyword type="function" name="clutter_event_copy ()" link="clutter-Events.html#clutter-event-copy"/>
     <keyword type="function" name="clutter_event_free ()" link="clutter-Events.html#clutter-event-free"/>
@@ -1481,9 +1477,6 @@
     <keyword type="function" name="ClutterEventFilterFunc ()" link="clutter-Events.html#ClutterEventFilterFunc" since="1.18"/>
     <keyword type="function" name="clutter_event_add_filter ()" link="clutter-Events.html#clutter-event-add-filter" since="1.18"/>
     <keyword type="function" name="clutter_event_remove_filter ()" link="clutter-Events.html#clutter-event-remove-filter" since="1.18"/>
-    <keyword type="macro" name="CLUTTER_BUTTON_PRIMARY" link="clutter-Events.html#CLUTTER-BUTTON-PRIMARY:CAPS" since="1.10"/>
-    <keyword type="macro" name="CLUTTER_BUTTON_MIDDLE" link="clutter-Events.html#CLUTTER-BUTTON-MIDDLE:CAPS" since="1.10"/>
-    <keyword type="macro" name="CLUTTER_BUTTON_SECONDARY" link="clutter-Events.html#CLUTTER-BUTTON-SECONDARY:CAPS" since="1.10"/>
     <keyword type="function" name="clutter_event_set_button ()" link="clutter-Events.html#clutter-event-set-button" since="1.8"/>
     <keyword type="function" name="clutter_event_get_button ()" link="clutter-Events.html#clutter-event-get-button" since="1.0"/>
     <keyword type="function" name="clutter_event_get_click_count ()" link="clutter-Events.html#clutter-event-get-click-count" since="1.0"/>
@@ -1509,6 +1502,10 @@
     <keyword type="function" name="clutter_event_get_device_type ()" link="clutter-Events.html#clutter-event-get-device-type" since="1.0"/>
     <keyword type="function" name="clutter_get_current_event_time ()" link="clutter-Events.html#clutter-get-current-event-time" since="1.0"/>
     <keyword type="function" name="clutter_get_current_event ()" link="clutter-Events.html#clutter-get-current-event" since="1.2"/>
+    <keyword type="macro" name="CLUTTER_CURRENT_TIME" link="clutter-Events.html#CLUTTER-CURRENT-TIME:CAPS" since="0.4"/>
+    <keyword type="macro" name="CLUTTER_PRIORITY_EVENTS" link="clutter-Events.html#CLUTTER-PRIORITY-EVENTS:CAPS" since="0.4"/>
+    <keyword type="macro" name="CLUTTER_EVENT_PROPAGATE" link="clutter-Events.html#CLUTTER-EVENT-PROPAGATE:CAPS" since="1.10"/>
+    <keyword type="macro" name="CLUTTER_EVENT_STOP" link="clutter-Events.html#CLUTTER-EVENT-STOP:CAPS" since="1.10"/>
     <keyword type="enum" name="enum ClutterModifierType" link="clutter-Events.html#ClutterModifierType" since="0.4"/>
     <keyword type="enum" name="enum ClutterScrollDirection" link="clutter-Events.html#ClutterScrollDirection" since="0.4"/>
     <keyword type="enum" name="enum ClutterScrollFinishFlags" link="clutter-Events.html#ClutterScrollFinishFlags" since="1.26"/>
@@ -1528,6 +1525,9 @@
     <keyword type="struct" name="struct ClutterTouchpadPinchEvent" link="clutter-Events.html#ClutterTouchpadPinchEvent" since="1.24"/>
     <keyword type="struct" name="struct ClutterTouchpadSwipeEvent" link="clutter-Events.html#ClutterTouchpadSwipeEvent" since="1.24"/>
     <keyword type="enum" name="enum ClutterTouchpadGesturePhase" link="clutter-Events.html#ClutterTouchpadGesturePhase" since="1.24"/>
+    <keyword type="macro" name="CLUTTER_BUTTON_PRIMARY" link="clutter-Events.html#CLUTTER-BUTTON-PRIMARY:CAPS" since="1.10"/>
+    <keyword type="macro" name="CLUTTER_BUTTON_MIDDLE" link="clutter-Events.html#CLUTTER-BUTTON-MIDDLE:CAPS" since="1.10"/>
+    <keyword type="macro" name="CLUTTER_BUTTON_SECONDARY" link="clutter-Events.html#CLUTTER-BUTTON-SECONDARY:CAPS" since="1.10"/>
     <keyword type="function" name="clutter_feature_available ()" link="clutter-Features.html#clutter-feature-available" since="0.2"/>
     <keyword type="function" name="clutter_feature_get_all ()" link="clutter-Features.html#clutter-feature-get-all" since="0.2"/>
     <keyword type="enum" name="enum ClutterFeatureFlags" link="clutter-Features.html#ClutterFeatureFlags" since="0.4"/>
@@ -1676,7 +1676,6 @@
     <keyword type="property" name="The “name” property" link="ClutterInputDevice.html#ClutterInputDevice--name"/>
     <keyword type="property" name="The “product-id” property" link="ClutterInputDevice.html#ClutterInputDevice--product-id"/>
     <keyword type="property" name="The “vendor-id” property" link="ClutterInputDevice.html#ClutterInputDevice--vendor-id"/>
-    <keyword type="macro" name="CLUTTER_PRIORITY_REDRAW" link="clutter-General.html#CLUTTER-PRIORITY-REDRAW:CAPS" since="0.8"/>
     <keyword type="function" name="clutter_init ()" link="clutter-General.html#clutter-init"/>
     <keyword type="function" name="clutter_init_with_args ()" link="clutter-General.html#clutter-init-with-args" since="0.2"/>
     <keyword type="function" name="clutter_get_option_group ()" link="clutter-General.html#clutter-get-option-group" since="0.2"/>
@@ -1721,6 +1720,7 @@
     <keyword type="function" name="clutter_grab_pointer_for_device ()" link="clutter-General.html#clutter-grab-pointer-for-device" deprecated="1.10: Use clutter_input_device_grab() instead." since="0.8"/>
     <keyword type="function" name="clutter_ungrab_pointer_for_device ()" link="clutter-General.html#clutter-ungrab-pointer-for-device" deprecated="1.10: Use clutter_input_device_ungrab() instead." since="0.8"/>
     <keyword type="function" name="clutter_do_event ()" link="clutter-General.html#clutter-do-event" since="0.4"/>
+    <keyword type="macro" name="CLUTTER_PRIORITY_REDRAW" link="clutter-General.html#CLUTTER-PRIORITY-REDRAW:CAPS" since="0.8"/>
     <keyword type="enum" name="enum ClutterInitError" link="clutter-General.html#ClutterInitError" since="0.2"/>
     <keyword type="enum" name="enum ClutterFontFlags" link="clutter-General.html#ClutterFontFlags" deprecated="1.22: Use #cairo_font_options_t instead" since="1.0"/>
     <keyword type="enum" name="enum ClutterTextDirection" link="clutter-General.html#ClutterTextDirection" since="1.2"/>
@@ -1827,9 +1827,9 @@
     <keyword type="enum" name="enum ClutterUnitType" link="clutter-Unit-conversion.html#ClutterUnitType" since="1.0"/>
     <keyword type="struct" name="struct ClutterUnits" link="clutter-Unit-conversion.html#ClutterUnits-struct"/>
     <keyword type="struct" name="struct ClutterParamSpecUnits" link="clutter-Unit-conversion.html#ClutterParamSpecUnits" since="1.0"/>
-    <keyword type="macro" name="CLUTTER_CAIRO_FORMAT_ARGB32" link="clutter-Cairo-integration.html#CLUTTER-CAIRO-FORMAT-ARGB32:CAPS" since="1.8"/>
     <keyword type="function" name="clutter_cairo_clear ()" link="clutter-Cairo-integration.html#clutter-cairo-clear" since="1.12"/>
     <keyword type="function" name="clutter_cairo_set_source_color ()" link="clutter-Cairo-integration.html#clutter-cairo-set-source-color" since="1.0"/>
+    <keyword type="macro" name="CLUTTER_CAIRO_FORMAT_ARGB32" link="clutter-Cairo-integration.html#CLUTTER-CAIRO-FORMAT-ARGB32:CAPS" since="1.8"/>
     <keyword type="function" name="clutter_util_next_p2 ()" link="clutter-Utilities.html#clutter-util-next-p2" deprecated="1.2"/>
     <keyword type="function" name="clutter_timeout_pool_new ()" link="clutter-Utilities.html#clutter-timeout-pool-new" deprecated="1.6: There is no direct replacement for this API" since="0.4"/>
     <keyword type="function" name="clutter_timeout_pool_add ()" link="clutter-Utilities.html#clutter-timeout-pool-add" deprecated="1.6: There is no direct replacement for this API" since="0.4"/>
@@ -1841,11 +1841,16 @@
     <keyword type="function" name="clutter_value_set_fixed ()" link="clutter-Utilities.html#clutter-value-set-fixed" deprecated="1.10: Use g_value_set_int() instead." since="0.8"/>
     <keyword type="function" name="clutter_value_get_fixed ()" link="clutter-Utilities.html#clutter-value-get-fixed" deprecated="1.10: Use g_value_get_int() instead." since="0.8"/>
     <keyword type="struct" name="struct ClutterParamSpecFixed" link="clutter-Utilities.html#ClutterParamSpecFixed-struct"/>
+    <keyword type="macro" name="CLUTTER_CHECK_VERSION()" link="clutter-Versioning-Macros.html#CLUTTER-CHECK-VERSION:CAPS"/>
+    <keyword type="function" name="clutter_check_version ()" link="clutter-Versioning-Macros.html#clutter-check-version" since="1.2"/>
     <keyword type="macro" name="CLUTTER_MAJOR_VERSION" link="clutter-Versioning-Macros.html#CLUTTER-MAJOR-VERSION:CAPS"/>
     <keyword type="macro" name="CLUTTER_MINOR_VERSION" link="clutter-Versioning-Macros.html#CLUTTER-MINOR-VERSION:CAPS"/>
     <keyword type="macro" name="CLUTTER_MICRO_VERSION" link="clutter-Versioning-Macros.html#CLUTTER-MICRO-VERSION:CAPS"/>
+    <keyword type="macro" name="CLUTTER_VERSION" link="clutter-Versioning-Macros.html#CLUTTER-VERSION:CAPS"/>
+    <keyword type="macro" name="CLUTTER_VERSION_S" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-S:CAPS"/>
     <keyword type="macro" name="CLUTTER_VERSION_HEX" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-HEX:CAPS"/>
-    <keyword type="macro" name="CLUTTER_CHECK_VERSION()" link="clutter-Versioning-Macros.html#CLUTTER-CHECK-VERSION:CAPS"/>
+    <keyword type="macro" name="CLUTTER_FLAVOUR" link="clutter-Versioning-Macros.html#CLUTTER-FLAVOUR:CAPS" deprecated="" since="0.4"/>
+    <keyword type="macro" name="CLUTTER_COGL" link="clutter-Versioning-Macros.html#CLUTTER-COGL:CAPS" deprecated="" since="0.4"/>
     <keyword type="macro" name="CLUTTER_NO_FPU" link="clutter-Versioning-Macros.html#CLUTTER-NO-FPU:CAPS" deprecated=""/>
     <keyword type="macro" name="CLUTTER_VERSION_1_0" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-1-0:CAPS" since="1.10"/>
     <keyword type="macro" name="CLUTTER_VERSION_1_2" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-1-2:CAPS" since="1.10"/>
@@ -1861,13 +1866,8 @@
     <keyword type="macro" name="CLUTTER_VERSION_1_22" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-1-22:CAPS" since="1.22"/>
     <keyword type="macro" name="CLUTTER_VERSION_1_24" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-1-24:CAPS" since="1.24"/>
     <keyword type="macro" name="CLUTTER_VERSION_1_26" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-1-26:CAPS" since="1.26"/>
-    <keyword type="macro" name="CLUTTER_VERSION_MIN_REQUIRED" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-MIN-REQUIRED:CAPS" since="1.10"/>
-    <keyword type="function" name="clutter_check_version ()" link="clutter-Versioning-Macros.html#clutter-check-version" since="1.2"/>
-    <keyword type="macro" name="CLUTTER_VERSION" link="clutter-Versioning-Macros.html#CLUTTER-VERSION:CAPS"/>
-    <keyword type="macro" name="CLUTTER_VERSION_S" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-S:CAPS"/>
-    <keyword type="macro" name="CLUTTER_FLAVOUR" link="clutter-Versioning-Macros.html#CLUTTER-FLAVOUR:CAPS" deprecated="" since="0.4"/>
-    <keyword type="macro" name="CLUTTER_COGL" link="clutter-Versioning-Macros.html#CLUTTER-COGL:CAPS" deprecated="" since="0.4"/>
     <keyword type="macro" name="CLUTTER_VERSION_MAX_ALLOWED" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-MAX-ALLOWED:CAPS" since="1.10"/>
+    <keyword type="macro" name="CLUTTER_VERSION_MIN_REQUIRED" link="clutter-Versioning-Macros.html#CLUTTER-VERSION-MIN-REQUIRED:CAPS" since="1.10"/>
     <keyword type="variable" name="clutter_major_version" link="clutter-Versioning-Macros.html#clutter-major-version" since="1.2"/>
     <keyword type="variable" name="clutter_minor_version" link="clutter-Versioning-Macros.html#clutter-minor-version" since="1.2"/>
     <keyword type="variable" name="clutter_micro_version" link="clutter-Versioning-Macros.html#clutter-micro-version" since="1.2"/>
@@ -2448,7 +2448,6 @@
     <keyword type="function" name="clutter_texture_new ()" link="ClutterTexture.html#clutter-texture-new" deprecated="1.12: Use #ClutterImage instead"/>
     <keyword type="function" name="clutter_texture_new_from_file ()" link="ClutterTexture.html#clutter-texture-new-from-file" deprecated="" since="0.8"/>
     <keyword type="function" name="clutter_texture_new_from_actor ()" link="ClutterTexture.html#clutter-texture-new-from-actor" deprecated="" since="0.6"/>
-    <keyword type="macro" name="CLUTTER_TEXTURE_ERROR" link="ClutterTexture.html#CLUTTER-TEXTURE-ERROR:CAPS" since="0.4"/>
     <keyword type="function" name="clutter_texture_set_from_file ()" link="ClutterTexture.html#clutter-texture-set-from-file" deprecated="" since="0.8"/>
     <keyword type="function" name="clutter_texture_set_from_rgb_data ()" link="ClutterTexture.html#clutter-texture-set-from-rgb-data" deprecated="1.12: Use #ClutterImage and clutter_image_set_data() instead" since="0.4"/>
     <keyword type="function" name="clutter_texture_set_from_yuv_data ()" link="ClutterTexture.html#clutter-texture-set-from-yuv-data" deprecated="" since="0.4"/>
@@ -2478,6 +2477,7 @@
     <keyword type="struct" name="struct ClutterTextureClass" link="ClutterTexture.html#ClutterTextureClass" since="0.2"/>
     <keyword type="enum" name="enum ClutterTextureFlags" link="ClutterTexture.html#ClutterTextureFlags" deprecated="" since="0.4"/>
     <keyword type="enum" name="enum ClutterTextureQuality" link="ClutterTexture.html#ClutterTextureQuality" deprecated="" since="0.8"/>
+    <keyword type="macro" name="CLUTTER_TEXTURE_ERROR" link="ClutterTexture.html#CLUTTER-TEXTURE-ERROR:CAPS" since="0.4"/>
     <keyword type="enum" name="enum ClutterTextureError" link="ClutterTexture.html#ClutterTextureError" since="0.4"/>
     <keyword type="property" name="The “cogl-material” property" link="ClutterTexture.html#ClutterTexture--cogl-material"/>
     <keyword type="property" name="The “cogl-texture” property" link="ClutterTexture.html#ClutterTexture--cogl-texture"/>
@@ -2841,5 +2841,329 @@
     <keyword type="constant" name="CLUTTER_TEXTURE_ERROR_OUT_OF_MEMORY" link="ClutterTexture.html#CLUTTER-TEXTURE-ERROR-OUT-OF-MEMORY:CAPS"/>
     <keyword type="constant" name="CLUTTER_TEXTURE_ERROR_NO_YUV" link="ClutterTexture.html#CLUTTER-TEXTURE-ERROR-NO-YUV:CAPS"/>
     <keyword type="constant" name="CLUTTER_TEXTURE_ERROR_BAD_FORMAT" link="ClutterTexture.html#CLUTTER-TEXTURE-ERROR-BAD-FORMAT:CAPS"/>
+    <keyword type="member" name="ClutterActor-struct.flags" link="ClutterActor.html#ClutterActor-struct.flags"/>
+    <keyword type="member" name="ClutterActorClass.show" link="ClutterActor.html#ClutterActorClass.show"/>
+    <keyword type="member" name="ClutterActorClass.show-all" link="ClutterActor.html#ClutterActorClass.show-all"/>
+    <keyword type="member" name="ClutterActorClass.hide" link="ClutterActor.html#ClutterActorClass.hide"/>
+    <keyword type="member" name="ClutterActorClass.hide-all" link="ClutterActor.html#ClutterActorClass.hide-all"/>
+    <keyword type="member" name="ClutterActorClass.realize" link="ClutterActor.html#ClutterActorClass.realize"/>
+    <keyword type="member" name="ClutterActorClass.unrealize" link="ClutterActor.html#ClutterActorClass.unrealize"/>
+    <keyword type="member" name="ClutterActorClass.map" link="ClutterActor.html#ClutterActorClass.map"/>
+    <keyword type="member" name="ClutterActorClass.unmap" link="ClutterActor.html#ClutterActorClass.unmap"/>
+    <keyword type="member" name="ClutterActorClass.paint" link="ClutterActor.html#ClutterActorClass.paint"/>
+    <keyword type="member" name="ClutterActorClass.parent-set" link="ClutterActor.html#ClutterActorClass.parent-set"/>
+    <keyword type="member" name="ClutterActorClass.destroy" link="ClutterActor.html#ClutterActorClass.destroy"/>
+    <keyword type="member" name="ClutterActorClass.pick" link="ClutterActor.html#ClutterActorClass.pick"/>
+    <keyword type="member" name="ClutterActorClass.queue-redraw" link="ClutterActor.html#ClutterActorClass.queue-redraw"/>
+    <keyword type="member" name="ClutterActorClass.get-preferred-width" link="ClutterActor.html#ClutterActorClass.get-preferred-width"/>
+    <keyword type="member" name="ClutterActorClass.get-preferred-height" link="ClutterActor.html#ClutterActorClass.get-preferred-height"/>
+    <keyword type="member" name="ClutterActorClass.allocate" link="ClutterActor.html#ClutterActorClass.allocate"/>
+    <keyword type="member" name="ClutterActorClass.apply-transform" link="ClutterActor.html#ClutterActorClass.apply-transform"/>
+    <keyword type="member" name="ClutterActorClass.event" link="ClutterActor.html#ClutterActorClass.event"/>
+    <keyword type="member" name="ClutterActorClass.button-press-event" link="ClutterActor.html#ClutterActorClass.button-press-event"/>
+    <keyword type="member" name="ClutterActorClass.button-release-event" link="ClutterActor.html#ClutterActorClass.button-release-event"/>
+    <keyword type="member" name="ClutterActorClass.scroll-event" link="ClutterActor.html#ClutterActorClass.scroll-event"/>
+    <keyword type="member" name="ClutterActorClass.key-press-event" link="ClutterActor.html#ClutterActorClass.key-press-event"/>
+    <keyword type="member" name="ClutterActorClass.key-release-event" link="ClutterActor.html#ClutterActorClass.key-release-event"/>
+    <keyword type="member" name="ClutterActorClass.motion-event" link="ClutterActor.html#ClutterActorClass.motion-event"/>
+    <keyword type="member" name="ClutterActorClass.enter-event" link="ClutterActor.html#ClutterActorClass.enter-event"/>
+    <keyword type="member" name="ClutterActorClass.leave-event" link="ClutterActor.html#ClutterActorClass.leave-event"/>
+    <keyword type="member" name="ClutterActorClass.captured-event" link="ClutterActor.html#ClutterActorClass.captured-event"/>
+    <keyword type="member" name="ClutterActorClass.key-focus-in" link="ClutterActor.html#ClutterActorClass.key-focus-in"/>
+    <keyword type="member" name="ClutterActorClass.key-focus-out" link="ClutterActor.html#ClutterActorClass.key-focus-out"/>
+    <keyword type="member" name="ClutterActorClass.queue-relayout" link="ClutterActor.html#ClutterActorClass.queue-relayout"/>
+    <keyword type="member" name="ClutterActorClass.get-accessible" link="ClutterActor.html#ClutterActorClass.get-accessible"/>
+    <keyword type="member" name="ClutterActorClass.get-paint-volume" link="ClutterActor.html#ClutterActorClass.get-paint-volume"/>
+    <keyword type="member" name="ClutterActorClass.has-overlaps" link="ClutterActor.html#ClutterActorClass.has-overlaps"/>
+    <keyword type="member" name="ClutterActorClass.paint-node" link="ClutterActor.html#ClutterActorClass.paint-node"/>
+    <keyword type="member" name="ClutterActorClass.touch-event" link="ClutterActor.html#ClutterActorClass.touch-event"/>
+    <keyword type="member" name="ClutterMargin-struct.left" link="ClutterActor.html#ClutterMargin-struct.left"/>
+    <keyword type="member" name="ClutterMargin-struct.right" link="ClutterActor.html#ClutterMargin-struct.right"/>
+    <keyword type="member" name="ClutterMargin-struct.top" link="ClutterActor.html#ClutterMargin-struct.top"/>
+    <keyword type="member" name="ClutterMargin-struct.bottom" link="ClutterActor.html#ClutterMargin-struct.bottom"/>
+    <keyword type="member" name="ClutterContainerIface.add" link="ClutterContainer.html#ClutterContainerIface.add"/>
+    <keyword type="member" name="ClutterContainerIface.remove" link="ClutterContainer.html#ClutterContainerIface.remove"/>
+    <keyword type="member" name="ClutterContainerIface.foreach" link="ClutterContainer.html#ClutterContainerIface.foreach"/>
+    <keyword type="member" name="ClutterContainerIface.foreach-with-internals" link="ClutterContainer.html#ClutterContainerIface.foreach-with-internals"/>
+    <keyword type="member" name="ClutterContainerIface.raise" link="ClutterContainer.html#ClutterContainerIface.raise"/>
+    <keyword type="member" name="ClutterContainerIface.lower" link="ClutterContainer.html#ClutterContainerIface.lower"/>
+    <keyword type="member" name="ClutterContainerIface.sort-depth-order" link="ClutterContainer.html#ClutterContainerIface.sort-depth-order"/>
+    <keyword type="member" name="ClutterContainerIface.child-meta-type" link="ClutterContainer.html#ClutterContainerIface.child-meta-type"/>
+    <keyword type="member" name="ClutterContainerIface.create-child-meta" link="ClutterContainer.html#ClutterContainerIface.create-child-meta"/>
+    <keyword type="member" name="ClutterContainerIface.destroy-child-meta" link="ClutterContainer.html#ClutterContainerIface.destroy-child-meta"/>
+    <keyword type="member" name="ClutterContainerIface.get-child-meta" link="ClutterContainer.html#ClutterContainerIface.get-child-meta"/>
+    <keyword type="member" name="ClutterContainerIface.actor-added" link="ClutterContainer.html#ClutterContainerIface.actor-added"/>
+    <keyword type="member" name="ClutterContainerIface.actor-removed" link="ClutterContainer.html#ClutterContainerIface.actor-removed"/>
+    <keyword type="member" name="ClutterContainerIface.child-notify" link="ClutterContainer.html#ClutterContainerIface.child-notify"/>
+    <keyword type="member" name="ClutterChildMeta-struct.container" link="ClutterChildMeta.html#ClutterChildMeta-struct.container"/>
+    <keyword type="member" name="ClutterChildMeta-struct.actor" link="ClutterChildMeta.html#ClutterChildMeta-struct.actor"/>
+    <keyword type="member" name="ClutterMediaIface.eos" link="ClutterMedia.html#ClutterMediaIface.eos"/>
+    <keyword type="member" name="ClutterMediaIface.error" link="ClutterMedia.html#ClutterMediaIface.error"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.get-preferred-width" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.get-preferred-width"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.get-preferred-height" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.get-preferred-height"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.allocate" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.allocate"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.set-container" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.set-container"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.get-child-meta-type" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.get-child-meta-type"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.create-child-meta" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.create-child-meta"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.begin-animation" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.begin-animation"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.get-animation-progress" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.get-animation-progress"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.end-animation" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.end-animation"/>
+    <keyword type="member" name="ClutterLayoutManagerClass.layout-changed" link="ClutterLayoutManager.html#ClutterLayoutManagerClass.layout-changed"/>
+    <keyword type="member" name="ClutterLayoutMeta-struct.manager" link="ClutterLayoutMeta.html#ClutterLayoutMeta-struct.manager"/>
+    <keyword type="member" name="ClutterActorMetaClass.set-actor" link="ClutterActorMeta.html#ClutterActorMetaClass.set-actor"/>
+    <keyword type="member" name="ClutterConstraintClass.update-allocation" link="ClutterConstraint.html#ClutterConstraintClass.update-allocation"/>
+    <keyword type="member" name="ClutterConstraintClass.update-preferred-size" link="ClutterConstraint.html#ClutterConstraintClass.update-preferred-size"/>
+    <keyword type="member" name="ClutterEffectClass.pre-paint" link="ClutterEffect.html#ClutterEffectClass.pre-paint"/>
+    <keyword type="member" name="ClutterEffectClass.post-paint" link="ClutterEffect.html#ClutterEffectClass.post-paint"/>
+    <keyword type="member" name="ClutterEffectClass.get-paint-volume" link="ClutterEffect.html#ClutterEffectClass.get-paint-volume"/>
+    <keyword type="member" name="ClutterEffectClass.paint" link="ClutterEffect.html#ClutterEffectClass.paint"/>
+    <keyword type="member" name="ClutterEffectClass.pick" link="ClutterEffect.html#ClutterEffectClass.pick"/>
+    <keyword type="member" name="ClutterContentIface.get-preferred-size" link="ClutterContent.html#ClutterContentIface.get-preferred-size"/>
+    <keyword type="member" name="ClutterContentIface.paint-content" link="ClutterContent.html#ClutterContentIface.paint-content"/>
+    <keyword type="member" name="ClutterContentIface.attached" link="ClutterContent.html#ClutterContentIface.attached"/>
+    <keyword type="member" name="ClutterContentIface.detached" link="ClutterContent.html#ClutterContentIface.detached"/>
+    <keyword type="member" name="ClutterContentIface.invalidate" link="ClutterContent.html#ClutterContentIface.invalidate"/>
+    <keyword type="member" name="ClutterStageClass.fullscreen" link="ClutterStage.html#ClutterStageClass.fullscreen"/>
+    <keyword type="member" name="ClutterStageClass.unfullscreen" link="ClutterStage.html#ClutterStageClass.unfullscreen"/>
+    <keyword type="member" name="ClutterStageClass.activate" link="ClutterStage.html#ClutterStageClass.activate"/>
+    <keyword type="member" name="ClutterStageClass.deactivate" link="ClutterStage.html#ClutterStageClass.deactivate"/>
+    <keyword type="member" name="ClutterStageClass.delete-event" link="ClutterStage.html#ClutterStageClass.delete-event"/>
+    <keyword type="member" name="ClutterPerspective-struct.fovy" link="ClutterStage.html#ClutterPerspective-struct.fovy"/>
+    <keyword type="member" name="ClutterPerspective-struct.aspect" link="ClutterStage.html#ClutterPerspective-struct.aspect"/>
+    <keyword type="member" name="ClutterPerspective-struct.z-near" link="ClutterStage.html#ClutterPerspective-struct.z-near"/>
+    <keyword type="member" name="ClutterPerspective-struct.z-far" link="ClutterStage.html#ClutterPerspective-struct.z-far"/>
+    <keyword type="member" name="ClutterFog-struct.z-near" link="ClutterStage.html#ClutterFog-struct.z-near"/>
+    <keyword type="member" name="ClutterFog-struct.z-far" link="ClutterStage.html#ClutterFog-struct.z-far"/>
+    <keyword type="member" name="ClutterTextClass.text-changed" link="ClutterText.html#ClutterTextClass.text-changed"/>
+    <keyword type="member" name="ClutterTextClass.activate" link="ClutterText.html#ClutterTextClass.activate"/>
+    <keyword type="member" name="ClutterTextClass.cursor-event" link="ClutterText.html#ClutterTextClass.cursor-event"/>
+    <keyword type="member" name="ClutterTextClass.cursor-changed" link="ClutterText.html#ClutterTextClass.cursor-changed"/>
+    <keyword type="member" name="ClutterClickActionClass.clicked" link="ClutterClickAction.html#ClutterClickActionClass.clicked"/>
+    <keyword type="member" name="ClutterClickActionClass.long-press" link="ClutterClickAction.html#ClutterClickActionClass.long-press"/>
+    <keyword type="member" name="ClutterDragActionClass.drag-begin" link="ClutterDragAction.html#ClutterDragActionClass.drag-begin"/>
+    <keyword type="member" name="ClutterDragActionClass.drag-motion" link="ClutterDragAction.html#ClutterDragActionClass.drag-motion"/>
+    <keyword type="member" name="ClutterDragActionClass.drag-end" link="ClutterDragAction.html#ClutterDragActionClass.drag-end"/>
+    <keyword type="member" name="ClutterDragActionClass.drag-progress" link="ClutterDragAction.html#ClutterDragActionClass.drag-progress"/>
+    <keyword type="member" name="ClutterDropActionClass.can-drop" link="ClutterDropAction.html#ClutterDropActionClass.can-drop"/>
+    <keyword type="member" name="ClutterDropActionClass.over-in" link="ClutterDropAction.html#ClutterDropActionClass.over-in"/>
+    <keyword type="member" name="ClutterDropActionClass.over-out" link="ClutterDropAction.html#ClutterDropActionClass.over-out"/>
+    <keyword type="member" name="ClutterDropActionClass.drop" link="ClutterDropAction.html#ClutterDropActionClass.drop"/>
+    <keyword type="member" name="ClutterGestureActionClass.gesture-begin" link="ClutterGestureAction.html#ClutterGestureActionClass.gesture-begin"/>
+    <keyword type="member" name="ClutterGestureActionClass.gesture-progress" link="ClutterGestureAction.html#ClutterGestureActionClass.gesture-progress"/>
+    <keyword type="member" name="ClutterGestureActionClass.gesture-end" link="ClutterGestureAction.html#ClutterGestureActionClass.gesture-end"/>
+    <keyword type="member" name="ClutterGestureActionClass.gesture-cancel" link="ClutterGestureAction.html#ClutterGestureActionClass.gesture-cancel"/>
+    <keyword type="member" name="ClutterGestureActionClass.gesture-prepare" link="ClutterGestureAction.html#ClutterGestureActionClass.gesture-prepare"/>
+    <keyword type="member" name="ClutterPanActionClass.pan" link="ClutterPanAction.html#ClutterPanActionClass.pan"/>
+    <keyword type="member" name="ClutterPanActionClass.pan-stopped" link="ClutterPanAction.html#ClutterPanActionClass.pan-stopped"/>
+    <keyword type="member" name="ClutterSwipeActionClass.swept" link="ClutterSwipeAction.html#ClutterSwipeActionClass.swept"/>
+    <keyword type="member" name="ClutterSwipeActionClass.swipe" link="ClutterSwipeAction.html#ClutterSwipeActionClass.swipe"/>
+    <keyword type="member" name="ClutterRotateActionClass.rotate" link="ClutterRotateAction.html#ClutterRotateActionClass.rotate"/>
+    <keyword type="member" name="ClutterZoomActionClass.zoom" link="ClutterZoomAction.html#ClutterZoomActionClass.zoom"/>
+    <keyword type="member" name="ClutterTapActionClass.tap" link="ClutterTapAction.html#ClutterTapActionClass.tap"/>
+    <keyword type="member" name="ClutterOffscreenEffectClass.create-texture" link="ClutterOffscreenEffect.html#ClutterOffscreenEffectClass.create-texture"/>
+    <keyword type="member" name="ClutterOffscreenEffectClass.paint-target" link="ClutterOffscreenEffect.html#ClutterOffscreenEffectClass.paint-target"/>
+    <keyword type="member" name="ClutterShaderEffectClass.get-static-shader-source" link="ClutterShaderEffect.html#ClutterShaderEffectClass.get-static-shader-source"/>
+    <keyword type="member" name="ClutterDeformEffectClass.deform-vertex" link="ClutterDeformEffect.html#ClutterDeformEffectClass.deform-vertex"/>
+    <keyword type="member" name="ClutterCanvasClass.draw" link="ClutterCanvas.html#ClutterCanvasClass.draw"/>
+    <keyword type="member" name="ClutterTimelineClass.started" link="ClutterTimeline.html#ClutterTimelineClass.started"/>
+    <keyword type="member" name="ClutterTimelineClass.completed" link="ClutterTimeline.html#ClutterTimelineClass.completed"/>
+    <keyword type="member" name="ClutterTimelineClass.paused" link="ClutterTimeline.html#ClutterTimelineClass.paused"/>
+    <keyword type="member" name="ClutterTimelineClass.new-frame" link="ClutterTimeline.html#ClutterTimelineClass.new-frame"/>
+    <keyword type="member" name="ClutterTimelineClass.marker-reached" link="ClutterTimeline.html#ClutterTimelineClass.marker-reached"/>
+    <keyword type="member" name="ClutterTimelineClass.stopped" link="ClutterTimeline.html#ClutterTimelineClass.stopped"/>
+    <keyword type="member" name="ClutterIntervalClass.validate" link="clutter-Value-intervals.html#ClutterIntervalClass.validate"/>
+    <keyword type="member" name="ClutterIntervalClass.compute-value" link="clutter-Value-intervals.html#ClutterIntervalClass.compute-value"/>
+    <keyword type="member" name="ClutterAnimatableIface.animate-property" link="ClutterAnimatable.html#ClutterAnimatableIface.animate-property"/>
+    <keyword type="member" name="ClutterAnimatableIface.find-property" link="ClutterAnimatable.html#ClutterAnimatableIface.find-property"/>
+    <keyword type="member" name="ClutterAnimatableIface.get-initial-state" link="ClutterAnimatable.html#ClutterAnimatableIface.get-initial-state"/>
+    <keyword type="member" name="ClutterAnimatableIface.set-final-state" link="ClutterAnimatable.html#ClutterAnimatableIface.set-final-state"/>
+    <keyword type="member" name="ClutterAnimatableIface.interpolate-value" link="ClutterAnimatable.html#ClutterAnimatableIface.interpolate-value"/>
+    <keyword type="member" name="ClutterTransitionClass.attached" link="ClutterTransition.html#ClutterTransitionClass.attached"/>
+    <keyword type="member" name="ClutterTransitionClass.detached" link="ClutterTransition.html#ClutterTransitionClass.detached"/>
+    <keyword type="member" name="ClutterTransitionClass.compute-value" link="ClutterTransition.html#ClutterTransitionClass.compute-value"/>
+    <keyword type="member" name="ClutterColor-struct.red" link="clutter-Colors.html#ClutterColor-struct.red"/>
+    <keyword type="member" name="ClutterColor-struct.green" link="clutter-Colors.html#ClutterColor-struct.green"/>
+    <keyword type="member" name="ClutterColor-struct.blue" link="clutter-Colors.html#ClutterColor-struct.blue"/>
+    <keyword type="member" name="ClutterColor-struct.alpha" link="clutter-Colors.html#ClutterColor-struct.alpha"/>
+    <keyword type="member" name="ClutterParamSpecColor-struct.default-value" link="clutter-Colors.html#ClutterParamSpecColor-struct.default-value"/>
+    <keyword type="member" name="ClutterButtonEvent.type" link="clutter-Events.html#ClutterButtonEvent.type"/>
+    <keyword type="member" name="ClutterButtonEvent.time" link="clutter-Events.html#ClutterButtonEvent.time"/>
+    <keyword type="member" name="ClutterButtonEvent.flags" link="clutter-Events.html#ClutterButtonEvent.flags"/>
+    <keyword type="member" name="ClutterButtonEvent.stage" link="clutter-Events.html#ClutterButtonEvent.stage"/>
+    <keyword type="member" name="ClutterButtonEvent.source" link="clutter-Events.html#ClutterButtonEvent.source"/>
+    <keyword type="member" name="ClutterButtonEvent.x" link="clutter-Events.html#ClutterButtonEvent.x"/>
+    <keyword type="member" name="ClutterButtonEvent.y" link="clutter-Events.html#ClutterButtonEvent.y"/>
+    <keyword type="member" name="ClutterButtonEvent.modifier-state" link="clutter-Events.html#ClutterButtonEvent.modifier-state"/>
+    <keyword type="member" name="ClutterButtonEvent.button" link="clutter-Events.html#ClutterButtonEvent.button"/>
+    <keyword type="member" name="ClutterButtonEvent.click-count" link="clutter-Events.html#ClutterButtonEvent.click-count"/>
+    <keyword type="member" name="ClutterButtonEvent.axes" link="clutter-Events.html#ClutterButtonEvent.axes"/>
+    <keyword type="member" name="ClutterButtonEvent.device" link="clutter-Events.html#ClutterButtonEvent.device"/>
+    <keyword type="member" name="ClutterKeyEvent.type" link="clutter-Events.html#ClutterKeyEvent.type"/>
+    <keyword type="member" name="ClutterKeyEvent.time" link="clutter-Events.html#ClutterKeyEvent.time"/>
+    <keyword type="member" name="ClutterKeyEvent.flags" link="clutter-Events.html#ClutterKeyEvent.flags"/>
+    <keyword type="member" name="ClutterKeyEvent.stage" link="clutter-Events.html#ClutterKeyEvent.stage"/>
+    <keyword type="member" name="ClutterKeyEvent.source" link="clutter-Events.html#ClutterKeyEvent.source"/>
+    <keyword type="member" name="ClutterKeyEvent.modifier-state" link="clutter-Events.html#ClutterKeyEvent.modifier-state"/>
+    <keyword type="member" name="ClutterKeyEvent.keyval" link="clutter-Events.html#ClutterKeyEvent.keyval"/>
+    <keyword type="member" name="ClutterKeyEvent.hardware-keycode" link="clutter-Events.html#ClutterKeyEvent.hardware-keycode"/>
+    <keyword type="member" name="ClutterKeyEvent.unicode-value" link="clutter-Events.html#ClutterKeyEvent.unicode-value"/>
+    <keyword type="member" name="ClutterKeyEvent.device" link="clutter-Events.html#ClutterKeyEvent.device"/>
+    <keyword type="member" name="ClutterMotionEvent.type" link="clutter-Events.html#ClutterMotionEvent.type"/>
+    <keyword type="member" name="ClutterMotionEvent.time" link="clutter-Events.html#ClutterMotionEvent.time"/>
+    <keyword type="member" name="ClutterMotionEvent.flags" link="clutter-Events.html#ClutterMotionEvent.flags"/>
+    <keyword type="member" name="ClutterMotionEvent.stage" link="clutter-Events.html#ClutterMotionEvent.stage"/>
+    <keyword type="member" name="ClutterMotionEvent.source" link="clutter-Events.html#ClutterMotionEvent.source"/>
+    <keyword type="member" name="ClutterMotionEvent.x" link="clutter-Events.html#ClutterMotionEvent.x"/>
+    <keyword type="member" name="ClutterMotionEvent.y" link="clutter-Events.html#ClutterMotionEvent.y"/>
+    <keyword type="member" name="ClutterMotionEvent.modifier-state" link="clutter-Events.html#ClutterMotionEvent.modifier-state"/>
+    <keyword type="member" name="ClutterMotionEvent.axes" link="clutter-Events.html#ClutterMotionEvent.axes"/>
+    <keyword type="member" name="ClutterMotionEvent.device" link="clutter-Events.html#ClutterMotionEvent.device"/>
+    <keyword type="member" name="ClutterScrollEvent.type" link="clutter-Events.html#ClutterScrollEvent.type"/>
+    <keyword type="member" name="ClutterScrollEvent.time" link="clutter-Events.html#ClutterScrollEvent.time"/>
+    <keyword type="member" name="ClutterScrollEvent.flags" link="clutter-Events.html#ClutterScrollEvent.flags"/>
+    <keyword type="member" name="ClutterScrollEvent.stage" link="clutter-Events.html#ClutterScrollEvent.stage"/>
+    <keyword type="member" name="ClutterScrollEvent.source" link="clutter-Events.html#ClutterScrollEvent.source"/>
+    <keyword type="member" name="ClutterScrollEvent.x" link="clutter-Events.html#ClutterScrollEvent.x"/>
+    <keyword type="member" name="ClutterScrollEvent.y" link="clutter-Events.html#ClutterScrollEvent.y"/>
+    <keyword type="member" name="ClutterScrollEvent.direction" link="clutter-Events.html#ClutterScrollEvent.direction"/>
+    <keyword type="member" name="ClutterScrollEvent.modifier-state" link="clutter-Events.html#ClutterScrollEvent.modifier-state"/>
+    <keyword type="member" name="ClutterScrollEvent.axes" link="clutter-Events.html#ClutterScrollEvent.axes"/>
+    <keyword type="member" name="ClutterScrollEvent.device" link="clutter-Events.html#ClutterScrollEvent.device"/>
+    <keyword type="member" name="ClutterScrollEvent.scroll-source" link="clutter-Events.html#ClutterScrollEvent.scroll-source"/>
+    <keyword type="member" name="ClutterScrollEvent.finish-flags" link="clutter-Events.html#ClutterScrollEvent.finish-flags"/>
+    <keyword type="member" name="ClutterStageStateEvent.type" link="clutter-Events.html#ClutterStageStateEvent.type"/>
+    <keyword type="member" name="ClutterStageStateEvent.time" link="clutter-Events.html#ClutterStageStateEvent.time"/>
+    <keyword type="member" name="ClutterStageStateEvent.flags" link="clutter-Events.html#ClutterStageStateEvent.flags"/>
+    <keyword type="member" name="ClutterStageStateEvent.stage" link="clutter-Events.html#ClutterStageStateEvent.stage"/>
+    <keyword type="member" name="ClutterStageStateEvent.source" link="clutter-Events.html#ClutterStageStateEvent.source"/>
+    <keyword type="member" name="ClutterStageStateEvent.changed-mask" link="clutter-Events.html#ClutterStageStateEvent.changed-mask"/>
+    <keyword type="member" name="ClutterStageStateEvent.new-state" link="clutter-Events.html#ClutterStageStateEvent.new-state"/>
+    <keyword type="member" name="ClutterCrossingEvent.type" link="clutter-Events.html#ClutterCrossingEvent.type"/>
+    <keyword type="member" name="ClutterCrossingEvent.time" link="clutter-Events.html#ClutterCrossingEvent.time"/>
+    <keyword type="member" name="ClutterCrossingEvent.flags" link="clutter-Events.html#ClutterCrossingEvent.flags"/>
+    <keyword type="member" name="ClutterCrossingEvent.stage" link="clutter-Events.html#ClutterCrossingEvent.stage"/>
+    <keyword type="member" name="ClutterCrossingEvent.source" link="clutter-Events.html#ClutterCrossingEvent.source"/>
+    <keyword type="member" name="ClutterCrossingEvent.x" link="clutter-Events.html#ClutterCrossingEvent.x"/>
+    <keyword type="member" name="ClutterCrossingEvent.y" link="clutter-Events.html#ClutterCrossingEvent.y"/>
+    <keyword type="member" name="ClutterCrossingEvent.device" link="clutter-Events.html#ClutterCrossingEvent.device"/>
+    <keyword type="member" name="ClutterCrossingEvent.related" link="clutter-Events.html#ClutterCrossingEvent.related"/>
+    <keyword type="member" name="ClutterTouchEvent.type" link="clutter-Events.html#ClutterTouchEvent.type"/>
+    <keyword type="member" name="ClutterTouchEvent.time" link="clutter-Events.html#ClutterTouchEvent.time"/>
+    <keyword type="member" name="ClutterTouchEvent.flags" link="clutter-Events.html#ClutterTouchEvent.flags"/>
+    <keyword type="member" name="ClutterTouchEvent.stage" link="clutter-Events.html#ClutterTouchEvent.stage"/>
+    <keyword type="member" name="ClutterTouchEvent.source" link="clutter-Events.html#ClutterTouchEvent.source"/>
+    <keyword type="member" name="ClutterTouchEvent.x" link="clutter-Events.html#ClutterTouchEvent.x"/>
+    <keyword type="member" name="ClutterTouchEvent.y" link="clutter-Events.html#ClutterTouchEvent.y"/>
+    <keyword type="member" name="ClutterTouchEvent.sequence" link="clutter-Events.html#ClutterTouchEvent.sequence"/>
+    <keyword type="member" name="ClutterTouchEvent.modifier-state" link="clutter-Events.html#ClutterTouchEvent.modifier-state"/>
+    <keyword type="member" name="ClutterTouchEvent.axes" link="clutter-Events.html#ClutterTouchEvent.axes"/>
+    <keyword type="member" name="ClutterTouchEvent.device" link="clutter-Events.html#ClutterTouchEvent.device"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.type" link="clutter-Events.html#ClutterTouchpadPinchEvent.type"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.time" link="clutter-Events.html#ClutterTouchpadPinchEvent.time"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.flags" link="clutter-Events.html#ClutterTouchpadPinchEvent.flags"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.stage" link="clutter-Events.html#ClutterTouchpadPinchEvent.stage"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.source" link="clutter-Events.html#ClutterTouchpadPinchEvent.source"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.phase" link="clutter-Events.html#ClutterTouchpadPinchEvent.phase"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.x" link="clutter-Events.html#ClutterTouchpadPinchEvent.x"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.y" link="clutter-Events.html#ClutterTouchpadPinchEvent.y"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.dx" link="clutter-Events.html#ClutterTouchpadPinchEvent.dx"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.dy" link="clutter-Events.html#ClutterTouchpadPinchEvent.dy"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.angle-delta" link="clutter-Events.html#ClutterTouchpadPinchEvent.angle-delta"/>
+    <keyword type="member" name="ClutterTouchpadPinchEvent.scale" link="clutter-Events.html#ClutterTouchpadPinchEvent.scale"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.type" link="clutter-Events.html#ClutterTouchpadSwipeEvent.type"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.time" link="clutter-Events.html#ClutterTouchpadSwipeEvent.time"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.flags" link="clutter-Events.html#ClutterTouchpadSwipeEvent.flags"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.stage" link="clutter-Events.html#ClutterTouchpadSwipeEvent.stage"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.source" link="clutter-Events.html#ClutterTouchpadSwipeEvent.source"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.phase" link="clutter-Events.html#ClutterTouchpadSwipeEvent.phase"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.n-fingers" link="clutter-Events.html#ClutterTouchpadSwipeEvent.n-fingers"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.x" link="clutter-Events.html#ClutterTouchpadSwipeEvent.x"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.y" link="clutter-Events.html#ClutterTouchpadSwipeEvent.y"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.dx" link="clutter-Events.html#ClutterTouchpadSwipeEvent.dx"/>
+    <keyword type="member" name="ClutterTouchpadSwipeEvent.dy" link="clutter-Events.html#ClutterTouchpadSwipeEvent.dy"/>
+    <keyword type="member" name="ClutterPoint-struct.x" link="clutter-Base-geometric-types.html#ClutterPoint-struct.x"/>
+    <keyword type="member" name="ClutterPoint-struct.y" link="clutter-Base-geometric-types.html#ClutterPoint-struct.y"/>
+    <keyword type="member" name="ClutterSize-struct.width" link="clutter-Base-geometric-types.html#ClutterSize-struct.width"/>
+    <keyword type="member" name="ClutterSize-struct.height" link="clutter-Base-geometric-types.html#ClutterSize-struct.height"/>
+    <keyword type="member" name="ClutterRect-struct.origin" link="clutter-Base-geometric-types.html#ClutterRect-struct.origin"/>
+    <keyword type="member" name="ClutterRect-struct.size" link="clutter-Base-geometric-types.html#ClutterRect-struct.size"/>
+    <keyword type="member" name="ClutterVertex-struct.x" link="clutter-Base-geometric-types.html#ClutterVertex-struct.x"/>
+    <keyword type="member" name="ClutterVertex-struct.y" link="clutter-Base-geometric-types.html#ClutterVertex-struct.y"/>
+    <keyword type="member" name="ClutterVertex-struct.z" link="clutter-Base-geometric-types.html#ClutterVertex-struct.z"/>
+    <keyword type="member" name="ClutterActorBox-struct.x1" link="clutter-Base-geometric-types.html#ClutterActorBox-struct.x1"/>
+    <keyword type="member" name="ClutterActorBox-struct.y1" link="clutter-Base-geometric-types.html#ClutterActorBox-struct.y1"/>
+    <keyword type="member" name="ClutterActorBox-struct.x2" link="clutter-Base-geometric-types.html#ClutterActorBox-struct.x2"/>
+    <keyword type="member" name="ClutterActorBox-struct.y2" link="clutter-Base-geometric-types.html#ClutterActorBox-struct.y2"/>
+    <keyword type="member" name="ClutterGeometry-struct.x" link="clutter-Base-geometric-types.html#ClutterGeometry-struct.x"/>
+    <keyword type="member" name="ClutterGeometry-struct.y" link="clutter-Base-geometric-types.html#ClutterGeometry-struct.y"/>
+    <keyword type="member" name="ClutterGeometry-struct.width" link="clutter-Base-geometric-types.html#ClutterGeometry-struct.width"/>
+    <keyword type="member" name="ClutterGeometry-struct.height" link="clutter-Base-geometric-types.html#ClutterGeometry-struct.height"/>
+    <keyword type="member" name="ClutterKnot-struct.x" link="clutter-Base-geometric-types.html#ClutterKnot-struct.x"/>
+    <keyword type="member" name="ClutterKnot-struct.y" link="clutter-Base-geometric-types.html#ClutterKnot-struct.y"/>
+    <keyword type="member" name="ClutterPathNode-struct.type" link="ClutterPath.html#ClutterPathNode-struct.type"/>
+    <keyword type="member" name="ClutterPathNode-struct.points" link="ClutterPath.html#ClutterPathNode-struct.points"/>
+    <keyword type="member" name="ClutterTextBufferClass.inserted-text" link="ClutterTextBuffer.html#ClutterTextBufferClass.inserted-text"/>
+    <keyword type="member" name="ClutterTextBufferClass.deleted-text" link="ClutterTextBuffer.html#ClutterTextBufferClass.deleted-text"/>
+    <keyword type="member" name="ClutterTextBufferClass.get-text" link="ClutterTextBuffer.html#ClutterTextBufferClass.get-text"/>
+    <keyword type="member" name="ClutterTextBufferClass.get-length" link="ClutterTextBuffer.html#ClutterTextBufferClass.get-length"/>
+    <keyword type="member" name="ClutterTextBufferClass.insert-text" link="ClutterTextBuffer.html#ClutterTextBufferClass.insert-text"/>
+    <keyword type="member" name="ClutterTextBufferClass.delete-text" link="ClutterTextBuffer.html#ClutterTextBufferClass.delete-text"/>
+    <keyword type="member" name="ClutterParamSpecUnits.default-type" link="clutter-Unit-conversion.html#ClutterParamSpecUnits.default-type"/>
+    <keyword type="member" name="ClutterParamSpecUnits.default-value" link="clutter-Unit-conversion.html#ClutterParamSpecUnits.default-value"/>
+    <keyword type="member" name="ClutterParamSpecUnits.minimum" link="clutter-Unit-conversion.html#ClutterParamSpecUnits.minimum"/>
+    <keyword type="member" name="ClutterParamSpecUnits.maximum" link="clutter-Unit-conversion.html#ClutterParamSpecUnits.maximum"/>
+    <keyword type="member" name="ClutterParamSpecFixed-struct.minimum" link="clutter-Utilities.html#ClutterParamSpecFixed-struct.minimum"/>
+    <keyword type="member" name="ClutterParamSpecFixed-struct.maximum" link="clutter-Utilities.html#ClutterParamSpecFixed-struct.maximum"/>
+    <keyword type="member" name="ClutterParamSpecFixed-struct.default-value" link="clutter-Utilities.html#ClutterParamSpecFixed-struct.default-value"/>
+    <keyword type="member" name="ClutterScriptClass.get-type-from-name" link="ClutterScript.html#ClutterScriptClass.get-type-from-name"/>
+    <keyword type="member" name="ClutterScriptableIface.set-id" link="ClutterScriptable.html#ClutterScriptableIface.set-id"/>
+    <keyword type="member" name="ClutterScriptableIface.get-id" link="ClutterScriptable.html#ClutterScriptableIface.get-id"/>
+    <keyword type="member" name="ClutterScriptableIface.parse-custom-node" link="ClutterScriptable.html#ClutterScriptableIface.parse-custom-node"/>
+    <keyword type="member" name="ClutterScriptableIface.set-custom-property" link="ClutterScriptable.html#ClutterScriptableIface.set-custom-property"/>
+    <keyword type="member" name="ClutterModelClass.get-n-rows" link="ClutterModel.html#ClutterModelClass.get-n-rows"/>
+    <keyword type="member" name="ClutterModelClass.get-n-columns" link="ClutterModel.html#ClutterModelClass.get-n-columns"/>
+    <keyword type="member" name="ClutterModelClass.get-column-name" link="ClutterModel.html#ClutterModelClass.get-column-name"/>
+    <keyword type="member" name="ClutterModelClass.get-column-type" link="ClutterModel.html#ClutterModelClass.get-column-type"/>
+    <keyword type="member" name="ClutterModelClass.insert-row" link="ClutterModel.html#ClutterModelClass.insert-row"/>
+    <keyword type="member" name="ClutterModelClass.remove-row" link="ClutterModel.html#ClutterModelClass.remove-row"/>
+    <keyword type="member" name="ClutterModelClass.get-iter-at-row" link="ClutterModel.html#ClutterModelClass.get-iter-at-row"/>
+    <keyword type="member" name="ClutterModelClass.resort" link="ClutterModel.html#ClutterModelClass.resort"/>
+    <keyword type="member" name="ClutterModelClass.row-added" link="ClutterModel.html#ClutterModelClass.row-added"/>
+    <keyword type="member" name="ClutterModelClass.row-removed" link="ClutterModel.html#ClutterModelClass.row-removed"/>
+    <keyword type="member" name="ClutterModelClass.row-changed" link="ClutterModel.html#ClutterModelClass.row-changed"/>
+    <keyword type="member" name="ClutterModelClass.sort-changed" link="ClutterModel.html#ClutterModelClass.sort-changed"/>
+    <keyword type="member" name="ClutterModelClass.filter-changed" link="ClutterModel.html#ClutterModelClass.filter-changed"/>
+    <keyword type="member" name="ClutterModelIterClass.get-value" link="ClutterModelIter.html#ClutterModelIterClass.get-value"/>
+    <keyword type="member" name="ClutterModelIterClass.set-value" link="ClutterModelIter.html#ClutterModelIterClass.set-value"/>
+    <keyword type="member" name="ClutterModelIterClass.is-first" link="ClutterModelIter.html#ClutterModelIterClass.is-first"/>
+    <keyword type="member" name="ClutterModelIterClass.is-last" link="ClutterModelIter.html#ClutterModelIterClass.is-last"/>
+    <keyword type="member" name="ClutterModelIterClass.next" link="ClutterModelIter.html#ClutterModelIterClass.next"/>
+    <keyword type="member" name="ClutterModelIterClass.prev" link="ClutterModelIter.html#ClutterModelIterClass.prev"/>
+    <keyword type="member" name="ClutterModelIterClass.get-model" link="ClutterModelIter.html#ClutterModelIterClass.get-model"/>
+    <keyword type="member" name="ClutterModelIterClass.get-row" link="ClutterModelIter.html#ClutterModelIterClass.get-row"/>
+    <keyword type="member" name="ClutterModelIterClass.copy" link="ClutterModelIter.html#ClutterModelIterClass.copy"/>
+    <keyword type="member" name="ClutterX11TexturePixmapClass.update-area" link="ClutterX11TexturePixmap.html#ClutterX11TexturePixmapClass.update-area"/>
+    <keyword type="member" name="ClutterWaylandSurfaceClass.queue-damage-redraw" link="clutter-ClutterWaylandSurface.html#ClutterWaylandSurfaceClass.queue-damage-redraw"/>
+    <keyword type="member" name="CallyActorClass.notify-clutter" link="CallyActor.html#CallyActorClass.notify-clutter"/>
+    <keyword type="member" name="CallyActorClass.focus-clutter" link="CallyActor.html#CallyActorClass.focus-clutter"/>
+    <keyword type="member" name="CallyActorClass.add-actor" link="CallyActor.html#CallyActorClass.add-actor"/>
+    <keyword type="member" name="CallyActorClass.remove-actor" link="CallyActor.html#CallyActorClass.remove-actor"/>
+    <keyword type="member" name="ClutterAnimationClass.started" link="clutter-Implicit-Animations.html#ClutterAnimationClass.started"/>
+    <keyword type="member" name="ClutterAnimationClass.completed" link="clutter-Implicit-Animations.html#ClutterAnimationClass.completed"/>
+    <keyword type="member" name="ClutterBehaviourClass.alpha-notify" link="ClutterBehaviour.html#ClutterBehaviourClass.alpha-notify"/>
+    <keyword type="member" name="ClutterBehaviourClass.applied" link="ClutterBehaviour.html#ClutterBehaviourClass.applied"/>
+    <keyword type="member" name="ClutterBehaviourClass.removed" link="ClutterBehaviour.html#ClutterBehaviourClass.removed"/>
+    <keyword type="member" name="ClutterBehaviourPathClass.knot-reached" link="ClutterBehaviourPath.html#ClutterBehaviourPathClass.knot-reached"/>
+    <keyword type="member" name="ClutterCairoTextureClass.create-surface" link="ClutterCairoTexture.html#ClutterCairoTextureClass.create-surface"/>
+    <keyword type="member" name="ClutterCairoTextureClass.draw" link="ClutterCairoTexture.html#ClutterCairoTextureClass.draw"/>
+    <keyword type="member" name="ClutterScoreClass.timeline-started" link="ClutterScore.html#ClutterScoreClass.timeline-started"/>
+    <keyword type="member" name="ClutterScoreClass.timeline-completed" link="ClutterScore.html#ClutterScoreClass.timeline-completed"/>
+    <keyword type="member" name="ClutterScoreClass.started" link="ClutterScore.html#ClutterScoreClass.started"/>
+    <keyword type="member" name="ClutterScoreClass.completed" link="ClutterScore.html#ClutterScoreClass.completed"/>
+    <keyword type="member" name="ClutterScoreClass.paused" link="ClutterScore.html#ClutterScoreClass.paused"/>
+    <keyword type="member" name="ClutterStateClass.completed" link="ClutterState.html#ClutterStateClass.completed"/>
+    <keyword type="member" name="ClutterTextureClass.size-change" link="ClutterTexture.html#ClutterTextureClass.size-change"/>
+    <keyword type="member" name="ClutterTextureClass.pixbuf-change" link="ClutterTexture.html#ClutterTextureClass.pixbuf-change"/>
+    <keyword type="member" name="ClutterTextureClass.load-finished" link="ClutterTexture.html#ClutterTextureClass.load-finished"/>
   </functions>
 </book>

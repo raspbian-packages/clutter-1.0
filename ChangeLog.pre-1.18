@@ -758,41 +758,40 @@ Date:   Thu Mar 6 16:30:30 2014 +0800
  .../vs10/cally-atktext-example.vcxproj.filters     |   2 +-
  build/win32/vs10/cally-clone-example.vcxproj       |  10 +-
  .../win32/vs10/cally-clone-example.vcxproj.filters |   2 +-
- build/win32/vs10/clutter-build-defines.props       |  63 +++
- build/win32/vs10/clutter-gen-srcs.props            |  98 ++++
- build/win32/vs10/clutter-install.props             | 332 +++++++++++++
- build/win32/vs10/clutter-version-paths.props       |  57 +++
- build/win32/vs10/clutter.props                     | 515 ---------------------
+ build/win32/vs10/clutter-build-defines.props       |  63 ++++
+ build/win32/vs10/clutter-gen-srcs.props            |  98 ++++++
+ .../vs10/{clutter.props => clutter-install.props}  | 219 ++-----------
+ build/win32/vs10/clutter-version-paths.props       |  57 ++++
  build/win32/vs10/clutter.vcxproj.filtersin         |   4 +
- build/win32/vs10/clutter.vcxprojin                 | 162 +++++--
+ build/win32/vs10/clutter.vcxprojin                 | 162 +++++++---
  build/win32/vs10/install.vcxproj                   |  10 +-
  build/win32/vs10/test-cogl-perf.vcxproj            |  10 +-
  build/win32/vs10/test-cogl-perf.vcxproj.filters    |   2 +-
  .../test-interactive-clutter.vcxproj.filtersin     |   2 +-
  .../win32/vs10/test-interactive-clutter.vcxprojin  |  10 +-
- build/win32/vs10/test-picking-performance.vcxproj  | 338 +++++++-------
- .../vs10/test-picking-performance.vcxproj.filters  |  46 +-
+ build/win32/vs10/test-picking-performance.vcxproj  | 338 ++++++++++-----------
+ .../vs10/test-picking-performance.vcxproj.filters  |  46 +--
  build/win32/vs10/test-picking.vcxproj              |  10 +-
  build/win32/vs10/test-picking.vcxproj.filters      |   2 +-
  build/win32/vs10/test-random-text.vcxproj          |  10 +-
  build/win32/vs10/test-random-text.vcxproj.filters  |   2 +-
- .../vs10/test-state-hidden-performance.vcxproj     | 338 +++++++-------
- .../test-state-hidden-performance.vcxproj.filters  |  46 +-
- .../test-state-interactive-performance.vcxproj     | 338 +++++++-------
- ...t-state-interactive-performance.vcxproj.filters |  46 +-
- .../win32/vs10/test-state-mini-performance.vcxproj | 338 +++++++-------
- .../test-state-mini-performance.vcxproj.filters    |  46 +-
- build/win32/vs10/test-state-performance.vcxproj    | 338 +++++++-------
- .../vs10/test-state-performance.vcxproj.filters    |  46 +-
- .../win32/vs10/test-state-pick-performance.vcxproj | 338 +++++++-------
- .../test-state-pick-performance.vcxproj.filters    |  46 +-
- .../win32/vs10/test-text-perf-performance.vcxproj  | 338 +++++++-------
- .../test-text-perf-performance.vcxproj.filters     |  46 +-
+ .../vs10/test-state-hidden-performance.vcxproj     | 338 ++++++++++-----------
+ .../test-state-hidden-performance.vcxproj.filters  |  46 +--
+ .../test-state-interactive-performance.vcxproj     | 338 ++++++++++-----------
+ ...t-state-interactive-performance.vcxproj.filters |  46 +--
+ .../win32/vs10/test-state-mini-performance.vcxproj | 338 ++++++++++-----------
+ .../test-state-mini-performance.vcxproj.filters    |  46 +--
+ build/win32/vs10/test-state-performance.vcxproj    | 338 ++++++++++-----------
+ .../vs10/test-state-performance.vcxproj.filters    |  46 +--
+ .../win32/vs10/test-state-pick-performance.vcxproj | 338 ++++++++++-----------
+ .../test-state-pick-performance.vcxproj.filters    |  46 +--
+ .../win32/vs10/test-text-perf-performance.vcxproj  | 338 ++++++++++-----------
+ .../test-text-perf-performance.vcxproj.filters     |  46 +--
  build/win32/vs10/test-text-perf.vcxproj            |  10 +-
  build/win32/vs10/test-text-perf.vcxproj.filters    |   2 +-
  build/win32/vs10/test-text.vcxproj                 |  10 +-
  build/win32/vs10/test-text.vcxproj.filters         |   2 +-
- 45 files changed, 2094 insertions(+), 1972 deletions(-)
+ 44 files changed, 1780 insertions(+), 1658 deletions(-)
 
 commit 3c344fe5eda34e1221da23818a2ce297d0f22125
 Author: Chun-wei Fan <fanchunwei@src.gnome.org>
@@ -821,25 +820,24 @@ Date:   Wed Mar 5 18:41:45 2014 +0800
  build/win32/vs9/cally-clone-example.vcproj         |   8 +-
  build/win32/vs9/clutter-build-defines.vsprops      |  57 ++++
  build/win32/vs9/clutter-gen-srcs.vsprops           |  81 +++++
- build/win32/vs9/clutter-install.vsprops            | 182 +++++++++++
+ .../{clutter.vsprops => clutter-install.vsprops}   | 182 +----------
  build/win32/vs9/clutter-version-paths.vsprops      |  54 ++++
  build/win32/vs9/clutter.vcprojin                   | 328 +++++++++++++++-----
- build/win32/vs9/clutter.vsprops                    | 344 ---------------------
  build/win32/vs9/install.vcproj                     |   8 +-
  build/win32/vs9/test-cogl-perf.vcproj              |   8 +-
  build/win32/vs9/test-interactive-clutter.vcprojin  |   8 +-
- build/win32/vs9/test-picking-performance.vcproj    | 332 ++++++++++----------
+ build/win32/vs9/test-picking-performance.vcproj    | 332 ++++++++++-----------
  build/win32/vs9/test-picking.vcproj                |   8 +-
  build/win32/vs9/test-random-text.vcproj            |   8 +-
- .../win32/vs9/test-state-hidden-performance.vcproj | 332 ++++++++++----------
- .../vs9/test-state-interactive-performance.vcproj  | 332 ++++++++++----------
- build/win32/vs9/test-state-mini-performance.vcproj | 332 ++++++++++----------
- build/win32/vs9/test-state-performance.vcproj      | 332 ++++++++++----------
- build/win32/vs9/test-state-pick-performance.vcproj | 332 ++++++++++----------
- build/win32/vs9/test-text-perf-performance.vcproj  | 332 ++++++++++----------
+ .../win32/vs9/test-state-hidden-performance.vcproj | 332 ++++++++++-----------
+ .../vs9/test-state-interactive-performance.vcproj  | 332 ++++++++++-----------
+ build/win32/vs9/test-state-mini-performance.vcproj | 332 ++++++++++-----------
+ build/win32/vs9/test-state-performance.vcproj      | 332 ++++++++++-----------
+ build/win32/vs9/test-state-pick-performance.vcproj | 332 ++++++++++-----------
+ build/win32/vs9/test-text-perf-performance.vcproj  | 332 ++++++++++-----------
  build/win32/vs9/test-text-perf.vcproj              |   8 +-
  build/win32/vs9/test-text.vcproj                   |   8 +-
- 26 files changed, 1836 insertions(+), 1635 deletions(-)
+ 25 files changed, 1664 insertions(+), 1463 deletions(-)
 
 commit 016eb45feed24500a68609f87255a170e6b64d91
 Author: Emmanuele Bassi <ebassi@gnome.org>
@@ -2195,59 +2193,40 @@ Date:   Thu Dec 12 14:36:16 2013 +0000
  examples/bin-layout.c                              |   2 +-
  examples/image-content.c                           |   2 +-
  examples/pan-action.c                              |   2 +-
- examples/redhand.png                               | Bin 0 -> 8250 bytes
+ {tests/data => examples}/redhand.png               | Bin
  tests/Makefile.am                                  |   4 +-
- tests/clutter-1.0.suppressions                     | 173 ++++++
+ tests/{data => }/clutter-1.0.suppressions          |   0
  tests/conform/ADDING_NEW_TESTS                     |  65 --
  tests/conform/Makefile.am                          | 345 ++---------
  tests/conform/run-tests.sh                         |  12 -
- tests/conform/scripts/test-animator-1.json         |   5 +
- tests/conform/scripts/test-animator-2.json         |  29 +
- tests/conform/scripts/test-animator-3.json         |  40 ++
- tests/conform/scripts/test-script-animation.json   |  14 +
- tests/conform/scripts/test-script-child.json       |  21 +
- .../scripts/test-script-implicit-alpha.json        |   8 +
- tests/conform/scripts/test-script-interval.json    |  16 +
- .../scripts/test-script-layout-property.json       |  21 +
- tests/conform/scripts/test-script-margin.json      |  22 +
- tests/conform/scripts/test-script-model.json       |  17 +
- .../conform/scripts/test-script-named-object.json  |  44 ++
- .../scripts/test-script-object-property.json       |  13 +
- tests/conform/scripts/test-script-single.json      |  10 +
- .../scripts/test-script-timeline-markers.json      |  12 +
- tests/conform/scripts/test-state-1.json            |  33 ++
+ .../{data => conform/scripts}/test-animator-1.json |   0
+ .../{data => conform/scripts}/test-animator-2.json |   0
+ .../{data => conform/scripts}/test-animator-3.json |   0
+ .../scripts}/test-script-animation.json            |   0
+ .../scripts}/test-script-child.json                |   0
+ .../scripts}/test-script-implicit-alpha.json       |   0
+ .../scripts}/test-script-interval.json             |   0
+ .../scripts}/test-script-layout-property.json      |   0
+ .../scripts}/test-script-margin.json               |   0
+ .../scripts}/test-script-model.json                |   0
+ .../scripts}/test-script-named-object.json         |   0
+ .../scripts}/test-script-object-property.json      |   0
+ .../scripts}/test-script-single.json               |   0
+ .../scripts}/test-script-timeline-markers.json     |   0
+ tests/{data => conform/scripts}/test-state-1.json  |   0
  tests/conform/test-conform-common.c                | 105 ----
  tests/conform/test-conform-common.h                |  52 --
  tests/conform/test-conform-main.c                  | 217 -------
  tests/conform/test-launcher.sh.in                  |  25 -
  tests/data/Makefile.am                             |  39 --
- tests/data/clutter-1.0.suppressions                | 173 ------
  tests/data/light0.png                              | Bin 5674 -> 0 bytes
- tests/data/redhand.png                             | Bin 8250 -> 0 bytes
  tests/data/redhand_alpha.png                       | Bin 4539 -> 0 bytes
- tests/data/test-animator-1.json                    |   5 -
- tests/data/test-animator-2.json                    |  29 -
- tests/data/test-animator-3.json                    |  40 --
- tests/data/test-script-animation.json              |  14 -
- tests/data/test-script-child.json                  |  21 -
- tests/data/test-script-implicit-alpha.json         |   8 -
- tests/data/test-script-interval.json               |  16 -
- tests/data/test-script-layout-property.json        |  21 -
- tests/data/test-script-margin.json                 |  22 -
- tests/data/test-script-model.json                  |  17 -
- tests/data/test-script-named-object.json           |  44 --
- tests/data/test-script-object-property.json        |  13 -
- tests/data/test-script-signals.json                |  68 ---
- tests/data/test-script-single.json                 |  10 -
- tests/data/test-script-timeline-markers.json       |  12 -
- tests/data/test-script.json                        |  74 ---
- tests/data/test-state-1.json                       |  33 --
  tests/interactive/Makefile.am                      |   9 +-
  tests/interactive/redhand.png                      | Bin 0 -> 8250 bytes
- tests/interactive/test-script-signals.json         |  68 +++
- tests/interactive/test-script.json                 |  74 +++
+ .../{data => interactive}/test-script-signals.json |   0
+ tests/{data => interactive}/test-script.json       |   0
  tests/interactive/test-state-script.c              |   2 +-
- 68 files changed, 2096 insertions(+), 1478 deletions(-)
+ 49 files changed, 1476 insertions(+), 858 deletions(-)
 
 commit cee38c167281a349297daf8d700c6ef793c499a8
 Author: Milo Casagrande <milo@ubuntu.com>
@@ -2757,15 +2736,13 @@ Date:   Tue Nov 19 00:26:37 2013 +0000
     Instead of wasting time and resources updating TableLayout, we should
     deprecate it and point developers of the GridLayout.
 
- clutter/Makefile.am                       |    4 +-
- clutter/clutter-deprecated.h              |    1 +
- clutter/clutter-table-layout.c            | 2581 ----------------------------
- clutter/clutter-table-layout.h            |  157 --
- clutter/clutter.h                         |    1 -
- clutter/deprecated/clutter-table-layout.c | 2611 +++++++++++++++++++++++++++++
- clutter/deprecated/clutter-table-layout.h |  172 ++
- doc/reference/clutter/clutter-docs.xml.in |    4 +-
- 8 files changed, 2788 insertions(+), 2743 deletions(-)
+ clutter/Makefile.am                             |  4 ++--
+ clutter/clutter-deprecated.h                    |  1 +
+ clutter/clutter.h                               |  1 -
+ clutter/{ => deprecated}/clutter-table-layout.c | 30 +++++++++++++++++++++++++
+ clutter/{ => deprecated}/clutter-table-layout.h | 15 +++++++++++++
+ doc/reference/clutter/clutter-docs.xml.in       |  4 ++--
+ 6 files changed, 50 insertions(+), 5 deletions(-)
 
 commit 56b579248e0d3db56c258cc8a40c28f1e266d778
 Author: Emmanuele Bassi <ebassi@gnome.org>

@@ -502,7 +502,7 @@ Date:   Mon Sep 20 12:04:51 2010 +0100
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 commit 699e8bbed28687dd91aba6b0518d43f815cae456
-Merge: af42cdb e92b186
+Merge: af42cdbe8 e92b18671
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Sep 20 14:33:26 2010 +0100
 
@@ -1424,7 +1424,7 @@ Date:   Tue Sep 7 11:55:23 2010 +0100
  2 files changed, 14 insertions(+), 15 deletions(-)
 
 commit 64088ea4de6334e10ad99c0844ffab057f1557ab
-Merge: 28f28c0 e8e360e
+Merge: 28f28c030 e8e360eaa
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Sep 13 15:51:18 2010 +0100
 
@@ -2083,11 +2083,10 @@ Date:   Wed Sep 8 14:48:40 2010 +0100
 
     po: Rename the POT file
 
- configure.ac       |    2 +-
- po/Makevars        |    2 +-
- po/clutter-1.0.pot | 1828 ++++++++++++++++++++++++++++++++++++++++++++++++++++
- po/clutter.pot     | 1828 ----------------------------------------------------
- 4 files changed, 1830 insertions(+), 1830 deletions(-)
+ configure.ac                        | 2 +-
+ po/Makevars                         | 2 +-
+ po/{clutter.pot => clutter-1.0.pot} | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
 
 commit 144da2ae3b49715ea72052a3722e03872694aa92
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -3173,7 +3172,7 @@ Date:   Fri Aug 20 17:03:06 2010 +0100
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 commit 5f15a620a107847e0b26bab6cdd1c9d27cd3a243
-Merge: 81481cd 444d315
+Merge: 81481cd80 444d31507
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Aug 20 15:24:42 2010 +0100
 
@@ -3195,7 +3194,7 @@ Date:   Fri Aug 20 15:24:42 2010 +0100
       Release Clutter 1.3.12 (developers snapshot)
     
     Conflicts:
-    	doc/cookbook/examples/Makefile.am
+            doc/cookbook/examples/Makefile.am
 
 commit 81481cd80342614d0fe57ffa6d2bd46103602952
 Author: Elliot Smith <elliot.smith@intel.com>
@@ -3300,10 +3299,9 @@ Date:   Thu Aug 19 16:48:59 2010 +0100
     a broader "pointer motion" recipe, so renamed the example
     (which only shows pointer crossing event handling).
 
- doc/cookbook/examples/Makefile.am                  |   4 +-
- doc/cookbook/examples/events-pointer-cross.c       | 113 ---------------------
- .../examples/events-pointer-motion-crossing.c      | 113 +++++++++++++++++++++
- 3 files changed, 115 insertions(+), 115 deletions(-)
+ doc/cookbook/examples/Makefile.am                                     | 4 ++--
+ .../{events-pointer-cross.c => events-pointer-motion-crossing.c}      | 0
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
 commit 72ddd471f04f663ce52fdb36347688a595cfa940
 Author: Elliot Smith <elliot.smith@intel.com>
@@ -3896,7 +3894,7 @@ Date:   Fri Aug 13 12:12:59 2010 +0100
  2 files changed, 17 insertions(+), 12 deletions(-)
 
 commit 6c6e93d27a0381ff07ecb9c37f1b0840682f359f
-Merge: 12f2481 1ed5d5c
+Merge: 12f248146 1ed5d5cab
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Thu Aug 12 18:29:08 2010 +0100
 
@@ -4381,16 +4379,15 @@ Date:   Mon Aug 2 15:24:03 2010 +0100
     managing unused areas of a rectangle and it doesn't neccessarily have
     to be used for an atlas so it wasn't a very good name.
 
- clutter/cogl/cogl/Makefile.am                  |   4 +-
- clutter/cogl/cogl/cogl-atlas-texture-private.h |  12 +-
- clutter/cogl/cogl/cogl-atlas-texture.c         | 169 +++----
- clutter/cogl/cogl/cogl-atlas.c                 | 598 ------------------------
- clutter/cogl/cogl/cogl-atlas.h                 |  78 ----
- clutter/cogl/cogl/cogl-context.c               |   7 +-
- clutter/cogl/cogl/cogl-context.h               |   4 +-
- clutter/cogl/cogl/cogl-rectangle-map.c         | 612 +++++++++++++++++++++++++
- clutter/cogl/cogl/cogl-rectangle-map.h         |  78 ++++
- 9 files changed, 792 insertions(+), 770 deletions(-)
+ clutter/cogl/cogl/Makefile.am                      |   4 +-
+ clutter/cogl/cogl/cogl-atlas-texture-private.h     |  12 +-
+ clutter/cogl/cogl/cogl-atlas-texture.c             | 169 +++++-----
+ clutter/cogl/cogl/cogl-atlas.h                     |  78 -----
+ clutter/cogl/cogl/cogl-context.c                   |   7 +-
+ clutter/cogl/cogl/cogl-context.h                   |   4 +-
+ .../cogl/{cogl-atlas.c => cogl-rectangle-map.c}    | 358 +++++++++++----------
+ clutter/cogl/cogl/cogl-rectangle-map.h             |  78 +++++
+ 8 files changed, 366 insertions(+), 344 deletions(-)
 
 commit 1e45428483f82b240bc45f20556cf767c49da902
 Author: Neil Roberts <neil@linux.intel.com>
@@ -4401,11 +4398,10 @@ Date:   Thu Aug 5 17:54:18 2010 +0100
     test-random-text is moved to the micro-bench directory. It now prints
     out the time taken to draw every 10 frames.
 
- tests/interactive/Makefile.am        |   1 -
- tests/interactive/test-random-text.c |  86 -----------------------------
- tests/micro-bench/Makefile.am        |   4 +-
- tests/micro-bench/test-random-text.c | 101 +++++++++++++++++++++++++++++++++++
- 4 files changed, 104 insertions(+), 88 deletions(-)
+ tests/interactive/Makefile.am                      |  1 -
+ tests/micro-bench/Makefile.am                      |  4 +-
+ .../test-random-text.c                             | 43 +++++++++++++++-------
+ 3 files changed, 32 insertions(+), 16 deletions(-)
 
 commit 65f449bdb0625c866781c56f025d20d20772dc8d
 Author: Neil Roberts <neil@linux.intel.com>
@@ -4767,7 +4763,7 @@ Date:   Wed Aug 11 11:39:24 2010 +0100
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 commit 5e1d40c07b66bcb4c2c0a4fd203bfdfeeaf3f17e
-Merge: 8d51617 d14e294
+Merge: 8d5161797 d14e294d8
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Aug 11 11:32:44 2010 +0100
 
@@ -5054,7 +5050,7 @@ Date:   Mon Aug 9 19:38:23 2010 +0100
  1 file changed, 3 insertions(+)
 
 commit 1c2e41e1b388fdf82867ac4071734316e5731870
-Merge: 985a4db eaed9c2
+Merge: 985a4db94 eaed9c22d
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Aug 9 17:44:42 2010 +0100
 
@@ -5953,7 +5949,7 @@ Date:   Tue Aug 3 16:11:52 2010 +0100
  1 file changed, 52 insertions(+), 32 deletions(-)
 
 commit 142f288986dba5cdeef2fa2e24fd019ce61fa5b0
-Merge: 10c5cb1 7ed3517
+Merge: 10c5cb180 7ed351750
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Tue Aug 3 15:44:46 2010 +0100
 
@@ -6010,15 +6006,13 @@ Date:   Mon Aug 2 21:40:55 2010 +0100
     identical we now have a single cogl/cogl-shader.c instead.
 
  clutter/cogl/cogl/Makefile.am                      |   2 +
- clutter/cogl/cogl/cogl-shader-private.h            |  40 ++++
- clutter/cogl/cogl/cogl-shader.c                    | 235 +++++++++++++++++++++
+ .../cogl/{driver/gles => }/cogl-shader-private.h   |   0
+ clutter/cogl/cogl/{driver/gles => }/cogl-shader.c  |  33 +++-
  clutter/cogl/cogl/driver/gl/Makefile.am            |   2 -
- clutter/cogl/cogl/driver/gl/cogl-shader-private.h  |  40 ----
- clutter/cogl/cogl/driver/gl/cogl-shader.c          | 169 ---------------
+ clutter/cogl/cogl/driver/gl/cogl-shader-private.h  |  40 -----
+ clutter/cogl/cogl/driver/gl/cogl-shader.c          | 169 ---------------------
  clutter/cogl/cogl/driver/gles/Makefile.am          |   2 -
- .../cogl/cogl/driver/gles/cogl-shader-private.h    |  40 ----
- clutter/cogl/cogl/driver/gles/cogl-shader.c        | 214 -------------------
- 9 files changed, 277 insertions(+), 467 deletions(-)
+ 7 files changed, 29 insertions(+), 219 deletions(-)
 
 commit 8021d3e2ebeced1921a973b325275c3e000655a2
 Author: Robert Bragg <robert@linux.intel.com>
@@ -6124,14 +6118,13 @@ Date:   Fri Jul 30 19:39:35 2010 +0100
     The interactive test for ClutterScore is really meant to be run as part
     of the conformance test suite, so we should move it there.
 
- tests/conform/.gitignore          |   1 +
- tests/conform/Makefile.am         |   1 +
- tests/conform/test-conform-main.c |   2 +
- tests/conform/test-score.c        | 119 +++++++++++++++++++++++++++++++++++
- tests/interactive/.gitignore      |   1 -
- tests/interactive/Makefile.am     |   1 -
- tests/interactive/test-score.c    | 127 --------------------------------------
- 7 files changed, 123 insertions(+), 129 deletions(-)
+ tests/conform/.gitignore                    |  1 +
+ tests/conform/Makefile.am                   |  1 +
+ tests/conform/test-conform-main.c           |  2 ++
+ tests/{interactive => conform}/test-score.c | 56 +++++++++++++----------------
+ tests/interactive/.gitignore                |  1 -
+ tests/interactive/Makefile.am               |  1 -
+ 6 files changed, 28 insertions(+), 34 deletions(-)
 
 commit a20a509584c8f8982b6f2f5daf92d882f99e6d02
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -6743,14 +6736,14 @@ Date:   Fri Jul 16 17:31:27 2010 +0100
  1 file changed, 11 insertions(+), 4 deletions(-)
 
 commit 71dfdf92d74603d4e8fc48eeb9da4a6a051d45f3
-Merge: af6f023 7be6ed3
+Merge: af6f023a8 7be6ed333
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Jul 16 17:23:36 2010 +0100
 
     Merge remote branch 'elliot/cookbook-actor-opacity'
     
     Conflicts:
-    	doc/cookbook/Makefile.am
+            doc/cookbook/Makefile.am
 
 commit af6f023a80dd02c39f02bd0876714129809377ec
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
@@ -6762,7 +6755,7 @@ Date:   Fri Jul 16 17:20:38 2010 +0100
  1 file changed, 4 insertions(+), 1 deletion(-)
 
 commit e92c8d72cc32a7403735138e723f18ae6ecee19c
-Merge: ad1613a 489799b
+Merge: ad1613a93 489799bb4
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Jul 16 17:13:12 2010 +0100
 
@@ -6774,10 +6767,10 @@ Date:   Fri Jul 16 17:13:12 2010 +0100
       cookbook: Added support for inline video
     
     Conflicts:
-    	doc/cookbook/Makefile.am
+            doc/cookbook/Makefile.am
 
 commit ad1613a93670fcdf1ca2e44d1435cf0655776c25
-Merge: 4170eac da22150
+Merge: 4170eacd9 da2215049
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Jul 16 17:12:37 2010 +0100
 
@@ -7356,7 +7349,7 @@ Date:   Tue Jul 13 18:41:01 2010 +0100
  6 files changed, 89 insertions(+), 42 deletions(-)
 
 commit ff56f4ac6f763dbce730454b8aa0806a1127e6cd
-Merge: 0cbfabc 6c913aa
+Merge: 0cbfabcda 6c913aa55
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Tue Jul 13 16:12:14 2010 +0100
 
@@ -7741,7 +7734,7 @@ Date:   Mon Jul 12 21:31:15 2010 +0100
  2 files changed, 42 insertions(+), 2 deletions(-)
 
 commit 1eec056bfd29119a515be072f92807a9398a4a37
-Merge: e2a553d 9d96c21
+Merge: e2a553da8 9d96c21de
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Jul 12 21:25:25 2010 +0100
 
@@ -7753,7 +7746,7 @@ Date:   Mon Jul 12 21:25:25 2010 +0100
       docs: Enabled animation section
 
 commit e2a553da86f3c62d167b9898e337ff10f43d3575
-Merge: 2de61da 97ac28e
+Merge: 2de61da29 97ac28ee4
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Jul 12 21:25:22 2010 +0100
 
@@ -7764,7 +7757,7 @@ Date:   Mon Jul 12 21:25:22 2010 +0100
       docs: Enabled animation section
 
 commit 2de61da29661585274fd5e10c27110f7eb1fe6fc
-Merge: 25dd0ae 9e5a18f
+Merge: 25dd0ae35 9e5a18fea
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon Jul 12 21:20:30 2010 +0100
 
@@ -8359,7 +8352,7 @@ Date:   Wed Jul 7 16:30:31 2010 +0100
  4 files changed, 14 insertions(+), 10 deletions(-)
 
 commit e3a8ece54d3a626f012b955a953d0ae69a22ad7a
-Merge: 175317a a3c69dc
+Merge: 175317a75 a3c69dc27
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Wed Jul 7 16:06:30 2010 +0100
 
@@ -8939,16 +8932,14 @@ Date:   Sun Jun 6 22:47:02 2010 +0100
     
     http://bugzilla.clutter-project.org/show_bug.cgi?id=2159
 
- configure.ac                      |  2 ++
- tests/conform/.gitignore          |  1 +
- tests/conform/Makefile.am         |  6 ++++--
- tests/conform/test-launcher.sh    | 25 -------------------------
- tests/conform/test-launcher.sh.in | 25 +++++++++++++++++++++++++
- tests/interactive/.gitignore      |  1 +
- tests/interactive/Makefile.am     |  8 +++++---
- tests/interactive/wrapper.sh      | 15 ---------------
- tests/interactive/wrapper.sh.in   | 15 +++++++++++++++
- 9 files changed, 53 insertions(+), 45 deletions(-)
+ configure.ac                                            | 2 ++
+ tests/conform/.gitignore                                | 1 +
+ tests/conform/Makefile.am                               | 6 ++++--
+ tests/conform/{test-launcher.sh => test-launcher.sh.in} | 2 +-
+ tests/interactive/.gitignore                            | 1 +
+ tests/interactive/Makefile.am                           | 8 +++++---
+ tests/interactive/{wrapper.sh => wrapper.sh.in}         | 2 +-
+ 7 files changed, 15 insertions(+), 7 deletions(-)
 
 commit 739240095ff62a69b6cb34cdee4243fa258e5382
 Author: Robert Bragg <robert@linux.intel.com>
@@ -9349,18 +9340,16 @@ Date:   Sat Jul 3 23:46:03 2010 +0100
     This renames CoglPixelBuffer to CoglPixelArray to be consistent with the
     new CoglVertexArray API.
 
- clutter/cogl/cogl/Makefile.am                 |   6 +-
- clutter/cogl/cogl/cogl-buffer.c               |   2 +-
- clutter/cogl/cogl/cogl-pixel-array-private.h  |  74 ++++++
- clutter/cogl/cogl/cogl-pixel-array.c          | 324 ++++++++++++++++++++++++++
- clutter/cogl/cogl/cogl-pixel-array.h          | 147 ++++++++++++
- clutter/cogl/cogl/cogl-pixel-buffer-private.h |  73 ------
- clutter/cogl/cogl/cogl-pixel-buffer.c         | 323 -------------------------
- clutter/cogl/cogl/cogl-pixel-buffer.h         | 146 ------------
- clutter/cogl/cogl/cogl-texture.c              |  14 +-
- clutter/cogl/cogl/cogl.h                      |   2 +-
- tests/conform/test-cogl-pixel-buffer.c        |  24 +-
- 11 files changed, 569 insertions(+), 566 deletions(-)
+ clutter/cogl/cogl/Makefile.am                      |   6 +-
+ clutter/cogl/cogl/cogl-buffer.c                    |   2 +-
+ ...buffer-private.h => cogl-pixel-array-private.h} |  35 ++---
+ .../{cogl-pixel-buffer.c => cogl-pixel-array.c}    | 155 +++++++++++----------
+ clutter/cogl/cogl/cogl-pixel-array.h               | 147 +++++++++++++++++++
+ clutter/cogl/cogl/cogl-pixel-buffer.h              | 146 -------------------
+ clutter/cogl/cogl/cogl-texture.c                   |  14 +-
+ clutter/cogl/cogl/cogl.h                           |   2 +-
+ tests/conform/test-cogl-pixel-buffer.c             |  24 ++--
+ 9 files changed, 267 insertions(+), 264 deletions(-)
 
 commit 57341dbb607280410bcfaf19d09876570a966a3b
 Author: Robert Bragg <robert@linux.intel.com>
@@ -10002,15 +9991,14 @@ Date:   Wed Jun 23 13:40:43 2010 +0100
     property of the path (not the Cogl context) so creating a new path or
     preserving a path with cogl_path_get_handle affects the fill rule.
 
- clutter/cogl/cogl/cogl-path-private.h     |   3 +
- clutter/cogl/cogl/cogl-path.c             |  38 +++++++++++++
- clutter/cogl/cogl/cogl-path.h             |  88 ++++++++++++++++++++++++------
- doc/reference/cogl/Makefile.am            |   6 +-
- doc/reference/cogl/cogl-sections.txt      |   3 +
- doc/reference/cogl/fill-rule-even-odd.png | Bin 0 -> 3121 bytes
- doc/reference/cogl/fill-rule-non-zero.png | Bin 0 -> 3143 bytes
- doc/reference/cogl/fill-rule.png          | Bin 3121 -> 0 bytes
- 8 files changed, 120 insertions(+), 18 deletions(-)
+ clutter/cogl/cogl/cogl-path-private.h              |   3 +
+ clutter/cogl/cogl/cogl-path.c                      |  38 +++++++++
+ clutter/cogl/cogl/cogl-path.h                      |  88 +++++++++++++++++----
+ doc/reference/cogl/Makefile.am                     |   6 +-
+ doc/reference/cogl/cogl-sections.txt               |   3 +
+ .../cogl/{fill-rule.png => fill-rule-even-odd.png} | Bin
+ doc/reference/cogl/fill-rule-non-zero.png          | Bin 0 -> 3143 bytes
+ 7 files changed, 120 insertions(+), 18 deletions(-)
 
 commit 95317b9623efc5768d74098cc963de7854ca0805
 Author: Neil Roberts <neil@linux.intel.com>
@@ -10929,12 +10917,11 @@ Date:   Fri Jun 18 14:30:23 2010 +0100
     substitution variable which contains the #define lines to put in
     rather than directly having them in the seperate files.
 
- clutter/cogl/cogl/Makefile.am                   |  3 --
- clutter/cogl/cogl/cogl-defines.h.in             | 36 ++++++++++++++++++++++
- clutter/cogl/cogl/driver/gl/cogl-defines.h.in   | 37 ----------------------
- clutter/cogl/cogl/driver/gles/cogl-defines.h.in | 41 -------------------------
- configure.ac                                    | 36 ++++++++++++++++++++--
- 5 files changed, 70 insertions(+), 83 deletions(-)
+ clutter/cogl/cogl/Makefile.am                      |  3 --
+ .../cogl/cogl/{driver/gl => }/cogl-defines.h.in    |  5 ++-
+ clutter/cogl/cogl/driver/gles/cogl-defines.h.in    | 41 ----------------------
+ configure.ac                                       | 36 +++++++++++++++++--
+ 4 files changed, 36 insertions(+), 49 deletions(-)
 
 commit a01b094630d748d4b0505852724b57b837e49d3a
 Author: Neil Roberts <neil@linux.intel.com>
@@ -11375,39 +11362,30 @@ Date:   Fri Jun 18 04:38:43 2010 +0100
     This remove quite a lot of redundant code by consolidating the eglx and
     eglnative window system backends.
 
- clutter/Makefile.am                        |   2 +-
- clutter/cogl/cogl/Makefile.am              |   4 +-
- clutter/cogl/cogl/winsys/cogl-egl.c        |  41 ++
- clutter/cogl/cogl/winsys/cogl-eglnative.c  |  35 --
- clutter/cogl/cogl/winsys/cogl-eglx.c       |  41 --
- clutter/egl/Makefile.am                    |  42 ++
- clutter/egl/clutter-backend-egl.c          | 807 ++++++++++++++++++++++++++++
- clutter/egl/clutter-backend-egl.h          | 116 ++++
- clutter/egl/clutter-egl-headers.h          |  38 ++
- clutter/egl/clutter-egl.h                  |  76 +++
- clutter/egl/clutter-event-tslib.c          | 297 +++++++++++
- clutter/egl/clutter-stage-egl.c            | 366 +++++++++++++
- clutter/egl/clutter-stage-egl.h            |  55 ++
- clutter/eglnative/Makefile.am              |  29 -
- clutter/eglnative/clutter-backend-egl.c    | 817 ----------------------------
- clutter/eglnative/clutter-backend-egl.h    | 110 ----
- clutter/eglnative/clutter-egl-headers.h    |  33 --
- clutter/eglnative/clutter-egl.h            |  48 --
- clutter/eglnative/clutter-event-tslib.c    | 297 -----------
- clutter/eglnative/clutter-stage-egl.c      | 366 -------------
- clutter/eglnative/clutter-stage-egl.h      |  41 --
- clutter/eglx/Makefile.am                   |  30 --
- clutter/eglx/clutter-backend-egl.c         | 823 -----------------------------
- clutter/eglx/clutter-backend-egl.h         | 116 ----
- clutter/eglx/clutter-egl-headers.h         |  38 --
- clutter/eglx/clutter-eglx.h                |  54 --
- clutter/eglx/clutter-stage-egl.c           | 366 -------------
- clutter/eglx/clutter-stage-egl.h           |  42 --
- configure.ac                               |   9 +-
- doc/reference/clutter/Makefile.am          |  12 +-
- doc/reference/clutter/clutter-docs.xml.in  |   3 +-
- doc/reference/clutter/clutter-sections.txt |   7 +-
- 32 files changed, 1851 insertions(+), 3310 deletions(-)
+ clutter/Makefile.am                                |   2 +-
+ clutter/cogl/cogl/Makefile.am                      |   4 +-
+ .../cogl/cogl/winsys/{cogl-eglx.c => cogl-egl.c}   |   0
+ clutter/cogl/cogl/winsys/cogl-eglnative.c          |  35 -
+ clutter/{eglx => egl}/Makefile.am                  |  26 +-
+ clutter/{eglnative => egl}/clutter-backend-egl.c   |  24 +-
+ clutter/{eglx => egl}/clutter-backend-egl.h        |   2 +-
+ clutter/{eglx => egl}/clutter-egl-headers.h        |   0
+ clutter/{eglx/clutter-eglx.h => egl/clutter-egl.h} |  30 +-
+ clutter/{eglnative => egl}/clutter-event-tslib.c   |   0
+ clutter/{eglnative => egl}/clutter-stage-egl.c     |   0
+ clutter/{eglx => egl}/clutter-stage-egl.h          |  13 +
+ clutter/eglnative/Makefile.am                      |  29 -
+ clutter/eglnative/clutter-backend-egl.h            | 110 ---
+ clutter/eglnative/clutter-egl-headers.h            |  33 -
+ clutter/eglnative/clutter-egl.h                    |  48 --
+ clutter/eglnative/clutter-stage-egl.h              |  41 -
+ clutter/eglx/clutter-backend-egl.c                 | 823 ---------------------
+ clutter/eglx/clutter-stage-egl.c                   | 366 ---------
+ configure.ac                                       |   9 +-
+ doc/reference/clutter/Makefile.am                  |  12 +-
+ doc/reference/clutter/clutter-docs.xml.in          |   3 +-
+ doc/reference/clutter/clutter-sections.txt         |   7 +-
+ 23 files changed, 79 insertions(+), 1538 deletions(-)
 
 commit 46bed23302a56eec8cb873670396927d2739ce71
 Author: Robert Bragg <robert@linux.intel.com>
@@ -11433,10 +11411,9 @@ Date:   Fri Jun 18 00:25:57 2010 +0100
     tslib devices and creating a GSource for touch screen events. It just
     happens that this only ever gets used with the eglnative backend.
 
- clutter/eglnative/Makefile.am           |   2 +-
- clutter/eglnative/clutter-event-egl.c   | 297 --------------------------------
- clutter/eglnative/clutter-event-tslib.c | 297 ++++++++++++++++++++++++++++++++
- 3 files changed, 298 insertions(+), 298 deletions(-)
+ clutter/eglnative/Makefile.am                                    | 2 +-
+ clutter/eglnative/{clutter-event-egl.c => clutter-event-tslib.c} | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
 
 commit ad9006e561c399cf3b5045de7aaac5e6e9684c5c
 Author: Robert Bragg <robert@linux.intel.com>
@@ -12473,7 +12450,7 @@ Date:   Sat Jun 12 17:45:54 2010 +0100
  5 files changed, 8 insertions(+), 18 deletions(-)
 
 commit b8b2a51d444f2a90a9428e26ae4e293deb7fed0d
-Merge: b2c905f 7343c66
+Merge: b2c905ff5 7343c6648
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri Jun 11 18:12:54 2010 +0100
 
@@ -14697,7 +14674,7 @@ Date:   Mon May 24 12:00:43 2010 +0100
  3 files changed, 45 insertions(+)
 
 commit 382bd394b92cd0abcc7cfbfae31dccf162aea7e8
-Merge: 254e8d0 9fcbb27
+Merge: 254e8d0fe 9fcbb274e
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Mon May 24 10:42:03 2010 +0100
 
@@ -14720,10 +14697,10 @@ Date:   Mon May 24 10:42:03 2010 +0100
       state machine: added state machine
     
     Conflicts:
-    	.gitignore
+            .gitignore
 
 commit 254e8d0fe585bb7de0798dd8063470d2aa1c60a5
-Merge: 5e3dc55 9ebd5fd
+Merge: 5e3dc5566 9ebd5fd93
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri May 21 14:38:37 2010 +0100
 
@@ -14763,7 +14740,7 @@ Date:   Fri May 21 14:13:14 2010 +0100
  7 files changed, 375 insertions(+), 17 deletions(-)
 
 commit 5e3dc55666c345a6a17dc3ae082c0ee1de3ae82a
-Merge: bb2d088 6567800
+Merge: bb2d088cb 65678006a
 Author: Emmanuele Bassi <ebassi@linux.intel.com>
 Date:   Fri May 21 10:55:09 2010 +0100
 
@@ -14793,7 +14770,7 @@ Date:   Fri May 21 10:55:09 2010 +0100
       ...
     
     Conflicts:
-    	configure.ac
+            configure.ac
 
 commit d156550633a4fc7580d6e06b726845fb414f7196
 Author: Øyvind Kolås <pippin@linux.intel.com>
@@ -15749,7 +15726,7 @@ Date:   Mon May 10 15:33:05 2010 +0100
     
     Conflicts:
     
-    	clutter/clutter-cairo-texture.c
+            clutter/clutter-cairo-texture.c
     
     http://bugzilla.openedhand.com/show_bug.cgi?id=1982
 

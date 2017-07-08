@@ -1,9 +1,13 @@
+#include "config.h"
+
+#include <locale.h>
 #include <stdlib.h>
 #include <stdio.h>
 
 #include <math.h>
 
 #include <glib.h>
+#include <glib/gi18n.h>
 #include <gmodule.h>
 #include <clutter/clutter.h>
 
@@ -137,6 +141,9 @@ test_script_main (int argc, char *argv[])
   GError *error = NULL;
   gchar *file;
   gint res;
+
+  setlocale (LC_ALL, "");
+  textdomain (GETTEXT_PACKAGE);
 
   if (clutter_init (&argc, &argv) != CLUTTER_INIT_SUCCESS)
     return 1;

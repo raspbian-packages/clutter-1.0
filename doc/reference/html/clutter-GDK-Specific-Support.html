@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GDK Specific Support: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="prev" href="clutter-Intel-CE3100-CE4100-Specific-Support.html" title="Intel CE3100, CE4100 Specific Support">
 <link rel="next" href="clutter-Wayland-specific-support.html" title="Wayland specific support">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-GDK-Specific-Support.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -132,8 +132,8 @@ a GDK based toolkit.</p>
 clutter_gdk_get_stage_from_window (<em class="parameter"><code><span class="type">GdkWindow</span> *window</code></em>);</pre>
 <p>Gets the stage for a particular X window.</p>
 <div class="refsect3">
-<a name="id-1.8.10.5.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gdk-get-stage-from-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -147,7 +147,7 @@ clutter_gdk_get_stage_from_window (<em class="parameter"><code><span class="type
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.10.5.3.6"></a><h4>Returns</h4>
+<a name="clutter-gdk-get-stage-from-window.returns"></a><h4>Returns</h4>
 <p> A <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>, or% NULL if a stage
 does not exist for the window. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -161,8 +161,8 @@ does not exist for the window. </p>
 clutter_gdk_get_stage_window (<em class="parameter"><code><a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> *stage</code></em>);</pre>
 <p>Gets the stages GdkWindow.</p>
 <div class="refsect3">
-<a name="id-1.8.10.5.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gdk-get-stage-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -176,7 +176,7 @@ clutter_gdk_get_stage_window (<em class="parameter"><code><a class="link" href="
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.10.5.4.6"></a><h4>Returns</h4>
+<a name="clutter-gdk-get-stage-window.returns"></a><h4>Returns</h4>
 <p> A GdkWindow* for the stage window. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -190,8 +190,8 @@ clutter_gdk_handle_event (<em class="parameter"><code><span class="type">GdkEven
 <p>This function processes a single GDK event; it can be used to hook
 into external event processing</p>
 <div class="refsect3">
-<a name="id-1.8.10.5.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gdk-handle-event.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -205,7 +205,7 @@ into external event processing</p>
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.10.5.5.6"></a><h4>Returns</h4>
+<a name="clutter-gdk-handle-event.returns"></a><h4>Returns</h4>
 <p> <span class="type">GdkFilterReturn</span>. <code class="literal">GDK_FILTER_REMOVE</code> indicates that
 Clutter has internally handled the event and the caller should do
 no further processing. <code class="literal">GDK_FILTER_CONTINUE</code> indicates that Clutter
@@ -227,8 +227,8 @@ pertaining Clutter's initialization process.</p>
 <code class="function">g_option_context_parse()</code> yourself, you should also call
 <a class="link" href="clutter-GDK-Specific-Support.html#clutter-gdk-set-display" title="clutter_gdk_set_display ()"><code class="function">clutter_gdk_set_display()</code></a> before <code class="function">g_option_context_parse()</code>.</p>
 <div class="refsect3">
-<a name="id-1.8.10.5.6.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gdk-set-display.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -250,7 +250,7 @@ pertaining Clutter's initialization process.</p>
 clutter_gdk_get_default_display (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Retrieves the pointer to the default display.</p>
 <div class="refsect3">
-<a name="id-1.8.10.5.7.5"></a><h4>Returns</h4>
+<a name="clutter-gdk-get-default-display.returns"></a><h4>Returns</h4>
 <p> the default display. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -264,8 +264,8 @@ clutter_gdk_set_stage_foreign (<em class="parameter"><code><a class="link" href=
                                <em class="parameter"><code><span class="type">GdkWindow</span> *window</code></em>);</pre>
 <p>Target the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> to use an existing external <span class="type">GdkWindow</span></p>
 <div class="refsect3">
-<a name="id-1.8.10.5.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-gdk-set-stage-foreign.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -286,7 +286,7 @@ clutter_gdk_set_stage_foreign (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.10.5.8.6"></a><h4>Returns</h4>
+<a name="clutter-gdk-set-stage-foreign.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if foreign window is valid</p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -301,7 +301,7 @@ clutter_gdk_get_visual (<em class="parameter"><code><span class="type">void</spa
 foreign toolkits, to ensure that the visual applied to the <span class="type">GdkWindow</span>
 used to render the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> is the correct one.</p>
 <div class="refsect3">
-<a name="id-1.8.10.5.9.6"></a><h4>Returns</h4>
+<a name="clutter-gdk-get-visual.returns"></a><h4>Returns</h4>
 <p> a <span class="type">GdkVisual</span> instance. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -313,6 +313,6 @@ used to render the <a class="link" href="ClutterStage.html" title="ClutterStage"
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

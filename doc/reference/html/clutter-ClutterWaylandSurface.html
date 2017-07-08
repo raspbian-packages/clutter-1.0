@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterWaylandSurface: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="prev" href="clutter-Wayland-compositor-specific-support.html" title="Wayland compositor specific support">
 <link rel="next" href="clutter-clutter-mir.html" title="clutter-mir">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -33,7 +33,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="clutter-ClutterWaylandSurface.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -91,7 +91,7 @@
 </div>
 <div class="refsect1">
 <a name="clutter-ClutterWaylandSurface.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -123,8 +123,8 @@ clutter_wayland_surface_new (<em class="parameter"><code><span class="type">stru
 <p>Creates a new <a class="link" href="clutter-ClutterWaylandSurface.html#ClutterWaylandSurface" title="struct ClutterWaylandSurface"><span class="type">ClutterWaylandSurface</span></a> for <em class="parameter"><code>surface</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.8.13.6.2.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-surface-new.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -138,7 +138,7 @@ clutter_wayland_surface_new (<em class="parameter"><code><span class="type">stru
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.13.6.2.6"></a><h4>Returns</h4>
+<a name="clutter-wayland-surface-new.returns"></a><h4>Returns</h4>
 <p> A new <a class="link" href="clutter-ClutterWaylandSurface.html#ClutterWaylandSurface" title="struct ClutterWaylandSurface"><span class="type">ClutterWaylandSurface</span></a> representing <em class="parameter"><code>surface</code></em>
 </p>
 </div>
@@ -171,8 +171,8 @@ actor <em class="parameter"><code>self</code></em>
  being re-drawn
 with the new buffer contents.</p>
 <div class="refsect3">
-<a name="id-1.8.13.6.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-surface-attach-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -231,8 +231,8 @@ region of the actor <em class="parameter"><code>self</code></em>
 <p>If multiple regions are changed then this should be called multiple
 times with different damage rectangles.</p>
 <div class="refsect3">
-<a name="id-1.8.13.6.4.6"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-surface-damage-buffer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -296,8 +296,8 @@ clutter_wayland_surface_get_cogl_texture
                                (<em class="parameter"><code><a class="link" href="clutter-ClutterWaylandSurface.html#ClutterWaylandSurface" title="struct ClutterWaylandSurface"><span class="type">ClutterWaylandSurface</span></a> *self</code></em>);</pre>
 <p>Retrieves the Cogl texture with the contents of the Wayland surface.</p>
 <div class="refsect3">
-<a name="id-1.8.13.6.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-surface-get-cogl-texture.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -311,7 +311,7 @@ clutter_wayland_surface_get_cogl_texture
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.13.6.5.6"></a><h4>Returns</h4>
+<a name="clutter-wayland-surface-get-cogl-texture.returns"></a><h4>Returns</h4>
 <p> a Cogl texture, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -324,8 +324,8 @@ clutter_wayland_surface_get_cogl_texture
 clutter_wayland_surface_get_surface (<em class="parameter"><code><a class="link" href="clutter-ClutterWaylandSurface.html#ClutterWaylandSurface" title="struct ClutterWaylandSurface"><span class="type">ClutterWaylandSurface</span></a> *self</code></em>);</pre>
 <p>Retrieves a point to the Wayland surface used by the actor.</p>
 <div class="refsect3">
-<a name="id-1.8.13.6.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-surface-get-surface.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -339,7 +339,7 @@ clutter_wayland_surface_get_surface (<em class="parameter"><code><a class="link"
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.8.13.6.6.6"></a><h4>Returns</h4>
+<a name="clutter-wayland-surface-get-surface.returns"></a><h4>Returns</h4>
 <p> a wl_surface pointer, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -353,8 +353,8 @@ clutter_wayland_surface_set_surface (<em class="parameter"><code><a class="link"
                                      <em class="parameter"><code><span class="type">struct wl_surface</span> *surface</code></em>);</pre>
 <p>Sets the Wayland surface to be used by the actor.</p>
 <div class="refsect3">
-<a name="id-1.8.13.6.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-wayland-surface-set-surface.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -414,8 +414,8 @@ mentioned in the release notes for the affected release.
 </pre>
 <p>The <a class="link" href="clutter-ClutterWaylandSurface.html#ClutterWaylandSurfaceClass" title="struct ClutterWaylandSurfaceClass"><span class="type">ClutterWaylandSurfaceClass</span></a> structure contains only private data</p>
 <div class="refsect3">
-<a name="id-1.8.13.7.3.5"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterWaylandSurfaceClass.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -447,6 +447,6 @@ mentioned in the release notes for the affected release.
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>

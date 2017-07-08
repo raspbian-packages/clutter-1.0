@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>ClutterBoxLayout: Clutter Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="Clutter Reference Manual">
 <link rel="up" href="ch03.html" title="Layout managers">
 <link rel="prev" href="ClutterFlowLayout.html" title="ClutterFlowLayout">
 <link rel="next" href="ClutterGridLayout.html" title="ClutterGridLayout">
-<meta name="generator" content="GTK-Doc V1.24 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -35,7 +35,7 @@
 </tr></table></div>
 <div class="refsect1">
 <a name="ClutterBoxLayout.functions"></a><h2>Functions</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="functions_return">
 <col class="functions_name">
@@ -238,7 +238,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterBoxLayout.properties"></a><h2>Properties</h2>
-<div class="informaltable"><table border="0">
+<div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
 <col width="150px" class="properties_type">
 <col width="300px" class="properties_name">
@@ -290,7 +290,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterBoxLayout.other"></a><h2>Types and Values</h2>
-<div class="informaltable"><table width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="name">
 <col class="description">
@@ -350,7 +350,7 @@ get the same size, ignoring expand settings and the preferred sizes</p></li>
 clutter_box_layout_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>Creates a new <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> layout manager</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.2.5"></a><h4>Returns</h4>
+<a name="clutter-box-layout-new.returns"></a><h4>Returns</h4>
 <p> the newly created <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -365,8 +365,8 @@ clutter_box_layout_set_pack_start (<em class="parameter"><code><a class="link" h
  should be layed out by appending
 them or by prepending them</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.3.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-pack-start.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -397,8 +397,8 @@ beginning of the layout</p></td>
 clutter_box_layout_get_pack_start (<em class="parameter"><code><a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> *layout</code></em>);</pre>
 <p>Retrieves the value set using <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-set-pack-start" title="clutter_box_layout_set_pack_start ()"><code class="function">clutter_box_layout_set_pack_start()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.4.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-pack-start.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -412,7 +412,7 @@ clutter_box_layout_get_pack_start (<em class="parameter"><code><a class="link" h
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.4.6"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-pack-start.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> should pack children
 at the beginning of the layout, and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -427,8 +427,8 @@ clutter_box_layout_set_spacing (<em class="parameter"><code><a class="link" href
 <p>Sets the spacing between children of <em class="parameter"><code>layout</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.5.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-spacing.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -457,8 +457,8 @@ clutter_box_layout_set_spacing (<em class="parameter"><code><a class="link" href
 clutter_box_layout_get_spacing (<em class="parameter"><code><a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> *layout</code></em>);</pre>
 <p>Retrieves the spacing set using <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-set-spacing" title="clutter_box_layout_set_spacing ()"><code class="function">clutter_box_layout_set_spacing()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.6.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-spacing.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -472,7 +472,7 @@ clutter_box_layout_get_spacing (<em class="parameter"><code><a class="link" href
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.6.6"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-spacing.returns"></a><h4>Returns</h4>
 <p> the spacing between children of the <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -487,8 +487,8 @@ clutter_box_layout_set_homogeneous (<em class="parameter"><code><a class="link" 
  children should be
 homogeneous</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.7.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-homogeneous.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -517,8 +517,8 @@ homogeneous</p>
 clutter_box_layout_get_homogeneous (<em class="parameter"><code><a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> *layout</code></em>);</pre>
 <p>Retrieves if the children sizes are allocated homogeneously.</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.8.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-homogeneous.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -532,7 +532,7 @@ clutter_box_layout_get_homogeneous (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.8.6"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-homogeneous.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> is arranging its children
 homogeneously, and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -546,8 +546,8 @@ clutter_box_layout_get_orientation (<em class="parameter"><code><a class="link" 
 <p>Retrieves the orientation of the <em class="parameter"><code>layout</code></em>
 .</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.9.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-orientation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -561,7 +561,7 @@ clutter_box_layout_get_orientation (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.9.6"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-orientation.returns"></a><h4>Returns</h4>
 <p> the orientation of the layout</p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -574,8 +574,8 @@ clutter_box_layout_set_orientation (<em class="parameter"><code><a class="link" 
                                     <em class="parameter"><code><a class="link" href="ClutterBoxLayout.html#ClutterOrientation" title="enum ClutterOrientation"><span class="type">ClutterOrientation</span></a> orientation</code></em>);</pre>
 <p>Sets the orientation of the <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> layout manager.</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.10.5"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-orientation.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -611,8 +611,8 @@ clutter_box_layout_set_vertical (<em class="parameter"><code><a class="link" hre
  should arrange its children vertically alongside
 the Y axis, instead of horizontally alongside the X axis</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.11.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-vertical.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -647,8 +647,8 @@ clutter_box_layout_get_vertical (<em class="parameter"><code><a class="link" hre
  as set using the
 <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-set-vertical" title="clutter_box_layout_set_vertical ()"><code class="function">clutter_box_layout_set_vertical()</code></a> function</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.12.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-vertical.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -662,7 +662,7 @@ clutter_box_layout_get_vertical (<em class="parameter"><code><a class="link" hre
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.12.8"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-vertical.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a> is arranging its children
 vertically, and <code class="literal">FALSE</code> otherwise</p>
 </div>
@@ -693,8 +693,8 @@ clutter_box_layout_pack (<em class="parameter"><code><a class="link" href="Clutt
 
 and sets the layout properties</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.13.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-pack.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -764,8 +764,8 @@ clutter_box_layout_set_alignment (<em class="parameter"><code><a class="link" hr
 inside <em class="parameter"><code>layout</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.14.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-alignment.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -817,8 +817,8 @@ clutter_box_layout_get_alignment (<em class="parameter"><code><a class="link" hr
 
 as set using <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-pack" title="clutter_box_layout_pack ()"><code class="function">clutter_box_layout_pack()</code></a> or <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-set-alignment" title="clutter_box_layout_set_alignment ()"><code class="function">clutter_box_layout_set_alignment()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.15.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-alignment.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -867,8 +867,8 @@ clutter_box_layout_set_expand (<em class="parameter"><code><a class="link" href=
  should expand inside <em class="parameter"><code>layout</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.16.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-expand.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -912,8 +912,8 @@ clutter_box_layout_get_expand (<em class="parameter"><code><a class="link" href=
  should expand inside <em class="parameter"><code>layout</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.17.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-expand.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -935,7 +935,7 @@ clutter_box_layout_get_expand (<em class="parameter"><code><a class="link" href=
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.17.8"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-expand.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> should expand, <code class="literal">FALSE</code> otherwise</p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -958,8 +958,8 @@ clutter_box_layout_set_fill (<em class="parameter"><code><a class="link" href="C
 inside <em class="parameter"><code>layout</code></em>
 </p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.18.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-fill.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1011,8 +1011,8 @@ clutter_box_layout_get_fill (<em class="parameter"><code><a class="link" href="C
 
 as set using <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-pack" title="clutter_box_layout_pack ()"><code class="function">clutter_box_layout_pack()</code></a> or <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-set-fill" title="clutter_box_layout_set_fill ()"><code class="function">clutter_box_layout_set_fill()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.19.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-fill.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1066,8 +1066,8 @@ of the actor using <em class="parameter"><code>layout</code></em>
 , and will use the <a class="link" href="ClutterBoxLayout.html#ClutterBoxLayout--easing-mode" title="The “easing-mode” property"><span class="type">“easing-mode”</span></a>
 and <a class="link" href="ClutterBoxLayout.html#ClutterBoxLayout--easing-duration" title="The “easing-duration” property"><span class="type">“easing-duration”</span></a> properties instead.</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.20.9"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-use-animations.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1099,8 +1099,8 @@ clutter_box_layout_get_use_animations (<em class="parameter"><code><a class="lin
 <p>Retrieves whether <em class="parameter"><code>layout</code></em>
  should animate changes in the layout properties.</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.21.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-use-animations.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1114,7 +1114,7 @@ clutter_box_layout_get_use_animations (<em class="parameter"><code><a class="lin
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.21.8"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-use-animations.returns"></a><h4>Returns</h4>
 <p> <code class="literal">TRUE</code> if the animations should be used, <code class="literal">FALSE</code> otherwise</p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -1135,8 +1135,8 @@ clutter_box_layout_set_easing_duration
  when animating changes
 in the layout properties.</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.22.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-easing-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1167,8 +1167,8 @@ clutter_box_layout_get_easing_duration
 <div class="warning"><p><code class="literal">clutter_box_layout_get_easing_duration</code> has been deprecated since version 1.12 and should not be used in newly-written code.</p></div>
 <p>Retrieves the duration set using <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-set-easing-duration" title="clutter_box_layout_set_easing_duration ()"><code class="function">clutter_box_layout_set_easing_duration()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.23.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-easing-duration.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1182,7 +1182,7 @@ clutter_box_layout_get_easing_duration
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.23.8"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-easing-duration.returns"></a><h4>Returns</h4>
 <p> the duration of the animations, in milliseconds</p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -1202,8 +1202,8 @@ clutter_box_layout_set_easing_mode (<em class="parameter"><code><a class="link" 
  when animating changes in layout
 properties.</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.24.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-set-easing-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1234,8 +1234,8 @@ clutter_box_layout_get_easing_mode (<em class="parameter"><code><a class="link" 
 <div class="warning"><p><code class="literal">clutter_box_layout_get_easing_mode</code> has been deprecated since version 1.12 and should not be used in newly-written code.</p></div>
 <p>Retrieves the easing mode set using <a class="link" href="ClutterBoxLayout.html#clutter-box-layout-set-easing-mode" title="clutter_box_layout_set_easing_mode ()"><code class="function">clutter_box_layout_set_easing_mode()</code></a></p>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.25.7"></a><h4>Parameters</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="clutter-box-layout-get-easing-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="150px" class="parameters_name">
 <col class="parameters_description">
@@ -1249,7 +1249,7 @@ clutter_box_layout_get_easing_mode (<em class="parameter"><code><a class="link" 
 </table></div>
 </div>
 <div class="refsect3">
-<a name="id-1.5.4.5.8.25.8"></a><h4>Returns</h4>
+<a name="clutter-box-layout-get-easing-mode.returns"></a><h4>Returns</h4>
 <p> an easing mode</p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -1261,8 +1261,8 @@ clutter_box_layout_get_easing_mode (<em class="parameter"><code><a class="link" 
 <a name="ClutterBoxAlignment"></a><h3>enum ClutterBoxAlignment</h3>
 <p>The alignment policies available on each axis of the <a class="link" href="ClutterBoxLayout.html" title="ClutterBoxLayout"><span class="type">ClutterBoxLayout</span></a></p>
 <div class="refsect3">
-<a name="id-1.5.4.5.9.2.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterBoxAlignment.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1320,8 +1320,8 @@ data and should be accessed using the provided API</p>
 <a name="ClutterOrientation"></a><h3>enum ClutterOrientation</h3>
 <p>Represents the orientation of actors or layout managers.</p>
 <div class="refsect3">
-<a name="id-1.5.4.5.9.5.4"></a><h4>Members</h4>
-<div class="informaltable"><table width="100%" border="0">
+<a name="ClutterOrientation.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="enum_members_name">
 <col class="enum_members_description">
@@ -1455,6 +1455,6 @@ alongside the Y axis, instead of alongside the X axis</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.24</div>
+<hr>Generated by GTK-Doc V1.25.1</div>
 </body>
 </html>
