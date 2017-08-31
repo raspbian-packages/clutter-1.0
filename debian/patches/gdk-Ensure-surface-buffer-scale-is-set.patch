@@ -16,11 +16,9 @@ https://bugzilla.gnome.org/show_bug.cgi?id=769190
  clutter/gdk/clutter-stage-gdk.c | 9 ++++++++-
  1 file changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/clutter/gdk/clutter-stage-gdk.c b/clutter/gdk/clutter-stage-gdk.c
-index 742de58..b4cc4d4 100644
 --- a/clutter/gdk/clutter-stage-gdk.c
 +++ b/clutter/gdk/clutter-stage-gdk.c
-@@ -227,7 +227,14 @@ clutter_stage_gdk_wayland_surface (ClutterStageGdk *stage_gdk)
+@@ -232,7 +232,14 @@
  
    if (!stage_gdk->foreign_window ||
        gdk_window_get_window_type (stage_gdk->window) != GDK_WINDOW_CHILD)
@@ -34,8 +32,5 @@ index 742de58..b4cc4d4 100644
 +      return surface;
 +    }
  
-   if (stage_gdk->clutter_surface)
-     return stage_gdk->clutter_surface;
--- 
-2.10.2
-
+   if (stage_gdk->subsurface)
+     goto out;
