@@ -7,6 +7,8 @@ clutter-1.0 (1.26.2+dfsg-2) UNRELEASED; urgency=medium
   * Add autopkgtest to run clutter-1.0-tests
   * debian/control.in:
     - Build-depend on dbus for build tests
+    - Build-depend on libgl1-mesa-dri for build tests since Debian's
+      libgl1-mesa-glx currently only recommends it
   * debian/rules:
     - Allow tests to not fail the build this time
   * Add debian/patches/skip-failing-tests.patch:
