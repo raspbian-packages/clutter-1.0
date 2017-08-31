@@ -51,7 +51,7 @@ override_dh_auto_test:
 	-dbus-run-session -- xvfb-run -a dh_auto_test
 
 override_dh_strip:
-	dh_strip --dbgsym-migration='libclutter-1.0-dbg (<< 1.26.0+dfsg-3~)'
+	dh_strip --dbgsym-migration='libclutter-1.0-dbg (<< 1.26.2+dfsg-2~)'
 
 get-orig-source get-packaged-orig-source:
 	uscan --verbose --force-download \

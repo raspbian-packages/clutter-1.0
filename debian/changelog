@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.2+dfsg-2) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.2+dfsg-2) experimental; urgency=medium
 
   * Convert from cdbs to dh
   * Bump debhelper compat to 10
@@ -13,10 +13,8 @@ clutter-1.0 (1.26.2+dfsg-2) UNRELEASED; urgency=medium
     - Allow tests to not fail the build this time
   * Add debian/patches/skip-failing-tests.patch:
     - Skip failing test so that we can run all the other tests
-  * Add git-conform-actor-graph-Add-missing-null-termination.patch:
-    - Fix actor-graph test on some architectures
 
- -- Jeremy Bicha <jbicha@ubuntu.com>  Tue, 09 May 2017 12:59:53 +0100
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 31 Aug 2017 13:07:16 -0400
 
 clutter-1.0 (1.26.2+dfsg-1) unstable; urgency=medium
 
