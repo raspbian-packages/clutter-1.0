@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.2+dfsg-3) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.2+dfsg-3) unstable; urgency=medium
 
   * Release to unstable
   * debian/control.in:
@@ -8,7 +8,7 @@ clutter-1.0 (1.26.2+dfsg-3) UNRELEASED; urgency=medium
 
   * Allow tests to fail the build on Ubuntu. The tests fail in Debian.
 
- -- Jeremy Bicha <jbicha@debian.org>  Fri, 01 Sep 2017 23:35:16 -0400
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 02 Sep 2017 17:14:56 -0400
 
 clutter-1.0 (1.26.2+dfsg-2) experimental; urgency=medium
 
