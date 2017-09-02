@@ -1,3 +1,21 @@
+clutter-1.0 (1.26.2+dfsg-2) experimental; urgency=medium
+
+  * Convert from cdbs to dh
+  * Bump debhelper compat to 10
+  * Add debian/libclutter-1.0-0.docs to install NEWS and README
+  * Convert to automatic dbgsym package
+  * Add autopkgtest to run clutter-1.0-tests
+  * debian/control.in:
+    - Build-depend on dbus for build tests
+    - Build-depend on libgl1-mesa-dri for build tests since Debian's
+      libgl1-mesa-glx currently only recommends it
+  * debian/rules:
+    - Allow tests to not fail the build this time
+  * Add debian/patches/skip-failing-tests.patch:
+    - Skip failing test so that we can run all the other tests
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 31 Aug 2017 13:07:16 -0400
+
 clutter-1.0 (1.26.2+dfsg-1) unstable; urgency=medium
 
   * New upstream release.

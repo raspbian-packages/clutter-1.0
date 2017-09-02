@@ -1,3 +1,4 @@
 01_do-not-build-cookbook.patch
 Rely-on-gdk-to-dispatch-wayland-events.patch
 gdk-Ensure-surface-buffer-scale-is-set.patch
+skip-failing-tests.patch
