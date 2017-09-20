@@ -1,3 +1,10 @@
+clutter-1.0 (1.26.2+dfsg-4) UNRELEASED; urgency=medium
+
+  * Don't run the build tests on s390x since they hang the build on
+    Launchpad
+
+ -- Jeremy Bicha <jbicha@debian.org>  Wed, 20 Sep 2017 15:51:05 -0400
+
 clutter-1.0 (1.26.2+dfsg-3) unstable; urgency=medium
 
   * Release to unstable
