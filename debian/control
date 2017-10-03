@@ -6,11 +6,10 @@ Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Andreas Henriksson <andreas@fatal.se>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
-Build-Depends: debhelper (>= 9),
-               cdbs (>= 0.4.93~),
-               dh-autoreconf,
+Uploaders: Andreas Henriksson <andreas@fatal.se>, Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
+Build-Depends: debhelper (>= 10),
                autopoint,
+               dbus <!nocheck>,
                gnome-pkg-tools,
                libgl1-mesa-dev (>= 7.1~rc3-1~),
                libcairo2-dev (>= 1.14.0),
@@ -26,7 +25,9 @@ Build-Depends: debhelper (>= 9),
                libxcomposite-dev (>= 1:0.4),
                libxi-dev,
                gtk-doc-tools (>= 1.20),
+               xauth <!nocheck>,
                xsltproc,
+               xvfb <!nocheck>,
                libgirepository1.0-dev (>= 1.35.8),
                gobject-introspection (>= 1.39.0),
                libatk1.0-dev (>= 2.5.3),
@@ -104,20 +105,6 @@ Description: Open GL based interactive canvas library (development files)
  presentations, kiosk style applications and so on.
  .
  This package contains the development files.
-
-Package: libclutter-1.0-dbg
-Section: debug
-Priority: extra
-Architecture: any
-Depends: libclutter-1.0-0 (= ${binary:Version}),
-         ${misc:Depends}
-Multi-Arch: same
-Description: Open GL based interactive canvas library (debug files)
- Clutter is an Open GL based interactive canvas library, designed for creating
- fast, mainly 2D single window applications such as media box UIs,
- presentations, kiosk style applications and so on.
- .
- This package contains the debug files.
 
 Package: libclutter-1.0-doc
 Section: doc

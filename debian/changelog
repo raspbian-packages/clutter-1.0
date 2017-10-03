@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.2+dfsg-1+rpi1) buster-staging; urgency=medium
+clutter-1.0 (1.26.2+dfsg-3+rpi1) buster-staging; urgency=medium
 
   [changes brought forward from 1.24.0-1+rpi1 by Peter Michael Green <plugwash@raspbian.org> at Fri, 25 Sep 2015 00:25:32 +0000]
   * Disable wayland and egl support.
@@ -6,7 +6,37 @@ clutter-1.0 (1.26.2+dfsg-1+rpi1) buster-staging; urgency=medium
     seem to be in build-depends). attempting to disable wayland
     from debian/rules doesn't seem to work.
 
- -- Raspbian forward porter <root@raspbian.org>  Sat, 08 Jul 2017 14:18:52 +0000
+ -- Peter Michael Green <plugwash@raspbian.org>  Sun, 10 Sep 2017 00:21:39 +0000
+
+clutter-1.0 (1.26.2+dfsg-3) unstable; urgency=medium
+
+  * Release to unstable
+  * debian/control.in:
+    - Drop Build-Depends on libgl1-mesa-dri
+  * debian/rules:
+    - Ignore test failures on Debian. See bug 874077.
+
+  * Allow tests to fail the build on Ubuntu. The tests fail in Debian.
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sat, 02 Sep 2017 17:14:56 -0400
+
+clutter-1.0 (1.26.2+dfsg-2) experimental; urgency=medium
+
+  * Convert from cdbs to dh
+  * Bump debhelper compat to 10
+  * Add debian/libclutter-1.0-0.docs to install NEWS and README
+  * Convert to automatic dbgsym package
+  * Add autopkgtest to run clutter-1.0-tests
+  * debian/control.in:
+    - Build-depend on dbus for build tests
+    - Build-depend on libgl1-mesa-dri for build tests since Debian's
+      libgl1-mesa-glx currently only recommends it
+  * debian/rules:
+    - Allow tests to not fail the build this time
+  * Add debian/patches/skip-failing-tests.patch:
+    - Skip failing test so that we can run all the other tests
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 31 Aug 2017 13:07:16 -0400
 
 clutter-1.0 (1.26.2+dfsg-1) unstable; urgency=medium
 

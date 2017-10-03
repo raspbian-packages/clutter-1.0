@@ -1,2 +1,2 @@
 usr/share/installed-tests
-usr/lib/clutter-1.0/installed-tests
+usr/lib/*/installed-tests/clutter
