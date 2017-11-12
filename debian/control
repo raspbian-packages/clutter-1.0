@@ -119,7 +119,6 @@ Description: Open GL based interactive canvas library (documentation)
 
 Package: clutter-1.0-tests
 Section: misc
-Priority: extra
 Architecture: any
 Depends: libclutter-1.0-0 (= ${binary:Version}),
          ${shlibs:Depends},

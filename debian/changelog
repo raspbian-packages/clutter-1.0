@@ -8,6 +8,7 @@ clutter-1.0 (1.26.2+dfsg-4) UNRELEASED; urgency=medium
   * gir1.2-clutter-1.0 Provides gir1.2-cally-1.0, gir1.2-cluttergdk-1.0,
     gir1.2-clutterx11-1.0 to reflect the various typelibs packaged
     together
+  * Move clutter-1.0-tests from deprecated priority extra to optional
 
  -- Jeremy Bicha <jbicha@debian.org>  Wed, 20 Sep 2017 15:51:05 -0400
 
