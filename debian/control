@@ -6,7 +6,7 @@ Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Andreas Henriksson <andreas@fatal.se>, Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
+Uploaders: Emilio Pozuelo Monfort <pochu@debian.org>, Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
 Build-Depends: debhelper (>= 10),
                autopoint,
                dbus <!nocheck>,
@@ -137,6 +137,9 @@ Architecture: any
 Depends: ${gir:Depends},
          ${shlibs:Depends},
          ${misc:Depends}
+Provides: gir1.2-cally-1.0 (= ${binary:Version}),
+          gir1.2-cluttergdk-1.0 (= ${binary:Version}),
+          gir1.2-clutterx11-1.0 (= ${binary:Version})
 Multi-Arch: same
 Description: GObject introspection data for the Clutter 1.0 library
  This package contains introspection data for the Clutter scene
