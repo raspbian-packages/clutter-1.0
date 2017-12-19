@@ -3,6 +3,9 @@ clutter-1.0 (1.26.2+dfsg-4) UNRELEASED; urgency=medium
   [ Jeremy Bicha ]
   * Don't run the build tests on s390x since they hang the build on
     Launchpad
+  * Update Vcs fields for conversion to git
+  * Add debian/gbp.conf
+  * Bump Standards-Version to 4.1.2
 
   [ Simon McVittie ]
   * gir1.2-clutter-1.0 Provides gir1.2-cally-1.0, gir1.2-cluttergdk-1.0,
