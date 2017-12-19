@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.2+dfsg-4) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.2+dfsg-4) unstable; urgency=medium
 
   [ Jeremy Bicha ]
   * Don't run the build tests on s390x since they hang the build on
@@ -14,7 +14,7 @@ clutter-1.0 (1.26.2+dfsg-4) UNRELEASED; urgency=medium
     together
   * Move clutter-1.0-tests from deprecated priority extra to optional
 
- -- Jeremy Bicha <jbicha@debian.org>  Wed, 20 Sep 2017 15:51:05 -0400
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 18 Dec 2017 22:20:53 -0500
 
 clutter-1.0 (1.26.2+dfsg-3) unstable; urgency=medium
 
@@ -830,7 +830,7 @@ clutter-1.0 (1.2.12-3) unstable; urgency=low
     - Removed, fixed upstream.
   * debian/patches/0001-disable-armv5t-specific-optimization.patch:
     - Renamed to 02_disable_armv5t_specific_optimization.patch.
-      Also don't comment all the code in the #if block, just change 
+      Also don't comment all the code in the #if block, just change
       #if __arm__ to #if 0.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 07 Aug 2010 00:54:09 +0200
