@@ -6,8 +6,8 @@ Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Andreas Henriksson <andreas@fatal.se>, Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
-Build-Depends: debhelper (>= 10),
+Uploaders: Emilio Pozuelo Monfort <pochu@debian.org>, Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
+Build-Depends: debhelper (>= 11),
                autopoint,
                dbus <!nocheck>,
                gnome-pkg-tools,
@@ -39,10 +39,10 @@ Build-Depends: debhelper (>= 10),
                libxkbcommon-dev,
 Build-Conflicts:
                libwayland-dev
-Standards-Version: 3.9.8
-Homepage: http://www.clutter-project.org/
-Vcs-Svn: svn://anonscm.debian.org/pkg-gnome/desktop/unstable/clutter-1.0
-Vcs-Browser: https://anonscm.debian.org/viewvc/pkg-gnome/desktop/unstable/clutter-1.0/
+Standards-Version: 4.1.2
+Homepage: https://blogs.gnome.org/clutter/
+Vcs-Git: https://anonscm.debian.org/git/pkg-gnome/clutter.git
+Vcs-Browser: https://anonscm.debian.org/git/pkg-gnome/clutter.git
 
 Package: libclutter-1.0-0
 Architecture: any
@@ -51,7 +51,6 @@ Depends: ${shlibs:Depends},
 Recommends: libclutter-1.0-common
 Breaks: libcogl9,
         cinnamon-session (<< 2.6.2),
-Pre-Depends: ${misc:Pre-Depends}
 Multi-Arch: same
 Description: Open GL based interactive canvas library
  Clutter is an Open GL based interactive canvas library, designed for creating
@@ -120,7 +119,6 @@ Description: Open GL based interactive canvas library (documentation)
 
 Package: clutter-1.0-tests
 Section: misc
-Priority: extra
 Architecture: any
 Depends: libclutter-1.0-0 (= ${binary:Version}),
          ${shlibs:Depends},
@@ -138,6 +136,9 @@ Architecture: any
 Depends: ${gir:Depends},
          ${shlibs:Depends},
          ${misc:Depends}
+Provides: gir1.2-cally-1.0 (= ${binary:Version}),
+          gir1.2-cluttergdk-1.0 (= ${binary:Version}),
+          gir1.2-clutterx11-1.0 (= ${binary:Version})
 Multi-Arch: same
 Description: GObject introspection data for the Clutter 1.0 library
  This package contains introspection data for the Clutter scene

@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.2+dfsg-3+rpi1) buster-staging; urgency=medium
+clutter-1.0 (1.26.2+dfsg-4+rpi1) buster-staging; urgency=medium
 
   [changes brought forward from 1.24.0-1+rpi1 by Peter Michael Green <plugwash@raspbian.org> at Fri, 25 Sep 2015 00:25:32 +0000]
   * Disable wayland and egl support.
@@ -6,7 +6,25 @@ clutter-1.0 (1.26.2+dfsg-3+rpi1) buster-staging; urgency=medium
     seem to be in build-depends). attempting to disable wayland
     from debian/rules doesn't seem to work.
 
- -- Peter Michael Green <plugwash@raspbian.org>  Sun, 10 Sep 2017 00:21:39 +0000
+ -- Raspbian forward porter <root@raspbian.org>  Wed, 27 Dec 2017 20:30:59 +0000
+
+clutter-1.0 (1.26.2+dfsg-4) unstable; urgency=medium
+
+  [ Jeremy Bicha ]
+  * Don't run the build tests on s390x since they hang the build on
+    Launchpad
+  * Update Vcs fields for conversion to git
+  * Add debian/gbp.conf
+  * Bump Standards-Version to 4.1.2
+  * Bump debhelper compat to 11
+
+  [ Simon McVittie ]
+  * gir1.2-clutter-1.0 Provides gir1.2-cally-1.0, gir1.2-cluttergdk-1.0,
+    gir1.2-clutterx11-1.0 to reflect the various typelibs packaged
+    together
+  * Move clutter-1.0-tests from deprecated priority extra to optional
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 18 Dec 2017 22:20:53 -0500
 
 clutter-1.0 (1.26.2+dfsg-3) unstable; urgency=medium
 
@@ -15,8 +33,6 @@ clutter-1.0 (1.26.2+dfsg-3) unstable; urgency=medium
     - Drop Build-Depends on libgl1-mesa-dri
   * debian/rules:
     - Ignore test failures on Debian. See bug 874077.
-
-  * Allow tests to fail the build on Ubuntu. The tests fail in Debian.
 
  -- Jeremy Bicha <jbicha@debian.org>  Sat, 02 Sep 2017 17:14:56 -0400
 
@@ -824,7 +840,7 @@ clutter-1.0 (1.2.12-3) unstable; urgency=low
     - Removed, fixed upstream.
   * debian/patches/0001-disable-armv5t-specific-optimization.patch:
     - Renamed to 02_disable_armv5t_specific_optimization.patch.
-      Also don't comment all the code in the #if block, just change 
+      Also don't comment all the code in the #if block, just change
       #if __arm__ to #if 0.
 
  -- Emilio Pozuelo Monfort <pochu@debian.org>  Sat, 07 Aug 2010 00:54:09 +0200
