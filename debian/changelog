@@ -1,6 +1,10 @@
 clutter-1.0 (1.26.2+dfsg-5) UNRELEASED; urgency=medium
 
+  [ Jeremy Bicha ]
   * Update Vcs fields for migration to https://salsa.debian.org/
+
+  [ Simon McVittie ]
+  * Remove obsolete Breaks on pre-jessie versions of cogl
 
  -- Jeremy Bicha <jbicha@debian.org>  Fri, 19 Jan 2018 13:21:12 -0500
 
