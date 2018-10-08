@@ -1,3 +1,11 @@
+clutter-1.0 (1.26.2+dfsg-7) unstable; urgency=medium
+
+  * Don't ignore build test failures on arches where the tests pass.
+    - The only release arch with ignored tests is mips. We don't run
+      the tests on armel or s390x because they hang the builders.
+
+ -- Jeremy Bicha <jbicha@debian.org>  Mon, 08 Oct 2018 03:59:44 -0400
+
 clutter-1.0 (1.26.2+dfsg-6) unstable; urgency=medium
 
   * Don't run build tests on armel since the tests appear to hang there
