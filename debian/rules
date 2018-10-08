@@ -45,16 +45,14 @@ override_dh_makeshlibs:
 
 override_dh_auto_test:
 # Don't run the tests on s390x since it hangs the build on Launchpad
-# Don't run on armel since it hung there
+# Don't run on armel since it hung with
 # https://buildd.debian.org/status/logs.php?pkg=clutter-1.0&ver=1.26.2%2Bdfsg-5
 ifneq (,$(filter armel s390x,$(DEB_HOST_ARCH)))
-# Temporarily ignore test failures on Debian until we see which pass
-else ifeq (yes,$(shell dpkg-vendor --derives-from Ubuntu && echo yes))
 # Ignore test failures on architectures where they fail
-#else ifneq (,$(filter hppa hurd-i386 kfreebsd-i386 kfreebsd-amd64 mipsel powerpc ppc64 sh4 sparc64,$(DEB_HOST_ARCH)))
-	dbus-run-session -- xvfb-run -a dh_auto_test
-else
+else ifneq (,$(filter hppa hurd-i386 kfreebsd-i386 kfreebsd-amd64 mips powerpc ppc64 sh4 sparc64,$(DEB_HOST_ARCH)))
 	-dbus-run-session -- xvfb-run -a dh_auto_test
+else
+	dbus-run-session -- xvfb-run -a dh_auto_test
 endif
 
 override_dh_strip:
