@@ -1,3 +1,10 @@
+clutter-1.0 (1.26.2+dfsg-8) unstable; urgency=medium
+
+  * Restore -Wl,-O1 to our LDFLAGS
+  * Bump Standards-Version to 4.3.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 23 Dec 2018 18:32:52 -0500
+
 clutter-1.0 (1.26.2+dfsg-7) unstable; urgency=medium
 
   * Don't ignore build test failures on arches where the tests pass.
@@ -1116,4 +1123,3 @@ clutter (0.1.0-1) unstable; urgency=low
   * Initial upload.
 
  -- Ross Burton <ross@debian.org>  Wed, 21 Jun 2006 17:46:05 +0100
-
