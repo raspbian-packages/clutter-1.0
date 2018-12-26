@@ -5,10 +5,10 @@ SUBDIRS += reference
 endif
 
 if ENABLE_DOCS
-SUBDIRS += common cookbook
+SUBDIRS += common
 endif
 
-DIST_SUBDIRS = reference common cookbook
+DIST_SUBDIRS = reference common
 
 EXTRA_DIST = \
 	CODING_STYLE \
