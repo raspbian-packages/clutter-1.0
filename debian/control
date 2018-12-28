@@ -6,7 +6,7 @@ Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>, Sjoerd Simons <sjoerd@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
+Uploaders: Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
 Build-Depends: debhelper (>= 11),
                autopoint,
                dbus <!nocheck>,
@@ -37,7 +37,7 @@ Build-Depends: debhelper (>= 11),
                libudev-dev (>= 136) [linux-any],
                libgudev-1.0-dev [linux-any],
                libxkbcommon-dev,
-Standards-Version: 4.2.1
+Standards-Version: 4.3.0
 Vcs-Browser: https://salsa.debian.org/gnome-team/clutter
 Vcs-Git: https://salsa.debian.org/gnome-team/clutter.git
 Homepage: https://blogs.gnome.org/clutter/

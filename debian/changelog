@@ -1,8 +1,28 @@
-clutter-1.0 (1.26.2+dfsg-7+rpi1) buster-staging; urgency=medium
+clutter-1.0 (1.26.2+dfsg-10+rpi1) buster-staging; urgency=medium
 
+  [changes brought forward from 1.26.2+dfsg-7+rpi1 by Peter Michael Green <plugwash@raspbian.org> at Thu, 11 Oct 2018 23:45:19 +0000]
   * Disable testsuite on armhf too (hang encountered on a raspbian autobuilder).
 
- -- Peter Michael Green <plugwash@raspbian.org>  Thu, 11 Oct 2018 23:45:19 +0000
+ -- Raspbian forward porter <root@raspbian.org>  Fri, 28 Dec 2018 05:47:50 +0000
+
+clutter-1.0 (1.26.2+dfsg-10) unstable; urgency=medium
+
+  * fix typo in dh_auto_test override
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 25 Dec 2018 19:30:54 -0500
+
+clutter-1.0 (1.26.2+dfsg-9) unstable; urgency=medium
+
+  * Restore dh_auto_test override
+
+ -- Jeremy Bicha <jbicha@debian.org>  Tue, 25 Dec 2018 11:25:26 -0500
+
+clutter-1.0 (1.26.2+dfsg-8) unstable; urgency=medium
+
+  * Restore -Wl,-O1 to our LDFLAGS
+  * Bump Standards-Version to 4.3.0
+
+ -- Jeremy Bicha <jbicha@debian.org>  Sun, 23 Dec 2018 18:32:52 -0500
 
 clutter-1.0 (1.26.2+dfsg-7) unstable; urgency=medium
 
@@ -1122,4 +1142,3 @@ clutter (0.1.0-1) unstable; urgency=low
   * Initial upload.
 
  -- Ross Burton <ross@debian.org>  Wed, 21 Jun 2006 17:46:05 +0100
-
