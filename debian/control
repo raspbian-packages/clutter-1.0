@@ -70,6 +70,7 @@ Description: Open GL based interactive canvas library (common files)
 Package: libclutter-1.0-dev
 Section: libdevel
 Architecture: any
+Multi-Arch: same
 Depends: libclutter-1.0-0 (= ${binary:Version}),
          gir1.2-clutter-1.0 (= ${binary:Version}),
          libgdk-pixbuf2.0-dev,
