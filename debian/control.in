@@ -104,6 +104,7 @@ Description: Open GL based interactive canvas library (development files)
 Package: libclutter-1.0-doc
 Section: doc
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Suggests: devhelp
 Description: Open GL based interactive canvas library (documentation)
