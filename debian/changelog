@@ -8,6 +8,10 @@ clutter-1.0 (1.26.2+dfsg-11) UNRELEASED; urgency=medium
     attempted (as it did previously). (Closes: #931921)
   * d/tests/installed-tests: Use AUTOPKGTEST_TMP instead of
     deprecated ADTTMP
+  * d/tests/build: Add a superficial build test to verify that
+    libclutter-1.0-dev works.
+    This does not exercise static compilation because not all dependencies
+    are available as static libraries.
 
  -- Simon McVittie <smcv@debian.org>  Tue, 20 Aug 2019 23:14:46 +0100
 
