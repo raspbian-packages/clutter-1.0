@@ -13,6 +13,8 @@ clutter-1.0 (1.26.2+dfsg-11) UNRELEASED; urgency=medium
     This does not exercise static compilation because not all dependencies
     are available as static libraries.
   * Set Rules-Requires-Root to no
+  * Don't run dbus-run-session and xvfb if we are going to skip build-time
+    tests due to nocheck
 
  -- Simon McVittie <smcv@debian.org>  Tue, 20 Aug 2019 23:14:46 +0100
 
