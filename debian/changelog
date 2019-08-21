@@ -18,6 +18,7 @@ clutter-1.0 (1.26.2+dfsg-11) UNRELEASED; urgency=medium
   * Make libclutter-1.0-dev Multi-Arch: same.
     This is not yet directly useful, because some dependencies are not.
   * Make the documentation Multi-Arch: foreign
+  * Standards-Version: 4.4.0 (no changes required)
 
  -- Simon McVittie <smcv@debian.org>  Tue, 20 Aug 2019 23:14:46 +0100
 
