@@ -6,6 +6,8 @@ clutter-1.0 (1.26.2+dfsg-11) UNRELEASED; urgency=medium
     in GLib code leaving different uninitialized stack contents, causing
     the test to be attempted (and hang), instead of never actually being
     attempted (as it did previously). (Closes: #931921)
+  * d/tests/installed-tests: Use AUTOPKGTEST_TMP instead of
+    deprecated ADTTMP
 
  -- Simon McVittie <smcv@debian.org>  Tue, 20 Aug 2019 23:14:46 +0100
 
