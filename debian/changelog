@@ -21,6 +21,9 @@ clutter-1.0 (1.26.2+dfsg-11) UNRELEASED; urgency=medium
   * Standards-Version: 4.4.0 (no changes required)
   * Use debhelper-compat 12
     - Move installed-tests to default libexecdir, /usr/libexec
+  * d/p/clutter-tests-conform-Fix-actor-offscreen-redirect.patch,
+    d/p/gdk-Ensure-surface-buffer-scale-is-set.patch:
+    Mark patches as applied upstream
 
  -- Simon McVittie <smcv@debian.org>  Wed, 21 Aug 2019 17:19:11 +0100
 

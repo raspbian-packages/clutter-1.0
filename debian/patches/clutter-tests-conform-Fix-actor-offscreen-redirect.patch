@@ -13,9 +13,9 @@ test case tried to run the main loop, the next paint callback caller
 path taken would try to re-lock the same mutex, thus dead lock.
 
 Origin: the fork of clutter in mutter 3.21.4, commit:9c0fa583
-Applied-upstream: no
 Bug: https://gitlab.gnome.org/GNOME/clutter/issues/8
 Bug-Debian: https://bugs.debian.org/931921
+Applied-upstream: 1.27.0, commit:f829ddf31449f76292a0f0a2c3e7269802d41a32
 ---
  tests/conform/actor-offscreen-redirect.c | 49 +++++++++++++++++++-------------
  1 file changed, 30 insertions(+), 19 deletions(-)
