@@ -12,6 +12,7 @@ clutter-1.0 (1.26.2+dfsg-11) UNRELEASED; urgency=medium
     libclutter-1.0-dev works.
     This does not exercise static compilation because not all dependencies
     are available as static libraries.
+  * Set Rules-Requires-Root to no
 
  -- Simon McVittie <smcv@debian.org>  Tue, 20 Aug 2019 23:14:46 +0100
 
