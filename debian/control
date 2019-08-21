@@ -7,7 +7,7 @@ Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
 Uploaders: Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>, Rico Tzschichholz <ricotz@ubuntu.com>
-Build-Depends: debhelper (>= 11),
+Build-Depends: debhelper-compat (= 12),
                autopoint,
                dbus <!nocheck>,
                gnome-pkg-tools,
