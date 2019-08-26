@@ -1,5 +1,6 @@
-clutter-1.0 (1.26.2+dfsg-11) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.2+dfsg-11) unstable; urgency=medium
 
+  * Team upload
   * d/p/clutter-tests-conform-Fix-actor-offscreen-redirect.patch:
     Apply patch from mutter's fork of clutter to fix a faulty test.
     This recently regressed when changes to gcc optimizations resulted
@@ -25,7 +26,7 @@ clutter-1.0 (1.26.2+dfsg-11) UNRELEASED; urgency=medium
     d/p/gdk-Ensure-surface-buffer-scale-is-set.patch:
     Mark patches as applied upstream
 
- -- Simon McVittie <smcv@debian.org>  Wed, 21 Aug 2019 17:19:11 +0100
+ -- Simon McVittie <smcv@debian.org>  Mon, 26 Aug 2019 15:10:32 +0100
 
 clutter-1.0 (1.26.2+dfsg-10) unstable; urgency=medium
 
