@@ -1,5 +1,6 @@
-clutter-1.0 (1.26.2+dfsg-12) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.2+dfsg-12) unstable; urgency=medium
 
+  * Team upload
   * d/rules: Only build documentation if we are building -doc package.
     This should speed up architecture-specific-only builds, like those
     done on buildds.
@@ -12,7 +13,7 @@ clutter-1.0 (1.26.2+dfsg-12) UNRELEASED; urgency=medium
     This is a workaround for what appears to be an llvmpipe regression
     between buster and sid (#935884).
 
- -- Simon McVittie <smcv@debian.org>  Tue, 27 Aug 2019 10:29:43 +0100
+ -- Simon McVittie <smcv@debian.org>  Tue, 27 Aug 2019 10:44:04 +0100
 
 clutter-1.0 (1.26.2+dfsg-11) unstable; urgency=medium
 
