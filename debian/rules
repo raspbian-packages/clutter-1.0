@@ -2,12 +2,19 @@
 
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,--as-needed
+binaries := $(shell dh_listpackages)
 
 ifeq ($(DEB_HOST_ARCH_OS),linux)
 	CONFFLAGS += \
 		--enable-wayland-backend=yes \
 		--enable-wayland-compositor=yes \
 		--enable-evdev-input=yes
+endif
+
+ifeq (,$(filter %-doc,$(binaries)))
+CONFFLAGS += --disable-gtk-doc
+else
+CONFFLAGS += --enable-gtk-doc
 endif
 
 %:
@@ -21,7 +28,6 @@ override_dh_auto_configure:
 		--enable-x11-backend=yes \
 		--enable-gdk-backend=yes \
 		--enable-egl-backend=yes \
-		--enable-gtk-doc \
 		--disable-docs \
 		--enable-installed-tests \
 		--enable-introspection=yes \
