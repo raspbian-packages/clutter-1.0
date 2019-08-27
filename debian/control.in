@@ -103,6 +103,7 @@ Description: Open GL based interactive canvas library (development files)
  This package contains the development files.
 
 Package: libclutter-1.0-doc
+Build-Profiles: <!nodoc>
 Section: doc
 Architecture: all
 Multi-Arch: foreign
