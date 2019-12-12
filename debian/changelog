@@ -1,3 +1,11 @@
+clutter-1.0 (1.26.2+dfsg-13) UNRELEASED; urgency=medium
+
+  * d/tests/build: Use correct compiler for proposed autopkgtest
+    cross-architecture testing support. Thanks, Steve Langasek
+    (Closes: #946294)
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 12 Dec 2019 16:13:07 +0000
+
 clutter-1.0 (1.26.2+dfsg-12) unstable; urgency=medium
 
   * Team upload
