@@ -1,11 +1,18 @@
 clutter-1.0 (1.26.2+dfsg-13) UNRELEASED; urgency=medium
 
+  [ Simon McVittie ]
   * d/tests/build: Use correct compiler for proposed autopkgtest
     cross-architecture testing support. Thanks, Steve Langasek
     (Closes: #946294)
   * d/tests/build: Fix shellcheck warnings
 
- -- Simon McVittie <smcv@debian.org>  Thu, 12 Dec 2019 16:13:07 +0000
+  [ Laurent Bigonville ]
+  * Add d/p/0006-Handle-8-and-10-bits-colour-depth-in-picking-code-11.patch:
+    Fix picking functionality for users with 10 bpc hardware, this allows
+    applications such as gnome-maps, totem and cheese to process mouse input
+    again. (Closes: #931618)
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 09 Jan 2020 01:17:02 +0100
 
 clutter-1.0 (1.26.2+dfsg-12) unstable; urgency=medium
 

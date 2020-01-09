@@ -3,3 +3,4 @@ Rely-on-gdk-to-dispatch-wayland-events.patch
 gdk-Ensure-surface-buffer-scale-is-set.patch
 skip-failing-tests.patch
 clutter-tests-conform-Fix-actor-offscreen-redirect.patch
+0006-Handle-8-and-10-bits-colour-depth-in-picking-code-11.patch
