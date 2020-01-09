@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.2+dfsg-13) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.2+dfsg-13) unstable; urgency=medium
 
   [ Simon McVittie ]
   * d/tests/build: Use correct compiler for proposed autopkgtest
@@ -13,7 +13,7 @@ clutter-1.0 (1.26.2+dfsg-13) UNRELEASED; urgency=medium
     again. (Closes: #931618)
   * debian/control.in: Bump Standards-Version to 4.4.1 (no further changes)
 
- -- Laurent Bigonville <bigon@debian.org>  Thu, 09 Jan 2020 01:42:32 +0100
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 09 Jan 2020 01:43:03 +0100
 
 clutter-1.0 (1.26.2+dfsg-12) unstable; urgency=medium
 
