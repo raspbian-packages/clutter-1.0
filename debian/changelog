@@ -7,8 +7,10 @@ clutter-1.0 (1.26.4+dfsg-1) UNRELEASED; urgency=medium
       d/p/0006-Handle-8-and-10-bits-colour-depth-in-picking-code-11.patch:
       applied upstream
     - debian/control.in: Bump libglib2.0-dev to 2.53.4
+  * debian/control.in: Add several -doc packages to the BDI so the links
+    between the gtk-doc files are properly resolved
 
- -- Laurent Bigonville <bigon@debian.org>  Sun, 15 Mar 2020 13:23:18 +0100
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 15 Mar 2020 13:37:28 +0100
 
 clutter-1.0 (1.26.2+dfsg-13) unstable; urgency=medium
 

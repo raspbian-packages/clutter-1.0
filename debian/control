@@ -38,6 +38,14 @@ Build-Depends: autopoint,
                xauth <!nocheck>,
                xsltproc,
                xvfb <!nocheck>,
+Build-Depends-Indep: libatk1.0-doc <!nodoc>,
+                     libcairo2-doc <!nodoc>,
+                     libclutter-gtk-1.0-doc <!nodoc>,
+                     libcogl-doc <!nodoc>,
+                     libgdk-pixbuf2.0-doc <!nodoc>,
+                     libglib2.0-doc <!nodoc>,
+                     libgtk-3-doc <!nodoc>,
+                     libpango1.0-doc <!nodoc>,
 Rules-Requires-Root: no
 Standards-Version: 4.4.1
 Vcs-Browser: https://salsa.debian.org/gnome-team/clutter
