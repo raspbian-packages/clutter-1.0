@@ -2,34 +2,40 @@ Description: Build without the cookbook directory
 Author: Jeremy Bicha <jbicha@linux.com>
 Forwarded: no
 
-Index: clutter-1.0-1.26.0+dfsg1/doc/Makefile.am
-===================================================================
---- clutter-1.0-1.26.0+dfsg1.orig/doc/Makefile.am
-+++ clutter-1.0-1.26.0+dfsg1/doc/Makefile.am
-@@ -5,10 +5,10 @@ SUBDIRS += reference
+--- a/doc/Makefile.am
++++ b/doc/Makefile.am
+@@ -4,11 +4,7 @@ if BUILD_GTK_DOC
+ SUBDIRS += reference
  endif
  
- if ENABLE_DOCS
--SUBDIRS += common cookbook
-+SUBDIRS += common
- endif
- 
--DIST_SUBDIRS = reference common cookbook
-+DIST_SUBDIRS = reference common
+-if ENABLE_DOCS
+-SUBDIRS += cookbook
+-endif
+-
+-DIST_SUBDIRS = reference cookbook
++DIST_SUBDIRS = reference
  
  EXTRA_DIST = \
- 	CODING_STYLE \
-Index: clutter-1.0-1.26.0+dfsg1/configure.ac
-===================================================================
---- clutter-1.0-1.26.0+dfsg1.orig/configure.ac
-+++ clutter-1.0-1.26.0+dfsg1/configure.ac
-@@ -1224,9 +1224,6 @@ AC_CONFIG_FILES([
+ 	CODING_STYLE.txt \
+--- a/configure.ac
++++ b/configure.ac
+@@ -1207,9 +1207,6 @@ AC_CONFIG_FILES([
+ 
+ 	doc/Makefile
  	doc/reference/Makefile
- 	doc/reference/clutter-docs.xml
- 	doc/common/Makefile
 -	doc/cookbook/Makefile
 -	doc/cookbook/clutter-cookbook.xml
 -	doc/cookbook/examples/Makefile
  
  	po/Makefile.in
  ])
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -30,7 +30,6 @@ meson_files = \
+ 	clutter/meson.build \
+ 	clutter/cex100/meson.build \
+ 	doc/meson.build \
+-	doc/cookbook/meson.build \
+ 	doc/reference/meson.build \
+ 	doc/reference/xml/gtkdocentities.ent.in \
+ 	doc/reference/xml/meson.build \

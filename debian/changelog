@@ -1,3 +1,14 @@
+clutter-1.0 (1.26.4+dfsg-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+    - debian/patches/01_do-not-build-cookbook.patch: Refreshed
+    - Drop d/p/clutter-tests-conform-Fix-actor-offscreen-redirect.patch,
+      d/p/gdk-Ensure-surface-buffer-scale-is-set.patch,
+      d/p/0006-Handle-8-and-10-bits-colour-depth-in-picking-code-11.patch:
+      applied upstream
+
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 15 Mar 2020 13:17:56 +0100
+
 clutter-1.0 (1.26.2+dfsg-13) unstable; urgency=medium
 
   [ Simon McVittie ]
