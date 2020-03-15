@@ -10,8 +10,9 @@ clutter-1.0 (1.26.4+dfsg-1) UNRELEASED; urgency=medium
     - debian/libclutter-1.0-0.docs: README → README.md
   * debian/control.in: Add several -doc packages to the BDI so the links
     between the gtk-doc files are properly resolved
+  * debian/clutter-1.0-tests.install: Install the valgrind suppression file
 
- -- Laurent Bigonville <bigon@debian.org>  Sun, 15 Mar 2020 13:38:37 +0100
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 15 Mar 2020 14:05:27 +0100
 
 clutter-1.0 (1.26.2+dfsg-13) unstable; urgency=medium
 
