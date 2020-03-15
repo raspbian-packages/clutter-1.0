@@ -1,4 +1,4 @@
-clutter-1.0 (1.26.4+dfsg-1) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.4+dfsg-1) unstable; urgency=medium
 
   * New upstream release
     - debian/patches/01_do-not-build-cookbook.patch: Refreshed
@@ -13,7 +13,7 @@ clutter-1.0 (1.26.4+dfsg-1) UNRELEASED; urgency=medium
   * debian/clutter-1.0-tests.install: Install the valgrind suppression file
   * debian/control.in: Bump Standards-Version to 4.5.0 (no further changes)
 
- -- Laurent Bigonville <bigon@debian.org>  Sun, 15 Mar 2020 14:10:41 +0100
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 15 Mar 2020 15:24:55 +0100
 
 clutter-1.0 (1.26.2+dfsg-13) unstable; urgency=medium
 
