@@ -8,7 +8,7 @@
 <link rel="up" href="deprecated.html" title="Part X. Deprecated Classes">
 <link rel="prev" href="ClutterScore.html" title="ClutterScore">
 <link rel="next" href="ClutterState.html" title="ClutterState">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -704,7 +704,7 @@ clutter_shader_get_cogl_program (<em class="parameter"><code><a class="link" hre
 </div>
 <div class="refsect3">
 <a name="clutter-shader-get-cogl-program.returns"></a><h4>Returns</h4>
-<p> A <span class="type">CoglHandle</span> for the shader program,
+<p>A <span class="type">CoglHandle</span> for the shader program,
 or <code class="literal">NULL</code>. The handle is owned by the <a class="link" href="clutter-Shaders.html#ClutterShader"><span class="type">ClutterShader</span></a> and it should
 not be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -739,7 +739,7 @@ clutter_shader_get_cogl_fragment_shader
 </div>
 <div class="refsect3">
 <a name="clutter-shader-get-cogl-fragment-shader.returns"></a><h4>Returns</h4>
-<p> A <span class="type">CoglHandle</span> for the fragment
+<p>A <span class="type">CoglHandle</span> for the fragment
 shader, or <code class="literal">NULL</code>. The handle is owned by the <a class="link" href="clutter-Shaders.html#ClutterShader"><span class="type">ClutterShader</span></a>
 and it should not be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -773,7 +773,7 @@ clutter_shader_get_cogl_vertex_shader (<em class="parameter"><code><a class="lin
 </div>
 <div class="refsect3">
 <a name="clutter-shader-get-cogl-vertex-shader.returns"></a><h4>Returns</h4>
-<p> A <span class="type">CoglHandle</span> for the vertex
+<p>A <span class="type">CoglHandle</span> for the vertex
 shader, or <code class="literal">NULL</code>. The handle is owned by the <a class="link" href="clutter-Shaders.html#ClutterShader"><span class="type">ClutterShader</span></a>
 and it should not be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -837,7 +837,7 @@ must have been initialized using <code class="literal">CLUTTER_TYPE_SHADER_FLOAT
 </tr>
 <tr>
 <td class="parameter_name"><p>floats</p></td>
-<td class="parameter_description"><p> an array of floating point values. </p></td>
+<td class="parameter_description"><p>an array of floating point values. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size]</span></td>
 </tr>
 </tbody>
@@ -871,7 +871,7 @@ the passed <span class="type">GValue</span>. <em class="parameter"><code>value</
 </tr>
 <tr>
 <td class="parameter_name"><p>length</p></td>
-<td class="parameter_description"><p> return location for the number of returned floating
+<td class="parameter_description"><p>return location for the number of returned floating
 point values, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -880,7 +880,7 @@ point values, or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="clutter-value-get-shader-float.returns"></a><h4>Returns</h4>
-<p> the pointer to a list of
+<p>the pointer to a list of
 floating point values.  The returned value is owned by the
 <span class="type">GValue</span> and should never be modified or freed. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length]</span></p>
@@ -944,7 +944,7 @@ must have been initialized using <code class="literal">CLUTTER_TYPE_SHADER_INT</
 </tr>
 <tr>
 <td class="parameter_name"><p>ints</p></td>
-<td class="parameter_description"><p> an array of integer values. </p></td>
+<td class="parameter_description"><p>an array of integer values. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size]</span></td>
 </tr>
 </tbody>
@@ -978,7 +978,7 @@ clutter_value_get_shader_int (<em class="parameter"><code>const <span class="typ
 </tr>
 <tr>
 <td class="parameter_name"><p>length</p></td>
-<td class="parameter_description"><p> return location for the number of returned integer
+<td class="parameter_description"><p>return location for the number of returned integer
 values, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -987,7 +987,7 @@ values, or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="clutter-value-get-shader-int.returns"></a><h4>Returns</h4>
-<p> the pointer to a list of
+<p>the pointer to a list of
 integer values.  The returned value is owned by the <span class="type">GValue</span> and
 should never be modified or freed. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length]</span></p>
@@ -1051,7 +1051,7 @@ must have been initialized using <code class="literal">CLUTTER_TYPE_SHADER_MATRI
 </tr>
 <tr>
 <td class="parameter_name"><p>matrix</p></td>
-<td class="parameter_description"><p> a matrix of floating point values. </p></td>
+<td class="parameter_description"><p>a matrix of floating point values. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=size]</span></td>
 </tr>
 </tbody>
@@ -1085,7 +1085,7 @@ the passed <span class="type">GValue</span>. <em class="parameter"><code>value</
 </tr>
 <tr>
 <td class="parameter_name"><p>length</p></td>
-<td class="parameter_description"><p> return location for the number of returned floating
+<td class="parameter_description"><p>return location for the number of returned floating
 point values, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1094,7 +1094,7 @@ point values, or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="clutter-value-get-shader-matrix.returns"></a><h4>Returns</h4>
-<p> the pointer to a matrix
+<p>the pointer to a matrix
 of floating point values. The returned value is owned by the <span class="type">GValue</span> and
 should never be modified or freed. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=length][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1227,6 +1227,6 @@ program, if any</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

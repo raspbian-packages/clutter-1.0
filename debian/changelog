@@ -1,3 +1,37 @@
+clutter-1.0 (1.26.4+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+    - debian/patches/01_do-not-build-cookbook.patch: Refreshed
+    - Drop d/p/clutter-tests-conform-Fix-actor-offscreen-redirect.patch,
+      d/p/gdk-Ensure-surface-buffer-scale-is-set.patch,
+      d/p/0006-Handle-8-and-10-bits-colour-depth-in-picking-code-11.patch:
+      applied upstream
+    - debian/control.in: Bump libglib2.0-dev to 2.53.4
+    - debian/libclutter-1.0-0.docs: README → README.md
+  * debian/control.in: Add several -doc packages to the BDI so the links
+    between the gtk-doc files are properly resolved
+  * debian/clutter-1.0-tests.install: Install the valgrind suppression file
+  * debian/control.in: Bump Standards-Version to 4.5.0 (no further changes)
+
+ -- Laurent Bigonville <bigon@debian.org>  Sun, 15 Mar 2020 15:24:55 +0100
+
+clutter-1.0 (1.26.2+dfsg-13) unstable; urgency=medium
+
+  [ Simon McVittie ]
+  * d/tests/build: Use correct compiler for proposed autopkgtest
+    cross-architecture testing support. Thanks, Steve Langasek
+    (Closes: #946294)
+  * d/tests/build: Fix shellcheck warnings
+
+  [ Laurent Bigonville ]
+  * Add d/p/0006-Handle-8-and-10-bits-colour-depth-in-picking-code-11.patch:
+    Fix picking functionality for users with 10 bpc hardware, this allows
+    applications such as gnome-maps, totem and cheese to process mouse input
+    again. (Closes: #931618)
+  * debian/control.in: Bump Standards-Version to 4.4.1 (no further changes)
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 09 Jan 2020 01:43:03 +0100
+
 clutter-1.0 (1.26.2+dfsg-12) unstable; urgency=medium
 
   * Team upload

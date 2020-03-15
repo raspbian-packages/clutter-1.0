@@ -8,7 +8,7 @@
 <link rel="up" href="ch02.html" title="Base actors">
 <link rel="prev" href="ch02.html" title="Base actors">
 <link rel="next" href="ClutterClone.html" title="ClutterClone">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -554,7 +554,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterStage.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">├──</span> ClutterFog
     <span class="lineart">╰──</span> ClutterPerspective
     GObject
@@ -658,7 +658,7 @@ painted and thus available.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-stage-get-actor-at-pos.returns"></a><h4>Returns</h4>
-<p> the actor at the specified coordinates,
+<p>the actor at the specified coordinates,
 if any. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -808,7 +808,7 @@ focus.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>actor</p></td>
-<td class="parameter_description"><p> the actor to set key focus to, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the actor to set key focus to, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -839,7 +839,7 @@ clutter_stage_get_key_focus (<em class="parameter"><code><a class="link" href="C
 </div>
 <div class="refsect3">
 <a name="clutter-stage-get-key-focus.returns"></a><h4>Returns</h4>
-<p> the actor with key focus, or the stage. </p>
+<p>the actor with key focus, or the stage. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -899,7 +899,7 @@ entire stage height</p></td>
 </div>
 <div class="refsect3">
 <a name="clutter-stage-read-pixels.returns"></a><h4>Returns</h4>
-<p> a pointer to newly allocated memory with the buffer
+<p>a pointer to newly allocated memory with the buffer
 or <code class="literal">NULL</code> if the read failed. Use <code class="function">g_free()</code> on the returned data
 to release the resources it has allocated. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym>]</span></p>
@@ -1112,13 +1112,13 @@ Clutter backend</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p> return location for the minimum width, in pixels,
+<td class="parameter_description"><p>return location for the minimum width, in pixels,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> return location for the minimum height, in pixels,
+<td class="parameter_description"><p>return location for the minimum height, in pixels,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1231,7 +1231,7 @@ this function will set <em class="parameter"><code>clip</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>clip</p></td>
-<td class="parameter_description"><p> Return location for the clip bounds. </p></td>
+<td class="parameter_description"><p>Return location for the clip bounds. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1375,7 +1375,7 @@ clutter_stage_get_perspective (<em class="parameter"><code><a class="link" href=
 </tr>
 <tr>
 <td class="parameter_name"><p>perspective</p></td>
-<td class="parameter_description"><p> return location for a
+<td class="parameter_description"><p>return location for a
 <a class="link" href="ClutterStage.html#ClutterPerspective"><span class="type">ClutterPerspective</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1825,7 +1825,7 @@ function, and every following call will return the same pointer to
 it.</p>
 <div class="refsect3">
 <a name="clutter-stage-get-default.returns"></a><h4>Returns</h4>
-<p> the main
+<p>the main
 <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>. You should never destroy or unref the returned
 actor. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Clutter.Stage]</span></p>
@@ -1927,7 +1927,7 @@ clutter_stage_get_color (<em class="parameter"><code><a class="link" href="Clutt
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p> return location for a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>. </p></td>
+<td class="parameter_description"><p>return location for a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2180,7 +2180,7 @@ clutter_stage_get_fog (<em class="parameter"><code><a class="link" href="Clutter
 </tr>
 <tr>
 <td class="parameter_name"><p>fog</p></td>
-<td class="parameter_description"><p> return location for a <a class="link" href="ClutterStage.html#ClutterFog"><span class="type">ClutterFog</span></a> structure. </p></td>
+<td class="parameter_description"><p>return location for a <a class="link" href="ClutterStage.html#ClutterFog"><span class="type">ClutterFog</span></a> structure. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2736,6 +2736,6 @@ state.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

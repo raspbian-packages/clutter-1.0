@@ -151,6 +151,12 @@ _clutter_input_device_gdk_new (ClutterDeviceManager    *manager,
     case GDK_SOURCE_TOUCHPAD:
       device_type = CLUTTER_TOUCHPAD_DEVICE;
       break;
+    case GDK_SOURCE_TRACKPOINT:
+      device_type = CLUTTER_POINTER_DEVICE;
+      break;
+    case GDK_SOURCE_TABLET_PAD:
+      device_type = CLUTTER_CURSOR_DEVICE;
+      break;
     }
 
   if (device_type != CLUTTER_KEYBOARD_DEVICE)

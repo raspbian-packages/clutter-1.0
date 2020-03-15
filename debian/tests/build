@@ -9,8 +9,18 @@ set -eux
 
 WORKDIR=$(mktemp -d)
 export XDG_RUNTIME_DIR="$WORKDIR"
-trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
-cd $WORKDIR
+cleanup () {
+    rm -fr "$WORKDIR"
+}
+trap cleanup 0 INT QUIT ABRT PIPE TERM
+cd "$WORKDIR"
+
+if [ -n "${DEB_HOST_GNU_TYPE:-}" ]; then
+    CROSS_COMPILE="$DEB_HOST_GNU_TYPE-"
+else
+    CROSS_COMPILE=
+fi
+
 cat <<EOF > cally.c
 #include <cally/cally.h>
 
@@ -41,7 +51,7 @@ for lib in \
     clutter-wayland-compositor \
     clutter-x11 \
 ; do
-    packages="${lib}-1.0"
+    package="${lib}-1.0"
 
     case "$lib" in
         (cally)
@@ -53,7 +63,9 @@ for lib in \
             ;;
     esac
 
-    gcc -o "${lib}-test" "${code}" $(pkg-config --cflags --libs ${packages})
+    # Deliberately word-splitting, that's how pkg-config works:
+    # shellcheck disable=SC2046
+    "${CROSS_COMPILE}gcc" -o "${lib}-test" "${code}" $("${CROSS_COMPILE}pkg-config" --cflags --libs "${package}")
     echo "build ($lib): OK"
     [ -x "${lib}-test" ]
     dbus-run-session -- xvfb-run -a "./${lib}-test"

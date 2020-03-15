@@ -2221,10 +2221,12 @@ _clutter_script_construct_object (ClutterScript *script,
                                              properties,
                                              &params);
 
+      G_GNUC_BEGIN_IGNORE_DEPRECATIONS
       parameters = (GParameter *) (void *) params->data;
       oinfo->object = g_object_newv (oinfo->gtype,
                                      params->len,
                                      parameters);
+      G_GNUC_END_IGNORE_DEPRECATIONS
 
       /* by sinking the floating reference, we make sure that the reference
        * count is correct whether the object is referenced from somewhere

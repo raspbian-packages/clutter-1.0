@@ -1,4 +1,4 @@
-include $(top_srcdir)/build/autotools/glib-tap.mk
+include $(top_srcdir)/build-aux/autotools/glib-tap.mk
 
 AM_CFLAGS = -g $(CLUTTER_CFLAGS) $(MAINTAINER_CFLAGS)
 LDADD = $(top_builddir)/clutter/libclutter-1.0.la $(CLUTTER_LIBS) $(LIBM)

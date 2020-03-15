@@ -38,7 +38,7 @@
               <listitem><simpara>wayland, for the Wayland backend</simpara></listitem>
               <listitem><simpara>win32, for the Windows backend</simpara></listitem>
               <listitem><simpara>osx, for the MacOS X backend</simpara></listitem>
-              <listitem><simpara>gsk, for the GDK backend</simpara></listitem>
+              <listitem><simpara>gdk, for the GDK backend</simpara></listitem>
               <listitem><simpara>eglnative, for the EGL/KMS backend</simpara></listitem>
               <listitem><simpara>cex100, for the CEx100 backend</simpara></listitem>
             </itemizedlist>
@@ -339,6 +339,16 @@
 
         <variablelist>
           <varlistentry>
+            <term>Backends</term>
+            <listitem><para>A string value, equivalent to setting
+            <code>CLUTTER_BACKEND</code>.</para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Drivers</term>
+            <listitem><para>A string value, equivalent to setting
+            <code>CLUTTER_DRIVER</code>.</para></listitem>
+          </varlistentry>
+          <varlistentry>
             <term>ShowFps</term>
             <listitem><para>A boolean value, equivalent to setting
             <code>CLUTTER_SHOW_FPS</code>.</para></listitem>
@@ -357,6 +367,11 @@
             <term>EnableAccessibility</term>
             <listitem><para>A boolean value, equivalent to setting
             <code>CLUTTER_ENABLE_ACCESSIBILITY</code>.</para></listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>SyncToVblank</term>
+            <listitem><para>A boolean value, equivalent to setting
+            <code>CLUTTER_VBLANK</code>.</para></listitem>
           </varlistentry>
           <varlistentry>
             <term>DefaultFps</term>

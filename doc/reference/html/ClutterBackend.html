@@ -8,7 +8,7 @@
 <link rel="up" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="prev" href="clutterbackends.html" title="Part VII. Clutter Backends">
 <link rel="next" href="clutter-X11-Specific-Support.html" title="X11 Specific Support">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -219,7 +219,7 @@ clutter_get_default_backend (<em class="parameter"><code><span class="type">void
 <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a> holds backend-specific configuration options.</p>
 <div class="refsect3">
 <a name="clutter-get-default-backend.returns"></a><h4>Returns</h4>
-<p> the default backend. You should
+<p>the default backend. You should
 not ref or unref the returned object. Applications should rarely
 need to use this. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -237,7 +237,7 @@ clutter_backend_set_resolution (<em class="parameter"><code><a class="link" href
 <p>Use <a class="link" href="ClutterSettings.html#ClutterSettings--font-dpi" title="The “font-dpi” property"><span class="type">“font-dpi”</span></a> instead</p>
 </div>
 <p>Sets the resolution for font handling on the screen. This is a
-scale factor between points specified in a <span class="type">PangoFontDescription</span>
+scale factor between points specified in a <a href="https://developer.gnome.org/pango/pango-Fonts.html#PangoFontDescription-struct"><span class="type">PangoFontDescription</span></a>
 and cairo units. The default value is 96, meaning that a 10 point
 font will be 13 units high. (10 * 96. / 72. = 13.3).</p>
 <p>Applications should never need to call this function.</p>
@@ -273,7 +273,7 @@ actually involved; the terminology is conventional).</p></td>
 clutter_backend_get_resolution (<em class="parameter"><code><a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a> *backend</code></em>);</pre>
 <p>Gets the resolution for font handling on the screen.</p>
 <p>The resolution is a scale factor between points specified in a
-<span class="type">PangoFontDescription</span> and cairo units. The default value is 96.0,
+<a href="https://developer.gnome.org/pango/pango-Fonts.html#PangoFontDescription-struct"><span class="type">PangoFontDescription</span></a> and cairo units. The default value is 96.0,
 meaning that a 10 point font will be 13 units
 high (10 * 96. / 72. = 13.3).</p>
 <p>Clutter will set the resolution using the current backend when
@@ -501,7 +501,7 @@ clutter_backend_get_font_options (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="clutter-backend-get-font-options.returns"></a><h4>Returns</h4>
-<p> the font options of the <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a>.
+<p>the font options of the <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a>.
 The returned <a href="/usr/share/gtk-doc/html/cairo/cairo-cairo-font-options-t.html#cairo-font-options-t"><span class="type">cairo_font_options_t</span></a> is owned by the backend and should
 not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -522,7 +522,7 @@ clutter_backend_set_font_name (<em class="parameter"><code><a class="link" href=
  string
 must either be <code class="literal">NULL</code>, which means that the font name from the
 default <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a> will be used; or be something that can
-be parsed by the <code class="function">pango_font_description_from_string()</code> function.</p>
+be parsed by the <a href="https://developer.gnome.org/pango/pango-Fonts.html#pango-font-description-from-string"><code class="function">pango_font_description_from_string()</code></a> function.</p>
 <div class="refsect3">
 <a name="clutter-backend-set-font-name.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -611,7 +611,7 @@ explicitly create a CoglContext.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-backend-get-cogl-context.returns"></a><h4>Returns</h4>
-<p> The <span class="type">CoglContext</span> associated with <em class="parameter"><code>backend</code></em>
+<p>The <span class="type">CoglContext</span> associated with <em class="parameter"><code>backend</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -891,6 +891,6 @@ properties have been changed.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

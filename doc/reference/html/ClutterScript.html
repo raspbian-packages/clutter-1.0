@@ -8,7 +8,7 @@
 <link rel="up" href="ch11.html" title="User interface definition">
 <link rel="prev" href="ch11.html" title="User interface definition">
 <link rel="next" href="ClutterScriptable.html" title="ClutterScriptable">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -295,7 +295,7 @@ order for them to survive.</p>
 <span class="normal">  </span><span class="string">"type"</span><span class="normal">   </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"ClutterRectangle"</span><span class="symbol">,</span>
 <span class="normal">  </span><span class="string">"width"</span><span class="normal">  </span><span class="symbol">:</span><span class="normal"> </span><span class="number">100</span><span class="symbol">,</span>
 <span class="normal">  </span><span class="string">"height"</span><span class="normal"> </span><span class="symbol">:</span><span class="normal"> </span><span class="number">100</span><span class="symbol">,</span>
-<span class="normal">  </span><span class="string">"color"</span><span class="normal">  </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"#ff0000ff"</span>
+<span class="normal">  </span><span class="string">"color"</span><span class="normal">  </span><span class="symbol">:</span><span class="normal"> </span><span class="string">"&amp;num;ff0000ff"</span>
 <span class="cbracket">}</span></pre></td>
       </tr>
     </tbody>
@@ -810,7 +810,7 @@ or other custom, file-based properties.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>paths</p></td>
-<td class="parameter_description"><p> an array of strings containing
+<td class="parameter_description"><p>an array of strings containing
 different search paths. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_paths]</span></td>
 </tr>
@@ -898,7 +898,7 @@ the reference count of the returned object.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-script-get-object.returns"></a><h4>Returns</h4>
-<p> the named object, or <code class="literal">NULL</code> if no object
+<p>the named object, or <code class="literal">NULL</code> if no object
 with the given name was available. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1058,7 +1058,7 @@ objects it returns.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-script-list-objects.returns"></a><h4>Returns</h4>
-<p> a list
+<p>a list
 of <span class="type">GObject</span>s, or <code class="literal">NULL</code>. The objects are owned by the
 <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> instance. Use <code class="function">g_list_free()</code> on the returned list when
 done. </p>
@@ -1198,7 +1198,7 @@ that do not support GModule.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>func</p></td>
-<td class="parameter_description"><p> signal connection function. </p></td>
+<td class="parameter_description"><p>signal connection function. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1242,7 +1242,7 @@ passed to this function.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>name</p></td>
-<td class="parameter_description"><p> a name for the <em class="parameter"><code>state</code></em>
+<td class="parameter_description"><p>a name for the <em class="parameter"><code>state</code></em>
 , or <code class="literal">NULL</code> to
 set the default <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
@@ -1285,7 +1285,7 @@ clutter_script_get_states (<em class="parameter"><code><a class="link" href="Clu
 </tr>
 <tr>
 <td class="parameter_name"><p>name</p></td>
-<td class="parameter_description"><p> the name of the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the name of the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1293,7 +1293,7 @@ clutter_script_get_states (<em class="parameter"><code><a class="link" href="Clu
 </div>
 <div class="refsect3">
 <a name="clutter-script-get-states.returns"></a><h4>Returns</h4>
-<p> a pointer to the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> for the
+<p>a pointer to the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> for the
 given name. The <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> is owned by the <a class="link" href="ClutterScript.html" title="ClutterScript"><span class="type">ClutterScript</span></a> instance
 and it should not be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1392,7 +1392,7 @@ clutter_script_get_translation_domain (<em class="parameter"><code><a class="lin
 </div>
 <div class="refsect3">
 <a name="clutter-script-get-translation-domain.returns"></a><h4>Returns</h4>
-<p> the translation domain, if any is set,
+<p>the translation domain, if any is set,
 or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1422,7 +1422,7 @@ clutter_script_set_translation_domain (<em class="parameter"><code><a class="lin
 </tr>
 <tr>
 <td class="parameter_name"><p>domain</p></td>
-<td class="parameter_description"><p> the translation domain, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the translation domain, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1547,6 +1547,6 @@ will use <code class="function">gettext()</code>, otherwise <code class="functio
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

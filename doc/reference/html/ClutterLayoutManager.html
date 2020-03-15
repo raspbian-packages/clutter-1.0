@@ -8,7 +8,7 @@
 <link rel="up" href="ch01.html" title="Abstract classes and interfaces">
 <link rel="prev" href="ClutterMedia.html" title="ClutterMedia">
 <link rel="next" href="ClutterLayoutMeta.html" title="ClutterLayoutMeta">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -227,7 +227,7 @@ a generic container using <a class="link" href="ClutterLayoutManager.html" title
 <p>The implementation of a layout manager does not differ from  the
 implementation of the size requisition and allocation bits of
 <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, so you should read the relative documentation
-forr subclassing <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>.</p>
+for subclassing <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>.</p>
 <p>The layout manager implementation can hold a back pointer to the
 <a class="link" href="ClutterContainer.html" title="ClutterContainer"><span class="type">ClutterContainer</span></a> by implementing the <a class="link" href="ClutterLayoutManager.html#ClutterLayoutManagerClass.set-container"><code class="function">ClutterLayoutManagerClass.set_container()</code></a>
 virtual function. The layout manager should not hold a real reference (i.e.
@@ -405,13 +405,13 @@ to <em class="parameter"><code>manager</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>min_width_p</p></td>
-<td class="parameter_description"><p> return location for the minimum width
+<td class="parameter_description"><p>return location for the minimum width
 of the layout, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>nat_width_p</p></td>
-<td class="parameter_description"><p> return location for the natural width
+<td class="parameter_description"><p>return location for the natural width
 of the layout, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -462,13 +462,13 @@ to <em class="parameter"><code>manager</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>min_height_p</p></td>
-<td class="parameter_description"><p> return location for the minimum height
+<td class="parameter_description"><p>return location for the minimum height
 of the layout, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>nat_height_p</p></td>
-<td class="parameter_description"><p> return location for the natural height
+<td class="parameter_description"><p>return location for the natural height
 of the layout, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -581,7 +581,7 @@ count of the <em class="parameter"><code>container</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>container</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterContainer.html" title="ClutterContainer"><span class="type">ClutterContainer</span></a> using <em class="parameter"><code>manager</code></em>
+<td class="parameter_description"><p>a <a class="link" href="ClutterContainer.html" title="ClutterContainer"><span class="type">ClutterContainer</span></a> using <em class="parameter"><code>manager</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -634,7 +634,7 @@ to the <em class="parameter"><code>actor</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-layout-manager-get-child-meta.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterLayoutMeta.html" title="ClutterLayoutMeta"><span class="type">ClutterLayoutMeta</span></a>, or <code class="literal">NULL</code> if the
+<p>a <a class="link" href="ClutterLayoutMeta.html" title="ClutterLayoutMeta"><span class="type">ClutterLayoutMeta</span></a>, or <code class="literal">NULL</code> if the
 <a class="link" href="ClutterLayoutManager.html" title="ClutterLayoutManager"><span class="type">ClutterLayoutManager</span></a> does not have layout properties. The returned
 layout meta instance is owned by the <a class="link" href="ClutterLayoutManager.html" title="ClutterLayoutManager"><span class="type">ClutterLayoutManager</span></a> and it
 should not be unreferenced. </p>
@@ -901,7 +901,7 @@ the <a class="link" href="ClutterLayoutMeta.html" title="ClutterLayoutMeta"><spa
 </div>
 <div class="refsect3">
 <a name="clutter-layout-manager-find-child-property.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GParamSpec</span> describing the property,
+<p>a <span class="type">GParamSpec</span> describing the property,
 or <code class="literal">NULL</code> if no property with that name exists. The returned
 <span class="type">GParamSpec</span> is owned by the layout manager and should not be
 modified or freed. </p>
@@ -935,7 +935,7 @@ stored inside the <a class="link" href="ClutterLayoutMeta.html" title="ClutterLa
 </tr>
 <tr>
 <td class="parameter_name"><p>n_pspecs</p></td>
-<td class="parameter_description"><p> return location for the number of returned
+<td class="parameter_description"><p>return location for the number of returned
 <span class="type">GParamSpec</span>s. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -944,7 +944,7 @@ stored inside the <a class="link" href="ClutterLayoutMeta.html" title="ClutterLa
 </div>
 <div class="refsect3">
 <a name="clutter-layout-manager-list-child-properties.returns"></a><h4>Returns</h4>
-<p> the newly-allocated,
+<p>the newly-allocated,
 <code class="literal">NULL</code>-terminated array of <span class="type">GParamSpec</span>s. Use <code class="function">g_free()</code> to free the
 resources allocated for the array. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_pspecs]</span></p>
@@ -997,7 +997,7 @@ or as a logical id returned by <a class="link" href="ClutterAlpha.html#clutter-a
 </div>
 <div class="refsect3">
 <a name="clutter-layout-manager-begin-animation.returns"></a><h4>Returns</h4>
-<p> The <a class="link" href="ClutterAlpha.html" title="ClutterAlpha"><span class="type">ClutterAlpha</span></a> created by the
+<p>The <a class="link" href="ClutterAlpha.html" title="ClutterAlpha"><span class="type">ClutterAlpha</span></a> created by the
 layout manager; the returned instance is owned by the layout
 manager and should not be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1273,6 +1273,6 @@ by using <a class="link" href="ClutterLayoutManager.html#clutter-layout-manager-
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

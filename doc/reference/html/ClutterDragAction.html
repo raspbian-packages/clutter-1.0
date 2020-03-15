@@ -8,7 +8,7 @@
 <link rel="up" href="ch04.html" title="Actions">
 <link rel="prev" href="ClutterClickAction.html" title="ClutterClickAction">
 <link rel="next" href="ClutterDropAction.html" title="ClutterDropAction">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -370,13 +370,13 @@ by the <a class="link" href="ClutterSettings.html#ClutterSettings--dnd-drag-thre
 </tr>
 <tr>
 <td class="parameter_name"><p>x_threshold</p></td>
-<td class="parameter_description"><p> return location for the horizontal drag
+<td class="parameter_description"><p>return location for the horizontal drag
 threshold value, in pixels. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y_threshold</p></td>
-<td class="parameter_description"><p> return location for the vertical drag
+<td class="parameter_description"><p>return location for the vertical drag
 threshold value, in pixels. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -408,7 +408,7 @@ clutter_drag_action_set_drag_handle (<em class="parameter"><code><a class="link"
 </tr>
 <tr>
 <td class="parameter_name"><p>handle</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code> to unset. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code> to unset. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -439,7 +439,7 @@ clutter_drag_action_get_drag_handle (<em class="parameter"><code><a class="link"
 </div>
 <div class="refsect3">
 <a name="clutter-drag-action-get-drag-handle.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, used as the drag
+<p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, used as the drag
 handle, or <code class="literal">NULL</code> if none was set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -533,7 +533,7 @@ If <em class="parameter"><code>drag_area</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>drag_area</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -566,7 +566,7 @@ in parents coordinates.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>drag_area</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> to be filled. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Base-geometric-types.html#ClutterRect"><span class="type">ClutterRect</span></a> to be filled. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -604,12 +604,12 @@ that started the dragging</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>press_x</p></td>
-<td class="parameter_description"><p> return location for the press event's X coordinate. </p></td>
+<td class="parameter_description"><p>return location for the press event's X coordinate. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>press_y</p></td>
-<td class="parameter_description"><p> return location for the press event's Y coordinate. </p></td>
+<td class="parameter_description"><p>return location for the press event's Y coordinate. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -642,13 +642,13 @@ event during the dragging</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>motion_x</p></td>
-<td class="parameter_description"><p> return location for the latest motion
+<td class="parameter_description"><p>return location for the latest motion
 event's X coordinate. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>motion_y</p></td>
-<td class="parameter_description"><p> return location for the latest motion
+<td class="parameter_description"><p>return location for the latest motion
 event's Y coordinate. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1110,6 +1110,6 @@ if it should be stopped.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

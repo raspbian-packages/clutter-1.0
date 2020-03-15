@@ -8,7 +8,7 @@
 <link rel="up" href="ch01.html" title="Abstract classes and interfaces">
 <link rel="prev" href="ClutterActor.html" title="ClutterActor">
 <link rel="next" href="ClutterChildMeta.html" title="ClutterChildMeta">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -278,7 +278,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterContainer.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/GTypeModule.html">GInterface</a>
     <span class="lineart">╰──</span> ClutterContainer
 </pre>
 </div>
@@ -616,7 +616,7 @@ clutter_container_get_children (<em class="parameter"><code><a class="link" href
 </div>
 <div class="refsect3">
 <a name="clutter-container-get-children.returns"></a><h4>Returns</h4>
-<p> a list
+<p>a list
 of <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>s. Use <code class="function">g_list_free()</code> on the returned
 list when done. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Clutter.Actor][<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>]</span></p>
@@ -662,7 +662,7 @@ virtual function, which has been deprecated.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p> a function to be called for each child. </p></td>
+<td class="parameter_description"><p>a function to be called for each child. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -710,7 +710,7 @@ virtual function, which has been deprecated.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p> a function to be called for each child. </p></td>
+<td class="parameter_description"><p>a function to be called for each child. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -755,7 +755,7 @@ into any child container.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-container-find-child-by-name.returns"></a><h4>Returns</h4>
-<p> The child actor with the requested name,
+<p>The child actor with the requested name,
 or <code class="literal">NULL</code> if no actor with that name was found. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -800,7 +800,7 @@ which has been deprecated. The default implementation will call
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p> the sibling to raise to, or <code class="literal">NULL</code> to raise
+<td class="parameter_description"><p>the sibling to raise to, or <code class="literal">NULL</code> to raise
 to the top. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -848,7 +848,7 @@ which has been deprecated. The default implementation will call
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p> the sibling to lower to, or <code class="literal">NULL</code> to lower
+<td class="parameter_description"><p>the sibling to lower to, or <code class="literal">NULL</code> to lower
 to the bottom. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -920,7 +920,7 @@ clutter_container_class_find_child_property
 </div>
 <div class="refsect3">
 <a name="clutter-container-class-find-child-property.returns"></a><h4>Returns</h4>
-<p> The <span class="type">GParamSpec</span> for the property or <code class="literal">NULL</code>
+<p>The <span class="type">GParamSpec</span> for the property or <code class="literal">NULL</code>
 if no such property exist. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -958,7 +958,7 @@ clutter_container_class_list_child_properties
 </div>
 <div class="refsect3">
 <a name="clutter-container-class-list-child-properties.returns"></a><h4>Returns</h4>
-<p> an array
+<p>an array
 of <span class="type">GParamSpec</span>s which should be freed after use. </p>
 <p><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_properties][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1304,7 +1304,7 @@ clutter_container_get_child_meta (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="clutter-container-get-child-meta.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="ClutterChildMeta.html" title="ClutterChildMeta"><span class="type">ClutterChildMeta</span></a> for the <em class="parameter"><code>actor</code></em>
+<p>the <a class="link" href="ClutterChildMeta.html" title="ClutterChildMeta"><span class="type">ClutterChildMeta</span></a> for the <em class="parameter"><code>actor</code></em>
 child
 of <em class="parameter"><code>container</code></em>
 or <code class="literal">NULL</code> if the specifiec actor does not exist or the
@@ -1592,7 +1592,7 @@ being set through the <a class="link" href="ClutterContainer.html#clutter-contai
 </tr>
 <tr>
 <td class="parameter_name"><p>pspec</p></td>
-<td class="parameter_description"><p> the <span class="type">GParamSpec</span> of the property set. </p></td>
+<td class="parameter_description"><p>the <span class="type">GParamSpec</span> of the property set. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GParamSpec]</span></td>
 </tr>
 <tr>
@@ -1609,6 +1609,6 @@ being set through the <a class="link" href="ClutterContainer.html#clutter-contai
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

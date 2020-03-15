@@ -8,7 +8,7 @@
 <link rel="up" href="ch13.html" title="Base Classes">
 <link rel="prev" href="ch13.html" title="Base Classes">
 <link rel="next" href="CallyGroup.html" title="CallyGroup">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -59,7 +59,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">AtkObject</span> *
+<a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct"><span class="returnvalue">AtkObject</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="CallyActor.html#cally-actor-new" title="cally_actor_new ()">cally_actor_new</a> <span class="c_punctuation">()</span>
@@ -122,8 +122,8 @@
 <div class="refsect1">
 <a name="CallyActor.object-hierarchy"></a><h2>Object Hierarchy</h2>
 <pre class="screen">    GObject
-    <span class="lineart">╰──</span> AtkObject
-        <span class="lineart">╰──</span> AtkGObjectAccessible
+    <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct">AtkObject</a>
+        <span class="lineart">╰──</span> <a href="/usr/share/gtk-doc/html/atk/AtkGObjectAccessible.html#AtkGObjectAccessible-struct">AtkGObjectAccessible</a>
             <span class="lineart">╰──</span> CallyActor
                 <span class="lineart">├──</span> <a class="link" href="CallyClone.html" title="CallyClone">CallyClone</a>
                 <span class="lineart">├──</span> <a class="link" href="CallyGroup.html" title="CallyGroup">CallyGroup</a>
@@ -136,7 +136,7 @@
 <a name="CallyActor.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
 <p>
 CallyActor implements
- AtkComponent and  AtkAction.</p>
+ <a href="/usr/share/gtk-doc/html/atk/AtkComponent.html#AtkComponent-struct">AtkComponent</a> and  <a href="/usr/share/gtk-doc/html/atk/AtkAction.html#AtkAction-struct">AtkAction</a>.</p>
 </div>
 <div class="refsect1">
 <a name="CallyActor.description"></a><h2>Description</h2>
@@ -149,7 +149,7 @@ exposing the common elements on each actor (position, extents, etc).</p>
 <a name="CallyActionFunc"></a><h3>CallyActionFunc ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>
 <span class="c_punctuation">(</span>*CallyActionFunc<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="CallyActor.html" title="CallyActor"><span class="type">CallyActor</span></a> *cally_actor</code></em>);</pre>
-<p>Action function, to be used on <span class="type">AtkAction</span> implementations as a individual
+<p>Action function, to be used on <a href="/usr/share/gtk-doc/html/atk/AtkAction.html#AtkAction-struct"><span class="type">AtkAction</span></a> implementations as a individual
 action</p>
 <div class="refsect3">
 <a name="CallyActionFunc.parameters"></a><h4>Parameters</h4>
@@ -174,7 +174,7 @@ action</p>
 <pre class="programlisting"><span class="returnvalue">void</span>
 <span class="c_punctuation">(</span>*CallyActionCallback<span class="c_punctuation">)</span> (<em class="parameter"><code><a class="link" href="CallyActor.html" title="CallyActor"><span class="type">CallyActor</span></a> *cally_actor</code></em>,
                         <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
-<p>Action function, to be used on <span class="type">AtkAction</span> implementations as
+<p>Action function, to be used on <a href="/usr/share/gtk-doc/html/atk/AtkAction.html#AtkAction-struct"><span class="type">AtkAction</span></a> implementations as
 an individual action. Unlike <a class="link" href="CallyActor.html#CallyActionFunc" title="CallyActionFunc ()"><span class="type">CallyActionFunc</span></a>, this function
 uses the <em class="parameter"><code>user_data</code></em>
  argument passed to <a class="link" href="CallyActor.html#cally-actor-add-action-full" title="cally_actor_add_action_full ()"><code class="function">cally_actor_add_action_full()</code></a>.</p>
@@ -205,7 +205,7 @@ uses the <em class="parameter"><code>user_data</code></em>
 <hr>
 <div class="refsect2">
 <a name="cally-actor-new"></a><h3>cally_actor_new ()</h3>
-<pre class="programlisting"><span class="returnvalue">AtkObject</span> *
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct"><span class="returnvalue">AtkObject</span></a> *
 cally_actor_new (<em class="parameter"><code><a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> *actor</code></em>);</pre>
 <p>Creates a new <a class="link" href="CallyActor.html" title="CallyActor"><span class="type">CallyActor</span></a> for the given <em class="parameter"><code>actor</code></em>
 </p>
@@ -226,7 +226,7 @@ cally_actor_new (<em class="parameter"><code><a class="link" href="ClutterActor.
 </div>
 <div class="refsect3">
 <a name="cally-actor-new.returns"></a><h4>Returns</h4>
-<p> the newly created <span class="type">AtkObject</span></p>
+<p> the newly created <a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct"><span class="type">AtkObject</span></a></p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
 </div>
@@ -239,7 +239,7 @@ cally_actor_add_action (<em class="parameter"><code><a class="link" href="CallyA
                         <em class="parameter"><code>const <span class="type">gchar</span> *action_description</code></em>,
                         <em class="parameter"><code>const <span class="type">gchar</span> *action_keybinding</code></em>,
                         <em class="parameter"><code><a class="link" href="CallyActor.html#CallyActionFunc" title="CallyActionFunc ()"><span class="type">CallyActionFunc</span></a> action_func</code></em>);</pre>
-<p>Adds a new action to be accessed with the <span class="type">AtkAction</span> interface.</p>
+<p>Adds a new action to be accessed with the <a href="/usr/share/gtk-doc/html/atk/AtkAction.html#AtkAction-struct"><span class="type">AtkAction</span></a> interface.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
 <a name="cally-actor-add-action.parameters"></a><h4>Parameters</h4>
@@ -295,7 +295,7 @@ cally_actor_add_action_full (<em class="parameter"><code><a class="link" href="C
                              <em class="parameter"><code><a class="link" href="CallyActor.html#CallyActionCallback" title="CallyActionCallback ()"><span class="type">CallyActionCallback</span></a> callback</code></em>,
                              <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>,
                              <em class="parameter"><code><span class="type">GDestroyNotify</span> notify</code></em>);</pre>
-<p>Adds a new action to be accessed with the <span class="type">AtkAction</span> interface.</p>
+<p>Adds a new action to be accessed with the <a href="/usr/share/gtk-doc/html/atk/AtkAction.html#AtkAction-struct"><span class="type">AtkAction</span></a> interface.</p>
 <p><span class="annotation">[<acronym title="Rename the original symbol's name to SYMBOL."><span class="acronym">rename-to</span></acronym> cally_actor_add_action]</span></p>
 <div class="refsect3">
 <a name="cally-actor-add-action-full.parameters"></a><h4>Parameters</h4>
@@ -328,12 +328,12 @@ cally_actor_add_action_full (<em class="parameter"><code><a class="link" href="C
 </tr>
 <tr>
 <td class="parameter_name"><p>callback</p></td>
-<td class="parameter_description"><p> the callback of the action. </p></td>
+<td class="parameter_description"><p>the callback of the action. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid until the GDestroyNotify argument is called."><span class="acronym">scope notified</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>user_data</p></td>
-<td class="parameter_description"><p> data to be passed to <em class="parameter"><code>callback</code></em>
+<td class="parameter_description"><p>data to be passed to <em class="parameter"><code>callback</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
@@ -499,6 +499,6 @@ ClutterContainer interface</p></td>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

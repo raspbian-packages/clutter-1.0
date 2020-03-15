@@ -8,7 +8,7 @@
 <link rel="up" href="ch01.html" title="Abstract classes and interfaces">
 <link rel="prev" href="ch01.html" title="Abstract classes and interfaces">
 <link rel="next" href="ClutterContainer.html" title="ClutterContainer">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -1579,7 +1579,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">PangoContext</span> *
+<a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="returnvalue">PangoContext</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="ClutterActor.html#clutter-actor-get-pango-context" title="clutter_actor_get_pango_context ()">clutter_actor_get_pango_context</a> <span class="c_punctuation">()</span>
@@ -1587,7 +1587,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">PangoContext</span> *
+<a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="returnvalue">PangoContext</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="ClutterActor.html#clutter-actor-create-pango-context" title="clutter_actor_create_pango_context ()">clutter_actor_create_pango_context</a> <span class="c_punctuation">()</span>
@@ -1595,7 +1595,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">PangoLayout</span> *
+<a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="returnvalue">PangoLayout</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="ClutterActor.html#clutter-actor-create-pango-layout" title="clutter_actor_create_pango_layout ()">clutter_actor_create_pango_layout</a> <span class="c_punctuation">()</span>
@@ -1619,7 +1619,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">AtkObject</span> *
+<a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct"><span class="returnvalue">AtkObject</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="ClutterActor.html#clutter-actor-get-accessible" title="clutter_actor_get_accessible ()">clutter_actor_get_accessible</a> <span class="c_punctuation">()</span>
@@ -2714,7 +2714,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterActor.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">╰──</span> ClutterMargin
     GObject
     <span class="lineart">╰──</span> GInitiallyUnowned
@@ -3733,7 +3733,7 @@ parents is a toplevel stage; see also <a class="link" href="ClutterActor.html#CL
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> user data. </p></td>
+<td class="parameter_description"><p>user data. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="This parameter is a 'user_data', for callbacks; many bindings can pass NULL here."><span class="acronym">closure</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -4311,7 +4311,7 @@ rectangular area.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>clip</p></td>
-<td class="parameter_description"><p> a rectangular clip region, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a rectangular clip region, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5098,7 +5098,7 @@ or <code class="function">get_preferred_height()</code> virtual functions.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>box</p></td>
-<td class="parameter_description"><p> the function fills this in with the actor's allocation. </p></td>
+<td class="parameter_description"><p>the function fills this in with the actor's allocation. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5138,7 +5138,7 @@ those transformations do not affect layout, only rendering.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>geom</p></td>
-<td class="parameter_description"><p> allocation geometry in pixels. </p></td>
+<td class="parameter_description"><p>allocation geometry in pixels. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -5188,13 +5188,13 @@ the behaviour of <a class="link" href="ClutterActor.html#clutter-actor-get-abs-a
 </tr>
 <tr>
 <td class="parameter_name"><p>ancestor</p></td>
-<td class="parameter_description"><p> A <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> to calculate the vertices
+<td class="parameter_description"><p>A <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> to calculate the vertices
 against, or <code class="literal">NULL</code> to use the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>verts</p></td>
-<td class="parameter_description"><p> return
+<td class="parameter_description"><p>return
 location for an array of 4 <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a> in which to store the result. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> fixed-size=4][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Clutter.Vertex]</span></td>
 </tr>
@@ -5237,25 +5237,25 @@ geometry management using the <a class="link" href="ClutterActor.html#ClutterAct
 </tr>
 <tr>
 <td class="parameter_name"><p>min_width_p</p></td>
-<td class="parameter_description"><p> return location for the minimum
+<td class="parameter_description"><p>return location for the minimum
 width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>min_height_p</p></td>
-<td class="parameter_description"><p> return location for the minimum
+<td class="parameter_description"><p>return location for the minimum
 height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_width_p</p></td>
-<td class="parameter_description"><p> return location for the natural
+<td class="parameter_description"><p>return location for the natural
 width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_height_p</p></td>
-<td class="parameter_description"><p> return location for the natural
+<td class="parameter_description"><p>return location for the natural
 height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -5301,13 +5301,13 @@ or a negative value to indicate that no height is defined</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>min_width_p</p></td>
-<td class="parameter_description"><p> return location for minimum width,
+<td class="parameter_description"><p>return location for minimum width,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_width_p</p></td>
-<td class="parameter_description"><p> return location for the natural
+<td class="parameter_description"><p>return location for the natural
 width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -5352,13 +5352,13 @@ or a negative value to indicate that no width is defined</p></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>min_height_p</p></td>
-<td class="parameter_description"><p> return location for minimum height,
+<td class="parameter_description"><p>return location for minimum height,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>natural_height_p</p></td>
-<td class="parameter_description"><p> return location for natural
+<td class="parameter_description"><p>return location for natural
 height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -5673,7 +5673,7 @@ the newly created structure.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-margin-copy.returns"></a><h4>Returns</h4>
-<p> a copy of the <a class="link" href="ClutterActor.html#ClutterMargin"><span class="type">ClutterMargin</span></a>. </p>
+<p>a copy of the <a class="link" href="ClutterActor.html#ClutterMargin"><span class="type">ClutterMargin</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -5710,7 +5710,7 @@ clutter_margin_new (<em class="parameter"><code><span class="type">void</span></
 <p>Creates a new <a class="link" href="ClutterActor.html#ClutterMargin"><span class="type">ClutterMargin</span></a>.</p>
 <div class="refsect3">
 <a name="clutter-margin-new.returns"></a><h4>Returns</h4>
-<p> a newly allocated <a class="link" href="ClutterActor.html#ClutterMargin"><span class="type">ClutterMargin</span></a>. Use
+<p>a newly allocated <a class="link" href="ClutterActor.html#ClutterMargin"><span class="type">ClutterMargin</span></a>. Use
 <a class="link" href="ClutterActor.html#clutter-margin-free" title="clutter_margin_free ()"><code class="function">clutter_margin_free()</code></a> to free the resources associated with it when
 done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -5771,7 +5771,7 @@ clutter_actor_get_margin (<em class="parameter"><code><a class="link" href="Clut
 </tr>
 <tr>
 <td class="parameter_name"><p>margin</p></td>
-<td class="parameter_description"><p> return location for a <a class="link" href="ClutterActor.html#ClutterMargin"><span class="type">ClutterMargin</span></a>. </p></td>
+<td class="parameter_description"><p>return location for a <a class="link" href="ClutterActor.html#ClutterMargin"><span class="type">ClutterMargin</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -6212,7 +6212,7 @@ the actor is destroyed.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>manager</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterLayoutManager.html" title="ClutterLayoutManager"><span class="type">ClutterLayoutManager</span></a>, or <code class="literal">NULL</code> to unset it. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterLayoutManager.html" title="ClutterLayoutManager"><span class="type">ClutterLayoutManager</span></a>, or <code class="literal">NULL</code> to unset it. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -6244,7 +6244,7 @@ clutter_actor_get_layout_manager (<em class="parameter"><code><a class="link" hr
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-layout-manager.returns"></a><h4>Returns</h4>
-<p> a pointer to the <a class="link" href="ClutterLayoutManager.html" title="ClutterLayoutManager"><span class="type">ClutterLayoutManager</span></a>,
+<p>a pointer to the <a class="link" href="ClutterLayoutManager.html" title="ClutterLayoutManager"><span class="type">ClutterLayoutManager</span></a>,
 or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -6278,7 +6278,7 @@ actor. The default background color of an actor is transparent.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>, or <code class="literal">NULL</code> to unset a previously
+<td class="parameter_description"><p>a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>, or <code class="literal">NULL</code> to unset a previously
 set color. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -6310,7 +6310,7 @@ clutter_actor_get_background_color (<em class="parameter"><code><a class="link" 
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p> return location for a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>. </p></td>
+<td class="parameter_description"><p>return location for a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -6388,7 +6388,7 @@ requested size and position if the actor's allocation is invalid.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>geometry</p></td>
-<td class="parameter_description"><p> A location to store actors <a class="link" href="clutter-Base-geometric-types.html#ClutterGeometry"><span class="type">ClutterGeometry</span></a>. </p></td>
+<td class="parameter_description"><p>A location to store actors <a class="link" href="clutter-Base-geometric-types.html#ClutterGeometry"><span class="type">ClutterGeometry</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -6471,12 +6471,12 @@ should probably call a different function like
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p> return location for the width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> return location for the height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -6552,12 +6552,12 @@ otherwise, returns 0,0.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p> return location for the X coordinate, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the X coordinate, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p> return location for the Y coordinate, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the Y coordinate, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7021,13 +7021,13 @@ clutter_actor_get_pivot_point (<em class="parameter"><code><a class="link" href=
 </tr>
 <tr>
 <td class="parameter_name"><p>pivot_x</p></td>
-<td class="parameter_description"><p> return location for the normalized X
+<td class="parameter_description"><p>return location for the normalized X
 coordinate of the pivot point, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>pivot_y</p></td>
-<td class="parameter_description"><p> return location for the normalized Y
+<td class="parameter_description"><p>return location for the normalized Y
 coordinate of the pivot point, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -7157,13 +7157,13 @@ clutter_actor_get_scale (<em class="parameter"><code><a class="link" href="Clutt
 </tr>
 <tr>
 <td class="parameter_name"><p>scale_x</p></td>
-<td class="parameter_description"><p> Location to store horizonal
+<td class="parameter_description"><p>Location to store horizonal
 scale factor, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>scale_y</p></td>
-<td class="parameter_description"><p> Location to store vertical
+<td class="parameter_description"><p>Location to store vertical
 scale factor, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -7436,19 +7436,19 @@ clutter_actor_get_translation (<em class="parameter"><code><a class="link" href=
 </tr>
 <tr>
 <td class="parameter_name"><p>translate_x</p></td>
-<td class="parameter_description"><p> return location for the X component
+<td class="parameter_description"><p>return location for the X component
 of the translation, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>translate_y</p></td>
-<td class="parameter_description"><p> return location for the Y component
+<td class="parameter_description"><p>return location for the Y component
 of the translation, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>translate_z</p></td>
-<td class="parameter_description"><p> return location for the Z component
+<td class="parameter_description"><p>return location for the Z component
 of the translation, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -7483,7 +7483,7 @@ actor's allocation and to the actor's pivot point.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>transform</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>, or <code class="literal">NULL</code> to
+<td class="parameter_description"><p>a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>, or <code class="literal">NULL</code> to
 unset a custom transformation. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -7515,7 +7515,7 @@ clutter_actor_get_transform (<em class="parameter"><code><a class="link" href="C
 </tr>
 <tr>
 <td class="parameter_name"><p>transform</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7552,7 +7552,7 @@ transformation is the identity matrix.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>transform</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7586,7 +7586,7 @@ the <em class="parameter"><code>transform</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>transform</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7627,7 +7627,7 @@ transformation (i.e. scale, rotation, etc)</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>vertex</p></td>
-<td class="parameter_description"><p> The translated <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>. </p></td>
+<td class="parameter_description"><p>The translated <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7673,22 +7673,22 @@ the <a class="link" href="ClutterActor.html#ClutterActorClass.paint"><code class
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p> x screen coordinate of the point to unproject. </p></td>
+<td class="parameter_description"><p>x screen coordinate of the point to unproject. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input. Default is transfer none."><span class="acronym">in</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p> y screen coordinate of the point to unproject. </p></td>
+<td class="parameter_description"><p>y screen coordinate of the point to unproject. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input. Default is transfer none."><span class="acronym">in</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>x_out</p></td>
-<td class="parameter_description"><p> return location for the unprojected x coordinance. </p></td>
+<td class="parameter_description"><p>return location for the unprojected x coordinance. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y_out</p></td>
-<td class="parameter_description"><p> return location for the unprojected y coordinance. </p></td>
+<td class="parameter_description"><p>return location for the unprojected y coordinance. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7734,7 +7734,7 @@ the behaviour of <a class="link" href="ClutterActor.html#clutter-actor-apply-tra
 </tr>
 <tr>
 <td class="parameter_name"><p>ancestor</p></td>
-<td class="parameter_description"><p> A <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> ancestor, or <code class="literal">NULL</code> to use the
+<td class="parameter_description"><p>A <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> ancestor, or <code class="literal">NULL</code> to use the
 default <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -7745,7 +7745,7 @@ default <a class="link" href="ClutterStage.html" title="ClutterStage"><span clas
 </tr>
 <tr>
 <td class="parameter_name"><p>vertex</p></td>
-<td class="parameter_description"><p> The translated <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>. </p></td>
+<td class="parameter_description"><p>The translated <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7778,12 +7778,12 @@ clutter_actor_get_transformed_position
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p> return location for the X coordinate, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the X coordinate, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p> return location for the Y coordinate, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the Y coordinate, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7830,12 +7830,12 @@ to get the coords of the actual quadrangle.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p> return location for the width, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the width, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> return location for the height, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the height, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -7935,7 +7935,7 @@ coordinates  as follows:</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>verts</p></td>
-<td class="parameter_description"><p> Pointer to a location of an array
+<td class="parameter_description"><p>Pointer to a location of an array
 of 4 <a class="link" href="clutter-Base-geometric-types.html#ClutterVertex"><span class="type">ClutterVertex</span></a> where to store the result. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> fixed-size=4]</span></td>
 </tr>
@@ -7979,7 +7979,7 @@ as long as you don't call <a class="link" href="clutter-Base-geometric-types.htm
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-paint-volume.returns"></a><h4>Returns</h4>
-<p> a pointer to a <a class="link" href="clutter-Base-geometric-types.html#ClutterPaintVolume"><span class="type">ClutterPaintVolume</span></a>,
+<p>a pointer to a <a class="link" href="clutter-Base-geometric-types.html#ClutterPaintVolume"><span class="type">ClutterPaintVolume</span></a>,
 or <code class="literal">NULL</code> if no volume could be determined. The returned pointer
 is not guaranteed to be valid across multiple frames; if you want
 to keep it, you will need to copy it using <a class="link" href="clutter-Base-geometric-types.html#clutter-paint-volume-copy" title="clutter_paint_volume_copy ()"><code class="function">clutter_paint_volume_copy()</code></a>. </p>
@@ -8019,7 +8019,7 @@ the actor is unable to determine a paint volume.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>box</p></td>
-<td class="parameter_description"><p> return location for a <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>. </p></td>
+<td class="parameter_description"><p>return location for a <a class="link" href="clutter-Base-geometric-types.html#ClutterActorBox"><span class="type">ClutterActorBox</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -8076,7 +8076,7 @@ together using <a class="link" href="clutter-Base-geometric-types.html#clutter-p
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-transformed-paint-volume.returns"></a><h4>Returns</h4>
-<p> a pointer to a <a class="link" href="clutter-Base-geometric-types.html#ClutterPaintVolume"><span class="type">ClutterPaintVolume</span></a>,
+<p>a pointer to a <a class="link" href="clutter-Base-geometric-types.html#ClutterPaintVolume"><span class="type">ClutterPaintVolume</span></a>,
 or <code class="literal">NULL</code> if no volume could be determined. The returned pointer is
 not guaranteed to be valid across multiple frames; if you wish to
 keep it, you will have to copy it using <a class="link" href="clutter-Base-geometric-types.html#clutter-paint-volume-copy" title="clutter_paint_volume_copy ()"><code class="function">clutter_paint_volume_copy()</code></a>. </p>
@@ -8115,7 +8115,7 @@ paint volume.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-default-paint-volume.returns"></a><h4>Returns</h4>
-<p> a pointer to the default
+<p>a pointer to the default
 <a class="link" href="clutter-Base-geometric-types.html#ClutterPaintVolume"><span class="type">ClutterPaintVolume</span></a>, relative to the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code> if
 the actor could not compute a valid paint volume. The returned value
 is not guaranteed to be stable across multiple frames, so if you
@@ -8148,7 +8148,7 @@ clutter_actor_set_content (<em class="parameter"><code><a class="link" href="Clu
 </tr>
 <tr>
 <td class="parameter_name"><p>content</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterContent.html" title="ClutterContent"><span class="type">ClutterContent</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterContent.html" title="ClutterContent"><span class="type">ClutterContent</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -8180,7 +8180,7 @@ clutter_actor_get_content (<em class="parameter"><code><a class="link" href="Clu
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-content.returns"></a><h4>Returns</h4>
-<p> a pointer to the <a class="link" href="ClutterContent.html" title="ClutterContent"><span class="type">ClutterContent</span></a> instance,
+<p>a pointer to the <a class="link" href="ClutterContent.html" title="ClutterContent"><span class="type">ClutterContent</span></a> instance,
 or <code class="literal">NULL</code> if none was set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -8316,13 +8316,13 @@ clutter_actor_get_content_scaling_filters
 </tr>
 <tr>
 <td class="parameter_name"><p>min_filter</p></td>
-<td class="parameter_description"><p> return location for the minification
+<td class="parameter_description"><p>return location for the minification
 filter, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>mag_filter</p></td>
-<td class="parameter_description"><p> return location for the magnification
+<td class="parameter_description"><p>return location for the magnification
 filter, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -8426,7 +8426,7 @@ it is possible to modify the content box by using the
 </tr>
 <tr>
 <td class="parameter_name"><p>box</p></td>
-<td class="parameter_description"><p> the return location for the bounding
+<td class="parameter_description"><p>the return location for the bounding
 box for the <a class="link" href="ClutterContent.html" title="ClutterContent"><span class="type">ClutterContent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
@@ -8564,25 +8564,25 @@ clutter_actor_get_clip (<em class="parameter"><code><a class="link" href="Clutte
 </tr>
 <tr>
 <td class="parameter_name"><p>xoff</p></td>
-<td class="parameter_description"><p> return location for the X offset of
+<td class="parameter_description"><p>return location for the X offset of
 the clip rectangle, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>yoff</p></td>
-<td class="parameter_description"><p> return location for the Y offset of
+<td class="parameter_description"><p>return location for the Y offset of
 the clip rectangle, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>width</p></td>
-<td class="parameter_description"><p> return location for the width of
+<td class="parameter_description"><p>return location for the width of
 the clip rectangle, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>height</p></td>
-<td class="parameter_description"><p> return location for the height of
+<td class="parameter_description"><p>return location for the height of
 the clip rectangle, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -9031,7 +9031,7 @@ on <em class="parameter"><code>self</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p> a child of <em class="parameter"><code>self</code></em>
+<td class="parameter_description"><p>a child of <em class="parameter"><code>self</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -9138,7 +9138,7 @@ on <em class="parameter"><code>self</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p> a child of <em class="parameter"><code>self</code></em>
+<td class="parameter_description"><p>a child of <em class="parameter"><code>self</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -9332,7 +9332,7 @@ it.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-first-child.returns"></a><h4>Returns</h4>
-<p> a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -9367,7 +9367,7 @@ it.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-next-sibling.returns"></a><h4>Returns</h4>
-<p> a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -9402,7 +9402,7 @@ it.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-previous-sibling.returns"></a><h4>Returns</h4>
-<p> a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -9435,7 +9435,7 @@ it.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-last-child.returns"></a><h4>Returns</h4>
-<p> a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -9474,7 +9474,7 @@ children of <em class="parameter"><code>self</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-child-at-index.returns"></a><h4>Returns</h4>
-<p> a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a pointer to a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -9503,7 +9503,7 @@ clutter_actor_get_children (<em class="parameter"><code><a class="link" href="Cl
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-children.returns"></a><h4>Returns</h4>
-<p> A newly
+<p>A newly
 allocated <span class="type">GList</span> of <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>s. Use <code class="function">g_list_free()</code> when
 done. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> ClutterActor]</span></p>
@@ -9562,7 +9562,7 @@ clutter_actor_get_parent (<em class="parameter"><code><a class="link" href="Clut
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-parent.returns"></a><h4>Returns</h4>
-<p> The <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> parent, or <code class="literal">NULL</code>
+<p>The <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> parent, or <code class="literal">NULL</code>
 if no parent is set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -9609,7 +9609,7 @@ or change state on <em class="parameter"><code>child</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> child of <em class="parameter"><code>self</code></em>
+<td class="parameter_description"><p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> child of <em class="parameter"><code>self</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -9706,7 +9706,7 @@ or change state on <em class="parameter"><code>child</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>sibling</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> child of <em class="parameter"><code>self</code></em>
+<td class="parameter_description"><p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> child of <em class="parameter"><code>self</code></em>
 , or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -9783,7 +9783,7 @@ clutter_actor_get_stage (<em class="parameter"><code><a class="link" href="Clutt
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-stage.returns"></a><h4>Returns</h4>
-<p> the stage
+<p>the stage
 containing the actor, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> Clutter.Stage]</span></p>
 </div>
@@ -9913,7 +9913,7 @@ the contents of <em class="parameter"><code>child</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>child</p></td>
-<td class="parameter_description"><p> return location for a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. </p></td>
+<td class="parameter_description"><p>return location for a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -9956,7 +9956,7 @@ the contents of <em class="parameter"><code>child</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>child</p></td>
-<td class="parameter_description"><p> return location for a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. </p></td>
+<td class="parameter_description"><p>return location for a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -10048,7 +10048,7 @@ in the <span class="type">GListModel</span> changes, the <a class="link" href="C
 <tbody>
 <tr>
 <td class="parameter_name"><p>item</p></td>
-<td class="parameter_description"><p> the item in the model. </p></td>
+<td class="parameter_description"><p>the item in the model. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> GObject]</span></td>
 </tr>
 <tr>
@@ -10061,7 +10061,7 @@ in the <span class="type">GListModel</span> changes, the <a class="link" href="C
 </div>
 <div class="refsect3">
 <a name="ClutterActorCreateChildFunc.returns"></a><h4>Returns</h4>
-<p> The newly created child <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. </p>
+<p>The newly created child <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix19.html#api-index-1.24">1.24</a></p>
@@ -10103,7 +10103,7 @@ directly is undefined behaviour.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>model</p></td>
-<td class="parameter_description"><p> a <span class="type">GListModel</span>. </p></td>
+<td class="parameter_description"><p>a <span class="type">GListModel</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -10547,7 +10547,7 @@ transition name as the signal detail.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-transition.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterTransition.html" title="ClutterTransition"><span class="type">ClutterTransition</span></a>, or <code class="literal">NULL</code> is none
+<p>a <a class="link" href="ClutterTransition.html" title="ClutterTransition"><span class="type">ClutterTransition</span></a>, or <code class="literal">NULL</code> is none
 was found to match the passed name; the returned instance is owned
 by Clutter and it should not be freed. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -10808,16 +10808,16 @@ clutter_actor_has_pointer (<em class="parameter"><code><a class="link" href="Clu
 <hr>
 <div class="refsect2">
 <a name="clutter-actor-get-pango-context"></a><h3>clutter_actor_get_pango_context ()</h3>
-<pre class="programlisting"><span class="returnvalue">PangoContext</span> *
+<pre class="programlisting"><a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="returnvalue">PangoContext</span></a> *
 clutter_actor_get_pango_context (<em class="parameter"><code><a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> *self</code></em>);</pre>
-<p>Retrieves the <span class="type">PangoContext</span> for <em class="parameter"><code>self</code></em>
-. The actor's <span class="type">PangoContext</span>
+<p>Retrieves the <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a> for <em class="parameter"><code>self</code></em>
+. The actor's <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a>
 is already configured using the appropriate font map, resolution
 and font options.</p>
 <p>Unlike <a class="link" href="ClutterActor.html#clutter-actor-create-pango-context" title="clutter_actor_create_pango_context ()"><code class="function">clutter_actor_create_pango_context()</code></a>, this context is owend
 by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> and it will be updated each time the options
 stored by the <a class="link" href="ClutterBackend.html" title="ClutterBackend"><span class="type">ClutterBackend</span></a> change.</p>
-<p>You can use the returned <span class="type">PangoContext</span> to create a <span class="type">PangoLayout</span>
+<p>You can use the returned <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a> to create a <a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a>
 and render text using <code class="function">cogl_pango_render_layout()</code> to reuse the
 glyphs cache also used by Clutter.</p>
 <div class="refsect3">
@@ -10837,8 +10837,8 @@ glyphs cache also used by Clutter.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-pango-context.returns"></a><h4>Returns</h4>
-<p> the <span class="type">PangoContext</span> for a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>.
-The returned <span class="type">PangoContext</span> is owned by the actor and should not be
+<p>the <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a> for a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>.
+The returned <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a> is owned by the actor and should not be
 unreferenced by the application code. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -10847,9 +10847,9 @@ unreferenced by the application code. </p>
 <hr>
 <div class="refsect2">
 <a name="clutter-actor-create-pango-context"></a><h3>clutter_actor_create_pango_context ()</h3>
-<pre class="programlisting"><span class="returnvalue">PangoContext</span> *
+<pre class="programlisting"><a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="returnvalue">PangoContext</span></a> *
 clutter_actor_create_pango_context (<em class="parameter"><code><a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> *self</code></em>);</pre>
-<p>Creates a <span class="type">PangoContext</span> for the given actor. The <span class="type">PangoContext</span>
+<p>Creates a <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a> for the given actor. The <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a>
 is already configured using the appropriate font map, resolution
 and font options.</p>
 <p>See also <a class="link" href="ClutterActor.html#clutter-actor-get-pango-context" title="clutter_actor_get_pango_context ()"><code class="function">clutter_actor_get_pango_context()</code></a>.</p>
@@ -10870,7 +10870,7 @@ and font options.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-create-pango-context.returns"></a><h4>Returns</h4>
-<p> the newly created <span class="type">PangoContext</span>.
+<p>the newly created <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a>.
 Use <code class="function">g_object_unref()</code> on the returned value to deallocate its
 resources. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
@@ -10880,18 +10880,18 @@ resources. </p>
 <hr>
 <div class="refsect2">
 <a name="clutter-actor-create-pango-layout"></a><h3>clutter_actor_create_pango_layout ()</h3>
-<pre class="programlisting"><span class="returnvalue">PangoLayout</span> *
+<pre class="programlisting"><a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="returnvalue">PangoLayout</span></a> *
 clutter_actor_create_pango_layout (<em class="parameter"><code><a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> *self</code></em>,
                                    <em class="parameter"><code>const <span class="type">gchar</span> *text</code></em>);</pre>
-<p>Creates a new <span class="type">PangoLayout</span> from the same <span class="type">PangoContext</span> used
-by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. The <span class="type">PangoLayout</span> is already configured
+<p>Creates a new <a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a> from the same <a href="https://developer.gnome.org/pango/pango-Contexts.html#PangoContext-struct"><span class="type">PangoContext</span></a> used
+by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. The <a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a> is already configured
 with the font map, resolution and font options, and the
 given <em class="parameter"><code>text</code></em>
 .</p>
-<p>If you want to keep around a <span class="type">PangoLayout</span> created by this
+<p>If you want to keep around a <a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a> created by this
 function you will have to connect to the <a class="link" href="ClutterBackend.html#ClutterBackend-font-changed" title="The “font-changed” signal"><span class="type">“font-changed”</span></a>
 and <a class="link" href="ClutterBackend.html#ClutterBackend-resolution-changed" title="The “resolution-changed” signal"><span class="type">“resolution-changed”</span></a> signals, and call
-<code class="function">pango_layout_context_changed()</code> in response to them.</p>
+<a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#pango-layout-context-changed"><code class="function">pango_layout_context_changed()</code></a> in response to them.</p>
 <div class="refsect3">
 <a name="clutter-actor-create-pango-layout.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -10908,7 +10908,7 @@ and <a class="link" href="ClutterBackend.html#ClutterBackend-resolution-changed"
 </tr>
 <tr>
 <td class="parameter_name"><p>text</p></td>
-<td class="parameter_description"><p> the text to set on the <span class="type">PangoLayout</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the text to set on the <a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -10916,7 +10916,7 @@ and <a class="link" href="ClutterBackend.html#ClutterBackend-resolution-changed"
 </div>
 <div class="refsect3">
 <a name="clutter-actor-create-pango-layout.returns"></a><h4>Returns</h4>
-<p> the newly created <span class="type">PangoLayout</span>.
+<p>the newly created <a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a>.
 Use <code class="function">g_object_unref()</code> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -10995,12 +10995,12 @@ be returned instead</p>
 <hr>
 <div class="refsect2">
 <a name="clutter-actor-get-accessible"></a><h3>clutter_actor_get_accessible ()</h3>
-<pre class="programlisting"><span class="returnvalue">AtkObject</span> *
+<pre class="programlisting"><a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct"><span class="returnvalue">AtkObject</span></a> *
 clutter_actor_get_accessible (<em class="parameter"><code><a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> *self</code></em>);</pre>
 <p>Returns the accessible object that describes the actor to an
 assistive technology.</p>
-<p>If no class-specific <span class="type">AtkObject</span> implementation is available for the
-actor instance in question, it will inherit an <span class="type">AtkObject</span>
+<p>If no class-specific <a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct"><span class="type">AtkObject</span></a> implementation is available for the
+actor instance in question, it will inherit an <a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct"><span class="type">AtkObject</span></a>
 implementation from the first ancestor class for which such an
 implementation is defined.</p>
 <p>The documentation of the <a class="ulink" href="http://developer.gnome.org/doc/API/2.0/atk/index.html" target="_top">ATK</a>
@@ -11023,7 +11023,7 @@ their uses.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-accessible.returns"></a><h4>Returns</h4>
-<p> the <span class="type">AtkObject</span> associated with <em class="parameter"><code>actor</code></em>
+<p>the <a href="/usr/share/gtk-doc/html/atk/AtkObject.html#AtkObject-struct"><span class="type">AtkObject</span></a> associated with <em class="parameter"><code>actor</code></em>
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -11240,7 +11240,7 @@ clutter_actor_get_actions (<em class="parameter"><code><a class="link" href="Clu
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-actions.returns"></a><h4>Returns</h4>
-<p> a copy
+<p>a copy
 of the list of <a class="link" href="ClutterAction.html" title="ClutterAction"><span class="type">ClutterAction</span></a>s. The contents of the list are
 owned by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. Use <code class="function">g_list_free()</code> to free the resources
 allocated by the returned <span class="type">GList</span>. </p>
@@ -11281,7 +11281,7 @@ of actions applied to <em class="parameter"><code>self</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-action.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterAction.html" title="ClutterAction"><span class="type">ClutterAction</span></a> for the given
+<p>a <a class="link" href="ClutterAction.html" title="ClutterAction"><span class="type">ClutterAction</span></a> for the given
 name, or <code class="literal">NULL</code>. The returned <a class="link" href="ClutterAction.html" title="ClutterAction"><span class="type">ClutterAction</span></a> is owned by the
 actor and it should not be unreferenced directly. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -11526,7 +11526,7 @@ clutter_actor_get_constraints (<em class="parameter"><code><a class="link" href=
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-constraints.returns"></a><h4>Returns</h4>
-<p> a copy
+<p>a copy
 of the list of <a class="link" href="ClutterConstraint.html" title="ClutterConstraint"><span class="type">ClutterConstraint</span></a>s. The contents of the list are
 owned by the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. Use <code class="function">g_list_free()</code> to free the resources
 allocated by the returned <span class="type">GList</span>. </p>
@@ -11567,7 +11567,7 @@ of constraints applied to <em class="parameter"><code>self</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-constraint.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterConstraint.html" title="ClutterConstraint"><span class="type">ClutterConstraint</span></a> for the given
+<p>a <a class="link" href="ClutterConstraint.html" title="ClutterConstraint"><span class="type">ClutterConstraint</span></a> for the given
 name, or <code class="literal">NULL</code>. The returned <a class="link" href="ClutterConstraint.html" title="ClutterConstraint"><span class="type">ClutterConstraint</span></a> is owned by the
 actor and it should not be unreferenced directly. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -11816,7 +11816,7 @@ clutter_actor_get_effects (<em class="parameter"><code><a class="link" href="Clu
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-effects.returns"></a><h4>Returns</h4>
-<p> a list
+<p>a list
 of <a class="link" href="ClutterEffect.html" title="ClutterEffect"><span class="type">ClutterEffect</span></a>s, or <code class="literal">NULL</code>. The elements of the returned
 list are owned by Clutter and they should not be freed. You should
 free the returned list using <code class="function">g_list_free()</code> when done. </p>
@@ -11857,7 +11857,7 @@ of effects applied to <em class="parameter"><code>self</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-effect.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterEffect.html" title="ClutterEffect"><span class="type">ClutterEffect</span></a> for the given
+<p>a <a class="link" href="ClutterEffect.html" title="ClutterEffect"><span class="type">ClutterEffect</span></a> for the given
 name, or <code class="literal">NULL</code>. The returned <a class="link" href="ClutterEffect.html" title="ClutterEffect"><span class="type">ClutterEffect</span></a> is owned by the
 actor and it should not be unreferenced directly. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -12032,13 +12032,13 @@ current size of the actor.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>center_x</p></td>
-<td class="parameter_description"><p> Location to store the X position
+<td class="parameter_description"><p>Location to store the X position
 of the scale center, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>center_y</p></td>
-<td class="parameter_description"><p> Location to store the Y position
+<td class="parameter_description"><p>Location to store the Y position
 of the scale center, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -12440,7 +12440,7 @@ the <a class="link" href="ClutterContainer.html" title="ClutterContainer"><span 
 </tr>
 <tr>
 <td class="parameter_name"><p>below</p></td>
-<td class="parameter_description"><p> A <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> to raise above. </p></td>
+<td class="parameter_description"><p>A <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> to raise above. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -12479,7 +12479,7 @@ the <a class="link" href="ClutterContainer.html" title="ClutterContainer"><span 
 </tr>
 <tr>
 <td class="parameter_name"><p>above</p></td>
-<td class="parameter_description"><p> A <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> to lower below. </p></td>
+<td class="parameter_description"><p>A <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> to lower below. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -12579,7 +12579,7 @@ over the <a class="link" href="clutter-Shaders.html#ClutterShader"><span class="
 </tr>
 <tr>
 <td class="parameter_name"><p>shader</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Shaders.html#ClutterShader"><span class="type">ClutterShader</span></a> or <code class="literal">NULL</code> to unset the shader. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Shaders.html#ClutterShader"><span class="type">ClutterShader</span></a> or <code class="literal">NULL</code> to unset the shader. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -12620,7 +12620,7 @@ clutter_actor_get_shader (<em class="parameter"><code><a class="link" href="Clut
 </div>
 <div class="refsect3">
 <a name="clutter-actor-get-shader.returns"></a><h4>Returns</h4>
-<p> The currently set <a class="link" href="clutter-Shaders.html#ClutterShader"><span class="type">ClutterShader</span></a>
+<p>The currently set <a class="link" href="clutter-Shaders.html#ClutterShader"><span class="type">ClutterShader</span></a>
 or <code class="literal">NULL</code> if no shader is set. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -12829,12 +12829,12 @@ clutter_actor_get_anchor_point (<em class="parameter"><code><a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>anchor_x</p></td>
-<td class="parameter_description"><p> return location for the X coordinate of the anchor point. </p></td>
+<td class="parameter_description"><p>return location for the X coordinate of the anchor point. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>anchor_y</p></td>
-<td class="parameter_description"><p> return location for the Y coordinate of the anchor point. </p></td>
+<td class="parameter_description"><p>return location for the Y coordinate of the anchor point. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -13121,17 +13121,17 @@ set using <a class="link" href="ClutterActor.html#clutter-actor-set-rotation" ti
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p> return value for the X coordinate of the center of rotation. </p></td>
+<td class="parameter_description"><p>return value for the X coordinate of the center of rotation. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p> return value for the Y coordinate of the center of rotation. </p></td>
+<td class="parameter_description"><p>return value for the Y coordinate of the center of rotation. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>z</p></td>
-<td class="parameter_description"><p> return value for the Z coordinate of the center of rotation. </p></td>
+<td class="parameter_description"><p>return value for the Z coordinate of the center of rotation. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -13255,7 +13255,7 @@ parent.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>matrix</p></td>
-<td class="parameter_description"><p> the return location for a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p></td>
+<td class="parameter_description"><p>the return location for a <a class="link" href="clutter-Base-geometric-types.html#ClutterMatrix"><span class="type">ClutterMatrix</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -15171,7 +15171,7 @@ is pressed on <em class="parameter"><code>actor</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterButtonEvent" title="struct ClutterButtonEvent"><span class="type">ClutterButtonEvent</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterButtonEvent" title="struct ClutterButtonEvent"><span class="type">ClutterButtonEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterButtonEvent]</span></td>
 </tr>
 <tr>
@@ -15216,7 +15216,7 @@ is released on <em class="parameter"><code>actor</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterButtonEvent" title="struct ClutterButtonEvent"><span class="type">ClutterButtonEvent</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterButtonEvent" title="struct ClutterButtonEvent"><span class="type">ClutterButtonEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterButtonEvent]</span></td>
 </tr>
 <tr>
@@ -15352,7 +15352,7 @@ user_function (<a class="link" href="ClutterActor.html" title="ClutterActor"><sp
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterCrossingEvent" title="struct ClutterCrossingEvent"><span class="type">ClutterCrossingEvent</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterCrossingEvent" title="struct ClutterCrossingEvent"><span class="type">ClutterCrossingEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterCrossingEvent]</span></td>
 </tr>
 <tr>
@@ -15543,7 +15543,7 @@ is pressed while <em class="parameter"><code>actor</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterKeyEvent" title="struct ClutterKeyEvent"><span class="type">ClutterKeyEvent</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterKeyEvent" title="struct ClutterKeyEvent"><span class="type">ClutterKeyEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterKeyEvent]</span></td>
 </tr>
 <tr>
@@ -15589,7 +15589,7 @@ is released while <em class="parameter"><code>actor</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterKeyEvent" title="struct ClutterKeyEvent"><span class="type">ClutterKeyEvent</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterKeyEvent" title="struct ClutterKeyEvent"><span class="type">ClutterKeyEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterKeyEvent]</span></td>
 </tr>
 <tr>
@@ -15633,7 +15633,7 @@ user_function (<a class="link" href="ClutterActor.html" title="ClutterActor"><sp
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterCrossingEvent" title="struct ClutterCrossingEvent"><span class="type">ClutterCrossingEvent</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterCrossingEvent" title="struct ClutterCrossingEvent"><span class="type">ClutterCrossingEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterCrossingEvent]</span></td>
 </tr>
 <tr>
@@ -15678,7 +15678,7 @@ moved over <em class="parameter"><code>actor</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterMotionEvent" title="struct ClutterMotionEvent"><span class="type">ClutterMotionEvent</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterMotionEvent" title="struct ClutterMotionEvent"><span class="type">ClutterMotionEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterMotionEvent]</span></td>
 </tr>
 <tr>
@@ -15767,7 +15767,7 @@ user_function (<a class="link" href="ClutterActor.html" title="ClutterActor"><sp
 </tr>
 <tr>
 <td class="parameter_name"><p>old_parent</p></td>
-<td class="parameter_description"><p> the previous parent of the actor, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the previous parent of the actor, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -16039,7 +16039,7 @@ scrolled on <em class="parameter"><code>actor</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>event</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterScrollEvent" title="struct ClutterScrollEvent"><span class="type">ClutterScrollEvent</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterScrollEvent" title="struct ClutterScrollEvent"><span class="type">ClutterScrollEvent</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterScrollEvent]</span></td>
 </tr>
 <tr>
@@ -16259,6 +16259,6 @@ unrealized.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

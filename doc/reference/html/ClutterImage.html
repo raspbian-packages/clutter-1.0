@@ -8,7 +8,7 @@
 <link rel="up" href="ch07.html" title="Content">
 <link rel="prev" href="ClutterCanvas.html" title="ClutterCanvas">
 <link rel="next" href="ch08.html" title="Paint Objects">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -140,7 +140,7 @@ clutter_image_new (<em class="parameter"><code><span class="type">void</span></c
 <p>Creates a new <a class="link" href="ClutterImage.html" title="ClutterImage"><span class="type">ClutterImage</span></a> instance.</p>
 <div class="refsect3">
 <a name="clutter-image-new.returns"></a><h4>Returns</h4>
-<p> the newly created <a class="link" href="ClutterImage.html" title="ClutterImage"><span class="type">ClutterImage</span></a> instance.
+<p>the newly created <a class="link" href="ClutterImage.html" title="ClutterImage"><span class="type">ClutterImage</span></a> instance.
 Use <code class="function">g_object_unref()</code> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -189,16 +189,16 @@ instance, if you use the GdkPixbuf library:</p>
 15</pre></td>
         <td class="listing_code"><pre class="programlisting"><span class="usertype">ClutterContent</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">image </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="ClutterImage.html#clutter-image-new">clutter_image_new</a></span><span class="normal"> </span><span class="symbol">();</span>
 
-<span class="usertype">GdkPixbuf</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">pixbuf </span><span class="symbol">=</span><span class="normal"> </span><span class="function">gdk_pixbuf_new_from_file</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">filename</span><span class="symbol">,</span><span class="normal"> NULL</span><span class="symbol">);</span>
+<span class="usertype">GdkPixbuf</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">pixbuf </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-File-Loading.html#gdk-pixbuf-new-from-file">gdk_pixbuf_new_from_file</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">filename</span><span class="symbol">,</span><span class="normal"> NULL</span><span class="symbol">);</span>
 
 <span class="function"><a href="ClutterImage.html#clutter-image-set-data">clutter_image_set_data</a></span><span class="normal"> </span><span class="symbol">(</span><span class="function">CLUTTER_IMAGE</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">image</span><span class="symbol">),</span>
-<span class="normal">                        </span><span class="function">gdk_pixbuf_get_pixels</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">),</span>
-<span class="normal">                        </span><span class="function">gdk_pixbuf_get_has_alpha</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">)</span>
+<span class="normal">                        </span><span class="function"><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#gdk-pixbuf-get-pixels">gdk_pixbuf_get_pixels</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">),</span>
+<span class="normal">                        </span><span class="function"><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#gdk-pixbuf-get-has-alpha">gdk_pixbuf_get_has_alpha</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">)</span>
 <span class="normal">                          </span><span class="symbol">?</span><span class="normal"> COGL_PIXEL_FORMAT_RGBA_8888</span>
 <span class="normal">                          </span><span class="symbol">:</span><span class="normal"> COGL_PIXEL_FORMAT_RGB_888</span><span class="symbol">,</span>
-<span class="normal">                        </span><span class="function">gdk_pixbuf_get_width</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">),</span>
-<span class="normal">                        </span><span class="function">gdk_pixbuf_get_height</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">),</span>
-<span class="normal">                        </span><span class="function">gdk_pixbuf_get_rowstride</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">),</span>
+<span class="normal">                        </span><span class="function"><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#gdk-pixbuf-get-width">gdk_pixbuf_get_width</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">),</span>
+<span class="normal">                        </span><span class="function"><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#gdk-pixbuf-get-height">gdk_pixbuf_get_height</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">),</span>
+<span class="normal">                        </span><span class="function"><a href="http://library.gnome.org/devel/gdk-pixbuf/unstable/gdk-pixbuf-The-GdkPixbuf-Structure.html#gdk-pixbuf-get-rowstride">gdk_pixbuf_get_rowstride</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">),</span>
 <span class="normal">                        </span><span class="symbol">&amp;</span><span class="normal">error</span><span class="symbol">);</span>
 
 <span class="function">g_object_unref</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">pixbuf</span><span class="symbol">);</span></pre></td>
@@ -224,7 +224,7 @@ instance, if you use the GdkPixbuf library:</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> the image data, as an array of bytes. </p></td>
+<td class="parameter_description"><p>the image data, as an array of bytes. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -380,7 +380,7 @@ return <code class="literal">FALSE</code>.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>data</p></td>
-<td class="parameter_description"><p> the image data, as an array of bytes. </p></td>
+<td class="parameter_description"><p>the image data, as an array of bytes. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -443,7 +443,7 @@ in order to update the actors using <em class="parameter"><code>image</code></em
 </div>
 <div class="refsect3">
 <a name="clutter-image-get-texture.returns"></a><h4>Returns</h4>
-<p> a pointer to the Cogl texture, or <code class="literal">NULL</code>. </p>
+<p>a pointer to the Cogl texture, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -518,6 +518,6 @@ private data.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

@@ -6,7 +6,7 @@ Source: clutter-1.0
 Section: libs
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Jeremy Bicha <jbicha@debian.org>, Michael Biebl <biebl@debian.org>,
+Uploaders: Jeremy Bicha <jbicha@debian.org>, Laurent Bigonville <bigon@debian.org>,
            Rico Tzschichholz <ricotz@ubuntu.com>,
 Build-Depends: autopoint,
                dbus <!nocheck>,
@@ -23,7 +23,7 @@ Build-Depends: autopoint,
                libgdk-pixbuf2.0-dev (>= 2.0),
                libgirepository1.0-dev (>= 1.35.8),
                libgl1-mesa-dev (>= 7.1~rc3-1~),
-               libglib2.0-dev (>= 2.44.0),
+               libglib2.0-dev (>= 2.53.4),
                libgtk-3-dev (>= 3.16),
                libgudev-1.0-dev [linux-any],
                libinput-dev (>= 0.19.0) [linux-any],
@@ -38,8 +38,16 @@ Build-Depends: autopoint,
                xauth <!nocheck>,
                xsltproc,
                xvfb <!nocheck>,
+Build-Depends-Indep: libatk1.0-doc <!nodoc>,
+                     libcairo2-doc <!nodoc>,
+                     libclutter-gtk-1.0-doc <!nodoc>,
+                     libcogl-doc <!nodoc>,
+                     libgdk-pixbuf2.0-doc <!nodoc>,
+                     libglib2.0-doc <!nodoc>,
+                     libgtk-3-doc <!nodoc>,
+                     libpango1.0-doc <!nodoc>,
 Rules-Requires-Root: no
-Standards-Version: 4.4.0
+Standards-Version: 4.5.0
 Vcs-Browser: https://salsa.debian.org/gnome-team/clutter
 Vcs-Git: https://salsa.debian.org/gnome-team/clutter.git
 Homepage: https://blogs.gnome.org/clutter/
@@ -82,6 +90,7 @@ Depends: gir1.2-clutter-1.0 (= ${binary:Version}),
          libdrm-dev [!hurd-any],
          libgdk-pixbuf2.0-dev,
          libgl1-mesa-dev (>= 7.1~rc3-1~),
+         libglib2.0-dev (>= 2.53.4),
          libgtk-3-dev,
          libinput-dev (>= 0.4.0) [linux-any],
          libjson-glib-dev (>= 0.12),

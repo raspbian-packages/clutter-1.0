@@ -10,7 +10,7 @@
 # - increase clutter_interface_version to the next odd number
 m4_define([clutter_major_version], [1])
 m4_define([clutter_minor_version], [26])
-m4_define([clutter_micro_version], [2])
+m4_define([clutter_micro_version], [4])
 
 # • for stable releases: increase the interface age by 1 for each release
 # • for development releases: keep clutter_interface_age to 0
@@ -41,8 +41,8 @@ AC_INIT([clutter],
 
 AC_CONFIG_SRCDIR([clutter/clutter.h])
 AC_CONFIG_HEADERS([clutter/config.h])
-AC_CONFIG_AUX_DIR([build])
-AC_CONFIG_MACRO_DIR([build/autotools])
+AC_CONFIG_AUX_DIR([build-aux])
+AC_CONFIG_MACRO_DIR([build-aux/autotools])
 
 AM_INIT_AUTOMAKE([1.11 foreign -Wno-portability no-define no-dist-gzip dist-xz tar-ustar])
 AM_SILENT_RULES([yes])
@@ -119,7 +119,7 @@ LT_LIB_M
 AC_HEADER_STDC
 
 # required versions for dependencies
-m4_define([glib_req_version],           [2.44.0])
+m4_define([glib_req_version],           [2.53.4])
 m4_define([cogl_req_version],           [1.21.2])
 m4_define([json_glib_req_version],      [0.12.0])
 m4_define([atk_req_version],            [2.5.3])
@@ -160,7 +160,7 @@ AC_ARG_ENABLE([Bsymbolic],
                 saved_LDFLAGS="${LDFLAGS}"
                 AC_MSG_CHECKING([for -Bsymbolic-functions linker flag])
                 LDFLAGS=-Wl,-Bsymbolic-functions
-                AC_TRY_LINK([], [int main (void) { return 0; }],
+                AC_TRY_LINK([], [return 0],
                             [
                               AC_MSG_RESULT([yes])
                               enable_Bsymbolic=yes
@@ -189,7 +189,7 @@ case "$host" in
     SAVED_CFLAGS="${CFLAGS}"
     CFLAGS="-fvisibility=hidden"
     AC_MSG_CHECKING([for -fvisibility=hidden compiler flag])
-    AC_TRY_COMPILE([], [int main (void) { return 0; }],
+    AC_TRY_COMPILE([], [return 0],
                    AC_MSG_RESULT(yes)
                    enable_fvisibility_hidden=yes,
                    AC_MSG_RESULT(no)
@@ -1177,14 +1177,13 @@ dnl ===========================================================================
 
 AC_CONFIG_FILES([
 	Makefile
-        README
 
-	build/Makefile
-	build/autotools/Makefile
-	build/mingw/Makefile
-	build/win32/Makefile
-	build/win32/vs9/Makefile
-	build/win32/vs10/Makefile
+	build-aux/Makefile
+	build-aux/autotools/Makefile
+	build-aux/mingw/Makefile
+	build-aux/win32/Makefile
+	build-aux/win32/vs9/Makefile
+	build-aux/win32/vs10/Makefile
 
 	clutter/Makefile
 	clutter/config.h.win32
@@ -1208,8 +1207,6 @@ AC_CONFIG_FILES([
 
 	doc/Makefile
 	doc/reference/Makefile
-	doc/reference/clutter-docs.xml
-	doc/common/Makefile
 
 	po/Makefile.in
 ])
