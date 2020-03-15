@@ -8,7 +8,7 @@
 <link rel="up" href="deprecated.html" title="Part X. Deprecated Classes">
 <link rel="prev" href="clutter-Shaders.html" title="Shaders">
 <link rel="next" href="ClutterTableLayout.html" title="ClutterTableLayout">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -289,7 +289,7 @@
 </div>
 <div class="refsect1">
 <a name="ClutterState.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">╰──</span> ClutterStateKey
     GObject
     <span class="lineart">╰──</span> ClutterState
@@ -635,7 +635,7 @@ the current state, but keys will be left intact.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-state-set-state.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives the
+<p>the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives the
 state transition. The returned timeline is owned by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>
 and it should not be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -715,7 +715,7 @@ clutter_state_warp_to_state (<em class="parameter"><code><a class="link" href="C
 </div>
 <div class="refsect3">
 <a name="clutter-state-warp-to-state.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives the
+<p>the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives the
 state transition. The returned timeline is owned by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a>
 and it should not be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -828,7 +828,7 @@ and 20% of the duration after animating.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_state_name</p></td>
-<td class="parameter_description"><p> the name of the source state keys are being added for. </p></td>
+<td class="parameter_description"><p>the name of the source state keys are being added for. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -904,7 +904,7 @@ combination.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_state_name</p></td>
-<td class="parameter_description"><p> the source transition to specify
+<td class="parameter_description"><p>the source transition to specify
 transition for, or <code class="literal">NULL</code> to specify the default fallback when a
 more specific source state doesn't exist. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
@@ -951,7 +951,7 @@ the transition</p></td>
 </div>
 <div class="refsect3">
 <a name="clutter-state-set-key.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> instance, allowing
+<p>the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> instance, allowing
 chaining of multiple calls. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -996,12 +996,12 @@ to the specified transition.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_state_name</p></td>
-<td class="parameter_description"><p> the name of the source state, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the name of the source state, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>target_state_name</p></td>
-<td class="parameter_description"><p> the name of the target state, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the name of the target state, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1046,13 +1046,13 @@ setting the duration with <a class="link" href="ClutterState.html#clutter-state-
 </tr>
 <tr>
 <td class="parameter_name"><p>source_state_name</p></td>
-<td class="parameter_description"><p> the name of the source state to
+<td class="parameter_description"><p>the name of the source state to
 get the duration of, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>target_state_name</p></td>
-<td class="parameter_description"><p> the name of the source state to
+<td class="parameter_description"><p>the name of the source state to
 get the duration of, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1093,7 +1093,7 @@ clutter_state_get_states (<em class="parameter"><code><a class="link" href="Clut
 </div>
 <div class="refsect3">
 <a name="clutter-state-get-states.returns"></a><h4>Returns</h4>
-<p> a newly allocated
+<p>a newly allocated
 <span class="type">GList</span> of state names. The contents of the returned <span class="type">GList</span> are owned
 by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> and should not be modified or freed. Use
 <code class="function">g_list_free()</code> to free the resources allocated by the returned list when
@@ -1134,25 +1134,25 @@ that describe the keys added to an animator.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>source_state_name</p></td>
-<td class="parameter_description"><p> the source transition name to query,
+<td class="parameter_description"><p>the source transition name to query,
 or <code class="literal">NULL</code> for all source states. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>target_state_name</p></td>
-<td class="parameter_description"><p> the target transition name to query,
+<td class="parameter_description"><p>the target transition name to query,
 or <code class="literal">NULL</code> for all target states. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>object</p></td>
-<td class="parameter_description"><p> the specific object instance to list keys for,
+<td class="parameter_description"><p>the specific object instance to list keys for,
 or <code class="literal">NULL</code> for all managed objects. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>property_name</p></td>
-<td class="parameter_description"><p> the property name to search for, or <code class="literal">NULL</code>
+<td class="parameter_description"><p>the property name to search for, or <code class="literal">NULL</code>
 for all properties. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1161,7 +1161,7 @@ for all properties. </p></td>
 </div>
 <div class="refsect3">
 <a name="clutter-state-get-keys.returns"></a><h4>Returns</h4>
-<p> a
+<p>a
 newly allocated <span class="type">GList</span> of <a class="link" href="ClutterState.html#ClutterStateKey"><span class="type">ClutterStateKey</span></a>s. The contents of
 the returned list are owned by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> and should not be
 modified or freed. Use <code class="function">g_list_free()</code> to free the resources allocated
@@ -1201,25 +1201,25 @@ clutter_state_remove_key (<em class="parameter"><code><a class="link" href="Clut
 </tr>
 <tr>
 <td class="parameter_name"><p>source_state_name</p></td>
-<td class="parameter_description"><p> the source state name to query,
+<td class="parameter_description"><p>the source state name to query,
 or <code class="literal">NULL</code> for all source states. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>target_state_name</p></td>
-<td class="parameter_description"><p> the target state name to query,
+<td class="parameter_description"><p>the target state name to query,
 or <code class="literal">NULL</code> for all target states. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>object</p></td>
-<td class="parameter_description"><p> the specific object instance to list keys for,
+<td class="parameter_description"><p>the specific object instance to list keys for,
 or <code class="literal">NULL</code> for all managed objects. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>property_name</p></td>
-<td class="parameter_description"><p> the property name to search for,
+<td class="parameter_description"><p>the property name to search for,
 or <code class="literal">NULL</code> for all properties. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1256,7 +1256,7 @@ clutter_state_get_timeline (<em class="parameter"><code><a class="link" href="Cl
 </div>
 <div class="refsect3">
 <a name="clutter-state-get-timeline.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives
+<p>the <a class="link" href="ClutterTimeline.html" title="ClutterTimeline"><span class="type">ClutterTimeline</span></a> that drives
 the state change animations. The returned timeline is owned
 by the <a class="link" href="ClutterState.html" title="ClutterState"><span class="type">ClutterState</span></a> and it should not be unreferenced directly. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -1312,7 +1312,7 @@ properties defined in the <a class="link" href="ClutterState.html" title="Clutte
 </tr>
 <tr>
 <td class="parameter_name"><p>animator</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterAnimator.html" title="ClutterAnimator"><span class="type">ClutterAnimator</span></a> instance, or <code class="literal">NULL</code> to
+<td class="parameter_description"><p>a <a class="link" href="ClutterAnimator.html" title="ClutterAnimator"><span class="type">ClutterAnimator</span></a> instance, or <code class="literal">NULL</code> to
 unset an existing <a class="link" href="ClutterAnimator.html" title="ClutterAnimator"><span class="type">ClutterAnimator</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1364,7 +1364,7 @@ between the two states, if any has been set</p>
 </div>
 <div class="refsect3">
 <a name="clutter-state-get-animator.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterAnimator.html" title="ClutterAnimator"><span class="type">ClutterAnimator</span></a> instance, or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="ClutterAnimator.html" title="ClutterAnimator"><span class="type">ClutterAnimator</span></a> instance, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -1470,7 +1470,7 @@ clutter_state_key_get_object (<em class="parameter"><code>const <a class="link" 
 </div>
 <div class="refsect3">
 <a name="clutter-state-key-get-object.returns"></a><h4>Returns</h4>
-<p> the object this state key applies to. </p>
+<p>the object this state key applies to. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix09.html#api-index-1.4">1.4</a></p>
@@ -1811,6 +1811,6 @@ the target state specified by <a class="link" href="ClutterState.html#clutter-st
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

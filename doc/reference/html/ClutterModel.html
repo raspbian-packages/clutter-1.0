@@ -8,7 +8,7 @@
 <link rel="up" href="ch12.html" title="Generic list model">
 <link rel="prev" href="ch12.html" title="Generic list model">
 <link rel="next" href="ClutterModelIter.html" title="ClutterModelIter">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -605,7 +605,7 @@ It will not work after the initial creation of the <a class="link" href="Clutter
 </tr>
 <tr>
 <td class="parameter_name"><p>names</p></td>
-<td class="parameter_description"><p> an array of strings. </p></td>
+<td class="parameter_description"><p>an array of strings. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 </tbody>
@@ -649,7 +649,7 @@ It will not work after the initial creation of the <a class="link" href="Clutter
 </tr>
 <tr>
 <td class="parameter_name"><p>types</p></td>
-<td class="parameter_description"><p> an array of <span class="type">GType</span> types. </p></td>
+<td class="parameter_description"><p>an array of <span class="type">GType</span> types. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 </tbody>
@@ -832,7 +832,7 @@ column 0 is type <code class="literal">G_TYPE_INT</code> and column 1 is of type
 <span class="normal">model </span><span class="symbol">=</span><span class="normal"> </span><span class="function">clutter_model_default_new</span><span class="normal"> </span><span class="symbol">(</span><span class="number">2</span><span class="symbol">,</span>
 <span class="normal">                                   G_TYPE_INT</span><span class="symbol">,</span><span class="normal">    </span><span class="string">"Score"</span><span class="symbol">,</span>
 <span class="normal">                                   G_TYPE_STRING</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team"</span><span class="symbol">);</span>
-<span class="function"><a href="ClutterModel.html#clutter-model-append">clutter_model_append</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">model</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">42</span><span class="symbol">,</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team &lt;GTKDOCLINK HREF="</span><span class="number">1</span><span class="symbol">:</span><span class="normal">CAPS</span><span class="string">"&gt;1&lt;/GTKDOCLINK&gt;"</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">);</span></pre></td>
+<span class="function"><a href="ClutterModel.html#clutter-model-append">clutter_model_append</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">model</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">42</span><span class="symbol">,</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team #1"</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -898,12 +898,12 @@ values for the given <em class="parameter"><code>columns</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>columns</p></td>
-<td class="parameter_description"><p> a vector with the columns to set. </p></td>
+<td class="parameter_description"><p>a vector with the columns to set. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>values</p></td>
-<td class="parameter_description"><p> a vector with the values. </p></td>
+<td class="parameter_description"><p>a vector with the values. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 </tbody>
@@ -937,7 +937,7 @@ is type <code class="literal">G_TYPE_INT</code> and column 1 is of type <code cl
 <span class="normal">model </span><span class="symbol">=</span><span class="normal"> </span><span class="function">clutter_model_default_new</span><span class="normal"> </span><span class="symbol">(</span><span class="number">2</span><span class="symbol">,</span>
 <span class="normal">                                   G_TYPE_INT</span><span class="symbol">,</span><span class="normal">    </span><span class="string">"Score"</span><span class="symbol">,</span>
 <span class="normal">                                   G_TYPE_STRING</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team"</span><span class="symbol">);</span>
-<span class="function"><a href="ClutterModel.html#clutter-model-prepend">clutter_model_prepend</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">model</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">42</span><span class="symbol">,</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team &lt;GTKDOCLINK HREF="</span><span class="number">1</span><span class="symbol">:</span><span class="normal">CAPS</span><span class="string">"&gt;1&lt;/GTKDOCLINK&gt;"</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">);</span></pre></td>
+<span class="function"><a href="ClutterModel.html#clutter-model-prepend">clutter_model_prepend</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">model</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">42</span><span class="symbol">,</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team #1"</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -1003,12 +1003,12 @@ values for the given <em class="parameter"><code>columns</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>columns</p></td>
-<td class="parameter_description"><p> a vector containing the columns to set. </p></td>
+<td class="parameter_description"><p>a vector containing the columns to set. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>values</p></td>
-<td class="parameter_description"><p> a vector containing the values for the cells. </p></td>
+<td class="parameter_description"><p>a vector containing the values for the cells. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 </tbody>
@@ -1045,7 +1045,7 @@ where column 0 is type <code class="literal">G_TYPE_INT</code> and column 1 is o
 <span class="normal">model </span><span class="symbol">=</span><span class="normal"> </span><span class="function">clutter_model_default_new</span><span class="normal"> </span><span class="symbol">(</span><span class="number">2</span><span class="symbol">,</span>
 <span class="normal">                                   G_TYPE_INT</span><span class="symbol">,</span><span class="normal">    </span><span class="string">"Score"</span><span class="symbol">,</span>
 <span class="normal">                                   G_TYPE_STRING</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team"</span><span class="symbol">);</span>
-<span class="function"><a href="ClutterModel.html#clutter-model-insert">clutter_model_insert</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">model</span><span class="symbol">,</span><span class="normal"> </span><span class="number">3</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">42</span><span class="symbol">,</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team &lt;GTKDOCLINK HREF="</span><span class="number">1</span><span class="symbol">:</span><span class="normal">CAPS</span><span class="string">"&gt;1&lt;/GTKDOCLINK&gt;"</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">);</span></pre></td>
+<span class="function"><a href="ClutterModel.html#clutter-model-insert">clutter_model_insert</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">model</span><span class="symbol">,</span><span class="normal"> </span><span class="number">3</span><span class="symbol">,</span><span class="normal"> </span><span class="number">0</span><span class="symbol">,</span><span class="normal"> </span><span class="number">42</span><span class="symbol">,</span><span class="normal"> </span><span class="number">1</span><span class="symbol">,</span><span class="normal"> </span><span class="string">"Team #1"</span><span class="symbol">,</span><span class="normal"> </span><span class="symbol">-</span><span class="number">1</span><span class="symbol">);</span></pre></td>
       </tr>
     </tbody>
   </table>
@@ -1123,12 +1123,12 @@ values for the given <em class="parameter"><code>columns</code></em>
 </tr>
 <tr>
 <td class="parameter_name"><p>columns</p></td>
-<td class="parameter_description"><p> a vector containing the columns to set. </p></td>
+<td class="parameter_description"><p>a vector containing the columns to set. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>values</p></td>
-<td class="parameter_description"><p> a vector containing the values for the cells. </p></td>
+<td class="parameter_description"><p>a vector containing the values for the cells. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=n_columns]</span></td>
 </tr>
 </tbody>
@@ -1297,7 +1297,7 @@ clutter_model_foreach (<em class="parameter"><code><a class="link" href="Clutter
 </tr>
 <tr>
 <td class="parameter_name"><p>func</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterModel.html#ClutterModelForeachFunc" title="ClutterModelForeachFunc ()"><span class="type">ClutterModelForeachFunc</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterModel.html#ClutterModelForeachFunc" title="ClutterModelForeachFunc ()"><span class="type">ClutterModelForeachFunc</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="The callback is valid only during the call to the method."><span class="acronym">scope call</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1474,7 +1474,7 @@ clutter_model_set_sort (<em class="parameter"><code><a class="link" href="Clutte
 </tr>
 <tr>
 <td class="parameter_name"><p>func</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterModel.html#ClutterModelSortFunc" title="ClutterModelSortFunc ()"><span class="type">ClutterModelSortFunc</span></a>, or <span class="type">NULL</span>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterModel.html#ClutterModelSortFunc" title="ClutterModelSortFunc ()"><span class="type">ClutterModelSortFunc</span></a>, or <span class="type">NULL</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1598,7 +1598,7 @@ clutter_model_set_filter (<em class="parameter"><code><a class="link" href="Clut
 </tr>
 <tr>
 <td class="parameter_name"><p>func</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterModel.html#ClutterModelFilterFunc" title="ClutterModelFilterFunc ()"><span class="type">ClutterModelFilterFunc</span></a>, or <span class="type">NULL</span>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterModel.html#ClutterModelFilterFunc" title="ClutterModelFilterFunc ()"><span class="type">ClutterModelFilterFunc</span></a>, or <span class="type">NULL</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -1768,7 +1768,7 @@ row in <em class="parameter"><code>model</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-model-get-first-iter.returns"></a><h4>Returns</h4>
-<p> A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>.
+<p>A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>.
 Call <code class="function">g_object_unref()</code> when done using it. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1803,7 +1803,7 @@ row in <em class="parameter"><code>model</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-model-get-last-iter.returns"></a><h4>Returns</h4>
-<p> A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>.
+<p>A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>.
 Call <code class="function">g_object_unref()</code> when done using it. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -1848,7 +1848,7 @@ row.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-model-get-iter-at-row.returns"></a><h4>Returns</h4>
-<p> A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>, or <code class="literal">NULL</code> if <em class="parameter"><code>row</code></em>
+<p>A new <a class="link" href="ClutterModelIter.html" title="ClutterModelIter"><span class="type">ClutterModelIter</span></a>, or <code class="literal">NULL</code> if <em class="parameter"><code>row</code></em>
 was
 out of bounds. When done using the iterator object, call <code class="function">g_object_unref()</code>
 to deallocate its resources. </p>
@@ -2219,6 +2219,6 @@ user_function (<a class="link" href="ClutterModel.html" title="ClutterModel"><sp
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

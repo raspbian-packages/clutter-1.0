@@ -3793,7 +3793,7 @@ clutter_text_class_init (ClutterTextClass *klass)
    */
   pspec = g_param_spec_unichar ("password-char",
                                 P_("Password Character"),
-                                P_("If non-zero, use this character to display the actor's contents"),
+                                P_("If non-zero, use this character to display the actor’s contents"),
                                 0,
                                 CLUTTER_PARAM_READWRITE);
   obj_props[PROP_PASSWORD_CHAR] = pspec;

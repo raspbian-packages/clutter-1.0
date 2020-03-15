@@ -1,3 +1,37 @@
+Clutter 1.26.4                                                       2020-03-09
+===============================================================================
+
+  • List of changes since Clutter 1.26.2
+
+    - Require GLib 2.54
+
+    - Build fixes
+
+    - Add an experimental Meson build
+
+    - Documentation fixes
+
+    - Handle 8 and 10 bits colour depth in picking code
+
+  • List of bugs fixed since Clutter 1.26.2
+
+    #792716 - Don't declare functions in AC_TRY_LINK and AC_TRY_COMPILE
+    #772213 - Take advantage of Unicode
+    #769190 - Clutter stage is too big and events wrong under hidpi gnome
+              on wayland 
+    
+    #8 - actor-offscreen-redirect test has uninitialized stack data,
+         hangs when the obvious fix is applied
+    #11 - Handle 10 bits colour bit depth in actor picking
+    !8 - docs: Add missing settings.ini Environment group keys
+    !9 - meson: Don't use undocumented -export-dynamic option
+    !11 - clutter/actor: Mark implicit transitions as remove-on-complete
+
+Many thanks to:
+
+  Floris Van den Abeele, Jonas Ådahl, Ting-Wei Lan, Chris Mayo, Sjoerd Simons,
+  Bastien Nocera, Rico Tzschichholz, Piotr Drąg.
+
 Clutter 1.26.2                                                       2017-05-12
 ===============================================================================
 

@@ -5,12 +5,11 @@ SUBDIRS += reference
 endif
 
 if ENABLE_DOCS
-SUBDIRS += common cookbook
+SUBDIRS += cookbook
 endif
 
-DIST_SUBDIRS = reference common cookbook
+DIST_SUBDIRS = reference cookbook
 
 EXTRA_DIST = \
-	CODING_STYLE \
-	HACKING \
-	HACKING.backends
+	CODING_STYLE.txt \
+	BACKENDS.md

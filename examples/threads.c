@@ -195,7 +195,7 @@ on_key_press_event (ClutterStage *stage,
 
       /* the data structure holding all our objects */
       data = test_thread_data_new ();
-      data->stage = g_object_ref (stage);
+      data->stage = (ClutterActor *) g_object_ref (stage);
       data->label = g_object_ref (count_label);
       data->progress = g_object_ref (progress_rect);
       data->rect = g_object_ref (rect);

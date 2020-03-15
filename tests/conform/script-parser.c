@@ -127,6 +127,9 @@ script_child (void)
   gboolean focus_ret;
   gchar *test_file;
 
+  g_type_ensure (TEST_TYPE_GROUP);
+  g_type_ensure (TEST_TYPE_GROUP_META);
+
   test_file = g_test_build_filename (G_TEST_DIST, "scripts", "test-script-child.json", NULL);
   clutter_script_load_from_file (script, test_file, &error);
   if (g_test_verbose () && error)

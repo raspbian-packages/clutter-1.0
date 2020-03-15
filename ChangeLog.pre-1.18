@@ -109,17 +109,17 @@ Date:   Mon Mar 17 23:09:27 2014 +0000
     
     And drop docbook tags along the way.
 
- clutter/deprecated/clutter-actor-deprecated.c  |   4 +-
- clutter/deprecated/clutter-alpha.c             |  55 +++++------
- clutter/deprecated/clutter-animation.c         | 130 ++++++++----------------
- clutter/deprecated/clutter-animator.c          |  95 ++++++++----------
- clutter/deprecated/clutter-behaviour-ellipse.c |   4 +-
- clutter/deprecated/clutter-behaviour-path.c    |   4 +-
- clutter/deprecated/clutter-box.c               |  40 ++++----
- clutter/deprecated/clutter-cairo-texture.c     |  24 ++---
- clutter/deprecated/clutter-state.c             | 132 ++++++++++++-------------
- clutter/deprecated/clutter-table-layout.c      |  30 +++---
- clutter/deprecated/clutter-texture.c           |  45 +++------
+ clutter/deprecated/clutter-actor-deprecated.c  |   4 ++--
+ clutter/deprecated/clutter-alpha.c             |  55 ++++++++++++++++++++++++-------------------------------
+ clutter/deprecated/clutter-animation.c         | 130 +++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------
+ clutter/deprecated/clutter-animator.c          |  95 +++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------
+ clutter/deprecated/clutter-behaviour-ellipse.c |   4 ++--
+ clutter/deprecated/clutter-behaviour-path.c    |   4 ++--
+ clutter/deprecated/clutter-box.c               |  40 +++++++++++++++++++---------------------
+ clutter/deprecated/clutter-cairo-texture.c     |  24 ++++++++----------------
+ clutter/deprecated/clutter-state.c             | 132 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------
+ clutter/deprecated/clutter-table-layout.c      |  30 +++++++++++-------------------
+ clutter/deprecated/clutter-texture.c           |  45 +++++++++++++--------------------------------
  11 files changed, 228 insertions(+), 335 deletions(-)
 
 commit 12370bd4f8246f72abe75fae90fdee452c7a8f58
@@ -130,40 +130,40 @@ Date:   Mon Mar 17 23:07:58 2014 +0000
     
     We're removing docbook tags in favour of the markdown syntax.
 
- clutter/clutter-actor.c            | 904 +++++++++++++++++++------------------
+ clutter/clutter-actor.c            | 904 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------
  clutter/clutter-backend.c          |   8 +-
- clutter/clutter-bin-layout.c       |  34 +-
- clutter/clutter-bind-constraint.c  |  31 +-
- clutter/clutter-binding-pool.c     |  19 +-
- clutter/clutter-box-layout.c       |  34 +-
+ clutter/clutter-bin-layout.c       |  34 ++------
+ clutter/clutter-bind-constraint.c  |  31 ++-----
+ clutter/clutter-binding-pool.c     |  19 ++---
+ clutter/clutter-box-layout.c       |  34 +++-----
  clutter/clutter-canvas.c           |   9 +-
  clutter/clutter-child-meta.h       |   9 +-
  clutter/clutter-clone.c            |   6 +-
- clutter/clutter-color.c            |  28 +-
- clutter/clutter-constraint.c       | 207 ++++-----
- clutter/clutter-deform-effect.c    |  19 +-
- clutter/clutter-drag-action.c      |  20 +-
- clutter/clutter-drop-action.c      |  14 +-
- clutter/clutter-effect.c           | 158 +++----
- clutter/clutter-flow-layout.c      |  35 +-
- clutter/clutter-gesture-action.c   |  64 +--
+ clutter/clutter-color.c            |  28 ++-----
+ clutter/clutter-constraint.c       | 207 +++++++++++++++++++--------------------------
+ clutter/clutter-deform-effect.c    |  19 ++---
+ clutter/clutter-drag-action.c      |  20 ++---
+ clutter/clutter-drop-action.c      |  14 +---
+ clutter/clutter-effect.c           | 158 ++++++++++++++---------------------
+ clutter/clutter-flow-layout.c      |  35 +++-----
+ clutter/clutter-gesture-action.c   |  64 +++++++-------
  clutter/clutter-image.c            |   9 +-
- clutter/clutter-input-device.c     |  20 +-
- clutter/clutter-layout-manager.c   | 285 ++----------
- clutter/clutter-main.c             | 140 ++----
- clutter/clutter-model.c            |  70 +--
- clutter/clutter-offscreen-effect.c |  41 +-
- clutter/clutter-paint-volume.c     |  64 +--
- clutter/clutter-path.c             |  67 +--
- clutter/clutter-script.c           |  10 +-
+ clutter/clutter-input-device.c     |  20 ++---
+ clutter/clutter-layout-manager.c   | 285 +++++++++++---------------------------------------------------
+ clutter/clutter-main.c             | 140 +++++++++++--------------------
+ clutter/clutter-model.c            |  70 ++++++++--------
+ clutter/clutter-offscreen-effect.c |  41 ++++-----
+ clutter/clutter-paint-volume.c     |  64 +++++++-------
+ clutter/clutter-path.c             |  67 +++++----------
+ clutter/clutter-script.c           |  10 +--
  clutter/clutter-scroll-actor.c     |   9 +-
- clutter/clutter-settings.c         |  24 +-
- clutter/clutter-shader-effect.c    | 100 ++--
- clutter/clutter-stage.c            |  50 +-
+ clutter/clutter-settings.c         |  24 +++---
+ clutter/clutter-shader-effect.c    | 100 +++++++++++-----------
+ clutter/clutter-stage.c            |  50 ++++++-----
  clutter/clutter-test-utils.c       |   2 +-
  clutter/clutter-test-utils.h       |   2 +-
  clutter/clutter-text.c             |   4 +-
- clutter/clutter-timeline.c         |  47 +-
+ clutter/clutter-timeline.c         |  47 +++++------
  clutter/clutter-types.h            |   4 +-
  clutter/clutter-units.c            |   6 +-
  36 files changed, 1062 insertions(+), 1491 deletions(-)
@@ -299,70 +299,70 @@ Date:   Mon Mar 17 18:19:52 2014 +0000
     We are going to switch to compiler annotations to determine the
     visibility of the symbols.
 
- clutter/clutter-action.h                     | 11 +++-
- clutter/clutter-actor-meta.h                 |  6 ++
- clutter/clutter-actor.c                      |  2 -
- clutter/clutter-actor.h                      | 89 ++++++++++++++++++++++++++++
- clutter/clutter-align-constraint.h           |  8 +++
- clutter/clutter-animatable.h                 |  5 ++
- clutter/clutter-backend.h                    | 22 ++++---
- clutter/clutter-bin-layout.h                 |  6 +-
- clutter/clutter-bind-constraint.h            |  8 +++
- clutter/clutter-binding-pool.h               | 13 ++++
- clutter/clutter-blur-effect.h                |  2 +
- clutter/clutter-box-layout.h                 |  9 +++
- clutter/clutter-brightness-contrast-effect.h |  8 +++
- clutter/clutter-cairo.h                      |  2 +
- clutter/clutter-child-meta.h                 |  9 ++-
- clutter/clutter-click-action.h               |  6 ++
- clutter/clutter-clone.h                      | 12 ++--
- clutter/clutter-color.h                      | 39 +++++++++---
- clutter/clutter-colorize-effect.h            |  4 ++
- clutter/clutter-constraint.h                 |  9 +++
- clutter/clutter-container.h                  | 86 +++++++++++++++------------
- clutter/clutter-deform-effect.h              | 28 +++++----
- clutter/clutter-desaturate-effect.h          |  4 ++
- clutter/clutter-device-manager.h             |  8 ++-
- clutter/clutter-drag-action.h                | 10 ++++
- clutter/clutter-drop-action.h                |  2 +
- clutter/clutter-effect.h                     | 12 +++-
+ clutter/clutter-action.h                     | 11 ++++++++++-
+ clutter/clutter-actor-meta.h                 |  6 ++++++
+ clutter/clutter-actor.c                      |  2 --
+ clutter/clutter-actor.h                      | 89 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-align-constraint.h           |  8 ++++++++
+ clutter/clutter-animatable.h                 |  5 +++++
+ clutter/clutter-backend.h                    | 22 ++++++++++++++--------
+ clutter/clutter-bin-layout.h                 |  6 ++++--
+ clutter/clutter-bind-constraint.h            |  8 ++++++++
+ clutter/clutter-binding-pool.h               | 13 +++++++++++++
+ clutter/clutter-blur-effect.h                |  2 ++
+ clutter/clutter-box-layout.h                 |  9 +++++++++
+ clutter/clutter-brightness-contrast-effect.h |  8 ++++++++
+ clutter/clutter-cairo.h                      |  2 ++
+ clutter/clutter-child-meta.h                 |  9 ++++++---
+ clutter/clutter-click-action.h               |  6 ++++++
+ clutter/clutter-clone.h                      | 12 ++++++++----
+ clutter/clutter-color.h                      | 39 ++++++++++++++++++++++++++++++++-------
+ clutter/clutter-colorize-effect.h            |  4 ++++
+ clutter/clutter-constraint.h                 |  9 +++++++++
+ clutter/clutter-container.h                  | 86 +++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------
+ clutter/clutter-deform-effect.h              | 28 +++++++++++++++++-----------
+ clutter/clutter-desaturate-effect.h          |  4 ++++
+ clutter/clutter-device-manager.h             |  8 ++++++--
+ clutter/clutter-drag-action.h                | 10 ++++++++++
+ clutter/clutter-drop-action.h                |  2 ++
+ clutter/clutter-effect.h                     | 12 +++++++++++-
  clutter/clutter-enum-types.c.in              |  1 +
- clutter/clutter-enum-types.h.in              | 19 +++---
- clutter/clutter-event.h                      | 52 +++++++++++++---
- clutter/clutter-feature.h                    |  2 +
- clutter/clutter-fixed-layout.h               |  2 +
- clutter/clutter-flow-layout.h                | 14 +++++
- clutter/clutter-gesture-action.h             |  7 +++
+ clutter/clutter-enum-types.h.in              | 19 +++++++++++--------
+ clutter/clutter-event.h                      | 52 ++++++++++++++++++++++++++++++++++++++++++++--------
+ clutter/clutter-feature.h                    |  2 ++
+ clutter/clutter-fixed-layout.h               |  2 ++
+ clutter/clutter-flow-layout.h                | 14 ++++++++++++++
+ clutter/clutter-gesture-action.h             |  7 +++++++
  clutter/clutter-group.h                      |  1 +
- clutter/clutter-input-device.h               | 20 +++++++
- clutter/clutter-interval.c                   |  8 ++-
- clutter/clutter-interval.h                   | 18 ++++++
- clutter/clutter-layout-manager.h             | 13 ++++
- clutter/clutter-layout-meta.h                |  2 +
- clutter/clutter-list-model.h                 |  3 +
- clutter/clutter-macros.h                     | 78 +++++++++++++-----------
- clutter/clutter-main.h                       | 36 +++++++++++
- clutter/clutter-model.h                      | 43 +++++++++++++-
- clutter/clutter-offscreen-effect.h           |  4 ++
- clutter/clutter-page-turn-effect.h           |  8 +++
- clutter/clutter-path-constraint.h            |  6 ++
- clutter/clutter-path.h                       | 26 ++++++++
- clutter/clutter-script.h                     | 16 +++++
- clutter/clutter-scriptable.h                 |  5 ++
- clutter/clutter-settings.h                   |  2 +
- clutter/clutter-shader-effect.h              |  7 +++
- clutter/clutter-shader-types.h               | 11 +++-
- clutter/clutter-snap-constraint.h            |  8 +++
- clutter/clutter-stage-manager.h              |  5 ++
- clutter/clutter-stage.h                      | 35 +++++++++++
- clutter/clutter-swipe-action.h               |  2 +
- clutter/clutter-text.h                       | 67 +++++++++++++++++++++
- clutter/clutter-texture.h                    |  2 +
- clutter/clutter-timeline.h                   | 25 ++++++++
- clutter/clutter-types.h                      | 54 +++++++++++++++++
- clutter/clutter-units.h                      | 18 ++++++
- clutter/clutter-version.h.in                 |  6 --
- clutter/clutter.h                            |  3 +-
+ clutter/clutter-input-device.h               | 20 ++++++++++++++++++++
+ clutter/clutter-interval.c                   |  8 ++++++--
+ clutter/clutter-interval.h                   | 18 ++++++++++++++++++
+ clutter/clutter-layout-manager.h             | 13 +++++++++++++
+ clutter/clutter-layout-meta.h                |  2 ++
+ clutter/clutter-list-model.h                 |  3 +++
+ clutter/clutter-macros.h                     | 78 ++++++++++++++++++++++++++++++++++++++++++------------------------------------
+ clutter/clutter-main.h                       | 36 ++++++++++++++++++++++++++++++++++++
+ clutter/clutter-model.h                      | 43 ++++++++++++++++++++++++++++++++++++++++++-
+ clutter/clutter-offscreen-effect.h           |  4 ++++
+ clutter/clutter-page-turn-effect.h           |  8 ++++++++
+ clutter/clutter-path-constraint.h            |  6 ++++++
+ clutter/clutter-path.h                       | 26 ++++++++++++++++++++++++++
+ clutter/clutter-script.h                     | 16 ++++++++++++++++
+ clutter/clutter-scriptable.h                 |  5 +++++
+ clutter/clutter-settings.h                   |  2 ++
+ clutter/clutter-shader-effect.h              |  7 +++++++
+ clutter/clutter-shader-types.h               | 11 ++++++++++-
+ clutter/clutter-snap-constraint.h            |  8 ++++++++
+ clutter/clutter-stage-manager.h              |  5 +++++
+ clutter/clutter-stage.h                      | 35 +++++++++++++++++++++++++++++++++++
+ clutter/clutter-swipe-action.h               |  2 ++
+ clutter/clutter-text.h                       | 67 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-texture.h                    |  2 ++
+ clutter/clutter-timeline.h                   | 25 +++++++++++++++++++++++++
+ clutter/clutter-types.h                      | 54 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-units.h                      | 18 ++++++++++++++++++
+ clutter/clutter-version.h.in                 |  6 ------
+ clutter/clutter.h                            |  3 +--
  clutter/deprecated/clutter-fixed.h           |  1 +
  65 files changed, 908 insertions(+), 142 deletions(-)
 
@@ -372,7 +372,7 @@ Date:   Sun Mar 16 15:33:11 2014 +0000
 
     Updated French translation
 
- po/fr.po | 921 ++++++++++++++++++++++++++++++++++-----------------------------
+ po/fr.po | 921 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------
  1 file changed, 493 insertions(+), 428 deletions(-)
 
 commit e70a0109f2306080a853aa15eb61fd9ce53edf73
@@ -457,7 +457,7 @@ Date:   Fri Feb 28 09:48:10 2014 -0500
     
     https://bugzilla.gnome.org/show_bug.cgi?id=726198
 
- clutter/egl/clutter-backend-eglnative.c | 39 +++++++++++++++++++++++++++++++++
+ clutter/egl/clutter-backend-eglnative.c | 39 +++++++++++++++++++++++++++++++++++++++
  clutter/egl/clutter-egl.h               |  2 ++
  2 files changed, 41 insertions(+)
 
@@ -505,10 +505,10 @@ Date:   Fri Mar 14 14:18:33 2014 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=726341
 
- clutter/Makefile.am                     |  4 +-
- clutter/egl/clutter-backend-eglnative.c |  4 +-
- clutter/egl/clutter-stage-eglnative.c   | 70 +++++++++++++++++++++++++++++++++
- clutter/egl/clutter-stage-eglnative.h   | 59 +++++++++++++++++++++++++++
+ clutter/Makefile.am                     |  4 ++--
+ clutter/egl/clutter-backend-eglnative.c |  4 +++-
+ clutter/egl/clutter-stage-eglnative.c   | 70 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/egl/clutter-stage-eglnative.h   | 59 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  4 files changed, 134 insertions(+), 3 deletions(-)
 
 commit dcaf5686a243d8b75ebe85206386dcf380216851
@@ -526,7 +526,7 @@ Date:   Mon Mar 10 10:25:22 2014 -0400
     
     https://bugzilla.gnome.org/show_bug.cgi?id=726199
 
- clutter/evdev/clutter-device-manager-evdev.c | 31 ++++++++++++++--------------
+ clutter/evdev/clutter-device-manager-evdev.c | 31 +++++++++++++++----------------
  1 file changed, 15 insertions(+), 16 deletions(-)
 
 commit defe55ff097aa53897bdd43c5ffdeadaab9f2a85
@@ -567,7 +567,7 @@ Date:   Sat Mar 1 13:06:25 2014 -0500
     
     https://bugzilla.gnome.org/show_bug.cgi?id=726199
 
- clutter/evdev/clutter-device-manager-evdev.c | 29 +++++++++++++++++-----------
+ clutter/evdev/clutter-device-manager-evdev.c | 29 ++++++++++++++++++-----------
  clutter/evdev/clutter-evdev.h                |  7 +++++--
  2 files changed, 23 insertions(+), 13 deletions(-)
 
@@ -586,7 +586,7 @@ Date:   Wed Mar 12 01:48:11 2014 +0000
 
     Updated Portuguese translation
 
- po/pt.po | 886 ++++++++++++++++++++++++++++++++++-----------------------------
+ po/pt.po | 886 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------
  1 file changed, 473 insertions(+), 413 deletions(-)
 
 commit 967d4c5b856dc910b42f5f1834a1ecc93035b9ec
@@ -595,7 +595,7 @@ Date:   Wed Mar 12 09:38:10 2014 +0900
 
     Added Korean translation
 
- po/ko.po | 2799 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ po/ko.po | 2799 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 2799 insertions(+)
 
 commit 70835c904a63cf40e175163ef33cbe62f0bfbe89
@@ -617,7 +617,7 @@ Date:   Tue Mar 11 16:20:07 2014 +0400
 
     Updated Russian translation
 
- po/ru.po | 1118 +++++++++++++++++++++++++++++++++-----------------------------
+ po/ru.po | 1118 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------------------
  1 file changed, 602 insertions(+), 516 deletions(-)
 
 commit 146c0610b7cc76cb963567aea28002e822844d36
@@ -626,8 +626,8 @@ Date:   Sun Mar 9 11:29:52 2014 +0800
 
     Updated Traditional Chinese translation(Hong Kong and Taiwan)
 
- po/zh_HK.po | 196 ++++++++++++++++++++++++++++++++----------------------------
- po/zh_TW.po | 196 ++++++++++++++++++++++++++++++++----------------------------
+ po/zh_HK.po | 196 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------
+ po/zh_TW.po | 196 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------
  2 files changed, 206 insertions(+), 186 deletions(-)
 
 commit e95f7e34c001c9a92678a21920cc778ac1ad6c01
@@ -636,7 +636,7 @@ Date:   Sat Mar 8 19:46:12 2014 +0200
 
     Updated Latvian translation
 
- po/lv.po | 935 ++++++++++++++++++++++++++++++++++-----------------------------
+ po/lv.po | 935 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------
  1 file changed, 500 insertions(+), 435 deletions(-)
 
 commit 986077cbda36dea47e5b342072f0a587c55a3643
@@ -645,7 +645,7 @@ Date:   Sat Mar 8 12:45:29 2014 +0000
 
     Updated Chinese (China) translation
 
- po/zh_CN.po | 336 +++++++++++++++++++++++++++++++++---------------------------
+ po/zh_CN.po | 336 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------
  1 file changed, 187 insertions(+), 149 deletions(-)
 
 commit c1fd29df7ac73ca85c0d3e0e2d9da92af250c9c4
@@ -747,50 +747,50 @@ Date:   Thu Mar 6 16:30:30 2014 +0800
     
     -Cosmetics: get rid of "\ No newline at end of file".
 
- build/win32/vs10/Makefile.am                       |   5 +-
- .../win32/vs10/cally-atkcomponent-example.vcxproj  |  10 +-
- .../cally-atkcomponent-example.vcxproj.filters     |   2 +-
- .../vs10/cally-atkeditabletext-example.vcxproj     |  10 +-
- .../cally-atkeditabletext-example.vcxproj.filters  |   2 +-
- build/win32/vs10/cally-atkevents-example.vcxproj   |  10 +-
- .../vs10/cally-atkevents-example.vcxproj.filters   |   2 +-
- build/win32/vs10/cally-atktext-example.vcxproj     |  10 +-
- .../vs10/cally-atktext-example.vcxproj.filters     |   2 +-
- build/win32/vs10/cally-clone-example.vcxproj       |  10 +-
- .../win32/vs10/cally-clone-example.vcxproj.filters |   2 +-
- build/win32/vs10/clutter-build-defines.props       |  63 ++++
- build/win32/vs10/clutter-gen-srcs.props            |  98 ++++++
- .../vs10/{clutter.props => clutter-install.props}  | 219 ++-----------
- build/win32/vs10/clutter-version-paths.props       |  57 ++++
- build/win32/vs10/clutter.vcxproj.filtersin         |   4 +
- build/win32/vs10/clutter.vcxprojin                 | 162 +++++++---
- build/win32/vs10/install.vcxproj                   |  10 +-
- build/win32/vs10/test-cogl-perf.vcxproj            |  10 +-
- build/win32/vs10/test-cogl-perf.vcxproj.filters    |   2 +-
- .../test-interactive-clutter.vcxproj.filtersin     |   2 +-
- .../win32/vs10/test-interactive-clutter.vcxprojin  |  10 +-
- build/win32/vs10/test-picking-performance.vcxproj  | 338 ++++++++++-----------
- .../vs10/test-picking-performance.vcxproj.filters  |  46 +--
- build/win32/vs10/test-picking.vcxproj              |  10 +-
- build/win32/vs10/test-picking.vcxproj.filters      |   2 +-
- build/win32/vs10/test-random-text.vcxproj          |  10 +-
- build/win32/vs10/test-random-text.vcxproj.filters  |   2 +-
- .../vs10/test-state-hidden-performance.vcxproj     | 338 ++++++++++-----------
- .../test-state-hidden-performance.vcxproj.filters  |  46 +--
- .../test-state-interactive-performance.vcxproj     | 338 ++++++++++-----------
- ...t-state-interactive-performance.vcxproj.filters |  46 +--
- .../win32/vs10/test-state-mini-performance.vcxproj | 338 ++++++++++-----------
- .../test-state-mini-performance.vcxproj.filters    |  46 +--
- build/win32/vs10/test-state-performance.vcxproj    | 338 ++++++++++-----------
- .../vs10/test-state-performance.vcxproj.filters    |  46 +--
- .../win32/vs10/test-state-pick-performance.vcxproj | 338 ++++++++++-----------
- .../test-state-pick-performance.vcxproj.filters    |  46 +--
- .../win32/vs10/test-text-perf-performance.vcxproj  | 338 ++++++++++-----------
- .../test-text-perf-performance.vcxproj.filters     |  46 +--
- build/win32/vs10/test-text-perf.vcxproj            |  10 +-
- build/win32/vs10/test-text-perf.vcxproj.filters    |   2 +-
- build/win32/vs10/test-text.vcxproj                 |  10 +-
- build/win32/vs10/test-text.vcxproj.filters         |   2 +-
+ build/win32/vs10/Makefile.am                                        |   5 ++-
+ build/win32/vs10/cally-atkcomponent-example.vcxproj                 |  10 ++---
+ build/win32/vs10/cally-atkcomponent-example.vcxproj.filters         |   2 +-
+ build/win32/vs10/cally-atkeditabletext-example.vcxproj              |  10 ++---
+ build/win32/vs10/cally-atkeditabletext-example.vcxproj.filters      |   2 +-
+ build/win32/vs10/cally-atkevents-example.vcxproj                    |  10 ++---
+ build/win32/vs10/cally-atkevents-example.vcxproj.filters            |   2 +-
+ build/win32/vs10/cally-atktext-example.vcxproj                      |  10 ++---
+ build/win32/vs10/cally-atktext-example.vcxproj.filters              |   2 +-
+ build/win32/vs10/cally-clone-example.vcxproj                        |  10 ++---
+ build/win32/vs10/cally-clone-example.vcxproj.filters                |   2 +-
+ build/win32/vs10/clutter-build-defines.props                        |  63 +++++++++++++++++++++++++++++++
+ build/win32/vs10/clutter-gen-srcs.props                             |  98 +++++++++++++++++++++++++++++++++++++++++++++++
+ build/win32/vs10/{clutter.props => clutter-install.props}           | 219 +++++++++------------------------------------------------------------------------------------------------
+ build/win32/vs10/clutter-version-paths.props                        |  57 ++++++++++++++++++++++++++++
+ build/win32/vs10/clutter.vcxproj.filtersin                          |   4 ++
+ build/win32/vs10/clutter.vcxprojin                                  | 162 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------
+ build/win32/vs10/install.vcxproj                                    |  10 ++---
+ build/win32/vs10/test-cogl-perf.vcxproj                             |  10 ++---
+ build/win32/vs10/test-cogl-perf.vcxproj.filters                     |   2 +-
+ build/win32/vs10/test-interactive-clutter.vcxproj.filtersin         |   2 +-
+ build/win32/vs10/test-interactive-clutter.vcxprojin                 |  10 ++---
+ build/win32/vs10/test-picking-performance.vcxproj                   | 338 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+ build/win32/vs10/test-picking-performance.vcxproj.filters           |  46 +++++++++++------------
+ build/win32/vs10/test-picking.vcxproj                               |  10 ++---
+ build/win32/vs10/test-picking.vcxproj.filters                       |   2 +-
+ build/win32/vs10/test-random-text.vcxproj                           |  10 ++---
+ build/win32/vs10/test-random-text.vcxproj.filters                   |   2 +-
+ build/win32/vs10/test-state-hidden-performance.vcxproj              | 338 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+ build/win32/vs10/test-state-hidden-performance.vcxproj.filters      |  46 +++++++++++------------
+ build/win32/vs10/test-state-interactive-performance.vcxproj         | 338 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+ build/win32/vs10/test-state-interactive-performance.vcxproj.filters |  46 +++++++++++------------
+ build/win32/vs10/test-state-mini-performance.vcxproj                | 338 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+ build/win32/vs10/test-state-mini-performance.vcxproj.filters        |  46 +++++++++++------------
+ build/win32/vs10/test-state-performance.vcxproj                     | 338 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+ build/win32/vs10/test-state-performance.vcxproj.filters             |  46 +++++++++++------------
+ build/win32/vs10/test-state-pick-performance.vcxproj                | 338 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+ build/win32/vs10/test-state-pick-performance.vcxproj.filters        |  46 +++++++++++------------
+ build/win32/vs10/test-text-perf-performance.vcxproj                 | 338 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------
+ build/win32/vs10/test-text-perf-performance.vcxproj.filters         |  46 +++++++++++------------
+ build/win32/vs10/test-text-perf.vcxproj                             |  10 ++---
+ build/win32/vs10/test-text-perf.vcxproj.filters                     |   2 +-
+ build/win32/vs10/test-text.vcxproj                                  |  10 ++---
+ build/win32/vs10/test-text.vcxproj.filters                          |   2 +-
  44 files changed, 1780 insertions(+), 1658 deletions(-)
 
 commit 3c344fe5eda34e1221da23818a2ce297d0f22125
@@ -812,31 +812,31 @@ Date:   Wed Mar 5 18:41:45 2014 +0800
     
     Similar updates to the Visual Studio 2010 project files will follow.
 
- build/win32/vs9/Makefile.am                        |   5 +-
- build/win32/vs9/cally-atkcomponent-example.vcproj  |   8 +-
- .../win32/vs9/cally-atkeditabletext-example.vcproj |   8 +-
- build/win32/vs9/cally-atkevents-example.vcproj     |   8 +-
- build/win32/vs9/cally-atktext-example.vcproj       |   8 +-
- build/win32/vs9/cally-clone-example.vcproj         |   8 +-
- build/win32/vs9/clutter-build-defines.vsprops      |  57 ++++
- build/win32/vs9/clutter-gen-srcs.vsprops           |  81 +++++
- .../{clutter.vsprops => clutter-install.vsprops}   | 182 +----------
- build/win32/vs9/clutter-version-paths.vsprops      |  54 ++++
- build/win32/vs9/clutter.vcprojin                   | 328 +++++++++++++++-----
- build/win32/vs9/install.vcproj                     |   8 +-
- build/win32/vs9/test-cogl-perf.vcproj              |   8 +-
- build/win32/vs9/test-interactive-clutter.vcprojin  |   8 +-
- build/win32/vs9/test-picking-performance.vcproj    | 332 ++++++++++-----------
- build/win32/vs9/test-picking.vcproj                |   8 +-
- build/win32/vs9/test-random-text.vcproj            |   8 +-
- .../win32/vs9/test-state-hidden-performance.vcproj | 332 ++++++++++-----------
- .../vs9/test-state-interactive-performance.vcproj  | 332 ++++++++++-----------
- build/win32/vs9/test-state-mini-performance.vcproj | 332 ++++++++++-----------
- build/win32/vs9/test-state-performance.vcproj      | 332 ++++++++++-----------
- build/win32/vs9/test-state-pick-performance.vcproj | 332 ++++++++++-----------
- build/win32/vs9/test-text-perf-performance.vcproj  | 332 ++++++++++-----------
- build/win32/vs9/test-text-perf.vcproj              |   8 +-
- build/win32/vs9/test-text.vcproj                   |   8 +-
+ build/win32/vs9/Makefile.am                                  |   5 ++-
+ build/win32/vs9/cally-atkcomponent-example.vcproj            |   8 ++---
+ build/win32/vs9/cally-atkeditabletext-example.vcproj         |   8 ++---
+ build/win32/vs9/cally-atkevents-example.vcproj               |   8 ++---
+ build/win32/vs9/cally-atktext-example.vcproj                 |   8 ++---
+ build/win32/vs9/cally-clone-example.vcproj                   |   8 ++---
+ build/win32/vs9/clutter-build-defines.vsprops                |  57 ++++++++++++++++++++++++++++++
+ build/win32/vs9/clutter-gen-srcs.vsprops                     |  81 ++++++++++++++++++++++++++++++++++++++++++
+ build/win32/vs9/{clutter.vsprops => clutter-install.vsprops} | 182 ++++++---------------------------------------------------------------------------------------
+ build/win32/vs9/clutter-version-paths.vsprops                |  54 ++++++++++++++++++++++++++++
+ build/win32/vs9/clutter.vcprojin                             | 328 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------
+ build/win32/vs9/install.vcproj                               |   8 ++---
+ build/win32/vs9/test-cogl-perf.vcproj                        |   8 ++---
+ build/win32/vs9/test-interactive-clutter.vcprojin            |   8 ++---
+ build/win32/vs9/test-picking-performance.vcproj              | 332 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+ build/win32/vs9/test-picking.vcproj                          |   8 ++---
+ build/win32/vs9/test-random-text.vcproj                      |   8 ++---
+ build/win32/vs9/test-state-hidden-performance.vcproj         | 332 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+ build/win32/vs9/test-state-interactive-performance.vcproj    | 332 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+ build/win32/vs9/test-state-mini-performance.vcproj           | 332 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+ build/win32/vs9/test-state-performance.vcproj                | 332 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+ build/win32/vs9/test-state-pick-performance.vcproj           | 332 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+ build/win32/vs9/test-text-perf-performance.vcproj            | 332 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------
+ build/win32/vs9/test-text-perf.vcproj                        |   8 ++---
+ build/win32/vs9/test-text.vcproj                             |   8 ++---
  25 files changed, 1664 insertions(+), 1463 deletions(-)
 
 commit 016eb45feed24500a68609f87255a170e6b64d91
@@ -888,9 +888,9 @@ Date:   Mon Mar 3 23:23:12 2014 +0000
     
     https://bugzilla.gnome.org/show_bug.cgi?id=705779
 
- clutter/x11/clutter-backend-x11.c |  13 +++
- clutter/x11/clutter-keymap-x11.c  | 164 +++++++++++++++++++++++++++++++++++++-
- clutter/x11/clutter-keymap-x11.h  |   3 +
+ clutter/x11/clutter-backend-x11.c |  13 +++++++++++++
+ clutter/x11/clutter-keymap-x11.c  | 164 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ clutter/x11/clutter-keymap-x11.h  |   3 +++
  3 files changed, 179 insertions(+), 1 deletion(-)
 
 commit a0003499783d28028dbc4c48e3c673d6b244a20e
@@ -943,7 +943,7 @@ Date:   Mon Mar 3 21:47:28 2014 +0100
 
     Updated Galician translations
 
- po/gl.po | 76 +++++++++++++++++++++++++++++++++++++---------------------------
+ po/gl.po | 76 ++++++++++++++++++++++++++++++++++++++++++++--------------------------------
  1 file changed, 44 insertions(+), 32 deletions(-)
 
 commit 9b097eb4d86e5235b3434a1e095f29a6a835b3cc
@@ -972,7 +972,7 @@ Date:   Mon Mar 3 11:36:11 2014 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=725561
 
- clutter/x11/clutter-device-manager-xi2.c | 35 ++++++++++++++++++++------------
+ clutter/x11/clutter-device-manager-xi2.c | 35 ++++++++++++++++++++++-------------
  1 file changed, 22 insertions(+), 13 deletions(-)
 
 commit edc91b7640c15678a9136dc1028518a46631936a
@@ -981,7 +981,7 @@ Date:   Sun Mar 2 18:49:34 2014 +0100
 
     Updated Polish translation
 
- po/pl.po | 930 +++++++++++++++++++++++++++++++++------------------------------
+ po/pl.po | 930 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------
  1 file changed, 489 insertions(+), 441 deletions(-)
 
 commit fdd553d2a9bef6cd449311e491fd985cad750f93
@@ -1061,7 +1061,7 @@ Date:   Mon Jan 20 13:50:08 2014 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=725102
 
- clutter/evdev/clutter-device-manager-evdev.c | 47 ++--------------------------
+ clutter/evdev/clutter-device-manager-evdev.c | 47 +++--------------------------------------------
  1 file changed, 3 insertions(+), 44 deletions(-)
 
 commit 945ee5764af31a0471c8410b094b41f343afd67a
@@ -1089,8 +1089,8 @@ Date:   Mon Jan 13 16:05:57 2014 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=725102
 
- clutter/evdev/clutter-device-manager-evdev.c | 129 ++++++++++++++++++++++++++-
- clutter/evdev/clutter-evdev.h                |   4 +
+ clutter/evdev/clutter-device-manager-evdev.c | 129 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--
+ clutter/evdev/clutter-evdev.h                |   4 ++++
  2 files changed, 131 insertions(+), 2 deletions(-)
 
 commit 133f95fd0d5ec3a4ec8c6f5db5be5331a1d328f2
@@ -1152,9 +1152,9 @@ Date:   Sun Dec 15 17:38:56 2013 +0100
     https://bugzilla.gnome.org/show_bug.cgi?id=720566
 
  README.in                                    |    7 +-
- clutter/evdev/clutter-device-manager-evdev.c | 1317 ++++++++++++--------------
- clutter/evdev/clutter-input-device-evdev.c   |  238 ++---
- clutter/evdev/clutter-input-device-evdev.h   |   35 +-
+ clutter/evdev/clutter-device-manager-evdev.c | 1317 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------------
+ clutter/evdev/clutter-input-device-evdev.c   |  238 +++++++++++++++++-----------------
+ clutter/evdev/clutter-input-device-evdev.h   |   35 ++++-
  configure.ac                                 |    8 +-
  5 files changed, 757 insertions(+), 848 deletions(-)
 
@@ -1194,8 +1194,8 @@ Date:   Mon Feb 24 22:45:32 2014 +0100
 
     Updated Serbian translation
 
- po/sr.po       | 62 +++++++++++++++++++++++++++++++++++-----------------------
- po/sr@latin.po | 62 +++++++++++++++++++++++++++++++++++-----------------------
+ po/sr.po       | 62 ++++++++++++++++++++++++++++++++++++++------------------------
+ po/sr@latin.po | 62 ++++++++++++++++++++++++++++++++++++++------------------------
  2 files changed, 76 insertions(+), 48 deletions(-)
 
 commit 856342caadc4d9c8ed1ad701ba77800d0367b5b5
@@ -1204,7 +1204,7 @@ Date:   Sun Feb 23 16:29:28 2014 +0100
 
     Updated Hungarian translation
 
- po/hu.po | 863 ++++++++++++++++++++++++++++++++++-----------------------------
+ po/hu.po | 863 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------------------
  1 file changed, 468 insertions(+), 395 deletions(-)
 
 commit cee480bd1a33305dff6f9302132e647acf1048ad
@@ -1222,7 +1222,7 @@ Date:   Fri Feb 21 22:13:07 2014 +0200
 
     Updated Lithuanian translation
 
- po/lt.po | 931 ++++++++++++++++++++++++++++++++++-----------------------------
+ po/lt.po | 931 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------
  1 file changed, 500 insertions(+), 431 deletions(-)
 
 commit bde9ea04e0409ad1101462fc11d82feb61cf3616
@@ -1315,7 +1315,7 @@ Date:   Fri Feb 14 20:37:43 2014 +0200
 
     Added uk translation
 
- po/uk.po | 1572 ++++++++++++++++++++++++++++++++++----------------------------
+ po/uk.po | 1572 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------------
  1 file changed, 853 insertions(+), 719 deletions(-)
 
 commit 197d1703649ea39f226b5a72702a7ec93b201ebc
@@ -1351,9 +1351,9 @@ Date:   Wed Feb 12 17:41:03 2014 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=724242
 
- clutter/clutter-gesture-action.c | 163 +++++++++++++++++++++++++++++++++++----
- clutter/clutter-gesture-action.h |  10 +++
- clutter/clutter-swipe-action.c   |  24 +++---
+ clutter/clutter-gesture-action.c | 163 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------
+ clutter/clutter-gesture-action.h |  10 ++++++++++
+ clutter/clutter-swipe-action.c   |  24 +++++++++++++-----------
  3 files changed, 172 insertions(+), 25 deletions(-)
 
 commit 54e2657cb0265c70f82249c83962901a6492d863
@@ -1389,7 +1389,7 @@ Date:   Wed Feb 12 20:29:05 2014 +0100
 
     Updated Norwegian bokmål translation
 
- po/nb.po | 1805 +++++++++++++++++++++++++++++++++++---------------------------
+ po/nb.po | 1805 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------
  1 file changed, 1014 insertions(+), 791 deletions(-)
 
 commit f73b4d334a0237fbf87737a2334c27244dda3d65
@@ -1485,7 +1485,7 @@ Date:   Sun Feb 9 13:28:11 2014 +0100
 
     Updated Aragonese translation
 
- po/an.po | 876 +++++++++++++++++++++++++++++++++------------------------------
+ po/an.po | 876 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------
  1 file changed, 462 insertions(+), 414 deletions(-)
 
 commit 54ac92bd83d22564cfdb11c73c28a9a5709d0001
@@ -1494,7 +1494,7 @@ Date:   Sun Feb 9 12:33:16 2014 +0100
 
     [l10n] Updated Italian translation.
 
- po/it.po | 169 +++++++++++++++++++++++++++++++++++++--------------------------
+ po/it.po | 169 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------
  1 file changed, 99 insertions(+), 70 deletions(-)
 
 commit 33244709169a6de0d85ed38873346a5dd55c6b02
@@ -1503,7 +1503,7 @@ Date:   Sun Feb 9 03:39:40 2014 +0000
 
     Updated Indonesian translation
 
- po/id.po | 884 +++++++++++++++++++++++++++++++++------------------------------
+ po/id.po | 884 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------
  1 file changed, 469 insertions(+), 415 deletions(-)
 
 commit 9e3b355a70932fb7daa2928ef4dc56bc8e902e01
@@ -1512,7 +1512,7 @@ Date:   Fri Feb 7 01:32:28 2014 +0100
 
     Updated Galician translations
 
- po/gl.po | 138 +++++++++++++++++++++++++++++++++++++--------------------------
+ po/gl.po | 138 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------
  1 file changed, 81 insertions(+), 57 deletions(-)
 
 commit 419da5f0350ae3f3545ad394bb1e8b2a98a4d5ca
@@ -1521,8 +1521,8 @@ Date:   Mon Feb 3 21:21:48 2014 +0100
 
     Updated Serbian translation
 
- po/sr.po       | 892 ++++++++++++++++++++++++++++++---------------------------
- po/sr@latin.po | 892 ++++++++++++++++++++++++++++++---------------------------
+ po/sr.po       | 892 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------------------
+ po/sr@latin.po | 892 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------------------
  2 files changed, 944 insertions(+), 840 deletions(-)
 
 commit edc155a74d6e96da12289ae0657f44bf71f32d3e
@@ -1531,8 +1531,8 @@ Date:   Sun Feb 2 20:05:16 2014 +0800
 
     Updated Traditional Chinese translation(Hong Kong and Taiwan)
 
- po/zh_HK.po | 912 ++++++++++++++++++++++++++++++++----------------------------
- po/zh_TW.po | 912 ++++++++++++++++++++++++++++++++----------------------------
+ po/zh_HK.po | 912 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------
+ po/zh_TW.po | 912 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------
  2 files changed, 966 insertions(+), 858 deletions(-)
 
 commit b9bc36e72e9eacb8b480f2a2c78734febb9ce7e1
@@ -1541,7 +1541,7 @@ Date:   Sun Feb 2 00:43:18 2014 -0200
 
     Updated Brazilian Portuguese translation
 
- po/pt_BR.po | 142 +++++++++++++++++++++++++++++++++++-------------------------
+ po/pt_BR.po | 142 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------
  1 file changed, 83 insertions(+), 59 deletions(-)
 
 commit 692f39ad57ea0e1056968e857ffb917c6087c200
@@ -1550,7 +1550,7 @@ Date:   Sun Jan 26 17:31:29 2014 +0100
 
     Updated Czech translation
 
- po/cs.po | 136 +++++++++++++++++++++++++++++++++++++--------------------------
+ po/cs.po | 136 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------
  1 file changed, 80 insertions(+), 56 deletions(-)
 
 commit f6b5a0450781813370eb64908028de1b084a6dd8
@@ -1561,7 +1561,7 @@ Date:   Sun Jan 26 04:33:03 2014 +0200
     
     Signed-off-by: Yosef Or Boczko <yoseforb@src.gnome.org>
 
- po/he.po | 138 +++++++++++++++++++++++++++++++++++++--------------------------
+ po/he.po | 138 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------
  1 file changed, 81 insertions(+), 57 deletions(-)
 
 commit 0dc4986f666edb067f43f328756df9103d840086
@@ -1615,7 +1615,7 @@ Date:   Thu Jan 23 18:17:50 2014 +0100
 
     Updated Spanish translation
 
- po/es.po | 144 ++++++++++++++++++++++++++++++++++++++-------------------------
+ po/es.po | 144 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------
  1 file changed, 86 insertions(+), 58 deletions(-)
 
 commit 75155b9d9685e093d08b3cf16824ee1f357b9b06
@@ -1659,8 +1659,8 @@ Date:   Thu Jan 23 12:05:17 2014 +0000
 
     Release Clutter 1.17.2
 
- NEWS         | 76 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- README.in    | 19 +++++++++++++++
+ NEWS         | 76 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ README.in    | 19 +++++++++++++++++++
  configure.ac |  2 +-
  3 files changed, 96 insertions(+), 1 deletion(-)
 
@@ -1783,10 +1783,10 @@ Date:   Fri Jan 17 11:03:15 2014 +0000
     
     https://bugzilla.gnome.org/show_bug.cgi?id=705915
 
- clutter/clutter-canvas.c                   | 151 ++++++++++++++++++++++++++++-
- clutter/clutter-canvas.h                   |   5 +
- clutter/clutter.symbols                    |   2 +
- doc/reference/clutter/clutter-sections.txt |   2 +
+ clutter/clutter-canvas.c                   | 151 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ clutter/clutter-canvas.h                   |   5 +++++
+ clutter/clutter.symbols                    |   2 ++
+ doc/reference/clutter/clutter-sections.txt |   2 ++
  4 files changed, 157 insertions(+), 3 deletions(-)
 
 commit c1d6194d24ba04ebb8fe15aacea5017f8b49ce37
@@ -1899,8 +1899,8 @@ Date:   Wed Aug 14 11:28:39 2013 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=705915
 
- clutter/clutter-settings.c         | 78 +++++++++++++++++++++++++++++++++++---
- clutter/x11/clutter-settings-x11.h |  2 +
+ clutter/clutter-settings.c         | 78 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+ clutter/x11/clutter-settings-x11.h |  2 ++
  2 files changed, 74 insertions(+), 6 deletions(-)
 
 commit 33316ce168e7d6b51407ffedad7b0249611f1fce
@@ -1929,7 +1929,7 @@ Date:   Fri Jan 17 19:04:25 2014 +0100
 
     Updated Czech translation
 
- po/cs.po | 1366 ++++++++++++++++++++++++++++++++------------------------------
+ po/cs.po | 1366 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------------
  1 file changed, 695 insertions(+), 671 deletions(-)
 
 commit cadbeceff0a729cdeafd84db237ed44ad782e820
@@ -1971,7 +1971,7 @@ Date:   Mon Jan 13 10:19:29 2014 +0200
 
     Updated Greek translation
 
- po/el.po | 1376 ++++++++++++++++++++++++++++++++------------------------------
+ po/el.po | 1376 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------------------------
  1 file changed, 701 insertions(+), 675 deletions(-)
 
 commit f3172d25c334e1572eb6feed29b2717b9ca7c9f8
@@ -1980,7 +1980,7 @@ Date:   Mon Jan 13 09:01:49 2014 +0200
 
     Updated Hebrew translation
 
- po/he.po | 756 ++++++++++++++++++++++++++++++++-------------------------------
+ po/he.po | 756 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------------------
  1 file changed, 390 insertions(+), 366 deletions(-)
 
 commit 9104c72677376d4df152e50e372477de40bba6ae
@@ -1989,7 +1989,7 @@ Date:   Thu Jan 2 09:54:17 2014 +0800
 
     Update Chinese simplified translation
 
- po/zh_CN.po | 2970 +++++++++++++++++++++++++++++++++++------------------------
+ po/zh_CN.po | 2970 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------
  1 file changed, 1785 insertions(+), 1185 deletions(-)
 
 commit 813892c7f1a6e511c95830782afbf95213606917
@@ -2016,7 +2016,7 @@ Date:   Thu Dec 26 23:53:11 2013 -0200
 
     Updated Brazilian Portuguese translation
 
- po/pt_BR.po | 833 +++++++++++++++++++++++++++++++-----------------------------
+ po/pt_BR.po | 833 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------
  1 file changed, 428 insertions(+), 405 deletions(-)
 
 commit dc39b295bb20e86d1a2d8fe8126f339236f77d22
@@ -2025,7 +2025,7 @@ Date:   Thu Dec 19 01:44:37 2013 +0100
 
     Updated Galician translations
 
- po/gl.po | 1364 ++++++++++++++++++++++++++++++++------------------------------
+ po/gl.po | 1364 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------------
  1 file changed, 694 insertions(+), 670 deletions(-)
 
 commit 74c01cdd0fbdd0c0423c9ce91337c94c090902f7
@@ -2038,14 +2038,14 @@ Date:   Mon Dec 16 09:27:41 2013 +0800
     tests are built has been totally reworked.  Instead, in the future,
     use NMake Makefiles to build them, which will be proposed later.
 
- build/win32/vs10/Makefile.am                       |   4 -
- build/win32/vs10/clutter.sln                       |  18 ---
- build/win32/vs10/install.vcxproj                   |   4 -
- .../test-conformance-clutter.vcxproj.filtersin     |  12 --
- .../win32/vs10/test-conformance-clutter.vcxprojin  | 168 ---------------------
- build/win32/vs9/Makefile.am                        |   2 -
- build/win32/vs9/clutter.sln                        |  22 ---
- build/win32/vs9/test-conformance-clutter.vcprojin  | 161 --------------------
+ build/win32/vs10/Makefile.am                                |   4 ----
+ build/win32/vs10/clutter.sln                                |  18 ------------------
+ build/win32/vs10/install.vcxproj                            |   4 ----
+ build/win32/vs10/test-conformance-clutter.vcxproj.filtersin |  12 ------------
+ build/win32/vs10/test-conformance-clutter.vcxprojin         | 168 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ build/win32/vs9/Makefile.am                                 |   2 --
+ build/win32/vs9/clutter.sln                                 |  22 ----------------------
+ build/win32/vs9/test-conformance-clutter.vcprojin           | 161 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
  8 files changed, 391 deletions(-)
 
 commit ad39d3d1aedf842b1c7d98a677e36d4e0f7a0df6
@@ -2096,20 +2096,20 @@ Date:   Thu Dec 12 15:05:16 2013 +0000
     ones that were written already pretty much conforming to the GTest API
     and style, and thus require minimal porting.
 
- tests/conform/Makefile.am     |  33 +++++++++
- tests/conform/animator.c      |  51 +++++++-------
- tests/conform/behaviours.c    |  64 ++++++++---------
- tests/conform/binding-pool.c  |  92 +++++++++++-------------
- tests/conform/color.c         | 158 +++++++++++++++++++++---------------------
- tests/conform/events-touch.c  |  13 ++--
- tests/conform/group.c         |  11 +--
- tests/conform/interval.c      |  63 ++++++++++++++---
- tests/conform/model.c         |  43 ++++++------
- tests/conform/rectangle.c     |  23 +++---
- tests/conform/script-parser.c | 142 ++++++++++++-------------------------
- tests/conform/text.c          |  69 +++++++++++++-----
- tests/conform/texture.c       |  21 +++---
- tests/conform/units.c         |  24 +++----
+ tests/conform/Makefile.am     |  33 +++++++++++++++++++++++++++++++++
+ tests/conform/animator.c      |  51 +++++++++++++++++++++++++--------------------------
+ tests/conform/behaviours.c    |  64 +++++++++++++++++++++++++++-------------------------------------
+ tests/conform/binding-pool.c  |  92 ++++++++++++++++++++++++++++++++++++++++----------------------------------------------------
+ tests/conform/color.c         | 158 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------
+ tests/conform/events-touch.c  |  13 ++++++-------
+ tests/conform/group.c         |  11 +++++++----
+ tests/conform/interval.c      |  63 +++++++++++++++++++++++++++++++++++++++++++++++++++++++--------
+ tests/conform/model.c         |  43 ++++++++++++++++++++++---------------------
+ tests/conform/rectangle.c     |  23 +++++++++--------------
+ tests/conform/script-parser.c | 142 +++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------
+ tests/conform/text.c          |  69 ++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------
+ tests/conform/texture.c       |  21 ++++++++-------------
+ tests/conform/units.c         |  24 ++++++++++++------------
  14 files changed, 420 insertions(+), 387 deletions(-)
 
 commit 7ec337f26f242db18039c67c5e0b046f818434cc
@@ -2121,20 +2121,20 @@ Date:   Thu Dec 12 14:51:00 2013 +0000
     Port the ClutterActor tests to the test API, and ensure they run under
     the new TAP harness.
 
- tests/conform/Makefile.am                      |  13 ++
- tests/conform/actor-anchors.c                  |  53 +++++-
- tests/conform/actor-destroy.c                  |  17 +-
- tests/conform/actor-graph.c                    | 119 +++++++++---
- tests/conform/actor-invariants.c               | 206 +++++----------------
- tests/conform/actor-iter.c                     |  22 +--
- tests/conform/actor-layout.c                   | 239 +++----------------------
- tests/conform/actor-meta.c                     |  15 +-
- tests/conform/actor-offscreen-limit-max-size.c | 128 ++++++-------
- tests/conform/actor-offscreen-redirect.c       |  25 ++-
- tests/conform/actor-paint-opacity.c            |  43 +++--
- tests/conform/actor-pick.c                     |  40 ++---
- tests/conform/actor-shader-effect.c            |  41 +++--
- tests/conform/actor-size.c                     |  13 +-
+ tests/conform/Makefile.am                      |  13 ++++++++++
+ tests/conform/actor-anchors.c                  |  53 ++++++++++++++++++++++++++++++++++-------
+ tests/conform/actor-destroy.c                  |  17 ++++++++++++--
+ tests/conform/actor-graph.c                    | 119 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------
+ tests/conform/actor-invariants.c               | 206 +++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------------------
+ tests/conform/actor-iter.c                     |  22 +++++++++--------
+ tests/conform/actor-layout.c                   | 239 +++++++++++++++++++++-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ tests/conform/actor-meta.c                     |  15 ++++++------
+ tests/conform/actor-offscreen-limit-max-size.c | 128 +++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------
+ tests/conform/actor-offscreen-redirect.c       |  25 +++++++++-----------
+ tests/conform/actor-paint-opacity.c            |  43 +++++++++++++++++----------------
+ tests/conform/actor-pick.c                     |  40 +++++++++++++++----------------
+ tests/conform/actor-shader-effect.c            |  41 +++++++++++++++++++++-----------
+ tests/conform/actor-size.c                     |  13 ++++++----
  14 files changed, 412 insertions(+), 562 deletions(-)
 
 commit 2a660fa298702111c192a7b51e2120799c9393de
@@ -2177,55 +2177,55 @@ Date:   Thu Dec 12 14:36:16 2013 +0000
     commits will re-establish the conformance test suite separately so we
     can check that everything works in a reliable way.
 
- Makefile.am                                        |   6 +-
- build/autotools/Makefile.am                        |   4 +
- build/autotools/glib-tap.mk                        | 134 +++++
- build/autotools/glibtests.m4                       |  28 +
- build/autotools/tap-driver.sh                      | 652 +++++++++++++++++++++
- build/autotools/tap-test                           |   5 +
- clutter/Makefile.am                                |   2 +
- clutter/clutter-test-utils.c                       | 422 +++++++++++++
- clutter/clutter-test-utils.h                       | 164 ++++++
- clutter/clutter.h                                  |   1 +
- clutter/clutter.symbols                            |   8 +
- configure.ac                                       |  24 +-
- examples/Makefile.am                               |   3 +-
- examples/bin-layout.c                              |   2 +-
- examples/image-content.c                           |   2 +-
- examples/pan-action.c                              |   2 +-
- {tests/data => examples}/redhand.png               | Bin
- tests/Makefile.am                                  |   4 +-
- tests/{data => }/clutter-1.0.suppressions          |   0
- tests/conform/ADDING_NEW_TESTS                     |  65 --
- tests/conform/Makefile.am                          | 345 ++---------
- tests/conform/run-tests.sh                         |  12 -
- .../{data => conform/scripts}/test-animator-1.json |   0
- .../{data => conform/scripts}/test-animator-2.json |   0
- .../{data => conform/scripts}/test-animator-3.json |   0
- .../scripts}/test-script-animation.json            |   0
- .../scripts}/test-script-child.json                |   0
- .../scripts}/test-script-implicit-alpha.json       |   0
- .../scripts}/test-script-interval.json             |   0
- .../scripts}/test-script-layout-property.json      |   0
- .../scripts}/test-script-margin.json               |   0
- .../scripts}/test-script-model.json                |   0
- .../scripts}/test-script-named-object.json         |   0
- .../scripts}/test-script-object-property.json      |   0
- .../scripts}/test-script-single.json               |   0
- .../scripts}/test-script-timeline-markers.json     |   0
- tests/{data => conform/scripts}/test-state-1.json  |   0
- tests/conform/test-conform-common.c                | 105 ----
- tests/conform/test-conform-common.h                |  52 --
- tests/conform/test-conform-main.c                  | 217 -------
- tests/conform/test-launcher.sh.in                  |  25 -
- tests/data/Makefile.am                             |  39 --
- tests/data/light0.png                              | Bin 5674 -> 0 bytes
- tests/data/redhand_alpha.png                       | Bin 4539 -> 0 bytes
- tests/interactive/Makefile.am                      |   9 +-
- tests/interactive/redhand.png                      | Bin 0 -> 8250 bytes
- .../{data => interactive}/test-script-signals.json |   0
- tests/{data => interactive}/test-script.json       |   0
- tests/interactive/test-state-script.c              |   2 +-
+ Makefile.am                                                       |   6 +-
+ build/autotools/Makefile.am                                       |   4 ++
+ build/autotools/glib-tap.mk                                       | 134 ++++++++++++++++++++++++++++++++++
+ build/autotools/glibtests.m4                                      |  28 ++++++++
+ build/autotools/tap-driver.sh                                     | 652 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ build/autotools/tap-test                                          |   5 ++
+ clutter/Makefile.am                                               |   2 +
+ clutter/clutter-test-utils.c                                      | 422 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-test-utils.h                                      | 164 ++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter.h                                                 |   1 +
+ clutter/clutter.symbols                                           |   8 +++
+ configure.ac                                                      |  24 ++-----
+ examples/Makefile.am                                              |   3 +-
+ examples/bin-layout.c                                             |   2 +-
+ examples/image-content.c                                          |   2 +-
+ examples/pan-action.c                                             |   2 +-
+ {tests/data => examples}/redhand.png                              | Bin
+ tests/Makefile.am                                                 |   4 +-
+ tests/{data => }/clutter-1.0.suppressions                         |   0
+ tests/conform/ADDING_NEW_TESTS                                    |  65 -----------------
+ tests/conform/Makefile.am                                         | 345 ++++++++++-----------------------------------------------------------------------------
+ tests/conform/run-tests.sh                                        |  12 ----
+ tests/{data => conform/scripts}/test-animator-1.json              |   0
+ tests/{data => conform/scripts}/test-animator-2.json              |   0
+ tests/{data => conform/scripts}/test-animator-3.json              |   0
+ tests/{data => conform/scripts}/test-script-animation.json        |   0
+ tests/{data => conform/scripts}/test-script-child.json            |   0
+ tests/{data => conform/scripts}/test-script-implicit-alpha.json   |   0
+ tests/{data => conform/scripts}/test-script-interval.json         |   0
+ tests/{data => conform/scripts}/test-script-layout-property.json  |   0
+ tests/{data => conform/scripts}/test-script-margin.json           |   0
+ tests/{data => conform/scripts}/test-script-model.json            |   0
+ tests/{data => conform/scripts}/test-script-named-object.json     |   0
+ tests/{data => conform/scripts}/test-script-object-property.json  |   0
+ tests/{data => conform/scripts}/test-script-single.json           |   0
+ tests/{data => conform/scripts}/test-script-timeline-markers.json |   0
+ tests/{data => conform/scripts}/test-state-1.json                 |   0
+ tests/conform/test-conform-common.c                               | 105 ---------------------------
+ tests/conform/test-conform-common.h                               |  52 --------------
+ tests/conform/test-conform-main.c                                 | 217 -------------------------------------------------------
+ tests/conform/test-launcher.sh.in                                 |  25 -------
+ tests/data/Makefile.am                                            |  39 ----------
+ tests/data/light0.png                                             | Bin 5674 -> 0 bytes
+ tests/data/redhand_alpha.png                                      | Bin 4539 -> 0 bytes
+ tests/interactive/Makefile.am                                     |   9 ++-
+ tests/interactive/redhand.png                                     | Bin 0 -> 8250 bytes
+ tests/{data => interactive}/test-script-signals.json              |   0
+ tests/{data => interactive}/test-script.json                      |   0
+ tests/interactive/test-state-script.c                             |   2 +-
  49 files changed, 1476 insertions(+), 858 deletions(-)
 
 commit cee38c167281a349297daf8d700c6ef793c499a8
@@ -2234,7 +2234,7 @@ Date:   Thu Dec 12 09:36:01 2013 +0100
 
     [l10n] Updated Italian translation.
 
- po/it.po | 1365 ++++++++++++++++++++++++++++++++------------------------------
+ po/it.po | 1365 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------------------------
  1 file changed, 695 insertions(+), 670 deletions(-)
 
 commit d4aed66821b5f2a040b40895dfbdca507e96bf7a
@@ -2258,7 +2258,7 @@ Date:   Mon Dec 9 16:05:11 2013 +0100
 
     Updated Spanish translation
 
- po/es.po | 1375 ++++++++++++++++++++++++++++++++------------------------------
+ po/es.po | 1375 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------------------------
  1 file changed, 701 insertions(+), 674 deletions(-)
 
 commit ed2fdf85f6f30452531722dbfd045298b6359458
@@ -2278,12 +2278,12 @@ Date:   Thu Dec 5 14:04:10 2013 +0000
     
     https://bugzilla.gnome.org/show_bug.cgi?id=710227
 
- clutter/clutter-enums.h                    |  23 +++++++
- clutter/clutter-gesture-action-private.h   |  28 --------
- clutter/clutter-gesture-action.c           | 107 ++++++++++++++++++++---------
- clutter/clutter-gesture-action.h           |   6 ++
- clutter/clutter.symbols                    |   3 +
- doc/reference/clutter/clutter-sections.txt |   2 +
+ clutter/clutter-enums.h                    |  23 +++++++++++++++++++++++
+ clutter/clutter-gesture-action-private.h   |  28 ----------------------------
+ clutter/clutter-gesture-action.c           | 107 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------
+ clutter/clutter-gesture-action.h           |   6 ++++++
+ clutter/clutter.symbols                    |   3 +++
+ doc/reference/clutter/clutter-sections.txt |   2 ++
  6 files changed, 107 insertions(+), 62 deletions(-)
 
 commit b0227644ffe3e857784fa09f5c1d4d5edfac1915
@@ -2440,8 +2440,8 @@ Date:   Tue Dec 3 12:50:39 2013 +0000
     drop the usage of cogl_get_draw_framebuffer() in their implementation.
 
  clutter/clutter-paint-node-private.h |  4 ++++
- clutter/clutter-paint-node.c         | 28 ++++++++++++++++++++++++
- clutter/clutter-paint-nodes.c        | 42 +++++++++++++++++++++++++++---------
+ clutter/clutter-paint-node.c         | 28 ++++++++++++++++++++++++++++
+ clutter/clutter-paint-nodes.c        | 42 ++++++++++++++++++++++++++++++++----------
  3 files changed, 64 insertions(+), 10 deletions(-)
 
 commit e619de20d83cbd072125e52247fbbaf4841dea41
@@ -2470,11 +2470,11 @@ Date:   Tue Dec 3 12:12:52 2013 +0000
     This is pretty much a mechanical port for all the places where we're
     still using the old 1.x API.
 
- clutter/clutter-actor.c           | 39 +++++++++++++++++++++-------------
- clutter/clutter-paint-nodes.c     | 14 ++++++++-----
+ clutter/clutter-actor.c           | 39 +++++++++++++++++++++++++--------------
+ clutter/clutter-paint-nodes.c     | 14 +++++++++-----
  clutter/clutter-stage.c           |  7 ++++---
- clutter/clutter-text.c            | 44 ++++++++++++++++++++-------------------
- clutter/cogl/clutter-stage-cogl.c | 13 +++++++-----
+ clutter/clutter-text.c            | 44 +++++++++++++++++++++++---------------------
+ clutter/cogl/clutter-stage-cogl.c | 13 ++++++++-----
  5 files changed, 69 insertions(+), 48 deletions(-)
 
 commit 1b45841414ad92a63ace2d7376a6682d39d9b20c
@@ -2700,7 +2700,7 @@ Date:   Mon Nov 18 00:18:32 2013 -0500
     
     https://bugzilla.gnome.org/show_bug.cgi?id=712563
 
- clutter/clutter-stage.c | 125 ++++++------------------------------------------
+ clutter/clutter-stage.c | 125 +++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 15 insertions(+), 110 deletions(-)
 
 commit 9082ccc30bfd7cf8e94f696013a10b817021b7dc
@@ -2739,8 +2739,8 @@ Date:   Tue Nov 19 00:26:37 2013 +0000
  clutter/Makefile.am                             |  4 ++--
  clutter/clutter-deprecated.h                    |  1 +
  clutter/clutter.h                               |  1 -
- clutter/{ => deprecated}/clutter-table-layout.c | 30 +++++++++++++++++++++++++
- clutter/{ => deprecated}/clutter-table-layout.h | 15 +++++++++++++
+ clutter/{ => deprecated}/clutter-table-layout.c | 30 ++++++++++++++++++++++++++++++
+ clutter/{ => deprecated}/clutter-table-layout.h | 15 +++++++++++++++
  doc/reference/clutter/clutter-docs.xml.in       |  4 ++--
  6 files changed, 50 insertions(+), 5 deletions(-)
 
@@ -2769,12 +2769,12 @@ Date:   Thu Aug 29 17:10:56 2013 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=707560
 
- clutter/clutter-event-private.h            |   2 +
- clutter/clutter-event.c                    | 106 +++++++++++++++++++++++++++++
- clutter/clutter-event.h                    |  26 +++++++
- clutter/clutter-main.c                     |  22 +++++-
- clutter/clutter-private.h                  |   4 ++
- doc/reference/clutter/clutter-sections.txt |   3 +
+ clutter/clutter-event-private.h            |   2 ++
+ clutter/clutter-event.c                    | 106 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-event.h                    |  26 ++++++++++++++++++++++++++
+ clutter/clutter-main.c                     |  22 +++++++++++++++++++++-
+ clutter/clutter-private.h                  |   4 ++++
+ doc/reference/clutter/clutter-sections.txt |   3 +++
  6 files changed, 162 insertions(+), 1 deletion(-)
 
 commit c2b0b9aace969ecb19e703c8d53d157eb1072559
@@ -2790,7 +2790,7 @@ Date:   Tue Nov 12 15:10:22 2013 -0500
     
     https://bugzilla.gnome.org/show_bug.cgi?id=712322
 
- clutter/x11/clutter-input-device-xi2.c | 63 ++++++++++++++++++++--------------
+ clutter/x11/clutter-input-device-xi2.c | 63 ++++++++++++++++++++++++++++++++++++++-------------------------
  1 file changed, 38 insertions(+), 25 deletions(-)
 
 commit 0fda81feabed58cf285ba313b393c9f24412b648
@@ -2820,7 +2820,7 @@ Date:   Mon Oct 7 12:13:41 2013 -0400
     The X server can sometimes send us coordinates in the negatives or above
     our window in extreme cases. Ensure that the user never sees this.
 
- clutter/x11/clutter-device-manager-xi2.c | 41 +++++++++++++++-----------------
+ clutter/x11/clutter-device-manager-xi2.c | 41 +++++++++++++++++++----------------------
  1 file changed, 19 insertions(+), 22 deletions(-)
 
 commit 1de024b5fa84a40af04b0305e4d985644daf9f1c
@@ -2865,11 +2865,11 @@ Date:   Fri Jan 18 10:55:59 2013 +0200
        }
      }
 
- clutter/clutter-interval.c           | 50 +++++++++++++++++++++++++++++++++++-
- tests/conform/script-parser.c        | 35 +++++++++++++++++++++++++
+ clutter/clutter-interval.c           | 50 +++++++++++++++++++++++++++++++++++++++++++++++++-
+ tests/conform/script-parser.c        | 35 +++++++++++++++++++++++++++++++++++
  tests/conform/test-conform-main.c    |  1 +
  tests/data/Makefile.am               |  1 +
- tests/data/test-script-interval.json | 16 ++++++++++++
+ tests/data/test-script-interval.json | 16 ++++++++++++++++
  5 files changed, 102 insertions(+), 1 deletion(-)
 
 commit 46c22de01e9981d71044128a7bbef07777362b10
@@ -2914,10 +2914,10 @@ Date:   Sat Oct 5 22:58:19 2013 +0900
     
     https://bugzilla.gnome.org/show_bug.cgi?id=709590
 
- clutter/wayland/clutter-backend-wayland-priv.h |  2 +
- clutter/wayland/clutter-backend-wayland.c      |  9 +---
- clutter/wayland/clutter-input-device-wayland.c | 58 ++++++++++++++++----------
- clutter/wayland/clutter-stage-wayland.c        | 11 +++++
+ clutter/wayland/clutter-backend-wayland-priv.h |  2 ++
+ clutter/wayland/clutter-backend-wayland.c      |  9 ++-------
+ clutter/wayland/clutter-input-device-wayland.c | 58 +++++++++++++++++++++++++++++++++++-----------------------
+ clutter/wayland/clutter-stage-wayland.c        | 11 +++++++++++
  clutter/wayland/clutter-stage-wayland.h        |  1 +
  5 files changed, 51 insertions(+), 30 deletions(-)
 
@@ -2988,7 +2988,7 @@ Date:   Tue Oct 8 23:34:19 2013 +0200
 
     Updated slovak translation
 
- po/sk.po | 613 +++++++++++++++++++++++++++++++++------------------------------
+ po/sk.po | 613 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------
  1 file changed, 322 insertions(+), 291 deletions(-)
 
 commit 676a7cdc946887ed745606be21bc3ead14079339
@@ -3065,7 +3065,7 @@ Date:   Thu Sep 26 00:18:38 2013 +0200
 
     Initial Hungarian translation
 
- po/hu.po | 2798 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ po/hu.po | 2798 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 2798 insertions(+)
 
 commit 18f71891cef9212a79e80f34f83fde47130360a0

@@ -1,6 +1,6 @@
 AUTOMAKE_OPTIONS = subdir-objects
 
-include $(top_srcdir)/build/autotools/Makefile.am.silent
+include $(top_srcdir)/build-aux/autotools/Makefile.am.silent
 
 # preamble
 NULL =
@@ -823,13 +823,13 @@ EXTRA_DIST += cally/cally.pc.in
 # glib-genmarshal rules
 glib_marshal_list = clutter-marshal.list
 glib_marshal_prefix = _clutter_marshal
-include $(top_srcdir)/build/autotools/Makefile.am.marshal
+include $(top_srcdir)/build-aux/autotools/Makefile.am.marshal
 
 # glib-mkenums rules
 glib_enum_h = clutter-enum-types.h
 glib_enum_c = clutter-enum-types.c
 glib_enum_headers = $(source_h) $(deprecated_h)
-include $(top_srcdir)/build/autotools/Makefile.am.enums
+include $(top_srcdir)/build-aux/autotools/Makefile.am.enums
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = $(pc_files)
@@ -876,36 +876,36 @@ libclutter_@CLUTTER_API_VERSION@_la_LDFLAGS = \
 	$(win32_resources_ldflag) \
 	$(NULL)
 
-dist-hook: ../build/win32/vs9/clutter.vcproj ../build/win32/vs10/clutter.vcxproj ../build/win32/vs10/clutter.vcxproj.filters ../build/win32/gen-enums.bat
+dist-hook: ../build-aux/win32/vs9/clutter.vcproj ../build-aux/win32/vs10/clutter.vcxproj ../build-aux/win32/vs10/clutter.vcxproj.filters ../build-aux/win32/gen-enums.bat
 
-../build/win32/vs9/clutter.vcproj: $(top_srcdir)/build/win32/vs9/clutter.vcprojin
+../build-aux/win32/vs9/clutter.vcproj: $(top_srcdir)/build-aux/win32/vs9/clutter.vcprojin
 	for F in `echo $(win32_source_c) $(cally_sources_c) $(source_c) $(source_c_priv) $(deprecated_c) $(deprecated_c_priv) $(built_source_c) | tr '/' '\\'`; do \
 		case $$F in \
 		*.c)	echo '   <File RelativePath="..\..\..\clutter\'$$F'" />' \
 			;; \
 		esac; \
 	done >clutter.sourcefiles
-	$(CPP) -P - <$(top_srcdir)/build/win32/vs9/clutter.vcprojin >$@
+	$(CPP) -P - <$(top_srcdir)/build-aux/win32/vs9/clutter.vcprojin >$@
 	rm clutter.sourcefiles
 
-../build/win32/vs10/clutter.vcxproj: $(top_srcdir)/build/win32/vs10/clutter.vcxprojin
+../build-aux/win32/vs10/clutter.vcxproj: $(top_srcdir)/build-aux/win32/vs10/clutter.vcxprojin
 	for F in `echo $(win32_source_c) $(cally_sources_c) $(source_c) $(source_c_priv) $(deprecated_c) $(deprecated_c_priv) $(built_source_c) | tr '/' '\\'`; do \
 		case $$F in \
 		*.c)	echo '    <ClCompile Include="..\..\..\clutter\'$$F'" />' \
 			;; \
 		esac; \
 	done >clutter.vs10.sourcefiles
-	$(CPP) -P - <$(top_srcdir)/build/win32/vs10/clutter.vcxprojin >$@
+	$(CPP) -P - <$(top_srcdir)/build-aux/win32/vs10/clutter.vcxprojin >$@
 	rm clutter.vs10.sourcefiles
 
-../build/win32/vs10/clutter.vcxproj.filters: $(top_srcdir)/build/win32/vs10/clutter.vcxproj.filtersin
+../build-aux/win32/vs10/clutter.vcxproj.filters: $(top_srcdir)/build-aux/win32/vs10/clutter.vcxproj.filtersin
 	for F in `echo $(win32_source_c) $(cally_sources_c) $(source_c) $(source_c_priv) $(deprecated_c) $(deprecated_c_priv) $(built_source_c) | tr '/' '\\'`; do \
 		case $$F in \
 		*.c)	echo '    <ClCompile Include="..\..\..\clutter\'$$F'"><Filter>Sources</Filter></ClCompile>' \
 			;; \
 		esac; \
 	done >clutter.vs10.sourcefiles.filters
-	$(CPP) -P - <$(top_srcdir)/build/win32/vs10/clutter.vcxproj.filtersin >$@
+	$(CPP) -P - <$(top_srcdir)/build-aux/win32/vs10/clutter.vcxproj.filtersin >$@
 	rm clutter.vs10.sourcefiles.filters
 
 clutter.vsenums_h:
@@ -938,7 +938,7 @@ clutter.vsenums_c:
 	rm vsenums_c.temp1
 	rm vsenums_c.temp
 
-../build/win32/gen-enums.bat: clutter.vsenums_h clutter.vsenums_c
+../build-aux/win32/gen-enums.bat: clutter.vsenums_h clutter.vsenums_c
 	echo 'if exist ..\..\clutter\clutter-enum-types.h goto DONE_COGL_ENUMS_H' >$@
 	cat clutter.vsenums_h >>$@
 	echo ':DONE_COGL_ENUMS_H' >>$@
@@ -954,7 +954,7 @@ EXTRA_DIST += \
 	$(NULL)
 
 # Let the VS9/VS10 Project files be cleared out before they are re-expanded...
-DISTCLEANFILES += ../build/win32/vs9/clutter.vcproj ../build/win32/vs10/clutter.vcxproj ../build/win32/vs10/clutter.vcxproj.filters ../build/win32/gen-enums.bat
+DISTCLEANFILES += ../build-aux/win32/vs9/clutter.vcproj ../build-aux/win32/vs10/clutter.vcxproj ../build-aux/win32/vs10/clutter.vcxproj.filters ../build-aux/win32/gen-enums.bat
 
 install-exec-local:
 	test -z "$(libdir)" || $(MKDIR_P) "$(DESTDIR)$(libdir)"

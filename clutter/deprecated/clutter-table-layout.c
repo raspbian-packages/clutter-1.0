@@ -1873,7 +1873,7 @@ clutter_table_layout_get_row_spacing (ClutterTableLayout *layout)
  *
  * Since: 1.4
  *
- * Deprecated: 1.18: Use clutter_grid_layout_attach_child() instead
+ * Deprecated: 1.18: Use clutter_grid_layout_attach() instead
  */
 void
 clutter_table_layout_pack (ClutterTableLayout  *layout,

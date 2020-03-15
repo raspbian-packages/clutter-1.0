@@ -514,7 +514,7 @@ clutter_backend_real_create_stage (ClutterBackend  *backend,
         {
           g_set_error (error, CLUTTER_INIT_ERROR,
                        CLUTTER_INIT_ERROR_BACKEND,
-                       _("The backend of type '%s' does not support "
+                       _("The backend of type “%s” does not support "
                          "creating multiple stages"),
                        G_OBJECT_TYPE_NAME (backend));
           return NULL;
