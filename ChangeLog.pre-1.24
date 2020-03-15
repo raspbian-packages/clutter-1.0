@@ -81,7 +81,7 @@ Date:   Mon Sep 14 01:00:12 2015 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=754993
 
- clutter/gdk/clutter-stage-gdk.c | 42 +++++++++++++++++++++++++++++++++--------
+ clutter/gdk/clutter-stage-gdk.c | 42 ++++++++++++++++++++++++++++++++++--------
  1 file changed, 34 insertions(+), 8 deletions(-)
 
 commit aeb19f2f4dcb6d25093802aaac1878c755dc16be
@@ -107,7 +107,7 @@ Date:   Mon Sep 14 13:24:00 2015 +0200
 
     Updated Czech translation
 
- po/cs.po | 863 +++++++++++++++++++++++++++++++--------------------------------
+ po/cs.po | 863 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------------
  1 file changed, 428 insertions(+), 435 deletions(-)
 
 commit 53bbd4801f870608fc49f51cc4b555636df9f22e
@@ -116,7 +116,7 @@ Date:   Sun Sep 13 05:27:22 2015 +0000
 
     Updated German translation
 
- po/de.po | 938 ++++++++++++++++++++++++++++++++-------------------------------
+ po/de.po | 938 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------------
  1 file changed, 476 insertions(+), 462 deletions(-)
 
 commit 13dbb74c81bec861d3a135fb53966ae5562831a7
@@ -216,7 +216,7 @@ Date:   Tue Sep 8 23:13:13 2015 +0200
 
     Updated Slovenian translation
 
- po/sl.po | 880 ++++++++++++++++++++++++++++++++-------------------------------
+ po/sl.po | 880 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 444 insertions(+), 436 deletions(-)
 
 commit 9432e67ee8f5884d883b6ce1e3ac3e84dcd7cd22
@@ -231,9 +231,9 @@ Date:   Mon Aug 31 22:58:11 2015 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=754697
 
- clutter/gdk/clutter-event-gdk.c |   9 +++
- clutter/gdk/clutter-stage-gdk.c | 143 +++++++++++++++++++++++++++++++++++++---
- clutter/gdk/clutter-stage-gdk.h |  12 ++++
+ clutter/gdk/clutter-event-gdk.c |   9 +++++++++
+ clutter/gdk/clutter-stage-gdk.c | 143 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------
+ clutter/gdk/clutter-stage-gdk.h |  12 ++++++++++++
  3 files changed, 154 insertions(+), 10 deletions(-)
 
 commit 3771ef2f08054770ebc6110de14efd8fa2de3a26
@@ -342,7 +342,7 @@ Date:   Fri Sep 4 07:51:39 2015 +0000
 
     Updated Italian translation
 
- po/it.po | 556 ++++++++++++++++++++++++++++++++-------------------------------
+ po/it.po | 556 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 279 insertions(+), 277 deletions(-)
 
 commit 7ed96aabd8c3703f5b0572ee7f000821a25d019d
@@ -376,7 +376,7 @@ Date:   Tue Sep 1 08:15:40 2015 +0000
 
     Updated Slovak translation
 
- po/sk.po | 75 ++++++++++++++++++++++++++++++----------------------------------
+ po/sk.po | 75 +++++++++++++++++++++++++++++++++++----------------------------------------
  1 file changed, 35 insertions(+), 40 deletions(-)
 
 commit 5ae744c835032b75146a9869e01f5920de5c2e32
@@ -385,7 +385,7 @@ Date:   Mon Aug 31 15:32:01 2015 +0000
 
     Updated Hungarian translation
 
- po/hu.po | 871 ++++++++++++++++++++++++++++++++-------------------------------
+ po/hu.po | 871 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 438 insertions(+), 433 deletions(-)
 
 commit 3bb58de17064de7d9d9d209c26ccf5d8f49c5e83
@@ -394,7 +394,7 @@ Date:   Sun Aug 30 11:12:55 2015 +0300
 
     Updated Hebrew translation
 
- po/he.po | 870 +++++++++++++++++++++++++++++++--------------------------------
+ po/he.po | 870 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 435 insertions(+), 435 deletions(-)
 
 commit dea5057fbd7e9e2f0199ec6df6e5716635f0e5ee
@@ -411,7 +411,7 @@ Date:   Sat Aug 29 20:19:51 2015 +0100
     This allows us to refactor the get_preferred_* implementation into a
     separate function.
 
- clutter/clutter-grid-layout.c | 69 +++++++++++++++++++++++++------------------
+ clutter/clutter-grid-layout.c | 69 +++++++++++++++++++++++++++++++++++++++++----------------------------
  1 file changed, 41 insertions(+), 28 deletions(-)
 
 commit ed80a4bebb4c271e0f3f22208b38010d9ba4a812
@@ -420,7 +420,7 @@ Date:   Sat Aug 29 15:58:00 2015 +0000
 
     Updated Slovak translation
 
- po/sk.po | 636 +++++++++++++++++++++++++++++++++------------------------------
+ po/sk.po | 636 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------
  1 file changed, 334 insertions(+), 302 deletions(-)
 
 commit 6b7cfceb5ee372269f22bcd3b785a245429c6998
@@ -429,7 +429,7 @@ Date:   Fri Aug 28 20:50:07 2015 +0000
 
     Updated Greek translation
 
- po/el.po | 628 ++++++++++++++++++++++++++++++++-------------------------------
+ po/el.po | 628 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 315 insertions(+), 313 deletions(-)
 
 commit 6bcbd1bfce75f82d95c6b15f8f4bdf1c3702f436
@@ -472,7 +472,7 @@ Date:   Wed Aug 26 17:38:58 2015 +0200
 
     Updated Polish translation
 
- po/pl.po | 656 +++++++++++++++++++++++++++++++--------------------------------
+ po/pl.po | 656 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 328 insertions(+), 328 deletions(-)
 
 commit 6e6d5b152b3d9c346bb6d02bd5234bf812ec325f
@@ -481,7 +481,7 @@ Date:   Tue Aug 25 22:51:41 2015 +0000
 
     Updated Chinese (Taiwan) translation
 
- po/zh_TW.po | 871 ++++++++++++++++++++++++++++++------------------------------
+ po/zh_TW.po | 871 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------------
  1 file changed, 438 insertions(+), 433 deletions(-)
 
 commit e26a0c3afc82bba1226403b05d5836c6dce8c4c9
@@ -555,8 +555,8 @@ Date:   Mon Aug 24 09:59:16 2015 +0100
     To avoid excessive copy and paste. We could even consider making it
     public before release.
 
- clutter/clutter-actor-private.h |  3 ++
- clutter/clutter-actor.c         | 63 +++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-actor-private.h |  3 +++
+ clutter/clutter-actor.c         | 63 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  2 files changed, 66 insertions(+)
 
 commit 6cc12adf4d1b3ab5475caa98a7c99a5b577459e1
@@ -630,7 +630,7 @@ Date:   Mon Aug 17 01:18:03 2015 +0200
 
     Updated Galician translations
 
- po/gl.po | 838 ++++++++++++++++++++++++++++++++-------------------------------
+ po/gl.po | 838 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 420 insertions(+), 418 deletions(-)
 
 commit 83869a17ea9cc69fad37a24dce99e34fefa2814b
@@ -639,7 +639,7 @@ Date:   Sat Aug 15 11:37:47 2015 +0000
 
     Updated French translation
 
- po/fr.po | 825 ++++++++++++++++++++++++++++++++-------------------------------
+ po/fr.po | 825 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 413 insertions(+), 412 deletions(-)
 
 commit c73d8f82a0cc9f20b836e8782813271e1a948ef6
@@ -648,7 +648,7 @@ Date:   Wed Aug 12 08:58:43 2015 +0200
 
     Updated Spanish translation
 
- po/es.po | 5804 +++++++++++++++++++++++++++++++-------------------------------
+ po/es.po | 5804 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 2902 insertions(+), 2902 deletions(-)
 
 commit 9a10c3cbee284cd463d21cc80e13e35aaffec1ae
@@ -669,7 +669,7 @@ Date:   Thu Aug 6 22:54:34 2015 +0300
 
     Updated Lithuanian translation
 
- po/lt.po | 828 ++++++++++++++++++++++++++++++++-------------------------------
+ po/lt.po | 828 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 415 insertions(+), 413 deletions(-)
 
 commit 3a52b688cb6c7e877145868c7fada8cde62cda5b
@@ -678,7 +678,7 @@ Date:   Tue Aug 4 10:28:50 2015 +0000
 
     Updated Portuguese translation
 
- po/pt.po | 433 ++++++++++++++++++++++++++++++++-------------------------------
+ po/pt.po | 433 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 218 insertions(+), 215 deletions(-)
 
 commit 434f01c08fb099031ff9aa17cd1ef238684f8d04
@@ -687,7 +687,7 @@ Date:   Mon Aug 3 11:23:29 2015 +0000
 
     Updated Indonesian translation
 
- po/id.po | 421 ++++++++++++++++++++++++++++++++-------------------------------
+ po/id.po | 421 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 212 insertions(+), 209 deletions(-)
 
 commit 6d649ec6d11833022f7e1bca8efc30274315080f
@@ -727,7 +727,7 @@ Date:   Sun Jul 26 11:29:10 2015 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=742678
 
- clutter/clutter-backend.c | 69 ++++++++++++++++++++++++++++++++++++++---------
+ clutter/clutter-backend.c | 69 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------
  1 file changed, 56 insertions(+), 13 deletions(-)
 
 commit 40f6a0135e9007c1830aa6e35b65399ce897e0fc
@@ -745,7 +745,7 @@ Date:   Thu Jul 23 20:19:34 2015 +0000
 
     Updated Swedish translation
 
- po/sv.po | 2237 +++++++++++++++++++++++++++++++++++---------------------------
+ po/sv.po | 2237 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------
  1 file changed, 1279 insertions(+), 958 deletions(-)
 
 commit 691be437ad034e19b201c05d6f6500e16c072455
@@ -858,7 +858,7 @@ Date:   Fri Jul 17 13:16:53 2015 +0100
     Now with the appropriate compiler warning that points to the replacement
     key symbol.
 
- clutter/deprecated/clutter-keysyms.h | 4198 +++++++++++++++++-----------------
+ clutter/deprecated/clutter-keysyms.h | 4198 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------
  1 file changed, 2099 insertions(+), 2099 deletions(-)
 
 commit 1506ec4a541938293d931a1bd1909d46a0d0a0e3
@@ -1030,9 +1030,9 @@ Date:   Wed Jul 1 15:15:41 2015 +0200
     
     These are needed in order to make these events binding friendly
 
- clutter/clutter-event.c            | 122 +++++++++++++++++++++++++++++++++++++
- clutter/clutter-event.h            |  17 ++++++
- doc/reference/clutter-sections.txt |   5 ++
+ clutter/clutter-event.c            | 122 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-event.h            |  17 +++++++++++++++++
+ doc/reference/clutter-sections.txt |   5 +++++
  3 files changed, 144 insertions(+)
 
 commit 5b8a2a9e156395052a8adda670fdf3fd0d30c591
@@ -1044,7 +1044,7 @@ Date:   Fri May 22 18:33:31 2015 +0200
     The translation from libinput events is fairly straightforward, as they
     map almost 1:1.
 
- clutter/evdev/clutter-device-manager-evdev.c | 165 +++++++++++++++++++++++++++
+ clutter/evdev/clutter-device-manager-evdev.c | 165 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  configure.ac                                 |   2 +-
  2 files changed, 166 insertions(+), 1 deletion(-)
 
@@ -1061,11 +1061,11 @@ Date:   Fri May 22 18:30:09 2015 +0200
     These events have been also made to propagate down/up the pointer
     position, just like scroll and button events do.
 
- clutter/clutter-enums.h            | 43 ++++++++++++++++++++
- clutter/clutter-event.c            | 34 ++++++++++++++++
- clutter/clutter-event.h            | 82 ++++++++++++++++++++++++++++++++++++++
- clutter/clutter-main.c             |  2 +
- doc/reference/clutter-sections.txt |  3 ++
+ clutter/clutter-enums.h            | 43 +++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-event.c            | 34 ++++++++++++++++++++++++++++++++++
+ clutter/clutter-event.h            | 82 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-main.c             |  2 ++
+ doc/reference/clutter-sections.txt |  3 +++
  5 files changed, 164 insertions(+)
 
 commit a4b79e1cd33274e20c4febdd15867bfea7c21033
@@ -1104,10 +1104,10 @@ Date:   Fri Jul 10 11:26:34 2015 +0100
     We should provide a simple convenience function that does all this for
     us.
 
- clutter/clutter-actor.c            | 135 +++++++++++++++++++++++++++++++++++++
- clutter/clutter-actor.h            |   6 ++
+ clutter/clutter-actor.c            | 135 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-actor.h            |   6 ++++++
  doc/reference/clutter-sections.txt |   1 +
- examples/actor-model.c             |  33 +++------
+ examples/actor-model.c             |  33 +++++++++------------------------
  4 files changed, 151 insertions(+), 24 deletions(-)
 
 commit eda436f0c40955908b9eaf588078680f2d27354e
@@ -1118,7 +1118,7 @@ Date:   Fri Jul 10 10:42:27 2015 +0100
     
     Show a simple transition when the current menu item is activated.
 
- examples/actor-model.c | 69 +++++++++++++++++++++++++++++++++++++++++++++++++-
+ examples/actor-model.c | 69 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
  1 file changed, 68 insertions(+), 1 deletion(-)
 
 commit bf0ca916629f5034ff322642269c222e62efaf28
@@ -1129,7 +1129,7 @@ Date:   Thu Jul 9 16:53:39 2015 +0100
     
     This is an example so it ought to be a bit more didactic.
 
- examples/actor-model.c | 310 +++++++++++++++++++++++++++----------------------
+ examples/actor-model.c | 310 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------
  1 file changed, 169 insertions(+), 141 deletions(-)
 
 commit 365bd482fbce9ae61e810878afe685d21e6a801d
@@ -1179,8 +1179,8 @@ Date:   Wed Jul 8 11:10:45 2015 +0100
     of instance fields and an instance private data structure is redundant
     at best, and less efficient at worst.
 
- clutter/clutter-backend-private.h |   9 ++-
- clutter/clutter-backend.c         | 119 ++++++++++++--------------------------
+ clutter/clutter-backend-private.h |   9 ++++++++-
+ clutter/clutter-backend.c         | 119 ++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------
  2 files changed, 46 insertions(+), 82 deletions(-)
 
 commit 19fbbcd35846453ac9ba77c321311faec39bb6e2
@@ -1292,8 +1292,8 @@ Date:   Tue Jul 7 14:52:20 2015 +0100
     ones, from GLib 2.44.
 
  clutter/Makefile.am            |   2 +-
- clutter/clutter-autocleanups.h | 106 +++++++++++++++++++++++++++++++++++++++++
- clutter/clutter.h              |   2 +
+ clutter/clutter-autocleanups.h | 106 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter.h              |   2 ++
  3 files changed, 109 insertions(+), 1 deletion(-)
 
 commit 6cd24faaa54de3246ca45d1c7426d8b7a74f71db
@@ -1306,7 +1306,7 @@ Date:   Tue Jul 7 09:23:42 2015 +0100
     loss of precision, and don't convert too integer when unnecessary, to
     avoid rounding errors.
 
- clutter/clutter-actor.c | 107 ++++++++++++++++++++++--------------------------
+ clutter/clutter-actor.c | 107 +++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------
  1 file changed, 49 insertions(+), 58 deletions(-)
 
 commit 4b9e672bc18e80c541138743c19c9229764c20e9
@@ -1319,7 +1319,7 @@ Date:   Mon Jun 29 20:28:43 2015 +0100
     a GListStore of model objects.
 
  examples/Makefile.am   |   1 +
- examples/actor-model.c | 442 +++++++++++++++++++++++++++++++++++++++++++++++++
+ examples/actor-model.c | 442 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  2 files changed, 443 insertions(+)
 
 commit bf9a71ae2381e3d0fdc9846f61777489befe1960
@@ -1336,9 +1336,9 @@ Date:   Mon Jun 29 20:22:56 2015 +0100
     allows automatic creation of views based on object models that update
     themselves without manual intervention.
 
- clutter/clutter-actor.c            | 127 +++++++++++++++++++++++++++++++++++++
- clutter/clutter-actor.h            |  27 ++++++++
- doc/reference/clutter-sections.txt |   2 +
+ clutter/clutter-actor.c            | 127 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-actor.h            |  27 +++++++++++++++++++++++++++
+ doc/reference/clutter-sections.txt |   2 ++
  3 files changed, 156 insertions(+)
 
 commit 7cde4486aaf860669cc4cf99f772238ac0e6a01f
@@ -1400,8 +1400,8 @@ Date:   Sun Jun 28 10:31:19 2015 +0100
     Now that we've deprecated the only concrete implementation of
     ClutterModel, it's time we deprecate the base abstract class.
 
- clutter/clutter-model.c | 106 ++++++++++++++++++++++++++++++++++++++++++++++--
- clutter/clutter-model.h |  96 ++++++++++++++++++++++++-------------------
+ clutter/clutter-model.c | 106 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---
+ clutter/clutter-model.h |  96 +++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------
  2 files changed, 158 insertions(+), 44 deletions(-)
 
 commit e1e6f7be481f1abeb06ec1fca18cfd8e1c9730e5
@@ -1458,7 +1458,7 @@ Date:   Wed Jul 1 21:58:13 2015 +0000
 
     Updated Portuguese translation
 
- po/pt.po | 1569 +++++++++++++++++++++++++++++++-------------------------------
+ po/pt.po | 1569 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------------
  1 file changed, 792 insertions(+), 777 deletions(-)
 
 commit 7c2ac712f73b26508fa5948dc266259b26fad0fa
@@ -1511,11 +1511,11 @@ Date:   Wed Sep 11 12:33:57 2013 -0300
     
     https://bugzilla.gnome.org/show_bug.cgi?id=707982
 
- clutter/clutter-enums.h            |   6 +-
- clutter/clutter-pan-action.c       | 120 +++++++++++++++++++++++++++++++------
- clutter/clutter-pan-action.h       |   5 ++
+ clutter/clutter-enums.h            |   6 +++++-
+ clutter/clutter-pan-action.c       | 120 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------
+ clutter/clutter-pan-action.h       |   5 +++++
  doc/reference/clutter-sections.txt |   1 +
- examples/pan-action.c              |  58 ++++++++++++++++--
+ examples/pan-action.c              |  58 ++++++++++++++++++++++++++++++++++++++++++++++++++++++----
  5 files changed, 167 insertions(+), 23 deletions(-)
 
 commit 2105055a347c8a35d091cabe118983f621f26965
@@ -1566,7 +1566,7 @@ Date:   Wed Jun 10 12:02:13 2015 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=747489
 
- clutter/gdk/clutter-backend-gdk.c  | 48 ++++++++++++++++++++++++++++++++++++++
+ clutter/gdk/clutter-backend-gdk.c  | 48 ++++++++++++++++++++++++++++++++++++++++++++++++
  clutter/gdk/clutter-gdk.h          |  3 +++
  doc/reference/clutter-sections.txt |  1 +
  3 files changed, 52 insertions(+)
@@ -1596,7 +1596,7 @@ Date:   Wed Jun 10 11:55:50 2015 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=747489
 
- clutter/gdk/clutter-stage-gdk.c | 50 ++++++++++++++++++++++++++++++-----------
+ clutter/gdk/clutter-stage-gdk.c | 50 +++++++++++++++++++++++++++++++++++++-------------
  1 file changed, 37 insertions(+), 13 deletions(-)
 
 commit dd9e43e98ddf321cd05b735022c8ef53a241a633
@@ -1742,36 +1742,36 @@ Date:   Tue May 19 13:19:48 2015 +0100
     Since we only have one API reference, we can drop the clutter/
     sub-level, and have all the files under doc/reference.
 
- .gitignore                                         |  30 ++--
- configure.ac                                       |   3 +-
- doc/reference/Makefile.am                          | 170 ++++++++++++++++++++-
- doc/reference/{clutter => }/actor-box.png          | Bin
- doc/reference/{clutter => }/actor-example.png      | Bin
- .../{clutter => }/animator-key-frames.png          | Bin
- .../{clutter => }/animator-key-frames.svg          |   0
- doc/reference/{clutter => }/bin-layout.png         | Bin
- doc/reference/{clutter => }/box-layout.png         | Bin
- doc/reference/{clutter => }/building-clutter.xml   |   0
- doc/reference/{clutter => }/clutter-docs.xml.in    |   0
- doc/reference/{clutter => }/clutter-overview.xml   |   0
- doc/reference/{clutter => }/clutter-sections.txt   |   0
- doc/reference/{clutter => }/clutter.types          |   0
- doc/reference/clutter/Makefile.am                  | 169 --------------------
- .../{clutter => }/constraints-example.png          | Bin
- doc/reference/{clutter => }/easing-modes.png       | Bin
- doc/reference/{clutter => }/easing-modes.svg       |   0
- doc/reference/{clutter => }/event-flow.dia         | Bin
- doc/reference/{clutter => }/event-flow.png         | Bin
- doc/reference/{clutter => }/flow-layout.png        | Bin
- doc/reference/{clutter => }/glossary.xml           |   0
- .../{clutter => }/migrating-ClutterAnimation.xml   |   0
- .../{clutter => }/migrating-ClutterBehaviour.xml   |   0
- .../{clutter => }/migrating-ClutterEffect.xml      |   0
- .../{clutter => }/migrating-ClutterPath.xml        |   0
- doc/reference/{clutter => }/offscreen-redirect.png | Bin
- doc/reference/{clutter => }/path-alpha-func.png    | Bin
- doc/reference/{clutter => }/running-clutter.xml    |   0
- doc/reference/{clutter => }/table-layout.png       | Bin
+ .gitignore                                                 |  30 +++++++++++++++---------------
+ configure.ac                                               |   3 +--
+ doc/reference/Makefile.am                                  | 170 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ doc/reference/{clutter => }/actor-box.png                  | Bin
+ doc/reference/{clutter => }/actor-example.png              | Bin
+ doc/reference/{clutter => }/animator-key-frames.png        | Bin
+ doc/reference/{clutter => }/animator-key-frames.svg        |   0
+ doc/reference/{clutter => }/bin-layout.png                 | Bin
+ doc/reference/{clutter => }/box-layout.png                 | Bin
+ doc/reference/{clutter => }/building-clutter.xml           |   0
+ doc/reference/{clutter => }/clutter-docs.xml.in            |   0
+ doc/reference/{clutter => }/clutter-overview.xml           |   0
+ doc/reference/{clutter => }/clutter-sections.txt           |   0
+ doc/reference/{clutter => }/clutter.types                  |   0
+ doc/reference/clutter/Makefile.am                          | 169 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ doc/reference/{clutter => }/constraints-example.png        | Bin
+ doc/reference/{clutter => }/easing-modes.png               | Bin
+ doc/reference/{clutter => }/easing-modes.svg               |   0
+ doc/reference/{clutter => }/event-flow.dia                 | Bin
+ doc/reference/{clutter => }/event-flow.png                 | Bin
+ doc/reference/{clutter => }/flow-layout.png                | Bin
+ doc/reference/{clutter => }/glossary.xml                   |   0
+ doc/reference/{clutter => }/migrating-ClutterAnimation.xml |   0
+ doc/reference/{clutter => }/migrating-ClutterBehaviour.xml |   0
+ doc/reference/{clutter => }/migrating-ClutterEffect.xml    |   0
+ doc/reference/{clutter => }/migrating-ClutterPath.xml      |   0
+ doc/reference/{clutter => }/offscreen-redirect.png         | Bin
+ doc/reference/{clutter => }/path-alpha-func.png            | Bin
+ doc/reference/{clutter => }/running-clutter.xml            |   0
+ doc/reference/{clutter => }/table-layout.png               | Bin
  30 files changed, 185 insertions(+), 187 deletions(-)
 
 commit c7bbe2a9f6ca0b86eb53f2824a7e1c9bc519d590
@@ -1780,13 +1780,13 @@ Date:   Tue May 19 13:14:05 2015 +0100
 
     Remove the separate Cally API reference
 
- .gitignore                             |  13 ---
- configure.ac                           |   2 -
- doc/reference/cally/Makefile.am        |  49 ---------
- doc/reference/cally/cally-docs.xml.in  | 145 ---------------------------
- doc/reference/cally/cally-overview.xml |  74 --------------
- doc/reference/cally/cally-sections.txt | 176 ---------------------------------
- doc/reference/cally/cally.types        |   9 --
+ .gitignore                             |  13 -------------
+ configure.ac                           |   2 --
+ doc/reference/cally/Makefile.am        |  49 -------------------------------------------------
+ doc/reference/cally/cally-docs.xml.in  | 145 -------------------------------------------------------------------------------------------------------------------------------------------------
+ doc/reference/cally/cally-overview.xml |  74 --------------------------------------------------------------------------
+ doc/reference/cally/cally-sections.txt | 176 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ doc/reference/cally/cally.types        |   9 ---------
  7 files changed, 468 deletions(-)
 
 commit 6088437786b76bb3f3dc400ce6d57bedf33b1def
@@ -1805,11 +1805,11 @@ Date:   Tue May 19 12:58:08 2015 +0100
     There are some issues with GTK-Doc not accepting multiple namespaces,
     but nothing seriously tragic.
 
- doc/reference/Makefile.am                  |   4 +-
- doc/reference/clutter/Makefile.am          |  68 +++--------
- doc/reference/clutter/clutter-docs.xml.in  |  34 ++++++
- doc/reference/clutter/clutter-sections.txt | 177 +++++++++++++++++++++++++++++
- doc/reference/clutter/clutter.types        |  50 +++++++-
+ doc/reference/Makefile.am                  |   4 +---
+ doc/reference/clutter/Makefile.am          |  68 ++++++++++++++++----------------------------------------------------
+ doc/reference/clutter/clutter-docs.xml.in  |  34 ++++++++++++++++++++++++++++++++++
+ doc/reference/clutter/clutter-sections.txt | 177 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ doc/reference/clutter/clutter.types        |  50 ++++++++++++++++++++++++++++++++++++++++++++------
  5 files changed, 272 insertions(+), 61 deletions(-)
 
 commit c71dfa216290f92ec5f82564d75df0a5fbafab6a
@@ -1829,7 +1829,7 @@ Date:   Tue May 19 11:53:10 2015 +0100
 
     build: Clean up Cally's API reference Makefile
 
- doc/reference/cally/Makefile.am | 81 +++++++++--------------------------------
+ doc/reference/cally/Makefile.am | 81 ++++++++++++++++++---------------------------------------------------------------
  1 file changed, 18 insertions(+), 63 deletions(-)
 
 commit 68df19790e4179c598d11d1b6143ecb625643734
@@ -1873,7 +1873,7 @@ Date:   Mon May 18 13:56:25 2015 +0200
 
     Updated Czech translation
 
- po/cs.po | 154 +++++++++++++++++++++++++++++----------------------------------
+ po/cs.po | 154 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------
  1 file changed, 71 insertions(+), 83 deletions(-)
 
 commit 9268bb914462fc6a6a760daae61a645f405cb8b1
@@ -2123,8 +2123,8 @@ Date:   Tue Apr 14 12:37:42 2015 +0100
     properties they refer to, but it's more efficient to just have a simple
     getter function.
 
- clutter/clutter-actor.c | 60 +++++++++++++++++++++++++++++++++++++++++++++++++
- clutter/clutter-actor.h |  7 ++++++
+ clutter/clutter-actor.c | 60 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-actor.h |  7 +++++++
  2 files changed, 67 insertions(+)
 
 commit 4006b8524d8aba496a3849822aed2254a0e25b89
@@ -2163,7 +2163,7 @@ Date:   Thu Apr 9 11:03:16 2015 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=747436
 
- clutter/x11/clutter-device-manager-xi2.c | 34 +++++++++++++++++++++++++++++++-
+ clutter/x11/clutter-device-manager-xi2.c | 34 +++++++++++++++++++++++++++++++++-
  1 file changed, 33 insertions(+), 1 deletion(-)
 
 commit bb52fa81ce30be69369e043357d6fb569b7ee5e5

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
-               "http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd" [
-<!ENTITY version "1.26.2">
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
+               "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
+  <!ENTITY % local.common.attrib "xmlns:xi  CDATA  #FIXED 'http://www.w3.org/2003/XInclude'">
+  <!ENTITY % gtkdocentities SYSTEM "xml/gtkdocentities.ent">
+  %gtkdocentities;
 ]>
 
-<book id="clutter" lang="en" xmlns:xi="http://www.w3.org/2003/XInclude">
+<book id="clutter" lang="en">
   <bookinfo>
     <title>Clutter Reference Manual</title>
-    <releaseinfo>for Clutter &version;</releaseinfo>
+    <releaseinfo>for Clutter &package_version;</releaseinfo>
 
     <copyright>
       <year>2006</year>

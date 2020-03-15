@@ -1,4 +1,4 @@
-include $(top_srcdir)/build/autotools/Makefile.am.silent
+include $(top_srcdir)/build-aux/autotools/Makefile.am.silent
 
 common_ldadd = \
 	$(top_builddir)/clutter/libclutter-@CLUTTER_API_VERSION@.la
@@ -35,4 +35,4 @@ cally_clone_example_SOURCES           = $(common_sources) cally-clone-example.c
 
 DISTCLEANFILES =
 
--include $(top_srcdir)/build/autotools/Makefile.am.gitignore
+-include $(top_srcdir)/build-aux/autotools/Makefile.am.gitignore

@@ -8,7 +8,7 @@
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="ClutterDeviceManager.html" title="ClutterDeviceManager">
 <link rel="next" href="clutter-Features.html" title="Features">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -671,7 +671,7 @@
 </div>
 <div class="refsect1">
 <a name="clutter-Events.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="/home/ebassi/gnome/install/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">├──</span> ClutterEvent
     <span class="lineart">╰──</span> ClutterEventSequence
 </pre>
@@ -706,7 +706,7 @@ clutter_event_new (<em class="parameter"><code><a class="link" href="clutter-Eve
 </div>
 <div class="refsect3">
 <a name="clutter-event-new.returns"></a><h4>Returns</h4>
-<p> A newly allocated <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a>. </p>
+<p>A newly allocated <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -734,7 +734,7 @@ clutter_event_copy (<em class="parameter"><code>const <a class="link" href="clut
 </div>
 <div class="refsect3">
 <a name="clutter-event-copy.returns"></a><h4>Returns</h4>
-<p> A newly allocated <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a>. </p>
+<p>A newly allocated <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a>. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 </div>
@@ -852,12 +852,12 @@ clutter_event_get_coords (<em class="parameter"><code>const <a class="link" href
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p> return location for the X coordinate, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the X coordinate, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p> return location for the Y coordinate, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>return location for the Y coordinate, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -954,27 +954,27 @@ applications, for example when implementing a wayland compositor.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>button_state</p></td>
-<td class="parameter_description"><p> the pressed buttons as a mask. </p></td>
+<td class="parameter_description"><p>the pressed buttons as a mask. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>base_state</p></td>
-<td class="parameter_description"><p> the regular pressed modifier keys. </p></td>
+<td class="parameter_description"><p>the regular pressed modifier keys. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>latched_state</p></td>
-<td class="parameter_description"><p> the latched modifier keys (currently released but still valid for one key press/release). </p></td>
+<td class="parameter_description"><p>the latched modifier keys (currently released but still valid for one key press/release). </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>locked_state</p></td>
-<td class="parameter_description"><p> the locked modifier keys (valid until the lock key is pressed and released again). </p></td>
+<td class="parameter_description"><p>the locked modifier keys (valid until the lock key is pressed and released again). </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>effective_state</p></td>
-<td class="parameter_description"><p> the logical OR of all the state bits above. </p></td>
+<td class="parameter_description"><p>the logical OR of all the state bits above. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1064,7 +1064,7 @@ clutter_event_set_source (<em class="parameter"><code><a class="link" href="clut
 </tr>
 <tr>
 <td class="parameter_name"><p>actor</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1096,7 +1096,7 @@ NULL if the event has no source.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-event-get-source.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. </p>
+<p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -1124,7 +1124,7 @@ clutter_event_set_stage (<em class="parameter"><code><a class="link" href="clutt
 </tr>
 <tr>
 <td class="parameter_name"><p>stage</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1156,7 +1156,7 @@ clutter_event_get_stage (<em class="parameter"><code>const <a class="link" href=
 </div>
 <div class="refsect3">
 <a name="clutter-event-get-stage.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>. </p>
+<p>a <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -1244,7 +1244,7 @@ clutter_event_get_axes (<em class="parameter"><code>const <a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>n_axes</p></td>
-<td class="parameter_description"><p> return location for the number of axes returned. </p></td>
+<td class="parameter_description"><p>return location for the number of axes returned. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1252,7 +1252,7 @@ clutter_event_get_axes (<em class="parameter"><code>const <a class="link" href="
 </div>
 <div class="refsect3">
 <a name="clutter-event-get-axes.returns"></a><h4>Returns</h4>
-<p> an array of axis values. </p>
+<p>an array of axis values. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -1283,7 +1283,7 @@ clutter_event_get_event_sequence (<em class="parameter"><code>const <a class="li
 </div>
 <div class="refsect3">
 <a name="clutter-event-get-event-sequence.returns"></a><h4>Returns</h4>
-<p> the event sequence, or <code class="literal">NULL</code>. </p>
+<p>the event sequence, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -1620,13 +1620,13 @@ position.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>dx</p></td>
-<td class="parameter_description"><p> the displacement relative to the pointer
+<td class="parameter_description"><p>the displacement relative to the pointer
 position in the X axis, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>dy</p></td>
-<td class="parameter_description"><p> the displacement relative to the pointer
+<td class="parameter_description"><p>the displacement relative to the pointer
 position in the Y axis, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -1713,7 +1713,7 @@ clutter_event_peek (<em class="parameter"><code><span class="type">void</span></
 does not remove it.</p>
 <div class="refsect3">
 <a name="clutter-event-peek.returns"></a><h4>Returns</h4>
-<p> A <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a> or NULL if queue empty. </p>
+<p>A <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a> or NULL if queue empty. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix04.html#api-index-0.4">0.4</a></p>
@@ -1818,7 +1818,7 @@ emitted for the event and it will take precedence over any grabs.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>stage</p></td>
-<td class="parameter_description"><p> The <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> to capture events for. </p></td>
+<td class="parameter_description"><p>The <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> to capture events for. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -2226,7 +2226,7 @@ clutter_event_set_related (<em class="parameter"><code><a class="link" href="clu
 </tr>
 <tr>
 <td class="parameter_name"><p>actor</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2258,7 +2258,7 @@ type <a class="link" href="clutter-Events.html#CLUTTER-LEAVE:CAPS"><code class="
 </div>
 <div class="refsect3">
 <a name="clutter-event-get-related.returns"></a><h4>Returns</h4>
-<p> the related <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
+<p>the related <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix07.html#api-index-1.0">1.0</a></p>
@@ -2351,12 +2351,12 @@ of <a class="link" href="clutter-Events.html#CLUTTER-SCROLL-SMOOTH:CAPS"><code c
 </tr>
 <tr>
 <td class="parameter_name"><p>dx</p></td>
-<td class="parameter_description"><p> return location for the delta on the horizontal axis. </p></td>
+<td class="parameter_description"><p>return location for the delta on the horizontal axis. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>dy</p></td>
-<td class="parameter_description"><p> return location for the delta on the vertical axis. </p></td>
+<td class="parameter_description"><p>return location for the delta on the vertical axis. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2426,7 +2426,7 @@ clutter_event_set_device (<em class="parameter"><code><a class="link" href="clut
 </tr>
 <tr>
 <td class="parameter_name"><p>device</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2461,7 +2461,7 @@ be cast to the platform-specific implementation.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-event-get-device.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> or <code class="literal">NULL</code>. The
+<p>the <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> or <code class="literal">NULL</code>. The
 returned device is owned by the <a class="link" href="clutter-Events.html#ClutterEvent"><span class="type">ClutterEvent</span></a> and it should not
 be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -2493,7 +2493,7 @@ clutter_event_set_source_device (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>device</p></td>
-<td class="parameter_description"><p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -2527,7 +2527,7 @@ return the same device as <a class="link" href="clutter-Events.html#clutter-even
 </div>
 <div class="refsect3">
 <a name="clutter-event-get-source-device.returns"></a><h4>Returns</h4>
-<p> a pointer to a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>
+<p>a pointer to a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>
 or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -2614,7 +2614,7 @@ example, to get the key modifier state from a Button 'clicked'
 event.</p>
 <div class="refsect3">
 <a name="clutter-get-current-event.returns"></a><h4>Returns</h4>
-<p> The current ClutterEvent, or <code class="literal">NULL</code> if none. </p>
+<p>The current ClutterEvent, or <code class="literal">NULL</code> if none. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -3776,7 +3776,7 @@ running at the same time.</p>
 </tr>
 <tr>
 <td class="struct_member_name"><p><a class="link" href="clutter-Events.html#ClutterModifierType" title="enum ClutterModifierType"><span class="type">ClutterModifierType</span></a> <em class="structfield"><code><a name="ClutterTouchEvent.modifier-state"></a>modifier_state</code></em>;</p></td>
-<td class="struct_member_description"><p> a bit-mask representing the state
+<td class="struct_member_description"><p>a bit-mask representing the state
 of modifier keys (e.g. Control, Shift, and Alt) and the pointer
 buttons. See <a class="link" href="clutter-Events.html#ClutterModifierType" title="enum ClutterModifierType"><span class="type">ClutterModifierType</span></a>. </p></td>
 <td class="struct_member_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> ClutterModifierType]</span></td>
@@ -4090,6 +4090,6 @@ mouse configuration.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

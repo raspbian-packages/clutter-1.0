@@ -8,7 +8,7 @@
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="ClutterInputDevice.html" title="ClutterInputDevice">
 <link rel="next" href="ClutterPath.html" title="ClutterPath">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -185,7 +185,7 @@
 </tr>
 <tr>
 <td class="function_type">
-<span class="returnvalue">PangoFontMap</span> *
+<a href="https://developer.gnome.org/pango/pango-Fonts.html#PangoFontMap-struct"><span class="returnvalue">PangoFontMap</span></a> *
 </td>
 <td class="function_name">
 <a class="link" href="clutter-General.html#clutter-get-font-map" title="clutter_get_font_map ()">clutter_get_font_map</a> <span class="c_punctuation">()</span>
@@ -479,13 +479,13 @@ faults and assertion failures. Make sure to handle the returned
 <tbody>
 <tr>
 <td class="parameter_name"><p>argc</p></td>
-<td class="parameter_description"><p> The number of arguments in <em class="parameter"><code>argv</code></em>
+<td class="parameter_description"><p>The number of arguments in <em class="parameter"><code>argv</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>argv</p></td>
-<td class="parameter_description"><p> A pointer to an array
+<td class="parameter_description"><p>A pointer to an array
 of arguments. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=argc][<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -529,31 +529,31 @@ behaviour - including segmentation faults.</p>
 <tbody>
 <tr>
 <td class="parameter_name"><p>argc</p></td>
-<td class="parameter_description"><p> a pointer to the number of command line arguments. </p></td>
+<td class="parameter_description"><p>a pointer to the number of command line arguments. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>argv</p></td>
-<td class="parameter_description"><p> a pointer to the array
+<td class="parameter_description"><p>a pointer to the array
 of command line arguments. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym> length=argc][<acronym title="Parameter for input and for returning results. Default is transfer full."><span class="acronym">inout</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>parameter_string</p></td>
-<td class="parameter_description"><p> a string which is displayed in the
+<td class="parameter_description"><p>a string which is displayed in the
 first line of <code class="option">--help</code> output, after
 <code class="literal"><em class="replaceable"><code>programname</code></em> [OPTION...]</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>entries</p></td>
-<td class="parameter_description"><p> a <code class="literal">NULL</code> terminated array of
+<td class="parameter_description"><p>a <code class="literal">NULL</code> terminated array of
 <span class="type">GOptionEntry</span>s describing the options of your program. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym>][<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>translation_domain</p></td>
-<td class="parameter_description"><p> a translation domain to use for
+<td class="parameter_description"><p>a translation domain to use for
 translating the <code class="option">--help</code> output for the options in
 <em class="parameter"><code>entries</code></em>
 with <code class="function">gettext()</code>, or <code class="literal">NULL</code>. </p></td>
@@ -561,7 +561,7 @@ with <code class="function">gettext()</code>, or <code class="literal">NULL</cod
 </tr>
 <tr>
 <td class="parameter_name"><p>error</p></td>
-<td class="parameter_description"><p> a return location for a <span class="type">GError</span>. </p></td>
+<td class="parameter_description"><p>a return location for a <span class="type">GError</span>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -619,7 +619,7 @@ initialized.</p>
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
 <a name="clutter-get-option-group.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GOptionGroup</span> for the commandline arguments
+<p>a <span class="type">GOptionGroup</span> for the commandline arguments
 recognized by Clutter. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -642,7 +642,7 @@ display connection with <a class="link" href="clutter-X11-Specific-Support.html#
 <p><span class="annotation">[<acronym title="Exposed in C code, not necessarily available in other languages."><span class="acronym">skip</span></acronym>]</span></p>
 <div class="refsect3">
 <a name="clutter-get-option-group-without-init.returns"></a><h4>Returns</h4>
-<p> a <span class="type">GOptionGroup</span> for the commandline arguments
+<p>a <span class="type">GOptionGroup</span> for the commandline arguments
 recognized by Clutter. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -762,7 +762,7 @@ clutter_get_actor_by_gid (<em class="parameter"><code><span class="type">guint32
 </div>
 <div class="refsect3">
 <a name="clutter-get-actor-by-gid.returns"></a><h4>Returns</h4>
-<p> the actor with the passed id or <code class="literal">NULL</code>.
+<p>the actor with the passed id or <code class="literal">NULL</code>.
 The returned actor does not have its reference count increased. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -931,14 +931,14 @@ clutter_get_font_flags (<em class="parameter"><code><span class="type">void</spa
 <hr>
 <div class="refsect2">
 <a name="clutter-get-font-map"></a><h3>clutter_get_font_map ()</h3>
-<pre class="programlisting"><span class="returnvalue">PangoFontMap</span> *
+<pre class="programlisting"><a href="https://developer.gnome.org/pango/pango-Fonts.html#PangoFontMap-struct"><span class="returnvalue">PangoFontMap</span></a> *
 clutter_get_font_map (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
-<p>Retrieves the <span class="type">PangoFontMap</span> instance used by Clutter.
+<p>Retrieves the <a href="https://developer.gnome.org/pango/pango-Fonts.html#PangoFontMap-struct"><span class="type">PangoFontMap</span></a> instance used by Clutter.
 You can use the global font map object with the COGL
 Pango API.</p>
 <div class="refsect3">
 <a name="clutter-get-font-map.returns"></a><h4>Returns</h4>
-<p> the <span class="type">PangoFontMap</span> instance. The returned
+<p>the <a href="https://developer.gnome.org/pango/pango-Fonts.html#PangoFontMap-struct"><span class="type">PangoFontMap</span></a> instance. The returned
 value is owned by Clutter and it should never be unreferenced. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
@@ -1722,7 +1722,7 @@ clutter_get_keyboard_grab (<em class="parameter"><code><span class="type">void</
 <p>Queries the current keyboard grab of clutter.</p>
 <div class="refsect3">
 <a name="clutter-get-keyboard-grab.returns"></a><h4>Returns</h4>
-<p> the actor currently holding the keyboard grab, or NULL if there is no grab. </p>
+<p>the actor currently holding the keyboard grab, or NULL if there is no grab. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -1735,7 +1735,7 @@ clutter_get_pointer_grab (<em class="parameter"><code><span class="type">void</s
 <p>Queries the current pointer grab of clutter.</p>
 <div class="refsect3">
 <a name="clutter-get-pointer-grab.returns"></a><h4>Returns</h4>
-<p> the actor currently holding the pointer grab, or NULL if there is no grab. </p>
+<p>the actor currently holding the pointer grab, or NULL if there is no grab. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix05.html#api-index-0.6">0.6</a></p>
@@ -2105,6 +2105,6 @@ vice-versa.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

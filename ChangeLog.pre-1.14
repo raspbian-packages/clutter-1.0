@@ -35,7 +35,7 @@ Date:   Mon Mar 25 15:10:27 2013 +0530
 
     hindi translation by chandan kumar
 
- po/hi.po | 696 +++++++++++++++++++++++++++++----------------------------------
+ po/hi.po | 696 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------------------
  1 file changed, 325 insertions(+), 371 deletions(-)
 
 commit 5bbd4be30b7073304bad96c1a026818bb951f251
@@ -44,7 +44,7 @@ Date:   Thu Mar 21 09:50:57 2013 +0200
 
     Updated Latvian translation
 
- po/lv.po | 543 ++++++++++++++++++++++++++++++++-------------------------------
+ po/lv.po | 543 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 272 insertions(+), 271 deletions(-)
 
 commit d0335c603d686cc1452ed1762a28ee6c6a8b48fb
@@ -53,7 +53,7 @@ Date:   Tue Mar 19 23:34:03 2013 +0100
 
     Added slovak translation
 
- po/sk.po | 3130 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ po/sk.po | 3130 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 3130 insertions(+)
 
 commit 19d6ebb7fc9e4511d7de9320b99fb6a59a042f52
@@ -62,7 +62,7 @@ Date:   Tue Mar 19 22:28:43 2013 +0100
 
     [l10n] Added Tadjik translation
 
- po/tg.po | 2741 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ po/tg.po | 2741 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 2741 insertions(+)
 
 commit da0025bfcae6d6ef6790989a6536a98f97c13da7
@@ -102,7 +102,7 @@ Date:   Sun Mar 17 20:07:43 2013 +0100
 
     [l10n] Updated Catalan (Valencian) translation
 
- po/ca@valencia.po | 676 +++++++++++++++++++++++++++---------------------------
+ po/ca@valencia.po | 676 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------------------------------------
  1 file changed, 338 insertions(+), 338 deletions(-)
 
 commit 3b05936cc4c8c959c40285e5d459e2b5bf5147e8
@@ -111,7 +111,7 @@ Date:   Sun Mar 17 14:57:59 2013 +0100
 
     Updated Danish translation
 
- po/da.po | 700 +++++++++++++++++++++++++++++++--------------------------------
+ po/da.po | 700 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 350 insertions(+), 350 deletions(-)
 
 commit 305616afe2d01c4014bbe9640043633c74dd7075
@@ -120,7 +120,7 @@ Date:   Fri Mar 15 14:36:13 2013 +0000
 
     Updated Portuguese translation and converted to New Spelling (Novo AO)
 
- po/pt.po | 1012 +++++++++++++++++++++++++++++++-------------------------------
+ po/pt.po | 1012 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 509 insertions(+), 503 deletions(-)
 
 commit fefde1b8e364c8269475fd37c3a3b15924cf8d84
@@ -135,7 +135,7 @@ Date:   Thu Mar 14 19:01:31 2013 -0300
     
     https://bugzilla.gnome.org/show_bug.cgi?id=695870
 
- clutter/clutter-actor.c | 52 ++++++++++++-------------------------------------
+ clutter/clutter-actor.c | 52 ++++++++++++----------------------------------------
  1 file changed, 12 insertions(+), 40 deletions(-)
 
 commit c8f34d448a52405b756535ca1cd7da42803cee11
@@ -177,7 +177,7 @@ Date:   Thu Mar 7 19:33:59 2013 +0000
     check that the actor is not part of a cloned branch of the scene graph,
     as well as checking if the actor has mapped clones.
 
- clutter/clutter-actor.c | 52 +++++++++++++++++++++++++++++++++++++------------
+ clutter/clutter-actor.c | 52 ++++++++++++++++++++++++++++++++++++++++------------
  1 file changed, 40 insertions(+), 12 deletions(-)
 
 commit a557930798e90ca690219e8ea2230f3e40164c66
@@ -209,7 +209,7 @@ Date:   Thu Mar 7 18:20:48 2013 +0000
     This allows us to ignore redraws queued on children of invisible
     parents, and avoid traversing the scene graph.
 
- clutter/clutter-actor.c | 67 +++++++++++++++++++++++++++++++++++++------------
+ clutter/clutter-actor.c | 67 +++++++++++++++++++++++++++++++++++++++++++++++++++----------------
  1 file changed, 51 insertions(+), 16 deletions(-)
 
 commit f8c129ae8189845c4163908f947ad9252b611314
@@ -226,9 +226,9 @@ Date:   Thu Mar 7 18:09:33 2013 +0000
     graph, so we can just skip the signal emissions and just do the right
     thing at the right time.
 
- clutter/clutter-actor-private.h |  7 ++++
- clutter/clutter-actor.c         | 80 ++++++++++++++++++++++++++++++++++++++++-
- clutter/clutter-clone.c         | 30 +++-------------
+ clutter/clutter-actor-private.h |  7 +++++++
+ clutter/clutter-actor.c         | 80 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ clutter/clutter-clone.c         | 30 +++++-------------------------
  3 files changed, 91 insertions(+), 26 deletions(-)
 
 commit 3e53c1ff73f6566359e6fe037ca1f3162299af03
@@ -260,7 +260,7 @@ Date:   Fri Mar 8 15:24:50 2013 +0000
     
     The main body of the function should not live inside an 'if' block.
 
- clutter/clutter-actor.c | 81 +++++++++++++++++++++++++------------------------
+ clutter/clutter-actor.c | 81 +++++++++++++++++++++++++++++++++++++++++----------------------------------------
  1 file changed, 41 insertions(+), 40 deletions(-)
 
 commit 09f4d5dbc410b71249213a158357f7175ab64f03
@@ -294,7 +294,7 @@ Date:   Thu Mar 7 11:23:39 2013 +0000
     
     Reading it is getting painful.
 
- clutter/clutter-actor-private.h | 154 ++++++++++++++++++++--------------------
+ clutter/clutter-actor-private.h | 154 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------------------------------------------
  1 file changed, 77 insertions(+), 77 deletions(-)
 
 commit 79be2fde47bc3dd840734ab54a30b287de036e09
@@ -345,7 +345,7 @@ Date:   Tue Mar 12 16:25:23 2013 +0530
 
     Assamese translation updated for gnome 3.8
 
- po/as.po | 699 ++++++++++++++++++++++++++++++++-------------------------------
+ po/as.po | 699 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 353 insertions(+), 346 deletions(-)
 
 commit 66d24394c5db978f0009eb99f8232d8c2fd8195c
@@ -354,7 +354,7 @@ Date:   Mon Mar 11 12:44:21 2013 +0700
 
     Updated Indonesian translation
 
- po/id.po | 597 ++++++++++++++++++++++++++++++++-------------------------------
+ po/id.po | 597 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 299 insertions(+), 298 deletions(-)
 
 commit 0c01f32e3d457468077e59b809f088b3d52f1280
@@ -363,7 +363,7 @@ Date:   Sun Mar 10 23:50:08 2013 +0100
 
     [l10] Updated Catalan translation
 
- po/ca.po | 668 +++++++++++++++++++++++++++++++--------------------------------
+ po/ca.po | 668 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 334 insertions(+), 334 deletions(-)
 
 commit a9616dba2acf9c053ec69d79f2cb6e0ca3b29436
@@ -377,10 +377,10 @@ Date:   Fri Mar 8 12:29:25 2013 +0800
     property sheets that we can later use to build the introspection files for
     Clutter from the Visual Studio IDE.
 
- build/win32/vs10/clutter.props     | 368 ++++++++++++++++++++-----------------
- build/win32/vs10/clutter.vcxprojin |  16 +-
- build/win32/vs9/clutter.vcprojin   |  16 +-
- build/win32/vs9/clutter.vsprops    | 351 ++++++++++++++++++-----------------
+ build/win32/vs10/clutter.props     | 368 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------
+ build/win32/vs10/clutter.vcxprojin |  16 ++++-----
+ build/win32/vs9/clutter.vcprojin   |  16 ++++-----
+ build/win32/vs9/clutter.vsprops    | 351 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------
  4 files changed, 398 insertions(+), 353 deletions(-)
 
 commit a4102e9aa2776c75d30a56726c1ad47ee7e502d8
@@ -393,7 +393,7 @@ Date:   Fri Mar 8 12:02:56 2013 +0800
     onfig.h.in template in the autotools builds, and also make items supported
     by MinGW builds reflected here as well.
 
- clutter/config.h.win32.in | 66 +++++++++++++++++++++++++++++------------------
+ clutter/config.h.win32.in | 66 +++++++++++++++++++++++++++++++++++++++++-------------------------
  1 file changed, 41 insertions(+), 25 deletions(-)
 
 commit c55acf7e7d51a7672e775da3ab25a86617426a6b
@@ -413,7 +413,7 @@ Date:   Thu Mar 7 14:51:40 2013 +0300
 
     Updated Belarusian translation.
 
- po/be.po | 642 +++++++++++++++++++++++++++++++--------------------------------
+ po/be.po | 642 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 321 insertions(+), 321 deletions(-)
 
 commit 4c1dc28382232e0f57e1c2f69ca7079fbb99ca81
@@ -424,7 +424,7 @@ Date:   Thu Mar 7 20:38:22 2013 +0900
     
     Signed-off-by: Gheyret Kenji <gheyret@gmail.com>
 
- po/ug.po | 648 +++++++++++++++++++++++++++++++--------------------------------
+ po/ug.po | 648 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 324 insertions(+), 324 deletions(-)
 
 commit ab274364381e68c87486cf0e5f9293fd0c40daf9
@@ -467,8 +467,8 @@ Date:   Tue Mar 5 16:48:35 2013 +0800
     -Remove some unwanted (repeated) cruft in the "install" stage
     -Adjust to the added and deprecated headers for the "install" stage
 
- build/win32/vs10/clutter.props  | 51 +++++++++++++++++++++++------------------
- build/win32/vs9/clutter.vsprops | 29 ++++++++++++-----------
+ build/win32/vs10/clutter.props  | 51 +++++++++++++++++++++++++++++----------------------
+ build/win32/vs9/clutter.vsprops | 29 ++++++++++++++++-------------
  2 files changed, 45 insertions(+), 35 deletions(-)
 
 commit 909c312084d1e7a2866f23edf8127c1964079b5c
@@ -606,7 +606,7 @@ Date:   Sun Mar 3 21:20:24 2013 +0100
 
     [l10n] Updated German translation
 
- po/de.po | 541 +++++++++++++++++++++++++++++++--------------------------------
+ po/de.po | 541 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------------
  1 file changed, 268 insertions(+), 273 deletions(-)
 
 commit 7a3367b3df79ffdbc2c7ea35f463b4713dbfb566
@@ -615,8 +615,8 @@ Date:   Fri Mar 1 22:13:37 2013 +0800
 
     Updated Traditional Chinese translation(Hong Kong and Taiwan)
 
- po/zh_HK.po | 592 ++++++++++++++++++++++++++++++------------------------------
- po/zh_TW.po | 590 +++++++++++++++++++++++++++++------------------------------
+ po/zh_HK.po | 592 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------------
+ po/zh_TW.po | 590 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------------
  2 files changed, 593 insertions(+), 589 deletions(-)
 
 commit 5c2931a2f0f7f3299843cd8e5c757137f50cc072
@@ -639,7 +639,7 @@ Date:   Fri Feb 22 21:54:31 2013 +0100
 
     Updated Czech translation
 
- po/cs.po | 640 +++++++++++++++++++++++++++++++--------------------------------
+ po/cs.po | 640 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 320 insertions(+), 320 deletions(-)
 
 commit 7ef97ae051e8479a0e66553da38e65d86c714c51
@@ -667,9 +667,9 @@ Date:   Wed Jan 30 11:49:38 2013 +1100
     https://bugzilla.gnome.org/show_bug.cgi?id=692851
 
  clutter/Makefile.am                              |  1 +
- clutter/wayland/clutter-backend-wayland-priv.h   | 67 ++++++++++++++++++++++++
+ clutter/wayland/clutter-backend-wayland-priv.h   | 67 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  clutter/wayland/clutter-backend-wayland.c        |  1 +
- clutter/wayland/clutter-backend-wayland.h        | 28 ----------
+ clutter/wayland/clutter-backend-wayland.h        | 28 ----------------------------
  clutter/wayland/clutter-device-manager-wayland.c |  1 +
  clutter/wayland/clutter-input-device-wayland.c   |  1 +
  clutter/wayland/clutter-stage-wayland.c          |  1 +
@@ -706,12 +706,12 @@ Date:   Wed Feb 20 22:14:46 2013 +0000
     
     https://bugzilla.gnome.org/show_bug.cgi?id=694319
 
- clutter/clutter-timeline.c                   | 146 ++++++++++++++++++++++-----
- clutter/clutter-timeline.h                   |   4 +
+ clutter/clutter-timeline.c                   | 146 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------
+ clutter/clutter-timeline.h                   |   4 ++++
  clutter/clutter.symbols                      |   1 +
  doc/reference/clutter/clutter-sections.txt   |   1 +
- tests/conform/timeline.c                     |   8 +-
- tests/data/test-script-timeline-markers.json |   3 +-
+ tests/conform/timeline.c                     |   8 +++++---
+ tests/data/test-script-timeline-markers.json |   3 ++-
  6 files changed, 133 insertions(+), 30 deletions(-)
 
 commit 619a7e9ab04705f9141f0512c66912760433b97d
@@ -726,7 +726,7 @@ Date:   Wed Feb 20 23:02:05 2013 +0000
     
     https://bugzilla.gnome.org/show_bug.cgi?id=686225
 
- clutter/clutter-scroll-actor.c | 103 +++++++----------------------------------
+ clutter/clutter-scroll-actor.c | 103 ++++++++++++++++---------------------------------------------------------------------------------------
  1 file changed, 16 insertions(+), 87 deletions(-)
 
 commit 6515ff8b6791ff865a6e04dc92c18524860ee375
@@ -867,7 +867,7 @@ Date:   Wed Feb 20 21:23:25 2013 +0100
 
     Update French translation
 
- po/fr.po | 586 +++++++++++++++++++++++++++++++--------------------------------
+ po/fr.po | 586 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 293 insertions(+), 293 deletions(-)
 
 commit 7bff7724129cc7cc0ffcf44c53377e7c540538ad
@@ -876,7 +876,7 @@ Date:   Sat Feb 16 21:17:13 2013 +0100
 
     Updated Polish translation
 
- po/pl.po | 226 +++++++++++++++++++++++++++++++--------------------------------
+ po/pl.po | 226 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 113 insertions(+), 113 deletions(-)
 
 commit f6cb43017e96ebbbc3a774bc39ec4756c5108d1e
@@ -940,14 +940,14 @@ Date:   Thu Nov 8 12:42:24 2012 -0500
     
     https://bugzilla.gnome.org/show_bug.cgi?id=692901
 
- clutter/clutter-master-clock.c    | 156 ++++++++++++++++++++++++++++----------
- clutter/clutter-stage-private.h   |   4 +-
- clutter/clutter-stage-window.c    |  43 ++++++++++-
- clutter/clutter-stage-window.h    |  10 ++-
- clutter/clutter-stage.c           | 105 +++++++++++++++++++++++--
- clutter/clutter-stage.h           |   8 ++
- clutter/cogl/clutter-stage-cogl.c | 131 ++++++++++++++++++++++++++------
- clutter/cogl/clutter-stage-cogl.h |   6 +-
+ clutter/clutter-master-clock.c    | 156 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------------------------
+ clutter/clutter-stage-private.h   |   4 +++-
+ clutter/clutter-stage-window.c    |  43 +++++++++++++++++++++++++++++++++++++++----
+ clutter/clutter-stage-window.h    |  10 ++++++++--
+ clutter/clutter-stage.c           | 105 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----
+ clutter/clutter-stage.h           |   8 ++++++++
+ clutter/cogl/clutter-stage-cogl.c | 131 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-----------------------
+ clutter/cogl/clutter-stage-cogl.h |   6 +++++-
  8 files changed, 386 insertions(+), 77 deletions(-)
 
 commit 9d43336e0368bd5a78436e3436a0a1a7383e1de6
@@ -996,7 +996,7 @@ Date:   Thu Feb 7 01:36:42 2013 +0100
 
     Updated Galician translations
 
- po/gl.po | 175 +++++++++++++++++++++++++++++++--------------------------------
+ po/gl.po | 175 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------
  1 file changed, 87 insertions(+), 88 deletions(-)
 
 commit f9d9ca431add562734e7d9f88044f8cae2ed131b
@@ -1039,11 +1039,11 @@ Date:   Wed Feb 6 11:05:58 2013 +0100
     
     https://bugzilla.gnome.org/show_bug.cgi?id=669122
 
- clutter/clutter-stage-window.c    |  17 ++++++
- clutter/clutter-stage-window.h    |   6 +++
- clutter/clutter-stage.c           |  62 ++++++++++++++-------
- clutter/cogl/clutter-stage-cogl.c | 111 +++++++++++++++++++++++++++++++++-----
- clutter/cogl/clutter-stage-cogl.h |   3 ++
+ clutter/clutter-stage-window.c    |  17 +++++++++++++++++
+ clutter/clutter-stage-window.h    |   6 ++++++
+ clutter/clutter-stage.c           |  62 ++++++++++++++++++++++++++++++++++++++++++--------------------
+ clutter/cogl/clutter-stage-cogl.c | 111 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------
+ clutter/cogl/clutter-stage-cogl.h |   3 +++
  5 files changed, 167 insertions(+), 32 deletions(-)
 
 commit 34e466a3f938780e5e27a45393b64495e71d5af8
@@ -1138,7 +1138,7 @@ Date:   Sun Jan 27 12:33:46 2013 +0900
     
     Signed-off-by: Gheyret Kenji <gheyret@gmail.com>
 
- po/ug.po | 321 ++++++++++++++++++++++++++++++---------------------------------
+ po/ug.po | 321 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------------
  1 file changed, 153 insertions(+), 168 deletions(-)
 
 commit d63b04d173c5af31ea2772087ab3ced004c1ff20
@@ -1147,7 +1147,7 @@ Date:   Fri Jan 25 16:38:05 2013 +0100
 
     [l10n] Updated Italian translation.
 
- po/it.po | 535 ++++++++++++++++++++++++++++++++-------------------------------
+ po/it.po | 535 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 268 insertions(+), 267 deletions(-)
 
 commit 95d56201bbcb78f061d573a113f3037392c89bd3
@@ -1156,7 +1156,7 @@ Date:   Wed Jan 23 22:05:30 2013 +0200
 
     Updated Lithuanian translation
 
- po/lt.po | 825 +++++++++++++++++++++++++++++++--------------------------------
+ po/lt.po | 825 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------------
  1 file changed, 407 insertions(+), 418 deletions(-)
 
 commit d12074ebb6a652099761e6c9a781173da71f979f
@@ -1167,7 +1167,7 @@ Date:   Sun Jan 20 20:30:01 2013 +0900
     
     Signed-off-by: Gheyret Kenji <gheyret@gmail.com>
 
- po/ug.po | 1875 ++++++++++++++++++++++++++++++++++++++------------------------
+ po/ug.po | 1875 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------
  1 file changed, 1143 insertions(+), 732 deletions(-)
 
 commit b9ff774556be063ed5a8b3fa49edf054ee2e1ca6
@@ -1176,7 +1176,7 @@ Date:   Fri Jan 18 21:42:57 2013 -0200
 
     Updated Brazilian Portuguese Translation
 
- po/pt_BR.po | 587 ++++++++++++++++++++++++++++++------------------------------
+ po/pt_BR.po | 587 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------------------
  1 file changed, 294 insertions(+), 293 deletions(-)
 
 commit af9c8feb6da1bab59871df07b0915752caa62ec1
@@ -1185,8 +1185,8 @@ Date:   Fri Jan 18 23:55:35 2013 +0100
 
     Updated Serbian translation
 
- po/sr.po       | 655 ++++++++++++++++++++++++++++-----------------------------
- po/sr@latin.po | 655 ++++++++++++++++++++++++++++-----------------------------
+ po/sr.po       | 655 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
+ po/sr@latin.po | 655 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  2 files changed, 644 insertions(+), 666 deletions(-)
 
 commit 62729c14e71abbe75db3dc465c1fa7f5b0223ab6
@@ -1381,7 +1381,7 @@ Date:   Wed Jan 9 07:00:36 2013 +0200
 
     Updated Bulgarian translation
 
- po/bg.po | 530 +++++++++++++++++++++++++++++++--------------------------------
+ po/bg.po | 530 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 265 insertions(+), 265 deletions(-)
 
 commit bb8ef4e5c0873c896643a3dddba6ea67b3e7dcc9
@@ -1415,7 +1415,7 @@ Date:   Mon Dec 24 22:54:03 2012 +0100
 
     Updated Galician translations
 
- po/gl.po | 647 +++++++++++++++++++++++++++++++--------------------------------
+ po/gl.po | 647 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 323 insertions(+), 324 deletions(-)
 
 commit 5a025b95157f190acc1a9602b8daf337733678cb
@@ -1424,7 +1424,7 @@ Date:   Sun Dec 23 18:54:54 2012 +0200
 
     Updated Greek translation
 
- po/el.po | 649 +++++++++++++++++++++++++++++++--------------------------------
+ po/el.po | 649 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------------
  1 file changed, 322 insertions(+), 327 deletions(-)
 
 commit 77a9decc00b173978bb3607fba5bcb376e0e3102
@@ -1433,7 +1433,7 @@ Date:   Sun Dec 23 04:11:54 2012 +0100
 
     Updated Polish translation
 
- po/pl.po | 632 +++++++++++++++++++++++++++++++--------------------------------
+ po/pl.po | 632 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 316 insertions(+), 316 deletions(-)
 
 commit c742b33200e4e73bf1b2b0ceac26ba648bb9aa3a
@@ -1442,7 +1442,7 @@ Date:   Wed Dec 19 13:25:12 2012 +0100
 
     Updated Spanish translation
 
- po/es.po | 639 +++++++++++++++++++++++++++++++--------------------------------
+ po/es.po | 639 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------------
  1 file changed, 317 insertions(+), 322 deletions(-)
 
 commit fa8878509e38cd90c706f8fa0c84219561680184
@@ -1451,7 +1451,7 @@ Date:   Wed Dec 19 11:39:46 2012 +0400
 
     Updated Russian translation
 
- po/ru.po | 579 ++++++++++++++++++++++++++++++++-------------------------------
+ po/ru.po | 579 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 290 insertions(+), 289 deletions(-)
 
 commit 4ce3fbbfdcef90d6fef02b326348e4354f519478
@@ -1460,7 +1460,7 @@ Date:   Tue Dec 18 08:39:23 2012 +0100
 
     Updated Slovenian translation
 
- po/sl.po | 776 ++++++++++++++++++++++++++++++++-------------------------------
+ po/sl.po | 776 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 391 insertions(+), 385 deletions(-)
 
 commit f7f2635fbf166c630a4b07b5f045e40f3bbbe047
@@ -1624,7 +1624,7 @@ Date:   Sun Dec 16 14:37:42 2012 +0000
     let's make it clear what each part of the function does. Also, add more
     comments.
 
- clutter/clutter-actor.c | 218 ++++++++++++++++++++++++++----------------------
+ clutter/clutter-actor.c | 218 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------
  1 file changed, 116 insertions(+), 102 deletions(-)
 
 commit 183e7b6176882fa9748d1a56fa802f86788f9c7c
@@ -1730,7 +1730,7 @@ Date:   Fri Dec 14 17:05:26 2012 +0000
     https://bugzilla.gnome.org/show_bug.cgi?id=690214
 
  clutter/clutter-actor.c           |  2 +-
- tests/conform/actor-invariants.c  | 40 +++++++++++++++++++++++++++++++++++++++
+ tests/conform/actor-invariants.c  | 40 ++++++++++++++++++++++++++++++++++++++++
  tests/conform/test-conform-main.c |  1 +
  3 files changed, 42 insertions(+), 1 deletion(-)
 
@@ -1995,10 +1995,10 @@ Date:   Sun Nov 25 23:11:45 2012 -0500
     
     https://bugzilla.gnome.org/show_bug.cgi?id=689061
 
- clutter/clutter-pan-action.c               | 116 +++++++++++++++++++++++++++--
- clutter/clutter-pan-action.h               |  12 ++-
- clutter/clutter.symbols                    |   2 +
- doc/reference/clutter/clutter-sections.txt |   2 +
+ clutter/clutter-pan-action.c               | 116 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+ clutter/clutter-pan-action.h               |  12 +++++++++++-
+ clutter/clutter.symbols                    |   2 ++
+ doc/reference/clutter/clutter-sections.txt |   2 ++
  4 files changed, 125 insertions(+), 7 deletions(-)
 
 commit 90a2401299418a5e6b4d0ceb6692a6c758414cdf
@@ -2043,9 +2043,9 @@ Date:   Wed Nov 28 22:25:55 2012 +0100
     The parameter is now used to index the touch/mouse pointer tracked
     in the gesture array, rename accordingly and update the docs.
 
- clutter/clutter-gesture-action.c | 70 ++++++++++++++++++++++------------------
- clutter/clutter-gesture-action.h | 10 +++---
- clutter/clutter-zoom-action.c    |  8 ++---
+ clutter/clutter-gesture-action.c | 70 ++++++++++++++++++++++++++++++++++++++--------------------------------
+ clutter/clutter-gesture-action.h | 10 +++++-----
+ clutter/clutter-zoom-action.c    |  8 ++++----
  3 files changed, 47 insertions(+), 41 deletions(-)
 
 commit 879b1330624f583f8ee44c9ee3b51d52e6603f98
@@ -2110,7 +2110,7 @@ Date:   Tue Nov 20 18:03:12 2012 +0100
 
     tests: Print the modifiers state on mouse/touch events
 
- tests/interactive/test-events.c | 99 ++++++++++++++++++++++++++++++++---------
+ tests/interactive/test-events.c | 99 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------
  1 file changed, 77 insertions(+), 22 deletions(-)
 
 commit f57fc569d29abc683ae1ca639244dcb74baca360
@@ -2234,11 +2234,11 @@ Date:   Mon Oct 8 17:44:13 2012 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=685737
 
- clutter/clutter-gesture-action.c           | 42 ++++++++++++++++++++++++++++++
- clutter/clutter-gesture-action.h           |  4 +++
+ clutter/clutter-gesture-action.c           | 42 ++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-gesture-action.h           |  4 ++++
  clutter/clutter.symbols                    |  1 +
  doc/reference/clutter/clutter-sections.txt |  1 +
- examples/pan-action.c                      | 13 +++++++--
+ examples/pan-action.c                      | 13 +++++++++++--
  5 files changed, 59 insertions(+), 2 deletions(-)
 
 commit 61f2d751d08aeade38b67f477bf4273e04231995
@@ -2267,15 +2267,15 @@ Date:   Mon Oct 1 16:15:06 2012 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=683948
 
- clutter/Makefile.am                        |   2 +
- clutter/clutter-tap-action.c               | 142 +++++++++++++++++++++++++++++
- clutter/clutter-tap-action.h               | 102 +++++++++++++++++++++
+ clutter/Makefile.am                        |   2 ++
+ clutter/clutter-tap-action.c               | 142 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-tap-action.h               | 102 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  clutter/clutter.h                          |   1 +
- clutter/clutter.symbols                    |   2 +
+ clutter/clutter.symbols                    |   2 ++
  doc/reference/clutter/clutter-docs.xml.in  |   1 +
- doc/reference/clutter/clutter-sections.txt |  17 ++++
+ doc/reference/clutter/clutter-sections.txt |  17 +++++++++++++++++
  doc/reference/clutter/clutter.types        |   1 +
- examples/image-content.c                   |  10 +-
+ examples/image-content.c                   |  10 +++++-----
  9 files changed, 273 insertions(+), 5 deletions(-)
 
 commit bd1febb2eaa73c2925785e3b5f5a7d7ab70d9692
@@ -2321,8 +2321,8 @@ Date:   Mon Oct 15 23:37:38 2012 +0200
     https://bugzilla.gnome.org/show_bug.cgi?id=685028
 
  clutter/Makefile.am                      |   1 +
- clutter/clutter-gesture-action-private.h |  59 +++++++++++++
- clutter/clutter-gesture-action.c         | 141 ++++++++++++++++++++-----------
+ clutter/clutter-gesture-action-private.h |  59 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/clutter-gesture-action.c         | 141 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------
  3 files changed, 153 insertions(+), 48 deletions(-)
 
 commit cbab0a62ad7eb162bc5f195f5e199fc6279d6751
@@ -2331,10 +2331,10 @@ Date:   Fri Oct 12 18:54:25 2012 +0100
 
     wayland: Port to new protocol
 
- clutter/wayland/clutter-backend-wayland.c        | 31 +++++++++++++++---------
+ clutter/wayland/clutter-backend-wayland.c        | 31 +++++++++++++++++++------------
  clutter/wayland/clutter-backend-wayland.h        |  1 +
- clutter/wayland/clutter-device-manager-wayland.c |  4 +--
- clutter/wayland/clutter-event-wayland.c          | 15 ++----------
+ clutter/wayland/clutter-device-manager-wayland.c |  4 ++--
+ clutter/wayland/clutter-event-wayland.c          | 15 ++-------------
  clutter/wayland/clutter-input-device-wayland.c   |  2 ++
  5 files changed, 26 insertions(+), 27 deletions(-)
 
@@ -2371,8 +2371,8 @@ Date:   Mon Oct 8 13:25:36 2012 +0100
     
     Signed-off-by: Rob Bradford <rob@linux.intel.com>
 
- clutter/wayland/clutter-backend-wayland.c | 174 ++++--------------------------
- clutter/wayland/clutter-backend-wayland.h |   4 +
+ clutter/wayland/clutter-backend-wayland.c | 174 ++++++++++++++++++------------------------------------------------------------------------------------------------------------------------------------------------------------
+ clutter/wayland/clutter-backend-wayland.h |   4 ++++
  2 files changed, 22 insertions(+), 156 deletions(-)
 
 commit d4c7f2ecf4986517b890ef2b76cb1b6bbcb026fa
@@ -2442,8 +2442,8 @@ Date:   Thu Aug 30 15:08:43 2012 -0700
     
     Signed-off-by: Daniel Stone <daniel@fooishbar.org>
 
- clutter/wayland/clutter-input-device-wayland.c | 58 ++++++++++++++++++++++++++
- clutter/wayland/clutter-input-device-wayland.h |  5 +++
+ clutter/wayland/clutter-input-device-wayland.c | 58 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/wayland/clutter-input-device-wayland.h |  5 +++++
  2 files changed, 63 insertions(+)
 
 commit 8f4e39b6d716876bdd386c832ede3a33bc76c042
@@ -2463,15 +2463,15 @@ Date:   Fri Aug 24 01:16:25 2012 +0200
     
     Signed-off-by: Daniel Stone <daniel@fooishbar.org>
 
- clutter/evdev/clutter-device-manager-evdev.c     |   9 +-
- clutter/evdev/clutter-xkb-utils.c                | 124 +++----
- clutter/evdev/clutter-xkb-utils.h                |   7 +-
- clutter/wayland/clutter-backend-wayland.c        |  30 +-
+ clutter/evdev/clutter-device-manager-evdev.c     |   9 +++--
+ clutter/evdev/clutter-xkb-utils.c                | 124 ++++++++++++++++++++-------------------------------------
+ clutter/evdev/clutter-xkb-utils.h                |   7 ++--
+ clutter/wayland/clutter-backend-wayland.c        |  30 ++++++++------
  clutter/wayland/clutter-backend-wayland.h        |   1 +
- clutter/wayland/clutter-device-manager-wayland.c |  24 +-
- clutter/wayland/clutter-input-device-wayland.c   | 394 +++++++++++++++++------
- clutter/wayland/clutter-input-device-wayland.h   |  11 +-
- clutter/wayland/clutter-stage-wayland.c          |  23 +-
+ clutter/wayland/clutter-device-manager-wayland.c |  24 +++---------
+ clutter/wayland/clutter-input-device-wayland.c   | 394 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------
+ clutter/wayland/clutter-input-device-wayland.h   |  11 +++---
+ clutter/wayland/clutter-stage-wayland.c          |  23 ++++++++++-
  clutter/wayland/clutter-wayland.h                |   2 +-
  10 files changed, 394 insertions(+), 231 deletions(-)
 
@@ -2512,7 +2512,7 @@ Date:   Thu Oct 11 03:55:54 2012 +0200
 
     Updated German translation
 
- po/de.po | 412 +++++++++++++++++++++++++++++++++++----------------------------
+ po/de.po | 412 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------
  1 file changed, 228 insertions(+), 184 deletions(-)
 
 commit 1eaa57788347e4271e96b7a1972f323fe859e02b
@@ -2628,7 +2628,7 @@ Date:   Wed Oct 3 19:48:25 2012 +0200
 
     Updated Czech translation
 
- po/cs.po | 1878 ++++++++++++++++++++++++++++++++++++--------------------------
+ po/cs.po | 1878 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------
  1 file changed, 1083 insertions(+), 795 deletions(-)
 
 commit 092389132e56ae996c1255d9bdd5e2b0ec7ab5e4
@@ -2637,7 +2637,7 @@ Date:   Sat Sep 29 17:36:45 2012 +0200
 
     [l10n] Updated Italian translation.
 
- po/it.po | 2650 +++++++++++++++++++++++++++++++++++++-------------------------
+ po/it.po | 2650 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------
  1 file changed, 1594 insertions(+), 1056 deletions(-)
 
 commit ffbf3d47fcbd7bc6d66bdfd1e0b639135dea0540
@@ -2646,7 +2646,7 @@ Date:   Fri Sep 28 20:36:21 2012 +0900
 
     [l10n] Update Japanese translation
 
- po/ja.po | 88 +++++++++++++++++++++-------------------------------------------
+ po/ja.po | 88 ++++++++++++++++++++++++++++------------------------------------------------------------
  1 file changed, 28 insertions(+), 60 deletions(-)
 
 commit a87fd7aae4421771bb412fc4e2aab2def07fd6b8
@@ -2661,11 +2661,11 @@ Date:   Fri Sep 28 18:59:27 2012 +0800
     -Make things a little bit more consistent between vs9 and vs10 in terms of
      the "install" stage
 
- build/win32/vs10/clutter.props                    |  17 +-
- build/win32/vs10/clutter.vcxprojin                |  16 +-
- build/win32/vs9/clutter.vcprojin                  |  16 +-
- build/win32/vs9/clutter.vsprops                   | 318 +++++++++++-----------
- build/win32/vs9/test-conformance-clutter.vcprojin |   4 -
+ build/win32/vs10/clutter.props                    |  17 +++++++---
+ build/win32/vs10/clutter.vcxprojin                |  16 +++++-----
+ build/win32/vs9/clutter.vcprojin                  |  16 +++++-----
+ build/win32/vs9/clutter.vsprops                   | 318 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------
+ build/win32/vs9/test-conformance-clutter.vcprojin |   4 ---
  5 files changed, 191 insertions(+), 180 deletions(-)
 
 commit 696f1afc041cdc76293931cf90fee99f8a0aecd2
@@ -2686,7 +2686,7 @@ Date:   Mon Sep 24 23:25:05 2012 +0300
 
     Updated Latvian translation
 
- po/lv.po | 1932 +++++++++++++++++++++++++++++++++++---------------------------
+ po/lv.po | 1932 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-------------------------------------------------------------------------------------------------
  1 file changed, 1087 insertions(+), 845 deletions(-)
 
 commit ab011c44ac6be7670e76559b83ea0833d6610c13

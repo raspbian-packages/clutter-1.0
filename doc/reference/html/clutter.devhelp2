@@ -2422,7 +2422,7 @@
     <keyword type="function" name="clutter_table_layout_get_column_spacing ()" link="ClutterTableLayout.html#clutter-table-layout-get-column-spacing" deprecated="1.18: Use #ClutterGridLayout:column-spacing" since="1.4"/>
     <keyword type="function" name="clutter_table_layout_get_row_count ()" link="ClutterTableLayout.html#clutter-table-layout-get-row-count" deprecated="1.18: No direct replacement is available" since="1.4"/>
     <keyword type="function" name="clutter_table_layout_get_column_count ()" link="ClutterTableLayout.html#clutter-table-layout-get-column-count" deprecated="1.18: No direct replacement is available" since="1.4"/>
-    <keyword type="function" name="clutter_table_layout_pack ()" link="ClutterTableLayout.html#clutter-table-layout-pack" deprecated="1.18: Use clutter_grid_layout_attach_child() instead" since="1.4"/>
+    <keyword type="function" name="clutter_table_layout_pack ()" link="ClutterTableLayout.html#clutter-table-layout-pack" deprecated="1.18: Use clutter_grid_layout_attach() instead" since="1.4"/>
     <keyword type="function" name="clutter_table_layout_set_alignment ()" link="ClutterTableLayout.html#clutter-table-layout-set-alignment" deprecated="" since="1.4"/>
     <keyword type="function" name="clutter_table_layout_get_alignment ()" link="ClutterTableLayout.html#clutter-table-layout-get-alignment" deprecated="" since="1.4"/>
     <keyword type="function" name="clutter_table_layout_set_expand ()" link="ClutterTableLayout.html#clutter-table-layout-set-expand" deprecated="" since="1.4"/>

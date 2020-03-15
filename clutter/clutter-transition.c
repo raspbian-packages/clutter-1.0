@@ -136,7 +136,6 @@ clutter_transition_stopped (ClutterTimeline *timeline,
       clutter_transition_detach (CLUTTER_TRANSITION (timeline),
                                  priv->animatable);
       g_clear_object (&priv->animatable);
-      g_object_unref (timeline);
     }
 }
 

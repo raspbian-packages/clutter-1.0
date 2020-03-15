@@ -8,7 +8,7 @@
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-Key-Bindings.html" title="Key Bindings">
 <link rel="next" href="clutter-Events.html" title="Events">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -174,7 +174,7 @@ clutter_device_manager_get_default (<em class="parameter"><code><span class="typ
 <p>Retrieves the device manager singleton</p>
 <div class="refsect3">
 <a name="clutter-device-manager-get-default.returns"></a><h4>Returns</h4>
-<p> the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> singleton.
+<p>the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> singleton.
 The returned instance is owned by Clutter and it should not be
 modified or freed. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -204,7 +204,7 @@ clutter_device_manager_list_devices (<em class="parameter"><code><a class="link"
 </div>
 <div class="refsect3">
 <a name="clutter-device-manager-list-devices.returns"></a><h4>Returns</h4>
-<p>  a newly allocated list of <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> objects. Use
+<p>a newly allocated list of <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> objects. Use
 <code class="function">g_slist_free()</code> to deallocate it when done. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Clutter.InputDevice]</span></p>
 </div>
@@ -233,7 +233,7 @@ clutter_device_manager_peek_devices (<em class="parameter"><code><a class="link"
 </div>
 <div class="refsect3">
 <a name="clutter-device-manager-peek-devices.returns"></a><h4>Returns</h4>
-<p>  a pointer to the internal list of <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> objects. The
+<p>a pointer to the internal list of <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> objects. The
 returned list is owned by the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> and should never
 be modified or freed. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Clutter.InputDevice]</span></p>
@@ -272,7 +272,7 @@ clutter_device_manager_get_device (<em class="parameter"><code><a class="link" h
 </div>
 <div class="refsect3">
 <a name="clutter-device-manager-get-device.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> or <code class="literal">NULL</code>. The
+<p>a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> or <code class="literal">NULL</code>. The
 returned device is owned by the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> and should
 never be modified or freed. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -314,7 +314,7 @@ Clutter backend</p>
 </div>
 <div class="refsect3">
 <a name="clutter-device-manager-get-core-device.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> or <code class="literal">NULL</code>. The
+<p>a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a> or <code class="literal">NULL</code>. The
 returned device is owned by the <a class="link" href="ClutterDeviceManager.html" title="ClutterDeviceManager"><span class="type">ClutterDeviceManager</span></a> and should
 not be modified or freed. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
@@ -371,7 +371,7 @@ equivalent to:</p>
 </div>
 <div class="refsect3">
 <a name="clutter-get-input-device-for-id.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix06.html#api-index-0.8">0.8</a></p>
@@ -486,6 +486,6 @@ removed from the <a class="link" href="ClutterDeviceManager.html" title="Clutter
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

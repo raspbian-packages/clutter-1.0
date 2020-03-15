@@ -1,4 +1,4 @@
-include $(top_srcdir)/build/autotools/Makefile.am.silent
+include $(top_srcdir)/build-aux/autotools/Makefile.am.silent
 
 all_examples = \
 	actor-model \
@@ -37,4 +37,4 @@ noinst_PROGRAMS = $(all_examples)
 
 EXTRA_DIST = redhand.png
 
--include $(top_srcdir)/build/autotools/Makefile.am.gitignore
+-include $(top_srcdir)/build-aux/autotools/Makefile.am.gitignore

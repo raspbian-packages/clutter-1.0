@@ -8,7 +8,7 @@
 <link rel="up" href="ch10.html" title="General purpose API">
 <link rel="prev" href="clutter-Base-geometric-types.html" title="Base geometric types">
 <link rel="next" href="clutter-General.html" title="General">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -629,7 +629,7 @@ set to <a class="link" href="ClutterInputDevice.html#CLUTTER-INPUT-MODE-MASTER:C
 </div>
 <div class="refsect3">
 <a name="clutter-input-device-get-associated-device.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix10.html#api-index-1.6">1.6</a></p>
@@ -659,7 +659,7 @@ clutter_input_device_get_slave_devices
 </div>
 <div class="refsect3">
 <a name="clutter-input-device-get-slave-devices.returns"></a><h4>Returns</h4>
-<p> a
+<p>a
 list of <a class="link" href="ClutterInputDevice.html" title="ClutterInputDevice"><span class="type">ClutterInputDevice</span></a>, or <code class="literal">NULL</code>. The contents of the list are
 owned by the device. Use <code class="function">g_list_free()</code> when done. </p>
 <p><span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> Clutter.InputDevice]</span></p>
@@ -899,13 +899,13 @@ clutter_input_device_get_key (<em class="parameter"><code><a class="link" href="
 </tr>
 <tr>
 <td class="parameter_name"><p>keyval</p></td>
-<td class="parameter_description"><p> return location for the keyval at <em class="parameter"><code>index_</code></em>
+<td class="parameter_description"><p>return location for the keyval at <em class="parameter"><code>index_</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>modifiers</p></td>
-<td class="parameter_description"><p> return location for the modifiers at <em class="parameter"><code>index_</code></em>
+<td class="parameter_description"><p>return location for the modifiers at <em class="parameter"><code>index_</code></em>
 . </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
@@ -1034,7 +1034,7 @@ an array of axis values.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>axes</p></td>
-<td class="parameter_description"><p> an array of axes values, typically
+<td class="parameter_description"><p>an array of axes values, typically
 coming from <a class="link" href="clutter-Events.html#clutter-event-get-axes" title="clutter_event_get_axes ()"><code class="function">clutter_event_get_axes()</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter points to an array of items."><span class="acronym">array</span></acronym>]</span></td>
 </tr>
@@ -1045,7 +1045,7 @@ coming from <a class="link" href="clutter-Events.html#clutter-event-get-axes" ti
 </tr>
 <tr>
 <td class="parameter_name"><p>value</p></td>
-<td class="parameter_description"><p> return location for the axis value. </p></td>
+<td class="parameter_description"><p>return location for the axis value. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1083,13 +1083,13 @@ clutter_input_device_get_coords (<em class="parameter"><code><a class="link" hre
 </tr>
 <tr>
 <td class="parameter_name"><p>sequence</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Events.html#ClutterEventSequence"><span class="type">ClutterEventSequence</span></a>, or <code class="literal">NULL</code> if
+<td class="parameter_description"><p>a <a class="link" href="clutter-Events.html#ClutterEventSequence"><span class="type">ClutterEventSequence</span></a>, or <code class="literal">NULL</code> if
 the device is not touch-based. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>point</p></td>
-<td class="parameter_description"><p> return location for the pointer
+<td class="parameter_description"><p>return location for the pointer
 or touch point. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Out parameter, where caller must allocate storage."><span class="acronym">out caller-allocates</span></acronym>]</span></td>
 </tr>
@@ -1133,12 +1133,12 @@ clutter_input_device_get_device_coords
 </tr>
 <tr>
 <td class="parameter_name"><p>x</p></td>
-<td class="parameter_description"><p> return location for the X coordinate. </p></td>
+<td class="parameter_description"><p>return location for the X coordinate. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>y</p></td>
-<td class="parameter_description"><p> return location for the Y coordinate. </p></td>
+<td class="parameter_description"><p>return location for the Y coordinate. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="Parameter for returning results. Default is transfer full."><span class="acronym">out</span></acronym>]</span></td>
 </tr>
 </tbody>
@@ -1171,7 +1171,7 @@ clutter_input_device_get_pointer_actor
 </div>
 <div class="refsect3">
 <a name="clutter-input-device-get-pointer-actor.returns"></a><h4>Returns</h4>
-<p> a pointer to the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> or <code class="literal">NULL</code>. </p>
+<p>a pointer to the <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -1201,7 +1201,7 @@ clutter_input_device_get_pointer_stage
 </div>
 <div class="refsect3">
 <a name="clutter-input-device-get-pointer-stage.returns"></a><h4>Returns</h4>
-<p> a pointer to the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> or <code class="literal">NULL</code>. </p>
+<p>a pointer to the <a class="link" href="ClutterStage.html" title="ClutterStage"><span class="type">ClutterStage</span></a> or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix08.html#api-index-1.2">1.2</a></p>
@@ -1298,7 +1298,7 @@ the events coming from <em class="parameter"><code>device</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-input-device-get-grabbed-actor.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix12.html#api-index-1.10">1.10</a></p>
@@ -1422,7 +1422,7 @@ touch events coming from <em class="parameter"><code>device</code></em>
 </div>
 <div class="refsect3">
 <a name="clutter-input-device-sequence-get-grabbed-actor.returns"></a><h4>Returns</h4>
-<p> a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
+<p>a <a class="link" href="ClutterActor.html" title="ClutterActor"><span class="type">ClutterActor</span></a>, or <code class="literal">NULL</code>. </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="ix13.html#api-index-1.12">1.12</a></p>
@@ -1883,6 +1883,6 @@ to <a class="link" href="ClutterInputDevice.html#CLUTTER-INPUT-MODE-MASTER:CAPS"
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>

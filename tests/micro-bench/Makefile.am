@@ -1,4 +1,4 @@
-include $(top_srcdir)/build/autotools/Makefile.am.silent
+include $(top_srcdir)/build-aux/autotools/Makefile.am.silent
 
 common_ldadd = $(top_builddir)/clutter/libclutter-@CLUTTER_API_VERSION@.la
 
@@ -30,4 +30,4 @@ test_text_perf_SOURCES = test-text-perf.c
 test_random_text_SOURCES = test-random-text.c
 test_cogl_perf_SOURCES = test-cogl-perf.c
 
--include $(top_srcdir)/build/autotools/Makefile.am.gitignore
+-include $(top_srcdir)/build-aux/autotools/Makefile.am.gitignore

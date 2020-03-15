@@ -37,7 +37,7 @@ Date:   Sun Sep 21 13:42:14 2014 +0000
 
     Updated Greek translation
 
- po/el.po | 307 +++++++++++++++++++++++++++++++--------------------------------
+ po/el.po | 307 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------------
  1 file changed, 153 insertions(+), 154 deletions(-)
 
 commit ca09f58d9340b5370080c21a0ad313ee9bbb2ec5
@@ -243,7 +243,7 @@ Date:   Thu Aug 28 18:09:28 2014 +0300
 
     Updated Hebrew translation
 
- po/he.po | 976 ++++++++++++++++++++++++++++++++-------------------------------
+ po/he.po | 976 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------------
  1 file changed, 494 insertions(+), 482 deletions(-)
 
 commit 591d31c970e1e00c53812de2c24bef6546bcf6ae
@@ -364,7 +364,7 @@ Date:   Mon Aug 18 15:38:09 2014 +0000
 
     Updated Assamese translation
 
- po/as.po | 1175 +++++++++++++++++++++++++++++++++-----------------------------
+ po/as.po | 1175 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------
  1 file changed, 620 insertions(+), 555 deletions(-)
 
 commit 22827e6043f1cdb3b0545ea0d78f16186f542d6a
@@ -373,7 +373,7 @@ Date:   Mon Aug 18 08:31:44 2014 +0000
 
     Updated German translation
 
- po/de.po | 91 ++++++++++++++++++++++++++++------------------------------------
+ po/de.po | 91 ++++++++++++++++++++++++++++++++++++++++---------------------------------------------------
  1 file changed, 40 insertions(+), 51 deletions(-)
 
 commit ad18f2a996a685962016055734121d45be581b5c
@@ -457,7 +457,7 @@ Date:   Sun Jul 6 17:43:14 2014 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=733202
 
- clutter/evdev/clutter-device-manager-evdev.c | 32 ++++++++++++++++++++++++++++
+ clutter/evdev/clutter-device-manager-evdev.c | 32 ++++++++++++++++++++++++++++++++
  clutter/evdev/clutter-evdev.h                |  4 ++++
  2 files changed, 36 insertions(+)
 
@@ -535,7 +535,7 @@ Date:   Mon Jul 21 23:48:42 2014 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=733562
 
- clutter/evdev/clutter-device-manager-evdev.c | 73 ++++++++++++++++++----------
+ clutter/evdev/clutter-device-manager-evdev.c | 73 ++++++++++++++++++++++++++++++++++++++++++++++---------------------------
  1 file changed, 46 insertions(+), 27 deletions(-)
 
 commit 958ffd4d40de4edb46140c7a282176aa8bb734c2
@@ -609,11 +609,11 @@ Date:   Thu Jun 5 15:21:05 2014 -0400
     
     https://bugzilla.gnome.org/show_bug.cgi?id=732342
 
- clutter/clutter-stage.c                        | 61 ++++++++------------------
- clutter/clutter-stage.h                        |  9 ----
+ clutter/clutter-stage.c                        | 61 +++++++++++++++++++------------------------------------------
+ clutter/clutter-stage.h                        |  9 ---------
  doc/reference/clutter/clutter-sections.txt     |  1 -
- tests/conform/actor-offscreen-limit-max-size.c |  6 +--
- tests/conform/actor-shader-effect.c            |  6 +--
+ tests/conform/actor-offscreen-limit-max-size.c |  6 ++----
+ tests/conform/actor-shader-effect.c            |  6 ++----
  5 files changed, 23 insertions(+), 60 deletions(-)
 
 commit 9c74b983100c5eb6e4b7d5921371f66b5965a434
@@ -736,7 +736,7 @@ Date:   Wed Jun 25 12:18:02 2014 +0100
 
     evdev: Update after libinput API changes
 
- clutter/evdev/clutter-device-manager-evdev.c | 46 +++++++++++++++-------------
+ clutter/evdev/clutter-device-manager-evdev.c | 46 ++++++++++++++++++++++++----------------------
  1 file changed, 24 insertions(+), 22 deletions(-)
 
 commit 3b77e5565c0d63ceb8a2eb848aea1e69e9aa4d46
@@ -799,7 +799,7 @@ Date:   Mon Jun 2 23:16:21 2014 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=731178
 
- clutter/evdev/clutter-device-manager-evdev.c | 40 ++++++++++------------------
+ clutter/evdev/clutter-device-manager-evdev.c | 40 ++++++++++++++--------------------------
  clutter/evdev/clutter-input-device-evdev.h   |  2 --
  configure.ac                                 |  2 +-
  3 files changed, 15 insertions(+), 29 deletions(-)
@@ -951,7 +951,7 @@ Date:   Fri Apr 25 20:07:53 2014 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=728968
 
- clutter/evdev/clutter-device-manager-evdev.c | 216 +++++++++++++++++++++++++++
+ clutter/evdev/clutter-device-manager-evdev.c | 216 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 216 insertions(+)
 
 commit 76d48f79d655095b89afef6211a61aae834da805
@@ -996,8 +996,8 @@ Date:   Fri Apr 25 19:54:35 2014 +0200
     
     https://bugzilla.gnome.org/show_bug.cgi?id=728967
 
- clutter/evdev/clutter-device-manager-evdev.c | 132 +++++++++++++++++++++++++++
- clutter/evdev/clutter-evdev.h                |  11 +++
+ clutter/evdev/clutter-device-manager-evdev.c | 132 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/evdev/clutter-evdev.h                |  11 +++++++++++
  2 files changed, 143 insertions(+)
 
 commit b66fec0450dc55f7221dc4e84c406ef30c4d177d
@@ -1011,10 +1011,10 @@ Date:   Fri Feb 28 10:15:45 2014 -0500
     
     https://bugzilla.gnome.org/show_bug.cgi?id=730215
 
- clutter/clutter-master-clock.c          | 15 +++++++++
+ clutter/clutter-master-clock.c          | 15 +++++++++++++++
  clutter/clutter-master-clock.h          |  2 ++
- clutter/egl/clutter-backend-eglnative.c | 54 +++++++++++++++++++++++++++++++++
- clutter/egl/clutter-egl.h               |  5 +++
+ clutter/egl/clutter-backend-eglnative.c | 54 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ clutter/egl/clutter-egl.h               |  5 +++++
  4 files changed, 76 insertions(+)
 
 commit 32af6a3ef4c62fabf74945ef67c0eef807298fe9
@@ -1054,7 +1054,7 @@ Date:   Mon May 12 23:45:42 2014 +0200
 
     [l10n] Updated Catalan (Valencian) translation
 
- po/ca@valencia.po | 1529 +++++++++++++++++++++++++++--------------------------
+ po/ca@valencia.po | 1529 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------------------------------------------------------------------------------------------------------
  1 file changed, 793 insertions(+), 736 deletions(-)
 
 commit 4b430ee098cf56fbb75f5cc6c1c912ca041e3b70
@@ -1063,7 +1063,7 @@ Date:   Mon May 12 23:45:33 2014 +0200
 
     [l10n] Update Catalan translation
 
- po/ca.po | 1142 ++++++++++++++++++++++++++++++++------------------------------
+ po/ca.po | 1142 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------
  1 file changed, 595 insertions(+), 547 deletions(-)
 
 commit 812f0d9880e6666b71f1da770bd0239607a39707
@@ -1072,7 +1072,7 @@ Date:   Fri May 2 10:42:23 2014 +0000
 
     Updated German translation
 
- po/de.po | 1135 +++++++++++++++++++++++++++++++++-----------------------------
+ po/de.po | 1135 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++--------------------------------------------------------------------------------------------------------
  1 file changed, 602 insertions(+), 533 deletions(-)
 
 commit bf5fe70e23287bfb08872cddf86266f43ac09f4c
@@ -1106,7 +1106,7 @@ Date:   Mon Apr 28 21:36:02 2014 +0200
 
     Updated Slovenian translation
 
- po/sl.po | 1116 +++++++++++++++++++++++++++++++++-----------------------------
+ po/sl.po | 1116 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------
  1 file changed, 588 insertions(+), 528 deletions(-)
 
 commit 0255b5a13366784a0d89bb214d8de7c37da25655
@@ -1193,7 +1193,7 @@ Date:   Wed Apr 16 17:12:16 2014 +0200
 
     Updated Basque language
 
- po/eu.po | 2852 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ po/eu.po | 2852 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  1 file changed, 2852 insertions(+)
 
 commit 6f370079ce9f9ab85e07c76e98a3352d0ddc8a8f
@@ -1253,7 +1253,7 @@ Date:   Sun Apr 6 19:48:17 2014 +0300
 
     Updated Greek translation
 
- po/el.po | 1022 ++++++++++++++++++++++++++++++++------------------------------
+ po/el.po | 1022 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------
  1 file changed, 530 insertions(+), 492 deletions(-)
 
 commit f9d99d1c4e573d08bdada42c0b70c984476c9541
@@ -1280,7 +1280,7 @@ Date:   Mon Mar 24 13:20:48 2014 +0000
     remove it from the repository.
 
  clutter/Makefile.am     |    1 -
- clutter/clutter.symbols | 1669 -----------------------------------------------
+ clutter/clutter.symbols | 1669 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  2 files changed, 1670 deletions(-)
 
 commit 363c0d2f7aec5ce3ce3601dbcca482a601bd86b3
@@ -1302,7 +1302,7 @@ Date:   Fri Mar 21 10:38:32 2014 +0000
 
     Updated Indonesian translation
 
- po/id.po | 950 +++++++++++++++++++++++++++++++--------------------------------
+ po/id.po | 950 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------------
  1 file changed, 472 insertions(+), 478 deletions(-)
 
 commit 62688569a8d38e1f510e9e752789a616faea205c
@@ -1311,7 +1311,7 @@ Date:   Fri Mar 21 08:31:19 2014 +0000
 
     Updated French translation
 
- po/fr.po | 215 ++++++++++++++++++++++++++++++++-------------------------------
+ po/fr.po | 215 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----------------------------------------------------------------------------------------------------------
  1 file changed, 109 insertions(+), 106 deletions(-)
 
 commit 5d53620bb94e428f891d1d0c143c2afd47b1466b
@@ -1401,7 +1401,7 @@ Date:   Thu Mar 20 09:18:57 2014 +0800
     builds and for newer Visual Studio versions, such as the availability for
     inttypes.h.  Update the layout of the file cosmetic-wise as well.
 
- clutter/config.h.win32.in | 66 ++++++++++++++++++++++++++++++-----------------
+ clutter/config.h.win32.in | 66 ++++++++++++++++++++++++++++++++++++++++++------------------------
  1 file changed, 42 insertions(+), 24 deletions(-)
 
 commit 783bc64a02f1bf946606d61cf92ce683513c0838
@@ -1417,12 +1417,12 @@ Date:   Thu Mar 20 08:57:06 2014 +0800
     config.h.win32.in is also updated accordingly for this purpose.  The
     clutter.symbols file can be dropped if it is not being used otherwise.
 
- build/win32/vs10/clutter-gen-srcs.props    | 16 -------
+ build/win32/vs10/clutter-gen-srcs.props    | 16 ----------------
  build/win32/vs10/clutter.vcxproj.filtersin |  1 -
- build/win32/vs10/clutter.vcxprojin         | 34 --------------
- build/win32/vs9/clutter-gen-srcs.vsprops   | 14 ------
- build/win32/vs9/clutter.vcprojin           | 74 ------------------------------
- clutter/config.h.win32.in                  |  7 +++
+ build/win32/vs10/clutter.vcxprojin         | 34 ----------------------------------
+ build/win32/vs9/clutter-gen-srcs.vsprops   | 14 --------------
+ build/win32/vs9/clutter.vcprojin           | 74 --------------------------------------------------------------------------
+ clutter/config.h.win32.in                  |  7 +++++++
  6 files changed, 7 insertions(+), 139 deletions(-)
 
 commit 8c9b5d0568c7bb6f809b2cd6c787f48deb0a87f2
@@ -1444,7 +1444,7 @@ Date:   Wed Mar 19 22:36:14 2014 +0100
 
     Updated Danish translation
 
- po/da.po | 1100 +++++++++++++++++++++++++++++++++-----------------------------
+ po/da.po | 1100 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++---------------------------------------------------------------------------------------------------------
  1 file changed, 580 insertions(+), 520 deletions(-)
 
 commit ccc5eb9f3588a3c66c2fc1f782b78e574e7ee5a7

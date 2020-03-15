@@ -8,7 +8,7 @@
 <link rel="up" href="ch08.html" title="Paint Objects">
 <link rel="prev" href="ClutterPaintNode.html" title="ClutterPaintNode">
 <link rel="next" href="clutteranimation.html" title="Part V. Clutter Animation Framework">
-<meta name="generator" content="GTK-Doc V1.25.1 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -170,14 +170,14 @@ fill using <em class="parameter"><code>color</code></em>
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p> the color to paint, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>the color to paint, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
 <a name="clutter-color-node-new.returns"></a><h4>Returns</h4>
-<p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>. Use
+<p>the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>. Use
 <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -218,7 +218,7 @@ be used for blending.</p>
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p> a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a> used for blending, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a> used for blending, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
@@ -236,7 +236,7 @@ be used for blending.</p>
 </div>
 <div class="refsect3">
 <a name="clutter-texture-node-new.returns"></a><h4>Returns</h4>
-<p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
+<p>the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
 Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -263,14 +263,14 @@ so it is safe to call <code class="function">cogl_object_unref()</code> when it 
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>pipeline</p></td>
-<td class="parameter_description"><p> a Cogl pipeline state object, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a Cogl pipeline state object, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
 <a name="clutter-pipeline-node-new.returns"></a><h4>Returns</h4>
-<p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
+<p>the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
 Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -280,9 +280,9 @@ Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title=
 <div class="refsect2">
 <a name="clutter-text-node-new"></a><h3>clutter_text_node_new ()</h3>
 <pre class="programlisting"><a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="returnvalue">ClutterPaintNode</span></a> *
-clutter_text_node_new (<em class="parameter"><code><span class="type">PangoLayout</span> *layout</code></em>,
+clutter_text_node_new (<em class="parameter"><code><a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a> *layout</code></em>,
                        <em class="parameter"><code>const <a class="link" href="clutter-Colors.html#ClutterColor"><span class="type">ClutterColor</span></a> *color</code></em>);</pre>
-<p>Creates a new <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a> that will paint a <span class="type">PangoLayout</span>
+<p>Creates a new <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a> that will paint a <a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a>
 with the given color.</p>
 <p>This function takes a reference on the passed <em class="parameter"><code>layout</code></em>
 , so it
@@ -298,12 +298,12 @@ is safe to call <code class="function">g_object_unref()</code> after it returns.
 <tbody>
 <tr>
 <td class="parameter_name"><p>layout</p></td>
-<td class="parameter_description"><p> a <span class="type">PangoLayout</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a href="https://developer.gnome.org/pango/pango-Layout-Objects.html#PangoLayout-struct"><span class="type">PangoLayout</span></a>, or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
 <tr>
 <td class="parameter_name"><p>color</p></td>
-<td class="parameter_description"><p> the color used to paint the layout,
+<td class="parameter_description"><p>the color used to paint the layout,
 or <code class="literal">NULL</code>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL is OK, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span></td>
 </tr>
@@ -312,7 +312,7 @@ or <code class="literal">NULL</code>. </p></td>
 </div>
 <div class="refsect3">
 <a name="clutter-text-node-new.returns"></a><h4>Returns</h4>
-<p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
+<p>the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
 Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -327,7 +327,7 @@ clutter_clip_node_new (<em class="parameter"><code><span class="type">void</span
 nodes to the 2D regions added to it.</p>
 <div class="refsect3">
 <a name="clutter-clip-node-new.returns"></a><h4>Returns</h4>
-<p> the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
+<p>the newly created <a class="link" href="ClutterPaintNode.html" title="ClutterPaintNode"><span class="type">ClutterPaintNode</span></a>.
 Use <a class="link" href="ClutterPaintNode.html#clutter-paint-node-unref" title="clutter_paint_node_unref ()"><code class="function">clutter_paint_node_unref()</code></a> when done. </p>
 <p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
@@ -418,6 +418,6 @@ type whose members cannot be directly accessed.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.25.1</div>
+<hr>Generated by GTK-Doc V1.29</div>
 </body>
 </html>
