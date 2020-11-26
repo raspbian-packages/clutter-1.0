@@ -1,3 +1,14 @@
+clutter-1.0 (1.26.4+dfsg-2) unstable; urgency=medium
+
+  * Team upload
+  * Preferentially build-depend on libgdk-pixbuf-2.0-dev.
+    We don't need the deprecated Xlib integration that is also pulled in
+    by the older libgdk-pixbuf2.0-dev package (see #974870).
+  * Standards-Version: 4.5.1 (no changes required)
+  * d/upstream/metadata: Add
+
+ -- Simon McVittie <smcv@debian.org>  Thu, 26 Nov 2020 09:55:12 +0000
+
 clutter-1.0 (1.26.4+dfsg-1) unstable; urgency=medium
 
   * New upstream release
