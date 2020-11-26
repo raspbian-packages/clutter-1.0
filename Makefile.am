@@ -30,7 +30,6 @@ meson_files = \
 	clutter/meson.build \
 	clutter/cex100/meson.build \
 	doc/meson.build \
-	doc/cookbook/meson.build \
 	doc/reference/meson.build \
 	doc/reference/xml/gtkdocentities.ent.in \
 	doc/reference/xml/meson.build \
