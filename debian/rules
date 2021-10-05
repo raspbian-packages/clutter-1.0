@@ -62,6 +62,3 @@ else
 	dbus-run-session -- xvfb-run -a dh_auto_test
 endif
 endif
-
-override_dh_strip:
-	dh_strip --dbgsym-migration='libclutter-1.0-dbg (<< 1.26.2+dfsg-2~)'
