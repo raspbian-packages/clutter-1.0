@@ -10,7 +10,7 @@ Uploaders: Jeremy Bicha <jbicha@debian.org>, Laurent Bigonville <bigon@debian.or
            Rico Tzschichholz <ricotz@ubuntu.com>,
 Build-Depends: autopoint,
                dbus <!nocheck>,
-               debhelper-compat (= 12),
+               debhelper-compat (= 13),
                gnome-pkg-tools,
                gobject-introspection (>= 1.39.0),
                gtk-doc-tools (>= 1.20),
