@@ -1,3 +1,25 @@
+clutter-1.0 (1.26.4+dfsg-3) UNRELEASED; urgency=medium
+
+  * (Build-)Depend on libgl-dev instead of transitional libgl1-mesa-dev
+  * Standards-Version: 4.6.0 (no changes required)
+  * Drop transition for old debug package migration.
+    The transition to -dbgsym for this source package was finished in
+    oldstable.
+  * Avoid explicitly specifying -Wl,--as-needed linker flag.
+    This is the default in current toolchains.
+  * d/rules: Stop ignoring test results on mips*el.
+    According to buildd logs, the tests now pass on these architectures.
+    Stop ignoring the result so that we'll catch any regressions.
+  * Bump debhelper compat level from 12 to 13
+    - Drop check for DEB_BUILD_OPTIONS containing "nocheck", since debhelper
+      now does this.
+    - debian/rules: Drop --fail-missing argument to dh_missing, which is now
+      the default.
+  * Add Lintian override for #970275
+  * d/rules: Don't let debhelper make all installed-tests data executable
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 05 Oct 2021 13:07:24 +0100
+
 clutter-1.0 (1.26.4+dfsg-2) unstable; urgency=medium
 
   * Team upload
