@@ -1,5 +1,6 @@
-clutter-1.0 (1.26.4+dfsg-3) UNRELEASED; urgency=medium
+clutter-1.0 (1.26.4+dfsg-3) unstable; urgency=medium
 
+  * Team upload
   * (Build-)Depend on libgl-dev instead of transitional libgl1-mesa-dev
   * Standards-Version: 4.6.0 (no changes required)
   * Drop transition for old debug package migration.
@@ -18,7 +19,7 @@ clutter-1.0 (1.26.4+dfsg-3) UNRELEASED; urgency=medium
   * Add Lintian override for #970275
   * d/rules: Don't let debhelper make all installed-tests data executable
 
- -- Simon McVittie <smcv@debian.org>  Tue, 05 Oct 2021 13:07:24 +0100
+ -- Simon McVittie <smcv@debian.org>  Tue, 12 Oct 2021 19:43:09 +0100
 
 clutter-1.0 (1.26.4+dfsg-2) unstable; urgency=medium
 
