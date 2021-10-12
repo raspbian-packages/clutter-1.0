@@ -24,7 +24,6 @@ actor_tests = \
 	actor-offscreen-redirect \
 	actor-paint-opacity \
 	actor-pick \
-	actor-shader-effect \
 	actor-size \
 	$(NULL)
 
