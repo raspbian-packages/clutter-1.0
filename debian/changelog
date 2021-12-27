@@ -1,3 +1,11 @@
+clutter-1.0 (1.26.4+dfsg-4) unstable; urgency=medium
+
+  * Team upload
+  * Revert "d/rules: Stop ignoring test results on mips*el".
+    Workaround for #1002690. (Closes: #1001650)
+
+ -- Simon McVittie <smcv@debian.org>  Mon, 27 Dec 2021 14:36:36 +0000
+
 clutter-1.0 (1.26.4+dfsg-3) unstable; urgency=medium
 
   * Team upload
