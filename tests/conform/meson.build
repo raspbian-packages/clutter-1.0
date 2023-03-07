@@ -94,3 +94,6 @@ foreach suite: conformance_suites
     )
   endforeach
 endforeach
+
+install_subdir('scripts',
+  install_dir: installed_test_bindir)
