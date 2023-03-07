@@ -1,2 +1,1 @@
 subdir('reference')
-subdir('cookbook')
