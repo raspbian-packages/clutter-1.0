@@ -802,6 +802,7 @@ pkgconf.generate(
     'apiversion=@0@'.format(clutter_api_version),
     'backends=@0@'.format(','.join(enabled_backends)),
   ],
+  libraries: clutter_deps + mathlib_dep,
   filebase: clutter_api_name,
   subdirs: clutter_api_name,
 )
