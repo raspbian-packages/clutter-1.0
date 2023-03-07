@@ -1500,7 +1500,12 @@ clutter_text_finalize (GObject *gobject)
 
   clutter_text_dirty_paint_volume (self);
 
-  clutter_text_set_buffer (self, NULL);
+  if (priv->buffer)
+    {
+      buffer_disconnect_signals (self);
+      g_clear_object (&priv->buffer);
+    }
+
   g_free (priv->font_name);
 
   G_OBJECT_CLASS (clutter_text_parent_class)->finalize (gobject);
