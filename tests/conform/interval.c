@@ -91,14 +91,14 @@ interval_from_script (void)
                     g_type_name (G_VALUE_TYPE (initial)),
                     g_value_get_float (initial));
   g_assert (G_VALUE_HOLDS (initial, G_TYPE_FLOAT));
-  g_assert_cmpfloat (g_value_get_float (initial), ==, 23.3f);
+  g_assert_cmpfloat_with_epsilon (g_value_get_float (initial), 23.3f, 0.0001);
   final = clutter_interval_peek_final_value (interval);
   if (g_test_verbose ())
     g_test_message ("\tfinal ['%s'] = '%.2f'",
                     g_type_name (G_VALUE_TYPE (final)),
                     g_value_get_float (final));
   g_assert (G_VALUE_HOLDS (final, G_TYPE_FLOAT));
-  g_assert_cmpfloat (g_value_get_float (final), ==, 42.2f);
+  g_assert_cmpfloat_with_epsilon (g_value_get_float (final), 42.2f, 0.00001);
 
   interval = CLUTTER_INTERVAL (clutter_script_get_object (script, "int-2"));
   initial = clutter_interval_peek_initial_value (interval);

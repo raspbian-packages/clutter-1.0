@@ -51,7 +51,7 @@ animator_multi_properties (void)
     }
 
   g_assert (clutter_animator_key_get_object (key) != NULL);
-  g_assert_cmpfloat (clutter_animator_key_get_progress (key), ==, 0.2);
+  g_assert_cmpfloat_with_epsilon (clutter_animator_key_get_progress (key), 0.2, 0.00001);
   g_assert_cmpstr (clutter_animator_key_get_property_name (key), ==, "x");
 
   g_assert (clutter_animator_key_get_property_type (key) == G_TYPE_FLOAT);
@@ -86,7 +86,7 @@ animator_multi_properties (void)
     }
 
   g_assert (clutter_animator_key_get_object (key) != NULL);
-  g_assert_cmpfloat (clutter_animator_key_get_progress (key), ==, 0.8);
+  g_assert_cmpfloat_with_epsilon (clutter_animator_key_get_progress (key), 0.8, 0.00001);
   g_assert_cmpstr (clutter_animator_key_get_property_name (key), ==, "y");
 
   g_assert (clutter_animator_key_get_property_type (key) == G_TYPE_FLOAT);
@@ -148,7 +148,7 @@ animator_properties (void)
     }
 
   g_assert (clutter_animator_key_get_object (key) != NULL);
-  g_assert_cmpfloat (clutter_animator_key_get_progress (key), ==, 0.2);
+  g_assert_cmpfloat_with_epsilon (clutter_animator_key_get_progress (key), 0.2, 0.00001);
   g_assert_cmpstr (clutter_animator_key_get_property_name (key), ==, "x");
 
   g_assert (clutter_animator_key_get_property_type (key) == G_TYPE_FLOAT);

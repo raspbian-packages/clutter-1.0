@@ -94,7 +94,7 @@ units_string (void)
 
   g_assert (clutter_units_from_string (&units, "5.1cm") == TRUE);
   g_assert (clutter_units_get_unit_type (&units) == CLUTTER_UNIT_CM);
-  g_assert_cmpfloat (clutter_units_get_unit_value (&units), ==, 5.1f);
+  g_assert_cmpfloat_with_epsilon (clutter_units_get_unit_value (&units), 5.1f, 0.00001);
 
   g_assert (clutter_units_from_string (&units, "5,mm") == FALSE);
 
