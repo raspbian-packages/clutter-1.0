@@ -684,6 +684,8 @@ endif
 need_xkb_utils = enabled_backends.contains('wayland') or enabled_backends.contains('mir')
 
 if enabled_input_backends.contains('evdev')
+  need_xkb_utils = true
+
   backend_deps += [
     dependency('libinput', version: libinput_req_version),
     dependency('gudev-1.0', version: libudev_req_version),
