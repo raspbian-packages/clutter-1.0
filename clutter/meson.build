@@ -355,7 +355,7 @@ if enabled_backends.contains('wayland')
     '#define CLUTTER_INPUT_WAYLAND "wayland"',
   ]
 
-  if get_variable('enable_wayland_compositor', false)
+  if get_option('wayland_compositor')
     clutter_config += '#define CLUTTER_HAS_WAYLAND_COMPOSITOR_SUPPORT 1'
   endif
 endif
