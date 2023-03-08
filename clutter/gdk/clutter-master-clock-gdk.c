@@ -264,7 +264,7 @@ static void
 clutter_master_clock_gdk_update (GdkFrameClock         *frame_clock,
                                  ClutterMasterClockGdk *master_clock)
 {
-  GList *stages, *l;
+  GList *stages, *l, *next;
 
   _clutter_threads_acquire_lock ();
 
@@ -279,7 +279,7 @@ clutter_master_clock_gdk_update (GdkFrameClock         *frame_clock,
   stages = g_hash_table_lookup (master_clock->clock_to_stage, frame_clock);
   CLUTTER_NOTE (SCHEDULER, "Updating %d stages tied to frame clock %p",
                 g_list_length (stages), frame_clock);
-  for (l = stages; l != NULL; l = l->next)
+  for (l = stages; l != NULL; l = next)
     {
       ClutterStage *stage = l->data;
 
@@ -304,7 +304,20 @@ clutter_master_clock_gdk_update (GdkFrameClock         *frame_clock,
       if (g_hash_table_lookup (master_clock->stage_to_clock, stage) != NULL)
         {
           master_clock_update_stage (master_clock, stage);
-          master_clock_schedule_stage_update (master_clock, stage, frame_clock);
+
+          if (g_hash_table_lookup (master_clock->stage_to_clock, stage) != NULL)
+            {
+              master_clock_schedule_stage_update (master_clock, stage, frame_clock);
+              next = l->next;
+            }
+          else
+            {
+              next = g_hash_table_lookup (master_clock->clock_to_stage, frame_clock);
+            }
+        }
+      else
+        {
+          next = g_hash_table_lookup (master_clock->clock_to_stage, frame_clock);
         }
     }
 
