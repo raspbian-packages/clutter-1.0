@@ -465,13 +465,19 @@ if enabled_backends.contains('x11')
   x11_headers = [
     'x11/clutter-x11.h',
     'x11/clutter-x11-texture-pixmap.h',
-
-    'x11/clutter-glx.h',
-    'x11/clutter-glx-texture-pixmap.h',
   ]
 
   install_headers(x11_headers,
     install_dir: join_paths(clutter_full_includedir, 'x11'),
+  )
+
+  glx_headers = [
+    'x11/clutter-glx.h',
+    'x11/clutter-glx-texture-pixmap.h',
+  ]
+  x11_headers += glx_headers
+  install_headers(glx_headers,
+    install_dir: join_paths(clutter_full_includedir, 'glx'),
   )
 
   backend_sources += x11_sources
